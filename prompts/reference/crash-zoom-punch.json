@@ -1,0 +1,177 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "crash-zoom-punch",
+  "category": "camera",
+  "category_label": { "en": "Camera & Space", "zh": "运镜与空间" },
+  "tags": ["camera"],
+  "source": {
+    "brief_kind": "hand",
+    "card": "references/shots/camera/crash-zoom-punch.md",
+    "card_sha256": null,
+    "derived_from": "read the recipe and wrote the cast and copy; did not copy upstream's placeholder text",
+    "authored_by": "shotcraft studio",
+    "authored_on": "2026-10-01",
+    "brief_version": 1,
+    "note": "card_sha256 is null because this reference brief was authored against the rendered shot rather than the card file; the ingest check will flag it and that is deliberate — see F051 step 'every reference brief cites the card it was derived from'."
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 11,
+    "duration_frames_hint": null,
+    "duration_verbatim": "11f",
+    "width": 1920,
+    "height": 1080,
+    "energy": "high",
+    "energy_label": { "zh": "高", "en": "high" },
+    "energy_verbatim": "高",
+    "energy_rationale": "六帧推完，能量全部压在 11 帧里；这一式没有落位后的停，所以它只能做插入式重音，不能承担叙事。"
+  },
+  "intent_zh": "把注意力一次性砸到某个点上；它是一记重音，不是一个镜头。",
+  "use_zh": "关键数字出现、错误态闪现、章节转场需要一个\"停一下\"的瞬间时",
+  "summary_zh": "全景一拍急推到目标特写（6f），落位二选一——过冲回弹（弹性）或撞停震屏（重量）",
+  "cast": {
+    "note": "The shortest brief in the reference set, on purpose: 11 frames cannot carry more than one actor and one gesture.",
+    "product": "Ledger — an accounting product",
+    "actors": [
+      {
+        "id": "figure",
+        "role": "primary",
+        "kind": "object",
+        "count": 1,
+        "source": "brief copy: cta",
+        "art": "the word START, ink on cream, already on screen when the push begins",
+        "state_in": "wide, unreadable",
+        "state_out": "filling the frame, readable, with a 6% overshoot on the scale"
+      }
+    ]
+  },
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "push",
+      "window": [0, 6],
+      "frame_hints": ["0-3f", "3-6f"],
+      "ease": null,
+      "beziers": [],
+      "raw": "Six-frame push from wide to target close-up."
+    },
+    {
+      "ord": 1,
+      "heading": "land",
+      "window": [6, 11],
+      "frame_hints": ["6-9f", "9-11f"],
+      "ease": null,
+      "beziers": [],
+      "raw": "Either an elastic overshoot or a dead stop with a shake. Pick one; they are not composable."
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "推镜时长",
+      "typical": "6f",
+      "feel": "6f 是这式存在的意义；拉到 12f 它就退化成普通推镜，高能量消失"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "落位方式",
+      "typical": "过冲回弹（弹性）｜撞停震屏（重量）",
+      "feel": "回弹读作轻快、震动读作沉重，两者传达的产品性格相反，必须按文案选"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "过冲幅度",
+      "typical": "1.06",
+      "feel": "1.06 是可读上限；1.10 以上文字边缘开始抖"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "震屏幅度",
+      "typical": "2px（撞停变体）",
+      "feel": "2px 在 1080p 下可见但不刺眼；4px 起会让压缩编码产生块效应"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "两种落位方式不可叠加：回弹 + 震屏会读作设备故障。",
+      "critical": true,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "11 帧没有安全落点，任何需要停留阅读的文案放不进来。",
+      "critical": true,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "广角下推会拉伸边缘文字，1080p 需要 35mm 以上焦段。",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "不要在推镜期间加转场或溶解，会把 6f 拖成一次普通切换。",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "crash-impact-real",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/camera/crash-impact-real/CrashImpactReal.tsx",
+      "component": "CrashImpactReal",
+      "duration_frames": 11,
+      "duration_source": "_DURATION export",
+      "uses_normalized_t": false,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "filled",
+    "authored": true,
+    "authored_by": "shotcraft studio",
+    "note": "The copy here is one word. That is a constraint of the card, not laziness: 11 frames cannot hold a sentence.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "filled",
+        "text": "Overspent by €4,180",
+        "alternatives": ["Reconciled", "Done"],
+        "rationale": "One line, 18 characters. A specific wrong number reads as a real account; 'Overspent' alone would read as a status label."
+      },
+      {
+        "id": "subhead",
+        "max_chars": 64,
+        "hint": "Optional. Omit rather than pad.",
+        "status": "omitted",
+        "text": null,
+        "rationale": "Omitted deliberately. The card has 11 frames and one actor; a subhead would compete with the number rather than supporting it."
+      },
+      {
+        "id": "cta",
+        "max_chars": 24,
+        "hint": "One verb phrase. No punctuation.",
+        "status": "omitted",
+        "text": null,
+        "rationale": "Omitted. This shot is a punctuation mark between two longer beats, not a call to action."
+      }
+    ]
+  },
+  "notes": [
+    "card_sha256 is null on purpose. It was authored from the render, not from the card file, and putting the card's hash here would claim a provenance the work does not have. The next revision of this brief should either re-author from the card and fill it, or delete the field.",
+    "11 frames is a hard ceiling on cast. This is the brief in the set that most clearly shows the card imposing structure on the copy rather than the other way round."
+  ]
+}

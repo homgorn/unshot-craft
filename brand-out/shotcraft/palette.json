@@ -1,0 +1,11 @@
+{
+  "shotcraft": {
+    "page": "#0e0e0c",
+    "surface": "#171714",
+    "field": "#1f1f1c",
+    "border": "#2c2c27",
+    "text": "#f0ede5",
+    "muted": "#8b877c",
+    "accent": "#d3923c"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "source": "C:\\susa ai\\cinematique",
+  "license": "MIT",
+  "techniques": 150,
+  "matrix_cells_filled": 791,
+  "matrix_cells_todo": 37,
+  "matrix_cells_tested": 0,
+  "videos_copied": 41,
+  "by_category": {
+    "Camera Work · Intermediate": 16,
+    "Camera Work · Basic": 20,
+    "Camera Work · Advanced": 5,
+    "Lighting · Basic": 13,
+    "Lighting · Intermediate": 15,
+    "Lighting · Advanced": 2,
+    "Composition · Basic": 10,
+    "Composition · Intermediate": 9,
+    "Composition · Advanced": 2,
+    "Editing · Intermediate": 3,
+    "Editing · Basic": 13,
+    "Editing · Advanced": 1,
+    "Storytelling · Basic": 4,
+    "Storytelling · Intermediate": 6,
+    "Storytelling · Advanced": 2,
+    "Visual Effects & Promptable FX · Intermediate": 3,
+    "Visual Effects & Promptable FX · Basic": 4,
+    "Visual Effects & Promptable FX · Advanced": 1,
+    "Genres & Styles · Intermediate": 7,
+    "Genres & Styles · Advanced": 10,
+    "Genres & Styles · Basic": 4
+  },
+  "problems": [],
+  "source_sha256": {
+    "catalog": "03443b1c573aec3c6b13c0ada9f219b7d52c54919ca6bd4374cbec84fd129853",
+    "matrix": "d1f20b22f8163c04255cda71971fb770ae5c90ac1057ec74725d2e61d837b0ac"
+  },
+  "motion_pairings": {
+    "techniques_mapped": 142,
+    "techniques_unmapped": 8,
+    "declared_links": 155,
+    "note": "pairing is declared in platform/catalog/pairings.py, never inferred from a name match; an unmapped technique returns an empty list rather than a guess",
+    "unmapped": [
+      "bokeh",
+      "color-grading",
+      "desaturation",
+      "film-grain",
+      "forced-perspective",
+      "lens-distortion",
+      "morphing",
+      "sepia-tone"
+    ]
+  },
+  "note": "every cell is tested:no because the source matrix has a FILLED/TODO status column and no verification column; nothing records a run against a model version"
+}

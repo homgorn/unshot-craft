@@ -1,0 +1,24 @@
+{
+  "kit": "shotcraft",
+  "version": "1.0.0",
+  "name": "shotcraft studio",
+  "strings": {
+    "organisation": "shotcraft studio",
+    "mark": "SC",
+    "product": "Ledger",
+    "tagline": "Books that close themselves"
+  },
+  "fonts": {
+    "sans": "'Inter Tight', 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif",
+    "mono": "'JetBrains Mono', 'Cascadia Mono', ui-monospace, monospace",
+    "serif": "'Newsreader', Georgia, serif",
+    "cjk": "'Microsoft YaHei', 'Noto Sans CJK SC', 'Hiragino Sans GB', sans-serif"
+  },
+  "type_scale": {
+    "body": "14px",
+    "small": "11px",
+    "label": "10px",
+    "h1": "24px",
+    "h2": "18px"
+  }
+}

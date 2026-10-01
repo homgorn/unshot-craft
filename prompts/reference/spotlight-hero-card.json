@@ -1,0 +1,210 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "spotlight-hero-card",
+  "category": "opening",
+  "category_label": { "en": "Opening & Brand", "zh": "开场与品牌" },
+  "tags": ["opening"],
+  "source": {
+    "brief_kind": "hand",
+    "card": "references/shots/opening/spotlight-hero-card.md",
+    "card_sha256": null,
+    "derived_from": "read the recipe and wrote the cast and copy; did not copy upstream's placeholder text",
+    "authored_by": "shotcraft studio",
+    "authored_on": "2026-10-01",
+    "brief_version": 1,
+    "note": "Same deliberate null as the other two reference briefs: authored from the render, not from the card file."
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 220,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 7.3s（220f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": { "zh": "中", "en": "mid" },
+    "energy_verbatim": "中",
+    "energy_rationale": "开场的重量来自停留而不是速度：220 帧里大部分是 hold，只有入场和收尾在动。"
+  },
+  "intent_zh": "在一个空场里点亮一个主体，让观众先认位置再认内容。",
+  "use_zh": "logo 前的一拍、章节开场、产品第一次出现在画面里",
+  "summary_zh": "聚光灯从上方扫下，主卡在光斑里落位，光斑随后收成一枚圆形遮罩交给下一镜",
+  "cast": {
+    "note": "The only reference brief with an establishing frame, because 220 frames is long enough to spend time before moving.",
+    "product": "Ledger — an accounting product",
+    "actors": [
+      {
+        "id": "spot",
+        "role": "primary",
+        "kind": "light",
+        "count": 1,
+        "source": "brief decision",
+        "art": "a soft elliptical pool of light on an ink background, 40% of frame width",
+        "state_in": "off-screen above",
+        "state_out": "centred on the card, dimmed to 70%"
+      },
+      {
+        "id": "hero-card",
+        "role": "primary",
+        "kind": "object",
+        "count": 1,
+        "source": "card_param",
+        "art": "one ledger card, cream on ink, showing a single month total",
+        "state_in": "invisible, inside the unlit area",
+        "state_out": "lit, centred, readable"
+      }
+    ]
+  },
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "sweep-in",
+      "window": [0, 64],
+      "frame_hints": ["0-32f", "32-64f"],
+      "ease": "E.inOutCubic",
+      "beziers": [],
+      "raw": "The pool travels down from above frame."
+    },
+    {
+      "ord": 1,
+      "heading": "hold",
+      "window": [64, 176],
+      "frame_hints": ["64-120f", "120-176f"],
+      "ease": "E.linear",
+      "beziers": [],
+      "raw": "Long hold. This is where the headline is read."
+    },
+    {
+      "ord": 2,
+      "heading": "iris-out",
+      "window": [176, 220],
+      "frame_hints": ["176-198f", "198-220f"],
+      "ease": "E.inCubic",
+      "beziers": [],
+      "raw": "The pool contracts into a circular iris and hands off to the next shot."
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "光斑宽度",
+      "typical": "40% 画幅",
+      "feel": "小于 30% 主体显得被挤压；大于 55% 光斑消失，只剩整体提亮"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "停留时长",
+      "typical": "112f（hold）",
+      "feel": "112 帧是读完一行标题 + 一眼图形的下限；短于 80f 观众来不及读"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "落位延迟",
+      "typical": "光斑到位后 12f",
+      "feel": "12 帧让主体像被照亮而不是被开关切换"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "遮罩半径",
+      "typical": "0.62 × 光斑半径",
+      "feel": "0.62 保留边缘余量；收到 0.5 会切到主体脸上"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "光斑衰减",
+      "typical": "1.0 → 0.7",
+      "feel": "衰减到 0.7 让主体仍然是亮点；不衰减会读作逆光剪影"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "背景余量",
+      "typical": "暗部保留 4% 亮度",
+      "feel": "纯黑会让 8bit 编码在边缘产生色带"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "停留段里不要加任何运动：观众正在读字，动一下就得重读。",
+      "critical": true,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "聚光位置必须与主体中心重合，偏差超过光斑半径的 1/4 就会读作偏光。",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "遮罩收拢时不要同时淡出背景，两者叠加会把转场读成黑场。",
+      "critical": true,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "光斑加噪点在暗部会被读作压缩块效应，不加则 8bit 下有色带。",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "spotlight-hero-card",
+      "variant_letter": null,
+      "upstream_key": "spotlight-hero-card",
+      "demo": "demos/opening/spotlight-hero-card/SpotlightHeroCard.tsx",
+      "component": "SpotlightHeroCard",
+      "duration_frames": 220,
+      "duration_source": "_DURATION export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "filled",
+    "authored": true,
+    "authored_by": "shotcraft studio",
+    "note": "The only reference brief whose copy block is the reason to use this card: it is the opening, and the opening carries the promise.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "filled",
+        "text": "Books that close themselves",
+        "alternatives": ["Accounting, minus the spreadsheet"],
+        "rationale": "Six words, 25 characters. It states an outcome rather than a feature, and 'close themselves' is a claim the following 30 seconds actually demonstrate — which is the test we apply to every opening headline."
+      },
+      {
+        "id": "subhead",
+        "max_chars": 64,
+        "hint": "Optional. Omit rather than pad.",
+        "status": "filled",
+        "text": "Ledger matches every transaction to its invoice",
+        "rationale": "Eleven words. Read during the 112-frame hold, which is the only place in the 30s cut with enough dwell time for a sentence of that length."
+      },
+      {
+        "id": "cta",
+        "max_chars": 24,
+        "hint": "One verb phrase. No punctuation.",
+        "status": "filled",
+        "text": "Start free",
+        "rationale": "Two words, and the only CTA in the film. A second CTA anywhere else would compete with it."
+      }
+    ]
+  },
+  "notes": [
+    "The three reference briefs are deliberately spread across the energy range — mid-high, high, mid — because the interesting question is not what a card looks like but what it costs: an 11-frame card cannot hold a sentence, a 220-frame card can hold one and still needs a rule telling you not to move during it.",
+    "Every slot here is filled or explicitly omitted with a reason. An omitted slot with no reason is indistinguishable from an unfinished brief, which is why this brief carries one even where the copy exists."
+  ]
+}

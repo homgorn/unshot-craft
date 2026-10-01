@@ -1,0 +1,17 @@
+/* GENERATED overlay. Import AFTER the template's own stylesheet.
+   Targets the template's real class names (see template/themes/ui.cjs) so a
+   kit is an override rather than a fork. */
+body, #workspace {
+  font-family: var(--font-sans);
+}
+.detail-title { font-family: var(--font-serif); }
+.research-row h4, .nav strong { font-family: var(--font-sans); }
+.card-eyebrow, .section-name, .table-head, .rail-title, .footer-note {
+  letter-spacing: 0.06em;
+}
+.project-card, .paper-card {
+  border-radius: 4px;
+}
+.brand-mark {
+  border-radius: 3px;
+}

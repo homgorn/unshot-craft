@@ -1,0 +1,232 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "card-stack",
+  "category": "ui-entrance",
+  "category_label": { "en": "UI Entrance & Showcase", "zh": "界面登场与陈列" },
+  "tags": ["ui-entrance"],
+  "source": {
+    "brief_kind": "hand",
+    "card": "references/shots/ui-entrance/card-stack.md",
+    "card_sha256": "5eb748e98e70b11dcf78a862b1cb08927bd21451afa7283bab42a5bd8b88082f",
+    "derived_from": "read the recipe and wrote the cast and copy; did not copy upstream's placeholder text",
+    "authored_by": "shotcraft studio",
+    "authored_on": "2026-10-01",
+    "brief_version": 1
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 126,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 4.2s（126f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": { "zh": "中高", "en": "mid-high" },
+    "energy_verbatim": "中高（入场是连续小爆发，展开段收成一次平滑的整体动作）",
+    "energy_rationale": "入场是连续小爆发，展开段收成一次平滑的整体动作"
+  },
+  "intent_zh": "一摞卡先聚成一个物体，再摊开成一组物体——顺序很关键：先给\"整体\"再给\"个体\"。 观众第一眼记住的是有分量的一摞（数量感），第二眼才看清每张",
+  "use_zh": "需要交代\"我们有一组东西\"的产品段落；卡片墙/模板库/方案列表的建立镜头，也能当 logo 前的一拍蓄势",
+  "summary_zh": "8 张卡从屏幕下方逐张 spring 弹入叠成一摞，全员落位后整摞一次性展成 3D 扇面——每张按序号偏转 8°、横移 34px、向后退一层",
+  "cast": {
+    "note": "A shot we own. Everything below is our decision; the recipe supplied only the timing and the 8°/34px/layer geometry.",
+    "product": "Ledger — an accounting product",
+    "actors": [
+      {
+        "id": "stack",
+        "role": "primary",
+        "kind": "group-of-cards",
+        "count": 8,
+        "source": "card_param 卡数",
+        "art": "eight ledger line-item cards, cream on ink, each showing one transaction row",
+        "state_in": "absent",
+        "state_out": "fanned in a 3D spread, facing camera-left, reading order preserved"
+      },
+      {
+        "id": "counter",
+        "role": "primary",
+        "kind": "text",
+        "content": "8 lines. One number.",
+        "source": "brief copy: headline",
+        "art": "tabular figures, 2.4rem, ink on the same cream as the cards",
+        "state_in": "absent",
+        "state_out": "settled under the fan, aligned to the left edge of the stack"
+      }
+    ]
+  },
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "entrance",
+      "window": [0, 38],
+      "frame_hints": ["0-12f", "12-24f", "24-38f"],
+      "ease": "E.outCubic",
+      "beziers": [],
+      "raw": "Cards 1-8 spring in from below, 33ms apart, each overshooting slightly so the stack has weight."
+    },
+    {
+      "ord": 1,
+      "heading": "settle",
+      "window": [38, 66],
+      "frame_hints": ["38-52f", "52-66f"],
+      "ease": "E.linear",
+      "beziers": [],
+      "raw": "Last card lands at 0.551 of normalised time; the stack holds for a beat so the eye can count it."
+    },
+    {
+      "ord": 2,
+      "heading": "fan-out",
+      "window": [66, 126],
+      "frame_hints": ["66-96f", "96-126f"],
+      "ease": "E.outCubic",
+      "beziers": [],
+      "raw": "One shared progress value drives all eight: each card rotates 8° by ordinal, translates 34px, and steps back one layer."
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "卡数",
+      "typical": "N=8（hue 222→334，每张 +16°）",
+      "feel": "8 张是扇面 56° 总张角的舒适上限；>10 张要把每张角度降到 5–6°，否则两端卡飞出画框"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "入场间隔",
+      "typical": "33ms（30fps ≈ 1 帧）",
+      "feel": "小于 1 帧会糊成一条；大于 50ms 队列感消失，变成逐张弹"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "spring 参数",
+      "typical": "stiffness 180, damping 18, mass 1",
+      "feel": "过冲 6–9% 是\"有分量\"的区间；超过 12% 读作弹球"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "扇面总张角",
+      "typical": "56°（8° × 7）",
+      "feel": "56° 之内文字仍可读；超过 70° 边缘两张的透视变形开始吃掉可读性"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "横移步长",
+      "typical": "34px",
+      "feel": "34px 让相邻卡露出约 60% 宽度，刚好读出\"下一张还有内容\""
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "层深",
+      "typical": "每张后退一层，z 步长 12px",
+      "feel": "层深过小扇面读作平面旋转；过大会让最后一张失焦"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "停顿时长",
+      "typical": "hold 28f",
+      "feel": "28 帧 ≈ 0.93s，足够数完 8 张又不至于拖"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "色相跨度",
+      "typical": "222 → 334（每张 +16°）",
+      "feel": "跨度控制在 112° 以内才不会读作彩虹渐变，破坏\"这是一组\"的印象"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "两段时间窗刚好首尾相接：末张入场结束于 `0.02+7*0.033+0.3 = 0.551`，展开始于 0.55。",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "入场用 per-item spring、展开用一条共享进度；两者写成同一条会把扇面读作乱抖。",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "扇面展开期间不要加 glow 或阴影：层次已经由层深表达，再加辉光会读作廉价。",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "卡数 >10 时必须同时降角度到 5–6°，否则两端飞出画框。",
+      "critical": true,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "文字在扇面里必须跟随每张卡的透视一起变换，不能贴在屏幕上不动。",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "card-stack",
+      "variant_letter": null,
+      "upstream_key": "card-stack",
+      "demo": "demos/ui-entrance/card-stack/CardStack.tsx",
+      "component": "CardStack",
+      "duration_frames": 126,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "filled",
+    "authored": true,
+    "authored_by": "shotcraft studio",
+    "note": "Filled by hand. The recipe supplied timing and geometry; the words, the cast and the colour choices are ours. This is the bar the generated briefs are measured against.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "filled",
+        "text": "Every line, one ledger.",
+        "alternatives": [
+          "Eight entries. Zero reconciliation.",
+          "Your books, in order."
+        ],
+        "rationale": "'Every line, one ledger' states the product's promise and sets the cast: eight line items. 24 characters, inside the 40 limit, and it does not claim anything about accuracy we cannot show on screen."
+      },
+      {
+        "id": "subhead",
+        "max_chars": 64,
+        "hint": "Optional. Omit rather than pad.",
+        "status": "filled",
+        "text": "Ledger for teams who hate spreadsheets",
+        "rationale": "Omitted in the 15s cut. Kept here because the 30s cut needs the category, and 'teams who hate spreadsheets' is a positioning claim we can defend, unlike 'effortless'."
+      },
+      {
+        "id": "cta",
+        "max_chars": 24,
+        "hint": "One verb phrase. No punctuation.",
+        "status": "filled",
+        "text": "Start free",
+        "rationale": "Two words. 'Start free' is the only CTA we use anywhere, because it is the only one that is true without a card reader."
+      }
+    ]
+  },
+  "notes": [
+    "Authored against the recipe, not against upstream's demo copy. Upstream ships no copy for this card at all, which is exactly why it has to be written from the recipe.",
+    "Duration is 126f and is not negotiable downstream: the two time windows in the recipe are contiguous at 0.551/0.55, so shortening the render desynchronises the entrance from the fan-out rather than trimming it."
+  ]
+}
