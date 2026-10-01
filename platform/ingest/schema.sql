@@ -400,6 +400,47 @@ CREATE TABLE IF NOT EXISTS translation (
 );
 CREATE INDEX IF NOT EXISTS idx_tr_status ON translation(locale_id, status);
 
+-- Authorship lives here, not in `translation`.
+--
+-- `translation` is derived: the ingest drops and rebuilds it from upstream's
+-- three inline dictionaries on every run. A provenance column written by hand
+-- therefore survives exactly until the next `scripts/init.ps1`, which is how 360
+-- machine translations with `status = needs_review` quietly became 360 rows with
+-- no status at all -- and how a reader could no longer tell which strings had ever
+-- been looked at by a person.
+--
+-- So the record of *who wrote a string and has a human signed it off* is a table
+-- the ingest does not own and never rewrites. `translation` holds the text;
+-- this holds the claim about the text. Losing the text is recoverable by
+-- re-extracting; losing the claim is not.
+CREATE TABLE IF NOT EXISTS translation_provenance (
+  id           INTEGER PRIMARY KEY,
+  locale_id    INTEGER NOT NULL REFERENCES locale(id) ON DELETE CASCADE,
+  ns           TEXT NOT NULL,
+  key          TEXT NOT NULL,
+  method       TEXT NOT NULL,             -- machine|human|vendor|import
+  status       TEXT NOT NULL,             -- needs_review|reviewed|stale
+  reviewed_by  TEXT,
+  reviewed_at  TEXT,
+  tool         TEXT,                      -- what produced it, for a machine pass
+  batch_file   TEXT,                      -- the batch it arrived in, for replay
+  updated_at   TEXT NOT NULL DEFAULT (datetime('now')),
+  UNIQUE(locale_id, ns, key)
+);
+CREATE INDEX IF NOT EXISTS idx_trp_status ON translation_provenance(locale_id, status);
+
+-- The one query that matters: how much of what is published has a human behind
+-- it. Kept as a view so no caller re-derives it and gets a different answer.
+CREATE VIEW IF NOT EXISTS translation_review_state AS
+SELECT lo.code                                   AS locale,
+       p.ns,
+       COUNT(*)                                  AS strings,
+       SUM(p.status = 'needs_review')            AS needs_review,
+       SUM(p.status = 'reviewed')                AS reviewed
+FROM translation_provenance p
+JOIN locale lo ON lo.id = p.locale_id
+GROUP BY lo.code, p.ns;
+
 -- ---------------------------------------------------------------------------
 -- 8. Research: competitive intel & monetization
 -- ---------------------------------------------------------------------------

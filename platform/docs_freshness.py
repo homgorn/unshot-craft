@@ -40,8 +40,10 @@ check it, and the promise needs a verifier.
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import sqlite3
+import subprocess
 import sys
 from pathlib import Path
 
@@ -118,6 +120,18 @@ CLAIMS: list[tuple[str, str, str, str]] = [
      "SELECT COUNT(*) FROM cinematic_technique", "technique wiki pages"),
     ("progress.md", r"(\d+) domain documents",
      None, "domain document count"),
+    ("progress.md", r"\| locales tracked \| (\d+)",
+     "SELECT COUNT(*) FROM locale", "locales tracked"),
+    ("progress.md", r"\*\*(\d+) attributed, (\d+) reviewed\.\*\*",
+     None, "attributed translations, from translate.py report"),
+    ("progress.md", r"(\d+) style names are translated",
+     None, "ru style titles, from the locale file"),
+    ("progress.md", r"(\d[\d,]*) machine translations marked `needs_review`",
+     None, "ru strings awaiting review"),
+    ("AGENTS.md", r"(\d+) attributed, \d+ reviewed",
+     None, "attributed translations, from translate.py report"),
+    ("AGENTS.md", r"doctor\.py\s+# 0 error / \d+ warn / (\d+) pass",
+     None, "doctor pass count"),
 
     # ------------------------------------------------------------- catalogue
     ("data/README.md", r"(\d+) techniques covering",
@@ -234,6 +248,16 @@ EXTERNAL: list[tuple[str, str, object, str]] = [
     ("docs/adr/0004-i18n-architecture.md",
      r"\*\*(\d+) hand-maintained index entries\*\*",
      lambda: _upstream_index_entries(), "translations.js index entries"),
+    ("progress.md", r"\*\*(\d+) attributed, (\d+) reviewed\.\*\*",
+     lambda: _provenance("attributed"), "attributed translations"),
+    ("progress.md", r"Today: \*\*\d+ attributed, (\d+) reviewed\.\*\*",
+     lambda: _provenance("reviewed"), "reviewed translations"),
+    ("progress.md", r"(\d+) machine translations marked `needs_review`",
+     lambda: _provenance("attributed"), "strings awaiting a native reviewer"),
+    ("progress.md", r"(\d+) style names are translated",
+     lambda: _ru_style_titles(), "ru style titles"),
+    ("AGENTS.md", r"(\d+) attributed, \d+ reviewed",
+     lambda: _provenance("attributed"), "attributed translations"),
 ]
 
 _CACHE: dict[str, object] = {}
@@ -255,8 +279,6 @@ def _flat(path: Path) -> str:
 
 def _run(rel: str, pattern: str) -> int:
     """Run a harness and pull one number out of its output."""
-    import subprocess
-    import os
     r = subprocess.run([sys.executable, rel], capture_output=True, text=True,
                        encoding="utf-8", cwd=str(ROOT),
                        env={**os.environ, "PYTHONIOENCODING": "utf-8"})
@@ -297,6 +319,47 @@ def _ru_card_rows() -> int:
     return c.execute("""SELECT COUNT(*) FROM translation
                         WHERE locale_id=(SELECT id FROM locale WHERE code='ru')
                           AND ns='card'""").fetchone()[0]
+
+
+def _provenance(which: str) -> int:
+    """Count from `translation_provenance`, which the ingest replays on every run."""
+    c = _conn()
+    try:
+        if which == "attributed":
+            return c.execute("SELECT COUNT(*) FROM translation_provenance").fetchone()[0]
+        return c.execute("SELECT COUNT(*) FROM translation_provenance "
+                         "WHERE status='reviewed'").fetchone()[0]
+    except sqlite3.Error:
+        return -1
+    finally:
+        c.close()
+
+
+def _ru_style_titles() -> int:
+    """Style names in ru that are neither absent nor the slug itself."""
+    import json as _json
+    p = ROOT / "site" / "locales" / "ru" / "styles.json"
+    if not p.exists():
+        return 0
+    d = _json.loads(p.read_text(encoding="utf-8"))
+    n = 0
+    for k, v in d.items():
+        t = v.get("title") if isinstance(v, dict) else v
+        if isinstance(t, str) and t and t != k:
+            n += 1
+    return n
+
+
+def _doctor_pass() -> int:
+    """Not used, and deliberately so.
+
+    doctor.py runs this gate as a subprocess, so a claim here that counted
+    doctor's own pass total would make the gate depend on a number that depends
+    on the gate. The first version of that claim read 41 and measured 40, which
+    is what circularity looks like from the inside. A number that cannot be
+    checked without checking itself is not a claim, it is decoration.
+    """
+    raise RuntimeError("deliberately unmeasured: circular with doctor.py")
 
 
 def _upstream_index_entries() -> int:

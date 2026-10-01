@@ -68,8 +68,8 @@
       },
       "styles": {
         "total": 96,
-        "translated": 0,
-        "pct": 0.0
+        "translated": 96,
+        "pct": 100.0
       },
       "ui": {
         "total": 74,
@@ -87,6 +87,6 @@
         "pct": 100.0
       }
     },
-    "overall_pct": 72.8
+    "overall_pct": 99.7
   }
 }

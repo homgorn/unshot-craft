@@ -84,17 +84,31 @@ Every one of these has caught a real defect. `scripts\init.ps1` runs the first
 four and fails if any does.
 
 ```powershell
-python platform/doctor.py                     # 0 error / 7 warn / 38 pass
+python platform/doctor.py                     # 0 error / 7 warn / 41 pass
 python platform/docs_freshness.py             # 67/67 claims, 7 negative tests
 python platform/catalog/layer_gate.py         # no feature claims done that is not
 python platform/catalog/selftest.py           # 31/31
 python platform/api/selftest.py               # 53/53
-python platform/site/selftest.py              # 92/92, real Chrome
+python platform/site/selftest.py              # 99/99, real Chrome
 python platform/wiki/audit_quality.py         # 28/28, 24 craft questions
 python platform/prompts/build_prompts.py --lint
-python platform/site/check_coverage.py        # ru is published at 72.8%
+python platform/site/check_coverage.py        # en 100%, zh 99.7%, ru 99.7%
+python platform/site/translate.py report      # 371 attributed, 0 reviewed
 python platform/_gate_test.py                 # proves docs_freshness can fail
 ```
+
+`platform/site/translate.py` is the i18n worklist. `list` for what to translate,
+`apply` for a batch, `verify` for what is left, `prune` for placeholder entries
+that have no source, `report` for who wrote what. It refuses a value equal to the
+slug, a value copied from another locale, a value still in CJK, and a string with
+untranslated latin words in it — each of which is a way a machine pass looks
+finished and is not.
+
+**Authorship is replayed, not stored.** `translation_provenance` is derived from
+the committed `site/locales/_batch_*.json` files, because `run.py` deletes and
+rebuilds the database on every run and a provenance column on a derived table
+survives exactly until the next ingest. A batch may claim `reviewed` only by
+naming a `reviewed_by`; nothing in this repo can upgrade its own work.
 
 `platform/docs_freshness.py` is the one people forget exists. A number written in
 prose is a promise that someone can check it, and this is the checker: 67 claims

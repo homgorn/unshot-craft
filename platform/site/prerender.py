@@ -164,6 +164,26 @@ def main() -> int:
     (ROOT / "site" / "build" / "prerender_report.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(out, ensure_ascii=False, indent=2))
+
+    # A stamp, because the ordering here is load-bearing and fails silently.
+    #
+    # `prerender.py` bakes translated card text into the static HTML block, and
+    # `build_site.py` regenerates that page from the template. Running the build
+    # *after* the prerender therefore drops every translation and re-exposes the
+    # Chinese corpus -- with no error, no warning, and a green selftest, because
+    # the runtime check reads the DOM after the i18n script has patched it back.
+    #
+    # That is not hypothetical: it happened here, and the only reason it was
+    # noticed is a check added afterwards that reads the static file with no
+    # JavaScript in the loop. The stamp turns "the build ran after the prerender"
+    # into a state a gate can see instead of a state nobody can.
+    (DIST / ".prerendered.json").write_text(json.dumps({
+        "locales": sorted(report),
+        "cards_baked": {loc: report[loc].get("cards") for loc in sorted(report)},
+        "built_by": "platform/site/prerender.py",
+        "note": ("delete this and re-run build_site.py and it will not come back; "
+                 "that is the point. scripts/init.ps1 runs build then prerender."),
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 1 if problems else 0
 
 

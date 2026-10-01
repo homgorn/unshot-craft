@@ -757,13 +757,33 @@ def run(repo: Path, db_path: Path) -> dict:
         catalog = {"status": "failed", "error": str(exc)}
         warnings.append(f"catalog ingest failed: {exc}")
 
+    # -- authored translations: replay the committed batches (ADR 0002).
+    #
+    # This database file is deleted and rebuilt on every run, so authorship data
+    # cannot be *stored* here -- it is replayed from `site/locales/_batch_*.json`,
+    # which is committed and reviewable. Without it, a machine translation
+    # marked `needs_review` loses that mark on the next build and the record of
+    # who is responsible for a line of Russian text disappears.
+    provenance: dict = {}
+    try:
+        import translations as translation_ingest
+        provenance = translation_ingest.replay(conn)
+        for p in provenance.get("problems", []):
+            warnings.append(f"translation provenance: {p}")
+        if provenance.get("rows"):
+            stats["translations_provenance"] = provenance["rows"]
+    except Exception as exc:                      # noqa: BLE001
+        provenance = {"status": "failed", "error": str(exc)}
+        warnings.append(f"translation provenance replay failed: {exc}")
+
     conn.execute(
         "UPDATE ingest_run SET finished_at=?, files_seen=?, cards_seen=?, styles_seen=?, params_extracted=?,"
         " locale_rows=?, warnings=?, status='ok' WHERE id=?",
         (now_iso(), stats["files"], stats["cards"], stats["styles"], stats["params"],
          stats["translations"], json.dumps(warnings[:200], ensure_ascii=False), run_id))
     conn.commit()
-    return {"stats": stats, "warnings": warnings, "head_sha": head_sha, "catalog": catalog}
+    return {"stats": stats, "warnings": warnings, "head_sha": head_sha,
+            "catalog": catalog, "translation_provenance": provenance}
 
 
 def subprocess_sha(repo: Path) -> str:

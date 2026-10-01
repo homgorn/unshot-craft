@@ -635,8 +635,38 @@ def serve(port: int) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--origin", default="https://shotcraft.example")
-    ap.add_argument("--serve", type=int, default=0)
+    ap.add_argument("--serve", type=int, default=0,
+                    help="serve site/dist on this port")
+    ap.add_argument("--rebuild", action="store_true",
+                    help="rebuild even when --serve is given. Off by default: a "
+                         "server that regenerates the tree it is serving will "
+                         "silently undo the prerender, which is how the Russian "
+                         "page came to serve the untranslated template during a "
+                         "test run")
     a = ap.parse_args()
+
+    serving_only = bool(a.serve) and not a.rebuild
+    if serving_only and not DIST.exists():
+        print("site/dist missing; run platform/site/build_site.py first",
+              file=sys.stderr)
+        return 2
+
+    if serving_only:
+        print(f"serving {DIST} on http://localhost:{a.serve} (not rebuilding)")
+        serve(a.serve)
+        return 0
+
+    # Invalidate the prerender stamp BEFORE building. This build regenerates every
+    # page from the template, so any static block prerender.py baked into it is
+    # about to be overwritten. Deleting the stamp first means that a build run
+    # after a prerender leaves the tree in a state a gate can detect, instead of
+    # one where the Russian page has quietly reverted to the Chinese corpus.
+    stamp = DIST / ".prerendered.json"
+    if stamp.exists():
+        stamp.unlink()
+        print("note: cleared the prerender stamp; re-run platform/site/prerender.py "
+              "or the static card block will be the untranslated template")
+
     res = build()
     print(json.dumps({"locales": res["locales"],
                       "coverage": {k: v["overall_pct"] for k, v in res["coverage"].items()},

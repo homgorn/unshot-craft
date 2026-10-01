@@ -96,6 +96,51 @@ slot and is never expanded, an untested tool parameter is an empty cell, and
 structural map and the semantic map (card schema, parameter extraction strategy,
 motion-design vocabulary, energy-curve selection heuristic).
 
+**The locales — and the one debt that was worse than it looked.** `en` is the
+reference, `zh` is upstream's own language, `ru` is ours. Coverage is measured by
+*difference from en*, not by presence, because an inherited string is present and
+untranslated:
+
+| locale | chrome | card titles | card descriptions | overall |
+|---|---|---|---|---|
+| `en` | 103/103 | 157/157 | 157/157 | 100 % |
+| `zh` | 103/104 | 157/157 | 0 (upstream wrote none) | 99.7 % |
+| `ru` | 104/104 | 157/157 | **157/157** | **99.7 %** |
+
+`ru` was published at 72.8 % and every one of its 157 cards showed a **Chinese
+summary**: `prerender.py` prefers a locale `description`, falls back to the card's
+Chinese `summary`, and no `description` existed. The site selftest read the DOM
+*after* the i18n script had patched the page, so it saw a Russian page while a
+crawler saw the Chinese one. Three things fixed it, in this order:
+
+1. **The static block is now checked with no JavaScript in the loop.** 157/157
+   cards carrying CJK prose fails `ru prerendered cards contain no CJK prose`.
+2. **`platform/site/translate.py`** — the worklist, the batch applier, the
+   verifier and the pruner. It refuses a value equal to the slug, a value copied
+   from another locale, a value still in CJK, and a string with untranslated
+   latin words in it. That last check caught five real defects in my own first
+   pass, including `rests на несколько кадров` and `surrounding text раздвигается`.
+3. **`ru/styles.json` was a fabricated file.** 96 keys whose `title` was the slug
+   itself — which satisfied every key count ever written while translating
+   nothing. `check_coverage.py` checked `cards` and `ui` and never `styles`. The
+   check is now generic across namespaces, and 214 style names are translated.
+
+**Authorship is replayed, not stored.** `run.py` deletes the database on every
+run, so a provenance column on `translation` survived exactly until the next
+ingest — and 371 machine translations marked `needs_review` became 371 rows with
+no status at all. `translation_provenance` is now derived by replaying the
+committed `site/locales/_batch_*.json` files, and a batch may claim `reviewed`
+only by naming a `reviewed_by`. Today: **371 attributed, 0 reviewed.** The
+Russian locale is published and complete, and none of it has been through a native
+reviewer, which the database says out loud.
+
+**The build ordering is enforced, not remembered.** `prerender.py` bakes
+translations into the static HTML; `build_site.py` regenerates the page from the
+template. Running the build after the prerender drops every translation silently.
+`build_site.py` now clears a stamp, `prerender.py` writes it, and the selftest
+refuses to run without it — which is how the culprit was found: `build_site.py
+--serve`, used to start a test server, was rebuilding the tree it served.
+
 **The index — built and working.** `platform/ingest/` is a dependency-free
 Python pipeline (hand parsers for YAML-ish frontmatter, markdown tables, JS
 object literals, and TSX motion literals). Output:

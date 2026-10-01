@@ -65,8 +65,13 @@ def free_port() -> int:
 
 
 def start_server(port: int):
+    # `--serve` without `--rebuild`: serving a tree must not regenerate it. When
+    # this call also ran the build, the test's own fixture became the
+    # untranslated template and the stamp check below failed for a reason that
+    # had nothing to do with the product.
     return subprocess.Popen(
-        [sys.executable, str(ROOT / "platform" / "site" / "build_site.py"), "--serve", str(port)],
+        [sys.executable, str(ROOT / "platform" / "site" / "build_site.py"),
+         "--serve", str(port)],
         cwd=str(ROOT), stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
         env={**__import__("os").environ, "PYTHONIOENCODING": "utf-8"})
 
@@ -493,6 +498,60 @@ def main() -> int:
 
             def is_cjk(s: str) -> bool:
                 return any("\u4e00" <= ch <= "\u9fff" for ch in s)
+
+            # -- the static block, read from disk -----------------------------
+            #
+            # The runtime check below reads the DOM after the i18n script has run.
+            # That is the better rendering and the one a returning visitor sees,
+            # but it is not the one a crawler sees, and it is not the one that put
+            # 157 Chinese summaries onto the Russian page in the first place. The
+            # prerendered block is static HTML, so it is checked here from the
+            # file, with no browser and no JavaScript in the loop.
+            #
+            # For a non-CJK locale the rule is exact: one CJK character in a baked
+            # card means that card is falling back to the Chinese corpus. `en` is
+            # skipped because upstream's gallery is the reference there.
+            # The prerender stamp. build_site.py clears it before regenerating the
+            # pages and prerender.py writes it back, so a missing stamp means
+            # "the build ran after the prerender" and the static block below is
+            # the untranslated template. It is checked first because every
+            # assertion after it is measuring a page that is known to be wrong.
+            stamp = DIST / ".prerendered.json"
+            check("site was prerendered after it was built",
+                  stamp.exists(),
+                  "site/dist/.prerendered.json is missing: build_site.py ran after "
+                  "prerender.py, so the static card block is the untranslated "
+                  "template. Re-run: python platform/site/prerender.py")
+
+            for loc in locales:
+                page = DIST / loc / "library.html"
+                if not page.exists():
+                    continue
+                baked = re.findall(
+                    r'<article class="shot-card[^"]*"[^>]*id="([^"]+)"(.*?)</article>',
+                    page.read_text(encoding="utf-8"), re.S)
+                check(f"{loc} prerenders every card", len(baked) == CARD_COUNT,
+                      f"{len(baked)} of {CARD_COUNT}")
+                cjk_cards, cyr_cards = [], 0
+                for cid, body in baked:
+                    text = re.sub(r"<[^>]+>", " ", body)
+                    if is_cjk(text):
+                        cjk_cards.append(cid)
+                    if any("\u0400" <= ch <= "\u04ff" for ch in text):
+                        cyr_cards += 1
+                if loc == "zh":
+                    check("zh prerendered cards are CJK", len(cjk_cards) == len(baked),
+                          f"{len(cjk_cards)} of {len(baked)}")
+                elif loc == "ru":
+                    # The check that matters. It failed at 157/157 before the
+                    # descriptions were translated, and it is the only assertion
+                    # here that would have caught it.
+                    check("ru prerendered cards contain no CJK prose",
+                          not cjk_cards,
+                          f"{len(cjk_cards)} card(s) still Chinese: {cjk_cards[:4]}")
+                    check("ru prerendered cards are actually Russian",
+                          cyr_cards == len(baked),
+                          f"{cyr_cards} of {len(baked)} have Cyrillic")
 
             if (DIST / "zh" / "library.html").exists():
                 zh_desc = card_desc("zh")

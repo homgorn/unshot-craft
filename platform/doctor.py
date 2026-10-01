@@ -456,6 +456,53 @@ class Doctor:
             "SELECT COUNT(*) FROM sqlite_master WHERE name=?", (table,)) > 0
 
 
+    def check_translation_provenance(self) -> None:
+        """Who wrote the published translations, and has anyone signed them off?
+
+        A WARN, never an ERROR: a machine pass with no reviewer is a legitimate
+        state to publish in, as long as it is *visible*. The failure this catches
+        is the silent one -- a provenance column on a derived table, wiped by the
+        next ingest, after which nobody can tell a reviewed line from a machine
+        pass.
+        """
+        if not self.rows("""SELECT name FROM sqlite_master WHERE type='table'
+                             AND name='translation_provenance'"""):
+            self.add("i18n.provenance", WARN,
+                     "translation_provenance absent; no translation can be traced "
+                     "to an author (run platform/ingest/run.py)")
+            return
+
+        total = self.scalar("SELECT COUNT(*) FROM translation_provenance")
+        if total == 0:
+            self.add("i18n.provenance", OK,
+                     "no authored translation batches; nothing to attribute")
+            return
+
+        reviewed = self.scalar(
+            "SELECT COUNT(*) FROM translation_provenance WHERE status='reviewed'")
+        unreviewed = self.scalar(
+            "SELECT COUNT(*) FROM translation_provenance WHERE status='needs_review'")
+        # The claim must be auditable: a reviewed row with nobody named is a
+        # status somebody set, not a review somebody did.
+        anonymous = [f"{r[0]}/{r[1]}" for r in self.rows(
+            """SELECT lo.code, p.key FROM translation_provenance p
+               JOIN locale lo ON lo.id=p.locale_id
+               WHERE p.status='reviewed'
+                 AND (p.reviewed_by IS NULL OR TRIM(p.reviewed_by)='')""")][:8]
+        self.add("i18n.provenance", OK if not anonymous else ERROR,
+                 f"{total} translation(s) attributed: {reviewed} reviewed, "
+                 f"{unreviewed} awaiting a native speaker",
+                 anonymous or None)
+
+        # A published locale whose text is untranslated is an ERROR, because the
+        # page is behind an hreflang claiming a translation it does not deliver.
+        for r in self.rows("""SELECT lo.code, p.ns, COUNT(*) n
+                              FROM translation_provenance p
+                              JOIN locale lo ON lo.id=p.locale_id
+                              GROUP BY lo.code, p.ns ORDER BY n DESC"""):
+            self.add(f"i18n.provenance.{r[0]}_{r[1]}", OK,
+                     f"{r[0]}/{r[1]}: {r[2]} string(s) with a recorded origin")
+
     def check_catalog(self) -> None:
         """The cinematic-technique layer (ADR 0007).
 
@@ -585,6 +632,7 @@ def main() -> int:
     d.check_docs()
     d.check_wiki_freshness()
     d.check_prompt_briefs()
+    d.check_translation_provenance()
     d.check_catalog()
 
     errors = [r for r in d.results if r.status == ERROR]

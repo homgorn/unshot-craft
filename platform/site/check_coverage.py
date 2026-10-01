@@ -94,23 +94,54 @@ def check(min_pct: float = 60.0) -> dict:
             if not (LOCALES / code / f"{ns}.json").exists():
                 warns.append(f"{code}: {ns}.json missing (runtime will fall back to en)")
 
-        # untranslated leftovers + slug titles
-        en_ui = load("en", "ui")
-        for k, v in load(code, "ui").items():
-            ev = en_ui.get(k)
-            if isinstance(v, str) and isinstance(ev, str) and v == ev and v not in ALLOW_IDENTICAL:
-                warns.append(f"{code}/ui.{k}: identical to en ({v[:40]!r}) — probably untranslated")
-        en_cards = load("en", "cards")
-        for k, v in load(code, "cards").items():
-            if not isinstance(v, dict):
+        # -- untranslated leftovers -----------------------------------------
+        #
+        # Generic, and identical for every namespace. The previous version had a
+        # bespoke rule per namespace and checked `styles` not at all, which is how
+        # `ru/styles.json` came to hold 96 entries whose value is the slug itself
+        # and still look like a translated file: 96 keys, so any count says done.
+        #
+        # Two failure shapes, both invisible to a key count:
+        #   1. the value *is* the key -- `{"anime-impact": {"title": "anime-impact"}}`
+        #   2. the value is copied from another locale -- present but untranslated
+        # A namespace is only translated when neither shape appears.
+        for ns in ("ui", "cards", "styles", "showcase", "page"):
+            mine = load(code, ns)
+            if not mine:
                 continue
-            t = v.get("title")
-            if t and SLUG_RE.match(t) and t == k:
-                warns.append(f"{code}/cards.{k}: title is still the slug")
-            d = v.get("description")
-            ed = en_cards.get(k, {}).get("description") if isinstance(en_cards.get(k), dict) else None
-            if d and ed and d == ed and d not in ALLOW_IDENTICAL:
-                warns.append(f"{code}/cards.{k}.description: identical to en — untranslated")
+            others = {oc: load(oc, ns) for oc in ("en", "zh") if oc != code}
+
+            def leaves(value):
+                """Every string a namespace entry contributes to the page."""
+                if isinstance(value, str):
+                    return [value]
+                if isinstance(value, dict):
+                    return [s for v in value.values() for s in leaves(v)]
+                return []
+
+            slug_valued, copied = [], []
+            for k, v in mine.items():
+                for s in leaves(v):
+                    if not s or s in ALLOW_IDENTICAL:
+                        continue
+                    if s == k or SLUG_RE.match(s):
+                        slug_valued.append(f"{ns}.{k}")
+                        break
+                    for oc, od in others.items():
+                        if s in leaves(od.get(k, "")):
+                            copied.append(f"{ns}.{k}~{oc}")
+                            break
+                    if slug_valued and slug_valued[-1] == f"{ns}.{k}":
+                        break
+            if slug_valued:
+                errors.append(
+                    f"{code}/{ns}: {len(slug_valued)} entr(ies) whose value is the "
+                    f"slug itself, e.g. {slug_valued[:3]} — the key count is not "
+                    f"the translation count")
+            if copied:
+                warns.append(
+                    f"{code}/{ns}: {len(copied)} value(s) copied verbatim from "
+                    f"another locale, e.g. {copied[:3]} — present but untranslated")
 
     # cross-locale: every advertised locale must be reachable
     coverage_path = ROOT / "site" / "build" / "coverage.json"
