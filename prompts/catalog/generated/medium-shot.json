@@ -1,0 +1,162 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Cropping at the chest and losing the hands, which makes the frame behave more like a medium close-up."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Leaving excessive empty space around one person, weakening the practical balance between expression and environment."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using shallow focus so extreme that every gesture crossing the narrow plane becomes distracting and soft."
+    }
+  ],
+  "motion": [
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "drone-dive-landing"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "exploded-view"
+    },
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Medium shot of [Subject] framed from the waist up, the perfect conversational distance that reveals both facial expression and the eloquent language of hands, shot on a 50mm lens at T2.8, Kodak Vision3 200T with rich warm midtones",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "medium-shot",
+  "source": {
+    "authored_lede": "Frames the subject from roughly the waist up, the workhorse of dialogue scenes — close enough to read expressions but wide enough to capture body language and gestures. Howard Hawks built his entire directorial style around the medium shot in films like \"His Girl Friday\" and \"The Big Sleep,\" trusting the perfect middle distance to convey rapid-fire dialogue and physical chemistry. Aaron Sorkin's walk-and-talk scenes in \"The West Wing\" rely on moving medium shots, and Sofia Coppola uses static medium shots in \"Lost in Translation\" to capture the quiet body language of disconnection.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Frame the subject from roughly the waist upward and leave room for hands to enter naturally. Use a normal perspective around 50mm, moderate depth of field, and warm midtones that keep skin and clothing dimensional. Place enough background detail to locate the scene without competing with the performance. For video, allow gestures and small body shifts to remain inside frame; avoid automated cropping that tightens toward the face whenever the subject speaks.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/medium-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/medium-shot.md",
+    "video_url": "media/medium-shot.mp4",
+    "when_to_use": "The medium shot is the default when dialogue and physical behavior need equal attention. Waist-up framing keeps expressions readable while preserving hands, shoulders, posture, and some environmental context. Use it for conversations, walk-and-talks, demonstrations, and quiet character beats that do not need close-up intensity. Its familiarity is useful, but a scene built only from medium shots can lose visual rhythm and emphasis."
+  },
+  "title": "\"Medium Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "category": "editing",
+  "category_label": "Editing",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "What Is Film Editing?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Letting the camera wander without new blocking, information, or pressure, confusing duration with meaningful immersion."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Changing doors, props, extras, or subject identity mid-shot, breaking the continuous space the technique depends on."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Hiding obvious cuts behind every passing object, reducing an unbroken performance into a stitched visual trick."
+    }
+  ],
+  "motion": [
+    {
+      "card": "crane-rise-reveal",
+      "category": "opening",
+      "duration_text": "5s（特写 hold 20f + 拉升 100f + 满幅静止 30f）",
+      "energy": "mid-high",
+      "frames": 20,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "crane-rise-reveal"
+    }
+  ],
+  "prompt": "Long unbroken take following [Subject] in real time through continuous space, the single take creating immersive experience where the viewer is trapped in real-time, shot on Steadicam with an ARRI Alexa Mini and 21mm Zeiss lens, the shifting light creating a natural color temperature journey, the unbroken continuity refusing to let the viewer escape into a cut",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "long-take",
+  "source": {
+    "authored_lede": "An extended shot that runs significantly longer than conventional cuts, building real-time tension, showcasing performance, and immersing the viewer in unbroken space and time. Alfonso Cuarón and Emmanuel Lubezki pushed the long take to new extremes in \"Children of Men\" with the legendary six-minute car ambush, and later in \"Gravity\" and \"Roma.\" Alejandro González Iñárritu's \"Birdman\" is constructed as one apparent continuous take. Andrei Tarkovsky's long takes in \"Stalker\" and \"Mirror\" unfold with hypnotic patience, while Béla Tarr's \"Sátántangó\" contains takes lasting over ten minutes. The long take is cinema's way of refusing to blink.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Plan one uninterrupted route with a clear starting frame, several blocking beats, and a decisive endpoint. Move the camera only when subject action or a reveal motivates it, preserving stable geography and consistent screen direction. Coordinate focus, exposure, and background activity as the shot enters new zones. Let performers cross foreground and background without identity drift. Avoid hidden jumps, resets, or impossible object changes. Build tension through real-time timing and changing proximity rather than simulated edits.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/long-take.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/long-take.md",
+    "video_url": null,
+    "when_to_use": "A long take works when real-time duration, spatial continuity, or performance tension should trap the audience inside the event. Use it for entrances, conversations that shift power, journeys through complex space, action with readable geography, or patient observation. The shot must evolve internally through blocking, camera movement, focus, and revelation. Length alone is not the achievement; every phase should create a new relationship without relying on a cut."
+  },
+  "title": "\"Long Take Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Long unbroken take following [Subject] in real time through continuous space, the single take creating immersive experience where the viewer is trapped in real-time, shot on Steadicam with an ARRI Alexa Mini and 21mm Zeiss lens, the shifting light creating a natural color temperature journey, the unbroken continuity refusing to let the viewer escape into a cut camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Long unbroken take following [Subject] in real time through continuous space, the single take creating immersive experience where the viewer is trapped in real-time, shot on Steadicam with an ARRI Alexa Mini and 21mm Zeiss lens, the shifting light creating a natural color temperature journey, the unbroken continuity refusing to let the viewer escape into a cut aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Long unbroken take following [Subject] in real time through continuous space, the single take creating immersive experience where the viewer is trapped in real-time, shot on Steadicam with an ARRI Alexa Mini and 21mm Zeiss lens, the shifting light creating a natural color temperature journey, the unbroken continuity refusing to let the viewer escape into a cut --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Long unbroken take following [Subject] in real time through continuous space, the single take creating immersive experience where the viewer is trapped in real-time, shot on Steadicam with an ARRI Alexa Mini and 21mm Zeiss lens, the shifting light creating a natural color temperature journey, the unbroken continuity refusing to let the viewer escape into a cut aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Long unbroken take following [Subject] in real time through continuous space, the single take creating immersive experience where the viewer is trapped in real-time, shot on Steadicam with an ARRI Alexa Mini and 21mm Zeiss lens, the shifting light creating a natural color temperature journey, the unbroken continuity refusing to let the viewer escape into a cut motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Long unbroken take following [Subject] in real time through continuous space, the single take creating immersive experience where the viewer is trapped in real-time, shot on Steadicam with an ARRI Alexa Mini and 21mm Zeiss lens, the shifting light creating a natural color temperature journey, the unbroken continuity refusing to let the viewer escape into a cut style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Long unbroken take following [Subject] in real time through continuous space, the single take creating immersive experience where the viewer is trapped in real-time, shot on Steadicam with an ARRI Alexa Mini and 21mm Zeiss lens, the shifting light creating a natural color temperature journey, the unbroken continuity refusing to let the viewer escape into a cut resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

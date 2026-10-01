@@ -1,0 +1,152 @@
+{
+  "category": "editing",
+  "category_label": "Editing",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "What Is Film Editing?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Adding a flash, blur, or speed ramp between scenes, cushioning the hard collision that should create the reaction."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Cutting between scenes with similar motion and tone, leaving too little contrast for real editorial whiplash."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Repeating smash cuts throughout a sequence, training the audience to expect them and draining their surprise."
+    }
+  ],
+  "motion": [
+    {
+      "card": "impact-feedback",
+      "category": "effects",
+      "duration_text": "n/a（元素级技法，寄生在落位动作上；各式占用帧数见参数表）",
+      "energy": "high",
+      "frames": null,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "anime-impact"
+    },
+    {
+      "card": "impact-feedback",
+      "category": "effects",
+      "duration_text": "n/a（元素级技法，寄生在落位动作上；各式占用帧数见参数表）",
+      "energy": "high",
+      "frames": null,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "hit-counter"
+    }
+  ],
+  "prompt": "Smash cut from absolute serenity to total chaos involving [Subject], an instantaneous hard cut with no transition, no preparation, the tonal whiplash so extreme the viewer physically reacts, the editorial equivalent of a slap, the technique that weaponizes the cut itself as a storytelling instrument",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "smash-cut",
+  "source": {
+    "authored_lede": "An abrupt, jarring cut between two vastly different scenes — often from quiet to loud, calm to chaos, or a character saying \"nothing could go wrong\" to everything going wrong. Edgar Wright is the modern master of the smash cut, using it for comedic whiplash throughout \"Shaun of the Dead\" and \"Hot Fuzz.\" Kubrick's smash cut from the bone to the satellite in \"2001\" is the most dramatic temporal smash cut in cinema. The Coen Brothers use smash cuts for dark comedy in \"Fargo\" and \"No Country for Old Men,\" and David Lynch uses them in \"Mulholland Drive\" to shatter the viewer's sense of narrative stability.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Construct two shots with sharply opposed tone, volume, motion, palette, or scale. Hold the first long enough to establish its state, then cut instantly at the most vulnerable or ironic beat. Use no dissolve, flash, or transitional smoothing. Make the opening frame of the second shot immediately legible and maximally different. Preserve intentional continuity only where a matched shape or phrase sharpens the joke or shock. Let sound change on the exact same frame as picture.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/smash-cut.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/smash-cut.md",
+    "video_url": null,
+    "when_to_use": "Use a smash cut when the transition itself should trigger shock, comedy, dread, or a sudden change of scale and time. The strongest versions collide opposite states: quiet with noise, stillness with motion, confidence with failure, or intimacy with vastness. Build enough calm or expectation before the cut for the whiplash to land. Avoid using it repeatedly, because the audience quickly adapts and the editorial strike loses force."
+  },
+  "title": "\"Smash Cut Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Smash cut from absolute serenity to total chaos involving [Subject], an instantaneous hard cut with no transition, no preparation, the tonal whiplash so extreme the viewer physically reacts, the editorial equivalent of a slap, the technique that weaponizes the cut itself as a storytelling instrument camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Smash cut from absolute serenity to total chaos involving [Subject], an instantaneous hard cut with no transition, no preparation, the tonal whiplash so extreme the viewer physically reacts, the editorial equivalent of a slap, the technique that weaponizes the cut itself as a storytelling instrument aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Smash cut from absolute serenity to total chaos involving [Subject], an instantaneous hard cut with no transition, no preparation, the tonal whiplash so extreme the viewer physically reacts, the editorial equivalent of a slap, the technique that weaponizes the cut itself as a storytelling instrument --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Smash cut from absolute serenity to total chaos involving [Subject], an instantaneous hard cut with no transition, no preparation, the tonal whiplash so extreme the viewer physically reacts, the editorial equivalent of a slap, the technique that weaponizes the cut itself as a storytelling instrument aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Smash cut from absolute serenity to total chaos involving [Subject], an instantaneous hard cut with no transition, no preparation, the tonal whiplash so extreme the viewer physically reacts, the editorial equivalent of a slap, the technique that weaponizes the cut itself as a storytelling instrument motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Smash cut from absolute serenity to total chaos involving [Subject], an instantaneous hard cut with no transition, no preparation, the tonal whiplash so extreme the viewer physically reacts, the editorial equivalent of a slap, the technique that weaponizes the cut itself as a storytelling instrument style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Smash cut from absolute serenity to total chaos involving [Subject], an instantaneous hard cut with no transition, no preparation, the tonal whiplash so extreme the viewer physically reacts, the editorial equivalent of a slap, the technique that weaponizes the cut itself as a storytelling instrument resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

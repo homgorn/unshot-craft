@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Lighting and framing interviews like glossy commercials, weakening the contrast between serious form and absurd content."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Adding comic zooms to every line, making the camera beg for laughs instead of observing behavior."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Having characters perform obvious jokes for the lens rather than protecting their sincere documentary reality."
+    }
+  ],
+  "motion": [
+    {
+      "card": "graze-face-tour",
+      "category": "camera",
+      "duration_text": "单段 4–5s；可多段接力延长",
+      "energy": "mid-high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "graze-face-tour"
+    }
+  ],
+  "prompt": "Mockumentary talking head interview with [Subject] looking slightly off-camera to an unseen interviewer, standard documentary medium close-up with unflattering fluorescent lighting, the documentary format treating the setting with the visual gravity of a war correspondent's confession, handheld camera occasionally reframing to maintain the documentary illusion, the Christopher Guest understanding that absurd comedy requires deadpan documentary treatment",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "mockumentary",
+  "source": {
+    "authored_lede": "A fictional film presented in documentary style — talking head interviews, observational camera work, title cards — creating comedy through the contrast between the serious form and absurd content. Rob Reiner's \"This Is Spinal Tap\" (1984) established the mockumentary as a legitimate comedic form. Christopher Guest continued the tradition with \"Waiting for Guffman,\" \"Best in Show,\" and \"A Mighty Wind.\" Ricky Gervais and Stephen Merchant's \"The Office\" (UK) made the mockumentary format a television staple, leading to the American version and eventually \"Parks and Recreation\" and \"Modern Family.\" Taika Waititi's \"What We Do in the Shadows\" brought the mockumentary to horror-comedy.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Frame the subject in a standard medium close-up, looking slightly off-camera toward an unseen interviewer. Use plain fluorescent or window light, a functional background, and minimal visual flattery. During observational scenes, let the handheld camera reframe late, zoom slightly toward revealing reactions, or catch a private glance into lens. Keep titles and composition sober. Treat every ridiculous statement with the visual gravity of serious testimony, never adding comic effects to explain the joke.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/mockumentary.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/mockumentary.md",
+    "video_url": null,
+    "when_to_use": "Use mockumentary when comedy depends on fictional characters treating absurd events with complete documentary seriousness. Talking-head interviews can contradict observed action, reveal vanity, or let a glance expose what dialogue will not. The format suits workplace, community, performance, and social satire. Keep the camera's behavior credible and restrained; if the filmmaking starts announcing jokes, the deadpan contrast loses its bite."
+  },
+  "title": "\"Mockumentary Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Mockumentary talking head interview with [Subject] looking slightly off-camera to an unseen interviewer, standard documentary medium close-up with unflattering fluorescent lighting, the documentary format treating the setting with the visual gravity of a war correspondent's confession, handheld camera occasionally reframing to maintain the documentary illusion, the Christopher Guest understanding that absurd comedy requires deadpan documentary treatment camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Mockumentary talking head interview with [Subject] looking slightly off-camera to an unseen interviewer, standard documentary medium close-up with unflattering fluorescent lighting, the documentary format treating the setting with the visual gravity of a war correspondent's confession, handheld camera occasionally reframing to maintain the documentary illusion, the Christopher Guest understanding that absurd comedy requires deadpan documentary treatment aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Mockumentary talking head interview with [Subject] looking slightly off-camera to an unseen interviewer, standard documentary medium close-up with unflattering fluorescent lighting, the documentary format treating the setting with the visual gravity of a war correspondent's confession, handheld camera occasionally reframing to maintain the documentary illusion, the Christopher Guest understanding that absurd comedy requires deadpan documentary treatment --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Mockumentary talking head interview with [Subject] looking slightly off-camera to an unseen interviewer, standard documentary medium close-up with unflattering fluorescent lighting, the documentary format treating the setting with the visual gravity of a war correspondent's confession, handheld camera occasionally reframing to maintain the documentary illusion, the Christopher Guest understanding that absurd comedy requires deadpan documentary treatment aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Mockumentary talking head interview with [Subject] looking slightly off-camera to an unseen interviewer, standard documentary medium close-up with unflattering fluorescent lighting, the documentary format treating the setting with the visual gravity of a war correspondent's confession, handheld camera occasionally reframing to maintain the documentary illusion, the Christopher Guest understanding that absurd comedy requires deadpan documentary treatment motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Mockumentary talking head interview with [Subject] looking slightly off-camera to an unseen interviewer, standard documentary medium close-up with unflattering fluorescent lighting, the documentary format treating the setting with the visual gravity of a war correspondent's confession, handheld camera occasionally reframing to maintain the documentary illusion, the Christopher Guest understanding that absurd comedy requires deadpan documentary treatment style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Mockumentary talking head interview with [Subject] looking slightly off-camera to an unseen interviewer, standard documentary medium close-up with unflattering fluorescent lighting, the documentary format treating the setting with the visual gravity of a war correspondent's confession, handheld camera occasionally reframing to maintain the documentary illusion, the Christopher Guest understanding that absurd comedy requires deadpan documentary treatment resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "category": "visual-effects",
+  "category_label": "Visual Effects & Promptable FX",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Inventing Worlds and Characters: Effects",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Blurring the subject along with the background, leaving no stable focal plane for the viewer."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Filling every empty area with identical glowing circles, which reads as an overlay rather than optical depth."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using bokeh when background geography matters, hiding information the audience needs to understand the scene."
+    }
+  ],
+  "motion": [],
+  "prompt": "Beautiful bokeh behind [Subject], hundreds of out-of-focus light sources transformed into soft luminous orbs of color, each perfectly round from the wide-open aperture of a fast 85mm lens, the distinctive creamy rendering of a Zeiss or Leica lens where the out-of-focus transition is butter-smooth, the visual magic of shallow depth of field turning the background into an impressionist painting of light",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "bokeh",
+  "source": {
+    "authored_lede": "The aesthetic quality of out-of-focus areas, particularly light sources that become soft, circular orbs — beautiful bokeh creates a dreamy, luminous background that elevates any subject. The term comes from the Japanese word for \"blur,\" and the quality of bokeh varies dramatically between lens designs. Anamorphic lenses produce distinctive oval bokeh, seen in J.J. Abrams' \"Star Trek\" and Ridley Scott's \"Blade Runner.\" Wong Kar-wai and Christopher Doyle exploit bokeh as a primary aesthetic element in \"In the Mood for Love.\" The rise of large-sensor cameras has made cinematic bokeh accessible to independent filmmakers, and the distinctive bokeh of vintage lenses has driven a renaissance in legacy glass from Helios, Canon K35, and Cooke Speed Panchro.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the subject sharply in the foreground and move practical lights well behind them. Use shallow depth of field with smooth focus falloff, turning distant points into soft circular or oval orbs without losing their color. Keep the eyes or chosen detail critically sharp. Avoid cutting bokeh shapes through the subject's silhouette. Build varied orb sizes from multiple distances and retain a few recognizable environmental cues so the background feels optical, not abstract decoration.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/bokeh.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/bokeh.md",
+    "video_url": null,
+    "when_to_use": "Use bokeh when the subject needs separation from a busy environment or when background lights should become emotional atmosphere rather than information. It suits portraits, romantic scenes, night streets, and intimate details. Strong bokeh depends on depth staging: the subject, lens plane, and distant lights need clear separation. Avoid it when the audience must read the location, background action, or spatial relationships in detail."
+  },
+  "title": "\"Bokeh Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Beautiful bokeh behind [Subject], hundreds of out-of-focus light sources transformed into soft luminous orbs of color, each perfectly round from the wide-open aperture of a fast 85mm lens, the distinctive creamy rendering of a Zeiss or Leica lens where the out-of-focus transition is butter-smooth, the visual magic of shallow depth of field turning the background into an impressionist painting of light camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Beautiful bokeh behind [Subject], hundreds of out-of-focus light sources transformed into soft luminous orbs of color, each perfectly round from the wide-open aperture of a fast 85mm lens, the distinctive creamy rendering of a Zeiss or Leica lens where the out-of-focus transition is butter-smooth, the visual magic of shallow depth of field turning the background into an impressionist painting of light aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Beautiful bokeh behind [Subject], hundreds of out-of-focus light sources transformed into soft luminous orbs of color, each perfectly round from the wide-open aperture of a fast 85mm lens, the distinctive creamy rendering of a Zeiss or Leica lens where the out-of-focus transition is butter-smooth, the visual magic of shallow depth of field turning the background into an impressionist painting of light --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Beautiful bokeh behind [Subject], hundreds of out-of-focus light sources transformed into soft luminous orbs of color, each perfectly round from the wide-open aperture of a fast 85mm lens, the distinctive creamy rendering of a Zeiss or Leica lens where the out-of-focus transition is butter-smooth, the visual magic of shallow depth of field turning the background into an impressionist painting of light aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Beautiful bokeh behind [Subject], hundreds of out-of-focus light sources transformed into soft luminous orbs of color, each perfectly round from the wide-open aperture of a fast 85mm lens, the distinctive creamy rendering of a Zeiss or Leica lens where the out-of-focus transition is butter-smooth, the visual magic of shallow depth of field turning the background into an impressionist painting of light motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Beautiful bokeh behind [Subject], hundreds of out-of-focus light sources transformed into soft luminous orbs of color, each perfectly round from the wide-open aperture of a fast 85mm lens, the distinctive creamy rendering of a Zeiss or Leica lens where the out-of-focus transition is butter-smooth, the visual magic of shallow depth of field turning the background into an impressionist painting of light style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Beautiful bokeh behind [Subject], hundreds of out-of-focus light sources transformed into soft luminous orbs of color, each perfectly round from the wide-open aperture of a fast 85mm lens, the distinctive creamy rendering of a Zeiss or Leica lens where the out-of-focus transition is butter-smooth, the visual magic of shallow depth of field turning the background into an impressionist painting of light resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

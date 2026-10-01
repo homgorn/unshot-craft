@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Showing the observing character in the same frame, which breaks the claim that the image is their exact view."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Adding exaggerated fisheye curvature that reads as an action camera rather than ordinary subjective vision."
+    },
+    {
+      "is_critical": 1,
+      "ord": 2,
+      "text": "Using random head sway without a target, making the viewpoint nauseating instead of emotionally identified with a character."
+    }
+  ],
+  "motion": [
+    {
+      "card": "graze-face-tour",
+      "category": "camera",
+      "duration_text": "单段 4–5s；可多段接力延长",
+      "energy": "mid-high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "graze-face-tour"
+    }
+  ],
+  "prompt": "First-person POV shot through the eyes of [Subject], shallow depth of field mimicking unfocused human vision, subtle lens breathing as focus racks, shot on a wide 14mm rectilinear lens to approximate human field of view, the immersive subjectivity of seeing exactly what the character sees",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "pov-shot",
+  "source": {
+    "authored_lede": "Shows the scene exactly as a character sees it, placing the viewer inside their subjective experience and creating powerful identification and immersion. Hitchcock was the master of POV, using subjective shots in \"Rear Window\" to lock the audience into James Stewart's voyeuristic gaze, and in \"Vertigo\" to plunge viewers into the protagonist's acrophobia. Gaspar Noé built \"Enter the Void\" entirely from a first-person perspective, including the afterlife. The \"Peep Show\" technique was also used to devastating effect by Kathryn Bigelow in \"Strange Days\" and Jonathan Glazer in \"Under the Skin.\"",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "State whose eyes define the camera and what they are looking toward. Keep the viewpoint at that character's height, with natural head movement, subtle focus breathing, and peripheral softness rather than a visible third-person body. A wide rectilinear perspective can suggest human field of view without fisheye distortion. For video, synchronize gaze shifts with sound or action cues and let focus settle imperfectly, as human attention does, before the important detail becomes clear.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/pov-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/pov-shot.md",
+    "video_url": "media/pov-shot.mp4",
+    "when_to_use": "Choose a point-of-view shot when viewers must share a character's act of looking rather than merely observe them. It can intensify discovery, fear, desire, surveillance, confusion, or physical danger. The shot works best when paired with a clear owner of the gaze and a meaningful target. Without that setup, first-person framing can feel like an unmotivated camera trick or generic game footage."
+  },
+  "title": "\"P.O.V. Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

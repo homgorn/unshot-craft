@@ -1,0 +1,202 @@
+{
+  "category": "narrative",
+  "category_label": "Narrative",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "How to Make a Short Film: An Introduction to Filmmaking",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Changing every visual element at once, so the future no longer connects clearly to the present timeline."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Showing the complete chain of events, removing the dramatic question that should energize the present story."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Treating the future as a generic dream with no stable detail the audience can remember or track."
+    }
+  ],
+  "motion": [
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "black-card-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "dark-tunnel-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "focus-handoff-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "mask-wipe-real"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "portal-wipe-v2"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "whip-brake-real"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "whip-pan-real"
+    }
+  ],
+  "prompt": "Flashforward showing [Subject] in a future state, the visual treatment cooler and more desaturated than present-day scenes, the camera positioned in the same angle as earlier shots to make the change more devastating by comparison, the flashforward creating dramatic irony as the audience now carries knowledge of this future while watching the present unfold",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "flashforward",
+  "source": {
+    "authored_lede": "A scene that jumps ahead to show future events before returning to the present timeline, creating dramatic irony, dread, or anticipation by revealing a destination before the journey. Nicolas Roeg used flashforwards brilliantly in \"Don't Look Now,\" where glimpses of the future create a web of dread throughout the film. \"Breaking Bad\" famously opens seasons with enigmatic flashforwards — the machine gun in the trunk, the burning teddy bear — that recontextualize everything that follows. Denis Villeneuve's \"Arrival\" builds its entire narrative twist on what the audience assumes are flashbacks but are actually flashforwards, fundamentally altering the audience's understanding of time and memory.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Repeat a present-day camera angle in the future so changes become immediately comparable. Shift the future toward cooler, restrained color, altered light, and visible consequences while preserving recognizable architecture, wardrobe cues, or props. Keep the glimpse concise and focus on one unanswered change. Transition back through a visual match or sharp temporal cut. The audience should recognize that time advanced, understand what changed, and still need to discover why it happened.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/flashforward.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/flashforward.md",
+    "video_url": null,
+    "when_to_use": "Use a flashforward when knowing the destination will make the journey more charged. Show a future injury, altered relationship, ruined place, or unexplained object, then return to the present while the audience carries that knowledge. It is effective for dread and dramatic irony, especially when the future image raises a precise question. Do not reveal so much that the intervening story loses uncertainty or possibility."
+  },
+  "title": "\"Flashforward Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Flashforward showing [Subject] in a future state, the visual treatment cooler and more desaturated than present-day scenes, the camera positioned in the same angle as earlier shots to make the change more devastating by comparison, the flashforward creating dramatic irony as the audience now carries knowledge of this future while watching the present unfold camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Flashforward showing [Subject] in a future state, the visual treatment cooler and more desaturated than present-day scenes, the camera positioned in the same angle as earlier shots to make the change more devastating by comparison, the flashforward creating dramatic irony as the audience now carries knowledge of this future while watching the present unfold aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Flashforward showing [Subject] in a future state, the visual treatment cooler and more desaturated than present-day scenes, the camera positioned in the same angle as earlier shots to make the change more devastating by comparison, the flashforward creating dramatic irony as the audience now carries knowledge of this future while watching the present unfold --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Flashforward showing [Subject] in a future state, the visual treatment cooler and more desaturated than present-day scenes, the camera positioned in the same angle as earlier shots to make the change more devastating by comparison, the flashforward creating dramatic irony as the audience now carries knowledge of this future while watching the present unfold aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Flashforward showing [Subject] in a future state, the visual treatment cooler and more desaturated than present-day scenes, the camera positioned in the same angle as earlier shots to make the change more devastating by comparison, the flashforward creating dramatic irony as the audience now carries knowledge of this future while watching the present unfold motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Flashforward showing [Subject] in a future state, the visual treatment cooler and more desaturated than present-day scenes, the camera positioned in the same angle as earlier shots to make the change more devastating by comparison, the flashforward creating dramatic irony as the audience now carries knowledge of this future while watching the present unfold style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Flashforward showing [Subject] in a future state, the visual treatment cooler and more desaturated than present-day scenes, the camera positioned in the same angle as earlier shots to make the change more devastating by comparison, the flashforward creating dramatic irony as the audience now carries knowledge of this future while watching the present unfold resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

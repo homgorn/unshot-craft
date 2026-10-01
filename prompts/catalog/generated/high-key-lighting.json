@@ -1,0 +1,142 @@
+{
+  "category": "lighting",
+  "category_label": "Lighting",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Film Lighting",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Confusing high key with blown highlights, erasing skin texture and white surfaces instead of controlling contrast."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Removing every trace of direction, which makes the subject look flat rather than softly and evenly modeled."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Placing dark background elements behind the subject that contradict the intended bright, low-contrast visual field."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "High-key lighting flooding [Subject] in bright even illumination with barely a shadow to be found, the overall exposure pushed a third of a stop hot to create an airy blown-out feeling, shot on Alexa at 1280 ISO with Cooke S7 glass for gentle halation around the highlights, the dreamy overlit aesthetic of warmth without shadows, optimism without darkness",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "high-key-lighting",
+  "source": {
+    "authored_lede": "A bright, even lighting style with minimal shadows that creates an optimistic, clean, or ethereal atmosphere, common in comedies, commercials, and dream sequences. The classic Hollywood musical relied on high-key lighting — Vincente Minnelli's \"An American in Paris\" and \"The Band Wagon\" glow with uniform brightness. Kubrick used clinical high-key lighting in the space station sequences of \"2001\" to create sterile futurism, and Sofia Coppola bathes \"Marie Antoinette\" in high-key pastel light to capture the candy-colored excess of Versailles. The technique is also fundamental to the visual language of romantic comedies from Nora Ephron to Nancy Meyers.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Surround the subject with broad, diffused illumination and keep the fill level close to the key so shadows remain pale and soft. Lift the overall exposure slightly while protecting facial and fabric highlights from clipping. Use light backgrounds, gentle halation, creamy skin, and restrained pastel color. Preserve subtle edge separation through small tonal differences rather than hard rims. For video, maintain stable brightness across movement so the subject does not fall into accidental contrast pockets.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/high-key-lighting.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/high-key-lighting.md",
+    "video_url": null,
+    "when_to_use": "Choose high-key lighting for optimism, cleanliness, glamour, romantic ease, clinical futurism, or a dreamlike lack of darkness. It works in comedy, commercials, musicals, beauty work, and deliberately sterile interiors. The frame should remain shaped even with minimal shadow. Use low contrast intentionally; simply overexposing a normal setup will lose skin, fabric, and production detail rather than create luminous control."
+  },
+  "title": "\"High-Key Lighting Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "High-key lighting flooding [Subject] in bright even illumination with barely a shadow to be found, the overall exposure pushed a third of a stop hot to create an airy blown-out feeling, shot on Alexa at 1280 ISO with Cooke S7 glass for gentle halation around the highlights, the dreamy overlit aesthetic of warmth without shadows, optimism without darkness camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "High-key lighting flooding [Subject] in bright even illumination with barely a shadow to be found, the overall exposure pushed a third of a stop hot to create an airy blown-out feeling, shot on Alexa at 1280 ISO with Cooke S7 glass for gentle halation around the highlights, the dreamy overlit aesthetic of warmth without shadows, optimism without darkness aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "High-key lighting flooding [Subject] in bright even illumination with barely a shadow to be found, the overall exposure pushed a third of a stop hot to create an airy blown-out feeling, shot on Alexa at 1280 ISO with Cooke S7 glass for gentle halation around the highlights, the dreamy overlit aesthetic of warmth without shadows, optimism without darkness --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "High-key lighting flooding [Subject] in bright even illumination with barely a shadow to be found, the overall exposure pushed a third of a stop hot to create an airy blown-out feeling, shot on Alexa at 1280 ISO with Cooke S7 glass for gentle halation around the highlights, the dreamy overlit aesthetic of warmth without shadows, optimism without darkness aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "High-key lighting flooding [Subject] in bright even illumination with barely a shadow to be found, the overall exposure pushed a third of a stop hot to create an airy blown-out feeling, shot on Alexa at 1280 ISO with Cooke S7 glass for gentle halation around the highlights, the dreamy overlit aesthetic of warmth without shadows, optimism without darkness motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "High-key lighting flooding [Subject] in bright even illumination with barely a shadow to be found, the overall exposure pushed a third of a stop hot to create an airy blown-out feeling, shot on Alexa at 1280 ISO with Cooke S7 glass for gentle halation around the highlights, the dreamy overlit aesthetic of warmth without shadows, optimism without darkness style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "High-key lighting flooding [Subject] in bright even illumination with barely a shadow to be found, the overall exposure pushed a third of a stop hot to create an airy blown-out feeling, shot on Alexa at 1280 ISO with Cooke S7 glass for gentle halation around the highlights, the dreamy overlit aesthetic of warmth without shadows, optimism without darkness resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

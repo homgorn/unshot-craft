@@ -83,6 +83,35 @@
         "summary": "Locales and how many strings each has"
       }
     },
+    "/techniques": {
+      "get": {
+        "summary": "The cinematic-technique catalog with a cross-tool matrix summary per technique"
+      }
+    },
+    "/optimize/{slug}": {
+      "get": {
+        "summary": "One technique, every tool: the verbatim prompt, each tool's parameters, and whether any cell has been run",
+        "parameters": [
+          {
+            "name": "tool",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mj61",
+                "runway_gen3",
+                "veo2",
+                "kling15",
+                "luma",
+                "pika15",
+                "sora"
+              ]
+            },
+            "description": "restrict to one tool; omit for all seven"
+          }
+        ]
+      }
+    },
     "/categories": {
       "get": {
         "summary": "The 10 card categories with counts"

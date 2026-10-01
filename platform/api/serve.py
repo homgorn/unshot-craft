@@ -170,6 +170,74 @@ def handle(conn, path: str, q: dict) -> tuple[int, object]:
             SELECT subject, spdx, url, commercial_use, blocking, obligation
             FROM license_registry ORDER BY blocking DESC, subject""")}
 
+    if path.startswith("/optimize/") or path == "/optimize":
+        # F073 over HTTP: one question, one call. The `tested` flag travels with
+        # every cell, so a caller cannot read a parameter without also reading
+        # whether anyone has run it.
+        slug = path[len("/optimize/"):].strip("/") if path.startswith("/optimize/") \
+            else (q.get("technique", [""])[0])
+        if not slug:
+            return 400, {"error": "usage: /optimize/<slug> or ?technique=<slug>"}
+        t = rows(cur, "SELECT id, name, title, prompt_text FROM cinematic_technique "
+                      "WHERE name=?", (slug,))
+        if not t:
+            return 404, {"error": f"unknown technique: {slug}"}
+        t = t[0]
+        cells = {}
+        for r in rows(cur, """SELECT a.key, a.label, a.param_style, p.params,
+                                     p.full_prompt, p.version_tag, p.tested, p.tested_at
+                              FROM technique_tool_param p JOIN ai_tool a ON a.id=p.tool_id
+                              WHERE p.technique_id=? ORDER BY a.id""", (t["id"],)):
+            cells[r["key"]] = {
+                "tool": r["label"], "param_style": r["param_style"],
+                "version": r["version_tag"], "params": r["params"],
+                "full_prompt": r["full_prompt"],
+                "tested": bool(r["tested"]), "tested_at": r["tested_at"],
+            }
+        only = q.get("tool", [None])[0]
+        if only:
+            if only not in cells:
+                return 404, {"error": f"no matrix row for tool {only!r}",
+                             "known_tools": sorted(cells)}
+            cells = {only: cells[only]}
+        motions = rows(cur, """SELECT m.kind, sc.name card, cc.key category,
+                                      e.key energy, sc.duration_frames, s.key style
+                               FROM technique_motion m JOIN style s ON s.id=m.style_id
+                               LEFT JOIN shot_card sc ON sc.id=s.card_id
+                               LEFT JOIN category cc ON cc.id=sc.category_id
+                               LEFT JOIN energy_level e ON e.id=sc.energy_level_id
+                               WHERE m.technique_id=? ORDER BY sc.name, s.key""", (t["id"],))
+        return 200, {
+            "slug": t["name"], "title": t["title"],
+            "prompt": t["prompt_text"],
+            "prompt_slot": "[Subject]",
+            "tool_params": cells,
+            "summary": {
+                "tools": len(cells),
+                "with_params": sum(1 for v in cells.values() if v["params"]),
+                "tested": sum(1 for v in cells.values() if v["tested"]),
+                "null": sum(1 for v in cells.values() if not v["params"]),
+            },
+            "motion_pairings": motions,
+            "motion_pairing_note": ("declared in platform/catalog/pairings.py, "
+                                    "never inferred from a name match"),
+        }
+
+    if path == "/techniques":
+        return 200, {"items": rows(cur, """SELECT t.name, t.title, cc.key category,
+                                                  t.level, t.video_url,
+                                                  (SELECT COUNT(*) FROM technique_motion m
+                                                    WHERE m.technique_id=t.id) motions,
+                                                  (SELECT COUNT(*) FROM technique_tool_param p
+                                                    WHERE p.technique_id=t.id
+                                                      AND p.params IS NOT NULL) with_params,
+                                                  (SELECT COUNT(*) FROM technique_tool_param p
+                                                    WHERE p.technique_id=t.id AND p.tested=1) tested
+                                           FROM cinematic_technique t
+                                           JOIN cinematic_category cc ON cc.id=t.category_id
+                                           ORDER BY cc.sort_order, t.name LIMIT ?""",
+                                        (min(int(q.get("limit", ["200"])[0] or 200), 500),))}
+
     if path == "/opportunities":
         return 200, {"items": rows(cur, """
             SELECT key, title, thesis, revenue_model, effort, time_to_first_revenue,
@@ -194,7 +262,8 @@ def handle(conn, path: str, q: dict) -> tuple[int, object]:
     if path in ("/", "/health"):
         return 200, {"ok": True, "docs": "/openapi.json", "endpoints": [
             "/stats", "/cards", "/cards/{slug}", "/styles", "/styles/{key}",
-            "/easing", "/rules", "/licenses", "/opportunities", "/categories", "/locales"]}
+            "/easing", "/rules", "/licenses", "/opportunities", "/categories", "/locales",
+            "/techniques", "/optimize/{slug}"]}
 
     return 404, {"error": f"no route: {path}"}
 

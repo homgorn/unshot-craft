@@ -1,0 +1,152 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Using the phrase from above without straight-down camera language, which often produces an ordinary high-angle perspective instead."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Building a scene with no visible pattern, making the unusual viewpoint feel decorative rather than narratively motivated."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Adding shallow focus across the frame, which weakens the forensic clarity and flattened geometry that define the view."
+    }
+  ],
+  "motion": [
+    {
+      "card": "overhead-camera-moves",
+      "category": "camera",
+      "duration_text": "A ~4.8s / B ~4.7s",
+      "energy": null,
+      "frames": 144,
+      "kind": "declared",
+      "parameters": 8,
+      "style": "overhead-tabletop-drop"
+    },
+    {
+      "card": "overhead-camera-moves",
+      "category": "camera",
+      "duration_text": "A ~4.8s / B ~4.7s",
+      "energy": null,
+      "frames": 144,
+      "kind": "declared",
+      "parameters": 8,
+      "style": "tilt-reveal"
+    }
+  ],
+  "prompt": "Bird's eye view looking straight down on [Subject], the camera positioned directly overhead creating a flattened god-like perspective where depth is eliminated and everything becomes pattern and geometry, long shadows stretching from each element, shot on medium format digital with a 40mm equivalent lens, muted teal and gold color palette, forensic sharpness from edge to edge",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "birds-eye-view",
+  "source": {
+    "authored_lede": "A shot taken from directly overhead, looking straight down on the subject, creating a god-like perspective that can make subjects appear small and insignificant or reveal patterns invisible from ground level. Busby Berkeley pioneered the technique in 1930s musicals, choreographing dancers into kaleidoscopic geometric formations seen from directly above. Darren Aronofsky used it extensively in \"Requiem for a Dream\" to convey psychological detachment, and Wes Anderson frequently employs overhead shots of meticulously arranged objects as a signature compositional device.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "State that the camera looks straight down with its optical axis perpendicular to the ground. Remove the horizon and treat people, objects, roads, and shadows as flat graphic shapes. Arrange the main elements into a deliberate pattern with clean spacing and edge-to-edge sharpness. Use a restrained teal-and-gold palette and long directional shadows to preserve visual separation. For video, keep the camera locked or moving vertically so the top-down geometry does not drift into an oblique aerial angle.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/birds-eye-view.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/birds-eye-view.md",
+    "video_url": "media/birds-eye-view.mp4",
+    "when_to_use": "Use a bird's eye view when the scene contains a pattern that ground-level framing would hide. Crowds, roads, bodies, tables, and architecture become readable as geometry from directly above. It also makes people appear controlled, observed, or insignificant. This angle works best when spatial design carries meaning; it is less useful when facial expression or normal depth must drive the moment."
+  },
+  "title": "\"Bird's Eye View Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

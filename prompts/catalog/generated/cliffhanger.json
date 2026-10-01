@@ -1,0 +1,162 @@
+{
+  "category": "narrative",
+  "category_label": "Narrative",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "How to Make a Short Film: An Introduction to Filmmaking",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Ending before the stakes are visible, creating simple interruption rather than suspenseful unresolved pressure."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Resolving the dangerous action inside the final frame, then pretending the aftermath is still a cliffhanger."
+    },
+    {
+      "is_critical": 1,
+      "ord": 2,
+      "text": "Using cliffhangers repeatedly without satisfying prior questions, which converts anticipation into audience distrust."
+    }
+  ],
+  "motion": [
+    {
+      "card": "montage-rhythm-moves",
+      "category": "rhythm",
+      "duration_text": "A 4.3s / B 4.3s / C 5s",
+      "energy": "high",
+      "frames": 129,
+      "kind": "declared",
+      "parameters": 10,
+      "style": "domino-cascade"
+    },
+    {
+      "card": "montage-rhythm-moves",
+      "category": "rhythm",
+      "duration_text": "A 4.3s / B 4.3s / C 5s",
+      "energy": "high",
+      "frames": 129,
+      "kind": "declared",
+      "parameters": 10,
+      "style": "drop-blackout-slam"
+    },
+    {
+      "card": "montage-rhythm-moves",
+      "category": "rhythm",
+      "duration_text": "A 4.3s / B 4.3s / C 5s",
+      "energy": "high",
+      "frames": 129,
+      "kind": "declared",
+      "parameters": 10,
+      "style": "wright-triple-cut"
+    }
+  ],
+  "prompt": "Cliffhanger moment frozen at peak suspense with [Subject], the image capturing the exact instant before resolution, the viewer's need for closure weaponized into desperate anticipation, dramatic sidelighting creating hard shadows that emphasize physical strain, the visual language of unresolved tension that demands continuation",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "cliffhanger",
+  "source": {
+    "authored_lede": "Ending a scene, episode, or act at a moment of peak suspense, leaving the outcome unresolved and exploiting the human need for closure to keep audiences desperate for more. The term comes from Thomas Hardy's serialized novel \"A Pair of Blue Eyes,\" where a character literally hangs from a cliff. \"The Empire Strikes Back\" ends on one of cinema's greatest cliffhangers — Han frozen in carbonite, Luke maimed and shattered by Vader's revelation. Television perfected the cliffhanger with \"Dallas\" 's \"Who shot J.R.?\" and \"Breaking Bad\"'s mid-season endings. Christopher Nolan ends \"Inception\" on a philosophical cliffhanger with the spinning top.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Build toward one irreversible beat, then frame the exact instant before impact, response, escape, or revelation. Use hard side light, compressed space, strained posture, and a clear eyeline toward the unresolved threat. Let the final image contain the question visually without explaining it in text. Cut away before movement completes, not before the audience understands what may happen. Preserve enough detail for the next scene to resume from the same physical and emotional position.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/cliffhanger.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/cliffhanger.md",
+    "video_url": null,
+    "when_to_use": "Use a cliffhanger at an act, episode, or scene break when the unresolved outcome can pull the audience forward. The best version stops after the stakes are understood but before the decisive action, answer, or consequence arrives. It works for physical danger, revelations, choices, and emotional confrontations. Avoid using it on minor information; the interruption must leave a genuine narrative pressure that the continuation can satisfy."
+  },
+  "title": "\"Cliffhanger Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Cliffhanger moment frozen at peak suspense with [Subject], the image capturing the exact instant before resolution, the viewer's need for closure weaponized into desperate anticipation, dramatic sidelighting creating hard shadows that emphasize physical strain, the visual language of unresolved tension that demands continuation camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Cliffhanger moment frozen at peak suspense with [Subject], the image capturing the exact instant before resolution, the viewer's need for closure weaponized into desperate anticipation, dramatic sidelighting creating hard shadows that emphasize physical strain, the visual language of unresolved tension that demands continuation aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Cliffhanger moment frozen at peak suspense with [Subject], the image capturing the exact instant before resolution, the viewer's need for closure weaponized into desperate anticipation, dramatic sidelighting creating hard shadows that emphasize physical strain, the visual language of unresolved tension that demands continuation --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Cliffhanger moment frozen at peak suspense with [Subject], the image capturing the exact instant before resolution, the viewer's need for closure weaponized into desperate anticipation, dramatic sidelighting creating hard shadows that emphasize physical strain, the visual language of unresolved tension that demands continuation aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Cliffhanger moment frozen at peak suspense with [Subject], the image capturing the exact instant before resolution, the viewer's need for closure weaponized into desperate anticipation, dramatic sidelighting creating hard shadows that emphasize physical strain, the visual language of unresolved tension that demands continuation motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Cliffhanger moment frozen at peak suspense with [Subject], the image capturing the exact instant before resolution, the viewer's need for closure weaponized into desperate anticipation, dramatic sidelighting creating hard shadows that emphasize physical strain, the visual language of unresolved tension that demands continuation style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Cliffhanger moment frozen at peak suspense with [Subject], the image capturing the exact instant before resolution, the viewer's need for closure weaponized into desperate anticipation, dramatic sidelighting creating hard shadows that emphasize physical strain, the visual language of unresolved tension that demands continuation resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

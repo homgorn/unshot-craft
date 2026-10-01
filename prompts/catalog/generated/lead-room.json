@@ -1,0 +1,152 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Leaving empty space behind a moving subject while compressing the area ahead, making the frame feel visually backward."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Following body orientation instead of eye direction, which can create lead room on the wrong side of a glance."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Recentering the subject continuously during a tracking shot, erasing the forward space that communicates destination and momentum."
+    }
+  ],
+  "motion": [
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "drone-dive-landing"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "exploded-view"
+    }
+  ],
+  "prompt": "Lead room composition with [Subject] positioned on one side of the frame with generous empty space in the direction of their gaze or movement, the open space suggesting possibility and destination, the satisfying rightness of proper lead room creating visual momentum, shot on a 50mm lens, the composition feeling natural and kinetically forward",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "lead-room",
+  "source": {
+    "authored_lede": "Empty space in front of a moving subject or in the direction they're looking, giving the subject visual breathing room and implying destination or intent. Lead room is one of the fundamental principles of shot composition — violating it deliberately creates tension and unease, as the Coen Brothers and David Fincher sometimes do in thriller sequences. Denis Villeneuve uses generous lead room in \"Arrival\" to suggest the vastness of the unknown that Amy Adams's character faces. Breaking the convention — placing a character at the leading edge of the frame with nothing ahead — immediately signals to the audience that something is wrong.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the moving or looking subject on the side opposite their direction, leaving a larger open field ahead of the eyes or motion. Keep the destination readable through environment, light, or framing, even if nothing has entered yet. Reduce trailing space behind the subject without crowding them. For video, pan or track at a speed that preserves the open area. If tension requires breaking the rule, pin the subject near the leading edge and make the absence of room unmistakable.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/lead-room.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/lead-room.md",
+    "video_url": null,
+    "when_to_use": "Lead room is essential when a subject looks, walks, drives, or moves toward one side of the frame. Space ahead gives that action somewhere to go and lets the audience anticipate a destination, person, or threat. Use generous room for possibility and forward momentum. Remove it deliberately when the character should feel blocked, pursued, or trapped against the edge. The technique must follow actual gaze and movement, not merely the direction a body faces."
+  },
+  "title": "\"Lead Room Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Lead room composition with [Subject] positioned on one side of the frame with generous empty space in the direction of their gaze or movement, the open space suggesting possibility and destination, the satisfying rightness of proper lead room creating visual momentum, shot on a 50mm lens, the composition feeling natural and kinetically forward camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Lead room composition with [Subject] positioned on one side of the frame with generous empty space in the direction of their gaze or movement, the open space suggesting possibility and destination, the satisfying rightness of proper lead room creating visual momentum, shot on a 50mm lens, the composition feeling natural and kinetically forward aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Lead room composition with [Subject] positioned on one side of the frame with generous empty space in the direction of their gaze or movement, the open space suggesting possibility and destination, the satisfying rightness of proper lead room creating visual momentum, shot on a 50mm lens, the composition feeling natural and kinetically forward --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Lead room composition with [Subject] positioned on one side of the frame with generous empty space in the direction of their gaze or movement, the open space suggesting possibility and destination, the satisfying rightness of proper lead room creating visual momentum, shot on a 50mm lens, the composition feeling natural and kinetically forward aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Lead room composition with [Subject] positioned on one side of the frame with generous empty space in the direction of their gaze or movement, the open space suggesting possibility and destination, the satisfying rightness of proper lead room creating visual momentum, shot on a 50mm lens, the composition feeling natural and kinetically forward motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Lead room composition with [Subject] positioned on one side of the frame with generous empty space in the direction of their gaze or movement, the open space suggesting possibility and destination, the satisfying rightness of proper lead room creating visual momentum, shot on a 50mm lens, the composition feeling natural and kinetically forward style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Lead room composition with [Subject] positioned on one side of the frame with generous empty space in the direction of their gaze or movement, the open space suggesting possibility and destination, the satisfying rightness of proper lead room creating visual momentum, shot on a 50mm lens, the composition feeling natural and kinetically forward resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

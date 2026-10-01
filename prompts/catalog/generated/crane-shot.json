@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Revealing the whole setting in the first frame, leaving the crane movement without new visual information to uncover."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Losing the original subject during ascent, which breaks the intended transition between individual and surrounding scale."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Replacing the controlled arc with random airborne drift that reads as an aerial shot rather than crane movement."
+    }
+  ],
+  "motion": [
+    {
+      "card": "crane-rise-reveal",
+      "category": "opening",
+      "duration_text": "5s（特写 hold 20f + 拉升 100f + 满幅静止 30f）",
+      "energy": "mid-high",
+      "frames": 20,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "crane-rise-reveal"
+    }
+  ],
+  "prompt": "Crane shot beginning tight on [Subject] then sweeping upward and backward in a majestic arc to reveal the true surrounding scale, the individual becoming one element among many in a seamless vertical revelation, shot on ARRI Alexa 65 with a 35mm Signature Prime, the mechanical grace of a Technocrane executing a precisely choreographed arc, golden hour light flooding horizontally",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "crane-shot",
+  "source": {
+    "authored_lede": "Camera mounted on a mechanical crane arm that sweeps upward, downward, or across a scene with majestic, controlled movement, often used for dramatic reveals or grand establishing moments. Orson Welles opened \"Touch of Evil\" with one of cinema's most famous crane shots — a continuous three-minute take following a car bomb through a Mexican border town. The final crane shot of \"Gone with the Wind\" pulling back to reveal hundreds of wounded soldiers remains one of Hollywood's most iconic images. Brian De Palma used elaborate crane work in \"The Untouchables\" for the Union Station staircase sequence, and Steven Spielberg's crane shots in \"Schindler's List\" shift from intimate to devastating in scale.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Begin on a clearly framed subject, then sweep upward and backward along a smooth mechanical arc. Reveal new layers in sequence rather than exposing the full environment at once: nearby action, surrounding group, architecture, then horizon. Keep the subject's location traceable as scale expands. Use broad golden-hour light to bind the levels together and a wide lens that avoids severe distortion. The path should feel engineered, stable, and continuous, never like free-floating aerial footage.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/crane-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/crane-shot.md",
+    "video_url": "media/crane-shot.mp4",
+    "when_to_use": "Choose a crane shot when a scene needs a grand reveal that changes scale and perspective in one controlled movement. Rising from a person to a crowd, battlefield, building, or landscape can expose consequences beyond the intimate frame. Descending can isolate one figure from a larger world. The move suits openings, finales, and major transitions; it is excessive when a simple tilt or pull-out conveys the same information."
+  },
+  "title": "\"Crane Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

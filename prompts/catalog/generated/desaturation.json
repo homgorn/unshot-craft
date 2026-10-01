@@ -1,0 +1,131 @@
+{
+  "category": "visual-effects",
+  "category_label": "Visual Effects & Promptable FX",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Inventing Worlds and Characters: Effects",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Removing color without preserving value contrast, producing a flat gray image with no visual hierarchy."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Leaving several unrelated colors vivid, weakening the narrative force of selective color isolation."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Oversaturating the retained hue until it appears pasted on rather than present in the photographed world."
+    }
+  ],
+  "motion": [],
+  "prompt": "Desaturated scene with [Subject] approaching monochrome, all color drained to near-gray except for a single vivid element, the Spielberg \"Schindler's List\" technique of selective color isolation, the surrounding gray rendering the world as bleak while the single color insists that something vital remains, heavy desaturation in grading leaving only one color channel active",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "desaturation",
+  "source": {
+    "authored_lede": "Reducing color intensity in the image, moving toward grayscale to create a bleak, documentary, or dreamlike quality — partial desaturation can isolate a single color for dramatic effect. Steven Spielberg used near-total desaturation in \"Schindler's List\" with the famous exception of the girl's red coat, creating one of cinema's most iconic selective-color moments. Ridley Scott desaturated \"Black Hawk Down\" for combat realism. \"Sin City\" by Robert Rodriguez uses radical desaturation with selective color to recreate Frank Miller's graphic novels. Janusz Kamiński's desaturated look for \"Saving Private Ryan\" established the visual template for modern war films.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Reduce saturation across the scene while preserving distinct values in skin, clothing, architecture, and background. Let most hues approach neutral gray rather than collapse into one muddy tone. If isolating a color, choose a single object and retain its vivid channel with clean edges and believable reflections. Support the treatment with directional light and strong tonal contrast. Keep the selected color stable across frames so it reads as intention, not processing noise.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/desaturation.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/desaturation.md",
+    "video_url": null,
+    "when_to_use": "Use desaturation for bleak realism, memory, documentary severity, graphic stylization, or a world emotionally drained of vitality. Partial desaturation can guide attention toward one remaining color, but that color needs narrative significance. The approach works when luminance, texture, and shape remain strong after hue is reduced. It fails when gray treatment is expected to create drama that the composition and lighting never supplied."
+  },
+  "title": "\"Desaturation Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Desaturated scene with [Subject] approaching monochrome, all color drained to near-gray except for a single vivid element, the Spielberg \"Schindler's List\" technique of selective color isolation, the surrounding gray rendering the world as bleak while the single color insists that something vital remains, heavy desaturation in grading leaving only one color channel active camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Desaturated scene with [Subject] approaching monochrome, all color drained to near-gray except for a single vivid element, the Spielberg \"Schindler's List\" technique of selective color isolation, the surrounding gray rendering the world as bleak while the single color insists that something vital remains, heavy desaturation in grading leaving only one color channel active aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Desaturated scene with [Subject] approaching monochrome, all color drained to near-gray except for a single vivid element, the Spielberg \"Schindler's List\" technique of selective color isolation, the surrounding gray rendering the world as bleak while the single color insists that something vital remains, heavy desaturation in grading leaving only one color channel active --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Desaturated scene with [Subject] approaching monochrome, all color drained to near-gray except for a single vivid element, the Spielberg \"Schindler's List\" technique of selective color isolation, the surrounding gray rendering the world as bleak while the single color insists that something vital remains, heavy desaturation in grading leaving only one color channel active aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Desaturated scene with [Subject] approaching monochrome, all color drained to near-gray except for a single vivid element, the Spielberg \"Schindler's List\" technique of selective color isolation, the surrounding gray rendering the world as bleak while the single color insists that something vital remains, heavy desaturation in grading leaving only one color channel active motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Desaturated scene with [Subject] approaching monochrome, all color drained to near-gray except for a single vivid element, the Spielberg \"Schindler's List\" technique of selective color isolation, the surrounding gray rendering the world as bleak while the single color insists that something vital remains, heavy desaturation in grading leaving only one color channel active style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Desaturated scene with [Subject] approaching monochrome, all color drained to near-gray except for a single vivid element, the Spielberg \"Schindler's List\" technique of selective color isolation, the surrounding gray rendering the world as bleak while the single color insists that something vital remains, heavy desaturation in grading leaving only one color channel active resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

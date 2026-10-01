@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Requesting constant violent shake, which feels synthetic and makes the subject impossible to track through the scene."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Combining handheld language with perfectly centered, mechanically smooth framing that cancels the intended operator presence."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Applying equal blur to every surface instead of tying motion artifacts to camera and subject movement."
+    }
+  ],
+  "motion": [
+    {
+      "card": "graze-face-tour",
+      "category": "camera",
+      "duration_text": "单段 4–5s；可多段接力延长",
+      "energy": "mid-high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "graze-face-tour"
+    }
+  ],
+  "prompt": "Handheld camera following [Subject], natural shake and breathing motion in the frame, motion blur on fast-moving elements, the gritty texture of Super 16mm film pushed two stops in processing, desaturated color with blown-out highlights, the raw unfiltered energy of being inside the moment rather than observing it",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "handheld-shot",
+  "source": {
+    "authored_lede": "Camera held by the operator without stabilization, resulting in natural shake and movement that creates raw immediacy, documentary realism, or frantic energy depending on context. John Cassavetes pioneered the emotional handheld style in \"A Woman Under the Influence,\" where the camera's restlessness mirrors Gena Rowlands' unraveling psyche. Paul Greengrass brought visceral handheld energy to mainstream cinema with the \"Bourne\" trilogy, while the Dardenne brothers and Lars von Trier's Dogme 95 movement made handheld a philosophical commitment to unvarnished truth.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Describe a shoulder-held operator following close behind or beside the subject, with subtle breathing drift, imperfect reframing, and heavier jolts only during sudden movement. Allow motion blur on fast gestures and occasional clipped highlights, supported by gritty Super 16 texture and restrained color. Keep the subject recoverable after each shake. For a still image, imply handheld capture through slight motion smear and off-center timing rather than uniformly blurring the entire frame.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/handheld-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/handheld-shot.md",
+    "video_url": "media/handheld-shot.mp4",
+    "when_to_use": "Reach for handheld movement when the camera must feel physically present inside an unstable moment. It can follow a character through conflict, capture documentary spontaneity, mirror panic, or make polished spaces feel exposed. The shake should reflect operator behavior and subject movement, not random vibration. Avoid it when spatial clarity, ceremonial scale, or controlled stillness matters more than raw proximity."
+  },
+  "title": "\"Handheld Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

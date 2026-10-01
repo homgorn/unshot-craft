@@ -35,7 +35,7 @@ Three independent mechanisms, all inline, none shared:
 
 Locale lives in `localStorage`, not in the URL — so there is no indexable per-language URL, no `hreflang`, and no way for a crawler or a link to reach the Russian library. Fixing that is our first site change (ADR-0004).
 
-## Repository composition (files indexed: 1009)
+## Repository composition (files indexed: 1139)
 
 | role | files |
 |---|---|
@@ -43,9 +43,9 @@ Locale lives in `localStorage`, not in the URL — so there is no indexable per-
 | `site` | 238 |
 | `card` | 157 |
 | `asset` | 156 |
+| `catalog` | 150 |
 | `other` | 78 |
 | `component` | 73 |
-| `catalog` | 20 |
 | `config` | 15 |
 | `doc` | 10 |
 | `reference` | 8 |

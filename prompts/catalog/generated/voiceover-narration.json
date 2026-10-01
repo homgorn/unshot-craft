@@ -1,0 +1,142 @@
+{
+  "category": "narrative",
+  "category_label": "Narrative",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "How to Make a Short Film: An Introduction to Filmmaking",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Describing visible actions word for word, reducing narration to redundant accessibility rather than added perspective."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Cutting images faster than the spoken thought can land, forcing sound and picture to compete."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using vague contemplative visuals with no relationship to the narrator's specific memory, irony, or argument."
+    }
+  ],
+  "motion": [
+    {
+      "card": "typing-code-block",
+      "category": "typography",
+      "duration_text": "约 4.6s（138f@30fps）",
+      "energy": "mid",
+      "frames": 138,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "typing-code-block"
+    }
+  ],
+  "prompt": "Scene designed to accompany voiceover narration with [Subject] in a contemplative visual, the imagery deliberately quiet and reflective to create space for an unseen narrator's voice, the visual mood introspective and open-ended, soft desaturated color palette, the Malick-Scorsese understanding that the right contemplative image paired with words creates something greater than either alone",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "voiceover-narration",
+  "source": {
+    "authored_lede": "A character's voice speaking over the visuals, providing internal thoughts, context, or commentary that can create intimacy, irony, or an essay-like quality depending on tone. Martin Scorsese uses voiceover as a vital narrative engine — Henry Hill's running commentary in \"Goodfellas\" is inseparable from the film's identity. Terrence Malick's whispered, philosophical voiceovers in \"The Thin Red Line\" and \"The Tree of Life\" create an interior poetry. Billy Wilder used voiceover to brilliant ironic effect in \"Sunset Boulevard,\" narrated by a dead man. Wong Kar-wai's voiceovers in \"In the Mood for Love\" turn interior monologue into pure longing.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Build a restrained visual scene around the subject: contemplative action, open negative space, soft desaturated color, and slow, readable movement. Keep cuts sparse enough for spoken ideas to breathe. Pair literal words with complementary or contradictory imagery rather than direct illustration. Maintain environmental sound and visual detail so the image does not become wallpaper. Place the subject off-center or looking beyond frame, creating psychological space for an unseen voice while preserving a complete visual story.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/voiceover-narration.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/voiceover-narration.md",
+    "video_url": null,
+    "when_to_use": "Use voiceover narration when the audience needs access to thought, memory, commentary, or a perspective the visible action cannot supply. Pairing words and images can create intimacy, contradiction, or essay-like reflection. The voice should add a second layer, not describe what viewers already see. Leave room in pacing and composition for language to land, especially when the images are emotionally dense or the narration carries irony."
+  },
+  "title": "\"Voiceover Narration Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Scene designed to accompany voiceover narration with [Subject] in a contemplative visual, the imagery deliberately quiet and reflective to create space for an unseen narrator's voice, the visual mood introspective and open-ended, soft desaturated color palette, the Malick-Scorsese understanding that the right contemplative image paired with words creates something greater than either alone camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Scene designed to accompany voiceover narration with [Subject] in a contemplative visual, the imagery deliberately quiet and reflective to create space for an unseen narrator's voice, the visual mood introspective and open-ended, soft desaturated color palette, the Malick-Scorsese understanding that the right contemplative image paired with words creates something greater than either alone aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Scene designed to accompany voiceover narration with [Subject] in a contemplative visual, the imagery deliberately quiet and reflective to create space for an unseen narrator's voice, the visual mood introspective and open-ended, soft desaturated color palette, the Malick-Scorsese understanding that the right contemplative image paired with words creates something greater than either alone --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Scene designed to accompany voiceover narration with [Subject] in a contemplative visual, the imagery deliberately quiet and reflective to create space for an unseen narrator's voice, the visual mood introspective and open-ended, soft desaturated color palette, the Malick-Scorsese understanding that the right contemplative image paired with words creates something greater than either alone aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Scene designed to accompany voiceover narration with [Subject] in a contemplative visual, the imagery deliberately quiet and reflective to create space for an unseen narrator's voice, the visual mood introspective and open-ended, soft desaturated color palette, the Malick-Scorsese understanding that the right contemplative image paired with words creates something greater than either alone motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Scene designed to accompany voiceover narration with [Subject] in a contemplative visual, the imagery deliberately quiet and reflective to create space for an unseen narrator's voice, the visual mood introspective and open-ended, soft desaturated color palette, the Malick-Scorsese understanding that the right contemplative image paired with words creates something greater than either alone style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Scene designed to accompany voiceover narration with [Subject] in a contemplative visual, the imagery deliberately quiet and reflective to create space for an unseen narrator's voice, the visual mood introspective and open-ended, soft desaturated color palette, the Malick-Scorsese understanding that the right contemplative image paired with words creates something greater than either alone resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

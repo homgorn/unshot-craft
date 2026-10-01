@@ -508,6 +508,8 @@ def main() -> int:
                  " JOIN cinematic_category cc ON cc.id=t.category_id"
                  " ORDER BY cc.sort_order, t.name")
     if cat_rows:
+        pair_total = Q("SELECT COUNT(*) n FROM technique_motion")[0]["n"]
+        pair_techs = Q("SELECT COUNT(DISTINCT technique_id) n FROM technique_motion")[0]["n"]
         cell = Q("""SELECT SUM(p.params IS NOT NULL) filled, SUM(p.tested=1) tested,
                            SUM(p.params IS NULL) nulls, COUNT(*) listed
                     FROM technique_tool_param p""")[0]
@@ -532,6 +534,12 @@ def main() -> int:
             f"been run against the model version, and {cell['nulls']} are empty because nobody "
             "has tested them. A plausible string in an untested cell is a claim we cannot "
             "defend to a client.", "",
+            f"**{pair_total} declared motion pairings across {pair_techs} of the "
+            f"{tcount} techniques.** Declared, never inferred: they come from an "
+            f"explicit `styles:` list in `data/cinematic/<slug>.md`, authored in "
+            f"`platform/catalog/pairings.py`. A technique with no entry returns an "
+            f"empty list and says so, because a wrong pairing hands a client a "
+            f"duration and an easing and looks researched.", "",
             f"`data/cinematic/` is **source**, not generated: authored, committed, reviewed in a "
             f"diff. See `data/cinematic/README.md`. Reference stills are linked; "
             f"{videos}/{tcount} techniques have a reference video.", ""]
@@ -603,6 +611,103 @@ def main() -> int:
         lines = ["# Cinematic techniques", "",
                  "The catalog corpus has not been ingested. See `data/cinematic/README.md`.",
                  ""]
+
+    # -- per-technique pages (F072) -----------------------------------------
+    # One page per technique, not one page with 150 entries. A technique page is
+    # what an LLM loads when a brief names a slug; making it grep the 40 KB
+    # domain document to find out that `dolly-shot` has two declared pairings
+    # costs a context window to learn one fact.
+    tech_dir = OUT / "techniques"
+    tech_dir.mkdir(parents=True, exist_ok=True)
+    for old in tech_dir.glob("*.md"):
+        old.unlink()
+    page_count = 0
+    for r in cat_rows:
+        tl = [f"# {r['title']}", "",
+              f"`{r['name']}` · {r['cat_label']} · level {r['level'] or '—'}", ""]
+        if r["video_url"]:
+            tl += [f"Reference video: `{r['video_url']}`", ""]
+        elif cat_rows and any(x["video_url"] for x in cat_rows):
+            tl += ["No reference video for this technique.", ""]
+        tl += ["## Prompt (verbatim, `[Subject]` intact)", "", "```", r["prompt_text"], "```", ""]
+        if r["lede_text"]:
+            tl += [clip(r["lede_text"], 600), ""]
+        if r["when_to_use_text"]:
+            tl += ["**When to use.** " + clip(r["when_to_use_text"], 400), ""]
+        if r["directing_text"]:
+            tl += ["**Directing the AI.** " + clip(r["directing_text"], 500), ""]
+        mist = Q("SELECT text FROM technique_section WHERE technique_id=? AND kind='common_mistake'"
+                 " ORDER BY ord", (r["id"],))
+        if mist:
+            tl.append("**Common mistakes.**")
+            for m in mist:
+                tl.append(f"- {clip(m['text'], 240)}")
+            tl.append("")
+        tools = Q("""SELECT a.key, a.label, p.params, p.version_tag, p.tested
+                     FROM technique_tool_param p JOIN ai_tool a ON a.id=p.tool_id
+                     WHERE p.technique_id=? ORDER BY a.key""", (r["id"],))
+        if tools:
+            tl += ["| tool | params | version | tested |", "|---|---|---|---|"]
+            for t in tools:
+                tl.append(f"| `{t['key']}` | "
+                          f"{('`' + t['params'] + '`') if t['params'] else '**null**'} | "
+                          f"{t['version_tag'] or '—'} | {'yes' if t['tested'] else 'no'} |")
+            tl.append("")
+        mot = Q("""SELECT m.kind, s.key style, sc.name card, cc.key category,
+                          sc.duration_frames
+                   FROM technique_motion m JOIN style s ON s.id=m.style_id
+                   LEFT JOIN shot_card sc ON sc.id=s.card_id
+                   LEFT JOIN category cc ON cc.id=sc.category_id
+                   WHERE m.technique_id=? ORDER BY sc.name, s.key""", (r["id"],))
+        tl.append("## Motion pairings")
+        if mot:
+            tl += ["", "**Declared, not inferred.** These come from an explicit "
+                      "`styles:` list in `data/cinematic/<slug>.md`, authored in "
+                      "`platform/catalog/pairings.py`. Nothing here is matched by "
+                      "name similarity.", ""]
+            tl += ["| kind | shot card | category | frames | style |",
+                   "|---|---|---|---|---|"]
+            for m in mot:
+                tl.append(f"| {m['kind']} | `{m['card'] or '—'}` | {m['category'] or '—'} | "
+                          f"{m['duration_frames'] or '—'} | `{m['style']}` |")
+            tl.append("")
+            tl += ["```", f"python platform/query.py technique-motions {r['name']}", "```", ""]
+        else:
+            tl += ["", "**None declared.** No entry in `platform/catalog/pairings.py` "
+                      "maps this technique to a shot card, so this page does not "
+                      "claim one. Pairing is authored, never guessed — a wrong "
+                      "pairing hands a client a duration and an easing and looks "
+                      "researched.", ""]
+        cites = Q("SELECT title, url FROM technique_citation WHERE technique_id=? ORDER BY ord",
+                  (r["id"],))
+        if cites:
+            tl.append("## Sources")
+            tl.append("")
+            for c in cites:
+                tl.append(f"- {c['title']}" + (f" — <{c['url']}>" if c["url"] else ""))
+            tl.append("")
+        sibs = re.findall(r"\[([^\]]+)\]\((\w[\w-]*)\.md\)",
+                          (ROOT / "data" / "cinematic" / f"{r['name']}.md").read_text(
+                              encoding="utf-8").split("## Related")[-1]
+                          if (ROOT / "data" / "cinematic" / f"{r['name']}.md").exists() else "")
+        if sibs:
+            tl += ["## Related techniques", ""]
+            tl += [f"- [{s}]({s}.md)" for s in sibs]
+            tl.append("")
+        (tech_dir / f"{r['name']}.md").write_text("\n".join(tl), encoding="utf-8")
+        page_count += 1
+
+    lines += ["", "## Per-technique pages", "",
+              f"One page per technique, {page_count} in total, so loading a single "
+              f"technique does not cost a 40 KB document:", "",
+              "| technique | category | level | video | pairings |",
+              "|---|---|---|---|---|"]
+    for r in cat_rows:
+        mot_n = Q("SELECT COUNT(*) n FROM technique_motion WHERE technique_id=?",
+                  (r["id"],))[0]["n"]
+        lines.append(f"| [{r['name']}](../techniques/{r['name']}.md) | {r['cat_key']} | "
+                     f"{r['level'] or '—'} | {'yes' if r['video_url'] else 'no'} | {mot_n} |")
+    lines.append("")
     (OUT / "domains" / "cinematic.md").write_text("\n".join(lines), encoding="utf-8")
 
     # ------------------------------------------------- domain: overview
@@ -750,6 +855,16 @@ def main() -> int:
         "paths": {
             "/": {"get": {"summary": "Health check and the route list"}},
             "/locales": {"get": {"summary": "Locales and how many strings each has"}},
+            "/techniques": {"get": {"summary": "The cinematic-technique catalog with a "
+                                                "cross-tool matrix summary per technique"}},
+            "/optimize/{slug}": {"get": {
+                "summary": "One technique, every tool: the verbatim prompt, each tool's "
+                           "parameters, and whether any cell has been run",
+                "parameters": [{"name": "tool", "in": "query",
+                                "schema": {"type": "string",
+                                           "enum": ["mj61", "runway_gen3", "veo2",
+                                                    "kling15", "luma", "pika15", "sora"]},
+                                "description": "restrict to one tool; omit for all seven"}]}},
             "/categories": {"get": {"summary": "The 10 card categories with counts"}},
             "/cards": {"get": {"summary": f"All {stats['cards']} shot cards",
                                "parameters": [

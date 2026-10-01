@@ -1,0 +1,142 @@
+{
+  "category": "lighting",
+  "category_label": "Lighting",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Film Lighting",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Raising fill until the face becomes flat and directionless, erasing the visual hierarchy established by the key light."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using a small hard fill source that casts its own sharp shadow and reveals the artificial lighting setup."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Changing the fill ratio between adjacent shots, causing skin contrast and shadow detail to jump during the edit."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Fill light softening the shadows on [Subject], a gentle secondary source creating a 4:1 contrast ratio, the shadow side retaining detail and color rather than falling to black, the fill large and diffused so it wraps without creating competing shadows, shot on 35mm Kodak Vision3 with a 65mm lens, the nuanced lighting ratio that separates professional from amateur cinematography",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "fill-light",
+  "source": {
+    "authored_lede": "A secondary light used to soften or fill in shadows created by the key light, controlling the contrast ratio of the scene — more fill means softer, less fill means more dramatic. The fill light ratio is one of the most consequential creative decisions in cinematography. Gordon Willis deliberately withheld fill in \"The Godfather,\" letting shadows go black, while Robert Richardson uses generous fill in Scorsese's \"Hugo\" to create a warm, inviting visual world. Roger Deakins is known for using minimal, precisely placed fill — often just a white card or bounce — to retain naturalism while keeping shadow detail alive in films like \"No Country for Old Men.\"",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Establish the key light first, then add a broad, diffused secondary source near the camera side. Ask for soft shadow recovery without a second visible shadow or competing highlight. Define the desired contrast clearly: the shadow side should retain color, eye detail, and facial structure while staying darker than the key side. Keep the fill neutral unless the environment motivates a tint. Across video shots, preserve the same key-to-fill relationship so contrast does not pulse between cuts.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/fill-light.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/fill-light.md",
+    "video_url": null,
+    "when_to_use": "Bring in fill light when the key creates the right direction but the shadows hide too much story information. It is useful for dialogue, portraits, product work, and any scene where faces must remain dimensional yet readable. More fill creates a gentle, open image; less fill preserves danger and mystery. Treat the fill level as an emotional decision, especially when matching several shots within the same conversation or sequence."
+  },
+  "title": "\"Fill Light Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Fill light softening the shadows on [Subject], a gentle secondary source creating a 4:1 contrast ratio, the shadow side retaining detail and color rather than falling to black, the fill large and diffused so it wraps without creating competing shadows, shot on 35mm Kodak Vision3 with a 65mm lens, the nuanced lighting ratio that separates professional from amateur cinematography camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Fill light softening the shadows on [Subject], a gentle secondary source creating a 4:1 contrast ratio, the shadow side retaining detail and color rather than falling to black, the fill large and diffused so it wraps without creating competing shadows, shot on 35mm Kodak Vision3 with a 65mm lens, the nuanced lighting ratio that separates professional from amateur cinematography aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Fill light softening the shadows on [Subject], a gentle secondary source creating a 4:1 contrast ratio, the shadow side retaining detail and color rather than falling to black, the fill large and diffused so it wraps without creating competing shadows, shot on 35mm Kodak Vision3 with a 65mm lens, the nuanced lighting ratio that separates professional from amateur cinematography --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Fill light softening the shadows on [Subject], a gentle secondary source creating a 4:1 contrast ratio, the shadow side retaining detail and color rather than falling to black, the fill large and diffused so it wraps without creating competing shadows, shot on 35mm Kodak Vision3 with a 65mm lens, the nuanced lighting ratio that separates professional from amateur cinematography aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Fill light softening the shadows on [Subject], a gentle secondary source creating a 4:1 contrast ratio, the shadow side retaining detail and color rather than falling to black, the fill large and diffused so it wraps without creating competing shadows, shot on 35mm Kodak Vision3 with a 65mm lens, the nuanced lighting ratio that separates professional from amateur cinematography motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Fill light softening the shadows on [Subject], a gentle secondary source creating a 4:1 contrast ratio, the shadow side retaining detail and color rather than falling to black, the fill large and diffused so it wraps without creating competing shadows, shot on 35mm Kodak Vision3 with a 65mm lens, the nuanced lighting ratio that separates professional from amateur cinematography style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Fill light softening the shadows on [Subject], a gentle secondary source creating a 4:1 contrast ratio, the shadow side retaining detail and color rather than falling to black, the fill large and diffused so it wraps without creating competing shadows, shot on 35mm Kodak Vision3 with a 65mm lens, the nuanced lighting ratio that separates professional from amateur cinematography resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

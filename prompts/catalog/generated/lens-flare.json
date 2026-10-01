@@ -1,0 +1,142 @@
+{
+  "category": "lighting",
+  "category_label": "Lighting",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Film Lighting",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Covering every frame with identical flare artifacts, which makes the effect feel composited rather than caused by a moving light source."
+    },
+    {
+      "is_critical": 1,
+      "ord": 1,
+      "text": "Letting bright streaks cross the subject's eyes or essential action without a narrative reason, destroying clarity at the focal point."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Mixing several unrelated flare shapes and colors until the optics no longer appear to belong to one coherent lens."
+    }
+  ],
+  "motion": [
+    {
+      "card": "text-as-mask",
+      "category": "opening",
+      "duration_text": "5s（hold 20f + 字内漂移 80f + 放大接管 30f + 静止 20f）",
+      "energy": "mid-high",
+      "frames": 20,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "text-as-mask"
+    }
+  ],
+  "prompt": "Dramatic lens flare across [Subject], horizontal anamorphic flare streaks in cyan and magenta stretching across the entire frame, secondary ghost flares bouncing between lens elements in geometric chains, shot on vintage anamorphic Panavision C-series lenses known for their aggressive but beautiful flare characteristics, the warm amber of sunrise fighting through cool blue coating artifacts",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "lens-flare",
+  "source": {
+    "authored_lede": "Light scattering through lens elements when a bright source hits the glass — once considered a flaw, now deliberately used to add energy, realism, or a dreamy sci-fi quality. J.J. Abrams made lens flare his polarizing signature, filling \"Star Trek\" (2009) with so many anamorphic flares that the technique became a meme. Before that, Janusz Kamiński used flares expressively in \"Saving Private Ryan\" and \"Minority Report\" as a visual language for memory and futurity. Michael Bay embraces flares for action energy, while cinematographer Hoyte van Hoytema uses controlled flares in Christopher Nolan's \"Interstellar\" to suggest cosmic light bleeding into human vision.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Put a bright source at the edge of the frame or aimed toward the lens, then define the flare's path across the image. Specify a horizontal colored streak, a restrained chain of geometric ghosts, and a warm source fighting cooler coating artifacts. Keep the main face or action readable beneath the effect. For video, make the flare react to camera movement and disappear when the source is blocked; it should slide, bloom, and contract with changing alignment rather than remain pasted in place.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/lens-flare.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/lens-flare.md",
+    "video_url": null,
+    "when_to_use": "Choose lens flare when a bright source should feel physically present inside the optics rather than merely lighting the set. It can energize action, make sunlight feel immediate, or push a scene toward dreamy science fiction. Use it as an event tied to camera angle and source position, not as surface decoration. The technique works best when the flare reinforces heat, scale, memory, glare, or a moment of visual overload."
+  },
+  "title": "\"Lens Flare Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Dramatic lens flare across [Subject], horizontal anamorphic flare streaks in cyan and magenta stretching across the entire frame, secondary ghost flares bouncing between lens elements in geometric chains, shot on vintage anamorphic Panavision C-series lenses known for their aggressive but beautiful flare characteristics, the warm amber of sunrise fighting through cool blue coating artifacts camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Dramatic lens flare across [Subject], horizontal anamorphic flare streaks in cyan and magenta stretching across the entire frame, secondary ghost flares bouncing between lens elements in geometric chains, shot on vintage anamorphic Panavision C-series lenses known for their aggressive but beautiful flare characteristics, the warm amber of sunrise fighting through cool blue coating artifacts aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Dramatic lens flare across [Subject], horizontal anamorphic flare streaks in cyan and magenta stretching across the entire frame, secondary ghost flares bouncing between lens elements in geometric chains, shot on vintage anamorphic Panavision C-series lenses known for their aggressive but beautiful flare characteristics, the warm amber of sunrise fighting through cool blue coating artifacts --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Dramatic lens flare across [Subject], horizontal anamorphic flare streaks in cyan and magenta stretching across the entire frame, secondary ghost flares bouncing between lens elements in geometric chains, shot on vintage anamorphic Panavision C-series lenses known for their aggressive but beautiful flare characteristics, the warm amber of sunrise fighting through cool blue coating artifacts aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Dramatic lens flare across [Subject], horizontal anamorphic flare streaks in cyan and magenta stretching across the entire frame, secondary ghost flares bouncing between lens elements in geometric chains, shot on vintage anamorphic Panavision C-series lenses known for their aggressive but beautiful flare characteristics, the warm amber of sunrise fighting through cool blue coating artifacts motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Dramatic lens flare across [Subject], horizontal anamorphic flare streaks in cyan and magenta stretching across the entire frame, secondary ghost flares bouncing between lens elements in geometric chains, shot on vintage anamorphic Panavision C-series lenses known for their aggressive but beautiful flare characteristics, the warm amber of sunrise fighting through cool blue coating artifacts style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Dramatic lens flare across [Subject], horizontal anamorphic flare streaks in cyan and magenta stretching across the entire frame, secondary ghost flares bouncing between lens elements in geometric chains, shot on vintage anamorphic Panavision C-series lenses known for their aggressive but beautiful flare characteristics, the warm amber of sunrise fighting through cool blue coating artifacts resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

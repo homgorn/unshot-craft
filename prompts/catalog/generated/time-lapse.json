@@ -1,0 +1,152 @@
+{
+  "category": "editing",
+  "category_label": "Editing",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "What Is Film Editing?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Moving the camera without purpose, which hides the gradual pattern that time compression is meant to reveal."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Accelerating every element equally, making solid buildings wobble or permanent objects mutate with passing time."
+    },
+    {
+      "is_critical": 1,
+      "ord": 2,
+      "text": "Providing no distinct beginning or ending state, so the sequence feels busy without communicating change."
+    }
+  ],
+  "motion": [
+    {
+      "card": "speed-ramp-freeze",
+      "category": "rhythm",
+      "duration_text": "变速全程 4–5s（慢速窗 ≥40f）；定格标注全程 4–5s（定格段 ≥45f）",
+      "energy": "mid-high",
+      "frames": 40,
+      "kind": "declared",
+      "parameters": 3,
+      "style": "freeze-annotate-real"
+    },
+    {
+      "card": "speed-ramp-freeze",
+      "category": "rhythm",
+      "duration_text": "变速全程 4–5s（慢速窗 ≥40f）；定格标注全程 4–5s（定格段 ≥45f）",
+      "energy": "mid-high",
+      "frames": 40,
+      "kind": "declared",
+      "parameters": 3,
+      "style": "speed-ramp-real"
+    }
+  ],
+  "prompt": "Time-lapse of [Subject] compressed from hours into seconds, light cycling through the full spectrum of the day, shadows rotating like sundial hands, the entire rhythm of existence compressed into a single visual breath, shot on a locked-off camera with an intervalometer, the Koyaanisqatsi revelation that accelerating time reveals patterns invisible to human perception",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "time-lapse",
+  "source": {
+    "authored_lede": "Capturing frames at intervals much slower than playback speed, compressing hours, days, or months into seconds to reveal processes invisible to normal perception — clouds racing, cities pulsing. Ron Fricke's \"Koyaanisqatsi\" (with Philip Glass's score) turned time-lapse into transcendent art, showing the rhythms of nature and civilization accelerated into hypnotic visual music. Terrence Malick uses time-lapse in \"The Tree of Life\" for cosmic creation sequences. David Fincher employed time-lapse in \"Fight Club\" and \"The Curious Case of Benjamin Button\" for both practical and poetic purposes. Modern nature documentaries by BBC and National Geographic have elevated time-lapse photography to a science.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Lock the camera and define a clear start state, end state, and visible process between them. Keep permanent architecture and horizon lines stable while clouds, shadows, traffic, people, or growth accelerate through frame. Describe light cycling across a believable path, with shadows rotating consistently rather than flickering randomly. Maintain one composition throughout. Compress duration aggressively, but preserve enough intermediate stages for the transformation to read as a continuous pattern rather than unrelated snapshots.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/time-lapse.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/time-lapse.md",
+    "video_url": null,
+    "when_to_use": "Use time-lapse when the story needs to show a process whose scale exceeds ordinary screen time: daylight crossing a room, clouds building, streets filling, or a structure changing. It can bridge hours, mark labor, reveal systems, or turn gradual transformation into visual rhythm. The technique works when change is the subject; it feels empty when nothing meaningful evolves within the locked composition."
+  },
+  "title": "\"Time-Lapse Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Centering and fully lighting the entity, reducing incomprehensible presence to a conventional creature reveal."
+    },
+    {
+      "is_critical": 1,
+      "ord": 1,
+      "text": "Using random tentacles without impossible scale, wrong geometry, or any challenge to human understanding."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Making the human figure invisible, which removes the scale reference needed to communicate insignificance."
+    }
+  ],
+  "motion": [
+    {
+      "card": "fracture",
+      "category": "opening",
+      "duration_text": "约 5.2s（156f@30fps；聚合 0–2.6s · hold 1s · 飞散 1.5s）",
+      "energy": "high",
+      "frames": 156,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "fracture"
+    }
+  ],
+  "prompt": "Cosmic horror atmosphere with [Subject] dwarfed by something vast and incomprehensible at the edge of the frame, non-Euclidean geometry subtly wrong in the architecture, the Annihilation shimmer distorting organic forms, scale that makes the human figure irrelevant, deep shadow concealing shapes that should not exist, cold clinical lighting that reveals too much, the terror of understanding how small you are",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "cosmic-horror",
+  "source": {
+    "authored_lede": "A visual approach to the unknowable and incomprehensible — vast entities beyond human understanding, non-Euclidean geometry, and the terror of insignificance in an indifferent universe. Inspired by H.P. Lovecraft's literary work, the visual language was refined by John Carpenter's \"The Thing\" (1982) with its shapeshifting alien horror. Annihilation (2018) by Alex Garland brought cosmic horror to modern cinema with its shimmer-distorted landscapes. The genre's visual challenge is depicting what cannot be comprehended — using scale, distortion, and wrongness to suggest the incomprehensible.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Frame the human subject as a tiny, readable figure against an immense structure or entity partly concealed at the edge of vision. Bend architecture into subtly non-Euclidean relationships, repeat forms at impossible scales, and distort organic matter with a restrained shimmer. Use cold clinical light to reveal disturbing detail while deep shadow withholds the whole. Keep perspective internally wrong but visually coherent. The image should make scale undeniable and comprehension impossible.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/cosmic-horror.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/cosmic-horror.md",
+    "video_url": null,
+    "when_to_use": "Use cosmic horror when fear should come from incomprehensible scale, unstable reality, or the discovery that human concerns mean nothing to the larger universe. It suits alien landscapes, impossible architecture, transformations, and encounters that resist full interpretation. Show enough structure to imply a vast intelligence or force, but preserve uncertainty. A fully explained creature becomes a monster; cosmic horror needs the terror of failed understanding."
+  },
+  "title": "\"Cosmic Horror Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Cosmic horror atmosphere with [Subject] dwarfed by something vast and incomprehensible at the edge of the frame, non-Euclidean geometry subtly wrong in the architecture, the Annihilation shimmer distorting organic forms, scale that makes the human figure irrelevant, deep shadow concealing shapes that should not exist, cold clinical lighting that reveals too much, the terror of understanding how small you are camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Cosmic horror atmosphere with [Subject] dwarfed by something vast and incomprehensible at the edge of the frame, non-Euclidean geometry subtly wrong in the architecture, the Annihilation shimmer distorting organic forms, scale that makes the human figure irrelevant, deep shadow concealing shapes that should not exist, cold clinical lighting that reveals too much, the terror of understanding how small you are aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Cosmic horror atmosphere with [Subject] dwarfed by something vast and incomprehensible at the edge of the frame, non-Euclidean geometry subtly wrong in the architecture, the Annihilation shimmer distorting organic forms, scale that makes the human figure irrelevant, deep shadow concealing shapes that should not exist, cold clinical lighting that reveals too much, the terror of understanding how small you are --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Cosmic horror atmosphere with [Subject] dwarfed by something vast and incomprehensible at the edge of the frame, non-Euclidean geometry subtly wrong in the architecture, the Annihilation shimmer distorting organic forms, scale that makes the human figure irrelevant, deep shadow concealing shapes that should not exist, cold clinical lighting that reveals too much, the terror of understanding how small you are aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Cosmic horror atmosphere with [Subject] dwarfed by something vast and incomprehensible at the edge of the frame, non-Euclidean geometry subtly wrong in the architecture, the Annihilation shimmer distorting organic forms, scale that makes the human figure irrelevant, deep shadow concealing shapes that should not exist, cold clinical lighting that reveals too much, the terror of understanding how small you are motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Cosmic horror atmosphere with [Subject] dwarfed by something vast and incomprehensible at the edge of the frame, non-Euclidean geometry subtly wrong in the architecture, the Annihilation shimmer distorting organic forms, scale that makes the human figure irrelevant, deep shadow concealing shapes that should not exist, cold clinical lighting that reveals too much, the terror of understanding how small you are style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Cosmic horror atmosphere with [Subject] dwarfed by something vast and incomprehensible at the edge of the frame, non-Euclidean geometry subtly wrong in the architecture, the Annihilation shimmer distorting organic forms, scale that makes the human figure irrelevant, deep shadow concealing shapes that should not exist, cold clinical lighting that reveals too much, the terror of understanding how small you are resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

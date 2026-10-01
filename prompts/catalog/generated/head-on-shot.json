@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Letting the subject approach diagonally, which changes the shot from direct confrontation into ordinary tracking coverage."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Breaking symmetry with accidental background clutter that distracts from the figure's controlled movement toward the lens."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using a cheerful wide-angle distortion when the intended emotion depends on menace, authority, or focused intensity."
+    }
+  ],
+  "motion": [
+    {
+      "card": "basic-3d-scene",
+      "category": "camera",
+      "duration_text": "约 6.0s（180f@30fps；四站，三段飞行各 0.96s）",
+      "energy": "mid",
+      "frames": 180,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "basic-3d-scene"
+    }
+  ],
+  "prompt": "Head-on shot of [Subject] moving directly toward the camera with perfect bilateral symmetry, the camera holding its ground as the figure grows larger in frame, shot on anamorphic 40mm Panavision C-series glass with slight barrel distortion adding menace, teal shadows and amber highlights, the confrontational energy of direct approach",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "head-on-shot",
+  "source": {
+    "authored_lede": "A shot where the subject moves or faces directly toward the camera, creating a confrontational, powerful feeling as the subject approaches or stares directly at the viewer. Stanley Kubrick mastered the head-on shot with his famous \"Kubrick stare\" — characters like Alex in \"A Clockwork Orange\" and Jack Torrance in \"The Shining\" glaring directly into the lens with menacing intensity. Spike Lee's double-dolly head-on shots place characters in direct communion with the audience, while Wes Anderson uses symmetrical head-on framing as a core visual signature in every film.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Center the subject on the lens axis and establish perfect bilateral balance around them. Have the camera hold position while the figure faces or walks directly toward it, growing from a smaller frame to a dominant one. Use a moderately wide anamorphic perspective with slight barrel distortion, teal shadows, and amber highlights to add pressure. Keep lateral drift near zero. The gaze, shoulders, and direction of travel should all point straight into the camera.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/head-on-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/head-on-shot.md",
+    "video_url": "media/head-on-shot.mp4",
+    "when_to_use": "Use a head-on shot when a character must confront the audience or advance with undeniable force. Direct eye contact can signal menace, confidence, accusation, or eerie calm, while forward movement steadily increases pressure. Symmetry makes the approach feel controlled and inevitable. Save this angle for decisive entrances, threats, revelations, or stylized portraiture; repeated use can turn confrontation into a flat visual habit."
+  },
+  "title": "\"Head-On Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

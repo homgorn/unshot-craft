@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Positioning the camera around waist height, which produces an ordinary low angle without the creature-level viewpoint."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Aiming forward instead of upward, losing the collapsing verticals and overhead dominance central to the technique."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Letting ultra-wide distortion bend every line randomly, turning controlled vertigo into an unreadable fisheye effect."
+    }
+  ],
+  "motion": [
+    {
+      "card": "steep-tilt-glide",
+      "category": "camera",
+      "duration_text": "4s（120f）单镜；页面越宽越可拉长",
+      "energy": "mid-high",
+      "frames": 120,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "steep-tilt-glide"
+    }
+  ],
+  "prompt": "Worm's eye view from ground level looking straight up at [Subject], the perspective so extreme that vertical elements seem to lean inward and threaten to collapse, shot from a camera placed directly on the ground with a 14mm ultra-wide rectilinear lens pointed straight up, the barrel distortion adding to the vertiginous effect, the overwhelming scale from the perspective of the smallest creature",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "worms-eye-view",
+  "source": {
+    "authored_lede": "Camera placed at ground level looking straight up, the most extreme low angle, making everything tower above and creating a sense of awe, intimidation, or childlike wonder. Orson Welles was famous for his low-angle work in \"Citizen Kane\" and \"The Trial,\" often requiring sets to be built with ceilings — unusual for the era. Terry Gilliam employs worm's eye views in \"Brazil\" and \"12 Monkeys\" to make bureaucratic architecture oppressive. Denis Villeneuve used ground-level upward shots in \"Arrival\" when the characters first approach the alien ship, capturing the vertigo of encountering something incomprehensibly vast.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the lens directly on the ground and aim nearly straight upward. Use an ultra-wide rectilinear perspective so vertical structures surge inward toward the sky while remaining recognizably architectural. Include a small ground-edge reference for scale and position the subject above or around the lens, not merely in front of it. Control barrel distortion rather than letting it dominate. In video, use a slow tilt or passing overhead movement, preserving the grounded viewpoint.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/worms-eye-view.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/worms-eye-view.md",
+    "video_url": "media/worms-eye-view.mp4",
+    "when_to_use": "Choose a worm's eye view when the camera should occupy the smallest possible position beneath something immense. Looking almost straight up can make a building, creature, vehicle, or person feel oppressive, astonishing, or childishly wondrous. It is more extreme than a normal low angle and strongly abstracts space. Use it for encounters with scale; avoid it when facial readability or ordinary geography must remain clear."
+  },
+  "title": "\"Worm's Eye View Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

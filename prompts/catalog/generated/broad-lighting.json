@@ -1,0 +1,142 @@
+{
+  "category": "lighting",
+  "category_label": "Lighting",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Film Lighting",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Lighting the narrow far cheek instead of the broad camera-facing plane, accidentally creating the opposite portrait pattern."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Filling every facial shadow to the same value, turning an open look into flat, directionless illumination."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using broad lighting for a scene built on concealment, where its welcoming clarity works against the intended tension."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Broad lighting on [Subject] with the key illuminating the wider camera-facing side, creating an open and warm appearance with minimal shadow visible, the widening effect making the face appear fuller and more inviting, a soft box key with matching soft fill creating low contrast, shot on an 85mm lens at f/4, the even clean illumination of a romantic comedy close-up, Kodak Portra-inspired warm skin rendition",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "broad-lighting",
+  "source": {
+    "authored_lede": "The side of the face turned toward the camera receives the key light, widening the apparent face shape and creating a brighter, more open look. Broad lighting is commonly used in comedy and romantic genres where an open, welcoming quality is desired. Classic Hollywood glamour photographers like Clarence Sinclair Bull used broad lighting for approachable star portraits. In cinema, broad lighting is the default for high-key comedic scenes and sitcom-style dialogue. It works against the conventional wisdom of dramatic lighting, deliberately choosing the wider, flatter option for warmth and accessibility.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Turn the subject slightly away from camera, then place the key so it illuminates the broader face plane still visible to the viewer. Use a large soft source and restrained fill, keeping only a narrow shadow on the far side. Maintain warm skin and open eyes without flattening every contour. The camera-facing cheek should carry the brightest area. Across video coverage, preserve the subject's turn and key direction; reversing either one accidentally changes the portrait into short lighting.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/broad-lighting.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/broad-lighting.md",
+    "video_url": null,
+    "when_to_use": "Use broad lighting when a portrait should feel open, warm, accessible, or gently flattering rather than secretive. It works well for comedy, romance, interviews, and dialogue where facial information needs to arrive without friction. Because the wider camera-facing side receives the key, the face appears fuller and brighter. Choose it deliberately for emotional ease, and avoid it when the character needs a slimmer outline, concealed expression, or noir-like tension."
+  },
+  "title": "\"Broad Lighting Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Broad lighting on [Subject] with the key illuminating the wider camera-facing side, creating an open and warm appearance with minimal shadow visible, the widening effect making the face appear fuller and more inviting, a soft box key with matching soft fill creating low contrast, shot on an 85mm lens at f/4, the even clean illumination of a romantic comedy close-up, Kodak Portra-inspired warm skin rendition camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Broad lighting on [Subject] with the key illuminating the wider camera-facing side, creating an open and warm appearance with minimal shadow visible, the widening effect making the face appear fuller and more inviting, a soft box key with matching soft fill creating low contrast, shot on an 85mm lens at f/4, the even clean illumination of a romantic comedy close-up, Kodak Portra-inspired warm skin rendition aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Broad lighting on [Subject] with the key illuminating the wider camera-facing side, creating an open and warm appearance with minimal shadow visible, the widening effect making the face appear fuller and more inviting, a soft box key with matching soft fill creating low contrast, shot on an 85mm lens at f/4, the even clean illumination of a romantic comedy close-up, Kodak Portra-inspired warm skin rendition --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Broad lighting on [Subject] with the key illuminating the wider camera-facing side, creating an open and warm appearance with minimal shadow visible, the widening effect making the face appear fuller and more inviting, a soft box key with matching soft fill creating low contrast, shot on an 85mm lens at f/4, the even clean illumination of a romantic comedy close-up, Kodak Portra-inspired warm skin rendition aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Broad lighting on [Subject] with the key illuminating the wider camera-facing side, creating an open and warm appearance with minimal shadow visible, the widening effect making the face appear fuller and more inviting, a soft box key with matching soft fill creating low contrast, shot on an 85mm lens at f/4, the even clean illumination of a romantic comedy close-up, Kodak Portra-inspired warm skin rendition motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Broad lighting on [Subject] with the key illuminating the wider camera-facing side, creating an open and warm appearance with minimal shadow visible, the widening effect making the face appear fuller and more inviting, a soft box key with matching soft fill creating low contrast, shot on an 85mm lens at f/4, the even clean illumination of a romantic comedy close-up, Kodak Portra-inspired warm skin rendition style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Broad lighting on [Subject] with the key illuminating the wider camera-facing side, creating an open and warm appearance with minimal shadow visible, the widening effect making the face appear fuller and more inviting, a soft box key with matching soft fill creating low contrast, shot on an 85mm lens at f/4, the even clean illumination of a romantic comedy close-up, Kodak Portra-inspired warm skin rendition resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

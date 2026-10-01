@@ -1,0 +1,142 @@
+{
+  "category": "lighting",
+  "category_label": "Lighting",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Film Lighting",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Calling several sources the key, which destroys the single dominant direction needed to sculpt the scene coherently."
+    },
+    {
+      "is_critical": 1,
+      "ord": 1,
+      "text": "Specifying brightness without angle or quality, leaving facial shadows and material texture entirely uncontrolled."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Allowing ambient illumination to overpower the key, making the stated primary source visually irrelevant."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Strong directional key light from a single source illuminating [Subject], the light carving sharp shadows that define every contour, dust motes floating in the visible beam, the single-source authority establishing the entire mood, a Fresnel spotlight quality with defined beam edge, warm tungsten color temperature at 3200K against cool blue ambient shadow",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "key-light",
+  "source": {
+    "authored_lede": "The primary and brightest light source in a scene, whose position, intensity, and quality define the overall mood and establish the dominant direction of light and shadow. Gordon Willis, \"the Prince of Darkness,\" used deliberately underexposed key lights in \"The Godfather\" to create the shadowy world of the Corleone family. Vittorio Storaro sculpted light as pure emotion in \"Apocalypse Now\" and \"Last Tango in Paris.\" The placement and quality of the key light is the single most important creative decision in any lighting setup, shaping everything from film noir's harsh side-key to Lubezki's soft naturalistic sources.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Name the key as the brightest source and place it precisely relative to the subject, such as 45 degrees camera-left and slightly high. Describe whether its beam is hard or soft, where the nose and cheek shadows fall, and how rapidly illumination drops across the scene. A warm tungsten key against cooler ambient shadow creates readable color separation. Keep every secondary source dim enough that the key retains authority over form and mood.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/key-light.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/key-light.md",
+    "video_url": null,
+    "when_to_use": "Define the key light whenever one source must establish the scene's dominant visual logic. Its angle and hardness can make a face open, guarded, glamorous, threatening, or exhausted before secondary lights do anything. A clear key is vital in portraits and narrative scenes where viewers should understand where illumination comes from. It can stand alone or anchor a larger setup, but should never feel directionless."
+  },
+  "title": "\"Key Light Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Strong directional key light from a single source illuminating [Subject], the light carving sharp shadows that define every contour, dust motes floating in the visible beam, the single-source authority establishing the entire mood, a Fresnel spotlight quality with defined beam edge, warm tungsten color temperature at 3200K against cool blue ambient shadow camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Strong directional key light from a single source illuminating [Subject], the light carving sharp shadows that define every contour, dust motes floating in the visible beam, the single-source authority establishing the entire mood, a Fresnel spotlight quality with defined beam edge, warm tungsten color temperature at 3200K against cool blue ambient shadow aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Strong directional key light from a single source illuminating [Subject], the light carving sharp shadows that define every contour, dust motes floating in the visible beam, the single-source authority establishing the entire mood, a Fresnel spotlight quality with defined beam edge, warm tungsten color temperature at 3200K against cool blue ambient shadow --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Strong directional key light from a single source illuminating [Subject], the light carving sharp shadows that define every contour, dust motes floating in the visible beam, the single-source authority establishing the entire mood, a Fresnel spotlight quality with defined beam edge, warm tungsten color temperature at 3200K against cool blue ambient shadow aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Strong directional key light from a single source illuminating [Subject], the light carving sharp shadows that define every contour, dust motes floating in the visible beam, the single-source authority establishing the entire mood, a Fresnel spotlight quality with defined beam edge, warm tungsten color temperature at 3200K against cool blue ambient shadow motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Strong directional key light from a single source illuminating [Subject], the light carving sharp shadows that define every contour, dust motes floating in the visible beam, the single-source authority establishing the entire mood, a Fresnel spotlight quality with defined beam edge, warm tungsten color temperature at 3200K against cool blue ambient shadow style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Strong directional key light from a single source illuminating [Subject], the light carving sharp shadows that define every contour, dust motes floating in the visible beam, the single-source authority establishing the entire mood, a Fresnel spotlight quality with defined beam edge, warm tungsten color temperature at 3200K against cool blue ambient shadow resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

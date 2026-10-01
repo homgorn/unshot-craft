@@ -1,0 +1,152 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Arranging the trio in a flat shoulder-to-shoulder row, which hides alliances and makes the composition feel posed."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Giving all three characters equal visual weight when the scene depends on one person being isolated or dominant."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Allowing eyelines to point randomly, making the characters appear disconnected from the conversation or standoff."
+    }
+  ],
+  "motion": [
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "drone-dive-landing"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "exploded-view"
+    }
+  ],
+  "prompt": "Three-shot of [Subject] arranged in a triangular composition across the widescreen frame, each occupying their own third, the triangular formation revealing tension between completely different energies colliding at a single point, shot on anamorphic 50mm with the wide frame emphasizing space between the three figures",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "three-shot",
+  "source": {
+    "authored_lede": "A shot framing three subjects, often used to show group dynamics, alliances, or the odd-one-out tension within a trio. Sergio Leone perfected the three-shot in the climactic standoff of \"The Good, the Bad and the Ugly,\" cycling between three armed men in a graveyard to create one of cinema's most iconic compositions. Akira Kurosawa uses triangular three-shots in \"Rashomon\" to stage conflicting testimonies, and the Coen Brothers frequently compose three-shots in their ensemble comedies like \"The Big Lebowski\" to play dynamics of alliance and exclusion within a group.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place three subjects at distinct points of a triangle across the widescreen frame, varying depth or height to establish hierarchy. Give each person a readable eyeline and body orientation toward or away from the others. Keep the spaces between them clear so alliance and exclusion can shift through movement. Use an anamorphic field without crowding the edges. In video, specify the gesture or step that changes the triangle and redistributes visual weight.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/three-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/three-shot.md",
+    "video_url": "media/three-shot.mp4",
+    "when_to_use": "Choose a three-shot when the drama comes from a trio rather than three separate characters. Triangular placement can reveal two against one, a mediator caught between rivals, or unstable alliances that change inside the scene. It suits standoffs, negotiations, comedy, and family tension. Avoid lining everyone up equally unless neutrality is intentional; the arrangement should make the group's emotional geometry visible."
+  },
+  "title": "\"Three-Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

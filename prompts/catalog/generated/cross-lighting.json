@@ -1,0 +1,142 @@
+{
+  "category": "lighting",
+  "category_label": "Lighting",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Film Lighting",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Blending the opposing colors across the entire subject, producing a muddy wash instead of two clearly directed sources."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Giving both lights equal frontal coverage, which flattens form and defeats the sculptural purpose of cross lighting."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Ignoring separate shadow directions, making the warm and cool highlights feel decorative rather than physically present in the space."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Cross-lighting from two opposing sources on [Subject], a warm tungsten source from one side casting amber highlights while a cool blue-white source from the other paints steel tones, the two competing colors meeting in a narrow strip of mixed light, each surface independently sculpted by the dual sources, shot on 35mm Kodak Vision3 500T to handle the mixed color temperatures with richness, a 50mm lens capturing the sculptural dimensionality",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "cross-lighting",
+  "source": {
+    "authored_lede": "Two light sources positioned on opposite sides of the subject, creating a complex interplay of highlights and shadows that sculpt form from multiple directions. Ridley Scott used cross-lighting extensively in \"Blade Runner\" to create the layered, multi-source atmosphere of a neon-drenched dystopia. Michael Mann employs cross-lighting in his nighttime cityscapes, with competing sources from streetlights, car headlights, and building illumination. The technique is also central to fashion and music video cinematography, where Bradford Young and Linus Sandgren create rich, multi-dimensional looks by playing sources against each other.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place two sources on opposite sides of the subject. Give one a warm amber character and the other a cooler blue-white tone, then specify which planes each source catches. Keep a narrow transition where the colors meet rather than blending everything into uniform purple. Let the sources cast shadows away from their own directions, with neither behaving like frontal fill. In video, lock both lights to motivated positions and track how their influence changes as the subject crosses between them.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/cross-lighting.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/cross-lighting.md",
+    "video_url": null,
+    "when_to_use": "Choose cross lighting when one source cannot explain the layered energy of a night exterior, stage, fashion frame, or neon interior. Opposing sources can carve different surfaces and separate a subject from several directions at once. The technique is especially useful when warm and cool environments collide. It demands control: each source needs a believable origin, and their overlap should create complexity without turning skin, costumes, or props into random patches of color."
+  },
+  "title": "\"Cross Lighting Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Cross-lighting from two opposing sources on [Subject], a warm tungsten source from one side casting amber highlights while a cool blue-white source from the other paints steel tones, the two competing colors meeting in a narrow strip of mixed light, each surface independently sculpted by the dual sources, shot on 35mm Kodak Vision3 500T to handle the mixed color temperatures with richness, a 50mm lens capturing the sculptural dimensionality camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Cross-lighting from two opposing sources on [Subject], a warm tungsten source from one side casting amber highlights while a cool blue-white source from the other paints steel tones, the two competing colors meeting in a narrow strip of mixed light, each surface independently sculpted by the dual sources, shot on 35mm Kodak Vision3 500T to handle the mixed color temperatures with richness, a 50mm lens capturing the sculptural dimensionality aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Cross-lighting from two opposing sources on [Subject], a warm tungsten source from one side casting amber highlights while a cool blue-white source from the other paints steel tones, the two competing colors meeting in a narrow strip of mixed light, each surface independently sculpted by the dual sources, shot on 35mm Kodak Vision3 500T to handle the mixed color temperatures with richness, a 50mm lens capturing the sculptural dimensionality --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Cross-lighting from two opposing sources on [Subject], a warm tungsten source from one side casting amber highlights while a cool blue-white source from the other paints steel tones, the two competing colors meeting in a narrow strip of mixed light, each surface independently sculpted by the dual sources, shot on 35mm Kodak Vision3 500T to handle the mixed color temperatures with richness, a 50mm lens capturing the sculptural dimensionality aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Cross-lighting from two opposing sources on [Subject], a warm tungsten source from one side casting amber highlights while a cool blue-white source from the other paints steel tones, the two competing colors meeting in a narrow strip of mixed light, each surface independently sculpted by the dual sources, shot on 35mm Kodak Vision3 500T to handle the mixed color temperatures with richness, a 50mm lens capturing the sculptural dimensionality motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Cross-lighting from two opposing sources on [Subject], a warm tungsten source from one side casting amber highlights while a cool blue-white source from the other paints steel tones, the two competing colors meeting in a narrow strip of mixed light, each surface independently sculpted by the dual sources, shot on 35mm Kodak Vision3 500T to handle the mixed color temperatures with richness, a 50mm lens capturing the sculptural dimensionality style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Cross-lighting from two opposing sources on [Subject], a warm tungsten source from one side casting amber highlights while a cool blue-white source from the other paints steel tones, the two competing colors meeting in a narrow strip of mixed light, each surface independently sculpted by the dual sources, shot on 35mm Kodak Vision3 500T to handle the mixed color temperatures with richness, a 50mm lens capturing the sculptural dimensionality resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

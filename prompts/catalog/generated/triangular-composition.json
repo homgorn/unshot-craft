@@ -1,0 +1,142 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Placing three figures on one horizontal line, which removes the apex and collapses the intended hierarchy."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Drawing obvious triangular props around the group, making the underlying compositional structure feel literal and forced."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Overlapping the lower anchors behind the dominant subject, so the three points cannot be read as separate positions."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Triangular composition with [Subject] arranged to form a triangle within the frame, the apex drawing the eye first then naturally guiding it down along the diagonal lines to the base, shot on a 50mm lens at eye level, the classical compositional structure that Da Vinci and Kurosawa both understood as the geometry of power and stability",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "triangular-composition",
+  "source": {
+    "authored_lede": "Arranging key elements to form a triangle within the frame, creating a stable, hierarchical structure that naturally guides the eye between three points of interest. Renaissance painters like Leonardo da Vinci used triangular composition as a foundation — the Mona Lisa and The Last Supper are both built on triangular structures. Akira Kurosawa arranges his samurai in triangular formations for stability and power in \"Seven Samurai.\" Steven Spielberg uses triangular staging in his group dialogue scenes, and Kubrick's symmetrical compositions often embed triangular sub-structures that give the frame its sense of architectural solidity.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Choose the dominant subject as the apex and place two secondary anchors lower and farther apart to form the base. Use gaze, shoulders, furniture, or architectural lines to reinforce the triangle without drawing it literally. Keep each point visually distinct and prevent overlapping heads. Adjust height and width to control stability: a broad base feels grounded, while a narrow steep form feels more hierarchical. In video, preserve the relationship through blocking as speakers shift attention.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/triangular-composition.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/triangular-composition.md",
+    "video_url": null,
+    "when_to_use": "Triangular composition works when three people, objects, or visual anchors need a stable relationship and clear hierarchy. It suits group dialogue, leadership tableaux, family scenes, and moments where an apex should dominate two supporting points. The eye naturally moves around the triangle, making dense blocking easier to read. Use variation in height and spacing; a perfectly equilateral arrangement can feel ceremonial, while an uneven triangle creates more tension without losing structure."
+  },
+  "title": "\"Triangular Composition Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Triangular composition with [Subject] arranged to form a triangle within the frame, the apex drawing the eye first then naturally guiding it down along the diagonal lines to the base, shot on a 50mm lens at eye level, the classical compositional structure that Da Vinci and Kurosawa both understood as the geometry of power and stability camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Triangular composition with [Subject] arranged to form a triangle within the frame, the apex drawing the eye first then naturally guiding it down along the diagonal lines to the base, shot on a 50mm lens at eye level, the classical compositional structure that Da Vinci and Kurosawa both understood as the geometry of power and stability aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Triangular composition with [Subject] arranged to form a triangle within the frame, the apex drawing the eye first then naturally guiding it down along the diagonal lines to the base, shot on a 50mm lens at eye level, the classical compositional structure that Da Vinci and Kurosawa both understood as the geometry of power and stability --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Triangular composition with [Subject] arranged to form a triangle within the frame, the apex drawing the eye first then naturally guiding it down along the diagonal lines to the base, shot on a 50mm lens at eye level, the classical compositional structure that Da Vinci and Kurosawa both understood as the geometry of power and stability aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Triangular composition with [Subject] arranged to form a triangle within the frame, the apex drawing the eye first then naturally guiding it down along the diagonal lines to the base, shot on a 50mm lens at eye level, the classical compositional structure that Da Vinci and Kurosawa both understood as the geometry of power and stability motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Triangular composition with [Subject] arranged to form a triangle within the frame, the apex drawing the eye first then naturally guiding it down along the diagonal lines to the base, shot on a 50mm lens at eye level, the classical compositional structure that Da Vinci and Kurosawa both understood as the geometry of power and stability style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Triangular composition with [Subject] arranged to form a triangle within the frame, the apex drawing the eye first then naturally guiding it down along the diagonal lines to the base, shot on a 50mm lens at eye level, the classical compositional structure that Da Vinci and Kurosawa both understood as the geometry of power and stability resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

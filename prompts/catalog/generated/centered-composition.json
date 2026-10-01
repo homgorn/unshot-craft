@@ -1,0 +1,142 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Centering the subject while architecture and vanishing lines sit off-axis, making the composition feel carelessly misaligned."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using central placement in every shot, reducing a forceful choice to an unexamined visual habit with no escalation."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Adding several equally bright side elements, which pull attention away from the exact axis the composition establishes."
+    }
+  ],
+  "motion": [
+    {
+      "card": "orbit-ring-title-open",
+      "category": "opening",
+      "duration_text": "约 4.3s（130f@30fps；标题落定 f50 到退场 f108 之间是 1.9s 稳态巡回）",
+      "energy": "mid",
+      "frames": 130,
+      "kind": "declared",
+      "parameters": 12,
+      "style": "orbit-ring-title-open"
+    }
+  ],
+  "prompt": "Centered composition with [Subject] at the exact mathematical center, the space arranged in perfect bilateral symmetry around them, the deliberate center placement creating ritual importance and confrontational directness, shot on a 28mm lens from a locked tripod at center height, deep focus rendering every detail sharp, Wes Anderson planimetric aesthetic meets Kubrick one-point-perspective severity",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "centered-composition",
+  "source": {
+    "authored_lede": "Placing the subject dead center in the frame — when done deliberately, it creates a powerful, confrontational, or hypnotically ordered effect that requires confidence and intentionality. Wes Anderson builds his entire visual identity around centered subjects, creating his trademark \"planimetric\" compositions. Kubrick's centered one-point-perspective shots in \"The Shining\" and \"Full Metal Jacket\" use the center position for maximum psychological impact. Jonathan Demme's centered close-ups in \"Silence of the Lambs\" break the conventional off-center framing of dialogue scenes to create confrontational direct address.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the subject's central axis on the exact midpoint of the frame and align the camera with the environment's vanishing point. Arrange surrounding forms to reinforce that position through symmetry, converging lines, or balanced negative space. Keep lens height level and make any asymmetry deliberate. The subject may look directly into camera for confrontation or remain still within the ordered space. For video, use locked framing or movement straight toward the center axis without lateral drift.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/centered-composition.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/centered-composition.md",
+    "video_url": null,
+    "when_to_use": "Centered composition is powerful when the subject should confront the viewer, command ritual importance, or become the fixed axis of an ordered world. Use it for direct address, formal portraits, one-point perspective, deadpan comedy, and psychologically rigid spaces. It requires confidence because the eye notices every imbalance around the center. Avoid default centering for convenience; the frame should gain pressure, clarity, or hypnotic order from the decision."
+  },
+  "title": "\"Centered Composition Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Centered composition with [Subject] at the exact mathematical center, the space arranged in perfect bilateral symmetry around them, the deliberate center placement creating ritual importance and confrontational directness, shot on a 28mm lens from a locked tripod at center height, deep focus rendering every detail sharp, Wes Anderson planimetric aesthetic meets Kubrick one-point-perspective severity camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Centered composition with [Subject] at the exact mathematical center, the space arranged in perfect bilateral symmetry around them, the deliberate center placement creating ritual importance and confrontational directness, shot on a 28mm lens from a locked tripod at center height, deep focus rendering every detail sharp, Wes Anderson planimetric aesthetic meets Kubrick one-point-perspective severity aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Centered composition with [Subject] at the exact mathematical center, the space arranged in perfect bilateral symmetry around them, the deliberate center placement creating ritual importance and confrontational directness, shot on a 28mm lens from a locked tripod at center height, deep focus rendering every detail sharp, Wes Anderson planimetric aesthetic meets Kubrick one-point-perspective severity --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Centered composition with [Subject] at the exact mathematical center, the space arranged in perfect bilateral symmetry around them, the deliberate center placement creating ritual importance and confrontational directness, shot on a 28mm lens from a locked tripod at center height, deep focus rendering every detail sharp, Wes Anderson planimetric aesthetic meets Kubrick one-point-perspective severity aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Centered composition with [Subject] at the exact mathematical center, the space arranged in perfect bilateral symmetry around them, the deliberate center placement creating ritual importance and confrontational directness, shot on a 28mm lens from a locked tripod at center height, deep focus rendering every detail sharp, Wes Anderson planimetric aesthetic meets Kubrick one-point-perspective severity motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Centered composition with [Subject] at the exact mathematical center, the space arranged in perfect bilateral symmetry around them, the deliberate center placement creating ritual importance and confrontational directness, shot on a 28mm lens from a locked tripod at center height, deep focus rendering every detail sharp, Wes Anderson planimetric aesthetic meets Kubrick one-point-perspective severity style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Centered composition with [Subject] at the exact mathematical center, the space arranged in perfect bilateral symmetry around them, the deliberate center placement creating ritual importance and confrontational directness, shot on a 28mm lens from a locked tripod at center height, deep focus rendering every detail sharp, Wes Anderson planimetric aesthetic meets Kubrick one-point-perspective severity resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

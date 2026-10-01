@@ -1,0 +1,152 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Making the subject so invisible that the frame reads only as landscape rather than a deliberate scale comparison."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using shallow depth of field, which collapses the vast environmental detail needed to communicate distance and isolation."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Crowding the horizon with several competing focal points that weaken the lone figure's compositional importance."
+    }
+  ],
+  "motion": [
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "drone-dive-landing"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "exploded-view"
+    }
+  ],
+  "prompt": "Extreme long shot of [Subject] barely visible against a vast landscape stretching to the horizon, a single long shadow the only vertical element in a perfectly horizontal world, sky gradient from pale white at the horizon to deep cerulean overhead, shot on large format 65mm film, infinite depth of field rendering everything sharp from feet to infinity, Lawrence of Arabia scale and desolation",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "extreme-long-shot",
+  "source": {
+    "authored_lede": "A very wide shot where the subject appears small against a vast environment, emphasizing scale, isolation, or the overwhelming nature of the surroundings. David Lean defined the technique in \"Lawrence of Arabia,\" where Peter O'Toole becomes a speck against infinite desert horizons, communicating both the grandeur and the punishing emptiness of the landscape. Terrence Malick uses extreme long shots in \"The Thin Red Line\" to dwarf soldiers against indifferent nature, and Chloé Zhao employed them throughout \"Nomadland\" to place Frances McDormand's van as a tiny vessel adrift in the American West.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Make the subject a small but intentional mark against a horizon-spanning environment. Describe a dominant horizontal composition, immense negative space, and one long shadow or contrasting color that lets the figure register. Keep detail sharp from near ground to distant horizon, with a pale-to-cerulean sky gradient reinforcing depth. For moving footage, use a nearly static frame or a very slow lateral drift; rapid movement destroys the patient comparison between human scale and landscape.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/extreme-long-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/extreme-long-shot.md",
+    "video_url": "media/extreme-long-shot.mp4",
+    "when_to_use": "Use an extreme long shot when the environment should overwhelm the person inside it. It suits desert crossings, isolated vehicles, battlefields, migration, wilderness, and moments when distance itself is the emotion. The subject may be tiny, but must remain compositionally discoverable. Choose this scale for grandeur, loneliness, or indifference; switch closer when gesture, identity, or dialogue becomes the dramatic center."
+  },
+  "title": "\"Extreme Long Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

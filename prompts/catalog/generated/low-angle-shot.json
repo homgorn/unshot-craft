@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Placing the lens only slightly below eye level, producing a neutral portrait with no meaningful upward pressure."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using an ultra-wide lens too close to the face, creating comic distortion instead of deliberate dominance."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Ignoring the background, even though converging architecture or open sky is central to the angle's sense of scale."
+    }
+  ],
+  "motion": [
+    {
+      "card": "steep-tilt-glide",
+      "category": "camera",
+      "duration_text": "4s（120f）单镜；页面越宽越可拉长",
+      "energy": "mid-high",
+      "frames": 120,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "steep-tilt-glide"
+    }
+  ],
+  "prompt": "Low angle shot looking up at [Subject] from below, the camera positioned at ground level shooting upward through converging vertical lines, shot on Cooke S4 18mm wide-angle lens exaggerating the height distortion, high-contrast Kodak Double-X black and white aesthetic, Citizen Kane grandeur",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "low-angle-shot",
+  "source": {
+    "authored_lede": "Camera positioned below the subject, looking up, making the subject appear dominant, powerful, heroic, or imposing. Orson Welles used low angles obsessively in \"Citizen Kane,\" famously requiring trenches cut into studio floors to achieve extreme upward perspectives on Charles Foster Kane, visually encoding his megalomania into every frame. Quentin Tarantino's iconic trunk shots — looking up at characters from inside a car trunk — are a playful variation, and Christopher Nolan used low angles throughout \"The Dark Knight\" to make Batman a towering mythic figure against Gotham's skyline.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Lower the camera beneath the subject's eye line and point upward through converging walls, columns, or skyline. A wide lens can stretch height, but keep the face and body recognizable rather than grotesquely warped. Give the subject a firm stance and place open sky or strong architecture behind them. High-contrast monochrome treatment can reinforce authority. In motion, advance carefully or hold position; random tilt changes weaken the stable power relationship.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/low-angle-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/low-angle-shot.md",
+    "video_url": "media/low-angle-shot.mp4",
+    "when_to_use": "Use a low angle to make a person, structure, or object command the frame. The upward view can express authority, threat, heroism, arrogance, or awe depending on performance and light. It also lets architecture converge behind the subject, increasing apparent height. Choose it for power shifts and monumental introductions. Avoid using it automatically for every hero, since dominance without narrative reason quickly becomes visual cliché."
+  },
+  "title": "\"Low Angle Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

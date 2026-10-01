@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Cropping at the waist, which removes the holster zone and turns the image into a standard medium shot."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Hiding both hands behind props or frame edges, losing the latent action that gives the composition tension."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using an exaggerated low angle by default, piling obvious dominance onto framing that already carries authority."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Cowboy shot of [Subject] framed from mid-thigh up, hands hanging loose at their sides, the figure's posture radiating coiled readiness beneath apparent calm, shot on Techniscope 2-perf 35mm for a gritty widescreen look, warm dusty color palette of ochre and leather brown",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "cowboy-shot",
+  "source": {
+    "authored_lede": "Frames the subject from roughly mid-thigh up, named after Western films where the frame needed to include a gunslinger's holstered weapon, conveying casual authority. Sergio Leone codified this framing in his Dollars trilogy, making the cowboy shot synonymous with Clint Eastwood's laconic gunfighter stance. Tarantino pays homage to the cowboy shot throughout \"Kill Bill\" and \"Django Unchained,\" and it has migrated beyond Westerns — John Woo uses the same mid-thigh framing for his dual-pistol action heroes in \"Hard Boiled\" and \"The Killer.\"",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Crop the figure at mid-thigh, keeping both hands visible and enough headroom for a stable silhouette. Ask for a relaxed but ready posture, with weight distribution and wardrobe details doing as much work as expression. Use a gritty widescreen texture, warm ochre and leather tones, and a natural perspective that does not stretch the legs. In video, hold the framing through hand movement rather than automatically pushing closer to the face.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/cowboy-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/cowboy-shot.md",
+    "video_url": "media/cowboy-shot.mp4",
+    "when_to_use": "Use the cowboy shot when a character's hands, hips, stance, or carried weapon matters alongside the face. Mid-thigh framing conveys readiness and casual authority without losing expression. It fits Western tension, action entrances, fashion, and any moment built around what someone might reach for. Choose a medium shot for more conversational ease, or a full long shot when footwork and environment matter."
+  },
+  "title": "\"Cowboy Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

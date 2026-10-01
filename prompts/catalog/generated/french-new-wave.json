@@ -1,0 +1,202 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Combining every New Wave device in each shot, turning rebellion into a rigid checklist of effects."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using polished studio light and locked framing while relying on wardrobe alone to suggest the movement."
+    },
+    {
+      "is_critical": 1,
+      "ord": 2,
+      "text": "Cutting continuity randomly, without preserving the character impulse that makes rough editing feel alive."
+    }
+  ],
+  "motion": [
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "black-card-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "dark-tunnel-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "focus-handoff-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "mask-wipe-real"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "portal-wipe-v2"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "whip-brake-real"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "whip-pan-real"
+    }
+  ],
+  "prompt": "French New Wave scene with [Subject] shot handheld on what appears to be stolen moments, the camera following with improvisational looseness, harsh midday sun creating unflattering but honest illumination, the composition casual rather than composed, the visual rebellion against studio perfection, high-contrast black and white on grainy 16mm stock, the Raoul Coutard handheld aesthetic",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "french-new-wave",
+  "source": {
+    "authored_lede": "A 1960s movement that broke every rule — jump cuts, handheld cameras, location shooting, fourth-wall breaks, and a rebellious rejection of polished studio filmmaking, treating cinema as conversation. Jean-Luc Godard's \"Breathless\" (1960) and François Truffaut's \"The 400 Blows\" (1959) launched the movement, joined by Agnès Varda, Jacques Rivette, Eric Rohmer, and Claude Chabrol. Cinematographer Raoul Coutard defined the visual style — handheld 16mm, natural light, real Parisian locations. The movement's influence is incalculable: Scorsese, Tarantino, Wes Anderson, Sofia Coppola, and Noah Baumbach all trace their artistic lineage directly to the Nouvelle Vague.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Shoot on real streets in hard midday light with grainy high-contrast black and white or restrained natural color. Follow the subject handheld with loose reframing, occasional focus correction, and casual composition. Let jump cuts remove pieces of continuous action while preserving its emotional line. Permit a glance into lens or an abrupt pan when character energy demands it. Keep location sound and uncontrolled background life visible; the city should feel captured, not dressed.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/french-new-wave.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/french-new-wave.md",
+    "video_url": null,
+    "when_to_use": "Use French New Wave style when the film should feel youthful, immediate, self-aware, and resistant to studio polish. It suits street romance, restless conversation, playful crime, and characters who seem to invent the movie as they live it. The style can combine handheld location work, jump cuts, direct address, and rough natural light. Choose rule-breaking that expresses attitude rather than collecting fashionable imperfections."
+  },
+  "title": "\"French New Wave Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "French New Wave scene with [Subject] shot handheld on what appears to be stolen moments, the camera following with improvisational looseness, harsh midday sun creating unflattering but honest illumination, the composition casual rather than composed, the visual rebellion against studio perfection, high-contrast black and white on grainy 16mm stock, the Raoul Coutard handheld aesthetic camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "French New Wave scene with [Subject] shot handheld on what appears to be stolen moments, the camera following with improvisational looseness, harsh midday sun creating unflattering but honest illumination, the composition casual rather than composed, the visual rebellion against studio perfection, high-contrast black and white on grainy 16mm stock, the Raoul Coutard handheld aesthetic aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "French New Wave scene with [Subject] shot handheld on what appears to be stolen moments, the camera following with improvisational looseness, harsh midday sun creating unflattering but honest illumination, the composition casual rather than composed, the visual rebellion against studio perfection, high-contrast black and white on grainy 16mm stock, the Raoul Coutard handheld aesthetic --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "French New Wave scene with [Subject] shot handheld on what appears to be stolen moments, the camera following with improvisational looseness, harsh midday sun creating unflattering but honest illumination, the composition casual rather than composed, the visual rebellion against studio perfection, high-contrast black and white on grainy 16mm stock, the Raoul Coutard handheld aesthetic aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "French New Wave scene with [Subject] shot handheld on what appears to be stolen moments, the camera following with improvisational looseness, harsh midday sun creating unflattering but honest illumination, the composition casual rather than composed, the visual rebellion against studio perfection, high-contrast black and white on grainy 16mm stock, the Raoul Coutard handheld aesthetic motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "French New Wave scene with [Subject] shot handheld on what appears to be stolen moments, the camera following with improvisational looseness, harsh midday sun creating unflattering but honest illumination, the composition casual rather than composed, the visual rebellion against studio perfection, high-contrast black and white on grainy 16mm stock, the Raoul Coutard handheld aesthetic style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "French New Wave scene with [Subject] shot handheld on what appears to be stolen moments, the camera following with improvisational looseness, harsh midday sun creating unflattering but honest illumination, the composition casual rather than composed, the visual rebellion against studio perfection, high-contrast black and white on grainy 16mm stock, the Raoul Coutard handheld aesthetic resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

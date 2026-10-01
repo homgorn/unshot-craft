@@ -1,0 +1,152 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Adding anonymous blurred blobs at the corners, with no recognizable connection to the location or the scene's meaning."
+    },
+    {
+      "is_critical": 1,
+      "ord": 1,
+      "text": "Covering the subject's face or action with foreground objects that create obstruction without tension, context, or reveal."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Moving all depth planes at the same screen speed, eliminating the parallax that makes foreground layering physically convincing."
+    }
+  ],
+  "motion": [
+    {
+      "card": "depth-layer-moves",
+      "category": "camera",
+      "duration_text": "视差滑轨 4–5s 持续；dolly-zoom 3–4s 单向行程",
+      "energy": null,
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 3,
+      "style": "dolly-zoom-real"
+    },
+    {
+      "card": "depth-layer-moves",
+      "category": "camera",
+      "duration_text": "视差滑轨 4–5s 持续；dolly-zoom 3–4s 单向行程",
+      "energy": null,
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 3,
+      "style": "multiplane-real"
+    }
+  ],
+  "prompt": "Foreground interest composition with [Subject] in the mid-ground and blurred elements dominating the immediate foreground, three distinct depth planes creating immersive physical space, the foreground elements partially obscuring the subject adding voyeuristic tension, shot on a 40mm lens at T2 creating visible focus separation between planes, Kodak 5219 500T with desaturated earth tones, the Spielberg technique of putting the viewer inside the world",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "foreground-interest",
+  "source": {
+    "authored_lede": "Placing objects or elements in the immediate foreground to add depth and dimension, creating a layered image that draws the viewer through multiple planes of the composition. Steven Spielberg consistently uses foreground objects — a glass of water in \"Jurassic Park,\" toys in \"E.T.\" — to add depth and narrative context. Roger Deakins layers his compositions with foreground elements in \"Skyfall\" and \"Blade Runner 2049\" to create immersive three-dimensionality. Emmanuel Lubezki places branches, grass, and natural elements in the immediate foreground of nearly every exterior shot in Malick's films to create the feeling of being inside the environment rather than observing it.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place a large object very close to the camera, partially entering the frame, with the main subject in the middle ground and a readable background beyond. Decide whether the foreground stays soft, sharp, reflective, or silhouetted based on its role. Use overlap to establish depth without covering the subject's essential action. For video, let parallax separate the planes during camera movement; nearby elements should travel faster across frame than distant ones.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/foreground-interest.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/foreground-interest.md",
+    "video_url": null,
+    "when_to_use": "Foreground interest helps when a scene feels flat, observed from outside, or short on spatial tension. Use nearby branches, glass, furniture, props, architecture, or partial figures to place the viewer inside the environment. It can add context, concealment, scale, or a voyeuristic edge while guiding attention toward mid-ground action. The foreground object should belong to the location and support the scene; random blur at the frame edge is not enough."
+  },
+  "title": "\"Foreground Interest Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Foreground interest composition with [Subject] in the mid-ground and blurred elements dominating the immediate foreground, three distinct depth planes creating immersive physical space, the foreground elements partially obscuring the subject adding voyeuristic tension, shot on a 40mm lens at T2 creating visible focus separation between planes, Kodak 5219 500T with desaturated earth tones, the Spielberg technique of putting the viewer inside the world camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Foreground interest composition with [Subject] in the mid-ground and blurred elements dominating the immediate foreground, three distinct depth planes creating immersive physical space, the foreground elements partially obscuring the subject adding voyeuristic tension, shot on a 40mm lens at T2 creating visible focus separation between planes, Kodak 5219 500T with desaturated earth tones, the Spielberg technique of putting the viewer inside the world aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Foreground interest composition with [Subject] in the mid-ground and blurred elements dominating the immediate foreground, three distinct depth planes creating immersive physical space, the foreground elements partially obscuring the subject adding voyeuristic tension, shot on a 40mm lens at T2 creating visible focus separation between planes, Kodak 5219 500T with desaturated earth tones, the Spielberg technique of putting the viewer inside the world --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Foreground interest composition with [Subject] in the mid-ground and blurred elements dominating the immediate foreground, three distinct depth planes creating immersive physical space, the foreground elements partially obscuring the subject adding voyeuristic tension, shot on a 40mm lens at T2 creating visible focus separation between planes, Kodak 5219 500T with desaturated earth tones, the Spielberg technique of putting the viewer inside the world aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Foreground interest composition with [Subject] in the mid-ground and blurred elements dominating the immediate foreground, three distinct depth planes creating immersive physical space, the foreground elements partially obscuring the subject adding voyeuristic tension, shot on a 40mm lens at T2 creating visible focus separation between planes, Kodak 5219 500T with desaturated earth tones, the Spielberg technique of putting the viewer inside the world motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Foreground interest composition with [Subject] in the mid-ground and blurred elements dominating the immediate foreground, three distinct depth planes creating immersive physical space, the foreground elements partially obscuring the subject adding voyeuristic tension, shot on a 40mm lens at T2 creating visible focus separation between planes, Kodak 5219 500T with desaturated earth tones, the Spielberg technique of putting the viewer inside the world style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Foreground interest composition with [Subject] in the mid-ground and blurred elements dominating the immediate foreground, three distinct depth planes creating immersive physical space, the foreground elements partially obscuring the subject adding voyeuristic tension, shot on a 40mm lens at T2 creating visible focus separation between planes, Kodak 5219 500T with desaturated earth tones, the Spielberg technique of putting the viewer inside the world resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

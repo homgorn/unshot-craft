@@ -1,0 +1,152 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Requesting cinematic depth of field without naming a focus plane, leaving sharpness arbitrary and unstable across the image."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Applying equal blur to objects at different distances, which destroys the gradual spatial cues created by optical focus."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Keeping the background soft when its action carries essential story information that should remain available to the viewer."
+    }
+  ],
+  "motion": [
+    {
+      "card": "depth-layer-moves",
+      "category": "camera",
+      "duration_text": "视差滑轨 4–5s 持续；dolly-zoom 3–4s 单向行程",
+      "energy": null,
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 3,
+      "style": "dolly-zoom-real"
+    },
+    {
+      "card": "depth-layer-moves",
+      "category": "camera",
+      "duration_text": "视差滑轨 4–5s 持续；dolly-zoom 3–4s 单向行程",
+      "energy": null,
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 3,
+      "style": "multiplane-real"
+    }
+  ],
+  "prompt": "Selective depth of field isolating [Subject] in a narrow focused slice, everything in front and behind melting into graduated blur, the cinematic depth of field that modern anamorphic and large-format cinematography has made the visual signature of prestige filmmaking, shot on a large format sensor with an 85mm lens at T1.3",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "depth-of-field",
+  "source": {
+    "authored_lede": "The range of distance in a scene that appears acceptably sharp — manipulating depth of field controls what the viewer focuses on and how they perceive spatial depth. The creative use of depth of field defines entirely different cinematic schools: Gregg Toland's infinite depth in \"Citizen Kane\" versus the paper-thin focus of Wong Kar-wai's films. Robert Richardson uses depth of field as an emotional instrument in Oliver Stone's \"JFK\" and Tarantino's \"The Hateful Eight.\" Modern large-format sensors on cameras like the ARRI Alexa 65 have given cinematographers like Hoyte van Hoytema and Linus Sandgren even more control over focus separation.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "State the nearest and farthest distances that should appear sharp, then identify the exact focal subject. For selective depth, ask for progressive blur before and behind that plane; for broad depth, preserve readable detail through foreground, middle ground, and background. Match apparent focus behavior to perspective and distance. In video, specify whether focus stays locked, follows the subject, or transfers deliberately between planes. Keep the transition smooth and motivated by attention.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/depth-of-field.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/depth-of-field.md",
+    "video_url": null,
+    "when_to_use": "Depth of field is a core choice whenever the audience needs guidance about where to look and how much of the space matters. Narrow focus isolates emotion or detail; broad focus reveals relationships across the frame. Use it to control intimacy, suspense, information, and spatial depth. Decide before prompting whether the background is context, distraction, or active story. That decision should determine focus range, not a default preference for cinematic blur."
+  },
+  "title": "\"Depth of Field Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Selective depth of field isolating [Subject] in a narrow focused slice, everything in front and behind melting into graduated blur, the cinematic depth of field that modern anamorphic and large-format cinematography has made the visual signature of prestige filmmaking, shot on a large format sensor with an 85mm lens at T1.3 camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Selective depth of field isolating [Subject] in a narrow focused slice, everything in front and behind melting into graduated blur, the cinematic depth of field that modern anamorphic and large-format cinematography has made the visual signature of prestige filmmaking, shot on a large format sensor with an 85mm lens at T1.3 aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Selective depth of field isolating [Subject] in a narrow focused slice, everything in front and behind melting into graduated blur, the cinematic depth of field that modern anamorphic and large-format cinematography has made the visual signature of prestige filmmaking, shot on a large format sensor with an 85mm lens at T1.3 --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Selective depth of field isolating [Subject] in a narrow focused slice, everything in front and behind melting into graduated blur, the cinematic depth of field that modern anamorphic and large-format cinematography has made the visual signature of prestige filmmaking, shot on a large format sensor with an 85mm lens at T1.3 aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Selective depth of field isolating [Subject] in a narrow focused slice, everything in front and behind melting into graduated blur, the cinematic depth of field that modern anamorphic and large-format cinematography has made the visual signature of prestige filmmaking, shot on a large format sensor with an 85mm lens at T1.3 motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Selective depth of field isolating [Subject] in a narrow focused slice, everything in front and behind melting into graduated blur, the cinematic depth of field that modern anamorphic and large-format cinematography has made the visual signature of prestige filmmaking, shot on a large format sensor with an 85mm lens at T1.3 style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Selective depth of field isolating [Subject] in a narrow focused slice, everything in front and behind melting into graduated blur, the cinematic depth of field that modern anamorphic and large-format cinematography has made the visual signature of prestige filmmaking, shot on a large format sensor with an 85mm lens at T1.3 resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "category": "lighting",
+  "category_label": "Lighting",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Film Lighting",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Making key and fill equally bright, which flattens the face and removes the setup's directional hierarchy."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using a backlight so strong that it creates a white cutout around hair and shoulders."
+    },
+    {
+      "is_critical": 1,
+      "ord": 2,
+      "text": "Listing three lights without positions or ratios, leaving the resulting illumination arbitrary rather than intentionally structured."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Classic three-point lighting on [Subject], the key light at 45 degrees creating defined shadow, a soft fill light gently opening the shadows, a warm-toned backlight rimming the edges with a thin golden halo, the balanced interplay sculpting the form into three dimensions, shot on medium format with an 80mm portrait lens at f/2.8, Kodak Portra color science with creamy skin tones and deep velvety blacks",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "three-point-lighting",
+  "source": {
+    "authored_lede": "The foundational lighting setup using three sources: a key light as the primary source, a fill light to soften shadows, and a backlight to separate the subject from the background. Developed during Hollywood's Golden Age by cinematographers like James Wong Howe and Gregg Toland, three-point lighting became the grammar of classical Hollywood cinema. It defined the glamorous look of stars from Garbo to Monroe and remains the starting point for all narrative lighting. Modern cinematographers like Roger Deakins and Janusz Kamiński build upon and deconstruct this foundation in every film they shoot.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the key about 45 degrees to one side and above the subject, creating a clear modeled shadow. Add a softer, dimmer fill from the opposite side that opens detail without erasing shape. Position a warm backlight behind and above to trace shoulders and hair while avoiding lens flare. Describe the relative intensity and color of all three sources. Keep the background darker enough that separation remains visible without making the rim look pasted on.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/three-point-lighting.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/three-point-lighting.md",
+    "video_url": null,
+    "when_to_use": "Use three-point lighting when you need a flexible, readable foundation for portraits, interviews, dialogue, product work, or narrative coverage. The key establishes direction, fill controls contrast, and backlight separates the subject from the setting. It can look polished or dramatic depending on ratios. Treat it as a starting structure rather than a compulsory formula; some scenes are stronger with one motivated source."
+  },
+  "title": "\"Three-Point Lighting Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Classic three-point lighting on [Subject], the key light at 45 degrees creating defined shadow, a soft fill light gently opening the shadows, a warm-toned backlight rimming the edges with a thin golden halo, the balanced interplay sculpting the form into three dimensions, shot on medium format with an 80mm portrait lens at f/2.8, Kodak Portra color science with creamy skin tones and deep velvety blacks camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Classic three-point lighting on [Subject], the key light at 45 degrees creating defined shadow, a soft fill light gently opening the shadows, a warm-toned backlight rimming the edges with a thin golden halo, the balanced interplay sculpting the form into three dimensions, shot on medium format with an 80mm portrait lens at f/2.8, Kodak Portra color science with creamy skin tones and deep velvety blacks aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Classic three-point lighting on [Subject], the key light at 45 degrees creating defined shadow, a soft fill light gently opening the shadows, a warm-toned backlight rimming the edges with a thin golden halo, the balanced interplay sculpting the form into three dimensions, shot on medium format with an 80mm portrait lens at f/2.8, Kodak Portra color science with creamy skin tones and deep velvety blacks --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Classic three-point lighting on [Subject], the key light at 45 degrees creating defined shadow, a soft fill light gently opening the shadows, a warm-toned backlight rimming the edges with a thin golden halo, the balanced interplay sculpting the form into three dimensions, shot on medium format with an 80mm portrait lens at f/2.8, Kodak Portra color science with creamy skin tones and deep velvety blacks aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Classic three-point lighting on [Subject], the key light at 45 degrees creating defined shadow, a soft fill light gently opening the shadows, a warm-toned backlight rimming the edges with a thin golden halo, the balanced interplay sculpting the form into three dimensions, shot on medium format with an 80mm portrait lens at f/2.8, Kodak Portra color science with creamy skin tones and deep velvety blacks motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Classic three-point lighting on [Subject], the key light at 45 degrees creating defined shadow, a soft fill light gently opening the shadows, a warm-toned backlight rimming the edges with a thin golden halo, the balanced interplay sculpting the form into three dimensions, shot on medium format with an 80mm portrait lens at f/2.8, Kodak Portra color science with creamy skin tones and deep velvety blacks style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Classic three-point lighting on [Subject], the key light at 45 degrees creating defined shadow, a soft fill light gently opening the shadows, a warm-toned backlight rimming the edges with a thin golden halo, the balanced interplay sculpting the form into three dimensions, shot on medium format with an 80mm portrait lens at f/2.8, Kodak Portra color science with creamy skin tones and deep velvety blacks resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

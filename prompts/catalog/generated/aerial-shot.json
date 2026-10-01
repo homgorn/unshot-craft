@@ -1,0 +1,162 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Setting the camera high without defining its angle, leaving the result confused between an aerial view and an overhead diagram."
+    },
+    {
+      "is_critical": 1,
+      "ord": 1,
+      "text": "Filling every part of the landscape with equal detail, so the subject disappears without a deliberate scale relationship."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Requesting fast drone movement when the scene needs grandeur, which turns a measured reveal into restless travel footage."
+    }
+  ],
+  "motion": [
+    {
+      "card": "crane-rise-reveal",
+      "category": "opening",
+      "duration_text": "5s（特写 hold 20f + 拉升 100f + 满幅静止 30f）",
+      "energy": "mid-high",
+      "frames": 20,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "crane-rise-reveal"
+    },
+    {
+      "card": "overhead-camera-moves",
+      "category": "camera",
+      "duration_text": "A ~4.8s / B ~4.7s",
+      "energy": null,
+      "frames": 144,
+      "kind": "declared",
+      "parameters": 8,
+      "style": "overhead-tabletop-drop"
+    },
+    {
+      "card": "overhead-camera-moves",
+      "category": "camera",
+      "duration_text": "A ~4.8s / B ~4.7s",
+      "energy": null,
+      "frames": 144,
+      "kind": "declared",
+      "parameters": 8,
+      "style": "tilt-reveal"
+    }
+  ],
+  "prompt": "Sweeping aerial shot of [Subject] seen from 300 feet above, captured at golden hour with warm amber light painting one side of the terrain while the other falls into deep violet shadow, volumetric god rays piercing through scattered cumulus clouds, shot on ARRI Alexa 65 with Hasselblad glass, 8K resolution, Kodak Vision3 250D color science, subtle atmospheric haze layering depth into the landscape",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "aerial-shot",
+  "source": {
+    "authored_lede": "A shot captured from high above the ground, typically using a drone or helicopter, providing a sweeping view of landscapes, cityscapes, or large-scale action. The aerial perspective conveys omniscience, freedom, or the terrifying scale of nature. David Lean pioneered epic aerial work in \"Lawrence of Arabia,\" while Ridley Scott used helicopter shots to establish the grandeur of ancient Rome in \"Gladiator.\" More recently, Denis Villeneuve employed haunting aerial compositions in \"Sicario\" to reveal the eerie geometry of border landscapes.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the camera roughly 300 feet above the subject and describe a broad downward view rather than a straight top-down angle. Keep a recognizable focal point inside the terrain, then build depth with foreground landforms, distant layers, atmospheric haze, and scattered clouds. Let warm golden-hour light strike one side of the landscape while deep violet shadow holds the other. For motion, specify a slow, stable glide that preserves scale and horizon orientation.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/aerial-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/aerial-shot.md",
+    "video_url": "media/aerial-shot.mp4",
+    "when_to_use": "Choose an aerial shot when geography matters as much as the subject. It can introduce a city, expose the geometry of a border or road network, track large-scale action, or reduce a person to a vulnerable mark inside the landscape. The height creates emotional distance, so use it for omniscience, freedom, grandeur, or environmental threat rather than intimate character beats."
+  },
+  "title": "\"Aerial Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Sweeping aerial shot of [Subject] seen from 300 feet above, captured at golden hour with warm amber light painting one side of the terrain while the other falls into deep violet shadow, volumetric god rays piercing through scattered cumulus clouds, shot on ARRI Alexa 65 with Hasselblad glass, 8K resolution, Kodak Vision3 250D color science, subtle atmospheric haze layering depth into the landscape camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Sweeping aerial shot of [Subject] seen from 300 feet above, captured at golden hour with warm amber light painting one side of the terrain while the other falls into deep violet shadow, volumetric god rays piercing through scattered cumulus clouds, shot on ARRI Alexa 65 with Hasselblad glass, 8K resolution, Kodak Vision3 250D color science, subtle atmospheric haze layering depth into the landscape aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Sweeping aerial shot of [Subject] seen from 300 feet above, captured at golden hour with warm amber light painting one side of the terrain while the other falls into deep violet shadow, volumetric god rays piercing through scattered cumulus clouds, shot on ARRI Alexa 65 with Hasselblad glass, 8K resolution, Kodak Vision3 250D color science, subtle atmospheric haze layering depth into the landscape --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Sweeping aerial shot of [Subject] seen from 300 feet above, captured at golden hour with warm amber light painting one side of the terrain while the other falls into deep violet shadow, volumetric god rays piercing through scattered cumulus clouds, shot on ARRI Alexa 65 with Hasselblad glass, 8K resolution, Kodak Vision3 250D color science, subtle atmospheric haze layering depth into the landscape aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Sweeping aerial shot of [Subject] seen from 300 feet above, captured at golden hour with warm amber light painting one side of the terrain while the other falls into deep violet shadow, volumetric god rays piercing through scattered cumulus clouds, shot on ARRI Alexa 65 with Hasselblad glass, 8K resolution, Kodak Vision3 250D color science, subtle atmospheric haze layering depth into the landscape motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Sweeping aerial shot of [Subject] seen from 300 feet above, captured at golden hour with warm amber light painting one side of the terrain while the other falls into deep violet shadow, volumetric god rays piercing through scattered cumulus clouds, shot on ARRI Alexa 65 with Hasselblad glass, 8K resolution, Kodak Vision3 250D color science, subtle atmospheric haze layering depth into the landscape style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Sweeping aerial shot of [Subject] seen from 300 feet above, captured at golden hour with warm amber light painting one side of the terrain while the other falls into deep violet shadow, volumetric god rays piercing through scattered cumulus clouds, shot on ARRI Alexa 65 with Hasselblad glass, 8K resolution, Kodak Vision3 250D color science, subtle atmospheric haze layering depth into the landscape resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

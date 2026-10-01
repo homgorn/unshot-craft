@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Changing recording formats and artifact styles between shots without a story reason for the source change."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Showing the threat clearly in centered light, removing the uncertainty that makes limited footage frightening."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Ignoring the camera operator's motive, so continued filming during danger feels implausible and mechanically convenient."
+    }
+  ],
+  "motion": [
+    {
+      "card": "graze-face-tour",
+      "category": "camera",
+      "duration_text": "单段 4–5s；可多段接力延长",
+      "energy": "mid-high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "graze-face-tour"
+    }
+  ],
+  "prompt": "Found footage shot of [Subject] through a consumer-grade camera in night vision mode, the entire image in distinctive green-tinged infrared, the framing chaotic and uncontrolled, the footage corrupted with digital artifacts and compression blocks, timestamp running in the corner, the Blair Witch principle that what you cannot clearly see is infinitely more terrifying, the aesthetic of authenticity as horror's most effective weapon",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "found-footage",
+  "source": {
+    "authored_lede": "A style presenting the film as discovered amateur or surveillance recordings — \"The Blair Witch Project,\" \"Paranormal Activity,\" the conceit that what you're watching is \"real\" raw footage. Ruggero Deodato's \"Cannibal Holocaust\" (1980) invented the format, so convincingly that the director was charged with murder before proving the actors were alive. \"The Blair Witch Project\" (1999) made found footage a cultural phenomenon and a marketing revolution. \"Cloverfield\" brought the style to blockbuster scale, and \"Paranormal Activity\" proved it could be extraordinarily profitable. The format exploits our associations between low production quality and authenticity.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Choose a specific recording source and keep its limitations consistent: consumer camera, night vision, surveillance angle, or phone-like handheld footage. Add reactive framing, delayed pans, autofocus hunting, compression blocks, and a stable timestamp without obscuring essential action. In darkness, reveal partial shapes at the edge rather than a fully lit threat. Let the operator's breath, movement, and fear affect the image. Preserve continuous geography so uncertainty comes from visibility, not incoherence.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/found-footage.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/found-footage.md",
+    "video_url": null,
+    "when_to_use": "Use found footage when the recording itself is part of the story: evidence, a recovered diary, surveillance, or a final document of danger. It is especially effective for horror because limited framing and imperfect visibility force the audience to search the image. Define who holds the camera and why they keep filming. Without that motivation, chaotic footage feels like an effect rather than discovered material."
+  },
+  "title": "\"Found Footage Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Found footage shot of [Subject] through a consumer-grade camera in night vision mode, the entire image in distinctive green-tinged infrared, the framing chaotic and uncontrolled, the footage corrupted with digital artifacts and compression blocks, timestamp running in the corner, the Blair Witch principle that what you cannot clearly see is infinitely more terrifying, the aesthetic of authenticity as horror's most effective weapon camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Found footage shot of [Subject] through a consumer-grade camera in night vision mode, the entire image in distinctive green-tinged infrared, the framing chaotic and uncontrolled, the footage corrupted with digital artifacts and compression blocks, timestamp running in the corner, the Blair Witch principle that what you cannot clearly see is infinitely more terrifying, the aesthetic of authenticity as horror's most effective weapon aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Found footage shot of [Subject] through a consumer-grade camera in night vision mode, the entire image in distinctive green-tinged infrared, the framing chaotic and uncontrolled, the footage corrupted with digital artifacts and compression blocks, timestamp running in the corner, the Blair Witch principle that what you cannot clearly see is infinitely more terrifying, the aesthetic of authenticity as horror's most effective weapon --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Found footage shot of [Subject] through a consumer-grade camera in night vision mode, the entire image in distinctive green-tinged infrared, the framing chaotic and uncontrolled, the footage corrupted with digital artifacts and compression blocks, timestamp running in the corner, the Blair Witch principle that what you cannot clearly see is infinitely more terrifying, the aesthetic of authenticity as horror's most effective weapon aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Found footage shot of [Subject] through a consumer-grade camera in night vision mode, the entire image in distinctive green-tinged infrared, the framing chaotic and uncontrolled, the footage corrupted with digital artifacts and compression blocks, timestamp running in the corner, the Blair Witch principle that what you cannot clearly see is infinitely more terrifying, the aesthetic of authenticity as horror's most effective weapon motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Found footage shot of [Subject] through a consumer-grade camera in night vision mode, the entire image in distinctive green-tinged infrared, the framing chaotic and uncontrolled, the footage corrupted with digital artifacts and compression blocks, timestamp running in the corner, the Blair Witch principle that what you cannot clearly see is infinitely more terrifying, the aesthetic of authenticity as horror's most effective weapon style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Found footage shot of [Subject] through a consumer-grade camera in night vision mode, the entire image in distinctive green-tinged infrared, the framing chaotic and uncontrolled, the footage corrupted with digital artifacts and compression blocks, timestamp running in the corner, the Blair Witch principle that what you cannot clearly see is infinitely more terrifying, the aesthetic of authenticity as horror's most effective weapon resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

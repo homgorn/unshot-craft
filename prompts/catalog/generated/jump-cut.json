@@ -1,0 +1,152 @@
+{
+  "category": "editing",
+  "category_label": "Editing",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "What Is Film Editing?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Changing angle, lens, and location together, which reads as a conventional cut instead of a temporal jump."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Smoothing the discontinuity with motion interpolation or dissolves, removing the jolt that gives the technique its character."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Allowing the subject's identity or wardrobe to drift between cuts, turning intentional fragmentation into continuity failure."
+    }
+  ],
+  "motion": [
+    {
+      "card": "beat-cut-moves",
+      "category": "rhythm",
+      "duration_text": "A 全程 ~4.3s（建立 49f + 五连切 + 定格 hold 35f）；B 全程 ~4.3s（活素材 30f + 三闪 + hold 60f）",
+      "energy": "high",
+      "frames": 49,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "beat-cut-accelerando"
+    },
+    {
+      "card": "beat-cut-moves",
+      "category": "rhythm",
+      "duration_text": "A 全程 ~4.3s（建立 49f + 五连切 + 定格 hold 35f）；B 全程 ~4.3s（活素材 30f + 三闪 + hold 60f）",
+      "energy": "high",
+      "frames": 49,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "paparazzi-flash"
+    }
+  ],
+  "prompt": "Jump cut sequence of [Subject] with the background and position shifting abruptly between cuts while the camera angle remains essentially the same, the jarring temporal discontinuity making time feel broken and reassembled, each cut a tiny violence against smooth continuity, shot on handheld 16mm with rough grain and blown-out highlights, the French New Wave rebellion against invisible editing",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "jump-cut",
+  "source": {
+    "authored_lede": "A cut between two sequential shots of the same subject from a similar angle, creating a jarring jump in time — once considered a mistake, now used intentionally for energy, anxiety, or time compression. Jean-Luc Godard made the jump cut famous in \"Breathless\" (1960), using it partly out of necessity to trim a too-long film and partly as a deliberate rejection of smooth Hollywood continuity. The technique became a signature of the French New Wave and has since been adopted by filmmakers from Guy Ritchie to Gus Van Sant. Darren Aronofsky uses rapid-fire jump cuts in \"Requiem for a Dream\" to convey the fragmented consciousness of addiction.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Lock a similar camera angle and framing across several sequential moments, then remove the connecting motion between them. Let the subject's pose, background position, or object state jump forward while the setup remains recognizably the same. Keep each discontinuity sharp, with no dissolve or smoothing. Vary interval length to shape rhythm without losing the pattern. Maintain identity, wardrobe, and location details so the audience reads broken time rather than unrelated replacement shots.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/jump-cut.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/jump-cut.md",
+    "video_url": null,
+    "when_to_use": "Use a jump cut when smooth continuity would hide the anxiety, speed, boredom, or fragmentation inside a moment. It can compress repeated action, expose missing time, or make a performance feel unstable. Keep camera angle and subject similar enough that the temporal jump reads clearly. The cut should feel intentionally abrupt, not like failed coverage. It works especially well in restless portraits, routines, travel, rehearsal, and subjective sequences."
+  },
+  "title": "\"Jump Cut Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Jump cut sequence of [Subject] with the background and position shifting abruptly between cuts while the camera angle remains essentially the same, the jarring temporal discontinuity making time feel broken and reassembled, each cut a tiny violence against smooth continuity, shot on handheld 16mm with rough grain and blown-out highlights, the French New Wave rebellion against invisible editing camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Jump cut sequence of [Subject] with the background and position shifting abruptly between cuts while the camera angle remains essentially the same, the jarring temporal discontinuity making time feel broken and reassembled, each cut a tiny violence against smooth continuity, shot on handheld 16mm with rough grain and blown-out highlights, the French New Wave rebellion against invisible editing aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Jump cut sequence of [Subject] with the background and position shifting abruptly between cuts while the camera angle remains essentially the same, the jarring temporal discontinuity making time feel broken and reassembled, each cut a tiny violence against smooth continuity, shot on handheld 16mm with rough grain and blown-out highlights, the French New Wave rebellion against invisible editing --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Jump cut sequence of [Subject] with the background and position shifting abruptly between cuts while the camera angle remains essentially the same, the jarring temporal discontinuity making time feel broken and reassembled, each cut a tiny violence against smooth continuity, shot on handheld 16mm with rough grain and blown-out highlights, the French New Wave rebellion against invisible editing aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Jump cut sequence of [Subject] with the background and position shifting abruptly between cuts while the camera angle remains essentially the same, the jarring temporal discontinuity making time feel broken and reassembled, each cut a tiny violence against smooth continuity, shot on handheld 16mm with rough grain and blown-out highlights, the French New Wave rebellion against invisible editing motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Jump cut sequence of [Subject] with the background and position shifting abruptly between cuts while the camera angle remains essentially the same, the jarring temporal discontinuity making time feel broken and reassembled, each cut a tiny violence against smooth continuity, shot on handheld 16mm with rough grain and blown-out highlights, the French New Wave rebellion against invisible editing style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Jump cut sequence of [Subject] with the background and position shifting abruptly between cuts while the camera angle remains essentially the same, the jarring temporal discontinuity making time feel broken and reassembled, each cut a tiny violence against smooth continuity, shot on handheld 16mm with rough grain and blown-out highlights, the French New Wave rebellion against invisible editing resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

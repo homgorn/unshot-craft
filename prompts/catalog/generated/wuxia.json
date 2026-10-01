@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Crowding the frame with many fighters, making the choreography read as battle noise instead of visual calligraphy."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using rigid clothing and poses, which removes the flowing motion that gives wuxia action its lyricism."
+    },
+    {
+      "is_critical": 1,
+      "ord": 2,
+      "text": "Treating aerial movement as superhero flight without grounded gesture, landscape, or honor-bound dramatic tension."
+    }
+  ],
+  "motion": [
+    {
+      "card": "cel-flash-stomp",
+      "category": "typography",
+      "duration_text": "每词 ~30f × 词数 + 收尾 ≥45f；三词约 4.8s",
+      "energy": "high",
+      "frames": 30,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "cel-flash-stomp"
+    }
+  ],
+  "prompt": "Wuxia style with [Subject] in gravity-defying motion, robes and fabric trailing like calligraphy strokes through the air, the fight-as-dance choreography of Ang Lee and Zhang Yimou, painterly natural landscape behind — bamboo forests or misty mountains, the action frozen at its most balletic moment, Kodak Vision3 250D warmth, the poetry of martial arts rendered as visual art",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "wuxia",
+  "source": {
+    "authored_lede": "A Chinese genre centered on martial arts warriors bound by codes of honor, featuring gravity-defying combat choreography, flowing silk costumes, and painterly landscapes. Ang Lee's \"Crouching Tiger, Hidden Dragon\" (2000) introduced the genre to global audiences with its bamboo forest fight sequence. Zhang Yimou's \"Hero\" and \"House of Flying Daggers\" pushed the visual poetry further with color-coded narrative chapters and rain of arrows frozen in mid-air. King Hu's \"A Touch of Zen\" (1971) established the template of martial artists fighting in natural landscapes. The genre treats action as dance and violence as calligraphy.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Freeze or track the subject at the most graceful point of a leap, turn, or suspended strike. Extend robes, sleeves, hair, and fabric along the motion path like calligraphy strokes. Place the action against bamboo, misty mountains, or another painterly natural setting with warm daylight and layered depth. Keep bodies anatomically readable and weapons aligned with gesture. Choreograph opponents as a balanced composition, treating gravity-defying movement as controlled dance rather than explosive flight.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/wuxia.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/wuxia.md",
+    "video_url": null,
+    "when_to_use": "Use wuxia for martial conflict shaped by honor, loyalty, restraint, and impossible physical grace. Combat becomes dance, while landscape and costume carry emotional meaning equal to the fighters. It suits duels in bamboo, misty mountains, courtyards, and color-coded chapters. Focus on one balletic action and its moral tension; crowded chaotic fighting loses the calligraphic clarity that makes the genre distinctive."
+  },
+  "title": "\"Wuxia Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Wuxia style with [Subject] in gravity-defying motion, robes and fabric trailing like calligraphy strokes through the air, the fight-as-dance choreography of Ang Lee and Zhang Yimou, painterly natural landscape behind — bamboo forests or misty mountains, the action frozen at its most balletic moment, Kodak Vision3 250D warmth, the poetry of martial arts rendered as visual art camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Wuxia style with [Subject] in gravity-defying motion, robes and fabric trailing like calligraphy strokes through the air, the fight-as-dance choreography of Ang Lee and Zhang Yimou, painterly natural landscape behind — bamboo forests or misty mountains, the action frozen at its most balletic moment, Kodak Vision3 250D warmth, the poetry of martial arts rendered as visual art aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Wuxia style with [Subject] in gravity-defying motion, robes and fabric trailing like calligraphy strokes through the air, the fight-as-dance choreography of Ang Lee and Zhang Yimou, painterly natural landscape behind — bamboo forests or misty mountains, the action frozen at its most balletic moment, Kodak Vision3 250D warmth, the poetry of martial arts rendered as visual art --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Wuxia style with [Subject] in gravity-defying motion, robes and fabric trailing like calligraphy strokes through the air, the fight-as-dance choreography of Ang Lee and Zhang Yimou, painterly natural landscape behind — bamboo forests or misty mountains, the action frozen at its most balletic moment, Kodak Vision3 250D warmth, the poetry of martial arts rendered as visual art aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Wuxia style with [Subject] in gravity-defying motion, robes and fabric trailing like calligraphy strokes through the air, the fight-as-dance choreography of Ang Lee and Zhang Yimou, painterly natural landscape behind — bamboo forests or misty mountains, the action frozen at its most balletic moment, Kodak Vision3 250D warmth, the poetry of martial arts rendered as visual art motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Wuxia style with [Subject] in gravity-defying motion, robes and fabric trailing like calligraphy strokes through the air, the fight-as-dance choreography of Ang Lee and Zhang Yimou, painterly natural landscape behind — bamboo forests or misty mountains, the action frozen at its most balletic moment, Kodak Vision3 250D warmth, the poetry of martial arts rendered as visual art style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Wuxia style with [Subject] in gravity-defying motion, robes and fabric trailing like calligraphy strokes through the air, the fight-as-dance choreography of Ang Lee and Zhang Yimou, painterly natural landscape behind — bamboo forests or misty mountains, the action frozen at its most balletic moment, Kodak Vision3 250D warmth, the poetry of martial arts rendered as visual art resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

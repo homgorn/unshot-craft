@@ -1,0 +1,172 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Showing a beautiful location without the landmarks or spatial relationships needed to orient the next scene."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Making the principal character too large in frame, turning contextual coverage into a conventional long shot."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Packing the image with unrelated atmosphere cues that obscure the intended time, geography, or narrative tone."
+    }
+  ],
+  "motion": [
+    {
+      "card": "depth-layer-moves",
+      "category": "camera",
+      "duration_text": "视差滑轨 4–5s 持续；dolly-zoom 3–4s 单向行程",
+      "energy": null,
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 3,
+      "style": "dolly-zoom-real"
+    },
+    {
+      "card": "depth-layer-moves",
+      "category": "camera",
+      "duration_text": "视差滑轨 4–5s 持续；dolly-zoom 3–4s 单向行程",
+      "energy": null,
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 3,
+      "style": "multiplane-real"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "drone-dive-landing"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "exploded-view"
+    }
+  ],
+  "prompt": "Wide establishing shot of [Subject] at blue hour, deep indigo sky with the last traces of sunset, a few warm lights glowing from within, atmospheric haze softening the distance, shot on ARRI Alexa with Zeiss Master Primes, desaturated cool palette with selective warm accents, architectural precision meets cinematic storytelling",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "establishing-shot",
+  "source": {
+    "authored_lede": "A wide shot typically used at the beginning of a scene to set the context, showing the location, time of day, and spatial relationships before cutting to closer action. Stanley Kubrick's establishing shots in \"The Shining\" — the Overlook Hotel dwarfed by mountains — immediately communicated isolation and foreboding. Ridley Scott's opening of \"Blade Runner\" established a dystopian Los Angeles with a single, unforgettable wide shot of industrial hellscape. David Fincher meticulously crafts establishing shots that embed narrative information into every architectural detail.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Frame the location wide enough to show its dominant architecture, surrounding terrain, access points, and one small sign of life. Set the scene at blue hour with a deep indigo sky, faint sunset residue, warm interior lights, and haze softening the distance. Keep the composition legible rather than merely expansive. If generating video, begin still or with a restrained drift, allowing the viewer to map the place before any cut or character movement claims attention.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/establishing-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/establishing-shot.md",
+    "video_url": "media/establishing-shot.mp4",
+    "when_to_use": "Open with an establishing shot when viewers need to understand where the scene happens, what time or weather shapes it, and how the key spaces connect. A strong version can also seed isolation, danger, wealth, or decay through architecture and scale. Use it before tighter coverage or after a major location change. Do not spend it on a setting the audience already reads clearly."
+  },
+  "title": "\"Establishing Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Wide establishing shot of [Subject] at blue hour, deep indigo sky with the last traces of sunset, a few warm lights glowing from within, atmospheric haze softening the distance, shot on ARRI Alexa with Zeiss Master Primes, desaturated cool palette with selective warm accents, architectural precision meets cinematic storytelling camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Wide establishing shot of [Subject] at blue hour, deep indigo sky with the last traces of sunset, a few warm lights glowing from within, atmospheric haze softening the distance, shot on ARRI Alexa with Zeiss Master Primes, desaturated cool palette with selective warm accents, architectural precision meets cinematic storytelling aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Wide establishing shot of [Subject] at blue hour, deep indigo sky with the last traces of sunset, a few warm lights glowing from within, atmospheric haze softening the distance, shot on ARRI Alexa with Zeiss Master Primes, desaturated cool palette with selective warm accents, architectural precision meets cinematic storytelling --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Wide establishing shot of [Subject] at blue hour, deep indigo sky with the last traces of sunset, a few warm lights glowing from within, atmospheric haze softening the distance, shot on ARRI Alexa with Zeiss Master Primes, desaturated cool palette with selective warm accents, architectural precision meets cinematic storytelling aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Wide establishing shot of [Subject] at blue hour, deep indigo sky with the last traces of sunset, a few warm lights glowing from within, atmospheric haze softening the distance, shot on ARRI Alexa with Zeiss Master Primes, desaturated cool palette with selective warm accents, architectural precision meets cinematic storytelling motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Wide establishing shot of [Subject] at blue hour, deep indigo sky with the last traces of sunset, a few warm lights glowing from within, atmospheric haze softening the distance, shot on ARRI Alexa with Zeiss Master Primes, desaturated cool palette with selective warm accents, architectural precision meets cinematic storytelling style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Wide establishing shot of [Subject] at blue hour, deep indigo sky with the last traces of sunset, a few warm lights glowing from within, atmospheric haze softening the distance, shot on ARRI Alexa with Zeiss Master Primes, desaturated cool palette with selective warm accents, architectural precision meets cinematic storytelling resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

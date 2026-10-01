@@ -41,6 +41,37 @@ def fmt_md(cur, rows) -> str:
     return "\n".join(out)
 
 
+def _render_all_tools(t: dict, rows: list[dict]) -> str:
+    """Every tool for one technique, grouped by what we can honestly claim.
+
+    Shared by `optimize-all` and `optimize --tool all` so the two cannot drift:
+    an answer about which parameters are trustworthy must have exactly one
+    wording.
+    """
+    out = [f"{t['title']}  ({t['name']})"]
+    ready = [r for r in rows if r["params"] and r["tested"]]
+    recorded = [r for r in rows if r["params"] and not r["tested"]]
+    empty = [r for r in rows if not r["params"]]
+    out.append(f"\n{len(ready)} ready to send, {len(recorded)} recorded but never "
+               f"tested, {len(empty)} empty\n")
+    for group, title in (
+            (ready, "READY - tested against the model version"),
+            (recorded, "RECORDED - parameter exists, never run"),
+            (empty, "EMPTY - no parameter; use the base prompt and log what you change")):
+        if not group:
+            continue
+        out.append(f"## {title}")
+        for r in group:
+            out.append(f"  {r['key']:12} {r['label']:22} {str(r['params'])[:66]}")
+        out.append("")
+    out += ["## Base prompt (verbatim, [Subject] intact)", t["prompt_text"], "",
+            "No cell in the source matrix has been run against a model version, so "
+            "`READY` is empty by design.",
+            "See platform/catalog/import_cinematique.py for why the importer refuses "
+            "to mark them tested."]
+    return "\n".join(out)
+
+
 def main(argv: list[str]) -> int:
     if not DB.exists():
         print(f"missing {DB}; run platform/ingest/run.py first", file=sys.stderr)
@@ -226,6 +257,67 @@ def main(argv: list[str]) -> int:
             WHERE m.technique_id=(SELECT id FROM cinematic_technique WHERE name=?)
             ORDER BY sc.energy_rank DESC NULLS LAST, s.key""", (slug,))))
 
+    elif cmd == "optimize-all":
+        # F073's headline question, asked for every tool at once: "given this
+        # technique, what do I send to each model, and which of those have never
+        # been run?" The untested ones are named rather than omitted, because a
+        # tool silently missing from the output reads as "nothing to send" when
+        # it means "nothing verified".
+        slug = rest[0] if rest else (opt("--technique") or "")
+        if not slug:
+            print("usage: query.py optimize-all <slug>")
+            return 2
+        t = table(cur, "SELECT id, name, title FROM cinematic_technique WHERE name=?", (slug,))
+        if not t:
+            print(f"unknown technique: {slug}")
+            return 1
+        t = t[0]
+        print(_render_all_tools(t, table(cur, """SELECT a.key, a.label, a.param_style,
+                    p.params, p.version_tag, p.tested, p.tested_at
+                    FROM technique_tool_param p JOIN ai_tool a ON a.id=p.tool_id
+                    WHERE p.technique_id=? ORDER BY a.id""", (t["id"],))))
+
+    elif cmd == "technique-motions":
+        # F074. "I chose a dolly push - what motion can realize it?"
+        # Pairing is declared in platform/catalog/pairings.py, never inferred, so
+        # an empty result is a real answer and is reported as one rather than
+        # backfilled with whatever cards exist.
+        slug = rest[0] if rest else ""
+        if not table(cur, "SELECT name FROM sqlite_master WHERE type='table' "
+                          "AND name='cinematic_technique'"):
+            print("catalog corpus is not ingested (WARN, not an error)")
+            return 0
+        t = table(cur, "SELECT id, name, title FROM cinematic_technique WHERE name=?", (slug,))
+        if not t:
+            print(f"unknown technique: {slug}")
+            return 1
+        t = t[0]
+        rows = table(cur, """SELECT m.kind, sc.name card, c.key category,
+                                    e.key energy, sc.duration_frames frames, sc.duration_text,
+                                    st.key style, st.duration_frames style_frames,
+                                    (SELECT COUNT(*) FROM card_param cp WHERE cp.card_id=sc.id) params
+                             FROM technique_motion m
+                             JOIN style st ON st.id=m.style_id
+                             LEFT JOIN shot_card sc ON sc.id=st.card_id
+                             LEFT JOIN category c ON c.id=sc.category_id
+                             LEFT JOIN energy_level e ON e.id=sc.energy_level_id
+                             WHERE m.technique_id=?
+                             ORDER BY e.rank DESC NULLS LAST, sc.name""", (t["id"],))
+        print(f"{t['title']}  ({t['name']})")
+        print(f"declared pairings: {len(rows)}\n")
+        if not rows:
+            print("no declared pairing. This technique has not been mapped to a shot "
+                  "card.\nThat is the honest answer -- pairings are authored in "
+                  "platform/catalog/pairings.py,\nnever inferred from a name match, "
+                  "because a wrong pairing hands a client a\nduration and an easing "
+                  "and looks researched.")
+            return 0
+        print(fmt_md(cur, rows))
+        print("\nCarry it with:")
+        for r in rows:
+            print(f"  python platform/query.py card {r['card']}")
+            break
+
     elif cmd == "optimize":
         # F073: one call, one question — "given a technique and a tool, what do I
         # send, and what motion card carries it?" The honest answer when a cell is
@@ -242,21 +334,29 @@ def main(argv: list[str]) -> int:
             print(f"unknown technique: {slug}")
             return 1
         t = t[0]
-        print(f"{t['title']}  ({t['name']})")
         if not tool:
+            print(f"{t['title']}  ({t['name']})")
             rows = table(cur, """SELECT a.key, p.params, p.tested FROM technique_tool_param p
                                  JOIN ai_tool a ON a.id=p.tool_id WHERE p.technique_id=?
                                  ORDER BY a.key""", (t["id"],))
             print(fmt_md(cur, rows))
             print("\nre-run with --tool <key> for one tool")
             return 0
+        if tool.lower() in ("all", "any", "*"):
+            print(_render_all_tools(t, table(cur, """SELECT a.key, a.label,
+                        a.param_style, p.params, p.version_tag, p.tested, p.tested_at
+                        FROM technique_tool_param p JOIN ai_tool a ON a.id=p.tool_id
+                        WHERE p.technique_id=? ORDER BY a.id""", (t["id"],))))
+            return 0
         cell = table(cur, """SELECT a.key, a.label, a.param_style, p.params, p.full_prompt,
                                     p.version_tag, p.tested, p.tested_at
                              FROM technique_tool_param p JOIN ai_tool a ON a.id=p.tool_id
                              WHERE p.technique_id=? AND a.key=?""", (t["id"], tool))
         if not cell:
-            print(f"no matrix row for {tool} on {slug}: this tool has not been researched "
-                  f"for this technique (null, not a guess)")
+            known = [r[0] for r in cur.execute("SELECT key FROM ai_tool ORDER BY id")]
+            print(f"no matrix row for {tool!r} on {slug}.\n"
+                  f"known tool keys: {', '.join(known)}\n"
+                  f"use --tool all to list every tool for this technique")
             return 1
         c0 = cell[0]
         print(f"tool      : {c0['label']} ({c0['param_style']})")

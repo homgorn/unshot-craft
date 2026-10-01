@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Adding constant violent shake, which feels performed and prevents the audience from observing actual behavior."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Polishing every composition and focus pull, removing the reactive uncertainty that gives the approach its tension."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Treating technical damage as authenticity while subjects remain posed, scripted, and untouched by the camera."
+    }
+  ],
+  "motion": [
+    {
+      "card": "graze-face-tour",
+      "category": "camera",
+      "duration_text": "单段 4–5s；可多段接力延长",
+      "energy": "mid-high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "graze-face-tour"
+    }
+  ],
+  "prompt": "Cinema verite documentary moment with [Subject], handheld camera following the action, natural available light providing uncontrolled illumination, the framing imperfect and reactive, occasional focus hunting, the raw audio of the environment, the entire aesthetic committed to the principle that imperfection is authenticity, Super 16mm film grain, the Jean Rouch principle that the camera's presence provokes truth",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "cinema-verite",
+  "source": {
+    "authored_lede": "A documentary approach using handheld cameras, natural lighting, and unscripted moments to capture truth — the camera is acknowledged as present, truth provoked rather than merely observed. Jean Rouch and Edgar Morin coined the term with \"Chronicle of a Summer\" (1961), where the filmmakers actively engage with their subjects. The American equivalent, \"direct cinema\" (Frederick Wiseman, the Maysles Brothers), takes a more observational approach. The Dardenne Brothers' fiction films apply cinéma vérité techniques to narrative cinema. Paul Greengrass brings cinéma vérité energy to mainstream thrillers like \"United 93\" and the \"Bourne\" trilogy, making Hollywood action feel like documentary.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Follow the subject with a handheld camera at human distance, reacting late to gestures and occasionally correcting framing or focus. Use only available light, allowing mixed color and uneven exposure where the location creates it. Keep ambient sound, interruptions, and glances toward the camera. Let the operator shift position when events change rather than anticipating every move. Preserve faces and essential action; authenticity comes from responsive observation, not from making the footage unreadable.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/cinema-verite.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/cinema-verite.md",
+    "video_url": null,
+    "when_to_use": "Use cinéma vérité when truth should emerge through interaction rather than polished observation. It suits interviews in motion, social encounters, street scenes, political situations, and fiction that needs documentary pressure. Let the camera's presence affect behavior instead of pretending it is invisible. The style requires responsive imperfections tied to unfolding action; random shake, damaged sound, or poor exposure without human consequence only imitates low production quality."
+  },
+  "title": "\"Cinéma Vérité Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Cinema verite documentary moment with [Subject], handheld camera following the action, natural available light providing uncontrolled illumination, the framing imperfect and reactive, occasional focus hunting, the raw audio of the environment, the entire aesthetic committed to the principle that imperfection is authenticity, Super 16mm film grain, the Jean Rouch principle that the camera's presence provokes truth camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Cinema verite documentary moment with [Subject], handheld camera following the action, natural available light providing uncontrolled illumination, the framing imperfect and reactive, occasional focus hunting, the raw audio of the environment, the entire aesthetic committed to the principle that imperfection is authenticity, Super 16mm film grain, the Jean Rouch principle that the camera's presence provokes truth aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Cinema verite documentary moment with [Subject], handheld camera following the action, natural available light providing uncontrolled illumination, the framing imperfect and reactive, occasional focus hunting, the raw audio of the environment, the entire aesthetic committed to the principle that imperfection is authenticity, Super 16mm film grain, the Jean Rouch principle that the camera's presence provokes truth --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Cinema verite documentary moment with [Subject], handheld camera following the action, natural available light providing uncontrolled illumination, the framing imperfect and reactive, occasional focus hunting, the raw audio of the environment, the entire aesthetic committed to the principle that imperfection is authenticity, Super 16mm film grain, the Jean Rouch principle that the camera's presence provokes truth aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Cinema verite documentary moment with [Subject], handheld camera following the action, natural available light providing uncontrolled illumination, the framing imperfect and reactive, occasional focus hunting, the raw audio of the environment, the entire aesthetic committed to the principle that imperfection is authenticity, Super 16mm film grain, the Jean Rouch principle that the camera's presence provokes truth motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Cinema verite documentary moment with [Subject], handheld camera following the action, natural available light providing uncontrolled illumination, the framing imperfect and reactive, occasional focus hunting, the raw audio of the environment, the entire aesthetic committed to the principle that imperfection is authenticity, Super 16mm film grain, the Jean Rouch principle that the camera's presence provokes truth style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Cinema verite documentary moment with [Subject], handheld camera following the action, natural available light providing uncontrolled illumination, the framing imperfect and reactive, occasional focus hunting, the raw audio of the environment, the entire aesthetic committed to the principle that imperfection is authenticity, Super 16mm film grain, the Jean Rouch principle that the camera's presence provokes truth resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

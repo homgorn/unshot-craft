@@ -1,0 +1,142 @@
+{
+  "category": "narrative",
+  "category_label": "Narrative",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "How to Make a Short Film: An Introduction to Filmmaking",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Choosing a symbol through cliché alone, without connecting it to the character's specific conflict or world."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Crowding the frame with competing metaphors, leaving no single image enough space to carry meaning."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Lighting the symbol like a supernatural sign when it should remain a credible object in the scene."
+    }
+  ],
+  "motion": [
+    {
+      "card": "text-as-mask",
+      "category": "opening",
+      "duration_text": "5s（hold 20f + 字内漂移 80f + 放大接管 30f + 静止 20f）",
+      "energy": "mid-high",
+      "frames": 20,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "text-as-mask"
+    }
+  ],
+  "prompt": "Visual symbolism with [Subject] carrying abstract meaning beyond its literal form, the image precisely rendered to communicate truths that language cannot reach, the composition treating the symbol with the reverence of a monument — centered, solitary, given maximum visual space, the Tarkovsky understanding that a concrete image can channel the ineffable",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "symbolism",
+  "source": {
+    "authored_lede": "Using concrete visual elements to represent abstract ideas or themes — a cage for imprisonment, water for rebirth, red for passion or danger — the visual poetry of cinema. Andrei Tarkovsky filled his films with water, fire, and earth symbolism in \"Stalker,\" \"Mirror,\" and \"Nostalghia.\" Kubrick encoded \"2001: A Space Odyssey\" with evolutionary symbolism from the bone weapon to the star child. Guillermo del Toro uses fantasy creatures as symbols for fascism in \"Pan's Labyrinth.\" The floating plastic bag in \"American Beauty\" became a cultural symbol, and Spike Lee's floating bed in \"She's Gotta Have It\" and \"Do the Right Thing\" uses physical impossibility as symbolic expression.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Choose one concrete subject whose form, behavior, or placement naturally echoes the theme. Give it clear visual space through centered framing, isolation, scale, or contrast, while retaining believable light and material. Connect it to the character through gaze, touch, or blocking rather than explanatory text. If the symbol recurs, alter its condition as the story changes. Let the literal object remain fully credible even while the composition invites a second reading.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/symbolism.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/symbolism.md",
+    "video_url": null,
+    "when_to_use": "Use symbolism when an abstract idea needs a physical image the audience can feel: enclosure for confinement, water for renewal, or a divided reflection for fractured identity. The chosen symbol should emerge from the story's world and character experience. It is most effective at turning points or in repeated compositions. Avoid piling multiple symbols into one frame; a single precise image usually carries more force."
+  },
+  "title": "\"Symbolism Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Visual symbolism with [Subject] carrying abstract meaning beyond its literal form, the image precisely rendered to communicate truths that language cannot reach, the composition treating the symbol with the reverence of a monument — centered, solitary, given maximum visual space, the Tarkovsky understanding that a concrete image can channel the ineffable camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Visual symbolism with [Subject] carrying abstract meaning beyond its literal form, the image precisely rendered to communicate truths that language cannot reach, the composition treating the symbol with the reverence of a monument — centered, solitary, given maximum visual space, the Tarkovsky understanding that a concrete image can channel the ineffable aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Visual symbolism with [Subject] carrying abstract meaning beyond its literal form, the image precisely rendered to communicate truths that language cannot reach, the composition treating the symbol with the reverence of a monument — centered, solitary, given maximum visual space, the Tarkovsky understanding that a concrete image can channel the ineffable --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Visual symbolism with [Subject] carrying abstract meaning beyond its literal form, the image precisely rendered to communicate truths that language cannot reach, the composition treating the symbol with the reverence of a monument — centered, solitary, given maximum visual space, the Tarkovsky understanding that a concrete image can channel the ineffable aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Visual symbolism with [Subject] carrying abstract meaning beyond its literal form, the image precisely rendered to communicate truths that language cannot reach, the composition treating the symbol with the reverence of a monument — centered, solitary, given maximum visual space, the Tarkovsky understanding that a concrete image can channel the ineffable motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Visual symbolism with [Subject] carrying abstract meaning beyond its literal form, the image precisely rendered to communicate truths that language cannot reach, the composition treating the symbol with the reverence of a monument — centered, solitary, given maximum visual space, the Tarkovsky understanding that a concrete image can channel the ineffable style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Visual symbolism with [Subject] carrying abstract meaning beyond its literal form, the image precisely rendered to communicate truths that language cannot reach, the composition treating the symbol with the reverence of a monument — centered, solitary, given maximum visual space, the Tarkovsky understanding that a concrete image can channel the ineffable resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

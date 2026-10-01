@@ -1,0 +1,131 @@
+{
+  "category": "visual-effects",
+  "category_label": "Visual Effects & Promptable FX",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Inventing Worlds and Characters: Effects",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Mixing particles, smoke, liquid, and fire in one change, obscuring the transformation's governing visual rule."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Losing facial or structural landmarks midway, so the source and destination no longer feel connected."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Changing lighting and camera angle during the morph, making continuity errors compete with the intended transformation."
+    }
+  ],
+  "motion": [],
+  "prompt": "[Subject] caught mid-transformation, the form dissolving into particles or liquid or light, features simultaneously present and absent in a liminal state between two identities, the mathematical smoothness of digital morphing applied to the human form, even lighting ensuring the transformation reads cleanly, the unsettling beauty of identity in flux and matter in transition",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "morphing",
+  "source": {
+    "authored_lede": "A digital transformation effect where one form smoothly dissolves, transmutes, or reshapes into another — character dissolving into particles, liquid metal transformation, ethereal dissolution, matter transmutation. Originally pioneered by ILM for the T-1000 in \"Terminator 2,\" morphing has evolved from face-to-face blending into a rich vocabulary of transformation effects. In AI image and video generation, morphing and dissolve effects are among the most promptable visual transformations, allowing creators to depict characters dissolving into elements, reforming from abstract matter, or undergoing surreal metamorphosis.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Show the subject midway between two defined forms, with landmarks from both identities visible in corresponding positions. Choose one transition behavior, such as particles, liquid, or light, and move it progressively across the body rather than everywhere at once. Keep the camera steady and illumination even so changing contours read cleanly. Preserve mass and directional flow. End with a stable destination form, allowing no leftover fragments or unexplained features from the source.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/morphing.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/morphing.md",
+    "video_url": null,
+    "when_to_use": "Use morphing when transformation itself is the dramatic event: a body changing identity, matter dissolving into particles, a face becoming another face, or an object reforming from liquid or light. It suits surreal, magical, technological, and body-horror moments. Define the source, destination, and transition material clearly. The effect fails when every feature changes independently without a readable progression between the two states."
+  },
+  "title": "\"Morphing / Dissolve Effect Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "[Subject] caught mid-transformation, the form dissolving into particles or liquid or light, features simultaneously present and absent in a liminal state between two identities, the mathematical smoothness of digital morphing applied to the human form, even lighting ensuring the transformation reads cleanly, the unsettling beauty of identity in flux and matter in transition camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "[Subject] caught mid-transformation, the form dissolving into particles or liquid or light, features simultaneously present and absent in a liminal state between two identities, the mathematical smoothness of digital morphing applied to the human form, even lighting ensuring the transformation reads cleanly, the unsettling beauty of identity in flux and matter in transition aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "[Subject] caught mid-transformation, the form dissolving into particles or liquid or light, features simultaneously present and absent in a liminal state between two identities, the mathematical smoothness of digital morphing applied to the human form, even lighting ensuring the transformation reads cleanly, the unsettling beauty of identity in flux and matter in transition --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "[Subject] caught mid-transformation, the form dissolving into particles or liquid or light, features simultaneously present and absent in a liminal state between two identities, the mathematical smoothness of digital morphing applied to the human form, even lighting ensuring the transformation reads cleanly, the unsettling beauty of identity in flux and matter in transition aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "[Subject] caught mid-transformation, the form dissolving into particles or liquid or light, features simultaneously present and absent in a liminal state between two identities, the mathematical smoothness of digital morphing applied to the human form, even lighting ensuring the transformation reads cleanly, the unsettling beauty of identity in flux and matter in transition motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "[Subject] caught mid-transformation, the form dissolving into particles or liquid or light, features simultaneously present and absent in a liminal state between two identities, the mathematical smoothness of digital morphing applied to the human form, even lighting ensuring the transformation reads cleanly, the unsettling beauty of identity in flux and matter in transition style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "[Subject] caught mid-transformation, the form dissolving into particles or liquid or light, features simultaneously present and absent in a liminal state between two identities, the mathematical smoothness of digital morphing applied to the human form, even lighting ensuring the transformation reads cleanly, the unsettling beauty of identity in flux and matter in transition resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

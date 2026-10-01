@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Keeping realistic architecture while adding random tilted framing, producing a weak imitation of the style."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using soft naturalistic shadows, which contradict the painted graphic darkness of Expressionist space."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Adding many unrelated horror props instead of letting distorted geometry and contrast carry the psychological threat."
+    }
+  ],
+  "motion": [
+    {
+      "card": "fracture",
+      "category": "opening",
+      "duration_text": "约 5.2s（156f@30fps；聚合 0–2.6s · hold 1s · 飞散 1.5s）",
+      "energy": "high",
+      "frames": 156,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "fracture"
+    }
+  ],
+  "prompt": "German Expressionism with [Subject] in deliberately distorted architecture, buildings leaning at impossible angles, shadows painted in sharp angular patterns that defy actual light sources, extreme contrast between blinding white and absolute black with no midtones, the Caligari aesthetic of a world bent by psychological torment, monochrome with exaggerated theatrical lighting",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "german-expressionism",
+  "source": {
+    "authored_lede": "An early 20th-century movement using distorted sets, extreme shadows, and exaggerated angles to externalize inner psychological states — the visual DNA of modern horror and Tim Burton. Robert Wiene's \"The Cabinet of Dr. Caligari\" (1920) established the movement with painted shadows and impossible architecture. F.W. Murnau's \"Nosferatu\" and Fritz Lang's \"Metropolis\" expanded the vocabulary. When these filmmakers fled Nazi Germany, they brought Expressionism to Hollywood, directly influencing film noir. Tim Burton's \"Batman,\" \"Edward Scissorhands,\" and \"Batman Returns\" are modern Expressionism, and Guillermo del Toro's production design carries the movement's DNA.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Build a monochrome set with leaning buildings, jagged doorways, slanted floors, and forced angles that cannot exist naturally. Remove most midtones, dividing the frame into blinding white and absolute black. Paint hard triangular shadows across surfaces without matching realistic light sources. Tilt the camera and exaggerate the subject's posture to echo the architecture. Keep every distortion graphic and intentional, as though the character's psychological torment designed the entire physical world.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/german-expressionism.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/german-expressionism.md",
+    "video_url": null,
+    "when_to_use": "Use German Expressionism when the environment should externalize fear, paranoia, grief, or mental fracture. Distorted walls, impossible streets, and painted shadows make psychology physical rather than realistic. It fits horror, nightmare, theatrical fantasy, and moments when subjective truth matters more than natural space. Commit across set, light, angle, and performance; one crooked doorway inside a normal world reads as decoration, not a governing style."
+  },
+  "title": "\"German Expressionism Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "German Expressionism with [Subject] in deliberately distorted architecture, buildings leaning at impossible angles, shadows painted in sharp angular patterns that defy actual light sources, extreme contrast between blinding white and absolute black with no midtones, the Caligari aesthetic of a world bent by psychological torment, monochrome with exaggerated theatrical lighting camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "German Expressionism with [Subject] in deliberately distorted architecture, buildings leaning at impossible angles, shadows painted in sharp angular patterns that defy actual light sources, extreme contrast between blinding white and absolute black with no midtones, the Caligari aesthetic of a world bent by psychological torment, monochrome with exaggerated theatrical lighting aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "German Expressionism with [Subject] in deliberately distorted architecture, buildings leaning at impossible angles, shadows painted in sharp angular patterns that defy actual light sources, extreme contrast between blinding white and absolute black with no midtones, the Caligari aesthetic of a world bent by psychological torment, monochrome with exaggerated theatrical lighting --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "German Expressionism with [Subject] in deliberately distorted architecture, buildings leaning at impossible angles, shadows painted in sharp angular patterns that defy actual light sources, extreme contrast between blinding white and absolute black with no midtones, the Caligari aesthetic of a world bent by psychological torment, monochrome with exaggerated theatrical lighting aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "German Expressionism with [Subject] in deliberately distorted architecture, buildings leaning at impossible angles, shadows painted in sharp angular patterns that defy actual light sources, extreme contrast between blinding white and absolute black with no midtones, the Caligari aesthetic of a world bent by psychological torment, monochrome with exaggerated theatrical lighting motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "German Expressionism with [Subject] in deliberately distorted architecture, buildings leaning at impossible angles, shadows painted in sharp angular patterns that defy actual light sources, extreme contrast between blinding white and absolute black with no midtones, the Caligari aesthetic of a world bent by psychological torment, monochrome with exaggerated theatrical lighting style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "German Expressionism with [Subject] in deliberately distorted architecture, buildings leaning at impossible angles, shadows painted in sharp angular patterns that defy actual light sources, extreme contrast between blinding white and absolute black with no midtones, the Caligari aesthetic of a world bent by psychological torment, monochrome with exaggerated theatrical lighting resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

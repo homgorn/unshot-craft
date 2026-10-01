@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Filling the frame with unrelated strange objects, creating visual novelty without emotional or thematic logic."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Lighting impossible events like spectacular fantasy, which weakens their calm and unsettling matter-of-fact quality."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Changing the world's rules every moment, leaving no dream logic for the audience to follow."
+    }
+  ],
+  "motion": [
+    {
+      "card": "magician-card-flourish",
+      "category": "opening",
+      "duration_text": "闪光 0.3s + 飞行 ~1.7s + 定格展示+扫光 ~2s；全段 4.2s",
+      "energy": "high",
+      "frames": 9,
+      "kind": "declared",
+      "parameters": 8,
+      "style": "magician-card-flourish"
+    }
+  ],
+  "prompt": "Surrealist scene with [Subject] in a world where dream logic replaces physical reality, impossible elements presented with the matter-of-fact certainty of documentary, lighting impossibly motivated from sources that do not exist, the Bunuel-Lynch visual language where the subconscious mind's architecture is rendered as physical space, the unsettling beauty of a world where logic has been replaced by feeling",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "surrealism",
+  "source": {
+    "authored_lede": "A movement drawing on dreams, the subconscious, and irrational imagery to create art that defies logic — melting clocks, impossible architecture, dream logic replacing narrative cause-and-effect. Luis Buñuel and Salvador Dalí created cinema's first surrealist film, \"Un Chien Andalou\" (1929), with its infamous eye-slicing opening. Buñuel continued making surrealist cinema for fifty years through \"The Discreet Charm of the Bourgeoisie.\" David Lynch is surrealism's modern heir — \"Eraserhead,\" \"Mulholland Drive,\" and \"Twin Peaks: The Return\" operate on dream logic. Alejandro Jodorowsky's \"El Topo\" and \"The Holy Mountain\" push surrealism to psychedelic extremes, and Charlie Kaufman's \"Eternal Sunshine\" and \"Synecdoche, New York\" bring surrealism into intimate emotional territory.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the subject in a recognizable setting, then alter one governing reality: scale, gravity, architecture, identity, or time. Present the impossible element with neutral framing and documentary certainty rather than fantasy spectacle. Motivate light from sources that visibly cannot exist, but keep surfaces and shadows internally consistent. Repeat a shape or action to establish dream logic. Let emotion determine transitions, while preserving enough spatial continuity that the viewer can inhabit the irrational world.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/surrealism.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/surrealism.md",
+    "video_url": null,
+    "when_to_use": "Use surrealism when subconscious feeling, desire, dread, or contradiction matters more than literal cause and effect. It suits dreams, identity fractures, psychological transitions, and worlds where impossible events reveal emotional truth. Establish a visual rule that belongs to the scene's feeling, then treat it as ordinary. Random strangeness is not enough; the strongest surreal image is specific, coherent, and impossible for a reason."
+  },
+  "title": "\"Surrealism Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Surrealist scene with [Subject] in a world where dream logic replaces physical reality, impossible elements presented with the matter-of-fact certainty of documentary, lighting impossibly motivated from sources that do not exist, the Bunuel-Lynch visual language where the subconscious mind's architecture is rendered as physical space, the unsettling beauty of a world where logic has been replaced by feeling camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Surrealist scene with [Subject] in a world where dream logic replaces physical reality, impossible elements presented with the matter-of-fact certainty of documentary, lighting impossibly motivated from sources that do not exist, the Bunuel-Lynch visual language where the subconscious mind's architecture is rendered as physical space, the unsettling beauty of a world where logic has been replaced by feeling aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Surrealist scene with [Subject] in a world where dream logic replaces physical reality, impossible elements presented with the matter-of-fact certainty of documentary, lighting impossibly motivated from sources that do not exist, the Bunuel-Lynch visual language where the subconscious mind's architecture is rendered as physical space, the unsettling beauty of a world where logic has been replaced by feeling --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Surrealist scene with [Subject] in a world where dream logic replaces physical reality, impossible elements presented with the matter-of-fact certainty of documentary, lighting impossibly motivated from sources that do not exist, the Bunuel-Lynch visual language where the subconscious mind's architecture is rendered as physical space, the unsettling beauty of a world where logic has been replaced by feeling aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Surrealist scene with [Subject] in a world where dream logic replaces physical reality, impossible elements presented with the matter-of-fact certainty of documentary, lighting impossibly motivated from sources that do not exist, the Bunuel-Lynch visual language where the subconscious mind's architecture is rendered as physical space, the unsettling beauty of a world where logic has been replaced by feeling motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Surrealist scene with [Subject] in a world where dream logic replaces physical reality, impossible elements presented with the matter-of-fact certainty of documentary, lighting impossibly motivated from sources that do not exist, the Bunuel-Lynch visual language where the subconscious mind's architecture is rendered as physical space, the unsettling beauty of a world where logic has been replaced by feeling style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Surrealist scene with [Subject] in a world where dream logic replaces physical reality, impossible elements presented with the matter-of-fact certainty of documentary, lighting impossibly motivated from sources that do not exist, the Bunuel-Lynch visual language where the subconscious mind's architecture is rendered as physical space, the unsettling beauty of a world where logic has been replaced by feeling resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

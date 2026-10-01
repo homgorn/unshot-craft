@@ -1,0 +1,1356 @@
+{
+  "schema": "cinematic.brief-index/1",
+  "count": 150,
+  "briefs": [
+    {
+      "slug": "360-degree-shot",
+      "title": "\"360-Degree Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "aerial-shot",
+      "title": "\"Aerial Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 3,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "birds-eye-view",
+      "title": "\"Bird's Eye View Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "choker-shot",
+      "title": "\"Choker Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "close-up",
+      "title": "\"Close-Up Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "cowboy-shot",
+      "title": "\"Cowboy Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "crane-shot",
+      "title": "\"Crane Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "crash-zoom",
+      "title": "\"Crash Zoom Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "dolly-shot",
+      "title": "\"Dolly Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 6,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "dutch-angle",
+      "title": "\"Dutch Angle Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "establishing-shot",
+      "title": "\"Establishing Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 4,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "extreme-close-up",
+      "title": "\"Extreme Close-Up Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "extreme-long-shot",
+      "title": "\"Extreme Long Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "eye-level-shot",
+      "title": "\"Eye-Level Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "handheld-shot",
+      "title": "\"Handheld Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "head-on-shot",
+      "title": "\"Head-On Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "high-angle-shot",
+      "title": "\"High Angle Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "insert-shot",
+      "title": "\"Insert Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "long-shot",
+      "title": "\"Long Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "low-angle-shot",
+      "title": "\"Low Angle Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "master-shot",
+      "title": "\"Master Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "medium-close-up",
+      "title": "\"Medium Close-Up Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "medium-shot",
+      "title": "\"Medium Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 3,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "one-er",
+      "title": "\"One-er (Oner) Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "over-the-shoulder",
+      "title": "\"Over-the-Shoulder Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "overhead-shot",
+      "title": "\"Overhead Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "pan-shot",
+      "title": "\"Pan Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "pov-shot",
+      "title": "\"P.O.V. Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "pull-out",
+      "title": "\"Pull Out Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "push-in",
+      "title": "\"Push In Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 4,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "rack-focus",
+      "title": "\"Rack Focus Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "slow-motion",
+      "title": "\"Slow Motion Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 3,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "static-shot",
+      "title": "\"Static Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "steadicam",
+      "title": "\"Steadicam Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "three-shot",
+      "title": "\"Three-Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "tilt-shot",
+      "title": "\"Tilt Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "tracking-shot",
+      "title": "\"Tracking Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 3,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "two-shot",
+      "title": "\"Two-Shot Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "vertigo-effect",
+      "title": "\"Vertigo Effect Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "advanced",
+      "motions": 3,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "whip-pan",
+      "title": "\"Whip Pan Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 4,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "worms-eye-view",
+      "title": "\"Worm's Eye View Prompt for AI Image & Video\"",
+      "category": "camera-work",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "ambient-light",
+      "title": "\"Ambient Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "available-light",
+      "title": "\"Available Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "backlight",
+      "title": "\"Backlight Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "blue-hour",
+      "title": "\"Blue Hour Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "bounce-light",
+      "title": "\"Bounce Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "broad-lighting",
+      "title": "\"Broad Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "chiaroscuro",
+      "title": "\"Chiaroscuro Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "color-temperature",
+      "title": "\"Color Temperature Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "cross-lighting",
+      "title": "\"Cross Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "dappled-light",
+      "title": "\"Dappled Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "edge-light",
+      "title": "\"Edge Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "eye-light",
+      "title": "\"Eye Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "fill-light",
+      "title": "\"Fill Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "gobo-lighting",
+      "title": "\"Gobo Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "golden-hour",
+      "title": "\"Golden Hour Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "hard-light",
+      "title": "\"Hard Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "high-key-lighting",
+      "title": "\"High-Key Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "key-light",
+      "title": "\"Key Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "kicker-light",
+      "title": "\"Kicker Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "lens-flare",
+      "title": "\"Lens Flare Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "low-key-lighting",
+      "title": "\"Low-Key Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "motivated-lighting",
+      "title": "\"Motivated Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "practical-lighting",
+      "title": "\"Practical Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "rembrandt-lighting",
+      "title": "\"Rembrandt Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "short-lighting",
+      "title": "\"Short Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "side-lighting",
+      "title": "\"Side Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "silhouette",
+      "title": "\"Silhouette Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "soft-light",
+      "title": "\"Soft Light Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "three-point-lighting",
+      "title": "\"Three-Point Lighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "uplighting",
+      "title": "\"Uplighting Prompt for AI Image & Video\"",
+      "category": "lighting",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "balancing-elements",
+      "title": "\"Balancing Elements Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "centered-composition",
+      "title": "\"Centered Composition Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "contrast-composition",
+      "title": "\"Contrast Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "deep-focus",
+      "title": "\"Deep Focus Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "depth-of-field",
+      "title": "\"Depth of Field Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "diagonal-lines",
+      "title": "\"Diagonal Lines Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "figure-ground",
+      "title": "\"Figure-Ground Relationship Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "foreground-interest",
+      "title": "\"Foreground Interest Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "framing-within-frame",
+      "title": "\"Framing Within Frame Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "golden-ratio",
+      "title": "\"Golden Ratio Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "headroom",
+      "title": "\"Headroom Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "lead-room",
+      "title": "\"Lead Room Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "leading-lines",
+      "title": "\"Leading Lines Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "mise-en-scene",
+      "title": "\"Mise-en-Scène Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "advanced",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "negative-space",
+      "title": "\"Negative Space Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "repetition-and-pattern",
+      "title": "\"Repetition and Pattern Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "rule-of-thirds",
+      "title": "\"Rule of Thirds Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "basic",
+      "motions": 3,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "shallow-focus",
+      "title": "\"Shallow Focus Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "symmetry",
+      "title": "\"Symmetry Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "triangular-composition",
+      "title": "\"Triangular Composition Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "visual-weight",
+      "title": "\"Visual Weight Prompt for AI Image & Video\"",
+      "category": "composition",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "cross-cutting",
+      "title": "\"Cross-Cutting Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "cut-in",
+      "title": "\"Cut-In Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "cutaway",
+      "title": "\"Cutaway Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "dissolve",
+      "title": "\"Dissolve Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 7,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "fade-in-out",
+      "title": "\"Fade In/Out Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "fast-motion",
+      "title": "\"Fast Motion Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "freeze-frame",
+      "title": "\"Freeze Frame Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 3,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "iris-transition",
+      "title": "\"Iris Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "jump-cut",
+      "title": "\"Jump Cut Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "long-take",
+      "title": "\"Long Take Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "montage",
+      "title": "\"Montage Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "reaction-shot",
+      "title": "\"Reaction Shot Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "reverse-motion",
+      "title": "\"Reverse Motion Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "smash-cut",
+      "title": "\"Smash Cut Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "split-screen",
+      "title": "\"Split Screen Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "time-lapse",
+      "title": "\"Time-Lapse Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 0,
+      "tools_tested": 0
+    },
+    {
+      "slug": "wipe-transition",
+      "title": "\"Wipe Prompt for AI Image & Video\"",
+      "category": "editing",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "breaking-fourth-wall",
+      "title": "\"Breaking the Fourth Wall Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "cliffhanger",
+      "title": "\"Cliffhanger Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "basic",
+      "motions": 3,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "flashback",
+      "title": "\"Flashback Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "basic",
+      "motions": 7,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "flashforward",
+      "title": "\"Flashforward Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "intermediate",
+      "motions": 7,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "foreshadowing",
+      "title": "\"Foreshadowing Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "frame-narrative",
+      "title": "\"Frame Narrative Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "in-medias-res",
+      "title": "\"In Medias Res Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "basic",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "motif",
+      "title": "\"Motif Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "non-linear-narrative",
+      "title": "\"Non-Linear Narrative Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "parallel-storylines",
+      "title": "\"Parallel Storylines Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "symbolism",
+      "title": "\"Symbolism Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "voiceover-narration",
+      "title": "\"Voiceover Narration Prompt for AI Image & Video\"",
+      "category": "narrative",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "bokeh",
+      "title": "\"Bokeh Prompt for AI Image & Video\"",
+      "category": "visual-effects",
+      "level": "basic",
+      "motions": 0,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "color-grading",
+      "title": "\"Color Grading Prompt for AI Image & Video\"",
+      "category": "visual-effects",
+      "level": "intermediate",
+      "motions": 0,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "desaturation",
+      "title": "\"Desaturation Prompt for AI Image & Video\"",
+      "category": "visual-effects",
+      "level": "basic",
+      "motions": 0,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "film-grain",
+      "title": "\"Film Grain Prompt for AI Image & Video\"",
+      "category": "visual-effects",
+      "level": "basic",
+      "motions": 0,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "forced-perspective",
+      "title": "\"Forced Perspective Prompt for AI Image & Video\"",
+      "category": "visual-effects",
+      "level": "intermediate",
+      "motions": 0,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "lens-distortion",
+      "title": "\"Lens Distortion Prompt for AI Image & Video\"",
+      "category": "visual-effects",
+      "level": "intermediate",
+      "motions": 0,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "morphing",
+      "title": "\"Morphing / Dissolve Effect Prompt for AI Image & Video\"",
+      "category": "visual-effects",
+      "level": "advanced",
+      "motions": 0,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "sepia-tone",
+      "title": "\"Sepia Tone Prompt for AI Image & Video\"",
+      "category": "visual-effects",
+      "level": "basic",
+      "motions": 0,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "acid-western",
+      "title": "\"Acid Western Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "cinema-verite",
+      "title": "\"Cinéma Vérité Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "cosmic-horror",
+      "title": "\"Cosmic Horror Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "dogme-95",
+      "title": "\"Dogme 95 Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "film-noir",
+      "title": "\"Film Noir Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "found-footage",
+      "title": "\"Found Footage Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "french-new-wave",
+      "title": "\"French New Wave Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "intermediate",
+      "motions": 7,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "german-expressionism",
+      "title": "\"German Expressionism Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "giallo",
+      "title": "\"Giallo Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "hyperlink-cinema",
+      "title": "\"Hyperlink Cinema Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "italian-neorealism",
+      "title": "\"Italian Neorealism Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "mockumentary",
+      "title": "\"Mockumentary Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "mumblecore",
+      "title": "\"Mumblecore Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "noir-tech",
+      "title": "\"Tech Noir Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "intermediate",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "poetic-realism",
+      "title": "\"Poetic Realism Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "slow-cinema",
+      "title": "\"Slow Cinema Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "advanced",
+      "motions": 2,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "southern-gothic",
+      "title": "\"Southern Gothic Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "spaghetti-western",
+      "title": "\"Spaghetti Western Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "intermediate",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "surrealism",
+      "title": "\"Surrealism Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "vaporwave",
+      "title": "\"Vaporwave Aesthetic Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "basic",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    },
+    {
+      "slug": "wuxia",
+      "title": "\"Wuxia Prompt for AI Image & Video\"",
+      "category": "genres",
+      "level": "advanced",
+      "motions": 1,
+      "tools_with_params": 7,
+      "tools_tested": 0
+    }
+  ]
+}

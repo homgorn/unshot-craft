@@ -1,0 +1,142 @@
+{
+  "category": "narrative",
+  "category_label": "Narrative",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "How to Make a Short Film: An Introduction to Filmmaking",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Having every figure look into camera, which destroys the private bond between one character and the audience."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using a vague neutral expression when the direct gaze needs a precise comic or dramatic intention."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Beginning with direct address before establishing the fictional space, leaving no illusion for the character to break."
+    }
+  ],
+  "motion": [
+    {
+      "card": "cursor-flyover",
+      "category": "camera",
+      "duration_text": "约 6.0s（180f@30fps；俯瞰 0–1.2s · 四步各 0.7s 过渡 + 0.5s 停留）",
+      "energy": "mid",
+      "frames": 180,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "cursor-flyover"
+    }
+  ],
+  "prompt": "[Subject] suddenly turning to look directly into the camera lens with a knowing expression, the other figures frozen in their activity unaware of the breach, the direct eye contact creating an instant conspiratorial bond with the viewer, the camera positioned exactly where an observer would be making the viewer complicit, the Fleabag-Ferris Bueller intimacy of a character who trusts the audience more than anyone in their own world",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "breaking-fourth-wall",
+  "source": {
+    "authored_lede": "A character directly addresses or acknowledges the audience, shattering the illusion of the fictional world to create intimacy, comedy, or existential awareness. Groucho Marx was an early master, but the technique reached its dramatic potential when Ingmar Bergman had actors stare into the camera in \"Persona\" and \"Summer with Monika.\" Ferris Bueller's conspiratorial monologues to the audience in John Hughes's film became iconic, and Kevin Spacey's direct address in \"House of Cards\" (inspired by Ian Richardson in the original BBC series) made the fourth wall break a prestige TV staple. Spike Lee's characters break the fourth wall for political address, and Fleabag's knowing glances in Phoebe Waller-Bridge's series elevated the technique to new emotional heights.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Position the camera exactly where an observer would stand, at the character's eye level. Let the surrounding action continue or briefly freeze while the subject turns and fixes direct, unwavering eye contact on the lens. Keep the expression specific: conspiratorial, accusatory, amused, or exposed. Other characters should remain unaware unless the story demands a larger rupture. Hold the gaze long enough to create complicity, then return the subject to the scene with a readable emotional consequence.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/breaking-fourth-wall.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/breaking-fourth-wall.md",
+    "video_url": null,
+    "when_to_use": "Use breaking the fourth wall when the character should recruit the audience as confidant, witness, judge, or accomplice. A glance can land a joke; sustained address can expose a private truth or rupture the fictional world. Establish normal scene behavior first so the breach has force. The technique loses impact if every character acknowledges the camera or if direct address carries no new relationship to the viewer."
+  },
+  "title": "\"Breaking the Fourth Wall Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "[Subject] suddenly turning to look directly into the camera lens with a knowing expression, the other figures frozen in their activity unaware of the breach, the direct eye contact creating an instant conspiratorial bond with the viewer, the camera positioned exactly where an observer would be making the viewer complicit, the Fleabag-Ferris Bueller intimacy of a character who trusts the audience more than anyone in their own world camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "[Subject] suddenly turning to look directly into the camera lens with a knowing expression, the other figures frozen in their activity unaware of the breach, the direct eye contact creating an instant conspiratorial bond with the viewer, the camera positioned exactly where an observer would be making the viewer complicit, the Fleabag-Ferris Bueller intimacy of a character who trusts the audience more than anyone in their own world aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "[Subject] suddenly turning to look directly into the camera lens with a knowing expression, the other figures frozen in their activity unaware of the breach, the direct eye contact creating an instant conspiratorial bond with the viewer, the camera positioned exactly where an observer would be making the viewer complicit, the Fleabag-Ferris Bueller intimacy of a character who trusts the audience more than anyone in their own world --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "[Subject] suddenly turning to look directly into the camera lens with a knowing expression, the other figures frozen in their activity unaware of the breach, the direct eye contact creating an instant conspiratorial bond with the viewer, the camera positioned exactly where an observer would be making the viewer complicit, the Fleabag-Ferris Bueller intimacy of a character who trusts the audience more than anyone in their own world aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "[Subject] suddenly turning to look directly into the camera lens with a knowing expression, the other figures frozen in their activity unaware of the breach, the direct eye contact creating an instant conspiratorial bond with the viewer, the camera positioned exactly where an observer would be making the viewer complicit, the Fleabag-Ferris Bueller intimacy of a character who trusts the audience more than anyone in their own world motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "[Subject] suddenly turning to look directly into the camera lens with a knowing expression, the other figures frozen in their activity unaware of the breach, the direct eye contact creating an instant conspiratorial bond with the viewer, the camera positioned exactly where an observer would be making the viewer complicit, the Fleabag-Ferris Bueller intimacy of a character who trusts the audience more than anyone in their own world style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "[Subject] suddenly turning to look directly into the camera lens with a knowing expression, the other figures frozen in their activity unaware of the breach, the direct eye contact creating an instant conspiratorial bond with the viewer, the camera positioned exactly where an observer would be making the viewer complicit, the Fleabag-Ferris Bueller intimacy of a character who trusts the audience more than anyone in their own world resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

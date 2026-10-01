@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Using random neon colors without establishing the disciplined red, blue, and violet architecture of the scene."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Flattening shadows with broad fill light, removing the concealment that makes saturated color feel dangerous."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Centering the threat immediately, leaving no elegant visual search or suspense inside the composition."
+    }
+  ],
+  "motion": [
+    {
+      "card": "fracture",
+      "category": "opening",
+      "duration_text": "约 5.2s（156f@30fps；聚合 0–2.6s · hold 1s · 飞散 1.5s）",
+      "energy": "high",
+      "frames": 156,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "fracture"
+    }
+  ],
+  "prompt": "Giallo-style scene with [Subject] drenched in vivid primary-color lighting, deep crimson from unseen sources, a pool of intense blue creating color boundaries where red meets blue in deep violet, the composition more concerned with aesthetic beauty than narrative logic, every frame designed as a painting, the Dario Argento principle that terror can be beautiful, the saturated primary colors of \"Suspiria\"",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "giallo",
+  "source": {
+    "authored_lede": "Italian horror-thriller genre known for vivid color palettes, elaborate murder sequences, leather-gloved killers, and a heightened visual style that prioritizes aesthetic beauty over narrative logic. Mario Bava established the giallo with \"Blood and Black Lace\" (1964) and \"Bay of Blood.\" Dario Argento perfected it with \"Deep Red,\" \"Suspiria,\" and \"Tenebre,\" using vivid primary-color lighting and elaborate set pieces that transform murder into grotesque art. Lucio Fulci pushed the genre to extremes with \"The Beyond.\" The giallo's influence extends to Brian De Palma, Nicolas Winding Refn's \"The Neon Demon,\" and the recent Suspiria remake by Luca Guadagnino.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the subject inside a dark interior divided by intense red and blue light from unseen or stylized sources, allowing their overlap to form deep violet. Use glossy surfaces, sharp silhouettes, elegant framing, and one threatening detail such as a leather-gloved hand at frame edge. Keep color saturation rich without losing facial form or object texture. Move the camera with controlled curiosity, revealing danger through reflections, doorways, and partial views rather than immediate full exposure.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/giallo.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/giallo.md",
+    "video_url": null,
+    "when_to_use": "Use giallo for horror-thriller scenes where color, suspense, and elaborate visual staging matter more than strict realism. It suits stalking, gloved killers, labyrinthine interiors, clues, and moments where danger becomes a composed spectacle. The palette should carry psychological pressure through red, blue, and violet boundaries. Avoid using vivid light as mere decoration; every color zone should shape threat, concealment, or attention."
+  },
+  "title": "\"Giallo Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Giallo-style scene with [Subject] drenched in vivid primary-color lighting, deep crimson from unseen sources, a pool of intense blue creating color boundaries where red meets blue in deep violet, the composition more concerned with aesthetic beauty than narrative logic, every frame designed as a painting, the Dario Argento principle that terror can be beautiful, the saturated primary colors of \"Suspiria\" camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Giallo-style scene with [Subject] drenched in vivid primary-color lighting, deep crimson from unseen sources, a pool of intense blue creating color boundaries where red meets blue in deep violet, the composition more concerned with aesthetic beauty than narrative logic, every frame designed as a painting, the Dario Argento principle that terror can be beautiful, the saturated primary colors of \"Suspiria\" aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Giallo-style scene with [Subject] drenched in vivid primary-color lighting, deep crimson from unseen sources, a pool of intense blue creating color boundaries where red meets blue in deep violet, the composition more concerned with aesthetic beauty than narrative logic, every frame designed as a painting, the Dario Argento principle that terror can be beautiful, the saturated primary colors of \"Suspiria\" --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Giallo-style scene with [Subject] drenched in vivid primary-color lighting, deep crimson from unseen sources, a pool of intense blue creating color boundaries where red meets blue in deep violet, the composition more concerned with aesthetic beauty than narrative logic, every frame designed as a painting, the Dario Argento principle that terror can be beautiful, the saturated primary colors of \"Suspiria\" aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Giallo-style scene with [Subject] drenched in vivid primary-color lighting, deep crimson from unseen sources, a pool of intense blue creating color boundaries where red meets blue in deep violet, the composition more concerned with aesthetic beauty than narrative logic, every frame designed as a painting, the Dario Argento principle that terror can be beautiful, the saturated primary colors of \"Suspiria\" motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Giallo-style scene with [Subject] drenched in vivid primary-color lighting, deep crimson from unseen sources, a pool of intense blue creating color boundaries where red meets blue in deep violet, the composition more concerned with aesthetic beauty than narrative logic, every frame designed as a painting, the Dario Argento principle that terror can be beautiful, the saturated primary colors of \"Suspiria\" style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Giallo-style scene with [Subject] drenched in vivid primary-color lighting, deep crimson from unseen sources, a pool of intense blue creating color boundaries where red meets blue in deep violet, the composition more concerned with aesthetic beauty than narrative logic, every frame designed as a painting, the Dario Argento principle that terror can be beautiful, the saturated primary colors of \"Suspiria\" resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

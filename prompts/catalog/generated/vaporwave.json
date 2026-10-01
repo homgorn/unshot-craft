@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Combining every retro icon at once, turning a coherent nostalgic world into an internet sticker collage."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using dark aggressive cyberpunk lighting, which loses vaporwave's pastel commercial emptiness and wistful artificial calm."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Applying severe VHS damage until architecture, text, and the central subject can no longer be read."
+    }
+  ],
+  "motion": [
+    {
+      "card": "gradient-transition",
+      "category": "transition",
+      "duration_text": "约 6.0s（180f@30fps；linear 0–2.4s · radial 2–4.2s · conic 4–6s）",
+      "energy": "low",
+      "frames": 180,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "gradient-transition"
+    }
+  ],
+  "prompt": "Vaporwave aesthetic with [Subject] bathed in neon pink and cyan gradient lighting, retro digital artifacts and scan lines overlaid, reflective chrome and glass surfaces, the nostalgic melancholy of a 1990s shopping mall at closing time, VHS color bleeding and tracking errors, palm trees and marble columns, the beauty of obsolete technology, everything slightly too saturated and slightly too perfect",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "vaporwave",
+  "source": {
+    "authored_lede": "A visual style born from internet culture that repurposes 1980s and 90s commercial aesthetics — glitch art, neon pink and cyan gradients, retro computer interfaces, marble busts, Japanese text, and VHS degradation — into a nostalgic critique of consumer capitalism. While originating as a music genre, the visual language has been widely adopted in film, advertising, and AI generation. Nicolas Winding Refn's neon-soaked aesthetics in \"The Neon Demon\" share DNA with vaporwave. The style is simultaneously ironic and sincere — mourning a future that never arrived.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Bathe the subject in a pink-to-cyan gradient and place them among reflective chrome, glass, marble columns, palms, or an empty shopping-mall interior. Add scan lines, mild VHS color bleed, tracking errors, and retro interface fragments without covering the composition. Keep surfaces slightly too polished and colors slightly too saturated. Leave generous empty space and late-night stillness so obsolete commercial imagery reads as melancholy rather than energetic cyberpunk spectacle.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/vaporwave.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/vaporwave.md",
+    "video_url": null,
+    "when_to_use": "Use vaporwave when the image should feel nostalgic for a commercial future that never arrived. It suits empty malls, obsolete technology, artificial leisure spaces, retro interfaces, and scenes balancing irony with sincere melancholy. The style is strongest when recognizable 1980s or 1990s consumer imagery feels abandoned or looped. Avoid treating it as a random neon collage; the emotional center is loss, repetition, and obsolete promise."
+  },
+  "title": "\"Vaporwave Aesthetic Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Vaporwave aesthetic with [Subject] bathed in neon pink and cyan gradient lighting, retro digital artifacts and scan lines overlaid, reflective chrome and glass surfaces, the nostalgic melancholy of a 1990s shopping mall at closing time, VHS color bleeding and tracking errors, palm trees and marble columns, the beauty of obsolete technology, everything slightly too saturated and slightly too perfect camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Vaporwave aesthetic with [Subject] bathed in neon pink and cyan gradient lighting, retro digital artifacts and scan lines overlaid, reflective chrome and glass surfaces, the nostalgic melancholy of a 1990s shopping mall at closing time, VHS color bleeding and tracking errors, palm trees and marble columns, the beauty of obsolete technology, everything slightly too saturated and slightly too perfect aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Vaporwave aesthetic with [Subject] bathed in neon pink and cyan gradient lighting, retro digital artifacts and scan lines overlaid, reflective chrome and glass surfaces, the nostalgic melancholy of a 1990s shopping mall at closing time, VHS color bleeding and tracking errors, palm trees and marble columns, the beauty of obsolete technology, everything slightly too saturated and slightly too perfect --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Vaporwave aesthetic with [Subject] bathed in neon pink and cyan gradient lighting, retro digital artifacts and scan lines overlaid, reflective chrome and glass surfaces, the nostalgic melancholy of a 1990s shopping mall at closing time, VHS color bleeding and tracking errors, palm trees and marble columns, the beauty of obsolete technology, everything slightly too saturated and slightly too perfect aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Vaporwave aesthetic with [Subject] bathed in neon pink and cyan gradient lighting, retro digital artifacts and scan lines overlaid, reflective chrome and glass surfaces, the nostalgic melancholy of a 1990s shopping mall at closing time, VHS color bleeding and tracking errors, palm trees and marble columns, the beauty of obsolete technology, everything slightly too saturated and slightly too perfect motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Vaporwave aesthetic with [Subject] bathed in neon pink and cyan gradient lighting, retro digital artifacts and scan lines overlaid, reflective chrome and glass surfaces, the nostalgic melancholy of a 1990s shopping mall at closing time, VHS color bleeding and tracking errors, palm trees and marble columns, the beauty of obsolete technology, everything slightly too saturated and slightly too perfect style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Vaporwave aesthetic with [Subject] bathed in neon pink and cyan gradient lighting, retro digital artifacts and scan lines overlaid, reflective chrome and glass surfaces, the nostalgic melancholy of a 1990s shopping mall at closing time, VHS color bleeding and tracking errors, palm trees and marble columns, the beauty of obsolete technology, everything slightly too saturated and slightly too perfect resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

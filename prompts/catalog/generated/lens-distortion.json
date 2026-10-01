@@ -1,0 +1,131 @@
+{
+  "category": "visual-effects",
+  "category_label": "Visual Effects & Promptable FX",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Inventing Worlds and Characters: Effects",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Warping the center and edges equally, making the image feel digitally melted rather than optically distorted."
+    },
+    {
+      "is_critical": 1,
+      "ord": 1,
+      "text": "Adding flare without a bright source, which breaks the physical logic of the implied lens."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Stacking barrel distortion, fringing, softness, and bokeh so heavily that the subject loses visual authority."
+    }
+  ],
+  "motion": [],
+  "prompt": "Lens distortion from a vintage anamorphic lens visible across [Subject], barrel distortion curving straight lines at frame edges into subtle arcs, oval-shaped bokeh, horizontal flare streaks, the edges softer and more swirled than the sharp center, chromatic aberration creating slight color fringing, the accumulated imperfections giving the image character that clinical modern lenses deliberately avoid",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "lens-distortion",
+  "source": {
+    "authored_lede": "Optical aberrations from specific lenses that bend, stretch, or warp the image — wide-angle barrel distortion, anamorphic oval bokeh, or vintage lens flaring — each lens has a personality. Emmanuel Lubezki exploits wide-angle distortion in his work with Terrence Malick, using ultra-wide lenses that bend the edges of reality. Roger Deakins prefers Arri/Zeiss Master Primes for their clinical precision, while Robert Richardson often chooses older, imperfect glass for its character. The anamorphic distortion of Panavision C-series and E-series lenses — their signature flares, edge softness, and oval bokeh — has become synonymous with the \"cinematic look.\" Modern lens designers at Cooke, Arri, and Zeiss carefully engineer specific amounts of controlled aberration.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Keep the central subject relatively sharp while curving straight lines near frame edges into subtle arcs. Add edge softness, mild chromatic fringing, oval background bokeh, and restrained horizontal flare from actual bright sources. Let perspective stretch objects closest to the lens, not distant forms at random. Preserve one coherent optical center across the shot. The imperfections should share a lens logic, with stronger aberration toward the perimeter and cleaner rendering near the middle.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/lens-distortion.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/lens-distortion.md",
+    "video_url": null,
+    "when_to_use": "Use lens distortion when optical imperfection should add personality, unease, intimacy, or period texture. Wide barrel distortion can make nearby faces confrontational, while anamorphic softness, oval bokeh, and horizontal flare can create expansive cinematic space. Match the aberration to a clear lens character and framing purpose. Distortion is less useful when architecture, products, or visual evidence must remain geometrically precise."
+  },
+  "title": "\"Lens Distortion Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Lens distortion from a vintage anamorphic lens visible across [Subject], barrel distortion curving straight lines at frame edges into subtle arcs, oval-shaped bokeh, horizontal flare streaks, the edges softer and more swirled than the sharp center, chromatic aberration creating slight color fringing, the accumulated imperfections giving the image character that clinical modern lenses deliberately avoid camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Lens distortion from a vintage anamorphic lens visible across [Subject], barrel distortion curving straight lines at frame edges into subtle arcs, oval-shaped bokeh, horizontal flare streaks, the edges softer and more swirled than the sharp center, chromatic aberration creating slight color fringing, the accumulated imperfections giving the image character that clinical modern lenses deliberately avoid aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Lens distortion from a vintage anamorphic lens visible across [Subject], barrel distortion curving straight lines at frame edges into subtle arcs, oval-shaped bokeh, horizontal flare streaks, the edges softer and more swirled than the sharp center, chromatic aberration creating slight color fringing, the accumulated imperfections giving the image character that clinical modern lenses deliberately avoid --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Lens distortion from a vintage anamorphic lens visible across [Subject], barrel distortion curving straight lines at frame edges into subtle arcs, oval-shaped bokeh, horizontal flare streaks, the edges softer and more swirled than the sharp center, chromatic aberration creating slight color fringing, the accumulated imperfections giving the image character that clinical modern lenses deliberately avoid aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Lens distortion from a vintage anamorphic lens visible across [Subject], barrel distortion curving straight lines at frame edges into subtle arcs, oval-shaped bokeh, horizontal flare streaks, the edges softer and more swirled than the sharp center, chromatic aberration creating slight color fringing, the accumulated imperfections giving the image character that clinical modern lenses deliberately avoid motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Lens distortion from a vintage anamorphic lens visible across [Subject], barrel distortion curving straight lines at frame edges into subtle arcs, oval-shaped bokeh, horizontal flare streaks, the edges softer and more swirled than the sharp center, chromatic aberration creating slight color fringing, the accumulated imperfections giving the image character that clinical modern lenses deliberately avoid style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Lens distortion from a vintage anamorphic lens visible across [Subject], barrel distortion curving straight lines at frame edges into subtle arcs, oval-shaped bokeh, horizontal flare streaks, the edges softer and more swirled than the sharp center, chromatic aberration creating slight color fringing, the accumulated imperfections giving the image character that clinical modern lenses deliberately avoid resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

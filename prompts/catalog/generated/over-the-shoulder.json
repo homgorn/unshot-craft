@@ -1,0 +1,152 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Letting the foreground head cover the speaker's expression, turning spatial context into a large visual obstruction."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Breaking eyeline direction between paired shots, which makes both characters appear to face the same side."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Rendering both planes equally sharp when the scene needs focus to privilege the person currently carrying the beat."
+    }
+  ],
+  "motion": [
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "drone-dive-landing"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "exploded-view"
+    }
+  ],
+  "prompt": "Over-the-shoulder shot with the near figure's shoulder and jaw soft and dark in the foreground, [Subject] sharply in focus in the mid-ground, the spatial depth between the two figures loaded with tension, shot on a 65mm lens at T2 creating a narrow depth of field, rich chiaroscuro lighting with deep umber shadows and warm golden highlights",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "over-the-shoulder",
+  "source": {
+    "authored_lede": "Shot framed from behind one character, looking past their shoulder at another, the standard coverage for dialogue that creates spatial relationships and a sense of being within the conversation. The shot/reverse-shot pattern using over-the-shoulder angles became the backbone of Hollywood dialogue coverage through the classical studio era. David Fincher meticulously calibrates the exact angle and depth of his OTS shots in \"The Social Network\" and \"Zodiac\" to control psychological tension. Wong Kar-wai subverts the technique in \"In the Mood for Love,\" using tight over-the-shoulder framings to suggest the suffocating proximity of secret desire.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place one character's shoulder, jaw, and back of head as a soft dark foreground shape occupying a controlled edge of frame. Hold the other character sharp in the mid-ground with their gaze aimed just beside the lens. Use a narrow depth of field and chiaroscuro to load the gap between them with tension. Keep screen direction consistent across reverse coverage. The foreground figure must remain recognizable without blocking the speaker's face or hands.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/over-the-shoulder.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/over-the-shoulder.md",
+    "video_url": "media/over-the-shoulder.mp4",
+    "when_to_use": "Use over-the-shoulder framing to place the audience inside a conversation while preserving who faces whom. The near shoulder creates depth and makes the listener's presence felt even when attention rests on the speaker. It suits dialogue, interrogation, seduction, negotiation, and withheld reactions. Choose cleaner singles when isolation matters more; use a two-shot when both performances deserve equal weight within the same moment."
+  },
+  "title": "\"Over-the-Shoulder Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

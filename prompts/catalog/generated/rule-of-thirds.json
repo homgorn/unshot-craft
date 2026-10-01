@@ -1,0 +1,162 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Placing the subject near a third line while leaving the remaining space empty of meaning or directional purpose."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Aligning every object to the grid, creating a visibly calculated frame instead of a naturally balanced composition."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using the rule during direct confrontation or formal symmetry, where off-center placement weakens the intended psychological force."
+    }
+  ],
+  "motion": [
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "drone-dive-landing"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "exploded-view"
+    },
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Rule of thirds composition with [Subject] positioned at the upper-right power point intersection, eyes precisely on the top horizontal third line, the remaining two-thirds of the frame filled with negative space creating natural visual flow, the composition dynamically balanced despite being asymmetrical, shot on a 50mm lens at T2.8, overcast daylight providing even naturalistic illumination",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "rule-of-thirds",
+  "source": {
+    "authored_lede": "Dividing the frame into a 3x3 grid and placing key elements along the lines or at their intersections, creating naturally balanced, dynamic compositions that feel more alive than dead-center framing. While most directors use the rule instinctively, Roger Deakins and the Coen Brothers apply it with mathematical precision in films like \"Fargo\" and \"No Country for Old Men.\" Emmanuel Lubezki frequently places subjects at the right-third intersection in Terrence Malick's films, leaving vast spaces of sky or landscape to fill the remaining two-thirds. The rule derives from classical painting composition and remains the most fundamental principle taught in both cinematography and photography.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Divide the frame mentally into a three-by-three grid. Place the subject's primary focal point, often the eyes or face, on one power-point intersection and align the horizon or dominant architecture with a third line. Give the open two-thirds a purpose through landscape, gaze direction, or approaching action. Keep secondary elements from competing with the focal point. For video, preserve useful lead room as the subject moves rather than forcing them mechanically onto one grid point in every frame.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/rule-of-thirds.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/rule-of-thirds.md",
+    "video_url": null,
+    "when_to_use": "Use the rule of thirds when a centered frame feels static but the composition still needs immediate clarity. It suits portraits, landscapes, interviews, and moving subjects because it creates space for gaze, direction, or environment. Place the focal point at an intersection and use the remaining area intentionally. The grid is a starting structure, not a decoration; break it when confrontation, symmetry, or deliberate discomfort would serve the scene better."
+  },
+  "title": "\"Rule of Thirds Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Rule of thirds composition with [Subject] positioned at the upper-right power point intersection, eyes precisely on the top horizontal third line, the remaining two-thirds of the frame filled with negative space creating natural visual flow, the composition dynamically balanced despite being asymmetrical, shot on a 50mm lens at T2.8, overcast daylight providing even naturalistic illumination camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Rule of thirds composition with [Subject] positioned at the upper-right power point intersection, eyes precisely on the top horizontal third line, the remaining two-thirds of the frame filled with negative space creating natural visual flow, the composition dynamically balanced despite being asymmetrical, shot on a 50mm lens at T2.8, overcast daylight providing even naturalistic illumination aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Rule of thirds composition with [Subject] positioned at the upper-right power point intersection, eyes precisely on the top horizontal third line, the remaining two-thirds of the frame filled with negative space creating natural visual flow, the composition dynamically balanced despite being asymmetrical, shot on a 50mm lens at T2.8, overcast daylight providing even naturalistic illumination --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Rule of thirds composition with [Subject] positioned at the upper-right power point intersection, eyes precisely on the top horizontal third line, the remaining two-thirds of the frame filled with negative space creating natural visual flow, the composition dynamically balanced despite being asymmetrical, shot on a 50mm lens at T2.8, overcast daylight providing even naturalistic illumination aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Rule of thirds composition with [Subject] positioned at the upper-right power point intersection, eyes precisely on the top horizontal third line, the remaining two-thirds of the frame filled with negative space creating natural visual flow, the composition dynamically balanced despite being asymmetrical, shot on a 50mm lens at T2.8, overcast daylight providing even naturalistic illumination motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Rule of thirds composition with [Subject] positioned at the upper-right power point intersection, eyes precisely on the top horizontal third line, the remaining two-thirds of the frame filled with negative space creating natural visual flow, the composition dynamically balanced despite being asymmetrical, shot on a 50mm lens at T2.8, overcast daylight providing even naturalistic illumination style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Rule of thirds composition with [Subject] positioned at the upper-right power point intersection, eyes precisely on the top horizontal third line, the remaining two-thirds of the frame filled with negative space creating natural visual flow, the composition dynamically balanced despite being asymmetrical, shot on a 50mm lens at T2.8, overcast daylight providing even naturalistic illumination resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "category": "editing",
+  "category_label": "Editing",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "What Is Film Editing?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Dissolving between equally busy images, creating a cluttered middle where neither subject nor thematic connection remains readable."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Letting faces or objects deform into each other, turning a layered transition into an unintended morphing effect."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using the same dissolve length for every transition, regardless of whether the story calls for tenderness, passage, or disorientation."
+    }
+  ],
+  "motion": [
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "black-card-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "dark-tunnel-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "focus-handoff-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "mask-wipe-real"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "portal-wipe-v2"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "whip-brake-real"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "whip-pan-real"
+    }
+  ],
+  "prompt": "Dissolve transition with two overlapping images of [Subject], both simultaneously visible for a long four-second overlap, the soft double-exposure quality of two temporalities occupying one image, warm sepia tones mixing with saturated color, the nostalgic ache of time-dissolving cinema",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "dissolve",
+  "source": {
+    "authored_lede": "One image gradually fades out as the next fades in, both visible simultaneously during the transition, suggesting the passage of time, a dream state, or a thematic connection. Ingmar Bergman used dissolves as emotional bridges in \"Wild Strawberries,\" where the overlap between present and memory becomes the film's central visual metaphor. Terrence Malick uses extended dissolves in \"The Tree of Life\" to blend cosmic and domestic imagery. Stanley Kubrick's dissolve from the star gate sequence to the neoclassical bedroom in \"2001\" is one of cinema's most disorienting transitions. Wong Kar-wai layers dissolves in \"In the Mood for Love\" to make time itself feel fluid and unreliable.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Select an outgoing and incoming shot with compatible focal areas or deliberately contrasting meanings. Fade the first image down while the second rises over a defined duration, allowing both to remain visible through the middle. Align faces, horizons, objects, or light shapes when their overlap should create a third meaning. Keep exposure controlled so the center does not become washed out. Preserve each shot's continuity before and after the transition, and avoid morphing identities during the blend.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/dissolve.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/dissolve.md",
+    "video_url": null,
+    "when_to_use": "A dissolve fits transitions where two images should coexist before one replaces the other. Use it for memory, elapsed time, dreams, emotional association, or visual comparison across places and periods. Longer overlaps feel fluid and contemplative; shorter ones work as gentle passage. Choose images whose shapes, tones, or meanings interact during the blend. If the overlap contains unrelated clutter, the transition becomes muddy rather than emotionally connected."
+  },
+  "title": "\"Dissolve Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Dissolve transition with two overlapping images of [Subject], both simultaneously visible for a long four-second overlap, the soft double-exposure quality of two temporalities occupying one image, warm sepia tones mixing with saturated color, the nostalgic ache of time-dissolving cinema camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Dissolve transition with two overlapping images of [Subject], both simultaneously visible for a long four-second overlap, the soft double-exposure quality of two temporalities occupying one image, warm sepia tones mixing with saturated color, the nostalgic ache of time-dissolving cinema aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Dissolve transition with two overlapping images of [Subject], both simultaneously visible for a long four-second overlap, the soft double-exposure quality of two temporalities occupying one image, warm sepia tones mixing with saturated color, the nostalgic ache of time-dissolving cinema --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Dissolve transition with two overlapping images of [Subject], both simultaneously visible for a long four-second overlap, the soft double-exposure quality of two temporalities occupying one image, warm sepia tones mixing with saturated color, the nostalgic ache of time-dissolving cinema aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Dissolve transition with two overlapping images of [Subject], both simultaneously visible for a long four-second overlap, the soft double-exposure quality of two temporalities occupying one image, warm sepia tones mixing with saturated color, the nostalgic ache of time-dissolving cinema motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Dissolve transition with two overlapping images of [Subject], both simultaneously visible for a long four-second overlap, the soft double-exposure quality of two temporalities occupying one image, warm sepia tones mixing with saturated color, the nostalgic ache of time-dissolving cinema style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Dissolve transition with two overlapping images of [Subject], both simultaneously visible for a long four-second overlap, the soft double-exposure quality of two temporalities occupying one image, warm sepia tones mixing with saturated color, the nostalgic ache of time-dissolving cinema resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

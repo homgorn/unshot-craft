@@ -1,0 +1,142 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Tilting every object in a different direction, creating visual confusion rather than one readable source of dynamic energy."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Leaving a dominant horizon perfectly stable while minor props angle randomly, weakening the intended sense of instability."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using diagonals in a quiet formal scene where their kinetic pressure contradicts the emotional pace and staging."
+    }
+  ],
+  "motion": [
+    {
+      "card": "steep-tilt-glide",
+      "category": "camera",
+      "duration_text": "4s（120f）单镜；页面越宽越可拉长",
+      "energy": "mid-high",
+      "frames": 120,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "steep-tilt-glide"
+    }
+  ],
+  "prompt": "Diagonal line composition with [Subject] surrounded by aggressive 45-degree angles, nothing horizontal or vertical in the entire composition, every line tilted and active, the deliberate absence of any stable reference creating dynamic instability and forward momentum, shot on a 24mm wide-angle with slight barrel distortion enhancing angular dynamism",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "diagonal-lines",
+  "source": {
+    "authored_lede": "Using diagonal elements in composition to create dynamic energy and movement, as diagonals feel inherently unstable and active compared to horizontal or vertical lines. Carol Reed filled \"The Third Man\" with diagonal compositions — tilted streets, canted angles, shadow lines cutting diagonally across walls — to visualize post-war Vienna's moral instability. Michael Bay uses aggressive diagonal compositions in his action sequences to maximize kinetic energy. Christopher Nolan employs diagonal lines in \"Inception\" during the dream sequences where architecture literally tilts, and Ridley Scott uses diagonal rain and light shafts throughout \"Blade Runner\" to keep the frame perpetually in motion.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Build the composition around one strong diagonal, roughly crossing from a lower corner toward the opposite upper area. Align architecture, shadow, rain, or body movement with that direction, then place the subject where the line delivers attention. Minimize stable horizontal references if instability is the goal. Use a second opposing diagonal only to create deliberate friction. For video, carry movement along the chosen slant or reveal it through a controlled camera tilt, not arbitrary frame wobble.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/diagonal-lines.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/diagonal-lines.md",
+    "video_url": null,
+    "when_to_use": "Diagonal lines suit action, pursuit, imbalance, conflict, and scenes that should resist calm horizontal or vertical order. Streets, shadows, rain, architecture, bodies, and camera angle can all create active slants through the frame. Use them to push the eye forward or make the world feel unstable. The technique loses force when every line tilts randomly; choose a dominant direction and let opposing diagonals appear only where collision or resistance matters."
+  },
+  "title": "\"Diagonal Lines Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Diagonal line composition with [Subject] surrounded by aggressive 45-degree angles, nothing horizontal or vertical in the entire composition, every line tilted and active, the deliberate absence of any stable reference creating dynamic instability and forward momentum, shot on a 24mm wide-angle with slight barrel distortion enhancing angular dynamism camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Diagonal line composition with [Subject] surrounded by aggressive 45-degree angles, nothing horizontal or vertical in the entire composition, every line tilted and active, the deliberate absence of any stable reference creating dynamic instability and forward momentum, shot on a 24mm wide-angle with slight barrel distortion enhancing angular dynamism aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Diagonal line composition with [Subject] surrounded by aggressive 45-degree angles, nothing horizontal or vertical in the entire composition, every line tilted and active, the deliberate absence of any stable reference creating dynamic instability and forward momentum, shot on a 24mm wide-angle with slight barrel distortion enhancing angular dynamism --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Diagonal line composition with [Subject] surrounded by aggressive 45-degree angles, nothing horizontal or vertical in the entire composition, every line tilted and active, the deliberate absence of any stable reference creating dynamic instability and forward momentum, shot on a 24mm wide-angle with slight barrel distortion enhancing angular dynamism aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Diagonal line composition with [Subject] surrounded by aggressive 45-degree angles, nothing horizontal or vertical in the entire composition, every line tilted and active, the deliberate absence of any stable reference creating dynamic instability and forward momentum, shot on a 24mm wide-angle with slight barrel distortion enhancing angular dynamism motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Diagonal line composition with [Subject] surrounded by aggressive 45-degree angles, nothing horizontal or vertical in the entire composition, every line tilted and active, the deliberate absence of any stable reference creating dynamic instability and forward momentum, shot on a 24mm wide-angle with slight barrel distortion enhancing angular dynamism style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Diagonal line composition with [Subject] surrounded by aggressive 45-degree angles, nothing horizontal or vertical in the entire composition, every line tilted and active, the deliberate absence of any stable reference creating dynamic instability and forward momentum, shot on a 24mm wide-angle with slight barrel distortion enhancing angular dynamism resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

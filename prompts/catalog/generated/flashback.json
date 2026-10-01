@@ -1,0 +1,202 @@
+{
+  "category": "narrative",
+  "category_label": "Narrative",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "How to Make a Short Film: An Introduction to Filmmaking",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Using warm color alone without a narrative anchor, making the flashback resemble a random grade change."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Explaining backstory the present scene already communicates, which stalls momentum instead of deepening character."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Softening every detail until actions and faces become vague, sacrificing comprehension for a generic dream look."
+    }
+  ],
+  "motion": [
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "black-card-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "dark-tunnel-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "focus-handoff-transition"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "mask-wipe-real"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "portal-wipe-v2"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "whip-brake-real"
+    },
+    {
+      "card": "shot-transitions",
+      "category": "transition",
+      "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+      "energy": null,
+      "frames": null,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "whip-pan-real"
+    }
+  ],
+  "prompt": "Flashback scene with [Subject] rendered in slightly overexposed warm-shifted tones, the image softer than present-day as if viewed through the imperfect lens of recollection, the color palette pushed toward amber and gold, lens flares and halation giving the image dreamy luminous quality, Kodak Vision3 50D pushed and cross-processed for vintage nostalgic look, the Malick-Lubezki language of memory as golden light",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "flashback",
+  "source": {
+    "authored_lede": "A scene that takes the audience back to an earlier point in time, revealing backstory, providing context for present behavior, or recontextualizing what we thought we knew. \"Citizen Kane\" is structured entirely around flashbacks as reporters investigate Charles Foster Kane's life. Francis Ford Coppola's \"The Godfather Part II\" masterfully interweaves flashbacks of young Vito Corleone with the present-day story of his son Michael. Christopher Nolan uses fragmented flashbacks as a structural principle in \"Memento,\" where the reversed chronology makes every flashback a revelation. Terrence Malick's \"The Tree of Life\" uses flashback as pure sensory memory, evoking childhood through images rather than plot.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Distinguish the remembered scene with a controlled visual system: warmer amber light, softer contrast, slight overexposure, gentle halation, or selective grain. Keep faces and important actions readable beneath the treatment. Build the transition around a matching object, sound cue, gesture, or composition that links present and past. Let imperfections suggest recollection, but maintain spatial continuity within the memory. Return to the present on an image that shows why this past moment matters now.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/flashback.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/flashback.md",
+    "video_url": null,
+    "when_to_use": "Use a flashback when past experience must explain present behavior, reveal missing context, or challenge what the audience assumed. It works best when the return to the past has a specific dramatic purpose rather than serving as an information dump. Sensory fragments can express unreliable or emotional memory, while a fuller scene can deliver concrete backstory. Give the audience a clear temporal anchor before or immediately after the shift."
+  },
+  "title": "\"Flashback Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Flashback scene with [Subject] rendered in slightly overexposed warm-shifted tones, the image softer than present-day as if viewed through the imperfect lens of recollection, the color palette pushed toward amber and gold, lens flares and halation giving the image dreamy luminous quality, Kodak Vision3 50D pushed and cross-processed for vintage nostalgic look, the Malick-Lubezki language of memory as golden light camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Flashback scene with [Subject] rendered in slightly overexposed warm-shifted tones, the image softer than present-day as if viewed through the imperfect lens of recollection, the color palette pushed toward amber and gold, lens flares and halation giving the image dreamy luminous quality, Kodak Vision3 50D pushed and cross-processed for vintage nostalgic look, the Malick-Lubezki language of memory as golden light aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Flashback scene with [Subject] rendered in slightly overexposed warm-shifted tones, the image softer than present-day as if viewed through the imperfect lens of recollection, the color palette pushed toward amber and gold, lens flares and halation giving the image dreamy luminous quality, Kodak Vision3 50D pushed and cross-processed for vintage nostalgic look, the Malick-Lubezki language of memory as golden light --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Flashback scene with [Subject] rendered in slightly overexposed warm-shifted tones, the image softer than present-day as if viewed through the imperfect lens of recollection, the color palette pushed toward amber and gold, lens flares and halation giving the image dreamy luminous quality, Kodak Vision3 50D pushed and cross-processed for vintage nostalgic look, the Malick-Lubezki language of memory as golden light aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Flashback scene with [Subject] rendered in slightly overexposed warm-shifted tones, the image softer than present-day as if viewed through the imperfect lens of recollection, the color palette pushed toward amber and gold, lens flares and halation giving the image dreamy luminous quality, Kodak Vision3 50D pushed and cross-processed for vintage nostalgic look, the Malick-Lubezki language of memory as golden light motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Flashback scene with [Subject] rendered in slightly overexposed warm-shifted tones, the image softer than present-day as if viewed through the imperfect lens of recollection, the color palette pushed toward amber and gold, lens flares and halation giving the image dreamy luminous quality, Kodak Vision3 50D pushed and cross-processed for vintage nostalgic look, the Malick-Lubezki language of memory as golden light style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Flashback scene with [Subject] rendered in slightly overexposed warm-shifted tones, the image softer than present-day as if viewed through the imperfect lens of recollection, the color palette pushed toward amber and gold, lens flares and halation giving the image dreamy luminous quality, Kodak Vision3 50D pushed and cross-processed for vintage nostalgic look, the Malick-Lubezki language of memory as golden light resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

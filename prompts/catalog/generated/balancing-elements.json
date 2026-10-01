@@ -1,0 +1,152 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Matching both sides by size alone, ignoring how brightness, color, texture, and isolation change perceived visual mass."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Making the counterweight as prominent as the subject, splitting attention between two equally demanding focal points."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Correcting imbalance with an unrelated prop that has no place in the environment or connection to the scene."
+    }
+  ],
+  "motion": [
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "drone-dive-landing"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "exploded-view"
+    }
+  ],
+  "prompt": "Balanced composition with [Subject] on one third of the frame counterweighted by a visually striking element on the opposite side, the balance not symmetrical but felt, the eye moving comfortably between the two anchoring elements, shot on medium format with a 65mm lens at f/5.6, the compositional harmony of a frame where every element has been weighed and placed with the precision of a balance scale",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "balancing-elements",
+  "source": {
+    "authored_lede": "Distributing visual weight across the frame so no single area feels too heavy or empty — a large subject on one side can be balanced by a smaller but visually striking element on the other. Akira Kurosawa was a master of compositional balance, carefully arranging actors and set pieces to create harmonious frames in \"Ran\" and \"Kagemusha.\" Emmanuel Lubezki balances Malick's human subjects against natural elements — a face balanced by a cloud formation, a body balanced by a tree. The principle derives from classical painting composition and is instinctive for experienced cinematographers like Roger Deakins, who balances frames intuitively in every setup.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the primary subject on one side, then choose a secondary element on the opposite side with enough contrast, color, isolation, or shape to counter it. Keep the secondary element clearly less important while giving it sufficient visual mass. Test the spaces between both anchors and the frame edges. In video, preserve the balance as figures move by shifting camera position, blocking, or background emphasis rather than adding arbitrary objects.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/balancing-elements.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/balancing-elements.md",
+    "video_url": null,
+    "when_to_use": "Balancing elements is useful when an asymmetrical frame feels lopsided even though the subject sits in the right place. A large muted figure can be counterweighted by a smaller bright object, strong line, or concentrated patch of contrast. Use the method in dialogue, landscape, still life, and environmental portraits. Balance does not require equal size or symmetry; it requires the eye to feel that visual pressure is distributed with intent."
+  },
+  "title": "\"Balancing Elements Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Balanced composition with [Subject] on one third of the frame counterweighted by a visually striking element on the opposite side, the balance not symmetrical but felt, the eye moving comfortably between the two anchoring elements, shot on medium format with a 65mm lens at f/5.6, the compositional harmony of a frame where every element has been weighed and placed with the precision of a balance scale camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Balanced composition with [Subject] on one third of the frame counterweighted by a visually striking element on the opposite side, the balance not symmetrical but felt, the eye moving comfortably between the two anchoring elements, shot on medium format with a 65mm lens at f/5.6, the compositional harmony of a frame where every element has been weighed and placed with the precision of a balance scale aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Balanced composition with [Subject] on one third of the frame counterweighted by a visually striking element on the opposite side, the balance not symmetrical but felt, the eye moving comfortably between the two anchoring elements, shot on medium format with a 65mm lens at f/5.6, the compositional harmony of a frame where every element has been weighed and placed with the precision of a balance scale --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Balanced composition with [Subject] on one third of the frame counterweighted by a visually striking element on the opposite side, the balance not symmetrical but felt, the eye moving comfortably between the two anchoring elements, shot on medium format with a 65mm lens at f/5.6, the compositional harmony of a frame where every element has been weighed and placed with the precision of a balance scale aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Balanced composition with [Subject] on one third of the frame counterweighted by a visually striking element on the opposite side, the balance not symmetrical but felt, the eye moving comfortably between the two anchoring elements, shot on medium format with a 65mm lens at f/5.6, the compositional harmony of a frame where every element has been weighed and placed with the precision of a balance scale motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Balanced composition with [Subject] on one third of the frame counterweighted by a visually striking element on the opposite side, the balance not symmetrical but felt, the eye moving comfortably between the two anchoring elements, shot on medium format with a 65mm lens at f/5.6, the compositional harmony of a frame where every element has been weighed and placed with the precision of a balance scale style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Balanced composition with [Subject] on one third of the frame counterweighted by a visually striking element on the opposite side, the balance not symmetrical but felt, the eye moving comfortably between the two anchoring elements, shot on medium format with a 65mm lens at f/5.6, the compositional harmony of a frame where every element has been weighed and placed with the precision of a balance scale resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

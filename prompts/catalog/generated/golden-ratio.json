@@ -1,0 +1,142 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Forcing every prop onto a visible spiral, making the composition feel diagrammed instead of naturally organized around attention."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using the golden ratio as a substitute for contrast, depth, and subject hierarchy, leaving the focal point weak."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Confusing the technique with centered symmetry, which removes the expanding curved path that should guide the viewer."
+    }
+  ],
+  "motion": [
+    {
+      "card": "orbit-ring-title-open",
+      "category": "opening",
+      "duration_text": "约 4.3s（130f@30fps；标题落定 f50 到退场 f108 之间是 1.9s 稳态巡回）",
+      "energy": "mid",
+      "frames": 130,
+      "kind": "declared",
+      "parameters": 12,
+      "style": "orbit-ring-title-open"
+    }
+  ],
+  "prompt": "Golden ratio spiral composition with [Subject] placed along the logarithmic curve, every major element sitting naturally along the mathematical spiral, the proportional harmony creating organic rightness that the eye follows without conscious awareness, shot on a 24mm wide-angle lens, the mathematical beauty that connects Fibonacci sequences to Renaissance painting to cinematic composition",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "golden-ratio",
+  "source": {
+    "authored_lede": "Composing using the mathematical golden spiral (1.618:1) to place key elements along a naturally occurring logarithmic curve, creating compositions that feel organically harmonious. While debate exists about whether filmmakers consciously employ the golden ratio, analysis of work by Akira Kurosawa, Kubrick, and Spielberg reveals compositions that consistently align with the spiral. Vittorio Storaro has explicitly discussed using the golden ratio in his compositions for \"Apocalypse Now\" and \"The Last Emperor.\" Renaissance painters from Leonardo to Vermeer used the proportion extensively, and its presence in cinema connects film composition to centuries of visual art tradition.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Lay a logarithmic spiral across the frame and place the main subject near its tightest curl. Arrange larger environmental forms, secondary figures, or lines along the expanding arc so the eye travels inward naturally. Avoid drawing a literal spiral into the set unless the story requires one. Keep the focal point strongest through contrast and detail. For video, let camera or subject movement follow the curved path while preserving the final visual landing point.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/golden-ratio.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/golden-ratio.md",
+    "video_url": null,
+    "when_to_use": "Use the golden ratio when a composition needs organic flow rather than the visible grid of thirds or the formality of symmetry. It suits landscapes, portraits in complex environments, still life, and layered action with a curved visual path. The spiral can connect a broad outer shape to a tight focal point. Treat it as a planning guide, not mystical proof of quality; subject hierarchy and readable staging still matter more than mathematical display."
+  },
+  "title": "\"Golden Ratio Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Golden ratio spiral composition with [Subject] placed along the logarithmic curve, every major element sitting naturally along the mathematical spiral, the proportional harmony creating organic rightness that the eye follows without conscious awareness, shot on a 24mm wide-angle lens, the mathematical beauty that connects Fibonacci sequences to Renaissance painting to cinematic composition camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Golden ratio spiral composition with [Subject] placed along the logarithmic curve, every major element sitting naturally along the mathematical spiral, the proportional harmony creating organic rightness that the eye follows without conscious awareness, shot on a 24mm wide-angle lens, the mathematical beauty that connects Fibonacci sequences to Renaissance painting to cinematic composition aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Golden ratio spiral composition with [Subject] placed along the logarithmic curve, every major element sitting naturally along the mathematical spiral, the proportional harmony creating organic rightness that the eye follows without conscious awareness, shot on a 24mm wide-angle lens, the mathematical beauty that connects Fibonacci sequences to Renaissance painting to cinematic composition --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Golden ratio spiral composition with [Subject] placed along the logarithmic curve, every major element sitting naturally along the mathematical spiral, the proportional harmony creating organic rightness that the eye follows without conscious awareness, shot on a 24mm wide-angle lens, the mathematical beauty that connects Fibonacci sequences to Renaissance painting to cinematic composition aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Golden ratio spiral composition with [Subject] placed along the logarithmic curve, every major element sitting naturally along the mathematical spiral, the proportional harmony creating organic rightness that the eye follows without conscious awareness, shot on a 24mm wide-angle lens, the mathematical beauty that connects Fibonacci sequences to Renaissance painting to cinematic composition motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Golden ratio spiral composition with [Subject] placed along the logarithmic curve, every major element sitting naturally along the mathematical spiral, the proportional harmony creating organic rightness that the eye follows without conscious awareness, shot on a 24mm wide-angle lens, the mathematical beauty that connects Fibonacci sequences to Renaissance painting to cinematic composition style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Golden ratio spiral composition with [Subject] placed along the logarithmic curve, every major element sitting naturally along the mathematical spiral, the proportional harmony creating organic rightness that the eye follows without conscious awareness, shot on a 24mm wide-angle lens, the mathematical beauty that connects Fibonacci sequences to Renaissance painting to cinematic composition resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

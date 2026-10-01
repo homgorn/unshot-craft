@@ -1,0 +1,162 @@
+{
+  "category": "editing",
+  "category_label": "Editing",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "What Is Film Editing?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Freezing on a motion-blurred transition frame where hands, face, or body position cannot carry a clear idea."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Allowing hair, smoke, background figures, or camera movement to continue, turning the freeze into selective visual failure."
+    },
+    {
+      "is_critical": 1,
+      "ord": 2,
+      "text": "Using multiple freezes without structural reason, reducing a decisive editorial gesture to a repetitive surface style."
+    }
+  ],
+  "motion": [
+    {
+      "card": "montage-rhythm-moves",
+      "category": "rhythm",
+      "duration_text": "A 4.3s / B 4.3s / C 5s",
+      "energy": "high",
+      "frames": 129,
+      "kind": "declared",
+      "parameters": 10,
+      "style": "domino-cascade"
+    },
+    {
+      "card": "montage-rhythm-moves",
+      "category": "rhythm",
+      "duration_text": "A 4.3s / B 4.3s / C 5s",
+      "energy": "high",
+      "frames": 129,
+      "kind": "declared",
+      "parameters": 10,
+      "style": "drop-blackout-slam"
+    },
+    {
+      "card": "montage-rhythm-moves",
+      "category": "rhythm",
+      "duration_text": "A 4.3s / B 4.3s / C 5s",
+      "energy": "high",
+      "frames": 129,
+      "kind": "declared",
+      "parameters": 10,
+      "style": "wright-triple-cut"
+    }
+  ],
+  "prompt": "Freeze frame of [Subject] caught at the precise instant of peak emotional or physical expression, the film grain suddenly visible as motion stops, the abrupt silence of a world frozen in time, movement arrested as an editorial exclamation point, Kodak Tri-X black and white grain, the immortality of a single stolen instant",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "freeze-frame",
+  "source": {
+    "authored_lede": "Action suddenly stops as a single frame is held on screen — the exclamation point of cinema, used for endings, revelations, or comic emphasis. François Truffaut's freeze frame ending of \"The 400 Blows\" — young Antoine Doinel reaching the sea and turning to look directly at the camera as the image freezes — is one of cinema's most iconic final images. Martin Scorsese uses the freeze frame throughout \"Goodfellas\" as a storytelling device, and the final freeze frame of \"Butch Cassidy and the Sundance Kid\" immortalized its heroes mid-action. Spike Lee employs freeze frames with title cards as a recurring stylistic device.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Build motion toward one precise peak, then hold that exact frame without interpolation, camera drift, or living background movement. Choose a moment with clear gesture, expression, and composition, not a transitional blur. Let texture or grain become visible once motion stops, and decide whether sound cuts, continues, or drops to silence. Hold long enough for the image to change meaning through duration. Resume motion only if the freeze is not meant as a final image.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/freeze-frame.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/freeze-frame.md",
+    "video_url": null,
+    "when_to_use": "Freeze frame belongs at an instant the audience should inspect, remember, or carry beyond normal time. Use it for endings, revelations, introductions, comic emphasis, or peak physical and emotional expression. The chosen image needs a strong silhouette and readable face or action because motion can no longer provide context. A freeze is an editorial exclamation point; frequent use turns punctuation into a mannerism and weakens its finality."
+  },
+  "title": "\"Freeze Frame Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Freeze frame of [Subject] caught at the precise instant of peak emotional or physical expression, the film grain suddenly visible as motion stops, the abrupt silence of a world frozen in time, movement arrested as an editorial exclamation point, Kodak Tri-X black and white grain, the immortality of a single stolen instant camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Freeze frame of [Subject] caught at the precise instant of peak emotional or physical expression, the film grain suddenly visible as motion stops, the abrupt silence of a world frozen in time, movement arrested as an editorial exclamation point, Kodak Tri-X black and white grain, the immortality of a single stolen instant aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Freeze frame of [Subject] caught at the precise instant of peak emotional or physical expression, the film grain suddenly visible as motion stops, the abrupt silence of a world frozen in time, movement arrested as an editorial exclamation point, Kodak Tri-X black and white grain, the immortality of a single stolen instant --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Freeze frame of [Subject] caught at the precise instant of peak emotional or physical expression, the film grain suddenly visible as motion stops, the abrupt silence of a world frozen in time, movement arrested as an editorial exclamation point, Kodak Tri-X black and white grain, the immortality of a single stolen instant aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Freeze frame of [Subject] caught at the precise instant of peak emotional or physical expression, the film grain suddenly visible as motion stops, the abrupt silence of a world frozen in time, movement arrested as an editorial exclamation point, Kodak Tri-X black and white grain, the immortality of a single stolen instant motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Freeze frame of [Subject] caught at the precise instant of peak emotional or physical expression, the film grain suddenly visible as motion stops, the abrupt silence of a world frozen in time, movement arrested as an editorial exclamation point, Kodak Tri-X black and white grain, the immortality of a single stolen instant style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Freeze frame of [Subject] caught at the precise instant of peak emotional or physical expression, the film grain suddenly visible as motion stops, the abrupt silence of a world frozen in time, movement arrested as an editorial exclamation point, Kodak Tri-X black and white grain, the immortality of a single stolen instant resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

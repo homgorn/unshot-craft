@@ -1,0 +1,162 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Allowing the subject to grow during the move, which turns the setup into an ordinary zoom or dolly approach."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Choosing a flat background with no depth lines, leaving little visible space for the contradiction to warp."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using the effect repeatedly, so a powerful psychological rupture becomes a predictable transition between ordinary shots."
+    }
+  ],
+  "motion": [
+    {
+      "card": "crash-zoom-punch",
+      "category": "camera",
+      "duration_text": "约 0.5s 动作 + 前后 hold（动作 6–11f，前 hold ≥30f 建立全景、后 hold ≥45f 读特写）",
+      "energy": "high",
+      "frames": 11,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "crash-impact-real"
+    },
+    {
+      "card": "crash-zoom-punch",
+      "category": "camera",
+      "duration_text": "约 0.5s 动作 + 前后 hold（动作 6–11f，前 hold ≥30f 建立全景、后 hold ≥45f 读特写）",
+      "energy": "high",
+      "frames": 11,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "crash-zoom-real"
+    },
+    {
+      "card": "steep-tilt-glide",
+      "category": "camera",
+      "duration_text": "4s（120f）单镜；页面越宽越可拉长",
+      "energy": "mid-high",
+      "frames": 120,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "steep-tilt-glide"
+    }
+  ],
+  "prompt": "Vertigo effect dolly zoom on [Subject] locked in frame while the background warps and telescopes away in a nauseating spatial contradiction, the zoom and dolly counter-movement perfectly synchronized, desaturated palette with sickly yellow-green undertones, shot on anamorphic glass, Hitchcock's visual language of psychological vertigo made manifest",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "vertigo-effect",
+  "source": {
+    "authored_lede": "Also called a dolly zoom — the camera dollies in while zooming out (or vice versa), causing the background to warp while the subject stays the same size, creating a visceral sense of disorientation. Invented by cameraman Irmin Roberts for Alfred Hitchcock's \"Vertigo\" (1958) to visualize James Stewart's acrophobia, the technique was later used to devastating effect by Steven Spielberg in \"Jaws\" — the moment Chief Brody sees the shark attack from the beach. Peter Jackson employed it in \"The Lord of the Rings\" when Frodo senses the Ringwraiths approaching, and Sam Raimi made it a horror staple in the \"Evil Dead\" films.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Lock the subject's size and central position throughout the shot. Move the camera physically inward while zooming outward, or reverse both actions, with perfect counter-synchronization. The foreground face should remain stable as background distance stretches or compresses visibly along strong depth lines. Use a desaturated palette with sickly yellow-green undertones and restrained anamorphic texture. State the move's duration and emotional trigger; do not ask for a normal push-in with incidental lens breathing.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/vertigo-effect.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/vertigo-effect.md",
+    "video_url": "media/vertigo-effect.mp4",
+    "when_to_use": "Deploy the vertigo effect at a moment of shock, dread, realization, or altered perception. The subject stays the same size while the world behind them telescopes, making stable space feel suddenly impossible. It works when psychology and environment must collide in one mechanical move. Because the distortion is conspicuous, use it sparingly and motivate it with a precise emotional turn rather than general unease."
+  },
+  "title": "\"Vertigo Effect Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

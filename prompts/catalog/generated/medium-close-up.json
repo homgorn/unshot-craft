@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Cropping beneath the chin or above the shoulders, which turns the intended frame into a tight close-up."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Leaving too much torso visible, weakening facial emphasis and drifting back toward a conventional medium shot."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Smoothing skin and expression so aggressively that the subtle performance cues the framing exists to capture disappear."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Medium close-up of [Subject] from the chest up, the intimate distance perfect for reading micro-expressions while body language of tension remains visible in the shoulders and hands, shot on a 75mm Cooke S4 at T2, noir-inflected color palette of deep blues and intermittent warm accents",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "medium-close-up",
+  "source": {
+    "authored_lede": "Frames the subject from the chest up, tighter than a medium shot but not as intimate as a close-up, ideal for emotional dialogue while retaining some body language context. This framing became the default for television drama and is the backbone of prestige TV from \"The Sopranos\" to \"Breaking Bad.\" In cinema, Michael Mann favors the medium close-up in \"Heat\" and \"Collateral\" to maintain both the intensity of facial performance and the physical awareness of characters in dangerous environments. Jonathan Demme's slightly-off-center medium close-ups became his signature from \"Silence of the Lambs\" through \"Rachel Getting Married.\"",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Frame from the chest upward, keeping the shoulders fully present and the eyes near the upper third. Use a slightly longer portrait perspective, moderate background blur, and controlled contrast that preserves skin detail. Let small changes in jaw, breath, and shoulder position carry the performance. Include only enough environment to anchor location. For video, avoid automatic zooming; hold the intimate distance and let the actor's micro-expressions create the variation.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/medium-close-up.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/medium-close-up.md",
+    "video_url": "media/medium-close-up.mp4",
+    "when_to_use": "Choose a medium close-up when emotional dialogue needs intimacy without the pressure of a full close-up. Chest-up framing keeps micro-expressions legible while shoulders and upper-body tension remain available. It is strong for interviews, confession, restrained conflict, and reaction beats. Pull wider when hands or spatial relations matter; move tighter when the face must become the entire dramatic landscape."
+  },
+  "title": "\"Medium Close-Up Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "category": "narrative",
+  "category_label": "Narrative",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "How to Make a Short Film: An Introduction to Filmmaking",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Giving one storyline all meaningful action while the others function only as decorative interruptions."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using identical locations and palettes, making simultaneous threads difficult to identify at a glance."
+    },
+    {
+      "is_critical": 1,
+      "ord": 2,
+      "text": "Forcing convergence through coincidence without planting shared causes, spaces, objects, or thematic pressure beforehand."
+    }
+  ],
+  "motion": [
+    {
+      "card": "split-flap-title",
+      "category": "typography",
+      "duration_text": "约 4.7s（140f：≥20f 乱码静止建立 + 级联翻牌 + ≥15f 停定静止）",
+      "energy": "mid",
+      "frames": 140,
+      "kind": "declared",
+      "parameters": 8,
+      "style": "split-flap-flip"
+    }
+  ],
+  "prompt": "Parallel storylines with [Subject] shown across multiple distinct visual quadrants happening simultaneously, each in its own color world and emotional register yet connected by theme, the Altman-Anderson principle that the world is a symphony of simultaneous stories, the invisible threads connecting lives that share a time without knowing it",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "parallel-storylines",
+  "source": {
+    "authored_lede": "Multiple narrative threads running simultaneously, often converging at key moments, creating thematic parallels and enriching the story by showing how different characters experience the same world. Robert Altman pioneered the multi-storyline film with \"Nashville\" and \"Short Cuts,\" weaving dozens of characters into tapestries of intersecting lives. Paul Thomas Anderson followed with \"Magnolia,\" where parallel storylines converge in a climax of biblical surrealism. Alejandro González Iñárritu's \"Babel\" weaves four storylines across three continents. Christopher Nolan's \"Dunkirk\" runs three parallel timelines at different temporal speeds — one week, one day, one hour — that converge at the climax.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Assign each thread a distinct location, palette, light quality, framing rhythm, and recurring subject. Show simultaneous action through alternating shots or clearly divided compositions, keeping each world internally consistent. Link the threads with matched gestures, shapes, weather, or objects without pretending they occupy the same space. Increase the frequency of transitions as convergence approaches. At the meeting point, preserve visual traces of each storyline so the collision feels earned rather than mechanically announced.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/parallel-storylines.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/parallel-storylines.md",
+    "video_url": null,
+    "when_to_use": "Use parallel storylines when different characters, places, or times can illuminate the same theme from contrasting angles. The threads may share an event, echo one another, or converge physically at a climax. Give each storyline its own immediate desire and visual identity; none should exist merely as a delay. Cross between them at moments of matching action, emotion, sound, or consequence to make the larger structure feel designed."
+  },
+  "title": "\"Parallel Storylines Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Parallel storylines with [Subject] shown across multiple distinct visual quadrants happening simultaneously, each in its own color world and emotional register yet connected by theme, the Altman-Anderson principle that the world is a symphony of simultaneous stories, the invisible threads connecting lives that share a time without knowing it camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Parallel storylines with [Subject] shown across multiple distinct visual quadrants happening simultaneously, each in its own color world and emotional register yet connected by theme, the Altman-Anderson principle that the world is a symphony of simultaneous stories, the invisible threads connecting lives that share a time without knowing it aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Parallel storylines with [Subject] shown across multiple distinct visual quadrants happening simultaneously, each in its own color world and emotional register yet connected by theme, the Altman-Anderson principle that the world is a symphony of simultaneous stories, the invisible threads connecting lives that share a time without knowing it --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Parallel storylines with [Subject] shown across multiple distinct visual quadrants happening simultaneously, each in its own color world and emotional register yet connected by theme, the Altman-Anderson principle that the world is a symphony of simultaneous stories, the invisible threads connecting lives that share a time without knowing it aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Parallel storylines with [Subject] shown across multiple distinct visual quadrants happening simultaneously, each in its own color world and emotional register yet connected by theme, the Altman-Anderson principle that the world is a symphony of simultaneous stories, the invisible threads connecting lives that share a time without knowing it motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Parallel storylines with [Subject] shown across multiple distinct visual quadrants happening simultaneously, each in its own color world and emotional register yet connected by theme, the Altman-Anderson principle that the world is a symphony of simultaneous stories, the invisible threads connecting lives that share a time without knowing it style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Parallel storylines with [Subject] shown across multiple distinct visual quadrants happening simultaneously, each in its own color world and emotional register yet connected by theme, the Altman-Anderson principle that the world is a symphony of simultaneous stories, the invisible threads connecting lives that share a time without knowing it resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

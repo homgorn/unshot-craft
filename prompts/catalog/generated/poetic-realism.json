@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Using fog so densely that the working environment disappears and the image becomes generic romantic haze."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Beautifying every surface until labor, wear, and social reality no longer anchor the lyrical treatment."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Crushing the image into harsh noir contrast, losing the soft midtones that carry melancholy and tenderness."
+    }
+  ],
+  "motion": [
+    {
+      "card": "letterspace-materialize",
+      "category": "opening",
+      "duration_text": "静置 ~15f + 描画 ~50f + 终态静置 ≥30f；全段 3–4s",
+      "energy": "low",
+      "frames": 15,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "letterspace-materialize"
+    }
+  ],
+  "prompt": "Poetic realism with [Subject] rendered in heartbreaking lyrical beauty, fog softening every hard edge into dreamlike haze, the ordinary transformed into visual poetry by atmosphere, the Marcel Carne understanding that working-class life contains as much beauty and melancholy as any aristocratic drama, soft black and white with rich midtones, fog itself becoming the emotional texture of longing",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "poetic-realism",
+  "source": {
+    "authored_lede": "A 1930s French movement blending realistic working-class settings with lyrical, dreamlike visual beauty — finding poetry in the mundane through fog-wrapped docks, rain on cobblestones, and melancholy love. Marcel Carné and cinematographer Eugène Schüfftan defined the style in \"Port of Shadows\" and \"Children of Paradise,\" creating misty, romantically lit working-class worlds. Jean Renoir's \"The Rules of the Game\" carries the movement's humanism. Jean Vigo's \"L'Atalante\" is poetic realism at its most luminous. The movement directly influenced film noir and continues to echo in the work of Wong Kar-wai, whose rain-soaked Hong Kong streets are direct descendants of Carné's fog-shrouded harbors.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the subject in a modest street, dock, café, or rented room with real signs of work and wear. Use soft black and white with rich midtones, wet cobblestones, diffused lamps, and fog that gently reduces distant contrast. Keep the figure grounded through tactile clothing and specific activity. Let rain or haze shape depth without hiding the setting. Compose lyricism through atmosphere and gesture, avoiding glamorous polish or fantasy architecture.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/poetic-realism.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/poetic-realism.md",
+    "video_url": null,
+    "when_to_use": "Use poetic realism for melancholy love, working-class lives, doomed encounters, and ordinary places charged with longing. The method keeps streets, docks, rooms, and labor recognizable while atmosphere lifts them beyond plain documentation. Fog, rain, reflections, and soft tonal light should deepen human feeling, not erase material reality. It is ideal when beauty and hardship need to coexist in the same restrained image."
+  },
+  "title": "\"Poetic Realism Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Poetic realism with [Subject] rendered in heartbreaking lyrical beauty, fog softening every hard edge into dreamlike haze, the ordinary transformed into visual poetry by atmosphere, the Marcel Carne understanding that working-class life contains as much beauty and melancholy as any aristocratic drama, soft black and white with rich midtones, fog itself becoming the emotional texture of longing camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Poetic realism with [Subject] rendered in heartbreaking lyrical beauty, fog softening every hard edge into dreamlike haze, the ordinary transformed into visual poetry by atmosphere, the Marcel Carne understanding that working-class life contains as much beauty and melancholy as any aristocratic drama, soft black and white with rich midtones, fog itself becoming the emotional texture of longing aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Poetic realism with [Subject] rendered in heartbreaking lyrical beauty, fog softening every hard edge into dreamlike haze, the ordinary transformed into visual poetry by atmosphere, the Marcel Carne understanding that working-class life contains as much beauty and melancholy as any aristocratic drama, soft black and white with rich midtones, fog itself becoming the emotional texture of longing --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Poetic realism with [Subject] rendered in heartbreaking lyrical beauty, fog softening every hard edge into dreamlike haze, the ordinary transformed into visual poetry by atmosphere, the Marcel Carne understanding that working-class life contains as much beauty and melancholy as any aristocratic drama, soft black and white with rich midtones, fog itself becoming the emotional texture of longing aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Poetic realism with [Subject] rendered in heartbreaking lyrical beauty, fog softening every hard edge into dreamlike haze, the ordinary transformed into visual poetry by atmosphere, the Marcel Carne understanding that working-class life contains as much beauty and melancholy as any aristocratic drama, soft black and white with rich midtones, fog itself becoming the emotional texture of longing motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Poetic realism with [Subject] rendered in heartbreaking lyrical beauty, fog softening every hard edge into dreamlike haze, the ordinary transformed into visual poetry by atmosphere, the Marcel Carne understanding that working-class life contains as much beauty and melancholy as any aristocratic drama, soft black and white with rich midtones, fog itself becoming the emotional texture of longing style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Poetic realism with [Subject] rendered in heartbreaking lyrical beauty, fog softening every hard edge into dreamlike haze, the ordinary transformed into visual poetry by atmosphere, the Marcel Carne understanding that working-class life contains as much beauty and melancholy as any aristocratic drama, soft black and white with rich midtones, fog itself becoming the emotional texture of longing resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

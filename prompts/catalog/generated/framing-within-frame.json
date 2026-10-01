@@ -1,0 +1,142 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Adding a decorative border with no physical relationship to the location, which reads as graphic design rather than staging."
+    },
+    {
+      "is_critical": 1,
+      "ord": 1,
+      "text": "Letting the doorway, window, or branches cut through the subject's face and obscure essential expression without purpose."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Exposing foreground and subject equally, flattening the depth layers that make the secondary frame visually useful."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Frame within a frame with [Subject] seen through a dark silhouette of an architectural opening, the framing device adding layers of depth and the voyeuristic feeling of observing from a hidden vantage, shot on a 35mm lens with exposure balanced for the subject making the surrounding frame go completely dark, the John Ford doorway composition that transforms a simple element into a metaphor for belonging and exclusion",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "framing-within-frame",
+  "source": {
+    "authored_lede": "Using elements within the scene — doorways, windows, arches, branches — to create a secondary frame around the subject, adding depth, drawing focus, and suggesting entrapment or voyeurism. John Ford used doorway framing iconically in \"The Searchers\" — the final shot of John Wayne framed in a cabin door is one of cinema's most analyzed compositions. Hitchcock used frame-within-frame throughout \"Rear Window\" with the apartment windows functioning as individual movie screens. Wes Anderson frequently frames characters through windows, doors, and proscenium arches to create his dollhouse aesthetic, while Park Chan-wook uses frames-within-frames to suggest surveillance and control in \"Oldboy.\"",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place the camera behind or beyond a real foreground opening, then position the subject inside its boundaries. Let the outer frame fall darker, softer, or partially silhouetted so attention passes through it into the scene. Keep enough irregularity to preserve physical depth rather than making a graphic border. Align the inner opening with the subject's action or isolation. In video, allow the frame to reveal, conceal, or tighten through camera movement without clipping the focal action accidentally.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/framing-within-frame.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/framing-within-frame.md",
+    "video_url": null,
+    "when_to_use": "Use framing within frame when the environment should control how the audience sees a subject. A doorway can suggest exclusion, a window can create voyeurism, and an arch can add formal depth. The technique is valuable for surveillance, isolation, discovery, and layered location work. Choose a framing object that belongs to the scene and keep it subordinate. If the inner frame becomes more decorative than the person or action inside it, focus collapses."
+  },
+  "title": "\"Framing Within Frame Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Frame within a frame with [Subject] seen through a dark silhouette of an architectural opening, the framing device adding layers of depth and the voyeuristic feeling of observing from a hidden vantage, shot on a 35mm lens with exposure balanced for the subject making the surrounding frame go completely dark, the John Ford doorway composition that transforms a simple element into a metaphor for belonging and exclusion camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Frame within a frame with [Subject] seen through a dark silhouette of an architectural opening, the framing device adding layers of depth and the voyeuristic feeling of observing from a hidden vantage, shot on a 35mm lens with exposure balanced for the subject making the surrounding frame go completely dark, the John Ford doorway composition that transforms a simple element into a metaphor for belonging and exclusion aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Frame within a frame with [Subject] seen through a dark silhouette of an architectural opening, the framing device adding layers of depth and the voyeuristic feeling of observing from a hidden vantage, shot on a 35mm lens with exposure balanced for the subject making the surrounding frame go completely dark, the John Ford doorway composition that transforms a simple element into a metaphor for belonging and exclusion --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Frame within a frame with [Subject] seen through a dark silhouette of an architectural opening, the framing device adding layers of depth and the voyeuristic feeling of observing from a hidden vantage, shot on a 35mm lens with exposure balanced for the subject making the surrounding frame go completely dark, the John Ford doorway composition that transforms a simple element into a metaphor for belonging and exclusion aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Frame within a frame with [Subject] seen through a dark silhouette of an architectural opening, the framing device adding layers of depth and the voyeuristic feeling of observing from a hidden vantage, shot on a 35mm lens with exposure balanced for the subject making the surrounding frame go completely dark, the John Ford doorway composition that transforms a simple element into a metaphor for belonging and exclusion motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Frame within a frame with [Subject] seen through a dark silhouette of an architectural opening, the framing device adding layers of depth and the voyeuristic feeling of observing from a hidden vantage, shot on a 35mm lens with exposure balanced for the subject making the surrounding frame go completely dark, the John Ford doorway composition that transforms a simple element into a metaphor for belonging and exclusion style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Frame within a frame with [Subject] seen through a dark silhouette of an architectural opening, the framing device adding layers of depth and the voyeuristic feeling of observing from a hidden vantage, shot on a 35mm lens with exposure balanced for the subject making the surrounding frame go completely dark, the John Ford doorway composition that transforms a simple element into a metaphor for belonging and exclusion resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

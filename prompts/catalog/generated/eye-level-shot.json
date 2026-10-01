@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Placing the camera at chest or forehead height while calling it eye level, subtly changing the power relationship."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Adding dramatic lens distortion or canted framing that contradicts the angle's neutral, observational purpose."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Treating neutrality as visual emptiness instead of using gaze, posture, and available light to hold attention."
+    }
+  ],
+  "motion": [
+    {
+      "card": "graze-face-tour",
+      "category": "camera",
+      "duration_text": "单段 4–5s；可多段接力延长",
+      "energy": "mid-high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "graze-face-tour"
+    }
+  ],
+  "prompt": "Eye-level shot of [Subject] with the camera positioned exactly at their eye height creating a direct and equal relationship with the viewer, natural available light providing gentle directional illumination, no dramatic angles or manipulation, shot on 16mm film stock with gentle grain, naturalistic color palette, intimate documentary stillness",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "eye-level-shot",
+  "source": {
+    "authored_lede": "A neutral shot taken at the subject's eye height, the most natural and common camera angle, creating a sense of equality and objectivity between viewer and subject. Yasujiro Ozu famously placed his camera at a low eye-level (the \"tatami shot\") in films like \"Tokyo Story,\" creating an intimate, respectful perspective that defined Japanese domestic cinema. The Dardenne brothers use persistent eye-level handheld work in \"Rosetta\" and \"The Child\" to maintain unflinching equality with their working-class subjects, never looking down on or up at them.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Position the lens exactly at the subject's eye height and keep verticals neutral. Frame the person with a natural conversational distance, available directional light, gentle 16mm-style grain, and an unforced color palette. Avoid heroic upward lines or downward compression. Let posture, gaze, and small facial shifts carry the frame. In video, use minimal handheld breathing or a locked camera rather than conspicuous movement, preserving the equal relationship between viewer and subject.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/eye-level-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/eye-level-shot.md",
+    "video_url": "media/eye-level-shot.mp4",
+    "when_to_use": "Choose eye level when the camera should meet a person without glorifying, diminishing, or judging them. It is the dependable angle for interviews, domestic scenes, observational drama, and direct exchanges where performance matters more than visual manipulation. Because it feels normal, it can also make unusual behavior more disturbing. Use another angle only when power, vulnerability, or spatial overview needs stronger emphasis."
+  },
+  "title": "\"Eye-Level Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

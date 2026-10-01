@@ -1,0 +1,142 @@
+{
+  "category": "lighting",
+  "category_label": "Lighting",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Film Lighting",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Adding large diffusion to the source, softening the edges until the defining hard-shadow quality disappears."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Using several hard lights from unrelated angles, producing crossed shadows that make the scene visually incoherent."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Ignoring how raking light reveals skin and surface flaws, creating harsh detail where the subject needed restraint."
+    }
+  ],
+  "motion": [
+    {
+      "card": "fracture",
+      "category": "opening",
+      "duration_text": "约 5.2s（156f@30fps；聚合 0–2.6s · hold 1s · 飞散 1.5s）",
+      "energy": "high",
+      "frames": 156,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "fracture"
+    }
+  ],
+  "prompt": "Hard light from a bare overhead source casting razor-sharp shadows on [Subject], defined shadow edges so crisp they look cut with a knife, every surface texture amplified by the raking illumination, shot on Kodak Double-X black and white stock for maximum contrast, a 35mm Zeiss Planar lens, the graphic severity of film noir where light itself becomes an instrument of pressure",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "hard-light",
+  "source": {
+    "authored_lede": "Light from a small or distant source that creates sharp, well-defined shadows, adding texture, drama, and graphic quality that can be harsh and unflattering or strikingly bold. Film noir cinematographers like John Alton and Nicholas Musuraca built entire visual worlds from hard light, creating the razor-sharp shadows of venetian blinds and fedora brims. David Fincher and Darius Khondji used hard light sources in \"Se7en\" to create the grimy, punishing atmosphere of a city drowning in sin. The direct sunlight in Sergio Leone's Westerns functions as nature's hard light, carving faces into dramatic relief.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Place a small bare or distant source at a defined angle and demand crisp, clearly shaped shadow edges. Let raking light reveal pores, fabric, dust, walls, and metal while keeping the contrast strong. A monochrome or restrained palette can make the geometry more forceful. Name any projected shape, such as blinds, and align it with the source. Avoid broad diffusion, ambient fill, or several competing directions that would soften the graphic result.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/hard-light.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/hard-light.md",
+    "video_url": null,
+    "when_to_use": "Use hard light when sharp shadows and exposed texture should create pressure, heat, severity, or graphic style. A small source can carve faces, project window patterns, define dust, or make architecture feel unforgiving. It suits noir, Westerns, interrogation, and harsh daylight. Because it reveals every surface irregularity, choose it deliberately for skin and products rather than assuming stronger contrast always looks more cinematic."
+  },
+  "title": "\"Hard Light Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Hard light from a bare overhead source casting razor-sharp shadows on [Subject], defined shadow edges so crisp they look cut with a knife, every surface texture amplified by the raking illumination, shot on Kodak Double-X black and white stock for maximum contrast, a 35mm Zeiss Planar lens, the graphic severity of film noir where light itself becomes an instrument of pressure camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Hard light from a bare overhead source casting razor-sharp shadows on [Subject], defined shadow edges so crisp they look cut with a knife, every surface texture amplified by the raking illumination, shot on Kodak Double-X black and white stock for maximum contrast, a 35mm Zeiss Planar lens, the graphic severity of film noir where light itself becomes an instrument of pressure aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Hard light from a bare overhead source casting razor-sharp shadows on [Subject], defined shadow edges so crisp they look cut with a knife, every surface texture amplified by the raking illumination, shot on Kodak Double-X black and white stock for maximum contrast, a 35mm Zeiss Planar lens, the graphic severity of film noir where light itself becomes an instrument of pressure --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Hard light from a bare overhead source casting razor-sharp shadows on [Subject], defined shadow edges so crisp they look cut with a knife, every surface texture amplified by the raking illumination, shot on Kodak Double-X black and white stock for maximum contrast, a 35mm Zeiss Planar lens, the graphic severity of film noir where light itself becomes an instrument of pressure aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Hard light from a bare overhead source casting razor-sharp shadows on [Subject], defined shadow edges so crisp they look cut with a knife, every surface texture amplified by the raking illumination, shot on Kodak Double-X black and white stock for maximum contrast, a 35mm Zeiss Planar lens, the graphic severity of film noir where light itself becomes an instrument of pressure motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Hard light from a bare overhead source casting razor-sharp shadows on [Subject], defined shadow edges so crisp they look cut with a knife, every surface texture amplified by the raking illumination, shot on Kodak Double-X black and white stock for maximum contrast, a 35mm Zeiss Planar lens, the graphic severity of film noir where light itself becomes an instrument of pressure style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Hard light from a bare overhead source casting razor-sharp shadows on [Subject], defined shadow edges so crisp they look cut with a knife, every surface texture amplified by the raking illumination, shot on Kodak Double-X black and white stock for maximum contrast, a 35mm Zeiss Planar lens, the graphic severity of film noir where light itself becomes an instrument of pressure resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Physically rushing the camera forward, which creates parallax and changes the move into a rapid dolly shot."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Failing to identify the landing detail, causing the zoom to end between subjects or on an unreadable crop."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Extending the blur across the held close-up, removing the crisp punctuation that makes the snap satisfying."
+    }
+  ],
+  "motion": [
+    {
+      "card": "crash-zoom-punch",
+      "category": "camera",
+      "duration_text": "约 0.5s 动作 + 前后 hold（动作 6–11f，前 hold ≥30f 建立全景、后 hold ≥45f 读特写）",
+      "energy": "high",
+      "frames": 11,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "crash-impact-real"
+    },
+    {
+      "card": "crash-zoom-punch",
+      "category": "camera",
+      "duration_text": "约 0.5s 动作 + 前后 hold（动作 6–11f，前 hold ≥30f 建立全景、后 hold ≥45f 读特写）",
+      "energy": "high",
+      "frames": 11,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "crash-zoom-real"
+    }
+  ],
+  "prompt": "Crash zoom snapping from a wide shot to an extreme close-up of [Subject] in half a second, the blur of the rapid zoom creating concentric radial streaks, shot on a vintage Angenieux 25-250mm zoom cranked at maximum speed, 35mm film grain adding grit to the motion blur, Shaw Brothers visual energy channeled through a modern lens",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "crash-zoom",
+  "source": {
+    "authored_lede": "A sudden, rapid zoom into a subject for dramatic emphasis, often used for comedic punchlines, horror reveals, or martial arts impact moments. The crash zoom is a staple of Hong Kong martial arts cinema, used by directors like Lau Kar-leung and Chang Cheh in Shaw Brothers productions to punctuate kung fu strikes. Quentin Tarantino pays homage to this in \"Kill Bill,\" and Edgar Wright uses crash zooms for comedic shock in his Cornetto trilogy. Sam Raimi made the crash zoom a horror signature — the camera hurtling toward a screaming face in the \"Evil Dead\" films became one of the genre's most recognizable moves.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Begin on a readable wide or medium composition, then snap the zoom to an extreme close-up in roughly half a second. Keep the target centered enough to land sharply after a brief burst of concentric radial streaking. Add gritty film texture without smearing the final frame. Define the exact trigger, such as a blow or sudden look, and hold on the destination. Do not move the camera through space; the lens change is the mechanical event.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/crash-zoom.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/crash-zoom.md",
+    "video_url": "media/crash-zoom.mp4",
+    "when_to_use": "Use a crash zoom to punch into a revelation, reaction, weapon, strike, or comic surprise with deliberate visual aggression. Unlike a push-in, it changes framing through a rapid lens move and should feel abrupt. The technique fits martial arts, horror, action, and stylized comedy. Save it for hard accents; repeated snaps reduce every moment to the same volume and exhaust the viewer."
+  },
+  "title": "\"Crash Zoom Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

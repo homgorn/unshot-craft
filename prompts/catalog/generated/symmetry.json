@@ -1,0 +1,142 @@
+{
+  "category": "composition",
+  "category_label": "Composition",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Rules of Shot Composition in Film",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Setting the camera slightly off-axis, causing doorways, ceiling lines, and vanishing points to disagree across the frame."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Mirroring broad shapes but ignoring light, color, and spacing, leaving the composition balanced only at first glance."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Breaking symmetry with several unrelated objects, so no single disruption gains the attention or narrative weight it deserves."
+    }
+  ],
+  "motion": [
+    {
+      "card": "orbit-ring-title-open",
+      "category": "opening",
+      "duration_text": "约 4.3s（130f@30fps；标题落定 f50 到退场 f108 之间是 1.9s 稳态巡回）",
+      "energy": "mid",
+      "frames": 130,
+      "kind": "declared",
+      "parameters": 12,
+      "style": "orbit-ring-title-open"
+    }
+  ],
+  "prompt": "Perfect bilateral symmetry with [Subject] standing at the exact center of the vanishing point, matching elements receding into infinity on both sides, the symmetry so absolute it becomes psychologically oppressive rather than beautiful, shot on a wide 24mm lens from a locked-off tripod at exact center height, Kubrick one-point-perspective severity",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "symmetry",
+  "source": {
+    "authored_lede": "A composition where both halves of the frame mirror each other, creating a sense of order, formality, perfection, or unsettling precision. Stanley Kubrick made symmetry his defining visual signature — the one-point-perspective corridor shots of \"The Shining\" and \"A Clockwork Orange\" remain the technique's most analyzed examples. Wes Anderson took symmetry to its whimsical extreme, making it the entire visual language of \"The Grand Budapest Hotel\" and \"The French Dispatch.\" Denis Villeneuve uses cold, imposing symmetry in \"Blade Runner 2049\" and \"Arrival\" to convey alien or corporate power structures.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Lock the camera on the exact center axis of the space and place the subject at the central vanishing point. Mirror major architectural forms, props, spacing, and light levels across the vertical divide. Keep lens height level so lines do not drift. Decide whether the symmetry feels playful, formal, or oppressive through scale and repetition. In video, use stable movement directly along the center axis; lateral drift should either remain absent or become a clear rupture of the ordered frame.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/symmetry.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/symmetry.md",
+    "video_url": null,
+    "when_to_use": "Symmetry is strongest when order itself carries emotion. Use it for ritual, authority, control, artificial perfection, deadpan comedy, or an unsettling sense that the world has been arranged too precisely. Corridors, facades, tables, and grouped characters provide natural mirrored structure. The effect depends on exact camera position and balanced set elements. Avoid casual near-symmetry; small errors look accidental unless one deliberate break in the pattern is the subject."
+  },
+  "title": "\"Symmetry Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Perfect bilateral symmetry with [Subject] standing at the exact center of the vanishing point, matching elements receding into infinity on both sides, the symmetry so absolute it becomes psychologically oppressive rather than beautiful, shot on a wide 24mm lens from a locked-off tripod at exact center height, Kubrick one-point-perspective severity camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Perfect bilateral symmetry with [Subject] standing at the exact center of the vanishing point, matching elements receding into infinity on both sides, the symmetry so absolute it becomes psychologically oppressive rather than beautiful, shot on a wide 24mm lens from a locked-off tripod at exact center height, Kubrick one-point-perspective severity aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Perfect bilateral symmetry with [Subject] standing at the exact center of the vanishing point, matching elements receding into infinity on both sides, the symmetry so absolute it becomes psychologically oppressive rather than beautiful, shot on a wide 24mm lens from a locked-off tripod at exact center height, Kubrick one-point-perspective severity --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Perfect bilateral symmetry with [Subject] standing at the exact center of the vanishing point, matching elements receding into infinity on both sides, the symmetry so absolute it becomes psychologically oppressive rather than beautiful, shot on a wide 24mm lens from a locked-off tripod at exact center height, Kubrick one-point-perspective severity aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Perfect bilateral symmetry with [Subject] standing at the exact center of the vanishing point, matching elements receding into infinity on both sides, the symmetry so absolute it becomes psychologically oppressive rather than beautiful, shot on a wide 24mm lens from a locked-off tripod at exact center height, Kubrick one-point-perspective severity motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Perfect bilateral symmetry with [Subject] standing at the exact center of the vanishing point, matching elements receding into infinity on both sides, the symmetry so absolute it becomes psychologically oppressive rather than beautiful, shot on a wide 24mm lens from a locked-off tripod at exact center height, Kubrick one-point-perspective severity style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Perfect bilateral symmetry with [Subject] standing at the exact center of the vanishing point, matching elements receding into infinity on both sides, the symmetry so absolute it becomes psychologically oppressive rather than beautiful, shot on a wide 24mm lens from a locked-off tripod at exact center height, Kubrick one-point-perspective severity resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

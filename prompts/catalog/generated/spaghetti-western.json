@@ -1,0 +1,142 @@
+{
+  "category": "genres",
+  "category_label": "Film Genres",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Genres: Where to Draw the Line?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Keeping every shot at medium distance, losing the genre's defining collision between faces and vast space."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Cutting rapidly throughout the standoff, denying silence and duration the chance to build operatic tension."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using clean modern surfaces and clothing, which weakens the dusty, weathered physical world around the confrontation."
+    }
+  ],
+  "motion": [
+    {
+      "card": "cel-flash-stomp",
+      "category": "typography",
+      "duration_text": "每词 ~30f × 词数 + 收尾 ≥45f；三词约 4.8s",
+      "energy": "high",
+      "frames": 30,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "cel-flash-stomp"
+    }
+  ],
+  "prompt": "Spaghetti Western standoff with [Subject], the camera alternating between extreme close-ups of squinting eyes and ultra-wide shots revealing vast empty space, dust devils spiraling through the frame, golden hour desert light casting long shadows, shot on Techniscope 2-perf 35mm for gritty widescreen, the Ennio Morricone tension of silence stretched to breaking point",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "spaghetti-western",
+  "source": {
+    "authored_lede": "Italian-produced Westerns characterized by extreme close-ups, sweeping wide shots, Morricone-style scores, morally gray antiheroes, and a stylized, operatic approach to violence. Sergio Leone defined the genre with his Dollars trilogy starring Clint Eastwood and reached its apex with \"Once Upon a Time in the West\" — a film built entirely from looks, silences, and Ennio Morricone's score. Leone's visual grammar of extreme close-up eyes cutting to extreme wide shots became one of cinema's most imitated styles. Sergio Corbucci's \"Django\" and \"The Great Silence\" pushed the genre toward nihilism. Tarantino's \"Django Unchained\" and \"The Hateful Eight\" are love letters to the Spaghetti Western tradition.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Establish an immense desert wide shot with the subject reduced against empty terrain, dust devils, and long golden-hour shadows. Cut to extreme close-ups of narrowed eyes, weathered skin, boots, and a hand hovering near a weapon. Keep the horizon broad and the color warm, with gritty widescreen texture. Alternate scale slowly, letting tiny gestures carry threat. Hold the final silence until tension peaks, then resolve with one sudden, readable action.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/spaghetti-western.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/spaghetti-western.md",
+    "video_url": null,
+    "when_to_use": "Use the Spaghetti Western style for standoffs, revenge, outlaw myth, and confrontations where waiting carries as much force as violence. Its rhythm depends on the collision between extreme close-ups and vast wides, turning eyes, hands, and empty distance into equal dramatic players. It suits morally gray characters and stylized danger. Do not rush the payoff; stretched silence is part of the visual architecture."
+  },
+  "title": "\"Spaghetti Western Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Spaghetti Western standoff with [Subject], the camera alternating between extreme close-ups of squinting eyes and ultra-wide shots revealing vast empty space, dust devils spiraling through the frame, golden hour desert light casting long shadows, shot on Techniscope 2-perf 35mm for gritty widescreen, the Ennio Morricone tension of silence stretched to breaking point camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Spaghetti Western standoff with [Subject], the camera alternating between extreme close-ups of squinting eyes and ultra-wide shots revealing vast empty space, dust devils spiraling through the frame, golden hour desert light casting long shadows, shot on Techniscope 2-perf 35mm for gritty widescreen, the Ennio Morricone tension of silence stretched to breaking point aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Spaghetti Western standoff with [Subject], the camera alternating between extreme close-ups of squinting eyes and ultra-wide shots revealing vast empty space, dust devils spiraling through the frame, golden hour desert light casting long shadows, shot on Techniscope 2-perf 35mm for gritty widescreen, the Ennio Morricone tension of silence stretched to breaking point --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Spaghetti Western standoff with [Subject], the camera alternating between extreme close-ups of squinting eyes and ultra-wide shots revealing vast empty space, dust devils spiraling through the frame, golden hour desert light casting long shadows, shot on Techniscope 2-perf 35mm for gritty widescreen, the Ennio Morricone tension of silence stretched to breaking point aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Spaghetti Western standoff with [Subject], the camera alternating between extreme close-ups of squinting eyes and ultra-wide shots revealing vast empty space, dust devils spiraling through the frame, golden hour desert light casting long shadows, shot on Techniscope 2-perf 35mm for gritty widescreen, the Ennio Morricone tension of silence stretched to breaking point motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Spaghetti Western standoff with [Subject], the camera alternating between extreme close-ups of squinting eyes and ultra-wide shots revealing vast empty space, dust devils spiraling through the frame, golden hour desert light casting long shadows, shot on Techniscope 2-perf 35mm for gritty widescreen, the Ennio Morricone tension of silence stretched to breaking point style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Spaghetti Western standoff with [Subject], the camera alternating between extreme close-ups of squinting eyes and ultra-wide shots revealing vast empty space, dust devils spiraling through the frame, golden hour desert light casting long shadows, shot on Techniscope 2-perf 35mm for gritty widescreen, the Ennio Morricone tension of silence stretched to breaking point resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

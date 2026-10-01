@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Writing only long continuous take without mapping the route, leaving the scene vulnerable to spatial jumps and changed details."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Packing unrelated events into the move, so choreography feels like a demonstration rather than one developing dramatic beat."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Using abrupt focal-length changes or impossible camera teleportation that function as cuts despite continuous-shot language."
+    }
+  ],
+  "motion": [
+    {
+      "card": "fracture",
+      "category": "opening",
+      "duration_text": "约 5.2s（156f@30fps；聚合 0–2.6s · hold 1s · 飞散 1.5s）",
+      "energy": "high",
+      "frames": 156,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "fracture"
+    }
+  ],
+  "prompt": "Long unbroken single take following [Subject] through shifting environments, the entire journey unbroken for minutes of choreographed spatial continuity, shot on Steadicam with an ARRI Alexa Mini and Cooke S4 21mm lens, the shifting light temperatures creating a living color journey through the space",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "one-er",
+  "source": {
+    "authored_lede": "An entire scene captured in a single unbroken take with no cuts, demanding precise choreography of actors, camera, and crew while creating real-time tension and immersive spatial continuity. Alfonso Cuarón and Emmanuel Lubezki pushed the oner to its limits in \"Children of Men\" with a six-minute car ambush shot, and Alejandro González Iñárritu structured the entirety of \"Birdman\" as one apparent continuous take. Alexander Sokurov actually achieved a true single-take feature film with \"Russian Ark,\" 96 unbroken minutes wandering through the Hermitage Museum. Sam Mendes' \"1917\" used hidden cuts to create the illusion of a two-hour oner through World War I trenches.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Describe one unbroken route from the opening composition to the final position, including each doorway, turn, actor crossing, focus change, and lighting transition. Keep the lens moderately wide and the movement Steadicam-smooth so space remains readable. Assign timed actions that motivate the camera's attention without implying cuts. Carry persistent wardrobe, props, and screen direction through every beat. If hidden transitions are intended, identify the exact occlusion instead of allowing arbitrary visual resets.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/one-er.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/one-er.md",
+    "video_url": "media/one-er.mp4",
+    "when_to_use": "Use a oner when real-time continuity should create immersion, pressure, or virtuoso flow. It can follow characters through connected rooms, preserve an escalating performance, or make viewers discover action as the camera does. The scene needs choreography strong enough to justify the absence of cuts. Choose conventional coverage when time must compress, geography can be fragmented, or the generated path cannot remain coherent."
+  },
+  "title": "\"One-er (Oner) Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

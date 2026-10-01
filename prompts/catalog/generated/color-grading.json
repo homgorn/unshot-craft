@@ -1,0 +1,131 @@
+{
+  "category": "visual-effects",
+  "category_label": "Visual Effects & Promptable FX",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Inventing Worlds and Characters: Effects",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Pushing every surface toward two colors, erasing natural material differences and believable skin variation."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Changing black levels and white balance between adjacent shots, breaking the continuity of the visual world."
+    },
+    {
+      "is_critical": 1,
+      "ord": 2,
+      "text": "Using saturation as a substitute for mood without controlling contrast, exposure, or the hierarchy of hues."
+    }
+  ],
+  "motion": [],
+  "prompt": "Heavily color-graded scene with [Subject] rendered in a distinct teal-and-orange complementary palette, shadows pushed deep into cyan-teal while skin tones and practicals isolated to deep amber-orange, the aggressive color manipulation where post-production color becomes a dominant creative force equal to the original photography, the final act of authorship in the filmmaking pipeline",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "color-grading",
+  "source": {
+    "authored_lede": "The process of altering and enhancing color in post-production to create a specific mood, era, or visual identity — the final paintbrush of cinema, transforming raw footage into visual art. The Coen Brothers' \"O Brother, Where Art Thou?\" (2000) was the first major film to be entirely digitally color graded, creating its sepia-toned Depression-era look. David Fincher works obsessively with colorist Stephen Nakamura to achieve the sickly green-yellow palette of \"Se7en\" and the cold precision of \"Zodiac.\" Steven Soderbergh used radical color grading in \"Traffic\" — amber for Mexico, blue for the US, natural for Ohio — as a narrative device. Modern colorists like Company 3's Stefan Sonnenfeld and Technicolor's Peter Doyle are as essential to a film's look as the cinematographer.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Define the palette by assigning hue families to shadows, midtones, skin, highlights, and practical sources. For a teal-and-amber look, push dark regions toward cyan while keeping faces and lamps warm, then protect neutral whites from contamination. Maintain exposure detail in both ends of the range. Apply the same color relationships across changing locations. Specify restrained saturation and consistent black levels so the grade feels authored rather than pasted over the photography.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/color-grading.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/color-grading.md",
+    "video_url": null,
+    "when_to_use": "Use color grading when a scene needs a unified emotional identity, a distinct period, or a visual boundary between storylines and locations. It can cool a procedural world, warm a memory, or create controlled contrast between shadows and practical lights. Establish the grade as part of the project's visual grammar, not a filter added independently to every shot. Continuity matters more than saturation."
+  },
+  "title": "\"Color Grading Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Heavily color-graded scene with [Subject] rendered in a distinct teal-and-orange complementary palette, shadows pushed deep into cyan-teal while skin tones and practicals isolated to deep amber-orange, the aggressive color manipulation where post-production color becomes a dominant creative force equal to the original photography, the final act of authorship in the filmmaking pipeline camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Heavily color-graded scene with [Subject] rendered in a distinct teal-and-orange complementary palette, shadows pushed deep into cyan-teal while skin tones and practicals isolated to deep amber-orange, the aggressive color manipulation where post-production color becomes a dominant creative force equal to the original photography, the final act of authorship in the filmmaking pipeline aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Heavily color-graded scene with [Subject] rendered in a distinct teal-and-orange complementary palette, shadows pushed deep into cyan-teal while skin tones and practicals isolated to deep amber-orange, the aggressive color manipulation where post-production color becomes a dominant creative force equal to the original photography, the final act of authorship in the filmmaking pipeline --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Heavily color-graded scene with [Subject] rendered in a distinct teal-and-orange complementary palette, shadows pushed deep into cyan-teal while skin tones and practicals isolated to deep amber-orange, the aggressive color manipulation where post-production color becomes a dominant creative force equal to the original photography, the final act of authorship in the filmmaking pipeline aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Heavily color-graded scene with [Subject] rendered in a distinct teal-and-orange complementary palette, shadows pushed deep into cyan-teal while skin tones and practicals isolated to deep amber-orange, the aggressive color manipulation where post-production color becomes a dominant creative force equal to the original photography, the final act of authorship in the filmmaking pipeline motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Heavily color-graded scene with [Subject] rendered in a distinct teal-and-orange complementary palette, shadows pushed deep into cyan-teal while skin tones and practicals isolated to deep amber-orange, the aggressive color manipulation where post-production color becomes a dominant creative force equal to the original photography, the final act of authorship in the filmmaking pipeline style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Heavily color-graded scene with [Subject] rendered in a distinct teal-and-orange complementary palette, shadows pushed deep into cyan-teal while skin tones and practicals isolated to deep amber-orange, the aggressive color manipulation where post-production color becomes a dominant creative force equal to the original photography, the final act of authorship in the filmmaking pipeline resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

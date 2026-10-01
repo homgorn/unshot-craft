@@ -1,0 +1,152 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Arranging every actor in a flat line, which records the cast but reveals nothing about hierarchy or tension."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Framing so wide that gestures and eyelines become unreadable, defeating the purpose of sustained ensemble staging."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Calling a short location reveal a master shot even though it does not contain the scene's complete dramatic action."
+    }
+  ],
+  "motion": [
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "drone-dive-landing"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "exploded-view"
+    }
+  ],
+  "prompt": "Wide master shot of [Subject] with all elements visible simultaneously, every figure precisely blocked to create a composition of intersecting eyelines and subtle tensions, shot on 35mm with a 27mm lens from a tripod, classical Hollywood staging with Altman-esque layered naturalism",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "master-shot",
+  "source": {
+    "authored_lede": "A continuous wide shot that captures the entire scene from start to finish, serving as the foundation over which closer coverage is layered in editing. Robert Altman was famous for shooting elaborate master shots with multiple overlapping conversations in films like \"Nashville\" and \"Short Cuts,\" trusting the wide frame to let audiences discover the drama themselves. Sidney Lumet staged masterful master shots in \"12 Angry Men,\" choreographing twelve actors within a single room with balletic precision. Mike Leigh builds entire scenes from master shots that allow his actors' improvisational performances to breathe.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Show the entire playing area and every essential figure at once. Block actors on distinct depth planes with intersecting eyelines, clear entrances, and enough separation to read alliances or friction. Use a stable tripod perspective and a moderately wide lens rather than an exaggerated panorama. Lighting should motivate attention inside the frame without hiding secondary action. For video, describe the scene's full beginning-to-end choreography, not merely a wide opening before an automatic cut.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/master-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/master-shot.md",
+    "video_url": "media/master-shot.mp4",
+    "when_to_use": "Build a master shot when a scene depends on ensemble timing, spatial continuity, or the audience choosing where to look. It provides the full dramatic action in one wide composition and becomes a foundation for closer coverage. The format suits overlapping conversations, group conflict, and carefully blocked rooms. It is less effective when the setting cannot support layered action or when one face must dominate from the start."
+  },
+  "title": "\"Master Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

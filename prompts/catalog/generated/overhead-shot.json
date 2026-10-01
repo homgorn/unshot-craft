@@ -1,0 +1,152 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Tilting the camera enough to reveal side faces, changing the graphic top-down view into an ordinary high angle."
+    },
+    {
+      "is_critical": 1,
+      "ord": 1,
+      "text": "Scattering props without deliberate spacing, which makes the surface look messy rather than designed for overhead reading."
+    },
+    {
+      "is_critical": 1,
+      "ord": 2,
+      "text": "Using strong shadows that overlap critical objects and obscure the procedural or narrative information in the arrangement."
+    }
+  ],
+  "motion": [
+    {
+      "card": "overhead-camera-moves",
+      "category": "camera",
+      "duration_text": "A ~4.8s / B ~4.7s",
+      "energy": null,
+      "frames": 144,
+      "kind": "declared",
+      "parameters": 8,
+      "style": "overhead-tabletop-drop"
+    },
+    {
+      "card": "overhead-camera-moves",
+      "category": "camera",
+      "duration_text": "A ~4.8s / B ~4.7s",
+      "energy": null,
+      "frames": 144,
+      "kind": "declared",
+      "parameters": 8,
+      "style": "tilt-reveal"
+    }
+  ],
+  "prompt": "Overhead shot looking straight down on [Subject], the flat geometric arrangement rendered as graphic composition, natural north-light creating soft even illumination with no harsh shadows, shot on medium format with a 55mm lens, clinical sharpness of top-down perspective, Wes Anderson-level compositional precision",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "overhead-shot",
+  "source": {
+    "authored_lede": "Camera positioned directly above the scene looking straight down, similar to bird's eye but typically closer, often used for tabletop scenes, maps, or choreographed action. Wes Anderson uses overhead shots of hands and objects obsessively in films like \"The Grand Budapest Hotel\" and \"The French Dispatch,\" turning tabletop arrangements into graphic design. Martin Scorsese employed the technique in \"Goodfellas\" for the famous cooking-in-prison scene, looking down on razor-thin garlic slices. Spike Jonze and David Fincher both use close overhead angles to transform mundane actions into visually striking compositions.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Mount the viewpoint directly above the working surface and point straight down, with no horizon or angled wall visible. Arrange hands and objects as a clean graphic composition, using soft north-window illumination to avoid harsh competing shadows. Keep the surface sharp from corner to corner and use a medium-format sense of detail. For video, specify precise hand paths and object changes while the camera remains locked, so movement activates the composition rather than destabilizing it.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/overhead-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/overhead-shot.md",
+    "video_url": "media/overhead-shot.mp4",
+    "when_to_use": "Choose an overhead shot for close top-down views of hands, food, maps, tools, documents, bodies, or choreographed action. It converts ordinary activity into graphic arrangement while keeping more intimacy than a broad bird's eye view. The technique works for procedures, clues, rituals, and visual comedy. Use it only when the placement and movement of objects carries meaning, not as automatic decorative coverage."
+  },
+  "title": "\"Overhead Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

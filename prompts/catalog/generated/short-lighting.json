@@ -1,0 +1,142 @@
+{
+  "category": "lighting",
+  "category_label": "Lighting",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Film Lighting",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Illuminating the broad near cheek, which reverses the intended pattern and removes the slimming field of shadow."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Crushing the entire camera-facing side to featureless black, losing the controlled detail that keeps the portrait readable."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Letting the narrow highlight spread across the nose and front plane, weakening the concentrated dramatic accent."
+    }
+  ],
+  "motion": [
+    {
+      "card": "spotlight-hero-card",
+      "category": "opening",
+      "duration_text": "约 4.6s（82–220f）",
+      "energy": "mid",
+      "frames": 220,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "spotlight-hero-card"
+    }
+  ],
+  "prompt": "Short lighting on [Subject] with the key hitting the narrow far side, putting the broader camera-facing side in shadow, the small bright area creating an accent surrounded by darkness, shot on a fast 85mm lens at T1.4 with the background falling to black, film noir portrait psychology where what is hidden matters more than what is shown",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "short-lighting",
+  "source": {
+    "authored_lede": "The side of the face turned away from the camera receives the key light, putting the broader visible area in shadow, creating a slimming, more dramatic and moody portrait. Short lighting is preferred for dramatic and thriller genres where mystery and tension serve the story. Gordon Willis frequently used short lighting patterns in his collaborations with Woody Allen and Francis Ford Coppola. Film noir cinematographers defaulted to short lighting to create the shadowy, secretive faces of morally ambiguous characters. Roger Deakins uses short lighting in \"Prisoners\" to maintain a persistent sense of concealment and dread.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Angle the subject away from camera and place the key on the narrow face plane turned farther from the lens. Keep the broad camera-facing cheek in shadow, with the bright far cheek acting as a controlled accent. Use minimal fill and let the background fall darker if the scene supports it. Preserve a catchlight or slight eye detail where needed. During movement, make the light pattern respond to head rotation instead of remaining frozen across the same facial regions.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/short-lighting.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/short-lighting.md",
+    "video_url": null,
+    "when_to_use": "Short lighting fits portraits that need mystery, tension, a slimmer face shape, or a sense that the character is withholding information. It works naturally in thrillers, noir, interrogations, and dramatic dialogue. The small far-side highlight becomes an accent surrounded by a larger field of shadow. Use it when concealment carries meaning, but protect enough eye and skin detail to keep the emotion intentional rather than simply underexposed."
+  },
+  "title": "\"Short Lighting Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Short lighting on [Subject] with the key hitting the narrow far side, putting the broader camera-facing side in shadow, the small bright area creating an accent surrounded by darkness, shot on a fast 85mm lens at T1.4 with the background falling to black, film noir portrait psychology where what is hidden matters more than what is shown camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Short lighting on [Subject] with the key hitting the narrow far side, putting the broader camera-facing side in shadow, the small bright area creating an accent surrounded by darkness, shot on a fast 85mm lens at T1.4 with the background falling to black, film noir portrait psychology where what is hidden matters more than what is shown aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Short lighting on [Subject] with the key hitting the narrow far side, putting the broader camera-facing side in shadow, the small bright area creating an accent surrounded by darkness, shot on a fast 85mm lens at T1.4 with the background falling to black, film noir portrait psychology where what is hidden matters more than what is shown --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Short lighting on [Subject] with the key hitting the narrow far side, putting the broader camera-facing side in shadow, the small bright area creating an accent surrounded by darkness, shot on a fast 85mm lens at T1.4 with the background falling to black, film noir portrait psychology where what is hidden matters more than what is shown aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Short lighting on [Subject] with the key hitting the narrow far side, putting the broader camera-facing side in shadow, the small bright area creating an accent surrounded by darkness, shot on a fast 85mm lens at T1.4 with the background falling to black, film noir portrait psychology where what is hidden matters more than what is shown motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Short lighting on [Subject] with the key hitting the narrow far side, putting the broader camera-facing side in shadow, the small bright area creating an accent surrounded by darkness, shot on a fast 85mm lens at T1.4 with the background falling to black, film noir portrait psychology where what is hidden matters more than what is shown style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Short lighting on [Subject] with the key hitting the narrow far side, putting the broader camera-facing side in shadow, the small bright area creating an accent surrounded by darkness, shot on a fast 85mm lens at T1.4 with the background falling to black, film noir portrait psychology where what is hidden matters more than what is shown resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

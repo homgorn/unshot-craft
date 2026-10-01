@@ -1,0 +1,192 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "The Dolly Shot: How To Create Powerful Shots With Simple Movement",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Calling for a dolly and a zoom at the same time without intentionally asking for a dolly zoom."
+    },
+    {
+      "is_critical": 1,
+      "ord": 1,
+      "text": "Describing camera movement without foreground or background layers, leaving no parallax for the model to express."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Stacking \"smooth,\" \"dynamic,\" \"epic,\" and multiple conflicting camera directions instead of specifying one controlled move."
+    }
+  ],
+  "motion": [
+    {
+      "card": "crash-zoom-punch",
+      "category": "camera",
+      "duration_text": "约 0.5s 动作 + 前后 hold（动作 6–11f，前 hold ≥30f 建立全景、后 hold ≥45f 读特写）",
+      "energy": "high",
+      "frames": 11,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "crash-impact-real"
+    },
+    {
+      "card": "crash-zoom-punch",
+      "category": "camera",
+      "duration_text": "约 0.5s 动作 + 前后 hold（动作 6–11f，前 hold ≥30f 建立全景、后 hold ≥45f 读特写）",
+      "energy": "high",
+      "frames": 11,
+      "kind": "declared",
+      "parameters": 4,
+      "style": "crash-zoom-real"
+    },
+    {
+      "card": "tension-camera-moves",
+      "category": "camera",
+      "duration_text": "单式 4–5s；全片合计 ≤2 式（各 ≤1 次）",
+      "energy": null,
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 10,
+      "style": "bullet-time-freeze-orbit"
+    },
+    {
+      "card": "tension-camera-moves",
+      "category": "camera",
+      "duration_text": "单式 4–5s；全片合计 ≤2 式（各 ≤1 次）",
+      "energy": null,
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 10,
+      "style": "dutch-roll-to-level"
+    },
+    {
+      "card": "tension-camera-moves",
+      "category": "camera",
+      "duration_text": "单式 4–5s；全片合计 ≤2 式（各 ≤1 次）",
+      "energy": null,
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 10,
+      "style": "pull-back-isolation"
+    },
+    {
+      "card": "tension-camera-moves",
+      "category": "camera",
+      "duration_text": "单式 4–5s；全片合计 ≤2 式（各 ≤1 次）",
+      "energy": null,
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 10,
+      "style": "slow-push-in"
+    }
+  ],
+  "prompt": "Smooth dolly shot gliding toward [Subject], the camera at eye level moving with buttery precision on dolly track, parallax effect separating foreground elements from the mid-ground subject from far-ground details, shot on 35mm with Panavision Primo lenses, rich blacks and saturated warm tones, the elegant motion of precision dolly track work",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "dolly-shot",
+  "source": {
+    "authored_lede": "A smooth camera movement where the entire camera physically moves toward, away from, or alongside the subject on a wheeled platform or track, creating an immersive sense of movement through space. Orson Welles used dolly shots to navigate the deep-focus interiors of \"Citizen Kane,\" while Spike Lee invented his signature double-dolly shot — mounting both actor and camera on the same platform — to create a floating, surreal glide seen in \"Do the Right Thing\" and \"25th Hour.\" Martin Scorsese's famous Copacabana shot in \"Goodfellas\" tracks Henry Hill through the back entrance of a nightclub in one fluid dolly movement.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Describe physical camera travel, direction, speed, subject lock, and foreground-to-background separation. \"Dolly toward\" is more useful than \"cinematic movement.\" Give the model visible layers for parallax — a foreground obstruction, the subject in the middle distance, and a readable background — so the move changes spatial relationships instead of behaving like a digital zoom.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/dolly-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/dolly-shot.md",
+    "video_url": "media/dolly-shot.mp4",
+    "when_to_use": "Use a dolly-in when a realization, threat, or emotional detail needs to become unavoidable. Dolly out when context should overwhelm the subject or create emotional distance. Move alongside a character when the audience should travel with them rather than simply observe them."
+  },
+  "title": "\"Dolly Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Smooth dolly shot gliding toward [Subject], the camera at eye level moving with buttery precision on dolly track, parallax effect separating foreground elements from the mid-ground subject from far-ground details, shot on 35mm with Panavision Primo lenses, rich blacks and saturated warm tones, the elegant motion of precision dolly track work camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Smooth dolly shot gliding toward [Subject], the camera at eye level moving with buttery precision on dolly track, parallax effect separating foreground elements from the mid-ground subject from far-ground details, shot on 35mm with Panavision Primo lenses, rich blacks and saturated warm tones, the elegant motion of precision dolly track work aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Smooth dolly shot gliding toward [Subject], the camera at eye level moving with buttery precision on dolly track, parallax effect separating foreground elements from the mid-ground subject from far-ground details, shot on 35mm with Panavision Primo lenses, rich blacks and saturated warm tones, the elegant motion of precision dolly track work --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Smooth dolly shot gliding toward [Subject], the camera at eye level moving with buttery precision on dolly track, parallax effect separating foreground elements from the mid-ground subject from far-ground details, shot on 35mm with Panavision Primo lenses, rich blacks and saturated warm tones, the elegant motion of precision dolly track work aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Smooth dolly shot gliding toward [Subject], the camera at eye level moving with buttery precision on dolly track, parallax effect separating foreground elements from the mid-ground subject from far-ground details, shot on 35mm with Panavision Primo lenses, rich blacks and saturated warm tones, the elegant motion of precision dolly track work motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Smooth dolly shot gliding toward [Subject], the camera at eye level moving with buttery precision on dolly track, parallax effect separating foreground elements from the mid-ground subject from far-ground details, shot on 35mm with Panavision Primo lenses, rich blacks and saturated warm tones, the elegant motion of precision dolly track work style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Smooth dolly shot gliding toward [Subject], the camera at eye level moving with buttery precision on dolly track, parallax effect separating foreground elements from the mid-ground subject from far-ground details, shot on 35mm with Panavision Primo lenses, rich blacks and saturated warm tones, the elegant motion of precision dolly track work resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "intermediate",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Revealing nothing consequential beyond the original frame, so the withdrawal changes size but not meaning."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Shrinking the subject through a zoom alone, missing the foreground parallax that makes physical retreat convincing."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Losing the subject behind newly revealed objects before the audience can compare them with the larger environment."
+    }
+  ],
+  "motion": [
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "drone-dive-landing"
+    },
+    {
+      "card": "space-camera-moves",
+      "category": "camera",
+      "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+      "energy": "high",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 7,
+      "style": "exploded-view"
+    }
+  ],
+  "prompt": "Pull-out shot beginning tight on [Subject] then slowly withdrawing to reveal the true scale of their surroundings, the shot transitioning from intimacy to cosmic isolation in one continuous movement, shot on 24mm wide-angle lens mounted on a telescoping jib arm, the scale expanding to swallow the individual",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "pull-out",
+  "source": {
+    "authored_lede": "The camera physically moves away from the subject, revealing more of the environment, often used to create a sense of isolation, revelation, or to transition from intimate to epic scale. The final pull-out of \"The Truman Show\" — revealing that Truman's entire world is a television set — is a defining use of the technique. Steven Spielberg's pull-out in \"Schindler's List\" from Oskar Schindler to reveal the enormous line of saved workers is emotionally devastating. The famous opening of Robert Altman's \"The Player\" pulls out from an office window to reveal the entire studio lot in one continuous movement.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Start tightly enough to read the subject's expression, then move the camera physically backward in one continuous path. Let foreground objects enter and background architecture expand through visible parallax, gradually reducing the person inside the composition. Use a wide perspective only as space opens, not as a sudden lens jump. Specify the final revealed element and maintain the subject's screen position so viewers can track them as the environment begins to swallow the frame.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/pull-out.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/pull-out.md",
+    "video_url": "media/pull-out.mp4",
+    "when_to_use": "Choose a pull-out when new context should reframe an intimate moment. Moving away can reveal a crowd, set, landscape, aftermath, or barrier that changes the subject's meaning and makes them feel isolated. It works for endings, revelations, and transitions from personal to epic scale. The wider information must matter; withdrawing only to show more empty room rarely earns the emotional shift."
+  },
+  "title": "\"Pull Out Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

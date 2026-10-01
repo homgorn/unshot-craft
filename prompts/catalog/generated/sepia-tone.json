@@ -1,0 +1,131 @@
+{
+  "category": "visual-effects",
+  "category_label": "Visual Effects & Promptable FX",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "Inventing Worlds and Characters: Effects",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Applying a flat brown overlay that stains whites and blacks without creating a convincing tonal range."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Keeping bright modern color accents in frame, which breaks the historical shorthand of the sepia treatment."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Adding extreme scratches and damage until surface effects overwhelm faces, actions, and the intended emotional memory."
+    }
+  ],
+  "motion": [],
+  "prompt": "Sepia-toned treatment on [Subject], the warm brownish-yellow transforming the image into what appears to be an aged photographic plate, the entire color spectrum collapsed into variations of amber and umber, highlights tinged with pale gold and shadows falling to chocolate brown, visible grain and slight vignetting reinforcing the antique quality, the universal visual language that tells the audience \"this was a long time ago\"",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "sepia-tone",
+  "source": {
+    "authored_lede": "A warm brownish-yellow color treatment that evokes aged photographs and historical periods, instantly signaling \"the past\" and adding a romantic, weathered quality. The sepia effect mimics the actual chemical toning process used on photographs from the 1860s through the early 1900s. The Coen Brothers used a digital sepia grade throughout \"O Brother, Where Art Thou?\" to evoke Depression-era America. Spielberg used sepia-tinted bookend sequences in \"Saving Private Ryan.\" Jean-Pierre Jeunet's \"A Very Long Engagement\" and Baz Luhrmann's period films use warm sepia tones to romanticize historical settings. The technique has become visual shorthand for memory and nostalgia.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Collapse the palette into amber, umber, pale gold, and chocolate brown while retaining a full range from highlight to shadow. Add fine visible grain, slight edge vignetting, and restrained softness consistent with an aged photographic plate. Keep faces and important objects separated by value, not color. Remove modern color accents that would puncture the treatment. Apply the same tonal curve across the sequence so the sepia world feels coherent rather than intermittently filtered.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/sepia-tone.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/sepia-tone.md",
+    "video_url": null,
+    "when_to_use": "Use sepia tone when the image should immediately suggest history, memory, an old photograph, or romantic distance from the present. It fits archival inserts, period bookends, family recollection, and deliberately weathered visual worlds. The treatment is a strong shorthand, so pair it with period-appropriate composition and surfaces. Do not rely on brown color alone to carry an otherwise modern scene into the past."
+  },
+  "title": "\"Sepia Tone Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Sepia-toned treatment on [Subject], the warm brownish-yellow transforming the image into what appears to be an aged photographic plate, the entire color spectrum collapsed into variations of amber and umber, highlights tinged with pale gold and shadows falling to chocolate brown, visible grain and slight vignetting reinforcing the antique quality, the universal visual language that tells the audience \"this was a long time ago\" camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Sepia-toned treatment on [Subject], the warm brownish-yellow transforming the image into what appears to be an aged photographic plate, the entire color spectrum collapsed into variations of amber and umber, highlights tinged with pale gold and shadows falling to chocolate brown, visible grain and slight vignetting reinforcing the antique quality, the universal visual language that tells the audience \"this was a long time ago\" aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Sepia-toned treatment on [Subject], the warm brownish-yellow transforming the image into what appears to be an aged photographic plate, the entire color spectrum collapsed into variations of amber and umber, highlights tinged with pale gold and shadows falling to chocolate brown, visible grain and slight vignetting reinforcing the antique quality, the universal visual language that tells the audience \"this was a long time ago\" --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Sepia-toned treatment on [Subject], the warm brownish-yellow transforming the image into what appears to be an aged photographic plate, the entire color spectrum collapsed into variations of amber and umber, highlights tinged with pale gold and shadows falling to chocolate brown, visible grain and slight vignetting reinforcing the antique quality, the universal visual language that tells the audience \"this was a long time ago\" aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Sepia-toned treatment on [Subject], the warm brownish-yellow transforming the image into what appears to be an aged photographic plate, the entire color spectrum collapsed into variations of amber and umber, highlights tinged with pale gold and shadows falling to chocolate brown, visible grain and slight vignetting reinforcing the antique quality, the universal visual language that tells the audience \"this was a long time ago\" motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Sepia-toned treatment on [Subject], the warm brownish-yellow transforming the image into what appears to be an aged photographic plate, the entire color spectrum collapsed into variations of amber and umber, highlights tinged with pale gold and shadows falling to chocolate brown, visible grain and slight vignetting reinforcing the antique quality, the universal visual language that tells the audience \"this was a long time ago\" style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Sepia-toned treatment on [Subject], the warm brownish-yellow transforming the image into what appears to be an aged photographic plate, the entire color spectrum collapsed into variations of amber and umber, highlights tinged with pale gold and shadows falling to chocolate brown, visible grain and slight vignetting reinforcing the antique quality, the universal visual language that tells the audience \"this was a long time ago\" resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

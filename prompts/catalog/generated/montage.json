@@ -1,0 +1,152 @@
+{
+  "category": "editing",
+  "category_label": "Editing",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "What Is Film Editing?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Repeating attractive shots that show no new milestone, making the sequence energetic but narratively static."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Accelerating cuts before the process is established, so the audience cannot understand what activity or change is being compressed."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Ending on another brief fragment instead of a clear payoff that confirms completion, failure, or transformation."
+    }
+  ],
+  "motion": [
+    {
+      "card": "beat-cut-moves",
+      "category": "rhythm",
+      "duration_text": "A 全程 ~4.3s（建立 49f + 五连切 + 定格 hold 35f）；B 全程 ~4.3s（活素材 30f + 三闪 + hold 60f）",
+      "energy": "high",
+      "frames": 49,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "beat-cut-accelerando"
+    },
+    {
+      "card": "beat-cut-moves",
+      "category": "rhythm",
+      "duration_text": "A 全程 ~4.3s（建立 49f + 五连切 + 定格 hold 35f）；B 全程 ~4.3s（活素材 30f + 三闪 + hold 60f）",
+      "energy": "high",
+      "frames": 49,
+      "kind": "declared",
+      "parameters": 9,
+      "style": "paparazzi-flash"
+    }
+  ],
+  "prompt": "Montage sequence compressing time around [Subject], each shot shorter than the last as momentum accelerates, the editing rhythm itself building like a crescendo, culminating in a final sustained shot of completion, the cinematic time machine that compresses months into two minutes of escalating visual rhythm",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "montage",
+  "source": {
+    "authored_lede": "A sequence of short shots edited together to compress time, convey information, or build emotional momentum — from training sequences to falling-in-love sequences, montage is cinema's time machine. Sergei Eisenstein theorized montage as cinema's unique art form in the 1920s, and his Odessa Steps sequence in \"Battleship Potemkin\" remains the most studied montage in film history. Rocky Balboa's training montage set to \"Gonna Fly Now\" defined the modern montage for a generation. Martin Scorsese uses montage in \"Goodfellas\" to compress years of criminal excess into exhilarating minutes, and Edgar Wright creates kinetic comic montages in the Cornetto trilogy.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Define the process and list a sequence of distinct visual milestones. Start with longer shots that establish the task, then tighten duration as competence, urgency, or accumulation grows. Use repeated actions, matched framing, or recurring objects to show measurable change. Vary shot scale while preserving subject and environment continuity. Build toward one sustained payoff image rather than stopping randomly. Let music or action rhythm guide cuts, but ensure every beat remains legible without sound.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/montage.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/montage.md",
+    "video_url": null,
+    "when_to_use": "Montage is built for change that matters but does not need to unfold in real time. Use it for training, travel, construction, research, falling in love, decline, or any process with visible milestones. Each shot should advance the state, not repeat the same information. Rhythm can accelerate toward completion or slow at setbacks. The sequence needs a clear beginning condition, meaningful progression, and a final image that proves what changed."
+  },
+  "title": "\"Montage Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Montage sequence compressing time around [Subject], each shot shorter than the last as momentum accelerates, the editing rhythm itself building like a crescendo, culminating in a final sustained shot of completion, the cinematic time machine that compresses months into two minutes of escalating visual rhythm camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: pan_right | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Montage sequence compressing time around [Subject], each shot shorter than the last as momentum accelerates, the editing rhythm itself building like a crescendo, culminating in a final sustained shot of completion, the cinematic time machine that compresses months into two minutes of escalating visual rhythm aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Montage sequence compressing time around [Subject], each shot shorter than the last as momentum accelerates, the editing rhythm itself building like a crescendo, culminating in a final sustained shot of completion, the cinematic time machine that compresses months into two minutes of escalating visual rhythm --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Montage sequence compressing time around [Subject], each shot shorter than the last as momentum accelerates, the editing rhythm itself building like a crescendo, culminating in a final sustained shot of completion, the cinematic time machine that compresses months into two minutes of escalating visual rhythm aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Montage sequence compressing time around [Subject], each shot shorter than the last as momentum accelerates, the editing rhythm itself building like a crescendo, culminating in a final sustained shot of completion, the cinematic time machine that compresses months into two minutes of escalating visual rhythm motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Montage sequence compressing time around [Subject], each shot shorter than the last as momentum accelerates, the editing rhythm itself building like a crescendo, culminating in a final sustained shot of completion, the cinematic time machine that compresses months into two minutes of escalating visual rhythm style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: smooth_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Montage sequence compressing time around [Subject], each shot shorter than the last as momentum accelerates, the editing rhythm itself building like a crescendo, culminating in a final sustained shot of completion, the cinematic time machine that compresses months into two minutes of escalating visual rhythm resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "category": "editing",
+  "category_label": "Editing",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "What Is Film Editing?",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Treating a fade as a default scene change, weakening the strong sense of chapter, ending, or passage it communicates."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Changing exposure unevenly across objects, making the transition look like lighting failure rather than the entire image receding."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Cutting away before full black has time to register, reducing the emotional closure and structural pause."
+    }
+  ],
+  "motion": [
+    {
+      "card": "chip-grid-single-select-blackout",
+      "category": "interaction",
+      "duration_text": "约5.0s（150f@30fps）",
+      "energy": "mid-low",
+      "frames": 150,
+      "kind": "declared",
+      "parameters": 8,
+      "style": "chip-grid-single-select-blackout"
+    }
+  ],
+  "prompt": "Fade to black from [Subject], the image gradually losing luminance over six seconds as the figure becomes shadow and the shadow becomes part of the darkness, the fade so gradual that the exact moment of disappearance is unidentifiable, the emotional weight of permanent conclusion, the visual equivalent of a long exhale",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "fade-in-out",
+  "source": {
+    "authored_lede": "The image gradually appears from or disappears to black (or white) — fade to black signals an ending or major time passage while fade from black signals a new beginning or chapter. The Coen Brothers use long, slow fades to black as chapter markers in \"No Country for Old Men,\" each fade feeling like a door closing permanently. Kubrick's fade to white at the end of \"2001\" suggests transcendence. Martin Scorsese uses the fade to black at the end of \"Goodfellas\" and \"The Irishman\" with devastating finality. The pace of the fade itself communicates meaning — a quick fade feels like a curtain dropping while a slow fade feels like consciousness dimming.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Choose whether the image enters from black, leaves into black, or uses white for a distinctly brighter transition. Set an exact duration and preserve the shot's composition while luminance changes evenly. For a slow fade, let details disappear in tonal order until the subject merges with darkness; for a fade in, reverse that emergence cleanly. Keep the final black or white hold long enough to register. Do not change subject shape or camera position during the transition unless separately directed.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/fade-in-out.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/fade-in-out.md",
+    "video_url": null,
+    "when_to_use": "Fade in or out when the story needs a clear boundary rather than a direct visual connection between shots. A fade to black can close a chapter, suggest long passage, or let consciousness recede; a fade from black can establish a beginning or return. The duration carries meaning. Use a fast fade for decisive closure and a slow one for exhaustion, grief, or gradual disappearance."
+  },
+  "title": "\"Fade In/Out Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Fade to black from [Subject], the image gradually losing luminance over six seconds as the figure becomes shadow and the shadow becomes part of the darkness, the fade so gradual that the exact moment of disappearance is unidentifiable, the emotional weight of permanent conclusion, the visual equivalent of a long exhale camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Fade to black from [Subject], the image gradually losing luminance over six seconds as the figure becomes shadow and the shadow becomes part of the darkness, the fade so gradual that the exact moment of disappearance is unidentifiable, the emotional weight of permanent conclusion, the visual equivalent of a long exhale aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Fade to black from [Subject], the image gradually losing luminance over six seconds as the figure becomes shadow and the shadow becomes part of the darkness, the fade so gradual that the exact moment of disappearance is unidentifiable, the emotional weight of permanent conclusion, the visual equivalent of a long exhale --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Fade to black from [Subject], the image gradually losing luminance over six seconds as the figure becomes shadow and the shadow becomes part of the darkness, the fade so gradual that the exact moment of disappearance is unidentifiable, the emotional weight of permanent conclusion, the visual equivalent of a long exhale aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Fade to black from [Subject], the image gradually losing luminance over six seconds as the figure becomes shadow and the shadow becomes part of the darkness, the fade so gradual that the exact moment of disappearance is unidentifiable, the emotional weight of permanent conclusion, the visual equivalent of a long exhale motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Fade to black from [Subject], the image gradually losing luminance over six seconds as the figure becomes shadow and the shadow becomes part of the darkness, the fade so gradual that the exact moment of disappearance is unidentifiable, the emotional weight of permanent conclusion, the visual equivalent of a long exhale style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Fade to black from [Subject], the image gradually losing luminance over six seconds as the figure becomes shadow and the shadow becomes part of the darkness, the fade so gradual that the exact moment of disappearance is unidentifiable, the emotional weight of permanent conclusion, the visual equivalent of a long exhale resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}

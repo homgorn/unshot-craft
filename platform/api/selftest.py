@@ -18,6 +18,26 @@ import urllib.request
 
 ROOT = __import__("pathlib").Path(__file__).resolve().parents[2]
 
+# Counts derived from the index under test. Hardcoded literals here would pass
+# today and fail on the first upstream bump for the wrong reason, which is the
+# difference between a test and a snapshot.
+import json as _json
+import sqlite3 as _sq
+
+_conn = _sq.connect(f"file:{(ROOT / 'platform' / 'db' / 'shotcraft.db').as_posix()}?mode=ro",
+                    uri=True)
+_q = lambda sql: _conn.execute(sql).fetchone()[0]
+CARD_COUNT = _q("SELECT COUNT(*) FROM shot_card")
+STYLE_COUNT = _q("SELECT COUNT(*) FROM style")
+RULE_COUNT = _q("SELECT COUNT(*) FROM rule")
+LOCALE_COUNT = _q("SELECT COUNT(*) FROM locale")
+CATEGORY_COUNT = _q("SELECT COUNT(*) FROM category")
+PARAM_COUNT = _q("SELECT COUNT(*) FROM card_param")
+MOTION_PARAM_COUNT = _q("SELECT COUNT(*) FROM motion_param")
+TECHNIQUE_COUNT = _q("SELECT COUNT(*) FROM cinematic_technique")
+TOOL_COUNT = _q("SELECT COUNT(*) FROM ai_tool")
+_conn.close()
+
 
 def free_port() -> int:
     s = socket.socket()
@@ -68,6 +88,51 @@ def main() -> int:
         if not ok:
             failures.append(f"{name}: {detail}")
 
+    # ------------------------------------------------------------------ F073
+    # The optimizer's whole contract is that an untested cell cannot be mistaken
+    # for a ready one, so these assertions are about the *shape* of the answer,
+    # not just that a route exists.
+    code, tech = call(base, "/techniques")
+    check("/techniques 200", code == 200, str(code))
+    items = tech.get("items", []) if isinstance(tech, dict) else []
+    check("/techniques returns the whole catalog", len(items) == TECHNIQUE_COUNT,
+          f"{len(items)} vs {TECHNIQUE_COUNT}")
+
+    code, opt = call(base, "/optimize/dolly-shot")
+    check("/optimize/{slug} 200", code == 200, str(code))
+    check("/optimize returns the verbatim prompt with [Subject]",
+          "[Subject]" in (opt.get("prompt") or ""), repr((opt.get("prompt") or "")[:40]))
+    cells = opt.get("tool_params", {})
+    check(f"/optimize returns all {TOOL_COUNT} tools", len(cells) == TOOL_COUNT,
+          f"{len(cells)}")
+    check("every cell carries an explicit tested flag",
+          all(isinstance(v.get("tested"), bool) for v in cells.values()),
+          "a cell without the flag is indistinguishable from a ready one")
+    check("tested:false never hides a parameter",
+          all(v.get("params") is None or v.get("tested") is False or v.get("tested_at")
+              for v in cells.values()),
+          "a parameter marked tested has no tested_at to back it")
+    check("/optimize reports how many cells are tested",
+          opt.get("summary", {}).get("tested") == 0,
+          f"tested={opt.get('summary', {}).get('tested')}, expected 0 (ADR 0007)")
+    check("/optimize summary adds up",
+          opt.get("summary", {}).get("with_params", 0)
+          + opt.get("summary", {}).get("null", 0) == TOOL_COUNT,
+          str(opt.get("summary")))
+    mot = opt.get("motion_pairings", [])
+    check("/optimize returns declared motion pairings", len(mot) > 0, str(len(mot)))
+    check("every pairing names a real shot card",
+          all(m.get("card") for m in mot), "a pairing points at no card")
+
+    code, one = call(base, "/optimize/dolly-shot?tool=mj61")
+    check("/optimize?tool= restricts to one", code == 200 and len(one.get("tool_params", {})) == 1,
+          str(code))
+    code, bogus = call(base, "/optimize/dolly-shot?tool=midjouney")
+    check("/optimize?tool=unknown 404 with the key list",
+          code == 404 and "known_tools" in bogus, str(code))
+    code, miss = call(base, "/optimize/no-such-technique")
+    check("/optimize/{unknown} 404", code == 404, str(code))
+
     try:
         code, health = call(base, "/health")
         check("/health 200", code == 200, str(code))
@@ -75,17 +140,19 @@ def main() -> int:
 
         code, stats = call(base, "/stats")
         check("/stats 200", code == 200)
-        check("stats.cards=157", stats.get("cards") == 157, str(stats.get("cards")))
-        check("stats.styles=218", stats.get("styles") == 218, str(stats.get("styles")))
-        # motion_params grows whenever the TSX extractor gains a pattern, so
-        # assert the floor and the invariant rather than a frozen count.
-        check("stats.motion_params >= 1800", stats.get("motion_params", 0) >= 1800,
+        check(f"stats.cards={CARD_COUNT}", stats.get("cards") == CARD_COUNT,
+              str(stats.get("cards")))
+        check(f"stats.styles={STYLE_COUNT}", stats.get("styles") == STYLE_COUNT,
+              str(stats.get("styles")))
+        check(f"stats.motion_params={MOTION_PARAM_COUNT}",
+              stats.get("motion_params") == MOTION_PARAM_COUNT,
               str(stats.get("motion_params")))
         check("stats has upstream_sha", bool(stats.get("upstream_sha")))
 
         code, cards = call(base, "/cards")
         check("/cards 200", code == 200)
-        check("/cards returns 157", len(cards.get("items", [])) == 157,
+        check(f"/cards returns all {CARD_COUNT}",
+              len(cards.get("items", [])) == CARD_COUNT,
               str(len(cards.get("items", []))))
 
         code, cam = call(base, "/cards?category=camera")
@@ -126,7 +193,8 @@ def main() -> int:
         check("/cards/{unknown} 404", code == 404, str(code))
 
         code, styles = call(base, "/styles")
-        check("/styles 200", code == 200 and len(styles.get("items", [])) == 218,
+        check(f"/styles returns all {STYLE_COUNT}",
+              code == 200 and len(styles.get("items", [])) == STYLE_COUNT,
               str(len(styles.get("items", []))))
 
         code, style = call(base, "/styles/blur-slide")
@@ -141,7 +209,8 @@ def main() -> int:
               ez["items"][0]["spec"])
 
         code, rules = call(base, "/rules")
-        check("/rules 200", code == 200 and len(rules.get("items", [])) == 27,
+        check(f"/rules returns all {RULE_COUNT}",
+              code == 200 and len(rules.get("items", [])) == RULE_COUNT,
               str(len(rules.get("items", []))))
         fams = {r["family"] for r in rules.get("items", [])}
         check("rules cover 5 families", fams == {"R", "Q", "S", "C", "P"}, str(fams))
@@ -156,10 +225,13 @@ def main() -> int:
               str(len(opp.get("items", []))))
 
         code, cats = call(base, "/categories")
-        check("/categories 200", code == 200 and len(cats.get("items", [])) == 10)
+        check(f"/categories returns all {CATEGORY_COUNT}",
+              code == 200 and len(cats.get("items", [])) == CATEGORY_COUNT,
+              str(len(cats.get("items", []))))
 
         code, loc = call(base, "/locales")
-        check("/locales 200", code == 200 and len(loc.get("items", [])) == 9,
+        check(f"/locales returns all {LOCALE_COUNT}",
+              code == 200 and len(loc.get("items", [])) == LOCALE_COUNT,
               str(len(loc.get("items", []))))
 
         # read-only guarantee

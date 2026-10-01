@@ -1,0 +1,142 @@
+{
+  "category": "camera-work",
+  "category_label": "Camera Work",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "50+ Types of Camera Shots, Angles, and Techniques",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "basic",
+  "mistakes": [
+    {
+      "is_critical": 0,
+      "ord": 0,
+      "text": "Confusing tilt with raising the camera, which changes viewpoint and parallax instead of rotating on a fixed axis."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Starting and ending on unrelated details, leaving the vertical scan with no dramatic logic or visual payoff."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Tilting too fast for costume, architecture, or environmental clues to register before the final reveal."
+    }
+  ],
+  "motion": [
+    {
+      "card": "steep-tilt-glide",
+      "category": "camera",
+      "duration_text": "4s（120f）单镜；页面越宽越可拉长",
+      "energy": "mid-high",
+      "frames": 120,
+      "kind": "declared",
+      "parameters": 6,
+      "style": "steep-tilt-glide"
+    }
+  ],
+  "prompt": "Slow tilt shot beginning at the feet of [Subject] and climbing vertically up their body, the deliberate vertical scan building anticipation, each detail telling the character's story before the face is revealed, shot on 85mm telephoto compressing the vertical layers, Kodak Vision3 500T with cool overcast color rendition",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "tilt-shot",
+  "source": {
+    "authored_lede": "A vertical rotation of the camera on a fixed axis, tilting up or down to reveal height, scan a character from feet to face, or follow vertical action. Hitchcock used the slow tilt masterfully in \"Psycho,\" tilting up the facade of the Bates house to establish its Gothic menace. Spielberg opens \"Jurassic Park\" with a slow tilt up the Brachiosaurus that mirrors the characters' awe, and Christopher Nolan employs precise tilts in \"Inception\" to disorient the viewer as architecture folds upon itself.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Fix the camera on its support and specify a vertical rotation upward or downward with no lateral travel. Name the starting detail, the visual information encountered during the move, and the final reveal. A telephoto perspective can compress stacked details during a character scan, while steady speed builds anticipation. Keep horizontal framing stable and avoid roll. For video, let the tilt resolve and hold briefly on the destination so the revealed face or object registers.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/tilt-shot.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/tilt-shot.md",
+    "video_url": "media/tilt-shot.mp4",
+    "when_to_use": "Use a tilt when attention needs to travel vertically while the camera stays in place. A slow rise from boots to face can delay identity; a move up a facade can establish intimidating height; a downward tilt can reveal danger, evidence, or a body below. The start and finish should form a meaningful relationship. Avoid tilting when physical camera elevation or a wider static frame communicates the idea more clearly."
+  },
+  "title": "\"Tilt Shot Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": null,
+      "param_style": "--flag",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": null,
+      "param_style": "k=v",
+      "params": null,
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 7,
+    "tested": 0,
+    "with_params": 0
+  }
+}

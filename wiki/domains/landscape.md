@@ -24,6 +24,6 @@ These are the surfaces that already carry the skill. They are also the surfaces 
 
 ## Traction
 
-- Upstream: **10,100 stars / 899 forks**, Apache-2.0, 1009 tracked files. That fork:star ratio (~9%) is the tell: people install it, they don't just bookmark it.
+- Upstream: **10,100 stars / 899 forks**, Apache-2.0, 1139 tracked files. That fork:star ratio (~9%) is the tell: people install it, they don't just bookmark it.
 - Sibling video-talkcraft: 1.3k stars / 126 forks, but a *non-commercial* licence — the author chose to fence the newer installment.
 - The install path is one command: `npx skills add Vincentwei1021/video-shotcraft`. Distribution is the skill registry, not a website.

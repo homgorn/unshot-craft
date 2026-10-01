@@ -1,0 +1,142 @@
+{
+  "category": "narrative",
+  "category_label": "Narrative",
+  "citations": [
+    {
+      "ord": 0,
+      "title": "How to Make a Short Film: An Introduction to Filmmaking",
+      "url": null
+    }
+  ],
+  "copy": {
+    "authored": false,
+    "note": "The prompt is the copy and it is authored upstream. What a client needs filled is the subject: replace [Subject] with the subject of their film. Do not expand it here — a filled slot stored in the brief reads exactly like an authored prompt and cannot be told apart.",
+    "slots": [
+      {
+        "id": "subject",
+        "value": "[Subject]"
+      }
+    ],
+    "status": "slot"
+  },
+  "level": "advanced",
+  "mistakes": [
+    {
+      "is_critical": 1,
+      "ord": 0,
+      "text": "Reordering scenes arbitrarily without creating mystery, contrast, or a new relationship between cause and consequence."
+    },
+    {
+      "is_critical": 0,
+      "ord": 1,
+      "text": "Giving every period identical styling, forcing viewers to guess when events occur from dialogue alone."
+    },
+    {
+      "is_critical": 0,
+      "ord": 2,
+      "text": "Overloading each fragment with clues, making the structure feel like a puzzle interface instead of lived drama."
+    }
+  ],
+  "motion": [
+    {
+      "card": "circle-match-iris",
+      "category": "transition",
+      "duration_text": "4.7s（锚点脉冲 30f + 光圈扩张 45f + 图表生长 55f + 静止 40f）",
+      "energy": "mid-high",
+      "frames": 30,
+      "kind": "declared",
+      "parameters": 5,
+      "style": "circle-match-iris"
+    }
+  ],
+  "prompt": "Non-linear narrative visualized with [Subject] existing simultaneously at different moments, each temporal fragment in its own distinct visual world with unique color science, the puzzle-like structure of Nolan and Tarantino made visual, the non-linear principle that chronology is a creative choice rather than an obligation",
+  "prompt_slot": "[Subject]",
+  "schema": "cinematic.brief/1",
+  "slug": "non-linear-narrative",
+  "source": {
+    "authored_lede": "A story told out of chronological order — rearranging time to create mystery, thematic resonance, or a puzzle the audience assembles. Quentin Tarantino's \"Pulp Fiction\" made non-linear narrative a mainstream phenomenon, while Christopher Nolan's \"Memento\" pushed it to its logical extreme by running the entire film in reverse. Alejandro González Iñárritu's \"21 Grams\" fragments three timelines into a mosaic, and Denis Villeneuve's \"Arrival\" uses non-linear structure to redefine the audience's understanding of time itself. Gaspar Noé's \"Irréversible\" tells its story in reverse chronological order, making its final scene of peaceful joy the most devastating in the film.",
+    "brief_kind": "generated",
+    "catalog_license": "MIT",
+    "catalog_repo": "cinematique",
+    "catalog_sha256": null,
+    "directing_the_ai": "Define each time period with a distinct but related palette, lighting condition, costume state, and environmental detail. Repeat one subject or composition across periods to expose change. Arrange fragments around dramatic meaning rather than random chronology: consequence, cause, contradiction, revelation. Keep screen direction and identity consistent within each period. When moments overlap, show a clear visual bridge. The final sequence should reward reconstruction, with each temporal fragment altering how another fragment is read.",
+    "image_url": "\"https://vvsvs.pro/img/cinematique/non-linear-narrative.webp\"",
+    "source_url": null,
+    "technique_file": "data/cinematic/non-linear-narrative.md",
+    "video_url": null,
+    "when_to_use": "Use a non-linear narrative when reordered time creates mystery, emotional contrast, or thematic resonance that chronology cannot provide. Place consequences before causes, revisit one event from different periods, or interleave temporal fragments that change one another's meaning. Every jump should contribute evidence. The structure demands strong anchors such as age, wardrobe, location, color, or repeated composition so the viewer can assemble the timeline without constant labels."
+  },
+  "title": "\"Non-Linear Narrative Prompt for AI Image & Video\"",
+  "tool_params": {
+    "kling15": {
+      "full_prompt": "Non-linear narrative visualized with [Subject] existing simultaneously at different moments, each temporal fragment in its own distinct visual world with unique color science, the puzzle-like structure of Nolan and Tarantino made visual, the non-linear principle that chronology is a creative choice rather than an obligation camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "param_style": "k=v",
+      "params": "camera_motion: slow_pan | resolution: 1080p | duration: 5 | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Kling 1.5",
+      "version": "kling-1.5"
+    },
+    "luma": {
+      "full_prompt": "Non-linear narrative visualized with [Subject] existing simultaneously at different moments, each temporal fragment in its own distinct visual world with unique color science, the puzzle-like structure of Nolan and Tarantino made visual, the non-linear principle that chronology is a creative choice rather than an obligation aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16_9 | duration: 5 | resolution: 1080p | style: cinematic",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Luma Dream Machine",
+      "version": "dream-machine"
+    },
+    "mj61": {
+      "full_prompt": "Non-linear narrative visualized with [Subject] existing simultaneously at different moments, each temporal fragment in its own distinct visual world with unique color science, the puzzle-like structure of Nolan and Tarantino made visual, the non-linear principle that chronology is a creative choice rather than an obligation --ar 16:9 --v 6.1 --style raw --cw 50",
+      "param_style": "--flag",
+      "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Midjourney v6.1",
+      "version": "v6.1"
+    },
+    "pika15": {
+      "full_prompt": "Non-linear narrative visualized with [Subject] existing simultaneously at different moments, each temporal fragment in its own distinct visual world with unique color science, the puzzle-like structure of Nolan and Tarantino made visual, the non-linear principle that chronology is a creative choice rather than an obligation aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "aspect_ratio: 16:9 | style: cinematic | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Pika 1.5",
+      "version": "pika-1.5"
+    },
+    "runway_gen3": {
+      "full_prompt": "Non-linear narrative visualized with [Subject] existing simultaneously at different moments, each temporal fragment in its own distinct visual world with unique color science, the puzzle-like structure of Nolan and Tarantino made visual, the non-linear principle that chronology is a creative choice rather than an obligation motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "param_style": "k=v",
+      "params": "motion_brush: smooth_slow_pan | aspect_ratio: 16:9 | duration: 5 | resolution: 1080p",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Runway Gen-3 Alpha",
+      "version": "gen-3-alpha"
+    },
+    "sora": {
+      "full_prompt": "Non-linear narrative visualized with [Subject] existing simultaneously at different moments, each temporal fragment in its own distinct visual world with unique color science, the puzzle-like structure of Nolan and Tarantino made visual, the non-linear principle that chronology is a creative choice rather than an obligation style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "param_style": "k=v",
+      "params": "style: cinematic | resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | motion: slow_pan",
+      "tested": false,
+      "tested_at": null,
+      "tool": "OpenAI Sora",
+      "version": "sora-1"
+    },
+    "veo2": {
+      "full_prompt": "Non-linear narrative visualized with [Subject] existing simultaneously at different moments, each temporal fragment in its own distinct visual world with unique color science, the puzzle-like structure of Nolan and Tarantino made visual, the non-linear principle that chronology is a creative choice rather than an obligation resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "param_style": "k=v",
+      "params": "resolution: 1080p | aspect_ratio: 16:9 | duration: 5 | cinematic_style: true",
+      "tested": false,
+      "tested_at": null,
+      "tool": "Google Veo 2",
+      "version": "veo-2"
+    }
+  },
+  "tool_summary": {
+    "listed": 7,
+    "note": "an untested tool parameter is an untested claim; `tested: false` on a cell with params means the parameter is recorded but has never been run against a model version",
+    "null": 0,
+    "tested": 0,
+    "with_params": 7
+  }
+}
