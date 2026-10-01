@@ -3,9 +3,91 @@
   "info": {
     "title": "shotcraft index API",
     "version": "1.0.0",
-    "description": "Read-only access to the indexed video-shotcraft knowledge base. Generated from shotcraft.db; no write endpoints."
+    "description": "Read-only access to the indexed video-shotcraft knowledge base. Generated from shotcraft.db; no write endpoints.",
+    "license": {
+      "name": "Apache-2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "local"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "CardRef": {
+        "type": "object",
+        "required": [
+          "name",
+          "category"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "energy": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "low",
+              "low-mid",
+              "mid-low",
+              "mid",
+              "mid-high",
+              "high",
+              "very-high",
+              "peak",
+              null
+            ]
+          },
+          "duration_frames": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string",
+            "description": "Chinese one-liner, upstream verbatim"
+          }
+        }
+      }
+    }
   },
   "paths": {
+    "/": {
+      "get": {
+        "summary": "Health check and the route list"
+      }
+    },
+    "/locales": {
+      "get": {
+        "summary": "Locales and how many strings each has"
+      }
+    },
+    "/categories": {
+      "get": {
+        "summary": "The 10 card categories with counts"
+      }
+    },
     "/cards": {
       "get": {
         "summary": "All 157 shot cards",
@@ -52,7 +134,22 @@
             "schema": {
               "type": "string"
             },
-            "description": "FTS5 search over name, summary, use, intention"
+            "description": "Full-text search. 3+ characters use the trigram index (substring, any script); 1-2 characters fall back to LIKE, which is why CJK works either way."
+          },
+          {
+            "name": "max_frames",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Only cards whose suggested duration fits"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
           }
         ]
       }
@@ -64,12 +161,12 @@
     },
     "/styles": {
       "get": {
-        "summary": "All 218 motion styles with extracted parameters"
+        "summary": "All 218 motion styles"
       }
     },
-    "/easing": {
+    "/styles/{key}": {
       "get": {
-        "summary": "Easing curves ranked by usage across the demo corpus"
+        "summary": "One style with its extracted motion parameters and easings"
       }
     },
     "/rules": {
