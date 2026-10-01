@@ -13,6 +13,13 @@ __pycache__/
 .venv/
 venv/
 
+# scratch files at the repo root. Anything matching this is a throwaway probe
+# written to work around a PowerShell quoting problem, not a deliverable --
+# `git add -A` swept one into a commit and the next commit had to delete it.
+# The real tools all live under platform/.
+/_*.py
+/_*.txt
+
 # node / site build output
 site/node_modules/
 site/dist/
