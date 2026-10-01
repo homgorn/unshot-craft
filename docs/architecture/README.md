@@ -86,9 +86,25 @@ as free text. The parenthesised rationale is the discriminative signal, so we ke
 the verbatim string *and* normalize the ordinal into `energy_level` (rank 1–8).
 A future filter on `rank` must not require throwing the prose away.
 
-**Translations are rows, not columns.** 371 source strings × 9 locales does not
+**Translations are rows, not columns.** 942 distinct `(ns, key)` pairs do not
 belong in `shot_card`. `translation(locale_id, ns, key, text, method, status)`
-scales to the 3,339 strings the target locale set implies.
+scales to the 4,266 rows a full nine-locale set implies at `zh`'s coverage
+(474 distinct keys × 9). Today it holds 1,298 rows across 3 built locales, and the
+gap between those two numbers is the honest measure of how much is still English:
+
+| namespace | distinct keys |
+|---|---|
+| `card` | 416 |
+| `style` | 214 |
+| `summary` | 199 |
+| `ui` | 74 |
+| `showcase` | 18 |
+| `page` | 11 |
+| `category` | 10 |
+
+`card` carries 416 keys for 157 cards because upstream ships a name *and* a
+description per card in some namespaces and a name only in others — which is why
+`ru` has 157 translated card titles and 0 translated descriptions.
 
 **The card↔style link comes from the directory, not from `library.json`.** We
 found a real upstream data bug: `crash-zoom-punch` advertises one style key while

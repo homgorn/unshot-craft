@@ -24,9 +24,10 @@ and nobody notices until an agent confidently cites a card that no longer exists
 |---|---|---|
 | `wiki/index.json` | site, SaaS, scripts | one object: stats, categories, locales, licenses, opportunities, all 157 cards |
 | `wiki/llms.txt` | LLM crawlers | `llms.txt` convention: one-line purpose, then links |
-| `wiki/llms-full.txt` | RAG ingestion | the whole corpus in one file (~620 KB) |
+| `wiki/llms-full.txt` | RAG ingestion | the whole corpus in one file (~1.1 MB) |
 | `wiki/cards/<slug>.md` + `.json` | humans, agents | one page per card: identity, variants, parameters, pitfalls |
-| `wiki/domains/*.md` | humans, agents | 9 domain documents |
+| `wiki/techniques/<slug>.md` | humans, agents | one page per cinematic technique (F072) |
+| `wiki/domains/*.md` | humans, agents | 10 domain documents |
 | `wiki/api/openapi.json` | future HTTP API | read-only contract |
 | `platform/db/shotcraft.db` | agents | SQL + FTS5 |
 

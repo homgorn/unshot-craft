@@ -8,23 +8,32 @@
 
 ## Status update, 2026-10-01
 
-**Implemented and verified**, at a smaller scale than originally scoped:
+**Implemented and verified at full scale, with one number that must be read twice:**
 
 | | scoped | actual |
 |---|---|---|
-| techniques | 150 | **20** (all 7 categories) |
-| matrix cells listed | 1050 | **45** |
-| cells with a parameter | 933 | **23** |
-| cells actually tested | — | **16** (Midjourney only) |
-| cells `null` | 117 | **22** |
+| techniques | 150 | **150** (7 categories) |
+| matrix cells listed | 1050 | **1050** |
+| cells with a parameter | 933 | **791** (113 of 150 per tool) |
+| cells actually tested | — | **0** |
+| cells `null` | 117 | **259** (37 source rows are `TODO`) |
+| declared motion pairings | — | **233** across 142 / 150 techniques |
 
-The architecture is the one specified below and nothing in it changed. The corpus
-is a seed: the techniques that can be defended from real cinematography practice
-today. `data/cinematic/README.md` records the gap, and `platform/catalog/selftest.py`
-reports the counts rather than a target, so a partial corpus cannot be mistaken
-for a finished one.
+The architecture is the one specified below and nothing in it changed. What changed
+is the corpus: it is **imported from a separate MIT-licensed project**
+(`cinematique`) by `platform/catalog/import_cinematique.py` rather than authored
+here, and the honest scale is the full 150.
 
-Verification: `python platform/catalog/selftest.py` → 23/23.
+**The `0` is the point of the whole exercise.** The source matrix has a
+`FILLED`/`TODO` status column and *no verification column* — their pipeline wrote
+parameters, and nothing recorded a run against a model version. 791 parameters
+exist and not one has been tested. The importer therefore forces `tested: no` on
+every imported cell, `doctor.py` asserts `tested == 0` as an equality rather than
+counting it, and `query.py optimize-all` prints `READY — tested` as an empty
+group. A catalog that claimed 791 verified tool parameters would look more
+valuable and be worth less than one that admits it has none.
+
+Verification: `python platform/catalog/selftest.py` → 31/31.
 
 ## What this is
 
@@ -90,10 +99,10 @@ defaults.**
 
 | | count |
 |---|---|
-| matrix cells listed | 45 |
-| cells carrying a parameter | 23 |
-| cells actually tested | 16 |
-| cells `null` | 22 |
+| matrix cells listed | 1050 |
+| cells carrying a parameter | 791 |
+| cells actually tested | **0** |
+| cells `null` | 259 |
 
 The unfilled cells are `NULL`, and `platform/catalog/selftest.py` counts them and
 prints the number. They are **not** filled with a plausible default, for the same
@@ -101,8 +110,22 @@ reason `render.duration_frames` is `null` for 5 upstream technique cards: a tool
 parameter we have not tested is an untested claim, and a plausible string in that
 cell is a claim we cannot defend to a client.
 
-The one present everywhere is `--ar 16:9 --v 6.1 --style raw --cw 50` for MJ,
-because that is a mechanical transform of the base prompt, not a judgement.
+**And the same rule applies to the 791 cells that *are* filled.** They were written
+by the source project's pipeline, which records no run against a model version, so
+they land as `tested: no` too. `platform/catalog/selftest.py` asserts
+`tested == 0` and `tested_at IS NULL` everywhere, and
+`platform/catalog/import_cinematique.py` refuses to write any other value.
+
+A second, sharper version of the rule applies to **citations**: the source corpus
+lists its sources as `Title — Publisher` with no link, so all 150 citations are
+stored with `url IS NULL`. `technique_citation.url` was `NOT NULL` and is now
+nullable, because a fabricated URL beside a real title would be worse than a
+missing citation — a reviewer follows it, finds nothing, and stops trusting every
+other citation in the row.
+
+The one parameter present on every MJ row is `--ar 16:9 --v 6.1 --style raw
+--cw 50`, because that is a mechanical transform of the base prompt, not a
+judgement.
 
 ## Category vocabulary is controlled, not free text
 
@@ -152,11 +175,19 @@ run still passes, because F070 requires either corpus to build alone.
 - **No prose generation.** The catalog is already prose. F050's problem does not
   apply.
 - **No `[Subject]` expansion.** See the rule above.
-- **No invented tool parameters.** 22 cells stay `NULL`, and 7 of the 23 filled
-  cells are marked `tested: no`.
-- **No invented techniques.** The corpus is 20 real techniques, not 150 placeholders.
-- **No image or video files.** `media_url` and `video_url` are URLs. We do not
-  mirror reference stills or generate MP4s in this feature; the video gap is
-  tracked separately and F060 stays blocked.
+- **No invented tool parameters.** 259 cells stay `NULL`, and **all 791** filled
+  cells are marked `tested: no` — including the ones the source project wrote,
+  because that project recorded no run either.
+- **No invented techniques.** The 150 are real, with film citations. They are
+  imported rather than authored here, which is a statement about provenance, not
+  about quality: each file carries `upstream_sha256`, so any row traces to the
+  exact byte it came from, and editing one is a divergence from Cinematique rather
+  than a local decision.
+- **No invented citation URLs.** 150 citations, all `url IS NULL`, for the reason
+  in the matrix section above.
+- **Reference videos are mirrored, MP4s are not rendered.** 41 techniques have a
+  reference `video_url` and the files are committed under `data/cinematic/media/`
+  (65 MB). What we do *not* do is render our own: F060 stays blocked on the Remotion
+  commercial licence, and no render in this repo is claimed to exist.
 - **No Remotion integration.** The catalog knows nothing about easing. It becomes
   renderable only when a shot card is paired with it — which is F073.

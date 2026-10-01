@@ -48,9 +48,10 @@ that is the real finding — it is not "upstream is lossy and we are right":
 | `style.identity.lost` | **211/214** | 3 upstream keys match neither authority and are **gone** |
 | `style.divergence_recorded` | 31 + 38 | 31 upstream keys in `gallery_style`; 38 demo-derived keys with no upstream counterpart |
 | `media.upstream_reachable` | **214/214 PASS** | every upstream preview *is* fetchable, via `gallery_style.media_url` |
-| `media.coverage` | **35 styles have no media row at all** | their derived key matches no upstream `.mp4` |
+| `media.coverage` | ~~35 styles have no media row at all~~ → **0** | **RESOLVED.** Every style now has an explicit row; see below |
 | `style.kebab_casing` | **7 keys** | `3D` → `3-D`; matches no upstream key either |
 | `media.poster_orphans` | 3 | `basic-3d-scene.jpg`, `carousel-3d.jpg`, `terminal-3d.jpg` on disk, unreferenced |
+| `media.bytes` | **436 rows, bytes NULL** | **OPEN.** Every style has a row; none has a local byte count |
 
 **Correction to an earlier reading of mine:** previews are *not* unreachable. Because
 `gallery_style` carries `media_url` copied verbatim from upstream, all 214 are
@@ -58,6 +59,20 @@ fetchable. The real cost is narrower and different:
 
 > **35 styles carry no preview in our index at all**, and **3 cards lose their
 > identity entirely**.
+
+**That first number was fixed, and the fix is recorded here rather than quietly
+applied.** `style_media` now has an explicit row for all 218 styles — 436 rows,
+one poster and one preview each. The 35 were styles whose derived kebab key
+matched no upstream `.mp4`, and writing a row anyway was the correct answer: a row
+that says "no file at this key" is a fact the site can act on, while a missing row
+is indistinguishable from not having looked.
+
+What the fix did **not** do is fetch anything. `style_media.bytes` is NULL on all
+436 rows, because the previews live in the GitHub release rather than in git and
+`mirror_site.py` writes them outside the index. So `media.bytes` is a standing
+WARN: the index knows *which* style should have a preview, not whether the file is
+on this machine. Closing it means pointing the rows at the mirror, which is a
+deployment decision, not an ingest one.
 
 ### The 3 lost keys are a `kebab()` bug, not a rule-5 consequence
 

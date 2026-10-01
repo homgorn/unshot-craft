@@ -47,9 +47,10 @@ platform/db/shotcraft.db
 - **It removes JavaScript rather than relocating it.** Upstream ships `app.js`,
   `showcase.js` and `translations.js` to render 157 cards that are Markdown with a
   video. Astro renders them at build time. Result: a card page is HTML + one `<video>`.
-- **Two islands, not an SPA.** A style switcher (57 multi-style cards) and instant
-  search need client code. Nothing else does. Filter-and-URL-state is plain links,
-  so every filtered view is shareable and crawlable for free.
+- **Two islands, not an SPA.** A style switcher (41 multi-style cards, 218 styles
+  between them — `shot-transitions` alone has 7) and instant search need client
+  code. Nothing else does. Filter-and-URL-state is plain links, so every filtered
+  view is shareable and crawlable for free.
 
 ### Why Cloudflare Pages, not Workers
 

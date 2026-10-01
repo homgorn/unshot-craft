@@ -86,8 +86,10 @@ were a number.
 
 Over 1,349 motion-section bullets the corpus states timing in about five
 incompatible notations, and the most common one is **frames** (`126f`), not
-normalized units. Only 24 of 157 cards have a beat with a stated `[t0, t1]`; only 44
-of 218 demos contain a literal `seg()` call.
+normalized units. Only 24 of 157 cards have a beat with a stated `[t0, t1]`; only 46
+of 221 demo components contain a literal `seg()` call — which is why the 199
+`segment` rows in `motion_param` are concentrated in those 46 files rather than
+spread across the corpus.
 
 > **A normalized timeline cannot be auto-derived.** The demos remain the
 > authoritative implementation, and a real timeline is authored — which is what

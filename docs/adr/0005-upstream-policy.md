@@ -6,8 +6,11 @@
 
 ## Context
 
-`video-shotcraft` is Apache-2.0, has ~10.1k stars and ~899 forks, and is actively
-maintained by its author (Vincentwei1021). Its own `demos/README.md` and
+`video-shotcraft` is Apache-2.0 and is actively maintained by its author
+(Vincentwei1021). At the pinned SHA it had ~10.1k stars and ~899 forks — both
+figures recorded at pin time and not re-checked, because neither is derivable from
+the clone and a number nobody re-measures is a number that silently becomes a lie.
+Its own `demos/README.md` and
 `references/shots/ATTRIBUTION.md` make clear the motion techniques were researched
 from publicly released promo films and open-source project pages, and **re-implemented
 from scratch** — no original footage, screenshots, art or brand elements are

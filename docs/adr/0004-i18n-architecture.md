@@ -18,8 +18,14 @@ Upstream has **three independent** localisation mechanisms, none of them shared:
 Consequences we have to live with:
 
 - Adding a locale means editing four files in three languages of programmer.
-- `translations.js` holds **742 hand-maintained index entries** (157 zh + 157 en
-  card names, 214 zh + 214 en style names) that must agree with the card set.
+- `translations.js` holds **774 hand-maintained index entries** that must agree
+  with the card set: `cardsZh` 157, `cardsEn` 157, `stylesZh` 214,
+  `stylesEn` **96**, `ui` 150. Note the asymmetry in `stylesEn` — it is not 214,
+  and an earlier draft of this ADR said 742 by assuming it was. The gap is an
+  upstream defect, not ours: 118 of 214 styles have no English name, which is
+  recorded in `platform/site/extract_locales.py`'s report and shows up as
+  `locales/en/styles.json` holding 96 keys. The number here is read from the
+  pinned clone by `platform/docs_freshness.py`, not remembered.
 - `build-seo.py` parses the JS by string-slicing (`src.index('cardsEn')` up to the
   next `},`) because there is no JSON to read. A single key containing `},`
   silently truncates the map.

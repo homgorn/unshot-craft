@@ -31,13 +31,22 @@ Runway Gen-3, Google Veo 2, Kling 1.5, Luma Dream Machine, Pika 1.5 and Sora.
 | | value |
 |---|---|
 | techniques | **150** |
-| categories | 8 (the 7 above plus Visual Effects as its own group) |
-| matrix cells filled | **791** of 1050 listed (113 of 150 per tool; 37 rows are `TODO`) |
+| categories | **7**, all populated |
+| matrix cells listed | **1050** (7 tools × 150) |
+| matrix cells filled | **791** (113 of 150 per tool; 37 source rows are `TODO`) |
+| matrix cells `NULL` | **259** |
 | matrix cells **tested against a model version** | **0** |
 | reference videos | 41 |
 | common-mistake entries | 450 |
 | citations | 150 |
 | citations carrying a URL | **0** — the source lists titles without links |
+
+Two vocabulary notes, both learned from the source rather than chosen. The
+source has **"Visual Effects & Promptable FX"** as its own group, so it is a
+category here too. It does **not** have a "Visual Style" group, and an earlier
+draft of this ADR listed one; it was removed rather than left empty, because a
+controlled-vocabulary entry nothing can populate makes `--category` look broken
+rather than absent.
 
 The original ADR's `117/150` is stale; the real figure is `113/150`.
 

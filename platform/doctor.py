@@ -390,6 +390,43 @@ class Doctor:
             self.add(f"docs.{d.replace('/', '_')}", OK if n > 0 else WARN,
                      f"{d}: {n} markdown files")
 
+        self.check_doc_numbers()
+
+    def check_doc_numbers(self) -> None:
+        """Do the documents still say what the index says?
+
+        Delegated to `platform/docs_freshness.py`, which owns the claim list,
+        because a claim list maintained in two places is a claim list that is
+        maintained in neither. Run as a subprocess because that file is a
+        standalone gate with its own negative tests; importing it would give two
+        answers to the same question depending on who asked.
+
+        A FAIL here is an ERROR, not a warning. A stale number in a document is
+        the specific failure this whole index exists to prevent, and the doc
+        freshness gate has seven negative tests proving it can catch one.
+        """
+        import os
+        import subprocess
+        gate = ROOT / "platform" / "docs_freshness.py"
+        if not gate.exists():
+            self.add("docs.numbers", WARN, "platform/docs_freshness.py is missing; "
+                                          "document numbers are unchecked")
+            return
+        r = subprocess.run([sys.executable, str(gate)], capture_output=True,
+                           text=True, encoding="utf-8", cwd=str(ROOT),
+                           env={**os.environ, "PYTHONIOENCODING": "utf-8"})
+        tail = [l for l in r.stdout.splitlines() if l.strip()]
+        summary = tail[-1] if tail else "(no output)"
+        bad = [l.strip() for l in r.stdout.splitlines() if l.strip().startswith("FAIL")]
+        if r.returncode != 0 and not bad:
+            # The gate failed without naming a claim: a crash, not a drift.
+            self.add("docs.numbers", ERROR, f"docs_freshness.py exited "
+                                           f"{r.returncode} without naming a claim",
+                     [r.stderr.strip()[-200:]] if r.stderr.strip() else None)
+            return
+        self.add("docs.numbers", OK if not bad else ERROR,
+                 summary, bad[:8] or None)
+
     def check_wiki_freshness(self) -> None:
         if self.conn is None or not WIKI.is_dir():
             return

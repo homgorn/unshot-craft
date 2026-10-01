@@ -8,7 +8,7 @@
 | 154 licensed audio assets | 35 MB | no |
 | 10.1k stars / 899 forks | — | no, and not the point |
 | **9-locale index + search** | ours | **yes** |
-| **1,057 extracted parameters, 1,607 motion params** | ours | **yes** — nobody indexes this |
+| **1,057 extracted parameters, 1,897 motion params** | ours | **yes** — nobody indexes this |
 | **A studio that ships films** | ours | **yes** |
 | **Licence/compliance clarity for Remotion** | ours | **yes** — and it's a real blocker |
 

@@ -74,8 +74,10 @@ if (Test-Path "data/cinematic") {
 #    without them is how a broken build gets committed.
 $gate = @(
     @{ name = "doctor";       cmd = "platform/doctor.py" },
+    @{ name = "doc numbers";  cmd = "platform/docs_freshness.py" },
     @{ name = "wiki audit";   cmd = "platform/wiki/audit_quality.py" },
-    @{ name = "brief lint";   cmd = "platform/prompts/build_prompts.py --lint" },
+    @{ name = "card briefs";  cmd = "platform/prompts/build_prompts.py --lint" },
+    @{ name = "cat briefs";   cmd = "platform/catalog/build_briefs.py --lint" },
     @{ name = "coverage";     cmd = "platform/site/check_coverage.py" }
 )
 foreach ($g in $gate) {
@@ -90,5 +92,17 @@ foreach ($g in $gate) {
     Step ("gate ok: " + $g.name)
 }
 
+# 7. the gates that need a browser or a port. Kept out of the loop above because
+#    they take minutes, not seconds, and a slow gate trains people to skip the
+#    fast ones. Run them before a commit, not on every rebuild.
+$deep = @(
+    "platform/catalog/selftest.py",
+    "platform/catalog/layer_gate.py",
+    "platform/api/selftest.py",
+    "platform/site/selftest.py"
+)
+Write-Host "  slow gates, not run here:"
+foreach ($s in $deep) { Write-Host "     python $s" }
+
 Write-Host "ok -- query with: python platform/query.py cards --energy high"
-Write-Host "     gates: platform/doctor.py, platform/catalog/layer_gate.py, platform/api/selftest.py, platform/site/selftest.py"
+Write-Host "     gates: platform/doctor.py, platform/docs_freshness.py, platform/catalog/layer_gate.py, platform/api/selftest.py, platform/site/selftest.py"
