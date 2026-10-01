@@ -3,7 +3,7 @@
   "category": "interaction",
   "category_en": "Interaction & Feature Demo",
   "summary_zh": "话题词实体化",
-  "summary_en": "A typed \"#word\" hard-cuts into a wide pill tag, holds, shrinks into its slot on the page, then hard-cuts again to reveal the finished view.",
+  "summary_en": "'A typed \"#word\" hard-cuts into a wide pill tag, holds, shrinks into its slot on the page, then hard-cuts again to reveal the finished view.'",
   "intention": "文字变实体的常规做法是渐变/morph/展开，原片帧级拆解证明 Bear 反着 来：**实体化是 1 帧硬切**——上一帧还是文字+光标，下一帧就是完整 胶囊，无展开无 cross-fade 无回弹。硬切给的是\"啪、成了\"的确定感， 任何渐变都会把\"实体\"软化成\"特效\"。全段骨架是**两次硬切夹一次 滑动**：硬切实体化 → 平滑缩移归位 → 硬切揭示成品页。唯一的连续 运动（缩移）被两记硬切框住，才显得又快又稳。这个节奏骨架是命门， 三段挪动任何一段的性质（把硬切改渐变、把滑动改硬切）整卡就塌。",
   "use": "标签/分类/关键词功能的演示段（笔记 app 打 tag、话题聚合）；\"输入 → 变成 UI 实体 → 归位到成品\"的三段式叙事",
   "duration_frames": 40,

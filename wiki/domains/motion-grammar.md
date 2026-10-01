@@ -1,6 +1,6 @@
 # Motion grammar
 
-This is the part of video-shotcraft that exists **only** as literals inside `demos/**/*.tsx`: the tuned curves, springs and timing windows. Nothing upstream indexes it. We extracted 1607 parameter occurrences across 218 demos.
+This is the part of video-shotcraft that exists **only** as literals inside `demos/**/*.tsx`: the tuned curves, springs and timing windows. Nothing upstream indexes it. We extracted 1897 parameter occurrences across 218 demos.
 
 ## Two demo families
 
@@ -65,7 +65,7 @@ Overshoot curves (`y1 > 1`) are the ones that produce the springy settle; the re
 | `timeline-travel` | 11.0 | 160.0 | 0.9 | 26 |
 | `ui-strip-away-outro` | 12.0 | 220.0 | — | — |
 | `ui-strip-away-outro` | 14.0 | 90.0 | — | — |
-| `unit-dot-swarm-regroup-v-2` | 11.5 | 150.0 | 0.8 | — |
+| `unit-dot-swarm-regroup-v2` | 11.5 | 150.0 | 0.8 | — |
 
 Modal cluster: damping 9–16, stiffness 60–260, mass 0.6–1.1. `damping ≤ 10` with `stiffness ≥ 200` reads as a hard mechanical snap; `damping ≥ 15` with `stiffness ≈ 90` reads as a heavy object settling.
 
@@ -87,7 +87,9 @@ The hard holds that must survive translation into any new film:
 | `interpolate` | 758 | `interpolate(input, inputRange, outputRange, opts)` — the frame-driven workhorse |
 | `easing_fn` | 259 | `Easing.in/out/inOut(Easing.base)` |
 | `segment` | 199 | `seg(t, t0, t1, E.x)` — the family-A equivalent of interpolate |
+| `helper` | 193 | a shared `Motion.tsx` helper call: `lerp` / `rand` |
 | `sin` | 110 | `Math.sin(...)` oscillation |
+| `easing_name` | 97 | a named curve from the shared table, e.g. `E.outCubic` |
 | `bezier` | 84 | `Easing.bezier(x1,y1,x2,y2)` |
 | `constant` | 75 | exported duration/frame constants |
 | `color` | 59 | named palette constants such as `BG`, `ACCENT` |

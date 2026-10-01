@@ -12,9 +12,9 @@
   "energy_rank": 5,
   "energy_text": "中高（数据即剧情）",
   "styles": [
-    "axis-rescale-shock-v-2",
-    "oscilloscope-stream-v-2",
-    "unit-dot-swarm-regroup-v-2"
+    "axis-rescale-shock-v2",
+    "oscilloscope-stream-v2",
+    "unit-dot-swarm-regroup-v2"
   ],
   "tags": [
     "data"

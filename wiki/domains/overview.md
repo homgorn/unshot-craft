@@ -11,12 +11,12 @@ An open-source agent skill (Apache-2.0) that turns Claude Code or Codex into a m
 | motion styles (demos) | 218 |
 | documented parameters | 1057 |
 | pitfalls | 792 (3 marked 命门) |
-| motion params extracted by us | 1607 |
+| motion params extracted by us | 1897 |
 | aesthetic rules | 27 |
 | SFX / BGM | 149 / 5 |
 | upstream locales | 2 (en, zh) |
 | our target locales | 9 |
-| translation strings | 1092 |
+| translation strings | 1298 |
 
 ## Read in this order
 
@@ -29,6 +29,7 @@ An open-source agent skill (Apache-2.0) that turns Claude Code or Codex into a m
 - [The sibling skill, the tools, the channels, and the upstream author](domains/landscape.md)
 - [Revenue models, ranked by time to first dollar, with the evidence](domains/monetization.md)
 - [Motion-design vocabulary as used by these cards, with card references](domains/glossary.md)
+- [The cinematic-technique catalog: what to shoot, and how to say it per tool](domains/cinematic.md)
 
 ## Hard rules that survive everything
 

@@ -15,9 +15,9 @@
 
 | letter | style key | duration | family | demo |
 |---|---|---|---|---|
-| — | `axis-rescale-shock-v-2` | —f | B | `demos/data/chart-live-moves/AxisRescaleShockV2.tsx` |
-| — | `oscilloscope-stream-v-2` | 112f | B | `demos/data/chart-live-moves/OscilloscopeStreamV2.tsx` |
-| — | `unit-dot-swarm-regroup-v-2` | 20f | B | `demos/data/chart-live-moves/UnitDotSwarmRegroupV2.tsx` |
+| — | `axis-rescale-shock-v2` | —f | B | `demos/data/chart-live-moves/AxisRescaleShockV2.tsx` |
+| — | `oscilloscope-stream-v2` | 112f | B | `demos/data/chart-live-moves/OscilloscopeStreamV2.tsx` |
+| — | `unit-dot-swarm-regroup-v2` | 20f | B | `demos/data/chart-live-moves/UnitDotSwarmRegroupV2.tsx` |
 
 ## What it does
 

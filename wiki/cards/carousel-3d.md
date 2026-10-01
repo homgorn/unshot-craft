@@ -15,7 +15,7 @@
 
 | letter | style key | duration | family | demo |
 |---|---|---|---|---|
-| — | `carousel-3-d` | 168f | A | `demos/ui-entrance/carousel-3d/Carousel3D.tsx` |
+| — | `carousel-3d` | 168f | A | `demos/ui-entrance/carousel-3d/Carousel3D.tsx` |
 
 ## What it does
 

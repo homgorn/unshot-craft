@@ -19,7 +19,7 @@
 | — | `dark-tunnel-transition` | 120f | B | `demos/transition/shot-transitions/DarkTunnelTransition.tsx` |
 | — | `focus-handoff-transition` | 120f | B | `demos/transition/shot-transitions/FocusHandoffTransition.tsx` |
 | — | `mask-wipe-real` | 120f | B | `demos/transition/shot-transitions/MaskWipeReal.tsx` |
-| — | `portal-wipe-v-2` | —f | B | `demos/transition/shot-transitions/PortalWipeV2.tsx` |
+| — | `portal-wipe-v2` | —f | B | `demos/transition/shot-transitions/PortalWipeV2.tsx` |
 | — | `whip-brake-real` | 130f | B | `demos/transition/shot-transitions/WhipBrakeReal.tsx` |
 | — | `whip-pan-real` | 120f | B | `demos/transition/shot-transitions/WhipPanReal.tsx` |
 

@@ -15,7 +15,7 @@
 
 | letter | style key | duration | family | demo |
 |---|---|---|---|---|
-| — | `basic-3-dscene` | 180f | A | `demos/camera/basic-3d-scene/Basic3DScene.tsx` |
+| — | `basic-3d-scene` | 180f | A | `demos/camera/basic-3d-scene/Basic3DScene.tsx` |
 
 ## What it does
 

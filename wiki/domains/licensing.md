@@ -15,6 +15,14 @@ The stack is not uniformly free. Before anything is sold or published, this is t
 
 149 SFX across 16 scene categories and 5 BGM tracks, all Mixkit free licence. `assets/audio/ATTRIBUTION.md` records the source of every file at download time (the rule there is: record it when you fetch it, you cannot reverse-look-it-up later).
 
+**5 files are marked untraceable (无法反查) and must not ship in a commercial delivery until re-sourced:**
+
+- `assets/audio/sfx/light/sparkle.mp3`
+- `assets/audio/sfx/riser/riser-cine.mp3`
+- `assets/audio/sfx/text/keyboard.mp3`
+- `assets/audio/sfx/transition/whoosh-big.mp3`
+- `assets/audio/sfx/ui/pop.mp3`
+
 ## What this means for us
 
 - The **core is Apache-2.0**: fork, modify, sell services built on it. Keep the copyright and add a NOTICE when redistributing.

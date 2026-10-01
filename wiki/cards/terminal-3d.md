@@ -15,7 +15,7 @@
 
 | letter | style key | duration | family | demo |
 |---|---|---|---|---|
-| — | `terminal-3-d` | 180f | A | `demos/camera/terminal-3d/Terminal3D.tsx` |
+| — | `terminal-3d` | 180f | A | `demos/camera/terminal-3d/Terminal3D.tsx` |
 
 ## What it does
 
