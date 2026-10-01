@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from shotcraft_ingest import motion, parsing  # noqa: E402
 from shotcraft_ingest.parsing import (  # noqa: E402
@@ -207,6 +208,9 @@ def classify(rel: str) -> str:
     return "other"
 
 
+CATALOG_SCHEMA = Path(__file__).resolve().parent.parent / "catalog" / "schema.sql"
+
+
 def build_db(db_path: Path, repo: Path) -> sqlite3.Connection:
     db_path.parent.mkdir(parents=True, exist_ok=True)
     if db_path.exists():
@@ -217,6 +221,11 @@ def build_db(db_path: Path, repo: Path) -> sqlite3.Connection:
             p.unlink()
     conn = sqlite3.connect(db_path)
     conn.executescript(SCHEMA.read_text(encoding="utf-8"))
+    # Section 10 (the cinematic catalog, ADR 0007) is applied after the upstream
+    # schema because two FKs cross the corpus boundary on purpose. Kept in a
+    # separate file so the two workstreams do not merge-conflict in one document.
+    if CATALOG_SCHEMA.exists():
+        conn.executescript(CATALOG_SCHEMA.read_text(encoding="utf-8"))
     return conn
 
 
@@ -436,8 +445,6 @@ def run(repo: Path, db_path: Path) -> dict:
                     conn.execute("INSERT INTO style_media(style_id,kind,url,media_type,remote_url,local_path,present)"
                                  " VALUES(?,?,?,?,?,?,?)",
                                  (sid, kind, murl, mtype, murl, str(local) if present else None, present))
-                conn.execute("INSERT OR IGNORE INTO style_fts(key,name_zh,description_zh) VALUES(?,?,?)",
-                             (gkey, st.get("label"), st.get("description")))
         if orphan_keys:
             warnings.append(f"library.json style keys with no matching demo component: {len(orphan_keys)} "
                             f"(e.g. {', '.join(orphan_keys[:5])})")
@@ -445,6 +452,32 @@ def run(repo: Path, db_path: Path) -> dict:
             conn.execute("INSERT INTO decision_log(area,decision,rationale) VALUES(?,?,?)",
                          ("upstream-stats", json.dumps(lib["stats"], ensure_ascii=False),
                           f"library.json revision {lib.get('revision')}"))
+    # Every style gets an explicit media row, even when library.json advertises
+    # none for it. A missing row means "we never looked"; a present row with
+    # present=0 means "we looked and the file is not there". Collapsing the two
+    # hides 35 real gaps behind an absence.
+    for sid, key in conn.execute("SELECT id, key FROM style"):
+        have = conn.execute("SELECT COUNT(*) FROM style_media WHERE style_id=?", (sid,)).fetchone()[0]
+        if not have:
+            poster_rel = f"gallery/media/poster/{key}.jpg"
+            present = int((repo / poster_rel).exists())
+            conn.execute("INSERT INTO style_media(style_id,kind,url,media_type,local_path,present)"
+                         " VALUES(?,?,?,?,?,?)",
+                         (sid, "poster", f"./media/poster/{key}.jpg", "jpg",
+                          poster_rel if present else None, present))
+            conn.execute("INSERT INTO style_media(style_id,kind,url,media_type,present)"
+                         " VALUES(?,?,?,?,0)",
+                         (sid, "preview", f"./media/{key}.mp4", "mp4"))
+        # style_fts covers every style, not only the 183 that library.json
+        # advertises. The 35 library.json-orphan styles are real demos (AGENTS.md
+        # rule 5 keeps them in gallery_style, it does not delete them), and an
+        # agent searching by style key must be able to find them.
+        zh = conn.execute(
+            "SELECT t.text FROM translation t JOIN locale l ON l.id=t.locale_id "
+            "WHERE l.code='zh' AND t.ns='style' AND t.key=?", (key,)).fetchone()
+        conn.execute("INSERT OR IGNORE INTO style_fts(key,name_zh,description_zh) VALUES(?,?,?)",
+                     (key, zh[0] if zh else None, None))
+
     conn.execute("""UPDATE category SET card_count =
                     (SELECT COUNT(*) FROM shot_card WHERE shot_card.category_id=category.id)""")
 
@@ -524,17 +557,55 @@ def run(repo: Path, db_path: Path) -> dict:
     # -- audio assets + licences ------------------------------------------
     att_path = repo / "assets" / "audio" / "ATTRIBUTION.md"
     att_text = att_path.read_text(encoding="utf-8") if att_path.exists() else ""
+    # Files upstream could not trace at download time. Upstream marks them inside
+    # the row's source column rather than in a separate list, so the flag has to
+    # be read per row, not by filename anywhere in the document.
+    untraceable: set[str] = set()
+    for line in att_text.splitlines():
+        if "无法反查" not in line:
+            continue
+        untraceable.update(re.findall(r"`([\w\-.]+\.mp3)`", line))
     for mp3 in sorted((repo / "assets" / "audio").rglob("*.mp3")):
         rel = mp3.relative_to(repo).as_posix()
         kind = "bgm" if "/bgm/" in rel else "sfx"
         cat = mp3.parent.name if kind == "sfx" else None
-        traceable = 1 if f"{mp3.name} | `{rel}`" in att_text or mp3.name in att_text else 0
+        # ATTRIBUTION.md keys its table by bare filename with the directory in
+        # a separate column, so the row is `| `name.mp3` | `sfx/text/` | ... |`.
+        # Presence of a row proves the file was catalogued; whether the *source*
+        # column is filled is the separate, and more important, question.
+        row_present = bool(re.search(rf"\|\s*`{re.escape(mp3.name)}`\s*\|", att_text))
+        flagged = mp3.name in untraceable or rel in untraceable
+        traceable = 1 if (row_present and not flagged) else 0
+        note = None
+        if flagged:
+            note = "ATTRIBUTION.md marks this 无法反查: source cannot be traced"
+        elif not row_present:
+            note = "no ATTRIBUTION.md row found; treated as unverified"
         conn.execute(
             "INSERT OR IGNORE INTO audio_asset(kind,path,category,title,traceable,commercial_ok,bytes,note)"
             " VALUES(?,?,?,?,?,?,?,?)",
             (kind, rel, cat, mp3.stem, traceable, 0 if traceable == 0 else 1, mp3.stat().st_size,
-             "untraceable source" if traceable == 0 else None))
+             note))
         stats["sfx"] += 1
+
+    # Upstream's ATTRIBUTION.md prose claims 6 untraceable files while its table
+    # marks 5. The table is the evidence, so the table wins -- but the gap is
+    # recorded rather than reconciled in silence, because "which file did they
+    # mean" is a question for upstream and not something to guess at.
+    prose = re.search(r"剩余\s*(\d+)\s*个仍无法反查", att_text)
+    if prose and int(prose.group(1)) != len(untraceable):
+        conn.execute(
+            "INSERT INTO decision_log(area,decision,rationale) VALUES(?,?,?)",
+            ("audio-provenance",
+             json.dumps({"table_flags": sorted(untraceable),
+                         "table_count": len(untraceable),
+                         "prose_claims": int(prose.group(1))}, ensure_ascii=False),
+             "ATTRIBUTION.md prose says " + prose.group(1) + " untraceable but its "
+             f"table marks {len(untraceable)}. The table is the evidence and wins; "
+             "the extra file is unidentified. Every flagged file is commercial_ok=0 "
+             "either way, so the delivery gate is unaffected."))
+        warnings.append(f"audio provenance discrepancy: ATTRIBUTION.md prose says "
+                        f"{prose.group(1)} untraceable, its table marks {len(untraceable)}")
 
     for subject, spdx, url, commercial, blocking, obligation, evidence in LICENSE_ROWS:
         conn.execute(
@@ -636,6 +707,14 @@ def run(repo: Path, db_path: Path) -> dict:
                      (area, decision, rationale, adr))
 
     # style labels are the union of label + description; keep the FTS complete
+    # param_fts is its own index rather than a column on shot_card, because the
+    # searchable unit is the parameter ("词间 stagger"), not the card. Without it
+    # an agent asking "what gap looks right here" gets nothing back.
+    for pk, tv, fn in conn.execute(
+            "SELECT param_key, typical_value, feel_note FROM card_param"):
+        conn.execute("INSERT INTO param_fts(param_key, typical_value, feel_note) VALUES(?,?,?)",
+                     (pk, tv, fn))
+
     # -- unified search surface: pool every locale + params + pitfalls + styles
     #    into one blob per card so a query works in any language.
     tr_rows = conn.execute("""
@@ -663,13 +742,28 @@ def run(repo: Path, db_path: Path) -> dict:
         conn.execute("INSERT INTO search_fts(slug, text_all) VALUES(?,?)", (name, blob))
         conn.execute("INSERT INTO search_fts_trgm(slug, text_all) VALUES(?,?)", (name, blob))
 
+    # -- second corpus: the cinematic catalog (ADR 0007).
+    # Tolerant of absence in both directions: either corpus must build alone.
+    catalog: dict = {}
+    try:
+        import catalog as catalog_ingest
+        catalog = catalog_ingest.ingest(conn)
+        if catalog.get("status") == "ok":
+            for p in (ROOT / "data" / "cinematic").glob("*.md"):
+                if p.name == "README.md":
+                    continue
+                stats["files"] += 1
+    except Exception as exc:                      # noqa: BLE001
+        catalog = {"status": "failed", "error": str(exc)}
+        warnings.append(f"catalog ingest failed: {exc}")
+
     conn.execute(
         "UPDATE ingest_run SET finished_at=?, files_seen=?, cards_seen=?, styles_seen=?, params_extracted=?,"
         " locale_rows=?, warnings=?, status='ok' WHERE id=?",
         (now_iso(), stats["files"], stats["cards"], stats["styles"], stats["params"],
          stats["translations"], json.dumps(warnings[:200], ensure_ascii=False), run_id))
     conn.commit()
-    return {"stats": stats, "warnings": warnings, "head_sha": head_sha}
+    return {"stats": stats, "warnings": warnings, "head_sha": head_sha, "catalog": catalog}
 
 
 def subprocess_sha(repo: Path) -> str:

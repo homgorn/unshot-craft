@@ -29,7 +29,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 BASE = "https://vincentwei1021.github.io/video-shotcraft"
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = "shotcraft-mirror/1.0 (+architecture research)"
 SKIP_SUFFIX = (".mp4", ".mov", ".webm")
 
@@ -69,7 +69,17 @@ def crawl(out: Path, max_pages: int = 400) -> list[str]:
         pages.append(rel)
         print(f"  + {rel} ({len(body):,} bytes)")
         for href in re.findall(r'(?:href|src)="([^"#?]+)"', body):
-            if href.startswith("/") or href.startswith("#") or href.startswith("mailto:"):
+            if href.startswith("#") or href.startswith("mailto:"):
+                continue
+            # absolute and protocol-relative URLs are external: skip rather than
+            # concatenating them onto BASE (which produced 404s on every one)
+            if href.startswith(("http://", "https://", "//", "/")):
+                if href.startswith(BASE):
+                    rel = href[len(BASE):].strip("/")
+                    if rel.endswith(".html") and rel not in seen:
+                        queue.append(href)
+                continue
+            if re.match(r"^[a-z][a-z0-9+.-]*:", href, re.I):   # other schemes
                 continue
             if href.endswith(SKIP_SUFFIX) or href.endswith((".jpg", ".svg", ".png", ".json", ".css", ".js", ".txt", ".xml")):
                 continue

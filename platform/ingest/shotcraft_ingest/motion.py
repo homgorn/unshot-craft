@@ -23,6 +23,11 @@ EASING_FN_RE = re.compile(r"Easing\.(inOut|in|out)\(\s*Easing\.(\w+)\s*\(?\s*([-
 EASING_BARE_RE = re.compile(r"easing\s*:\s*Easing\.(quad|cubic|quartic|quint|expo|circ|back|elastic|bounce|sine|linear)")
 SPRING_CFG_RE = re.compile(
     r"spring\(\s*\{(.*?)\}\s*\)", re.S)
+# Family A's helpers are first-class motion parameters too: `seg()` is that
+# family's interpolate, and `lerp(a, b, t)` states a channel's end value. Both
+# carry the tuning that a card's 参数表 only describes in prose.
+HELPER_CALL_RE = re.compile(r"(?<![A-Za-z0-9_$.])(lerp|seg|rand)\s*\(([^;]{1,160}?)\)")
+E_MEMBER_RE = re.compile(r"(?<![A-Za-z0-9_$.])E\.(\w+)(?!\s*\w+\s*=)")
 INTERPOLATE_RE = re.compile(
     r"interpolate\(\s*(\w+)\s*,\s*\[([^\]]*)\]\s*,\s*\[([^\]]*)\]\s*,?\s*(\{[^}]*\})?", re.S)
 SEGMENT_RE = re.compile(
@@ -71,6 +76,13 @@ def extract_motion_params(src: str) -> list[dict]:
                 "raw": raw,
             }
         )
+
+    def add_here(kind: str, name: str | None, args: dict, anchor: str, detail: str = ""):
+        """Record a finding whose only anchor is a literal occurrence (no regex
+        match object). Without this the line number silently became a byte
+        offset, which is worse than no line number at all."""
+        pos = src.find(anchor)
+        add(kind, name, args, pos if pos >= 0 else 0, detail)
 
     for m in BEZIER_RE.finditer(src):
         x1, y1, x2, y2 = (float(g) for g in m.groups())
@@ -133,6 +145,24 @@ def extract_motion_params(src: str) -> list[dict]:
     for m in DURATION_RE.finditer(src):
         add("constant", m.group(1), {"value": int(m.group(2)), "unit": "frames"}, m.start())
 
+    # shared Motion.tsx helpers: `seg` is already covered by SEGMENT_RE, so this
+    # pass exists for lerp/rand and for the easing names actually applied
+    seen_calls: set[tuple[str, str]] = set()
+    for m in HELPER_CALL_RE.finditer(src):
+        fn, args = m.group(1), re.sub(r"\s+", " ", m.group(2)).strip()
+        key = (fn, args)
+        if key in seen_calls:
+            continue
+        seen_calls.add(key)
+        if fn == "seg":
+            continue        # SEGMENT_RE records it with its easing argument
+        add("helper", fn, {"fn": fn, "args": args}, m.start())
+
+    eases = sorted({m.group(1) for m in E_MEMBER_RE.finditer(src)})
+    if eases:
+        for name in eases:
+            add_here("easing_name", name, {"curve": name}, f"E.{name}")
+
     # de-dup identical (kind, raw) pairs from overlapping patterns
     seen: set[tuple[str, str]] = set()
     unique: list[dict] = []
@@ -146,10 +176,66 @@ def extract_motion_params(src: str) -> list[dict]:
 
 
 def kebab(stem: str) -> str:
-    """PascalCase -> kebab-case, digit-aware: Basic3DScene -> basic-3-d-scene."""
-    s = re.sub(r"([A-Za-z])(\d)", r"\1-\2", stem)
-    s = re.sub(r"(\d)([A-Za-z])", r"\1-\2", s)
-    return re.sub(r"([a-z])([A-Z])", r"\1-\2", s).lower()
+    """PascalCase -> kebab-case, matching upstream's own convention.
+
+    The digit boundary is the subtle part, and getting it wrong produces a key
+    that matches nothing on either side:
+
+        Basic3DScene        -> basic-3d-scene       (digits bind FORWARD to 3D)
+        AxisRescaleShockV2  -> axis-rescale-shock-v2 (digits bind BACKWARD to V)
+
+    Rule: a digit run binds forward when an uppercase+lowercase pair follows it
+    (`3D` is one token), otherwise backward (`V2` is one token). A naive
+    `([A-Za-z])(\\d)` split yields `basic-3-d-scene` and
+    `axis-rescale-shock-v-2`, which is exactly what platform/doctor.py flags.
+    """
+    tokens: list[str] = []
+    i, n = 0, len(stem)
+    while i < n:
+        ch = stem[i]
+        if ch.isdigit():
+            j = i
+            while j < n and stem[j].isdigit():
+                j += 1
+            digits = stem[i:j]
+            # Forward-binding: an uppercase follows the digits, so that capital
+            # opens the next word and the digits belong to it. `Basic3DScene` has
+            # 3 followed by D — the D starts "DScene", so the token is `3d`.
+            if j < n and stem[j].isupper():
+                tokens.append((digits + stem[j]).lower())   # forward: 3D -> 3d
+                i = j + 1
+                continue
+            if tokens:
+                tokens[-1] += digits                   # backward: V2, 4x
+            else:
+                tokens.append(digits)
+            i = j
+            continue
+        if ch.isupper():
+            j = i
+            while j < n and stem[j].isupper():
+                j += 1
+            run = stem[i:j]
+            # An acronym run is one token (SFX), but its LAST capital begins the
+            # next word and takes the lowercase run with it (BlurSlide ->
+            # blur | slide, not b | lur | s | lide).
+            if len(run) > 1:
+                tokens.append(run[:-1].lower())
+                k = j - 1
+            else:
+                k = i
+            m = k + 1
+            while m < n and stem[m].islower():
+                m += 1
+            tokens.append(stem[k:m].lower())
+            i = m
+            continue
+        j = i
+        while j < n and stem[j].islower():
+            j += 1
+        tokens.append(stem[i:j])
+        i = j
+    return "-".join(t for t in tokens if t)
 
 
 def norm(s: str) -> str:

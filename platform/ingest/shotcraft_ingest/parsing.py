@@ -156,7 +156,13 @@ def split_energy(text: str) -> tuple[str | None, str, str | None]:
 # JavaScript object literals (translations.js, showcase.js)
 # ---------------------------------------------------------------------------
 
-JS_PAIR_RE = re.compile(r"'((?:[^'\\]|\\.)*)'\s*:\s*'((?:[^'\\]|\\.)*)'")
+# Upstream writes keys BOTH quoted and bare: translations.js uses bare
+# identifiers (`title: '…'`) while some inline blocks quote them (`'skip': '…'`).
+# Values are single-quoted, double-quoted, or numeric. One regex covers all three
+# key forms and all three value forms; the first non-None group wins.
+_JS_KEY = r"(?:'((?:[^'\\]|\\.)*)'|\"((?:[^\"\\]|\\.)*)\"|([A-Za-z_$][\w$]*))"
+_JS_VAL = r"'((?:[^'\\]|\\.)*)'|\"((?:[^\"\\]|\\.)*)\"|(-?\d+(?:\.\d+)?|true|false|null)"
+JS_PAIR_RE = re.compile(_JS_KEY + r"\s*:\s*(" + _JS_VAL + r")")
 JS_BARE_RE = re.compile(r'([A-Za-z_$][\w$]*)\s*:\s*"((?:[^"\\]|\\.)*)"')
 
 
@@ -199,14 +205,37 @@ def block_at(text: str, brace_idx: int) -> tuple[str, int]:
 
 
 def parse_js_map(segment: str) -> dict[str, str]:
-    """Flat {'k': 'v', ...} or {k: "v"} object -> dict."""
+    """Flat object literal -> dict, accepting bare, single- and double-quoted keys.
+
+    Upstream mixes key styles: `translations.js` writes bare identifiers
+    (`title: '…'`), some inline blocks quote them (`'skip': '…'`). A quoted-key
+    regex alone silently extracts almost nothing, which is exactly the failure
+    that made the first extraction return 6 of ~75 ui keys.
+    """
     out: dict[str, str] = {}
-    for k, v in JS_PAIR_RE.findall(segment):
-        out[unescape_js(k)] = unescape_js(v)
-    if not out:
-        for k, v in JS_BARE_RE.findall(segment):
-            out[k] = v.replace('\\"', '"')
+    for m in JS_PAIR_RE.finditer(segment):
+        key = next((g for g in m.groups()[:3] if g is not None), None)
+        if key is None:
+            continue
+        value = next((g for g in m.groups()[3:] if g is not None), "")
+        out[unescape_js(key)] = unquote_js(unescape_js(value))
     return out
+
+
+def unquote_js(s: str) -> str:
+    """Drop one layer of literal quoting that survives extraction.
+
+    Upstream stores some values with their own quotes already inside the string
+    (and the workbench i18n files wrap whole values). The capture groups exclude
+    the syntactic quotes, but not these, so every UI string rendered as
+    `'All shots'` on the page instead of `All shots`.
+    """
+    v = s.strip()
+    if len(v) >= 2 and v[0] == v[-1] and v[0] in "'\"":
+        inner = v[1:-1]
+        if "'" not in inner and '"' not in inner:
+            return inner
+    return v
 
 
 def top_level_member(text: str, key: str) -> str | None:

@@ -18,6 +18,11 @@ site/node_modules/
 site/dist/
 node_modules/
 
+# verification screenshots: real evidence, but regenerable on demand and ~100 KB
+# each. site/build/*.json IS committed -- the coverage report is the artifact a
+# reviewer reads to judge whether a locale is publishable.
+site/build/shots/
+
 # os noise
 .DS_Store
 Thumbs.db
