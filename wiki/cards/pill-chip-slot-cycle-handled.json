@@ -1,0 +1,38 @@
+{
+  "name": "pill-chip-slot-cycle-handled",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "胶囊滚轮挤开",
+  "summary_en": "A dark chip inside the sentence rolls through feature words, its width easing to each word so the surrounding text is pushed apart while grey ghost items show above and below.",
+  "intention": "词槽轮换有两派：让句子躲开变化（宽度固定的滚轮），或者让句子**接受** 变化（胶囊撑宽、两侧文字被挤开）。这卡是后者，代价是必须把宽度算准， 回报是句子读起来活的——\"Your\" 和 \"Handled\" 被推着走，观众感到胶囊里 的词有分量。上下露出的灰色幽灵项是第二个记号：它明示\"这是个可以滚的 列表\"，让观众预期还有下一个词。",
+  "use": "\"我们替你搞定 ___\" 这类句式卖点；SaaS 功能列举的一句话收口；浅底品牌片主视觉一拍",
+  "duration_frames": 150,
+  "duration_text": "约 5.0s（150f@30fps：静置 → 3 次切换（0.25/0.47/0.69）→ 尾部静置）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（三拍稳定节拍，宽度伸缩是唯一的连续运动）",
+  "styles": [
+    "pill-chip-slot-cycle-handled"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "词表",
+    "切换点",
+    "缓动",
+    "胶囊",
+    "幽灵项",
+    "幽灵视差",
+    "句子字号",
+    "配色"
+  ],
+  "pitfall_count": 7,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/pill-chip-slot-cycle-handled.md",
+  "demo": "references/shots/typography/pill-chip-slot-cycle-handled.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#pill-chip-slot-cycle-handled"
+  ],
+  "wiki": "wiki/cards/pill-chip-slot-cycle-handled.md"
+}

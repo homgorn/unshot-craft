@@ -1,0 +1,42 @@
+{
+  "name": "riso-print-hits",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "孔版印刷冲击",
+  "summary_en": "Two risograph impacts: a single misregistered color split that snaps into alignment, and a beat-driven series that grows stronger.",
+  "intention": "RGB 色散故障闪（impact-feedback C 式的一部分）是荧光屏语言，与纸墨 调性相克。这两式给出印刷版平替：元素裂成浅灰/深墨两份单色印版 （multiply 油墨感而非 screen 荧光感），像 risograph 没对准版，抖几下 \"啪\"地套准——同样的冲击力，介质想象完全换成纸上油墨。A 是单发： 撞停瞬间裂版、震荡衰减、硬切套准，给一次命中盖章；B 是它的节奏化： 每个鼓点整画面跳大 8% + 标题裂版，错位逐拍加码，越打越狠—— 卡点段的视觉低音鼓。同技术根（衰减震荡的双版错位），单发/连打二选一。",
+  "use": "标题/卡片的命中强调，纸墨审美版的\"故障闪\"；A 单发高潮、B 节奏段连打",
+  "duration_frames": 120,
+  "duration_text": "A 4s（单发）；B 4.7s（四拍）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高",
+  "styles": [
+    "riso-beat-pump",
+    "riso-misregistration-hit"
+  ],
+  "tags": [
+    "typography",
+    "rhythm",
+    "effects"
+  ],
+  "params": [
+    "双版",
+    "A 错位包络",
+    "A 撞入",
+    "A 套准脉冲",
+    "B 泵",
+    "B 错版加码",
+    "B 作用域",
+    "B 节拍参照物",
+    "收尾"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/riso-print-hits.md",
+  "demo": "references/shots/effects/riso-print-hits.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#riso-print-hits"
+  ],
+  "wiki": "wiki/cards/riso-print-hits.md"
+}

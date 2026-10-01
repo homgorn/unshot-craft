@@ -1,0 +1,39 @@
+{
+  "name": "wall-reveal-moves",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "整墙揭示",
+  "summary_en": "Three in-place wall reveals: sequential bento lights, a wave of grid flips, and a wireframe drawing itself into a finished interface.",
+  "intention": "\"一墙内容怎么出场\"库内此前只有 deck-deal-flyin 一个答案——高能量、位移型、 \"东西涌进来\"。但不是每面墙都该涌：品牌段要庄重、功能墙要轻快、 \"从设计到实物\"要讲工序。这三式共同点是**非位移批量入场**——元素原地显形， 版式从第一帧就成立，观众看的是\"状态变化的波前扫过一面墙\"而不是\"物体飞行\"。 选型先问一句：这面墙该\"涌进来\"还是\"亮起来\"？前者去 deck-deal-flyin，后者进本卡。",
+  "use": "功能墙/卡片墙/整页界面的整体亮相；内容已在原位、要\"显形\"而非\"涌入\"的段落",
+  "duration_frames": 150,
+  "duration_text": "单式约 4.3–5s（A 150f / B 130f / C 150f @30fps，含建立 hold 与静止收尾）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中",
+  "styles": [
+    "bento-light-up",
+    "grid-wave-flip",
+    "wireframe-draw-on"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "A 节拍",
+    "A 单格",
+    "B 波前",
+    "B 翻面结构",
+    "C 描线",
+    "C 实体化",
+    "静止收尾"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/wall-reveal-moves.md",
+  "demo": "references/shots/ui-entrance/wall-reveal-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#wall-reveal-moves"
+  ],
+  "wiki": "wiki/cards/wall-reveal-moves.md"
+}

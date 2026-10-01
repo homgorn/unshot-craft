@@ -1,0 +1,37 @@
+{
+  "name": "title-demote-to-label",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "标题降格标签",
+  "summary_en": "A centered headline stands for a beat, then shrinks and slides to the top-left corner to become a section label as content grows beneath it.",
+  "intention": "章节标题的常规命运是\"出现→消失→内容登场\"，标题和内容互不认识。 本卡让标题**降格而不退场**：居中大字站稳一拍宣告主题，然后一次连续 补间缩到 0.3x 飞到左上角，落成这一节的栏目标签——它还在屏幕上， 只是从主角变成了门牌。观众获得免费的空间记忆：刚才那个大词就是 现在左上角那个小词，本节讲的就是它。内容骨架在降格进行中就开始 生长，交接零空档。",
+  "use": "章节开场（标题先当主角再让位给内容）；教程/功能演示片的小节交接；B 式给\"文字/编辑\"类产品加身份暗示",
+  "duration_frames": 92,
+  "duration_text": "A ~3s（92f）/ B ~3.5s（104f）；demo 两式串播 196f",
+  "energy": "低中",
+  "energy_rank": 2,
+  "energy_text": "低中（版式变换型，氛围镜头）",
+  "styles": [
+    "title-demote-to-label"
+  ],
+  "tags": [
+    "typography",
+    "transition"
+  ],
+  "params": [
+    "降格补间",
+    "站稳拍",
+    "骨架错峰",
+    "生长起点",
+    "选中高亮",
+    "白闪转场"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/title-demote-to-label.md",
+  "demo": "references/shots/typography/title-demote-to-label.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#title-demote-to-label"
+  ],
+  "wiki": "wiki/cards/title-demote-to-label.md"
+}

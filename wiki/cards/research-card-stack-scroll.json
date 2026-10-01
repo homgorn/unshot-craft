@@ -1,0 +1,38 @@
+{
+  "name": "research-card-stack-scroll",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "论文卡叠压",
+  "summary_en": "Dark paper cards drop into the center every twelve frames and pile along a downward-right axis, squashing on landing while only the topmost card renders its full text as the rest blur into the stack.",
+  "intention": "要说的是\"数量\"，但一次给 13 张卡会读成一堵墙。改成流水线：卡一张一张进，每张都被 读过（最上一张永远是全文渲染的那张），读完就沉进堆里变模糊。观众感受到的是持续不断 的吞吐量，而不是一个静态的堆。背景 grid 同速下移是速度参照——没有它，堆积会读作 \"卡在原地缩小\"。",
+  "use": "\"读了大量资料/处理了海量文档\"的量级交代；研究类、检索类、批处理类产品的能力镜头",
+  "duration_frames": 144,
+  "duration_text": "约 4.8s（144f@30fps）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（匀速高频，无爆发但持续压迫）",
+  "styles": [
+    "research-card-stack-scroll"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "节拍",
+    "入场行程",
+    "入场位移/缩放",
+    "落位压缩",
+    "堆积轴线",
+    "深度衰减",
+    "回收窗",
+    "内容坐标系"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/research-card-stack-scroll.md",
+  "demo": "references/shots/ui-entrance/research-card-stack-scroll.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#research-card-stack-scroll"
+  ],
+  "wiki": "wiki/cards/research-card-stack-scroll.md"
+}

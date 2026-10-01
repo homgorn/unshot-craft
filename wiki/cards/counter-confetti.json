@@ -1,0 +1,36 @@
+{
+  "name": "counter-confetti",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "数字冲刺纸屑",
+  "summary_en": "A large counter sprints up with ease-out-quart and an overshoot scale while 52 confetti pieces burst in from both sides on real gravity arcs — deliberately half a beat before the number lands.",
+  "intention": "数字不是\"显示\"出来的，是\"冲线\"的：计数曲线前快后慢像百米冲刺进入慢镜，纸屑在数字到位**之前**抢拍爆开——庆祝比结果先到半拍，情绪压过信息，观众先兴奋再看清数字。",
+  "use": "里程碑/成绩数字的庆祝拍：用户数、营收、下载量等\"值得开香槟\"的指标揭示",
+  "duration_frames": 138,
+  "duration_text": "约 4.6s（138f@30fps；计数 0.3–2.6s · 纸屑 2.4s 起 · 落定 3.3s）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（计数蓄力 + 爆点释放，标准的情绪峰值镜头）",
+  "styles": [
+    "counter-confetti"
+  ],
+  "tags": [
+    "data"
+  ],
+  "params": [
+    "计数曲线",
+    "抢拍量",
+    "纸屑数量",
+    "重力/初速比",
+    "scale 过冲",
+    "终值"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/counter-confetti.md",
+  "demo": "references/shots/data/counter-confetti.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#counter-confetti"
+  ],
+  "wiki": "wiki/cards/counter-confetti.md"
+}

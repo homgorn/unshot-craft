@@ -1,0 +1,36 @@
+{
+  "name": "paper-craft-moves",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "纸艺动效",
+  "summary_en": "Two paper gestures: masking tape slapping a floating card down, and cards rising from the page like a pop-up book.",
+  "intention": "Wes Anderson 手账美术与立体书纸艺的 UI 翻译。A：卡片轻飘入位后 悬着微晃（未固定的纸），两条撕边半透明胶带\"啪、啪\"先后拍在对角， 第二条拍下**同帧**卡片停晃、投影变薄、整卡下沉——\"按死\"的定妆 一瞬是主角，两声\"啪\"是天然音效点。B：整页平躺如摊开书页（俯视）， 卡片像贴在页上的纸片沿各自底边错峰立起成墙，立到 95° 回弹 90° （纸的韧性），根部投影随立起收窄。",
+  "use": "纸墨主视觉片的实体材料语言：单卡定妆入场用 A、整版 dashboard 开场建立用 B；与纸墨+强调色的主视觉（模板片为纸/墨/琥珀）天然同源",
+  "duration_frames": 120,
+  "duration_text": "A 3–4s / B 4–5.5s",
+  "energy": "A 中",
+  "energy_rank": null,
+  "energy_text": "A 中（两拍打击）/ B 中高（立墙有纵深冲击）",
+  "styles": [
+    "masking-tape-slap",
+    "popup-book-rise"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "A 按死三件套",
+    "A 胶带质感",
+    "B 立起方向",
+    "B 根部投影",
+    "B 收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/paper-craft-moves.md",
+  "demo": "references/shots/ui-entrance/paper-craft-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#paper-craft-moves"
+  ],
+  "wiki": "wiki/cards/paper-craft-moves.md"
+}

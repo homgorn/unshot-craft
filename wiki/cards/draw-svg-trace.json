@@ -1,0 +1,36 @@
+{
+  "name": "draw-svg-trace",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "SVG 描线追踪",
+  "summary_en": "An ink stroke traces an element outline, closes with a dark flash, and hands focus to the revealed content.",
+  "intention": "\"画出来\"是纸墨审美里最顺手的入场隐喻：元素不是飞进来也不是淡进来， 而是被一支看不见的笔当场描出来。库内 wall-reveal-moves C 式已有整页 蓝图版（全屏线框逐段画+区域点亮），本卡是它的**元素级特写版**—— 一条线、一个主体、一次闭合，笔头可见、方向可读，适合\"接下来讲它\" 的点名时刻。第二用法是标题下划线生长：同一套路 18f 短版，给重点词 一笔手绘强调，与马克笔审美 token 天然同族。",
+  "use": "单个卡片/图表/标题的被点名入场；元素级手法（整页级蓝图描线归 wall-reveal-moves C 式）",
+  "duration_frames": 40,
+  "duration_text": "描边 40f + 闪黑交棒 16f + hold ≥35f，约 3–4s",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中",
+  "styles": [
+    "draw-svg-trace"
+  ],
+  "tags": [
+    "typography",
+    "ui-entrance"
+  ],
+  "params": [
+    "描边速度",
+    "笔头",
+    "闭合闪",
+    "下划线版",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/draw-svg-trace.md",
+  "demo": "references/shots/ui-entrance/draw-svg-trace.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#draw-svg-trace"
+  ],
+  "wiki": "wiki/cards/draw-svg-trace.md"
+}

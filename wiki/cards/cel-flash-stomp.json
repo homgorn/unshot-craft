@@ -1,0 +1,37 @@
+{
+  "name": "cel-flash-stomp",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "底色闪砸字",
+  "summary_en": "Large words stamp into frame on the beat while flat background colors flash behind the locked typography.",
+  "intention": "逐词砸字（stomp typography）单用只有重量；背景纯色闪（动漫背景 フラッシュ——必杀技名出现时底色交替闪）单用只是闪。焊在一起互补 成立：词砸下的落定帧正是底闪的起爆帧，**主体稳、背景闪**——观众 盯着字，眼角余光里整个世界在震颤，打击感来自周边视野而不来自主体 抖动。这是与震屏完全相反的路线：震屏晃主体，本卡晃世界。三词逐拍 递进，末词闪加倍+标签条收束，一句口号剪成三记盖章。",
+  "use": "口号/三连词的高能段落（\"SHIP / FASTER / TODAY\"式）；文字节奏卡，与 type-rhythm-sync 互补（那是字属性动，这是字砸+底闪）",
+  "duration_frames": 30,
+  "duration_text": "每词 ~30f × 词数 + 收尾 ≥45f；三词约 4.8s",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高",
+  "styles": [
+    "cel-flash-stomp"
+  ],
+  "tags": [
+    "typography",
+    "rhythm"
+  ],
+  "params": [
+    "词时长",
+    "砸落",
+    "歪角",
+    "底闪",
+    "标签条",
+    "收尾"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/cel-flash-stomp.md",
+  "demo": "references/shots/typography/cel-flash-stomp.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#cel-flash-stomp"
+  ],
+  "wiki": "wiki/cards/cel-flash-stomp.md"
+}

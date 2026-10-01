@@ -1,0 +1,39 @@
+{
+  "name": "svg-shape-morph",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "轮廓变形",
+  "summary_en": "A closed organic outline flows smoothly into a second shape and back again, interpolating 140 matched sample points while a faint scale breath, slow drift rotation and hue shift from cyan to violet ride on top.",
+  "intention": "\"形态会变\"这件事，用两张图交叉淡入是说不清的——观众看到的是两个东西重叠。真正的 morph 要让观众相信这一直是**同一个东西**在改变形状。等点数重采样加逐点插值就是这个 \"同一性\"的技术保证：没有点的生成或消失，只有半径在变。变回原形是为了闭环——观众 看到往返，才知道这是可逆的能力而不是一次性的变身。",
+  "use": "抽象概念的\"形态转换/自适应/有机生长\"表达；开场 logo 前的氛围一拍，或章节之间的过渡形",
+  "duration_frames": 156,
+  "duration_text": "约 5.2s（156f@30fps）",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（无爆点的连续流动，适合当旁白底或呼吸拍）",
+  "styles": [
+    "svg-shape-morph"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "采样点数",
+    "基半径",
+    "形状 A",
+    "形状 B",
+    "变形窗",
+    "中段静置",
+    "呼吸幅度",
+    "自转",
+    "色相区间"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/svg-shape-morph.md",
+  "demo": "references/shots/ui-entrance/svg-shape-morph.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#svg-shape-morph"
+  ],
+  "wiki": "wiki/cards/svg-shape-morph.md"
+}

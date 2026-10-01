@@ -1,0 +1,37 @@
+{
+  "name": "particle-sand-fill",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "粒子落砂成柱",
+  "summary_en": "Chart columns form from falling square particles, solidify when full, and finish with a value pop.",
+  "intention": "把柱状图入场从\"长高动画\"换成\"落体堆积\"：每根柱上方下一场方块雨， 粒子逐颗坠落（重力加速）、触堆积面即停+15% 回弹，一层压一层堆到目标 高度后粒子面淡出换实体柱、顶部数值标签弹出。数据的\"量\"变成看得见的 \"一颗一颗攒出来\"——与 unit-dot-swarm-regroup（点群平面迁徙聚形） 分工：那是同一批点改队形，这是落体材料筑成图形。",
+  "use": "柱状图/量级对比入场；讲\"积累/汇聚\"语义的数据段落",
+  "duration_frames": 150,
+  "duration_text": "4–5s",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（构筑感入场）",
+  "styles": [
+    "particle-sand-fill"
+  ],
+  "tags": [
+    "data",
+    "effects"
+  ],
+  "params": [
+    "粒径",
+    "每柱粒子数",
+    "坠落",
+    "回弹",
+    "柱间错峰",
+    "收束"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/particle-sand-fill.md",
+  "demo": "references/shots/data/particle-sand-fill.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#particle-sand-fill"
+  ],
+  "wiki": "wiki/cards/particle-sand-fill.md"
+}

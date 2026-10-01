@@ -1,0 +1,44 @@
+{
+  "name": "lead-word-zoom-assemble",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "首词推近组句",
+  "summary_en": "The lead word fills the frame at 2.3x and keeps drifting toward the viewer, then a single curve recedes it to size while the line slides left and the trailing words are pushed into their slots — pivoting on the lead word centre and the measured baseline.",
+  "intention": "字卡最容易犯的错是\"整句一起淡入\"——观众同时收到 5 个词，一个都没记住。这张卡把 阅读顺序做成**物理顺序**：先只给一个词，而且大到占满画面、还在继续朝观众推近，观众 被迫先读它；然后这个词退回自己在句子里的尺寸和位置，整句围绕它长出来。落定时观众 已经读过两遍主词。 真正的手感命门不是缩放曲线，而是**支点**。首词从\"画面正中\"走到\"行内第三个字符的 位置\"，如果支点取行盒中心，缩放和左滑会各自把字往两边拽，末尾几帧基线抖得肉眼可见。 把 `transform-origin` 横向钉在首词中心、纵向钉在基线，这两点全程不动，整行就只是 \"收小\"，没有任何漂移。",
+  "use": "品牌名/产品名的 Introducing 字卡；发布会式开场第二镜；一句话主张需要\"先让一个词占满画面、再把整句补齐\"的场合",
+  "duration_frames": 84,
+  "duration_text": "约 2.8s（84f@30fps；组句 f32 完成、上移与副行 f34–50、静止 22f、末 12f crash）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（起手就是满画面的大字，但全程只有一次运动，没有二次冲击）",
+  "styles": [
+    "lead-word-zoom-assemble"
+  ],
+  "tags": [
+    "opening",
+    "typography"
+  ],
+  "params": [
+    "首词起手倍数",
+    "推近",
+    "hold",
+    "缩回",
+    "左滑",
+    "后续词延迟",
+    "词间错峰",
+    "单词推入",
+    "词淡入",
+    "字号/字重/字距",
+    "上移 + 副行",
+    "静止",
+    "crash"
+  ],
+  "pitfall_count": 9,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/lead-word-zoom-assemble.md",
+  "demo": "references/shots/typography/lead-word-zoom-assemble.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#lead-word-zoom-assemble"
+  ],
+  "wiki": "wiki/cards/lead-word-zoom-assemble.md"
+}

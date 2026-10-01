@@ -1,0 +1,34 @@
+{
+  "name": "print-texture-transitions",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "印刷质感转场",
+  "summary_en": "A print-based reveal: ink bleeding outward from a drop point to consume the old scene.",
+  "intention": "转场语言已有交棒（shot-transitions 六式）和穿越（transition-travel） ，都是空间/光学隐喻。本式开第三族：**介质隐喻**——新画面不是\"到来\" 而是\"印染\"出来的，直接调用库内纸墨审美的物理想象：像一滴墨落在 宣纸上洇开吃掉旧景，有机、书写感。天然亲和 paper/ink 调性的片子， 是 light-leak-burn（强调色漏光）之外的另一个\"介质系\"接缝选择。",
+  "use": "换景接缝的纸墨审美款；与交棒六式/穿越三式并列的第三族——\"介质显影\"型转场",
+  "duration_frames": 80,
+  "duration_text": "4–4.5s（洇开段 55–80f + 静止收尾 ≥30f）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（渐进显形，无冲击拍）",
+  "styles": [
+    "ink-bleed-reveal"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "渗边",
+    "洇开",
+    "收尾摘罩",
+    "收尾"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/print-texture-transitions.md",
+  "demo": "references/shots/transition/print-texture-transitions.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#print-texture-transitions"
+  ],
+  "wiki": "wiki/cards/print-texture-transitions.md"
+}

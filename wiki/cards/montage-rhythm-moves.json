@@ -1,0 +1,42 @@
+{
+  "name": "montage-rhythm-moves",
+  "category": "rhythm",
+  "category_en": "Rhythm & Montage",
+  "summary_zh": "蒙太奇节奏",
+  "summary_en": "Three montage rhythms: blackout anticipation and slam, a three-shot detail burst, and a domino cascade of entrances.",
+  "intention": "beat-cut-moves 管切点间隔怎么排，这三式管更大一层的节奏叙事： A 是\"静默即蓄力\"——drop 前一拍切全黑死寂憋一整拍，爆开才够响 （EDM 演出 blackout 惯例），给全片最高潮的前一秒用；B 是\"流程三连\" ——三个超近特写咔哒咔哒咔哒连打（按下/拨动/翻牌），第三声甩回全景 亮结果，Edgar Wright 式把\"操作很简单\"剪成肌肉记忆；C 是\"动量传递\" ——标题砸落震起卡片、卡片落地撞进侧边栏，每个元素的入场由上一个的 撞击触发，Rube Goldberg 式把一页内容的入场讲成连锁反应。",
+  "use": "段落级节奏设计：蓄力爆发（A）、流程速写（B）、开场连锁（C）；与 beat-cut-moves（切点排布）互补——这三式管\"段落的呼吸形状\"",
+  "duration_frames": 129,
+  "duration_text": "A 4.3s / B 4.3s / C 5s",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高",
+  "styles": [
+    "domino-cascade",
+    "drop-blackout-slam",
+    "wright-triple-cut"
+  ],
+  "tags": [
+    "rhythm"
+  ],
+  "params": [
+    "A 铺垫",
+    "A 黑场",
+    "A 爆入",
+    "B 特写结构",
+    "B 构图统一",
+    "B 甩回",
+    "C 动量链",
+    "C 撞击震动",
+    "C 卡片弹跳",
+    "收尾"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/rhythm/montage-rhythm-moves.md",
+  "demo": "references/shots/rhythm/montage-rhythm-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#montage-rhythm-moves"
+  ],
+  "wiki": "wiki/cards/montage-rhythm-moves.md"
+}

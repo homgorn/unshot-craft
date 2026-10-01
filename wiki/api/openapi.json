@@ -1,0 +1,96 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "shotcraft index API",
+    "version": "1.0.0",
+    "description": "Read-only access to the indexed video-shotcraft knowledge base. Generated from shotcraft.db; no write endpoints."
+  },
+  "paths": {
+    "/cards": {
+      "get": {
+        "summary": "All 157 shot cards",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "opening",
+                "typography",
+                "ui-entrance",
+                "camera",
+                "data",
+                "interaction",
+                "transition",
+                "rhythm",
+                "effects",
+                "outro"
+              ]
+            }
+          },
+          {
+            "name": "energy",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "l",
+                "l",
+                "m",
+                "m",
+                "m",
+                "h",
+                "v",
+                "p"
+              ]
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "FTS5 search over name, summary, use, intention"
+          }
+        ]
+      }
+    },
+    "/cards/{slug}": {
+      "get": {
+        "summary": "One card with its parameters, pitfalls and styles"
+      }
+    },
+    "/styles": {
+      "get": {
+        "summary": "All 218 motion styles with extracted parameters"
+      }
+    },
+    "/easing": {
+      "get": {
+        "summary": "Easing curves ranked by usage across the demo corpus"
+      }
+    },
+    "/rules": {
+      "get": {
+        "summary": "The 27 aesthetic rules, grouped by family"
+      }
+    },
+    "/licenses": {
+      "get": {
+        "summary": "Licence audit for the whole stack"
+      }
+    },
+    "/opportunities": {
+      "get": {
+        "summary": "Monetization models with their evidence"
+      }
+    },
+    "/stats": {
+      "get": {
+        "summary": "Counts used by every document in this wiki"
+      }
+    }
+  }
+}

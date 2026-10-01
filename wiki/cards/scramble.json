@@ -1,0 +1,37 @@
+{
+  "name": "scramble",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "乱码锁定",
+  "summary_en": "Every character flickers through a seeded symbol pool two frames at a time, then locks to its real glyph left to right, each lock flashing a short blue-white glow.",
+  "intention": "同一句标题的三种\"造字\"手法里，打字机是人在写、翻牌是机器在播报， 乱码锁定是**机器在算**——先满屏噪声表示\"还没解出来\"，再左→右一个个 咬定真字符。它天然带黑客/解密腔，适合技术产品的开场；但也最挑文案： 字符是被逐个点名的，字数就是节拍数。",
+  "use": "技术型开场标题；版本号/代号揭晓；\"系统就绪\"\"数据解锁\"这类带机器口吻的一拍",
+  "duration_frames": 96,
+  "duration_text": "约 3.2s（96f@30fps）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（持续高频跳字的视觉噪声，无单点冲击）",
+  "styles": [
+    "scramble"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "占位文案",
+    "锁定窗",
+    "锁定抖动",
+    "跳字频率",
+    "锁定闪光",
+    "字体字距",
+    "起手空屏"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/scramble.md",
+  "demo": "references/shots/typography/scramble.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#scramble"
+  ],
+  "wiki": "wiki/cards/scramble.md"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "text-as-mask",
+  "category": "opening",
+  "category_en": "Opening & Brand",
+  "summary_zh": "文字蒙版",
+  "summary_en": "Product footage moves inside oversized title letters before the type expands until the footage takes over the frame.",
+  "intention": "标题和产品画面抢屏幕是老问题——先字后画慢，画上压字挤。这一式让 两者同体：字形就是遮罩，产品只透过笔画显形，观众同时读到词和画面 质感；结尾字形胀开溢出画幅，产品自然接管全屏——\"从品牌词走进产品\" 一条镜头说完，兼任章节转场（与 transition-travel C 字腔穿越同族： 那边是镜头钻进字腔，这边是字形自己胀开，前者相机动、后者门动）。",
+  "use": "品牌词/口号与产品画面二合一的开场或章节卡；字是门、产品在门里",
+  "duration_frames": 20,
+  "duration_text": "5s（hold 20f + 字内漂移 80f + 放大接管 30f + 静止 20f）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（漂移段沉稳，接管段一次爆发）",
+  "styles": [
+    "text-as-mask"
+  ],
+  "tags": [
+    "opening",
+    "typography"
+  ],
+  "params": [
+    "字号/字重",
+    "漂移速度",
+    "放大倍率",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/opening/text-as-mask.md",
+  "demo": "references/shots/opening/text-as-mask.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#text-as-mask"
+  ],
+  "wiki": "wiki/cards/text-as-mask.md"
+}

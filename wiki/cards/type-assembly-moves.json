@@ -1,0 +1,40 @@
+{
+  "name": "type-assembly-moves",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "文字集结",
+  "summary_en": "Four typography assemblies: split-letter rise, drifting convergence, tracking expansion, and text flowing along a path.",
+  "intention": "标题入场已有\"原位变形系\"四式（乱码解码/字符坠落/翻牌/打字机——字 在原地换形态）。本卡补\"集结系\"：字符从别处**汇聚成**标题，运动轨迹 本身有戏。A 琴键式——每字从看不见的裁切线下滑升，理性利落，通用度 最高；B 片头式——字符四散带模糊漂入、逐个锁定加深，Stranger Things 的仪式感，适合品牌名亮相;C 呼吸式——字母从叠压一团吸一口气展开， 最安静的一式，适合抒情段落；D 语义式——字符沿一条上升曲线鱼贯流入 再摆正，曲线可以正好描着图表增长线走，文字与数据同框叙事。",
+  "use": "大标题/标语的入场；与 type-entrance-moves 两式、split-flap-title、document-typewriter-reveal 同属标题入场大品类，全片 ≤2 种",
+  "duration_frames": 56,
+  "duration_text": "单式 4–5s（动作段 A ~56f / B ~104f / C ~58f / D ~99f，均含 hold）",
+  "energy": "A 中 / B 中高 / C 低中 / D 中",
+  "energy_rank": null,
+  "energy_text": "A 中 / B 中高 / C 低中 / D 中",
+  "styles": [
+    "letterform-drift-assembly",
+    "split-text-stagger",
+    "text-on-path",
+    "tracking-expand-reveal"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "A 过冲",
+    "B 锁定脉冲",
+    "B 漂移三绑定",
+    "C 实现命门",
+    "D 摆正",
+    "D 曲线",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 1,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/type-assembly-moves.md",
+  "demo": "references/shots/typography/type-assembly-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#type-assembly-moves"
+  ],
+  "wiki": "wiki/cards/type-assembly-moves.md"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "mosaic-reframe",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "三段布局重排",
+  "summary_en": "Twelve tiles morph continuously between a regular grid, a feature mosaic with one hero slot, and a rotated diagonal cascade, each tile interpolating position and size independently with a slight stagger.",
+  "intention": "让观众看见\"布局本身在思考\"：同样 12 张内容，从整齐档案态（网格）变成有主次的策展态（feature mosaic），再变成有态度的动态态（对角瀑布）。三段排版是三种叙事语气，变形过程即产品能力。",
+  "use": "\"同一批内容多种看法\"的陈列转场：作品集/模板库/相册产品的布局能力展示",
+  "duration_frames": 180,
+  "duration_text": "约 6.0s（180f@30fps；浮现 0–0.6s · A→B 1.6–2.5s · hold · B→C 3.7–4.8s）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（连续流动的重排，无爆点，气质从容）",
+  "styles": [
+    "mosaic-reframe"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "段窗口",
+    "微 stagger",
+    "瀑布参数",
+    "mosaic 大位",
+    "浮现节奏",
+    "瓦片内容"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/mosaic-reframe.md",
+  "demo": "references/shots/transition/mosaic-reframe.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#mosaic-reframe"
+  ],
+  "wiki": "wiki/cards/mosaic-reframe.md"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "segmented-thumb-hero",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "分段控件特写",
+  "summary_en": "An oversized segmented control gets a close-up: a cursor slides in, presses, and the white thumb snaps to the other segment as icons swap with a spring.",
+  "intention": "产品切到新模式，通常拍法是整个界面换掉。本卡反着来：把 segmented control 放大到 1080px 宽拍特写，**thumb 那 8 帧位移本身就是叙事**—— \"我们从 A 走到了 B\"。没有任何页面上下文，控件即舞台。因果链完整： 光标滑入（有人来了）→ 按下+涟漪（做了决定）→ thumb 滑动（世界响应） → 新图标弹出（新身份确立）。四拍缺一不可，缺了光标就是 UI 自己在动， 缺了图标弹出就是切换没有奖励。",
+  "use": "\"模式切换/二选一\"功能的宣告镜头（Ask→Computer、Chat→Agent 式）；一个 UI 微交互撑一整镜的特写拍法",
+  "duration_frames": 110,
+  "duration_text": "~3.5s（demo 110f：浮入 18f + 光标 24f + 点击 + 滑动 8f + 图标弹出 + hold）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（微交互特写，精致不轰）",
+  "styles": [
+    "segmented-thumb-hero"
+  ],
+  "tags": [
+    "interaction"
+  ],
+  "params": [
+    "控件尺寸",
+    "thumb 时长",
+    "光标滑入",
+    "按下",
+    "图标弹出",
+    "收尾 hold"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/segmented-thumb-hero.md",
+  "demo": "references/shots/interaction/segmented-thumb-hero.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#segmented-thumb-hero"
+  ],
+  "wiki": "wiki/cards/segmented-thumb-hero.md"
+}

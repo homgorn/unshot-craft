@@ -1,0 +1,38 @@
+{
+  "name": "picker-carousel-feature-cycle",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "药丸吸附轮播",
+  "summary_en": "A vertical mobile-style picker holds its focus pill still while the list passes through it, each item decelerating hard into place and resting for several frames before the next.",
+  "intention": "把\"选择\"这件事的物理感做出来：焦点框是固定的，是内容在滚动并被吸住。 每项停下后必须**真的静止几帧**——连续滚动读作 loading 动画，停顿才读作 \"这一项被选中了\"。距离衰减（透明度 + 字号 + 灰度三通道同时衰减）是让 观众视线始终锁在中间那一行的唯一手段。",
+  "use": "逐个念出功能名/场景名的列表镜头；\"选一个\"的交互演示；移动端产品的 picker 类控件展示",
+  "duration_frames": 108,
+  "duration_text": "约3.6s（108f@30fps）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（每一次吸附都是一个节拍点，5 拍匀速推进）",
+  "styles": [
+    "picker-carousel-feature-cycle"
+  ],
+  "tags": [
+    "interaction"
+  ],
+  "params": [
+    "行高/可见行数",
+    "步数",
+    "HOLD",
+    "吸附缓动",
+    "opacity 衰减",
+    "fontSize 衰减",
+    "图标可见性",
+    "药丸呼吸"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/picker-carousel-feature-cycle.md",
+  "demo": "references/shots/interaction/picker-carousel-feature-cycle.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#picker-carousel-feature-cycle"
+  ],
+  "wiki": "wiki/cards/picker-carousel-feature-cycle.md"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "magician-card-flourish",
+  "category": "opening",
+  "category_en": "Opening & Brand",
+  "summary_zh": "魔术卡弹射",
+  "summary_en": "A blue starburst flashes on black for a third of a second, then a card shoots out of the flash, spinning along an arc toward camera before freezing near full frame.",
+  "intention": "魔术师甩牌：一道蓝色星芒闪过，卡片仿佛从光里被变出来——从画面 中心极远处（视觉上一个小点）弹射而出，沿弧线极速自旋飞向镜头， 到达中心瞬间硬定格成近满幅展示。三个魔术感命门：**闪光先行** （光是\"变\"的仪式，0.3s 短促干脆）、**弹射节奏**（起飞慢速蓄力→ 急加速踢出→弧线段减速抵达，slow-in→burst→decelerating arc）、 **定格即静**（无减速尾巴无回弹，13 整圈自旋保证定格恰为正面）。",
+  "use": "单张卡片/海报/封面的魔术性登场（片头主视觉、产品卡揭晓）；纯黑暗场；需要\"变出来\"仪式感的爆点",
+  "duration_frames": 9,
+  "duration_text": "闪光 0.3s + 飞行 ~1.7s + 定格展示+扫光 ~2s；全段 4.2s",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（一次性爆点，定格后即静）",
+  "styles": [
+    "magician-card-flourish"
+  ],
+  "tags": [
+    "opening",
+    "ui-entrance",
+    "effects"
+  ],
+  "params": [
+    "闪光时长",
+    "星芒旋转",
+    "光束颜色",
+    "中心",
+    "弹射曲线",
+    "自旋衰减",
+    "定格尺寸",
+    "硬定格"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/opening/magician-card-flourish.md",
+  "demo": "references/shots/opening/magician-card-flourish.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#magician-card-flourish"
+  ],
+  "wiki": "wiki/cards/magician-card-flourish.md"
+}

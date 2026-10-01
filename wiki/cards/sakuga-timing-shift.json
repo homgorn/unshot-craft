@@ -1,0 +1,37 @@
+{
+  "name": "sakuga-timing-shift",
+  "category": "rhythm",
+  "category_en": "Rhythm & Montage",
+  "summary_zh": "作画式节奏变拍",
+  "summary_en": "Movement begins in stepped, held drawings and suddenly switches to frame-by-frame acceleration at the climax.",
+  "intention": "库内时间轴操纵已有 speed-ramp 连续变速与 hit-counter 的局部顿帧。 本卡是另一种——**改的不是速度是帧率本身**： 顿挫段驱动帧 q=floor(f/3)*3，元素每 3 帧才动一步（10fps 手翻书）， 切换帧起改用原始 f 逐帧驱动，丝滑冲刺。一拍三的钝与一拍一的滑 同屏对切，日式作画的拍数演出（shooting on 3s / on 1s）。顿挫段 不是低级感是手工感，切换点即高潮标记。",
+  "use": "单元素的强调性位移（卡片入场、指标冲线）；需要\"手工感→高潮爆发\"反差的段落",
+  "duration_frames": 150,
+  "duration_text": "~5s",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高",
+  "styles": [
+    "sakuga-timing-shift"
+  ],
+  "tags": [
+    "ui-entrance",
+    "rhythm"
+  ],
+  "params": [
+    "拍数",
+    "每步位移",
+    "步间姿势",
+    "切换帧",
+    "冲刺缓动",
+    "收尾"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/rhythm/sakuga-timing-shift.md",
+  "demo": "references/shots/rhythm/sakuga-timing-shift.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#sakuga-timing-shift"
+  ],
+  "wiki": "wiki/cards/sakuga-timing-shift.md"
+}

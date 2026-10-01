@@ -1,0 +1,39 @@
+{
+  "name": "assemble-then-type-flyin",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "骨架装配落字",
+  "summary_en": "Textless component shells fly in from every direction onto an empty dark grid, then every character arrives from 3D space with its own large rotation and settles into position.",
+  "intention": "把\"页面生成\"拆成两个语义清楚的阶段：先立骨架（框、卡片、分隔线、 色块，全部无字），再填文字。文字用逐字 3D 旋转落位，是因为骨架段 只有平面位移——两段的运动维度必须不同，否则观众读不出\"这是第二步\"。",
+  "use": "页面/海报\"自己长出来\"的开场；排版类产品的能力展示；从骨架到成稿的两段式叙事",
+  "duration_frames": 156,
+  "duration_text": "约5.2s（156f@30fps）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（骨架段稀疏、文字段密集，能量单调上升到收尾）",
+  "styles": [
+    "assemble-then-type-flyin"
+  ],
+  "tags": [
+    "effects"
+  ],
+  "params": [
+    "骨架时序",
+    "骨架飞入",
+    "骨架残影",
+    "文字起点",
+    "逐字位移",
+    "逐字旋转",
+    "perspective",
+    "字间隔",
+    "落位清零"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/assemble-then-type-flyin.md",
+  "demo": "references/shots/effects/assemble-then-type-flyin.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#assemble-then-type-flyin"
+  ],
+  "wiki": "wiki/cards/assemble-then-type-flyin.md"
+}

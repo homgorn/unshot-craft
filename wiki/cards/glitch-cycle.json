@@ -1,0 +1,37 @@
+{
+  "name": "glitch-cycle",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "乱码轮播",
+  "summary_en": "Status phrases cycle through one monospace slot, each dissolving into noise at both ends with RGB split and jitter, while a progress bar tracks the whole run.",
+  "intention": "状态播报最笨的做法是四行字逐条淡入。轮播把它们压进**一个槽位**： 短语头尾用乱码\"熔断\"再\"凝固\"，中段几乎干净只偶尔抽一下——观众读到的 是\"系统在一步步推进\"，而不是四条独立文案。乱码浓度是这卡的语法： 浓 = 正在切换，淡 = 正在这一状态里。底部进度条把四拍串成一条时间线， 最后一条把概率收到 0，落定即结束。",
+  "use": "加载/构建/部署过程的状态播报；技术型片头的\"系统自述\"；需要机器口吻推进时间的一段垫底",
+  "duration_frames": 168,
+  "duration_text": "约 5.6s（168f@30fps，4 条短语各 42f）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（持续的高频噪声脉冲，切换点是峰值）",
+  "styles": [
+    "glitch-cycle"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "短语表",
+    "概率关键帧",
+    "重掷频率",
+    "抖动幅度",
+    "RGB 分离",
+    "槽宽字体",
+    "进度条"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/glitch-cycle.md",
+  "demo": "references/shots/typography/glitch-cycle.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#glitch-cycle"
+  ],
+  "wiki": "wiki/cards/glitch-cycle.md"
+}

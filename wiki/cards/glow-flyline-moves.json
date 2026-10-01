@@ -1,0 +1,41 @@
+{
+  "name": "glow-flyline-moves",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "光斑与飞线",
+  "summary_en": "Three dark-scene accents: ambient glow orbs, connecting flight arcs, and a synchronized orb-to-line relay.",
+  "intention": "这是库内第一张整卡住在**暗场**的卡。白底提亮不可见判例反过来读就是： 要玩光，先去暗场。A 是空间的呼吸——近黑底三团重 blur 光斑有机漂移， 中央深卡边缘随最近光斑靠近而泛光，背景不再是死的；B 是数据的动词—— 发光弧线从 A 卡\"打\"到 B 卡，亮点头领跑、渐隐光尾，落点描边脉冲点亮， 指标关联第一次有了方向；C 是 A+B 的焊接——飞线落点帧邻近光斑同帧 涨亮一拍，氛围层与事件层**同帧共振**，互相搭腔而非各演各的（组合命门： 拆开共振帧就退化成两张卡并置）。",
+  "use": "全片唯一暗场段落的氛围与数据叙事：铺底噪用 A、讲数据流向用 B、要背景给前景搭腔用 C；Linear 官网味",
+  "duration_frames": 150,
+  "duration_text": "A ~5s / B ~4.7s / C ~5.2s",
+  "energy": "A 低",
+  "energy_rank": null,
+  "energy_text": "A 低（底噪级）/ B 中 / C 中高",
+  "styles": [
+    "flyline-arc",
+    "glow-orb-ambient",
+    "orb-flyline-relay"
+  ],
+  "tags": [
+    "data",
+    "effects"
+  ],
+  "params": [
+    "A 光斑",
+    "A 卡缘辉光",
+    "A 收敛",
+    "B 线体",
+    "B 光头",
+    "B 脉冲",
+    "C 共振",
+    "C 时间轴"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/glow-flyline-moves.md",
+  "demo": "references/shots/effects/glow-flyline-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#glow-flyline-moves"
+  ],
+  "wiki": "wiki/cards/glow-flyline-moves.md"
+}

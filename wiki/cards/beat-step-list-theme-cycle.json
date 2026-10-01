@@ -1,0 +1,37 @@
+{
+  "name": "beat-step-list-theme-cycle",
+  "category": "rhythm",
+  "category_en": "Rhythm & Montage",
+  "summary_zh": "节拍列表换色",
+  "summary_en": "An adjective list steps up one row per beat while a fixed center pill catches each word and the background recolors on the same beat.",
+  "intention": "换一次主题色是功能演示；0.6 秒换一次、连换三次、每次\"选中行+胶囊色 +全场底色\"三件事同帧齐跳——就成了节拍器。用最便宜的变量切换做出 全片最高的节奏密度。命门有二：一是**三通道必须锁同一拍点**，任何 一通道慢半拍，\"齐跳\"退化成三个各自为政的动画；二是**跳与滑的分界** ——跳变只占拍头 6f，其余 12f 完全静置，拍点要\"跳\"不要\"滑\"， 匀速滚动的列表就只是列表。",
+  "use": "\"同一产品多种气质/多主题展示\"段落（modern/playful/expressive 式形容词连打）；全片节奏最密的一段；音乐段对拍",
+  "duration_frames": 30,
+  "duration_text": "铺垫 30f + 每拍 18f × 拍数 + 收尾 hold；3 拍约 3.5s（demo 110f）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（0.6s 一拍三通道齐跳，密度型高能）",
+  "styles": [
+    "beat-step-list-theme-cycle"
+  ],
+  "tags": [
+    "typography",
+    "rhythm"
+  ],
+  "params": [
+    "拍长",
+    "跳变窗",
+    "拍数",
+    "squash",
+    "底色跨度",
+    "铺垫/收尾"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/rhythm/beat-step-list-theme-cycle.md",
+  "demo": "references/shots/rhythm/beat-step-list-theme-cycle.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#beat-step-list-theme-cycle"
+  ],
+  "wiki": "wiki/cards/beat-step-list-theme-cycle.md"
+}

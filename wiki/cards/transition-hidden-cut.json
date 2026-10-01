@@ -1,0 +1,40 @@
+{
+  "name": "transition-hidden-cut",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "隐藏切点转场",
+  "summary_en": "Three ways to conceal the edit: foreground occlusion, opposing impacts, and a brief amber light leak at the cut.",
+  "intention": "与 shot-transitions A 式 flash-cut 同族：flash-cut 用一层白闪盖住硬切， 这三式换了三种\"障眼物\"——扫过的前景卡片（A）、对撞的撞击帧（B）、 爬到顶峰的漏光（C）。共同原理是魔术误导：观众的眼睛被大动作/强光 吸走的那 1-3 帧里完成硬切，回过神来景已经换了，全程\"看不见剪刀\"。 flash-cut 是最素的一款；要方向感选 A，要仪式感选 B，要温度选 C。",
+  "use": "两镜衔接处需要\"无痕换景\"或\"仪式感开屏\"时（技法卡，与 shot-transitions 六式同层选型）",
+  "duration_frames": null,
+  "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+  "energy": "n/a",
+  "energy_rank": null,
+  "energy_text": "n/a（技法卡，不占能量位）",
+  "styles": [
+    "invisible-cut",
+    "light-leak-burn",
+    "versus-slam"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "A 横扫",
+    "A 糊感",
+    "A 带风推挤",
+    "B 斜缝几何",
+    "B 撞击三件套",
+    "C 光层",
+    "C 光强包络",
+    "C 冲淡"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/transition-hidden-cut.md",
+  "demo": "references/shots/transition/transition-hidden-cut.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#transition-hidden-cut"
+  ],
+  "wiki": "wiki/cards/transition-hidden-cut.md"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "transition-travel",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "穿行式转场",
+  "summary_en": "Two passage transitions: shared-element relocation, and a push through the counter of a letterform.",
+  "intention": "shot-transitions 六式是\"交棒\"型——前镜收尾、后镜入场，接缝靠白闪/暗场/ 焦点/黑场/糊帧/窗口盖住换页瞬间。本卡两式是\"穿越\"型——后景在前景画面里 以真实元素存在（网格槽位/字形洞），镜头一条连续空间运动钻进去， 观众从头到尾跟着同一个物体，没有交棒瞬间。选型口径：后景能在前景里\"预先 在场\"→穿越；两景只是先后关系、无空间嵌套→交棒。两式内部再按语义分—— A 是\"把这张卡放回去\"（详情→总览，F 式穿窗的逆向）；C 是\"标题即是门\" （章节字卡与转场二合一）。",
+  "use": "前后两镜存在\"元素/容器\"级空间关系的接缝（技法卡，与 shot-transitions 六式互补选用）",
+  "duration_frames": null,
+  "duration_text": "n/a（技法卡；各式动作段 25–60f，前后 hold 另计，帧数从相邻镜头预算里划）",
+  "energy": "n/a",
+  "energy_rank": null,
+  "energy_text": "n/a（技法卡，不占能量位）",
+  "styles": [
+    "letterform-zoom",
+    "shared-element-morph"
+  ],
+  "tags": [
+    "camera",
+    "transition"
+  ],
+  "params": [
+    "A morph 主曲线",
+    "A 同一物体感",
+    "A 落座仪式",
+    "C 穿腔主推",
+    "C 撤场与呼应"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/transition-travel.md",
+  "demo": "references/shots/transition/transition-travel.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#transition-travel"
+  ],
+  "wiki": "wiki/cards/transition-travel.md"
+}

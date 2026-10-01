@@ -1,0 +1,37 @@
+{
+  "name": "fui-hud-moves",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "科幻 HUD 动效",
+  "summary_en": "Two FUI patterns: a line unfolding into a panel, and a reticle assembling itself around a target.",
+  "intention": "科幻虚构界面（Jarvis/Territory）的两个可中性化母题。A 是面板的 仪式感开关机：1px 细线极快抽出→纵向撑开成面板→内容淡入，退场反向 压线缩点熄灭（老 CRT 关机）；灰阶细线即成立，不需要科技蓝。 B 是运动中的捕获：四个 L 形角标从画外冲入、超调回弹、\"咔\"地咬合 到目标元素四角+弹标签——与 freeze-annotate 分工：那卡冻结画面标注， 本卡在流动中点名。",
+  "use": "暗场/科技感段落的面板入退场用 A；任何\"看这里\"的目标点名用 B（替代箭头圈红，画面不冻结）",
+  "duration_frames": 120,
+  "duration_text": "A 3–4s（含退场）/ B 2–3s",
+  "energy": "A 中 / B 中高",
+  "energy_rank": null,
+  "energy_text": "A 中 / B 中高（咬合帧是打击点）",
+  "styles": [
+    "line-unfold-panel",
+    "reticle-lock-on"
+  ],
+  "tags": [
+    "ui-entrance",
+    "effects"
+  ],
+  "params": [
+    "A 两段节奏",
+    "A 线体",
+    "B 飞入行程",
+    "B 超调",
+    "B 咬合帧"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/fui-hud-moves.md",
+  "demo": "references/shots/effects/fui-hud-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#fui-hud-moves"
+  ],
+  "wiki": "wiki/cards/fui-hud-moves.md"
+}

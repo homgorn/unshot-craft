@@ -1,0 +1,34 @@
+{
+  "name": "edit-hook-moves",
+  "category": "outro",
+  "category_en": "Outro",
+  "summary_zh": "剪辑钩子",
+  "summary_en": "An editorial hook: a short logo-button stinger that interrupts the ending with a 12-frame easter egg.",
+  "intention": "库内声画卡管的都是\"画面上的事\"；这一式管**时间线本身的修辞**—— 终点的反悔：收黑→logo 淡入定住（观众以为结束）→突然 12f UI 特写 彩蛋硬切插入→切回 logo 收尾，预告片 button ending，留最后一个钩子。 拿观众的\"已经结束了\"的预期开玩笑。",
+  "use": "片尾收束（全片 ≤1 次）",
+  "duration_frames": 150,
+  "duration_text": "~5s",
+  "energy": "低→瞬时中→低",
+  "energy_rank": null,
+  "energy_text": "低→瞬时中→低",
+  "styles": [
+    "logo-sting-button"
+  ],
+  "tags": [
+    "outro"
+  ],
+  "params": [
+    "彩蛋时长",
+    "彩蛋构图",
+    "像素级一致",
+    "剪辑方式"
+  ],
+  "pitfall_count": 3,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/outro/edit-hook-moves.md",
+  "demo": "references/shots/outro/edit-hook-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#edit-hook-moves"
+  ],
+  "wiki": "wiki/cards/edit-hook-moves.md"
+}

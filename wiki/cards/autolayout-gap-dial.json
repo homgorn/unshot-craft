@@ -1,0 +1,36 @@
+{
+  "name": "autolayout-gap-dial",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "间距拨盘布局",
+  "summary_en": "A gap value dial pushes a row of blocks apart in real time while badge digits tick, then everything springs back into place.",
+  "intention": "\"参数改了、UI 变了\"是设计工具的核心承诺，但通常拍成\"点面板→切 结果\"的前后对比，因果被剪掉了。本卡把因果拍成连续镜头：间距徽章 数字逐格跳，链接块**同帧**被推开，测量线实时拉长——数字就是缰绳， 布局就是马。框选描边+8 手柄+间距标注全是设计工具的母语，观众一眼 认出\"这是在工具里调参数\"。回程故意用欠阻尼弹簧过冲（缩到比起点 更紧再回稳），把\"归位\"做成一次有弹性的收尾。与 type-and-filter 分工：那是\"输入内容→列表收敛\"的检索因果，本卡是\"拨数值→几何 重排\"的参数因果。",
+  "use": "设计工具/低代码产品的\"改一个数、界面跟着动\"卖点镜头；\"用设计工具语义做包装\"的品类语言",
+  "duration_frames": 120,
+  "duration_text": "~4s（120f：框选入场 + 拉松 38f + hold + 弹簧回弹）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（工具理性型，爽点在数字与位移的锁定同步）",
+  "styles": [
+    "autolayout-gap-dial"
+  ],
+  "tags": [
+    "interaction"
+  ],
+  "params": [
+    "gap 幅度",
+    "去程时长",
+    "回程弹簧",
+    "数字步进",
+    "标注几何",
+    "块宽"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/autolayout-gap-dial.md",
+  "demo": "references/shots/interaction/autolayout-gap-dial.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#autolayout-gap-dial"
+  ],
+  "wiki": "wiki/cards/autolayout-gap-dial.md"
+}

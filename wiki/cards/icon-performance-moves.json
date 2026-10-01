@@ -1,0 +1,38 @@
+{
+  "name": "icon-performance-moves",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "图标表演动效",
+  "summary_en": "Two icon performances: an explosive confirmation burst and an escalating attention bounce that compresses on landing.",
+  "intention": "库内图标动画品类首批入库：icon 是镜头怼着拍的表演者，不是 UI 角落的 微交互。A 是确认时刻的三连爆——大对勾先缩 0.6x 蓄力 3f、弹 1.35x 过冲 落回，同帧中心射出 10 根短线粒子+一圈描边环从边缘扩到 2.5 倍直径淡出， \"部署成功\"不是画出来的是炸出来的；B 是 macOS Dock 语汇——app 图标 原地连跳 4 次一次比一次高（0.5→1.2 倍 icon 高），每次落地压扁 （宽 1.2x 高 0.8x）+溅尘点，跳最高那下镜头向它轻推 8%（被吸引）， 落定后弹开功能面板——把\"用户注意力\"剪进叙事。",
+  "use": "半屏级 icon 特写段落；A \"完成/成功\"的标点符号，B 新功能引出",
+  "duration_frames": 120,
+  "duration_text": "A 3–4s / B 4–5s",
+  "energy": "A 高潮点缀 / B 蓄势引入",
+  "energy_rank": null,
+  "energy_text": "A 高潮点缀 / B 蓄势引入",
+  "styles": [
+    "attention-bounce",
+    "pop-burst-confirm"
+  ],
+  "tags": [
+    "interaction",
+    "effects"
+  ],
+  "params": [
+    "icon 尺寸",
+    "A 蓄力",
+    "A 粒子/环",
+    "B 递增弹跳",
+    "B 落地挤压",
+    "B 镜头推近"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/icon-performance-moves.md",
+  "demo": "references/shots/effects/icon-performance-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#icon-performance-moves"
+  ],
+  "wiki": "wiki/cards/icon-performance-moves.md"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "timeline-travel",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "时间线穿行",
+  "summary_en": "The camera accelerates along a horizontal version timeline, raises cards at each stop, then brakes sharply on the final milestone.",
+  "intention": "把产品的版本史拍成一次沿时间轴的旅行（《反恐王国》片头判例）： 镜头缓起→冲刺→急刹三段变速横移，v1.0/v2.0/v3.0 刻度依次掠过， 每过一格对应卡片从刻度线上 spring 弹立——历史在窗外闪过， 急停在\"今天\"并推近。速度本身讲\"发展快\"，急停讲\"现在最重要\"。",
+  "use": "changelog/里程碑/发展史段落（\"我们一直在发货\"的另一种拍法）；与 scroll-brake-moves 分工：那卡是纵向列表急刹，本卡是横向时间旅行",
+  "duration_frames": 150,
+  "duration_text": "4–5s",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（加速→急刹的节奏型镜头）",
+  "styles": [
+    "timeline-travel"
+  ],
+  "tags": [
+    "camera",
+    "data"
+  ],
+  "params": [
+    "变速曲线",
+    "弹立时机",
+    "刻度密度",
+    "急停推近"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/timeline-travel.md",
+  "demo": "references/shots/data/timeline-travel.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#timeline-travel"
+  ],
+  "wiki": "wiki/cards/timeline-travel.md"
+}

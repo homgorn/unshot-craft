@@ -1,0 +1,36 @@
+{
+  "name": "white-flash-logo-simplify-cut",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "冲白降维切换",
+  "summary_en": "A liquid six-color gradient wordmark shimmers in place, the frame flash-burns to white with a blur-and-brightness pulse, and a flat gradient wordmark fades in and settles on the white.",
+  "intention": "先给足华丽（六色液态渐变在字面上流动、柔光扫掠），再用一次白闪把它\"净化\"成扁平三色字标——观众读到的是\"演出结束，这就是它的正式形象\"。降维是修辞：从感性质感切到理性识别。",
+  "use": "品牌段落收束（华丽演绎→干净定妆）；情绪从炫技切换到正式宣告的转场拍",
+  "duration_frames": 108,
+  "duration_text": "约 3.6s（108f@30fps；静置流光 0–1.2s · 冲白 1.2–1.5s · 扁平定格 1.7–2.7s）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（一次脉冲式重音，前后都是静场）",
+  "styles": [
+    "white-flash-logo-simplify-cut"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "冲白窗口",
+    "过曝脉冲",
+    "扁平入场",
+    "液态流速",
+    "字标字号",
+    "渐变常量"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/white-flash-logo-simplify-cut.md",
+  "demo": "references/shots/transition/white-flash-logo-simplify-cut.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#white-flash-logo-simplify-cut"
+  ],
+  "wiki": "wiki/cards/white-flash-logo-simplify-cut.md"
+}

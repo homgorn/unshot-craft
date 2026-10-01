@@ -1,0 +1,36 @@
+{
+  "name": "hatch-depth",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "斜纹变实柱",
+  "summary_en": "Hatched placeholder bars wipe out to length one by one, then cross-fade into solid accent-colored data bars with values popping at their tips and a LIVE header sliding in.",
+  "intention": "把\"占位符变成真数据\"这个产品瞬间拍成看得见的材质转换：先用 45° 斜纹条画出\"这里将有数据\"的草稿感，再让实心色层原位替换——几何完全不动、只换皮肤，观众读到的是\"同一样东西活了\"。",
+  "use": "\"从草稿到真实数据\"的叙事拍；dashboard/报表功能引入，或强调数据实时性的段落",
+  "duration_frames": 132,
+  "duration_text": "约 4.4s（132f@30fps；生长 0–1.7s · 蜕变 2.2–3.4s · 微颤收尾）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（信息渐进，无爆点，靠质感转换制造\"上线了\"的瞬间）",
+  "styles": [
+    "hatch-depth"
+  ],
+  "tags": [
+    "data"
+  ],
+  "params": [
+    "错峰间隔",
+    "生长时长",
+    "蜕变窗口",
+    "柱宽数据",
+    "微颤幅度",
+    "强调色"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/hatch-depth.md",
+  "demo": "references/shots/data/hatch-depth.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#hatch-depth"
+  ],
+  "wiki": "wiki/cards/hatch-depth.md"
+}

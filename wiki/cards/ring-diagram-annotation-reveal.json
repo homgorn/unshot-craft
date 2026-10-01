@@ -1,0 +1,40 @@
+{
+  "name": "ring-diagram-annotation-reveal",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "环图收束标注",
+  "summary_en": "A full-frame subject collapses into a concentric mechanism diagram, adds segmented rings and inward arrows, then shifts left to make room for a readable annotation column.",
+  "intention": "直接出现一张环形图，观众只会把它当作静态信息图。本卡先让主体占满全画面，再用 收缩的圆形窗口把“内容”压成一个可分析对象；细环、分段环与向心箭头依次补齐机制， 最后整组退到左侧，右栏才给出名称和解释。视觉顺序因此是**先经历对象，再理解结构， 最后阅读定义**，适合科技、工程、数据和概念科普。",
+  "use": "把抽象名词解释成结构图；系统/装置/流程的“主体→机制→注释”镜头；需要先制造沉浸特写、再退成可读说明图的横屏 B-roll",
+  "duration_frames": 190,
+  "duration_text": "约 6.3s（190f@30fps；最终构图保留 30f 可读时间）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（前半段几何持续建立，后半段转为信息阅读）",
+  "styles": [
+    "ring-diagram-annotation-reveal"
+  ],
+  "tags": [
+    "ui-entrance",
+    "camera",
+    "data"
+  ],
+  "params": [
+    "圆窗收束",
+    "细环收缩",
+    "分段环",
+    "外环旋转",
+    "向心箭头",
+    "布局让位",
+    "标题错峰",
+    "最终 hold"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/ring-diagram-annotation-reveal.md",
+  "demo": "references/shots/data/ring-diagram-annotation-reveal.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#ring-diagram-annotation-reveal"
+  ],
+  "wiki": "wiki/cards/ring-diagram-annotation-reveal.md"
+}

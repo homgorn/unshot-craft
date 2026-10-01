@@ -1,0 +1,39 @@
+{
+  "name": "aurora-bloom-bg-flip",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "极光升腾反黑",
+  "summary_en": "A soft purple-orange aurora blob rises from the bottom of a light frame, then the whole background slams dark in under half a second while the copy blur-swaps to a new line.",
+  "intention": "把\"底色反转\"当成重音符号用：前 62% 让极光慢慢升起、观众适应浅底， 然后用不到 0.4s 把整个画面压到近黑——这一下比任何缩放/闪白都更像 \"翻页\"。文案的换句必须卡在反转之后，且中间留空档，让观众先接住画面 变化再读新句。",
+  "use": "叙事转折点（\"多年以来…→一切都变了\"）；品牌片从铺垫拉到重音的那一拍；深浅色系之间的段落切换",
+  "duration_frames": 156,
+  "duration_text": "约5.2s（156f@30fps）",
+  "energy": "由低到高",
+  "energy_rank": null,
+  "energy_text": "由低到高（前 2/3 是酝酿，压暗那一瞬是全片重音）",
+  "styles": [
+    "aurora-bloom-bg-flip"
+  ],
+  "tags": [
+    "effects"
+  ],
+  "params": [
+    "blob 模糊/尺寸",
+    "升起",
+    "反转时长",
+    "底色",
+    "blob 压暗",
+    "橙核漂移",
+    "A 句 blur-out",
+    "B 句 blur-in",
+    "换句空档"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/aurora-bloom-bg-flip.md",
+  "demo": "references/shots/effects/aurora-bloom-bg-flip.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#aurora-bloom-bg-flip"
+  ],
+  "wiki": "wiki/cards/aurora-bloom-bg-flip.md"
+}

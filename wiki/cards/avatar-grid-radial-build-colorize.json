@@ -1,0 +1,36 @@
+{
+  "name": "avatar-grid-radial-build-colorize",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "分环生长染色",
+  "summary_en": "A card grid grows ring by ring from the center — tiles holding initials, icons, or image placeholders — then about fifteen percent of them flush red at random moments to surface anomalies.",
+  "intention": "两幕结构：第一幕\"群体成形\"——卡片从中心一环环长出，像镜头下的菌落生长；第二幕\"异常浮现\"——铺满后个别卡片陆续变红，观众的眼睛被迫扫描全场找红点。它把\"我们帮你盯着所有项\"这句话拍成了体验。",
+  "use": "\"群体中浮现异常/重点\"的数据叙事：用户群健康度、监控面板、批量状态总览",
+  "duration_frames": 168,
+  "duration_text": "约 5.6s（168f@30fps；铺满 0.5–1.7s · 染色 1.7–3.4s 陆续浮现）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（生长段有节奏感，染色段是安静的\"发现\"时刻）",
+  "styles": [
+    "avatar-grid-radial-build-colorize"
+  ],
+  "tags": [
+    "data"
+  ],
+  "params": [
+    "生长速度",
+    "异常比例",
+    "染色窗口",
+    "状态色",
+    "网格规模",
+    "内容混合比"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/avatar-grid-radial-build-colorize.md",
+  "demo": "references/shots/data/avatar-grid-radial-build-colorize.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#avatar-grid-radial-build-colorize"
+  ],
+  "wiki": "wiki/cards/avatar-grid-radial-build-colorize.md"
+}

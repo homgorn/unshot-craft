@@ -1,0 +1,42 @@
+{
+  "name": "trailer-grammar-moves",
+  "category": "rhythm",
+  "category_en": "Rhythm & Montage",
+  "summary_zh": "预告片剪辑语法",
+  "summary_en": "Three trailer structures: a rapid opening hook, alternating title cards and footage, and a direct smash cut into stillness.",
+  "intention": "库内节奏卡各管一段：beat-cut 管切点排布、montage-rhythm 管段落呼吸、 rhythm-interrupt 管打断。本卡管**预告片的结构性时刻**——不是某个 镜头怎么动，是整片的三个关节怎么接：A 是开场钩——正片前 0.9 秒塞 三个最抓眼镜头速剪 + 黑场静默一拍再开场，预告片的\"预告\"；B 是中段 对话——UI 镜头与黑底短语卡互相接拍交替硬切，画面与文字都踩拍点， 第三幕结构；C 是高潮句号——满屏动势轰鸣最高潮一帧硬切成整齐静止 全景死寂，喧闹→死寂。三式合用即一支预告片的骨架。",
+  "use": "预告片的三个结构性时刻：开场怎么钩（A）、中段怎么对话（B）、高潮怎么收（C）；三式合用即一支预告片的骨架",
+  "duration_frames": 141,
+  "duration_text": "A ~4.7s / B ~5s / C ~4.5s",
+  "energy": "A 高 / B 中 / C 高",
+  "energy_rank": null,
+  "energy_text": "A 高 / B 中 / C 高",
+  "styles": [
+    "card-footage-cadence",
+    "smash-cut",
+    "trailer-bumper"
+  ],
+  "tags": [
+    "opening",
+    "transition",
+    "rhythm"
+  ],
+  "params": [
+    "A 速剪",
+    "A 微推",
+    "A 黑场",
+    "B 交替",
+    "B 字卡",
+    "C 切点",
+    "C 模糊",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/rhythm/trailer-grammar-moves.md",
+  "demo": "references/shots/rhythm/trailer-grammar-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#trailer-grammar-moves"
+  ],
+  "wiki": "wiki/cards/trailer-grammar-moves.md"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "depth-layer-moves",
+  "category": "camera",
+  "category_en": "Camera & Space",
+  "summary_zh": "分层深度运镜",
+  "summary_en": "Two depth techniques: layered parallax rails and a simulated dolly zoom that pins the subject while the background expands.",
+  "intention": "整页平移是\"看页面\"，分层深度是\"在页面的空间里\"。视差滑轨给横移 加纵深（迪士尼多平面摄影机原理，Linear 片同款质感）；伪 dolly-zoom 反过来——主角纹丝不动、全世界压过来，给戏剧性时刻蓄力。",
+  "use": "平面截图要\"有厚度\"的段落；戏剧性蓄力时刻用 dolly-zoom（一支片 ≤1 次）",
+  "duration_frames": 150,
+  "duration_text": "视差滑轨 4–5s 持续；dolly-zoom 3–4s 单向行程",
+  "energy": "视差=中",
+  "energy_rank": null,
+  "energy_text": "视差=中（质感型）；dolly-zoom=中高（压迫感渐强）",
+  "styles": [
+    "dolly-zoom-real",
+    "multiplane-real"
+  ],
+  "tags": [
+    "camera"
+  ],
+  "params": [
+    "视差层系数",
+    "层次锚",
+    "dolly 膨胀行程"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/camera/depth-layer-moves.md",
+  "demo": "references/shots/camera/depth-layer-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#depth-layer-moves"
+  ],
+  "wiki": "wiki/cards/depth-layer-moves.md"
+}

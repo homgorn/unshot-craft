@@ -1,0 +1,38 @@
+{
+  "name": "chip-grid-single-select-blackout",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "灰闪单选反黑",
+  "summary_en": "Five option chips fade in, then a single grey press frame flashes before the chosen chip turns solid black with a tiny bounce while the others drop to eighteen percent without moving.",
+  "intention": "一帧灰闪 + 三帧反黑，是把真实 UI 的 `:active → :selected` 两级状态 拆开演。观众看到的是\"手指按下\"再\"系统确认\"，而不是一次渐变。其余 chip 降到 18% 而**位置绝不移动**：一旦重排，观众会以为页面刷新了， \"单选\"的语义就丢了。",
+  "use": "单选/套餐/档位选择的交互演示；\"选了它之后会怎样\"的因果镜头；价格/参数结算类链路",
+  "duration_frames": 150,
+  "duration_text": "约5.0s（150f@30fps）",
+  "energy": "中低",
+  "energy_rank": 3,
+  "energy_text": "中低（唯一的爆点是那一帧灰闪，其余都在收）",
+  "styles": [
+    "chip-grid-single-select-blackout"
+  ],
+  "tags": [
+    "interaction"
+  ],
+  "params": [
+    "入场",
+    "选中时刻",
+    "灰闪",
+    "反黑",
+    "按压回弹",
+    "余项降级",
+    "收束时刻",
+    "上移收窄"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/chip-grid-single-select-blackout.md",
+  "demo": "references/shots/interaction/chip-grid-single-select-blackout.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#chip-grid-single-select-blackout"
+  ],
+  "wiki": "wiki/cards/chip-grid-single-select-blackout.md"
+}

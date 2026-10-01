@@ -1,0 +1,39 @@
+{
+  "name": "glass-pill-dictation-typing",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "玻璃胶囊听写",
+  "summary_en": "A fixed-width glass pill pops in slightly oversized and settles, glowing with an accent gradient inside that fades out as a placeholder sentence types across it.",
+  "intention": "用\"光随输入熄灭\"讲一件很小的事：待命时它在发光（等你说话），你一开口 它就把光让给文字。1.7s 里只做三件事——弹出、打字、光退。任何额外动作 （弹跳、色变、图标动画）都会让这一拍不再是休止符。",
+  "use": "语音/AI 输入框的登场；\"跟它说话\"的交互提示镜头；高能段之间的一个安静过渡拍",
+  "duration_frames": 50,
+  "duration_text": "约1.7s（50f@30fps）",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（全片最安静的一拍，只有光在退）",
+  "styles": [
+    "glass-pill-dictation-typing"
+  ],
+  "tags": [
+    "interaction"
+  ],
+  "params": [
+    "胶囊定宽",
+    "出场缩放",
+    "opacity 时序",
+    "内嵌光",
+    "打字",
+    "光熄灭",
+    "阴影收敛",
+    "声波竖条",
+    "光标"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/glass-pill-dictation-typing.md",
+  "demo": "references/shots/interaction/glass-pill-dictation-typing.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#glass-pill-dictation-typing"
+  ],
+  "wiki": "wiki/cards/glass-pill-dictation-typing.md"
+}

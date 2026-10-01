@@ -1,0 +1,38 @@
+{
+  "name": "chart-live-moves",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "活体图表",
+  "summary_en": "Three data-driven motions: a live oscilloscope trace, dots regrouping into a figure, and an axis forced to rescale.",
+  "intention": "图表不是插图是剧情。三式共同前提（实测判例）：**必须真图表语境** ——真轴标/真数据/真文案，灰阶占位条测不出数据叙事的表达力。 A 示波流线：曲线写入点钉在右端上下起伏，旧数据左流出画，中途一次 突发尖峰（振幅 2.2×、读数跳大变强调色）——\"实时\"不用说出口，还有事件； B 点阵重组：320 个点（每点≈40 customers）散布→聚三簇（浮 Free/Pro/ Enterprise 真标签）→列队成柱（真轴标）→聚成点阵大数字 \"12,847\"—— 同一批点，观众能跟着某一颗看它归队； C 轴爆表：折线正常爬升，新值顶破图表上沿冲出卡片 220px（强调色粗线 插进标题区），停半拍，y 轴\"哗\"地重标（旧刻度飞出/新刻度滑入/网格 加密/旧线压扁成地平线），新值落回+弹真值标签——用\"坐标轴装不下\"演增长。",
+  "use": "数据叙事段落；分别讲\"实时性\"、\"每个数字是一个人\"、\"增长装不下\"",
+  "duration_frames": 180,
+  "duration_text": "各 4–6s",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（数据即剧情）",
+  "styles": [
+    "axis-rescale-shock-v-2",
+    "oscilloscope-stream-v-2",
+    "unit-dot-swarm-regroup-v-2"
+  ],
+  "tags": [
+    "data"
+  ],
+  "params": [
+    "真语境",
+    "主角色",
+    "A 流速",
+    "B 点数/点径",
+    "C 冲出幅度",
+    "收尾"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/chart-live-moves.md",
+  "demo": "references/shots/data/chart-live-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#chart-live-moves"
+  ],
+  "wiki": "wiki/cards/chart-live-moves.md"
+}

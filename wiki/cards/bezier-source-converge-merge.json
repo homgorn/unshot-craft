@@ -1,0 +1,38 @@
+{
+  "name": "bezier-source-converge-merge",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "曲线汇流吞并",
+  "summary_en": "Four source nodes each draw a thin bezier curve toward one convergence point, then slide along their own curve and shrink as if swallowed, while accent data packets glide the paths and the curves erase backward.",
+  "intention": "\"我们把四个来源统一了\"是一句抽象话。这个动效把它变成可看的物理过程：先建立四条独立 的通路（draw-on 是\"连上了\"），再让四个来源真的顺着通路走进同一个点并被吸进去（缩小 到 0 是\"被吞并\"），最后擦掉通路只留徽标（\"现在只有一个\"）。三段叙事各自有明确的 起止，观众不需要旁白就能读出因果。",
+  "use": "\"多源整合/统一接入/数据汇聚\"的核心机制镜头；集成、聚合、单一入口类产品的说明段落",
+  "duration_frames": 168,
+  "duration_text": "约 5.6s（168f@30fps）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（长镜慢速推进，靠数据包滑行维持活性；吞并瞬间是唯一小高点）",
+  "styles": [
+    "bezier-source-converge-merge"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "来源数",
+    "draw-on",
+    "汇聚窗",
+    "三段缩小",
+    "数据包周期",
+    "包相位偏移",
+    "擦除",
+    "徽标脉冲"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/bezier-source-converge-merge.md",
+  "demo": "references/shots/ui-entrance/bezier-source-converge-merge.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#bezier-source-converge-merge"
+  ],
+  "wiki": "wiki/cards/bezier-source-converge-merge.md"
+}

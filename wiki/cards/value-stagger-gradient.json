@@ -1,0 +1,39 @@
+{
+  "name": "value-stagger-gradient",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "数值梯度铺开",
+  "summary_en": "Sixteen bars rise in a staggered sweep where height, hue, travel distance and blur are each spread as a gradient across the row, then a second beat re-origins the stagger at the center so the pulse amplitude fans out symmetrically.",
+  "intention": "stagger 通常只被用来错开时间。这张卡要说的是它还能错开**值**——同一个索引既决定 \"什么时候动\"，也决定\"动到多少\"。两拍是一组对照实验：第一拍原点在首位（梯度从左到 右单调铺开），第二拍原点换到中心（梯度以中轴对称铺开）。观众看到的不是两个动画， 而是同一个配方换了一个参数。屏幕上的代码字幕同步换成对应的 stagger 调用，明说这件事。",
+  "use": "技法演示与参数化能力的展示镜头；也可直接当数据/频谱/均衡器类界面的入场",
+  "duration_frames": 150,
+  "duration_text": "约 5.0s（150f@30fps）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（第一拍是连续铺开，第二拍中心脉冲是明确的一次峰值）",
+  "styles": [
+    "value-stagger-gradient"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "柱数",
+    "时间错峰",
+    "单柱行程",
+    "高度梯度",
+    "色相梯度",
+    "位移/模糊梯度",
+    "第二拍原点",
+    "脉冲幅度梯度",
+    "亮度脉冲"
+  ],
+  "pitfall_count": 7,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/value-stagger-gradient.md",
+  "demo": "references/shots/ui-entrance/value-stagger-gradient.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#value-stagger-gradient"
+  ],
+  "wiki": "wiki/cards/value-stagger-gradient.md"
+}

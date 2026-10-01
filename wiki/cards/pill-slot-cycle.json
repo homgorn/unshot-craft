@@ -1,0 +1,36 @@
+{
+  "name": "pill-slot-cycle",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "词槽轮换",
+  "summary_en": "A fixed sentence keeps its trailing pill slot spinning like a slot machine through feature words until the final word locks the sentence.",
+  "intention": "罗列六个功能，列表要六行、逐条淡入要六拍还占满屏。词槽轮换把它们 塞进**一句话的一个槽位**里：句干 \"One AI tool to ___\" 是承诺，槽里 滚过的每个 pill 是证据，最后 pill 飞走、\"do it all.\" 落位——证据 列举完毕，结论盖章。结构自带三幕：承诺→列举→收束。命门是句干 **纹丝不动**：观众的眼睛全程钉在槽位上，句干一晃列举感就散。",
+  "use": "\"功能列举\"类文案的最优雅解法（比逐条列表快、比乱码解码有语义）；一句话卖点 + 多个动词短语的段落",
+  "duration_frames": 12,
+  "duration_text": "入场 12f + 每拍 21f × 词数 + 收束 14f + hold；6 词约 5.8s（demo 175f）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（稳定节拍器，无峰值）",
+  "styles": [
+    "pill-slot-cycle"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "拍长",
+    "换位窗",
+    "飞行距离",
+    "运动模糊",
+    "收束过冲",
+    "收尾 hold"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/pill-slot-cycle.md",
+  "demo": "references/shots/typography/pill-slot-cycle.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#pill-slot-cycle"
+  ],
+  "wiki": "wiki/cards/pill-slot-cycle.md"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "carousel-3d",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "环形画廊",
+  "summary_en": "Eight cards sit on a circular ring laid out with sin and cos, spinning through exactly one full revolution while each card billboards outward with matched front and back faces so it never reads as mirrored or upside down.",
+  "intention": "展示\"一组东西\"最省事的办法是排成一排横滑，但横滑有起点和终点。环形没有——它天然 循环，观众看多久都不会觉得\"放完了\"。这张卡真正要解决的是环形 carousel 最容易翻车 的点：卡片背面。方案是双面同向贴图，所以从环内看和从环外看是同一张正立的卡，环转一圈 不会有任何一帧出现镜像或倒置。",
+  "use": "作品集/模板库/集成清单的循环展示；需要无缝 loop 的背景拍或落地页 hero",
+  "duration_frames": 168,
+  "duration_text": "约 5.6s（168f@30fps）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（匀速无变化，是可无限循环的稳态运动）",
+  "styles": [
+    "carousel-3-d"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "卡数",
+    "半径",
+    "自转速度",
+    "透视",
+    "相机俯角",
+    "相机推近",
+    "卡尺寸",
+    "地面盘"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/carousel-3d.md",
+  "demo": "references/shots/ui-entrance/carousel-3d.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#carousel-3d"
+  ],
+  "wiki": "wiki/cards/carousel-3d.md"
+}

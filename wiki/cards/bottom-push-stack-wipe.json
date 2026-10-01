@@ -1,0 +1,36 @@
+{
+  "name": "bottom-push-stack-wipe",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "底推换章",
+  "summary_en": "Each new scene pushes up from the bottom edge with its own saturated background color, physically shoving the old scene out of frame.",
+  "intention": "wipe-transitions 是一条边界扫过、新旧页都不动；page-turn 是立方体 翻转。本卡是第三种物性：**新章把旧章顶出去**——两屏刚性接触、同速 同向位移，像自动售货机压栈。命门是\"连底色整屏走\"：底色+窗口卡+装饰 条焊成一块整料从底边推入，观众读到\"换了个世界\"而不是\"换了张卡\"。 重 ease-out（快进慢停）给推入一个\"哐\"的落位感；上缘 40px 接缝阴影 是两屏物理接触的证据。连推三章且底色饱和度拉满，换章本身就成了全片 的节拍器——slack 原片全片就靠这一招做骨架。",
+  "use": "多章节产品片的换章骨架（每章一个卖点一种底色）；需要\"翻页节奏感\"贯穿全片的段落切换",
+  "duration_frames": 30,
+  "duration_text": "单次推入 30f + 章内 hold ~1s；demo 三连推 140f（~4.7s）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中",
+  "styles": [
+    "bottom-push-stack-wipe"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "推入时长",
+    "章间 hold",
+    "接缝阴影",
+    "底色",
+    "内容钉死",
+    "连推次数"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/bottom-push-stack-wipe.md",
+  "demo": "references/shots/transition/bottom-push-stack-wipe.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#bottom-push-stack-wipe"
+  ],
+  "wiki": "wiki/cards/bottom-push-stack-wipe.md"
+}

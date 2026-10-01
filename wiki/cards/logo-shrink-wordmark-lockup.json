@@ -1,0 +1,36 @@
+{
+  "name": "logo-shrink-wordmark-lockup",
+  "category": "outro",
+  "category_en": "Outro",
+  "summary_zh": "图标收束落位",
+  "summary_en": "A neon slit ring shrinks fast into a solid white O with an overshoot brake, slides left to make room, letters stagger in one by one, and an accent slogan fades in below.",
+  "intention": "片尾的\"盖章\"动作：满屏的霓虹大环携能量坍缩成一枚小图标，愈合缺口、转为纯白（从演出态到标准态），然后按品牌 lockup 的规范一步步落位——图标让位、字标进场、标语押尾。观众看到的是品牌从动态里\"站定\"。",
+  "use": "片尾品牌定妆：从满屏图形能量收束到\"图标+字标+标语\"的标准 lockup",
+  "duration_frames": 132,
+  "duration_text": "约 4.4s（132f@30fps；收束 0.1–1.2s · 让位 1.5–2.1s · 字母 2–2.7s · 标语 3.2–3.7s）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（收束段有冲击力，整体是沉稳的落定节奏）",
+  "styles": [
+    "logo-shrink-wordmark-lockup"
+  ],
+  "tags": [
+    "outro"
+  ],
+  "params": [
+    "收束幅度",
+    "刹车过冲",
+    "愈合窗口",
+    "左移让位",
+    "字母 stagger",
+    "标语入场"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/outro/logo-shrink-wordmark-lockup.md",
+  "demo": "references/shots/outro/logo-shrink-wordmark-lockup.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#logo-shrink-wordmark-lockup"
+  ],
+  "wiki": "wiki/cards/logo-shrink-wordmark-lockup.md"
+}

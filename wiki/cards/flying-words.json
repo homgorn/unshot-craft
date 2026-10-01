@@ -1,0 +1,38 @@
+{
+  "name": "flying-words",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "词语纵深隧道",
+  "summary_en": "Keywords spawn deep in a perspective tunnel and rush past the camera along the z axis, fading in and out on a lifecycle curve across two seamless loops.",
+  "intention": "关键词列举最土的做法是堆一屏静态词云。词语隧道把同一批词**摊到时间轴上**： 远处生成、由小变大、擦过镜头消失，观众永远只在读三五个词，但主观感受是 \"词很多\"。它是背景层不是主角层——相机不动、元素动，所以前景压一层标题 或 UI 完全不打架。词表整体替换成项目关键词即可，不改一行运动逻辑。",
+  "use": "关键词云/能力清单的动态背景；片头片尾的\"信息量\"垫底层；需要纵深穿越感的转场",
+  "duration_frames": 180,
+  "duration_text": "约 6.0s（180f@30fps，2 个完整循环，可无缝接续）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（全屏持续 3D 位移，画面无一刻静止）",
+  "styles": [
+    "flying-words"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "词表",
+    "纵深行程",
+    "散开系数",
+    "生命曲线",
+    "循环圈数",
+    "近端模糊",
+    "配色",
+    "中心光晕"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/flying-words.md",
+  "demo": "references/shots/typography/flying-words.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#flying-words"
+  ],
+  "wiki": "wiki/cards/flying-words.md"
+}

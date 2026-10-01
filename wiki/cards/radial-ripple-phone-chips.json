@@ -1,0 +1,38 @@
+{
+  "name": "radial-ripple-phone-chips",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "同心波纹手机",
+  "summary_en": "Four concentric grey circles breathe out of phase like water ripples while a centered phone mockup auto-scrolls its feed and two white feature chips spring in and hover.",
+  "intention": "用最少的动作把手机放在画面正中并让它\"活着\"：同心圆负责氛围呼吸， 屏内自动滚屏负责证明\"里面有内容在跑\"，两侧 chip 负责点出功能名。 三层动作各自极慢，叠起来才不会显得静止——这是产品定格镜头的标准配法。",
+  "use": "移动端产品的\"这就是它\"定格镜头；功能点分列两侧的介绍段；片头/片尾的产品全景",
+  "duration_frames": 168,
+  "duration_text": "约5.6s（168f@30fps）",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（安静、有呼吸感，靠同心圆的持续起伏撑住不冷场）",
+  "styles": [
+    "radial-ripple-phone-chips"
+  ],
+  "tags": [
+    "effects"
+  ],
+  "params": [
+    "同心圆层数/尺寸",
+    "呼吸幅度",
+    "相位差",
+    "手机投影",
+    "自动滚屏",
+    "chip pop",
+    "chip 时序",
+    "chip 悬浮"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/radial-ripple-phone-chips.md",
+  "demo": "references/shots/effects/radial-ripple-phone-chips.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#radial-ripple-phone-chips"
+  ],
+  "wiki": "wiki/cards/radial-ripple-phone-chips.md"
+}

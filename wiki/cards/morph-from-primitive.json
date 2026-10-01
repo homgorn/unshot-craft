@@ -1,0 +1,36 @@
+{
+  "name": "morph-from-primitive",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "原型变形",
+  "summary_en": "A circle anticipates with one breath, morphs into a rounded card outline, then reveals its content.",
+  "intention": "入场库全是\"从外面进来\"——飞入、砸落、翻面，主体都预先存在于画外； 本卡是**就地长出来**：画面中心一个描边正圆先鼓一口气（scale 1→1.12→1），随即轮廓连续变形为圆角矩形卡片，内容再淡入。原型 停留加呼吸这一拍就是预备动作——迪士尼 anticipation 的图形学翻译： 圆先\"吸气\"，观众就知道它要变，变形本身因此不需要任何解释。 仅适用图形/图标/卡轮廓类主体——位图截图不能 morph。",
+  "use": "图形/图标/卡轮廓类主体的入场；logo→UI 容器的经典原语",
+  "duration_frames": 20,
+  "duration_text": "~4.7s（呼吸 20f + 变形 24f + 内容淡入 12f）",
+  "energy": "中低",
+  "energy_rank": 3,
+  "energy_text": "中低",
+  "styles": [
+    "morph-from-primitive"
+  ],
+  "tags": [
+    "opening",
+    "ui-entrance"
+  ],
+  "params": [
+    "呼吸幅度",
+    "原型停留",
+    "变形时长",
+    "目标形态",
+    "内容淡入"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/morph-from-primitive.md",
+  "demo": "references/shots/ui-entrance/morph-from-primitive.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#morph-from-primitive"
+  ],
+  "wiki": "wiki/cards/morph-from-primitive.md"
+}

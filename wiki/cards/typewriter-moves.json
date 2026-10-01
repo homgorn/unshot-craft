@@ -1,0 +1,40 @@
+{
+  "name": "typewriter-moves",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "打字机动效",
+  "summary_en": "Two typing narratives: a terminal command that triggers the scene and a three-act mistake, deletion, and retype.",
+  "intention": "打字是唯一自带时间性的文字入场——字符一个个到来本身就是节奏， 不需要额外动效。A 把打字当**引信**：暗色终端窗逐字敲出命令、 方块光标方波闪，回车帧镜头急推进命令行硬切产品界面，命令行是 场景的导火索，开发者产品标配；B 把打字当**独白**：逐字打出平庸词 （\"just a dashboard\"）→ 停顿犹豫 → 退格删掉 → 更快打出卖点词 （\"your command center\"），犹豫-否定-宣言的三幕剧，戏全在三档 速度差里。与 scramble-decode 的区别：乱码解码是机器在猜， 打字是人在说。",
+  "use": "开发者产品开场（A）、slogan/卖点字卡（B）；文字自带时间性的入场",
+  "duration_frames": 150,
+  "duration_text": "A ~5s / B ~5.5s",
+  "energy": "A 中高 / B 中低",
+  "energy_rank": null,
+  "energy_text": "A 中高 / B 中低",
+  "styles": [
+    "terminal-typewriter",
+    "typewriter-error-retype"
+  ],
+  "tags": [
+    "opening",
+    "typography"
+  ],
+  "params": [
+    "字符节奏",
+    "A 光标",
+    "A 急推",
+    "A 硬切",
+    "B 三档速度",
+    "B 光标三态",
+    "B 排版",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/typewriter-moves.md",
+  "demo": "references/shots/typography/typewriter-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#typewriter-moves"
+  ],
+  "wiki": "wiki/cards/typewriter-moves.md"
+}

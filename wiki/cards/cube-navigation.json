@@ -1,0 +1,36 @@
+{
+  "name": "cube-navigation",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "立方体逐面导航",
+  "summary_en": "Content panels wrap the six faces of a 3D cube while the camera alternates between face close-ups and pulled-back isometric views, each face shaded live by its normal direction.",
+  "intention": "把\"切页面\"升维成\"转立方体\"：模块不是并列的 tab 而是同一个实体的六个面，相机在特写（读内容）与等轴（看结构）之间交替，观众始终知道\"我在整体的哪一面\"。空间连续性替代了转场。",
+  "use": "多模块产品的\"逐面导航\"陈列：Overview/Metrics/Timeline 等 3–6 个板块的空间化串讲",
+  "duration_frames": 180,
+  "duration_text": "约 6.0s（180f@30fps；五段相机步进，每段约 0.7s + hold）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（稳定的空间巡航，靠转面瞬间的透视变化给节拍）",
+  "styles": [
+    "cube-navigation"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "立方体尺寸",
+    "特写距离",
+    "段窗口",
+    "等轴角",
+    "明暗系数",
+    "面内容"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/cube-navigation.md",
+  "demo": "references/shots/transition/cube-navigation.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#cube-navigation"
+  ],
+  "wiki": "wiki/cards/cube-navigation.md"
+}

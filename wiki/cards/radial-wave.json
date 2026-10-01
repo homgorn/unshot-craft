@@ -1,0 +1,37 @@
+{
+  "name": "radial-wave",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "点阵涟漪",
+  "summary_en": "A 17x9 dot grid lights up in rings that spread outward from the center, each dot overshooting its scale before settling into a steady glow, then a brighter pulse collapses back inward from the edges.",
+  "intention": "把\"很多点同时存在\"这件静态事实，改写成\"能量从一个源头扩散到全体\"的动态事实。观众 看到的不是一张点阵图，而是一次通电：中心先亮，亮度像水波推过去，走完之后整张阵列 留在常亮态——为下一拍要放的内容铺好底。第二道反向波是回执，告诉观众这个系统会回应。",
+  "use": "产品/品牌开场的\"系统上电\"一拍；也用作数据网格、节点地图、覆盖范围类叙事的建立镜头",
+  "duration_frames": 114,
+  "duration_text": "约 3.8s（114f@30fps）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（起手爆发一次，波前过后转为常亮低能量底子）",
+  "styles": [
+    "radial-wave"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "阵列规模",
+    "波速系数",
+    "单点行程",
+    "过冲幅度",
+    "第二道波",
+    "常亮底",
+    "高亮阈值"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/radial-wave.md",
+  "demo": "references/shots/ui-entrance/radial-wave.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#radial-wave"
+  ],
+  "wiki": "wiki/cards/radial-wave.md"
+}

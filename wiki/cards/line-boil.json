@@ -1,0 +1,36 @@
+{
+  "name": "line-boil",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "线条沸腾",
+  "summary_en": "Typography and outlines subtly redraw every few frames so a held image retains a handmade, living texture.",
+  "intention": "库内 R 系判例要求落定后\"真静止\"，但长字卡（3s+ 的黑场字卡、片尾） 完全冻结会读作\"片子卡了\"。本卡给第三种状态：**活着的静止**——轮廓 每 3 帧被\"重描\"一次，位置内容全然不动，只有线条边缘在极轻微地呼吸， 手绘动画 hold 帧的百年惯例。与 noise-drift（被否决）的区别正是可感性： 漂移是整体 1–3px 位移（肉眼读不出），沸腾是轮廓形变+阶梯跳变（每次 换 seed 都是一次可见的\"重描\"）。纸墨审美里这是\"手工感\"的直接来源。",
+  "use": "标题字卡/描边元素的长 hold 段（黑场字卡升级首选）；质感层手法，寄生在别的镜头上",
+  "duration_frames": null,
+  "duration_text": "寄生型——沸腾段随宿主 hold 长度，无自身时长",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（底噪级）",
+  "styles": [
+    "line-boil"
+  ],
+  "tags": [
+    "typography",
+    "effects"
+  ],
+  "params": [
+    "displacement scale",
+    "seed 节拍",
+    "baseFrequency",
+    "适用对象",
+    "与 R 系关系"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/line-boil.md",
+  "demo": "references/shots/effects/line-boil.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#line-boil"
+  ],
+  "wiki": "wiki/cards/line-boil.md"
+}

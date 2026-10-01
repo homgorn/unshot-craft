@@ -1,0 +1,38 @@
+{
+  "name": "word-relay-geometry",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "利益词接力",
+  "summary_en": "Three benefit words hand off in turn, each with its own geometry — a spinning dashed circle, three interlocking circles that trim into view, and a metallic sheen that resolves to pure white.",
+  "intention": "三点式利益陈述最容易做成三张字卡硬切。接力的做法是给每个词配一套 **只属于它的几何**：虚线圆是\"在转\"（快）、三圆相扣是\"互相咬合\"（好）、 金属扫光是\"材质硬\"（强）——几何本身就在替形容词做论证。第三个词 留了升格待遇（sheen 扫光 + 收白），因为它是结论。背景 20 颗微尘上浮 把三拍缝成一个连续空间，不然还是三张卡。",
+  "use": "三点式利益陈述（更快/更好/更强）；品牌价值观段落；需要\"一词一世界\"的中段推进",
+  "duration_frames": 180,
+  "duration_text": "约 6.0s（180f@30fps：三段各 0.36 时长窗，段间重叠 0.04）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（三拍推进 + 全程几何运动 + 背景粒子，无静止帧）",
+  "styles": [
+    "word-relay-geometry"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "三段时段",
+    "入/出场窗",
+    "outline→fill",
+    "虚线圆",
+    "trim 生长",
+    "sheen 扫光",
+    "收白",
+    "字号配色"
+  ],
+  "pitfall_count": 7,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/word-relay-geometry.md",
+  "demo": "references/shots/typography/word-relay-geometry.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#word-relay-geometry"
+  ],
+  "wiki": "wiki/cards/word-relay-geometry.md"
+}

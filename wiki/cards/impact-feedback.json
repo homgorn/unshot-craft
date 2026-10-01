@@ -1,0 +1,37 @@
+{
+  "name": "impact-feedback",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "冲击反馈",
+  "summary_en": "Two impact layers: a combo counter with damage feedback, and a full anime-style impact frame.",
+  "intention": "元素砸到位却没有\"砸到了\"的一瞬，落位读作 PPT 飞入。游戏 juice （Vlambeer screenshake 理论）与动漫演出 impact frames 给了同一答案： 命中的那几帧把时间咬住，冲量才传到观众手上。两式是一条强度阶梯： B 用局部顿帧叠伤害数字和 combo 跳字，把功能清单剪成一套连招， 叙事感最强；C 是最重的一拳——撞停 3 帧翻负片炸集中线，强调级最高、 最风格化。",
+  "use": "元素落位/撞击的\"命中一瞬\"——给砸入、撞停加游戏级手感；按强度阶梯选式",
+  "duration_frames": null,
+  "duration_text": "n/a（元素级技法，寄生在落位动作上；各式占用帧数见参数表）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（瞬时冲击）",
+  "styles": [
+    "anime-impact",
+    "hit-counter"
+  ],
+  "tags": [
+    "effects"
+  ],
+  "params": [
+    "B 节奏",
+    "B 伤害数字",
+    "B 计数器",
+    "C 急推撞停",
+    "C 冲击帧",
+    "C 恢复震屏"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/impact-feedback.md",
+  "demo": "references/shots/effects/impact-feedback.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#impact-feedback"
+  ],
+  "wiki": "wiki/cards/impact-feedback.md"
+}

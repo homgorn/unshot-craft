@@ -1,0 +1,36 @@
+{
+  "name": "before-after-slider-scrub",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "前后对比拉杆",
+  "summary_en": "Before and after views share one frame while a fast-then-slow slider reveals the processed result.",
+  "intention": "AI 图像产品发布片的标准对比语法：同一画面\"处理前\"（低对比灰蒙） 与\"处理后\"（清晰版）叠放，带圆手柄的竖分割杆先从左端猛甩到 70% （overshoot 回弹）、停一拍，再以约 1/5 的速度慢扫回来让观众看清 差异——**快甩慢扫的速度对比就是节奏**：快甩宣告\"变了\"， 慢扫证明\"变在哪\"。",
+  "use": "AI 增强/优化/重构类功能的效果对比段落（\"用前 vs 用后\"一镜讲清）",
+  "duration_frames": 150,
+  "duration_text": "4–5s",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（快甩是打击点，慢扫是阅读期）",
+  "styles": [
+    "before-after-slider-scrub"
+  ],
+  "tags": [
+    "data",
+    "interaction"
+  ],
+  "params": [
+    "速度比",
+    "揭示",
+    "手柄",
+    "before 处理",
+    "角标"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/before-after-slider-scrub.md",
+  "demo": "references/shots/data/before-after-slider-scrub.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#before-after-slider-scrub"
+  ],
+  "wiki": "wiki/cards/before-after-slider-scrub.md"
+}

@@ -1,0 +1,23 @@
+# upstream: read-only clone, pinned, not ours
+upstream/
+
+# WAL sidecars only. platform/db/shotcraft.db IS committed: it is a deliverable,
+# so a reviewer can read the index without running Python (ADR-0002). The
+# generator ships alongside it, so the file is always reproducible.
+platform/db/*.db-wal
+platform/db/*.db-shm
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# node / site build output
+site/node_modules/
+site/dist/
+node_modules/
+
+# os noise
+.DS_Store
+Thumbs.db

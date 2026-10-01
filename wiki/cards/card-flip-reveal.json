@@ -1,0 +1,37 @@
+{
+  "name": "card-flip-reveal",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "卡片翻面揭示",
+  "summary_en": "Feature cards rotate 180 degrees around the Y axis, flash at the edge, and reveal a large result on the back.",
+  "intention": "库内\"翻\"字辈已有 wall-reveal-moves B（整墙波浪翻面，讲入场）和 split-flap（字符翻牌，讲文字）。本卡是**语义翻面**：一张卡的正反两面 是一对因果——正面是功能界面，背面是它带来的数字结论。翻面动作本身 就是\"所以呢？\"的回答，Apple bento 段落的标准语法。逐张错峰 10f 扫过 一排，三张卡三个数字节奏读作\"成果连报\"。",
+  "use": "\"功能→成果\"的成对叙事：一排功能卡逐张翻出各自的指标/结论；元素级转场卡",
+  "duration_frames": 26,
+  "duration_text": "单卡翻转 26f，三卡错峰 10f，全程 ~4.9s（含 hold）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高",
+  "styles": [
+    "card-flip-reveal"
+  ],
+  "tags": [
+    "data",
+    "transition"
+  ],
+  "params": [
+    "翻转时长",
+    "过冲",
+    "高光峰值",
+    "错峰",
+    "背面内容",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/card-flip-reveal.md",
+  "demo": "references/shots/transition/card-flip-reveal.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#card-flip-reveal"
+  ],
+  "wiki": "wiki/cards/card-flip-reveal.md"
+}

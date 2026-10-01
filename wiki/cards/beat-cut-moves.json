@@ -1,0 +1,41 @@
+{
+  "name": "beat-cut-moves",
+  "category": "rhythm",
+  "category_en": "Rhythm & Montage",
+  "summary_zh": "节拍硬切",
+  "summary_en": "Two hard-cut rhythms: an accelerating sequence with shrinking intervals, and a three-flash freeze montage.",
+  "intention": "库内节奏词汇一直只管\"一条运动内\"的速率（speed-ramp 是同一条 take 里变速）和\"落定后停多久\"（R 系呼吸判例），没有词管**多镜之间切点 怎么排**。本卡补这一块：硬切不做任何过渡，切点间隔本身就是乐谱—— 间隔递减读作加速逼近（A），等距三闪读作快门连拍（B）。与 R 系不 冲突：R 管落定后的停，本卡管切点排布，切串结束必须接足量 hold 把 呼吸还回去。注意这是刻意的例外——节奏偏好判例是单向\"放慢\"，硬切 串切得越狠，切完的 hold 要比平常更长。",
+  "use": "高光/冲刺段落把\"切\"本身打成鼓点；A 式预告片式加速逼近，B 式颁奖连拍仪式感",
+  "duration_frames": 49,
+  "duration_text": "A 全程 ~4.3s（建立 49f + 五连切 + 定格 hold 35f）；B 全程 ~4.3s（活素材 30f + 三闪 + hold 60f）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高",
+  "styles": [
+    "beat-cut-accelerando",
+    "paparazzi-flash"
+  ],
+  "tags": [
+    "transition",
+    "rhythm"
+  ],
+  "params": [
+    "A 切点帧",
+    "A 视图池",
+    "A 切帧快门感",
+    "A 末段收住",
+    "B 三闪切点",
+    "B 白闪层",
+    "B 快门余韵",
+    "B 三裁切",
+    "B 末段收束"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/rhythm/beat-cut-moves.md",
+  "demo": "references/shots/rhythm/beat-cut-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#beat-cut-moves"
+  ],
+  "wiki": "wiki/cards/beat-cut-moves.md"
+}

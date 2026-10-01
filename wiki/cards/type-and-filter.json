@@ -1,0 +1,37 @@
+{
+  "name": "type-and-filter",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "打字筛选",
+  "summary_en": "A real interface types a search, collapses the grid to one result, then clicks through into the detail view.",
+  "intention": "让观众\"跟着做一遍\"：看清输入了什么、页面怎么响应、点了哪里。这是全片唯一模拟真人操作的镜头，节奏必须像人手，不能像脚本。",
+  "use": "功能演示的\"操作叙事\"段；搜索/筛选/进入详情的任何交互链路",
+  "duration_frames": 190,
+  "duration_text": "约 2.5s（118–190f）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（发牌高能段之后的从容一拍）",
+  "styles": [
+    "type-and-filter"
+  ],
+  "tags": [
+    "interaction"
+  ],
+  "params": [
+    "打字速度",
+    "呼吸位",
+    "光标",
+    "过滤退场",
+    "目标卡滑位",
+    "点击确认",
+    "搜索框"
+  ],
+  "pitfall_count": 2,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/type-and-filter.md",
+  "demo": "references/shots/interaction/type-and-filter.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#type-and-filter"
+  ],
+  "wiki": "wiki/cards/type-and-filter.md"
+}

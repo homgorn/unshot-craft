@@ -1,0 +1,37 @@
+{
+  "name": "graze-face-tour",
+  "category": "camera",
+  "category_en": "Camera & Space",
+  "summary_zh": "贴面游走",
+  "summary_en": "The camera skims low across the UI surface like terrain while page text hovers above the interface and settles down as the shot advances.",
+  "intention": "把 UI 拍成地形：大倾角特写让侧栏树、导航、列表行变成掠过的地貌， 浅景深强化\"贴面\"。戏眼是**文字空中贴落**：文字/组件不是原地淡入， 而是悬浮在界面上空（3D z 轴抬高），在空中时往界面投同形软影， 随镜头行进先后加速贴落、影子随高度收敛消失——观众看见界面在 镜头经过时\"完成自己\"。影子是可感命门：没有影子，悬浮读作 普通位移入场；有影子，空间关系瞬间成立。",
+  "use": "功能区巡礼（把 UI 当地景飞掠）；配合暗场+霓虹缘光做产品\"内部世界\"段落；界面内容逐区登场",
+  "duration_frames": 150,
+  "duration_text": "单段 4–5s；可多段接力延长",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（运镜持续推进+元素连续落位，信息密度高）",
+  "styles": [
+    "graze-face-tour"
+  ],
+  "tags": [
+    "ui-entrance",
+    "camera"
+  ],
+  "params": [
+    "悬浮高度",
+    "影子参数",
+    "贴落错峰",
+    "下落曲线",
+    "段间接力",
+    "景深"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/camera/graze-face-tour.md",
+  "demo": "references/shots/camera/graze-face-tour.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#graze-face-tour"
+  ],
+  "wiki": "wiki/cards/graze-face-tour.md"
+}

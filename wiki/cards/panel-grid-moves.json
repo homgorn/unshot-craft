@@ -1,0 +1,42 @@
+{
+  "name": "panel-grid-moves",
+  "category": "rhythm",
+  "category_en": "Rhythm & Montage",
+  "summary_zh": "面板网格动效",
+  "summary_en": "Three grid rhythms: a flashing mosaic takeover, a collective flip-and-reflow, and an angled comic-panel split.",
+  "intention": "与 wall-reveal-moves 的区别是本卡的定位锚：那是\"整墙怎么入场\" （一次性揭示），这是\"格子怎么当节奏器\"——分格、重排、并列都发生 在节拍上，格变即鼓点。A 是填：3×3 格按十六分音符乱序逐格啪啪硬入， 填满停一拍，中心格放大吞掉全屏——功能矩阵一秒全亮相；B 是移：6 张卡 在节拍点集体直线换位（横排→3×2 网格），半秒落定 + 加深脉冲收束—— 布局重排本身当一个鼓点；C 是并：画面咔咔切成 3 个斜线分格，同一产品 三种机位同时定格，停半拍后一格斜边扩张吃掉全屏——Scott Pilgrim 的 分屏语言。按需选：多功能亮相用 A，布局叙事用 B，单品多视角用 C。",
+  "use": "把\"格子\"当节奏器：逐格踩拍亮相（A）、节拍点集体换位（B）、同主体多机位定格并列（C）；三式都吃拍点",
+  "duration_frames": 141,
+  "duration_text": "A ~4.7s / B ~4.8s / C ~5s",
+  "energy": "A 高 / B 中 / C 中高",
+  "energy_rank": null,
+  "energy_text": "A 高 / B 中 / C 中高",
+  "styles": [
+    "comic-panel-split",
+    "flip-grid-reflow",
+    "grid-flash-mosaic"
+  ],
+  "tags": [
+    "ui-entrance",
+    "rhythm"
+  ],
+  "params": [
+    "A 硬入",
+    "A 描边",
+    "A 吞屏",
+    "B 坐标",
+    "B 交错",
+    "B 脉冲",
+    "C 斜缝",
+    "C 保活",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/rhythm/panel-grid-moves.md",
+  "demo": "references/shots/rhythm/panel-grid-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#panel-grid-moves"
+  ],
+  "wiki": "wiki/cards/panel-grid-moves.md"
+}

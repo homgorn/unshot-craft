@@ -1,0 +1,38 @@
+{
+  "name": "doc-park-left-pill-deal",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "文档驻留发牌",
+  "summary_en": "The source document slides left until only a sliver remains and keeps scrolling slowly, while three outlined pills are dealt one at a time, each followed by a caption that darkens word by word.",
+  "intention": "结论要一条一条给，观众才记得住。但如果把来源文档淡出，结论就变成了空中楼阁——观众 不知道这些话从哪来。这张卡的解法是**让来源留在画面里**：文档靠左驻留只露一截，还在 缓慢滚动（说明它正在被读），右侧的每条结论都是从这份文档里长出来的。发牌节奏刻意慢， 是为了给旁白留出说完一句的时间。",
+  "use": "旁白驱动的\"分析结论逐条给出\"段落；文档理解、推荐理由、审阅意见类产品的核心说明镜头",
+  "duration_frames": 174,
+  "duration_text": "约 5.8s（174f@30fps）",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（慢发牌节奏，全片无峰值；靠自动滚动维持活性）",
+  "styles": [
+    "doc-park-left-pill-deal"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "发牌起点",
+    "驻留窗",
+    "驻留幅度",
+    "药丸透明度窗",
+    "药丸位移窗",
+    "字幕延迟",
+    "字幕加深行程",
+    "自动滚动"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/doc-park-left-pill-deal.md",
+  "demo": "references/shots/ui-entrance/doc-park-left-pill-deal.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#doc-park-left-pill-deal"
+  ],
+  "wiki": "wiki/cards/doc-park-left-pill-deal.md"
+}

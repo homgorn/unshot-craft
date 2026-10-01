@@ -1,0 +1,38 @@
+{
+  "name": "scanline-annotate-focus",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "扫描取景标注",
+  "summary_en": "A bright scanline travels down the page and, as it clears each block, camera framing brackets snap inward onto that region and a monospace caption types out beside it.",
+  "intention": "把\"分析\"这件抽象事做成可见的因果链：扫描线走到哪，那块就被框住、被 命名。观众读的是\"机器的视线\"，所以扫描线必须匀速、标注必须严格滞后于 扫描线过境——**先扫到再弹框**，顺序一旦错乱就变成了预先编排的动画。",
+  "use": "\"AI 正在读你的页面/品牌\"的分析镜头；设计系统/品牌规范的拆解介绍；产品能力的自我说明段",
+  "duration_frames": 138,
+  "duration_text": "约4.6s（138f@30fps）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（机械冷静，节奏由扫描线匀速推动，标注是节拍点）",
+  "styles": [
+    "scanline-annotate-focus"
+  ],
+  "tags": [
+    "effects"
+  ],
+  "params": [
+    "扫描线",
+    "触发换算",
+    "最小间隔",
+    "取景框收拢",
+    "角标",
+    "对焦闪",
+    "标注",
+    "计数行"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/scanline-annotate-focus.md",
+  "demo": "references/shots/effects/scanline-annotate-focus.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#scanline-annotate-focus"
+  ],
+  "wiki": "wiki/cards/scanline-annotate-focus.md"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "marker-underline-title",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "马克笔下划线",
+  "summary_en": "After the headline settles, a marker stroke draws itself under the keyword — tapered, rough-edged, and slightly tilted to follow the italic.",
+  "intention": "打印体标题里突然出现一笔手绘马克笔，用材质反差把一个词从 排版里拎出来——像人拿笔在海报上圈重点。命门有三：**快** （8–12f 一笔呵成，慢了读作加载条）、**近**（贴着字底，离远了 读作分隔线不是强调）、**跟字势**（斜体词的划线必须左低右高 微上斜——斜向画反是最容易犯且一眼假的错，判例见已知坑）。",
+  "use": "标题里强调单个关键词（new/free/AI…）；手写感/人味的品牌调性；正文标注式强调",
+  "duration_frames": 12,
+  "duration_text": "标题落定 +4~8f 后起笔，划线 8–12f，总 1–1.5s",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（一笔点睛，不抢标题的戏）",
+  "styles": [
+    "marker-underline-title"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "划线时长",
+    "字底距离",
+    "斜向",
+    "笔宽",
+    "毛糙度"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/marker-underline-title.md",
+  "demo": "references/shots/typography/marker-underline-title.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#marker-underline-title"
+  ],
+  "wiki": "wiki/cards/marker-underline-title.md"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "scanline-assemble-flyin",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "扫描装配飞入",
+  "summary_en": "The page starts as an empty dark grid; a scanline descends and each component flies in from off-screen to snap into place behind it, with motion blur and a bright edge flash on landing.",
+  "intention": "让\"页面被生成\"这件事有一个可信的施工顺序：扫描线是施工进度条， 组件从画外飞进来贴合是施工动作。关键是**扫完那一刻恰好装完最后一块** ——扫描线提前收工或组件拖尾都会让\"扫描驱动装配\"的因果关系散掉。",
+  "use": "\"页面自己生成\"的开场；AI 建站/自动排版类产品的核心演示；从空白到成品的能力叙事",
+  "duration_frames": 138,
+  "duration_text": "约4.6s（138f@30fps）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（扫描线是稳的，但每次组件飞入都是一个爆点，密度递进）",
+  "styles": [
+    "scanline-assemble-flyin"
+  ],
+  "tags": [
+    "effects"
+  ],
+  "params": [
+    "扫描线",
+    "触发换算",
+    "最小间隔",
+    "飞入位移",
+    "飞入旋转",
+    "飞入缓动",
+    "残影模糊",
+    "落位闪边"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/scanline-assemble-flyin.md",
+  "demo": "references/shots/effects/scanline-assemble-flyin.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#scanline-assemble-flyin"
+  ],
+  "wiki": "wiki/cards/scanline-assemble-flyin.md"
+}

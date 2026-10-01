@@ -1,0 +1,43 @@
+{
+  "name": "tension-camera-moves",
+  "category": "camera",
+  "category_en": "Camera & Space",
+  "summary_zh": "张力运镜",
+  "summary_en": "Four emotional camera tools: frozen orbit, Dutch roll correction, slow pressure push, and an isolating pull-back.",
+  "intention": "space-camera-moves 三式是\"把页面当 3D 实体拍\"的高光炫技；这四式相反—— 动作本身克制，全部劲道在情绪语义上：A 说\"这一刻值得停下时间看\" （运动中的元素被冻住、相机绕行审视）；B 说\"问题解决了，世界被扶正\" （斜角悬着的难受感在节拍上滚回水平）；C 说\"有什么要发生了\"（慢到 不自觉的推近积压张力，顶点硬切释放）；D 说\"最后只剩这一件事\" （后拉中周围逐层熄灭，孤悬一点收束全片）。四式各占一个情绪格， 是分镜阶段\"这一段观众该感到什么\"的直接词汇。",
+  "use": "情绪节点（震撼/纠偏/积压/收束）的运镜语言；与 space-camera-moves 的\"炫技大动作\"互补——这四式动作小、情绪重",
+  "duration_frames": 150,
+  "duration_text": "单式 4–5s；全片合计 ≤2 式（各 ≤1 次）",
+  "energy": "A 高 / B 中 / C 低压升 / D 低收",
+  "energy_rank": null,
+  "energy_text": "A 高 / B 中 / C 低压升 / D 低收",
+  "styles": [
+    "bullet-time-freeze-orbit",
+    "dutch-roll-to-level",
+    "pull-back-isolation",
+    "slow-push-in"
+  ],
+  "tags": [
+    "camera"
+  ],
+  "params": [
+    "A 双时钟",
+    "A 环绕",
+    "B 斜置",
+    "B 滚正",
+    "C 推近",
+    "C 硬切",
+    "D 后拉",
+    "D 熄灭",
+    "D 光晕",
+    "收尾"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/camera/tension-camera-moves.md",
+  "demo": "references/shots/camera/tension-camera-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#tension-camera-moves"
+  ],
+  "wiki": "wiki/cards/tension-camera-moves.md"
+}

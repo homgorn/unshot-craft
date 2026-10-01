@@ -1,0 +1,232 @@
+[
+  {
+    "id": "F001",
+    "category": "ops",
+    "description": "Upstream clone is pinned and reproducible: a fresh machine can produce a byte-identical shotcraft.db from upstream/video-shotcraft.",
+    "steps": [
+      "Delete platform/db/shotcraft.db",
+      "Run: python platform/ingest/run.py",
+      "Verify platform/db/shotcraft.db now exists",
+      "Run: python platform/query.py stats",
+      "Verify cards=157, styles=218, card_params=1057, pitfalls=792, motion_params=1607, rules=27",
+      "Verify the printed upstream SHA matches the SHA in upstream/video-shotcraft/.git"
+    ],
+    "priority": 1,
+    "passes": true
+  },
+  {
+    "id": "F002",
+    "category": "functional",
+    "description": "Card, style, media, parameter and pitfall tables match the upstream tree, with every divergence surfaced rather than dropped.",
+    "steps": [
+      "Run: python platform/query.py cards --category camera",
+      "Verify the list matches references/shots/camera/*.md one-for-one",
+      "Run: python platform/query.py card crash-zoom-punch",
+      "Verify two styles are listed (crash-impact-real, crash-zoom-real) because demos/camera/crash-zoom-punch/ holds two components",
+      "Run: python platform/query.py params blur-slide",
+      "Verify motion parameters are returned with line numbers",
+      "Verify any library.json style key without a matching demo appears in the ingest warnings rather than being silently dropped"
+    ],
+    "priority": 1,
+    "passes": true
+  },
+  {
+    "id": "F003",
+    "category": "functional",
+    "description": "Search works in Chinese, English and slugs. unicode61 cannot match inside a Chinese phrase and trigram cannot do 1-2 character queries, so the search must cascade.",
+    "steps": [
+      "Run: python platform/query.py search 转场",
+      "Verify at least one transition card is returned",
+      "Run: python platform/query.py search 弹簧",
+      "Verify at least one card is returned",
+      "Run: python platform/query.py search overshoot",
+      "Verify at least one card is returned",
+      "Run: python platform/query.py search spring",
+      "Verify at least one card is returned",
+      "Run: python platform/query.py search crash-zoom",
+      "Verify crash-zoom-punch is returned",
+      "Run: python platform/query.py search cut",
+      "Verify at least one card is returned"
+    ],
+    "priority": 1,
+    "passes": true
+  },
+  {
+    "id": "F004",
+    "category": "functional",
+    "description": "The LLM wiki is generated from the DB and is complete: llms.txt, llms-full.txt, 9 domain documents, 157 card pages, index.json, openapi.json.",
+    "steps": [
+      "Run: python platform/wiki/build_wiki.py",
+      "Verify it reports cards=157, domains=9",
+      "Verify wiki/llms.txt, wiki/llms-full.txt, wiki/index.json and wiki/api/openapi.json exist",
+      "Count files in wiki/cards/*.md and verify it is 157",
+      "Open wiki/cards/crash-zoom-punch.md and verify Identity, Variants, Parameters and Known pitfalls sections are all present",
+      "Open wiki/domains/motion-grammar.md and verify it lists the house easing curve and the observed spring configs",
+      "Re-run build_wiki.py and verify no file changes (deterministic)"
+    ],
+    "priority": 1,
+    "passes": true
+  },
+  {
+    "id": "F005",
+    "category": "quality",
+    "description": "The wiki answers real craft questions without upstream file access, and it never claims the free core is sellable.",
+    "steps": [
+      "Ask 20 craft questions using only files under wiki/",
+      "Verify at least 18 are answered correctly",
+      "Open wiki/domains/licensing.md and verify Remotion and PolyForm Noncommercial are marked as blocking",
+      "Open wiki/domains/monetization.md and verify it contains an explicit 'what we are not doing' section",
+      "Verify no generated page claims the Apache-2.0 core is exclusive to us"
+    ],
+    "priority": 2,
+    "passes": false
+  },
+  {
+    "id": "F006",
+    "category": "ops",
+    "description": "The live site mirrors completely, including the mp4 previews that are not in git.",
+    "steps": [
+      "Run: python platform/mirror_site.py --out upstream/site-mirror",
+      "Verify index.html, library.html, showcase.html, app.js, showcase.js, translations.js, styles.css and api/library.json are present",
+      "Run: python platform/mirror_site.py --out upstream/site-mirror --media",
+      "Verify the command reports missing_previews=0",
+      "Verify the exit code is 0",
+      "Compare the mirrored api/library.json with upstream/video-shotcraft/gallery/api/library.json and verify cardCount=157 and styleCount=214"
+    ],
+    "priority": 2,
+    "passes": false
+  },
+  {
+    "id": "F010",
+    "category": "functional",
+    "description": "Upstream translations.js is extracted to per-locale JSON with byte-identical strings, and the site still renders identically in en and zh.",
+    "steps": [
+      "Run the extraction script and verify locales/en/*.json and locales/zh/*.json are produced",
+      "Verify locales/en/cards.json has 157 entries and locales/en/styles.json has 214",
+      "Run: python platform/query.py stats and verify translations equals the sum of extracted strings",
+      "Open dist/en/library.html and dist/zh/library.html and verify both render 157 cards",
+      "Compare a screenshot of the pre-change library.html with dist/en/library.html at the same viewport and verify they are pixel-identical",
+      "Verify build-seo.py's string-slice parser is no longer used for the English card map"
+    ],
+    "priority": 2,
+    "passes": false
+  },
+  {
+    "id": "F011",
+    "category": "functional",
+    "description": "One i18n runtime replaces the three upstream inline mechanisms, and the language switcher works from every page.",
+    "steps": [
+      "Open dist/<locale>/index.html, library.html and showcase.html",
+      "Verify none of them contain an inline L10N or SHOWCASE_L10N object",
+      "Verify each loads one shared i18n module and one locale JSON bundle",
+      "Switch language from the library page and verify the hero, the filters and the card names all change",
+      "Switch language from the showcase page and verify its strings change",
+      "Verify the three mechanisms collapsed into one: no duplicate dictionary for the same key exists across pages"
+    ],
+    "priority": 2,
+    "passes": false
+  },
+  {
+    "id": "F012",
+    "category": "functional",
+    "description": "Locales are addressable in the URL with correct hreflang, canonical and locale-qualified sitemap entries.",
+    "steps": [
+      "Request /ru/library.html and verify HTTP 200",
+      "Verify every page in every locale emits link rel=alternate hreflang for all 9 locales plus x-default",
+      "Verify each page has a self-referencing canonical matching its own URL",
+      "Verify / redirects to the best-guess locale from Accept-Language",
+      "Verify the root HTML contains a visible language switcher without JavaScript",
+      "Verify sitemap.xml contains a locale-qualified entry for every locale x page combination",
+      "Verify a deep link such as /ru/library.html#crash-zoom-punch still resolves to the card"
+    ],
+    "priority": 2,
+    "passes": false
+  },
+  {
+    "id": "F013",
+    "category": "functional",
+    "description": "Per-locale card and style dictionaries are generated from the DB, so no locale requires hand-editing translations.js.",
+    "steps": [
+      "Run the site build for locale ru",
+      "Verify site/dist/ru/library.html shows all 157 cards",
+      "Verify ru card text came from the translation table and not from a hand-edited file",
+      "Verify no card name is left as its English slug unless it is a proper noun such as Ink Press",
+      "Run the site build for a locale with no translations yet and verify it falls back to en instead of rendering empty strings"
+    ],
+    "priority": 3,
+    "passes": false
+  },
+  {
+    "id": "F014",
+    "category": "quality",
+    "description": "Locale coverage is measurable and gated, not a matter of opinion.",
+    "steps": [
+      "Run: python platform/query.py stats and read the translations count",
+      "For each locale compute translated/source ratio",
+      "Verify a CI check fails the build when a locale falls below the agreed coverage threshold",
+      "Verify the same check flags any string identical to its English value",
+      "Verify per-locale font stack is applied, including CJK for zh, ja and ko"
+    ],
+    "priority": 3,
+    "passes": false
+  },
+  {
+    "id": "F020",
+    "category": "integration",
+    "description": "A read-only HTTP API serves the index described by wiki/api/openapi.json.",
+    "steps": [
+      "Start the API server and request /stats",
+      "Verify the response matches platform/query.py stats",
+      "Request /cards?category=camera and verify only camera cards are returned",
+      "Request /cards?energy=high and verify the energy rank filter is applied",
+      "Request /cards/crash-zoom-punch and verify parameters, pitfalls and styles are included",
+      "Request /cards?q=<a Chinese phrase> and verify results are returned",
+      "Verify no endpoint accepts a write verb"
+    ],
+    "priority": 3,
+    "passes": false
+  },
+  {
+    "id": "F030",
+    "category": "functional",
+    "description": "A brand kit can be layered over the upstream template without editing the upstream template.",
+    "steps": [
+      "Install one brand kit over upstream/video-shotcraft/template",
+      "Verify the film renders and the palette, fonts and textures come from the kit",
+      "Verify no file under the kit's own directory is modified by the install",
+      "Verify the kit can be removed cleanly",
+      "Verify the same procedure works on a fresh clone of the template"
+    ],
+    "priority": 3,
+    "passes": false
+  },
+  {
+    "id": "F040",
+    "category": "ops",
+    "description": "An upstream release bump is a scripted, reviewable operation.",
+    "steps": [
+      "Pull the new upstream SHA into upstream/video-shotcraft",
+      "Run: python platform/ingest/run.py",
+      "Run: python platform/wiki/build_wiki.py",
+      "Review git diff of wiki/index.json and confirm only the expected counts and new cards changed",
+      "Verify the new SHA is recorded in source_repo.head_sha",
+      "Verify no row lost its source_file_id, so the change is traceable"
+    ],
+    "priority": 3,
+    "passes": false
+  },
+  {
+    "id": "F041",
+    "category": "ops",
+    "description": "The whole pipeline is reproducible from a clean checkout with one command.",
+    "steps": [
+      "Clone the workspace into a fresh directory",
+      "Run the init script",
+      "Verify it clones upstream if absent, then ingests, then builds the wiki",
+      "Verify it exits 0 and prints the resulting counts",
+      "Verify it is silent and fast when everything is already up to date"
+    ],
+    "priority": 2,
+    "passes": false
+  }
+]

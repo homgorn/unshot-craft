@@ -1,0 +1,36 @@
+{
+  "name": "color-block-step-wipe",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "色块阶跃吞屏",
+  "summary_en": "A color block swallows the screen in three to five discrete hard steps — either expanding from a center strip or eating diagonally from a corner.",
+  "intention": "库里 wipe 类全是连续扫过——边界匀速或缓动地推过去。本卡反着来： **全程零插值零缓动**，色块像老式像素游戏的方块生长，每一跳都是硬切， 跳与跳之间完全静止。顿挫本身就是节奏：3–5 声\"咔、咔、咔\"比一次 平滑扫过更有宣告感。变体 B 再加一层：色块推进时携带一张内容卡同拍 离散跳位——卡不做补间，读作\"整块被搬进来\"，色块是运货的不是装饰的。",
+  "use": "品牌色转场/章节交接；\"硬朗无缓动\"的像素游戏手感段落；接管后的纯色场当下一段的舞台",
+  "duration_frames": 44,
+  "duration_text": "A ~2.5s（生长 44f + 徽章 + hold）/ B ~1.5–2s（3 跳 30f + hold）；demo 合计 150f",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（能量来自\"跳变\"的顿挫而非速度）",
+  "styles": [
+    "color-block-step-wipe"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "步数",
+    "跳位间隔",
+    "徽章过冲",
+    "携带卡",
+    "斜角 clip",
+    "接管 hold"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/color-block-step-wipe.md",
+  "demo": "references/shots/transition/color-block-step-wipe.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#color-block-step-wipe"
+  ],
+  "wiki": "wiki/cards/color-block-step-wipe.md"
+}

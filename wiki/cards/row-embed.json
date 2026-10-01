@@ -1,0 +1,36 @@
+{
+  "name": "row-embed",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "行元素嵌入",
+  "summary_en": "Content rows descend with perspective, flatten into the page, and flash a thin amber seam at the moment of insertion.",
+  "intention": "详情页的行不是\"显示出来\"而是\"长进去\"——每一行从空中降下并严丝合缝嵌入页面布局，嵌入瞬间的强调色缝是\"咔哒\"扣上的视觉拟音。",
+  "use": "\"结构化数据长进页面\"的详情页/列表镜头；行级内容的批量入场",
+  "duration_frames": 68,
+  "duration_text": "约 2s（12–68f）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中",
+  "styles": [
+    "row-embed"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "节拍",
+    "飞行姿态",
+    "飞行体",
+    "空槽补丁",
+    "嵌入闪光",
+    "相机"
+  ],
+  "pitfall_count": 2,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/row-embed.md",
+  "demo": "references/shots/ui-entrance/row-embed.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#row-embed"
+  ],
+  "wiki": "wiki/cards/row-embed.md"
+}

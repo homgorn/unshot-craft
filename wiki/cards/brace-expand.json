@@ -1,0 +1,37 @@
+{
+  "name": "brace-expand",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "括号拉幕",
+  "summary_en": "A tight pair of braces appears at center, then springs apart and scales up to title size, revealing the text through a clip width bound strictly to the brace gap.",
+  "intention": "标题揭示的手法里，本卡最省：不做遮罩条、不做逐字、不做位移——只让 一对括号往两边走，文字被\"括出来\"。它天生带代码语感（`{}` 是花括号）， 所以在技术产品语境里读作\"这就是内容本体\"。命门是 clip 宽度**必须严格 绑括号位置**：一旦文字自己淡入或自己擦入，括号就退化成装饰，幕布感全失。",
+  "use": "开发者/技术产品的标题字卡；章节开场；需要\"一个符号完成揭示\"的极简一拍",
+  "duration_frames": 114,
+  "duration_text": "约 3.8s（114f@30fps：7f 出现 → 弹开 → 落定后字距松弛 → hold）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（单次过冲是唯一峰值，其余静止）",
+  "styles": [
+    "brace-expand"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "括号出现",
+    "弹开窗",
+    "半距",
+    "缩放",
+    "clip 留位",
+    "字距松弛",
+    "布局"
+  ],
+  "pitfall_count": 7,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/brace-expand.md",
+  "demo": "references/shots/typography/brace-expand.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#brace-expand"
+  ],
+  "wiki": "wiki/cards/brace-expand.md"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "space-camera-moves",
+  "category": "camera",
+  "category_en": "Camera & Space",
+  "summary_zh": "空间运镜",
+  "summary_en": "Three spatial camera moves: exploded assembly, subject-locked rotation, and a drone-like dive to the landing point.",
+  "intention": "depth-layer 卡是给平移加纵深——层在动、页面还是页面。这两式更进一步： 整页被当成一个 3D 实体，相机（或世界）绕着它做实拍级机动。两式叙事 语义各占一格：A 说\"看看它由什么组成\"（拆解展示，Apple 发布片语言）； C 说\"从全局俯瞰砸到主角\"（上帝视角一头扎进 hero 特写，全景→焦点）。",
+  "use": "把平面页面当 3D 实体拍的高光段落；两式都是\"大动作\"，一支片合计 ≤2 次",
+  "duration_frames": 150,
+  "duration_text": "A 5s（炸开-悬停-合体全程）；C 3–5s 单向俯冲",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高",
+  "styles": [
+    "drone-dive-landing",
+    "exploded-view"
+  ],
+  "tags": [
+    "camera"
+  ],
+  "params": [
+    "A 空间基座",
+    "A 炸开",
+    "A 合体",
+    "A 深度锚",
+    "C 行程",
+    "C 速度曲线",
+    "C 氛围"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/camera/space-camera-moves.md",
+  "demo": "references/shots/camera/space-camera-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#space-camera-moves"
+  ],
+  "wiki": "wiki/cards/space-camera-moves.md"
+}

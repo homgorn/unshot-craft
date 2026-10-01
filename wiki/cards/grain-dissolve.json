@@ -1,0 +1,36 @@
+{
+  "name": "grain-dissolve",
+  "category": "outro",
+  "category_en": "Outro",
+  "summary_zh": "文字砂化凝聚",
+  "summary_en": "A clean line of text boils into displaced grain noise inside a hatched selection frame, then the particle cloud condenses into a larger glowing wordmark that locks sharp.",
+  "intention": "把\"一句话浓缩成一个词\"拍成物理事件：句子先失稳沸腾成颗粒（信息解体），选区框暗示\"正在选中提取\"，然后所有颗粒能量向中心坍缩成更大更亮的短字标——观众读到的是\"这一切归结为它\"。",
+  "use": "收尾\"XX. Now Live\"式上线宣告；长句信息压缩成品牌短标的能量聚合拍",
+  "duration_frames": 60,
+  "duration_text": "约 2.0s（60f@30fps；砂化 0.26–0.56s · 凝聚 1.2–1.42s · 凝固回落收尾）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（短促、一次性的能量脉冲，天然的 outro 卡点）",
+  "styles": [
+    "grain-dissolve"
+  ],
+  "tags": [
+    "outro"
+  ],
+  "params": [
+    "displacement scale",
+    "baseFrequency",
+    "seed 换帧率",
+    "砂化窗口",
+    "凝聚交叉",
+    "辉光包络"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/outro/grain-dissolve.md",
+  "demo": "references/shots/outro/grain-dissolve.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#grain-dissolve"
+  ],
+  "wiki": "wiki/cards/grain-dissolve.md"
+}

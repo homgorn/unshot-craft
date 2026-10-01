@@ -1,0 +1,38 @@
+{
+  "name": "vertical-word-roll-blur-cycle",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "竖向词条滚轮",
+  "summary_en": "The closing word of a tagline rolls vertically through a three-line reel, neighbouring rows blurring into grey depth while the settled word takes the accent color.",
+  "intention": "句尾换词的最优解是滚轮而不是淡入淡出：滚轮自带**方向**（往上翻页）， 观众知道\"还有下一个\"。这卡的两个身份记号是相邻行的**垂直 blur** （滚轮景深，模拟机械转筒的失焦）和落定时的**染色**（灰→强调色， \"这个才是答案\"）。句干 `Built for` 全程纹丝不动——眼睛钉在滚轮上， 句干一晃列举感就散。",
+  "use": "\"Built for ___\" 这类句干 + 受众/对象列举的一句话卖点；浅底品牌片的干净一拍",
+  "duration_frames": 150,
+  "duration_text": "约 5.0s（150f@30fps：静置 → 3 次换词 → 尾部整组淡出）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（稳定三拍，无峰值）",
+  "styles": [
+    "vertical-word-roll-blur-cycle"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "词表",
+    "拍点",
+    "缓动配方",
+    "行高/视窗",
+    "相邻行 blur",
+    "落定染色",
+    "字号字重",
+    "收尾淡出"
+  ],
+  "pitfall_count": 7,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/vertical-word-roll-blur-cycle.md",
+  "demo": "references/shots/typography/vertical-word-roll-blur-cycle.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#vertical-word-roll-blur-cycle"
+  ],
+  "wiki": "wiki/cards/vertical-word-roll-blur-cycle.md"
+}

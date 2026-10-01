@@ -1,0 +1,38 @@
+{
+  "name": "page-turn-transitions",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "翻页转场",
+  "summary_en": "Two full-page transitions: adjacent faces rotating like a cube, and an old page splitting open like double doors.",
+  "intention": "shot-transitions 六式和 transition-travel/hidden-cut 都把页面当\"场景\" ——相机在场景间移动。本卡把页面当**实体**：它有厚度、有重量、会翻面 会裂开。体块隐喻的仪式感更强，适合章节级大换页（功能 A 讲完→功能 B） 而非镜头级小交棒。A 立方体是\"空间上并列\"——两页是盒子的两面， 暗示同级关系；B 对开门是\"旧的让位\"——旧页从正中撕开滑走、新页 从底下迎上来，暗示取代关系。按语义选：并列翻篇用 A，新旧交替用 B。",
+  "use": "章节级换页：两个并列大段落之间的\"翻篇\"仪式；与 shot-transitions 系（镜头交棒）分工——那是\"航拍机移过去\"，这是\"页面自己是实体\"",
+  "duration_frames": 30,
+  "duration_text": "单式 前态建立 30f + 转场 20–38f + 收尾 ≥40f，约 4.4–4.7s",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高",
+  "styles": [
+    "barn-door-split",
+    "cube-rotate"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "A 结构命门",
+    "A 转速",
+    "A 亮度对切",
+    "B 预告",
+    "B 滑出",
+    "B 撕裂边",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/page-turn-transitions.md",
+  "demo": "references/shots/transition/page-turn-transitions.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#page-turn-transitions"
+  ],
+  "wiki": "wiki/cards/page-turn-transitions.md"
+}

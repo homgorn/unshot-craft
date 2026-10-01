@@ -1,0 +1,36 @@
+{
+  "name": "command-palette-summon",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "命令面板召唤",
+  "summary_en": "The screen dims and blurs as a command palette drops in, populates results, and narrows while the query is typed.",
+  "intention": "Raycast/Linear 发布片的标志性仪式：一声轻响，整个 UI 世界压暗 让路，⌘K 面板从中心上方弹落，候选列表错峰浮现；敲两个字母， 列表实时收窄——\"你要的一切都在这个输入框里\"。模拟交互按真人 操作速度走（R3），收窄的\"挤压感\"来自行高塌缩而非淡出。",
+  "use": "效率型产品的\"全产品在一个输入框里\"叙事；命令面板/搜索/快捷键功能的标志性登场",
+  "duration_frames": 150,
+  "duration_text": "4–5s",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（仪式感型，弹落帧与收窄是两个小打击点）",
+  "styles": [
+    "command-palette-summon"
+  ],
+  "tags": [
+    "ui-entrance",
+    "interaction"
+  ],
+  "params": [
+    "压暗",
+    "弹落",
+    "候选错峰",
+    "收窄",
+    "光标"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/command-palette-summon.md",
+  "demo": "references/shots/interaction/command-palette-summon.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#command-palette-summon"
+  ],
+  "wiki": "wiki/cards/command-palette-summon.md"
+}

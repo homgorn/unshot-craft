@@ -1,0 +1,38 @@
+{
+  "name": "letterspace-materialize",
+  "category": "opening",
+  "category_en": "Opening & Brand",
+  "summary_zh": "字距结晶字标",
+  "summary_en": "Every letter of a widely tracked wordmark draws itself in parallel, growing like handwriting and finishing together on the same frame.",
+  "intention": "字标不是淡入也不是打字机，而是\"结晶\"：全部字母的笔画同时 开始连续生长，像一只看不见的手同时写所有字母，同一瞬间齐收 成词。两个命门：**连续**（笔画必须是连续画出的过程，不许遮罩 分段——先半截再另半截会被读穿；任何中间帧都该像\"写到一半\"）； **同步**（所有字母同帧起笔、同帧完成——逐字错峰是打字机语义， 这里是整词一体的仪式感）。",
+  "use": "片尾/片头品牌字标登场（SUPERHUMAN 式大字距全大写）；章节题字；needs 静谧/高级感的收束帧",
+  "duration_frames": 15,
+  "duration_text": "静置 ~15f + 描画 ~50f + 终态静置 ≥30f；全段 3–4s",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（静谧仪式感，一次呼吸完成）",
+  "styles": [
+    "letterspace-materialize"
+  ],
+  "tags": [
+    "opening",
+    "typography",
+    "outro"
+  ],
+  "params": [
+    "描画时长",
+    "同步性",
+    "连续性",
+    "字形",
+    "字距",
+    "终态静置"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/opening/letterspace-materialize.md",
+  "demo": "references/shots/opening/letterspace-materialize.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#letterspace-materialize"
+  ],
+  "wiki": "wiki/cards/letterspace-materialize.md"
+}

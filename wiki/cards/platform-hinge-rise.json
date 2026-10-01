@@ -1,0 +1,37 @@
+{
+  "name": "platform-hinge-rise",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "平台铰接升起",
+  "summary_en": "A support platform establishes first, two subjects hinge upward from adjacent lower pivots, and a restrained outcome wedge rises last to turn evidence into a conclusion.",
+  "intention": "先让平台成为可信的“承托关系”，再让两个主体从平台后方翻起，观众会自然把它们 理解为同组证据；最后从下方升起的结论台不是第三个平级元素，而是对前两者的归纳。 固定机位和明确的遮挡顺序让这张卡适合解释性 B-roll，也能换成产品卡、人物、建筑或 对比方案。核心不是“东西从下方出现”，而是**两个相邻铰点产生方向相反的展开力**。",
+  "use": "两个主体/方案/品牌并列登场；建筑、设备、卡片从基座后升起；需要在一个固定机位里完成“先摆证据再下结论”的解释镜头",
+  "duration_frames": 104,
+  "duration_text": "约 3.5s（104f@30fps；结论落定后保留 30f 静止）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（中段双主体同时翻起是唯一主动作，结尾只做稳重升台）",
+  "styles": [
+    "platform-hinge-rise"
+  ],
+  "tags": [
+    "opening",
+    "ui-entrance"
+  ],
+  "params": [
+    "平台建立",
+    "语境圆",
+    "双主体翻起",
+    "阻尼回摆",
+    "结论台",
+    "收尾 hold"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/platform-hinge-rise.md",
+  "demo": "references/shots/ui-entrance/platform-hinge-rise.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#platform-hinge-rise"
+  ],
+  "wiki": "wiki/cards/platform-hinge-rise.md"
+}

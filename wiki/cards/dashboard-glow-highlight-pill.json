@@ -1,0 +1,38 @@
+{
+  "name": "dashboard-glow-highlight-pill",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "金色胶囊指引",
+  "summary_en": "A trading dashboard rises into frame with perspective and keeps drifting in 3D while a golden light blob roams across the panels, stretches into a pill, and draws a glowing outline around a modal.",
+  "intention": "用一束光把观众的注意力从\"整个仪表盘\"收到\"这一个弹窗\"上。光斑先在 面板间巡游（宣布有东西要来），拉成胶囊（蓄力），再从胶囊落点起笔 描出弹窗轮廓（交棒）——三段是同一束光的连续变形，任何一处断开就 变成三个不相干的动画。全片仅 2s，每段都靠上一段的落点做起点。",
+  "use": "金融/数据类产品的重功能揭示；\"注意这里\"的高级指引；黑金调品牌片的核心一拍",
+  "duration_frames": 60,
+  "duration_text": "约2.0s（60f@30fps）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（2s 里塞了升入 + 巡游 + 描边 + 弹窗四段，交棒必须密不透风）",
+  "styles": [
+    "dashboard-glow-highlight-pill"
+  ],
+  "tags": [
+    "effects"
+  ],
+  "params": [
+    "金字淡出",
+    "仪表盘升入",
+    "常驻 3D 漂移",
+    "光斑巡游",
+    "背景虚化",
+    "描边 draw-on",
+    "描边收敛",
+    "弹窗淡入"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/dashboard-glow-highlight-pill.md",
+  "demo": "references/shots/effects/dashboard-glow-highlight-pill.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#dashboard-glow-highlight-pill"
+  ],
+  "wiki": "wiki/cards/dashboard-glow-highlight-pill.md"
+}

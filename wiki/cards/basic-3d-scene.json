@@ -1,0 +1,36 @@
+{
+  "name": "basic-3d-scene",
+  "category": "camera",
+  "category_en": "Camera & Space",
+  "summary_zh": "空间步进演示",
+  "summary_en": "Impress-style spatial slides: cards sit at scattered 3D poses and the camera flies to align with each one by inverting its transform, ending on a pulled-back overview where every card lights up.",
+  "intention": "把\"翻页\"变成\"在想法的空间里旅行\"：每张卡不仅有位置还有姿态（第二步侧转 40°、第三步整个画框转 90°），相机对齐它时观众的世界也跟着转——空间变化本身成为\"进入新章节\"的仪式感。",
+  "use": "概念/路线图/三步法的空间化讲述；替代平面 slides 的\"每一步都换个空间视角\"",
+  "duration_frames": 180,
+  "duration_text": "约 6.0s（180f@30fps；四站，三段飞行各 0.96s）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（每次转场有空间惊喜，停留段安静读卡）",
+  "styles": [
+    "basic-3-dscene"
+  ],
+  "tags": [
+    "camera"
+  ],
+  "params": [
+    "站点姿态",
+    "飞行时长",
+    "停留间隔",
+    "OVERVIEW 缩放",
+    "聚焦衰减",
+    "perspective"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/camera/basic-3d-scene.md",
+  "demo": "references/shots/camera/basic-3d-scene.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#basic-3d-scene"
+  ],
+  "wiki": "wiki/cards/basic-3d-scene.md"
+}

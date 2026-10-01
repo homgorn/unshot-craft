@@ -1,0 +1,37 @@
+{
+  "name": "spectrum-morph-ui",
+  "category": "rhythm",
+  "category_en": "Rhythm & Montage",
+  "summary_zh": "频谱变形界面",
+  "summary_en": "A title underline breaks into animated spectrum bars for two phrases, then gathers back into a clean line.",
+  "intention": "声画同步库内已有 type-rhythm-sync A（字重脉冲）——那是\"文字自己动\"； 本卡是\"UI 构件变成均衡器\"：下划线这个最不起眼的构件被音乐借用两小节， 裂成 28 根竖条跳出频谱，然后**收拢还原、完璧归赵**。借用-归还结构是 全部优雅所在——观众先认出\"这是下划线\"，再看它变成别的东西，最后 看它变回来；若一开始就是频谱条，只是又一个音乐可视化。跳完必须还原 成那条 8px 直线，一像素不差。",
+  "use": "有音轨片子的声画同步高光段（BGM 副歌起/鼓点密集段）；标题字卡、章节页的下划线/分隔线构件",
+  "duration_frames": 64,
+  "duration_text": "~4.7s（裂开 8f + 跳动 64f + 收拢 12f + 静止 39f）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中",
+  "styles": [
+    "spectrum-morph-ui"
+  ],
+  "tags": [
+    "typography",
+    "rhythm"
+  ],
+  "params": [
+    "条数/条宽",
+    "峰值幅度",
+    "包络",
+    "换挡节拍",
+    "时间轴",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/rhythm/spectrum-morph-ui.md",
+  "demo": "references/shots/rhythm/spectrum-morph-ui.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#spectrum-morph-ui"
+  ],
+  "wiki": "wiki/cards/spectrum-morph-ui.md"
+}

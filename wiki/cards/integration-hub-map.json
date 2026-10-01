@@ -1,0 +1,37 @@
+{
+  "name": "integration-hub-map",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "集成星图",
+  "summary_en": "A page flips 180 degrees into an integration hub where five app icons pop in together and rainbow light tubes connect with pulses flowing through them.",
+  "intention": "翻面是\"换时代\"：旧文档页整个翻转 180° 得到新中枢页——必须是 完整翻面不是转个角度（判例），翻的动作**快翻+尾段减速**、一口气 完成无分段停顿（\"匀速\"判例：用户说的匀速=无停顿，不是字面 linear；90° 侧棱停顿版被裁）。侧棱时刻只\"闪一下\"（1–3f 脉冲， 长光晕平台被裁）。接入是**两拍制**：五图标同帧弹现（第一拍）→ 五管同帧起画齐连（第二拍）——齐，才读作\"生态一次到位\"；错峰 逐个连读作逐个谈判（两轮被裁）。连通后光管内亮脉冲沿图标→中枢 方向持续循环，\"输送感\"是终态的生命。",
+  "use": "集成/生态能力段（一个产品连一切）；版本翻新叙事（旧页翻成新页）；暗场霓虹调性的功能高潮",
+  "duration_frames": 15,
+  "duration_text": "前摇 ~0.5s + 快翻 ~1.2s + 图标齐现 → 光管齐连两拍 ~0.7s + 输送呼吸 ≥1.5s；全段 4.5–5s",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（翻面是爆点，输送段是余韵）",
+  "styles": [
+    "integration-hub-map"
+  ],
+  "tags": [
+    "ui-entrance",
+    "effects"
+  ],
+  "params": [
+    "翻面时长",
+    "翻面曲线",
+    "侧棱闪",
+    "接入节奏",
+    "光管生长",
+    "输送脉冲"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/integration-hub-map.md",
+  "demo": "references/shots/ui-entrance/integration-hub-map.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#integration-hub-map"
+  ],
+  "wiki": "wiki/cards/integration-hub-map.md"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "typing-code-block",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "代码块揭示",
+  "summary_en": "The same syntax-highlighted snippet reveals two ways side by side: lines fade up on a stagger on the left, characters type out in full token color on the right.",
+  "intention": "代码揭示只有两种真解法：**整行浮出来**（读的是结构）和**一个字一个字打** （读的是过程）。这卡把两者并排放在同一段代码上，是选型用的对照镜： 左侧 4 行 4 拍就完，适合\"代码不是重点、结果才是\"；右侧 138 帧才打完 59 个字符，适合\"看我写\"。关键细节是右侧**打字不丢色**——常见错误是 打字时先出白字再着色，那就退化成终端回显，不是代码编辑器。",
+  "use": "代码/配置揭示镜头；开发者产品的\"就三行\"演示；需要对比两种揭示节奏时的选型参考镜",
+  "duration_frames": 138,
+  "duration_text": "约 4.6s（138f@30fps）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（右侧持续打字推进，左侧一次性收敛）",
+  "styles": [
+    "typing-code-block"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "代码量",
+    "行 stagger",
+    "行位移",
+    "打字窗",
+    "光标块",
+    "面板",
+    "空行占位"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/typing-code-block.md",
+  "demo": "references/shots/typography/typing-code-block.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#typing-code-block"
+  ],
+  "wiki": "wiki/cards/typing-code-block.md"
+}

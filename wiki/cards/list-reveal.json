@@ -1,0 +1,38 @@
+{
+  "name": "list-reveal",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "逐项找位",
+  "summary_en": "Menu rows scale into place one after another with a faint overshoot while the whole list drifts slowly upward, keeping the per-item entrance and the group motion on two independent layers.",
+  "intention": "列表逐项淡入是最容易做得死板的一类动效：每项动完就停，画面在两项之间是完全静止的。 这张卡的解法是给容器加一层与逐项入场无关的慢速漂移——局部在\"找位\"，整体在\"呼吸\"。 观众读得清每一项，同时画面从头到尾没有一帧是钉死的。",
+  "use": "导航/侧边栏/设置面板的入场；任何\"界面自己长出来\"的 UI 段落，也适合做旁白铺垫时的低能量底",
+  "duration_frames": 108,
+  "duration_text": "约 3.6s（108f@30fps）",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（稳定节拍，无峰值；靠漂移维持画面不死）",
+  "styles": [
+    "list-reveal"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "项数",
+    "stagger",
+    "单项行程",
+    "起始 scale",
+    "起始位移",
+    "过冲",
+    "容器漂移",
+    "透明度斜率"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/list-reveal.md",
+  "demo": "references/shots/ui-entrance/list-reveal.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#list-reveal"
+  ],
+  "wiki": "wiki/cards/list-reveal.md"
+}

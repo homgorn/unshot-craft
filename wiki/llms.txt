@@ -1,0 +1,206 @@
+# video-shotcraft
+
+> A wiki of the video-shotcraft motion-design system: 157 shot recipe cards, 218 tuned Remotion demos, 1057 documented parameters, 27 aesthetic rules, extracted easing/spring/timing grammar, and a licence audit. Generated from upstream `5ddbf521038b`.
+
+This is a static knowledge base for language models. Every card is addressed by a stable slug; the slug is the join key across the markdown cards, the Remotion demos, the media files and the deep links on the live gallery.
+
+## Documents
+
+- [What video-shotcraft is, what it ships, and the four layers](domains/overview.md)
+- [The 157 shot recipe cards, indexed by category, energy and duration](domains/cards.md)
+- [Easing curves, spring configs and timing primitives extracted from the demos](domains/motion-grammar.md)
+- [The production pipeline, the 27 aesthetic rules, the energy arc, sound and QA](domains/methodology.md)
+- [How the upstream repo, the gallery site and the workbench fit together](domains/architecture.md)
+- [Every licence in the stack and what it allows or blocks](domains/licensing.md)
+- [The sibling skill, the tools, the channels, and the upstream author](domains/landscape.md)
+- [Revenue models, ranked by time to first dollar, with the evidence](domains/monetization.md)
+- [Motion-design vocabulary as used by these cards, with card references](domains/glossary.md)
+
+## Cards by category
+
+### Opening & Brand / 开场与品牌
+
+- [brand-ink-open](cards/brand-ink-open.md): 品牌墨印开场
+- [crane-rise-reveal](cards/crane-rise-reveal.md): 吊臂升起揭示
+- [dataviz-landscape-open](cards/dataviz-landscape-open.md): 数据景观开场
+- [fracture](cards/fracture.md): 碎片聚合飞散
+- [icon-field-colorize](cards/icon-field-colorize.md): 图标点阵翻色
+- [letterspace-materialize](cards/letterspace-materialize.md): 字距结晶字标
+- [magician-card-flourish](cards/magician-card-flourish.md): 魔术卡弹射
+- [orbit-ring-title-open](cards/orbit-ring-title-open.md): 环形卡阵标题开场
+- [spotlight-hero-card](cards/spotlight-hero-card.md): 聚光主角卡
+- [stroke-segment-build](cards/stroke-segment-build.md): 描边分段构建
+- [text-as-mask](cards/text-as-mask.md): 文字蒙版
+
+### Typography & Title Cards / 文字与字卡
+
+- [blur-slide](cards/blur-slide.md): 逐词模糊入场
+- [brace-expand](cards/brace-expand.md): 括号拉幕
+- [cel-flash-stomp](cards/cel-flash-stomp.md): 底色闪砸字
+- [countdown-arc-scatter](cards/countdown-arc-scatter.md): 表盘数字扫过
+- [document-typewriter-reveal](cards/document-typewriter-reveal.md): 文档打字揭示
+- [flying-words](cards/flying-words.md): 词语纵深隧道
+- [glitch-cycle](cards/glitch-cycle.md): 乱码轮播
+- [gradient-word-sweep](cards/gradient-word-sweep.md): 渐变充能词
+- [lead-word-zoom-assemble](cards/lead-word-zoom-assemble.md): 首词推近组句
+- [marker-underline-title](cards/marker-underline-title.md): 马克笔下划线
+- [outline-word-fill](cards/outline-word-fill.md): 空心字点亮
+- [paper-title-card](cards/paper-title-card.md): 纸张标题卡
+- [pill-chip-slot-cycle-handled](cards/pill-chip-slot-cycle-handled.md): 胶囊滚轮挤开
+- [pill-slot-cycle](cards/pill-slot-cycle.md): 词槽轮换
+- [scramble](cards/scramble.md): 乱码锁定
+- [split-flap-title](cards/split-flap-title.md): 翻牌屏标题
+- [text-column-converge](cards/text-column-converge.md): 双词合拢
+- [title-demote-to-label](cards/title-demote-to-label.md): 标题降格标签
+- [type-assembly-moves](cards/type-assembly-moves.md): 文字集结
+- [type-entrance-moves](cards/type-entrance-moves.md): 文字入场
+- [type-rhythm-sync](cards/type-rhythm-sync.md): 文字节奏同步
+- [typewriter-moves](cards/typewriter-moves.md): 打字机动效
+- [typing-code-block](cards/typing-code-block.md): 代码块揭示
+- [vertical-word-roll-blur-cycle](cards/vertical-word-roll-blur-cycle.md): 竖向词条滚轮
+- [word-relay-filmstrip](cards/word-relay-filmstrip.md): 胶片词接力
+- [word-relay-geometry](cards/word-relay-geometry.md): 利益词接力
+
+### UI Entrance & Showcase / 界面登场与陈列
+
+- [avatar-bracket-carousel](cards/avatar-bracket-carousel.md): 对焦框轮换
+- [bezier-source-converge-merge](cards/bezier-source-converge-merge.md): 曲线汇流吞并
+- [card-stack](cards/card-stack.md): 牌堆扇展
+- [carousel-3d](cards/carousel-3d.md): 环形画廊
+- [cloner-depth-echo](cards/cloner-depth-echo.md): 克隆纵深回响
+- [deck-deal-flyin](cards/deck-deal-flyin.md): 发牌飞入
+- [doc-park-left-pill-deal](cards/doc-park-left-pill-deal.md): 文档驻留发牌
+- [draw-svg-trace](cards/draw-svg-trace.md): SVG 描线追踪
+- [element-body-moves](cards/element-body-moves.md): 元素形变
+- [floating-glossy-label-pills](cards/floating-glossy-label-pills.md): 高光胶囊横滑
+- [integration-hub-map](cards/integration-hub-map.md): 集成星图
+- [list-reveal](cards/list-reveal.md): 逐项找位
+- [list-stack-press](cards/list-stack-press.md): 列表堆叠压弹
+- [morph-from-primitive](cards/morph-from-primitive.md): 原型变形
+- [neon-frame-forerun](cards/neon-frame-forerun.md): 霓虹框先行
+- [neon-frame-orbit-drop](cards/neon-frame-orbit-drop.md): 霓虹框环绕齐落
+- [page-waterfall-wall](cards/page-waterfall-wall.md): 页面瀑布墙
+- [paper-craft-moves](cards/paper-craft-moves.md): 纸艺动效
+- [platform-hinge-rise](cards/platform-hinge-rise.md): 平台铰接升起
+- [product-card-progressive-assemble](cards/product-card-progressive-assemble.md): 字段逐个落位
+- [radial-wave](cards/radial-wave.md): 点阵涟漪
+- [research-card-stack-scroll](cards/research-card-stack-scroll.md): 论文卡叠压
+- [row-embed](cards/row-embed.md): 行元素嵌入
+- [runway-ground-skim](cards/runway-ground-skim.md): 跑道掠地贴落
+- [skeleton-reveal](cards/skeleton-reveal.md): 骨架显影
+- [svg-shape-morph](cards/svg-shape-morph.md): 轮廓变形
+- [value-stagger-gradient](cards/value-stagger-gradient.md): 数值梯度铺开
+- [wall-reveal-moves](cards/wall-reveal-moves.md): 整墙揭示
+
+### Camera & Space / 运镜与空间
+
+- [basic-3d-scene](cards/basic-3d-scene.md): 空间步进演示
+- [crash-zoom-punch](cards/crash-zoom-punch.md): 冲撞变焦
+- [cursor-flyover](cards/cursor-flyover.md): 四角巡览指点
+- [depth-layer-moves](cards/depth-layer-moves.md): 分层深度运镜
+- [graze-face-tour](cards/graze-face-tour.md): 贴面游走
+- [overhead-camera-moves](cards/overhead-camera-moves.md): 俯视运镜
+- [space-camera-moves](cards/space-camera-moves.md): 空间运镜
+- [steep-tilt-glide](cards/steep-tilt-glide.md): 侧立透视滑行
+- [tension-camera-moves](cards/tension-camera-moves.md): 张力运镜
+- [terminal-3d](cards/terminal-3d.md): 终端空间飞行
+
+### Data & Metrics / 数据与指标
+
+- [avatar-grid-radial-build-colorize](cards/avatar-grid-radial-build-colorize.md): 分环生长染色
+- [before-after-slider-scrub](cards/before-after-slider-scrub.md): 前后对比拉杆
+- [chart-live-moves](cards/chart-live-moves.md): 活体图表
+- [counter-confetti](cards/counter-confetti.md): 数字冲刺纸屑
+- [cycle-glass-node-morph](cards/cycle-glass-node-morph.md): 循环玻璃节点接管
+- [gauge-readout-moves](cards/gauge-readout-moves.md): 仪表读数动效
+- [hatch-depth](cards/hatch-depth.md): 斜纹变实柱
+- [odometer-digit-roll](cards/odometer-digit-roll.md): 里程表数字滚动
+- [particle-celebrate-hits](cards/particle-celebrate-hits.md): 粒子庆祝打点
+- [particle-sand-fill](cards/particle-sand-fill.md): 粒子落砂成柱
+- [ring-diagram-annotation-reveal](cards/ring-diagram-annotation-reveal.md): 环图收束标注
+- [scroll-brake-moves](cards/scroll-brake-moves.md): 滚动刹停
+- [timeline-travel](cards/timeline-travel.md): 时间线穿行
+
+### Interaction & Feature Demo / 交互与功能演示
+
+- [ai-stream-response](cards/ai-stream-response.md): AI 响应汇入
+- [autolayout-gap-dial](cards/autolayout-gap-dial.md): 间距拨盘布局
+- [canvas-materialize-moves](cards/canvas-materialize-moves.md): 画布物化动效
+- [chip-grid-single-select-blackout](cards/chip-grid-single-select-blackout.md): 灰闪单选反黑
+- [chip-lift-to-user-pill](cards/chip-lift-to-user-pill.md): 选中长成药丸
+- [collab-cursor-moves](cards/collab-cursor-moves.md): 协作光标演出
+- [command-palette-summon](cards/command-palette-summon.md): 命令面板召唤
+- [glass-pill-dictation-typing](cards/glass-pill-dictation-typing.md): 玻璃胶囊听写
+- [hashtag-to-pill-materialize](cards/hashtag-to-pill-materialize.md): 话题词实体化
+- [input-trigger-moves](cards/input-trigger-moves.md): 输入触发动效
+- [picker-carousel-feature-cycle](cards/picker-carousel-feature-cycle.md): 药丸吸附轮播
+- [segmented-thumb-hero](cards/segmented-thumb-hero.md): 分段控件特写
+- [theme-switch-moves](cards/theme-switch-moves.md): 主题切换动效
+- [type-and-filter](cards/type-and-filter.md): 打字筛选
+- [voice-waveform-live](cards/voice-waveform-live.md): 实时声纹
+
+### Transitions / 转场
+
+- [bottom-push-stack-wipe](cards/bottom-push-stack-wipe.md): 底推换章
+- [bubble-swarm-takeover](cards/bubble-swarm-takeover.md): 气泡群幕布
+- [card-flip-reveal](cards/card-flip-reveal.md): 卡片翻面揭示
+- [card-flock-tumble](cards/card-flock-tumble.md): 卡片翻飞收束
+- [circle-match-iris](cards/circle-match-iris.md): 圆心匹配光圈切
+- [color-block-step-wipe](cards/color-block-step-wipe.md): 色块阶跃吞屏
+- [cube-navigation](cards/cube-navigation.md): 立方体逐面导航
+- [gradient-transition](cards/gradient-transition.md): 渐变参数变奏
+- [line-carry-transition](cards/line-carry-transition.md): 线条接力转场
+- [mosaic-reframe](cards/mosaic-reframe.md): 三段布局重排
+- [page-turn-transitions](cards/page-turn-transitions.md): 翻页转场
+- [paper-plane-messenger](cards/paper-plane-messenger.md): 纸飞机信使
+- [print-texture-transitions](cards/print-texture-transitions.md): 印刷质感转场
+- [shot-transitions](cards/shot-transitions.md): 镜头交棒转场
+- [tear-streak-transitions](cards/tear-streak-transitions.md): 撕裂拖影转场
+- [transition-hidden-cut](cards/transition-hidden-cut.md): 隐藏切点转场
+- [transition-travel](cards/transition-travel.md): 穿行式转场
+- [white-flash-logo-simplify-cut](cards/white-flash-logo-simplify-cut.md): 冲白降维切换
+- [wipe-transitions](cards/wipe-transitions.md): 几何擦除转场
+
+### Rhythm & Montage / 节奏与蒙太奇
+
+- [beat-cut-moves](cards/beat-cut-moves.md): 节拍硬切
+- [beat-step-list-theme-cycle](cards/beat-step-list-theme-cycle.md): 节拍列表换色
+- [montage-rhythm-moves](cards/montage-rhythm-moves.md): 蒙太奇节奏
+- [panel-grid-moves](cards/panel-grid-moves.md): 面板网格动效
+- [quad-split-parallel-scenes](cards/quad-split-parallel-scenes.md): 四宫并行蒙太奇
+- [rhythm-interrupt-moves](cards/rhythm-interrupt-moves.md): 节奏中断动效
+- [sakuga-timing-shift](cards/sakuga-timing-shift.md): 作画式节奏变拍
+- [smear-multiples](cards/smear-multiples.md): 拖影分身
+- [spectrum-morph-ui](cards/spectrum-morph-ui.md): 频谱变形界面
+- [speed-ramp-freeze](cards/speed-ramp-freeze.md): 变速与定格
+- [trailer-grammar-moves](cards/trailer-grammar-moves.md): 预告片剪辑语法
+
+### Light & Emphasis / 光效与强调
+
+- [assemble-then-type-flyin](cards/assemble-then-type-flyin.md): 骨架装配落字
+- [aurora-bloom-bg-flip](cards/aurora-bloom-bg-flip.md): 极光升腾反黑
+- [brand-frame-snap](cards/brand-frame-snap.md): 品牌画框硬切
+- [dashboard-glow-highlight-pill](cards/dashboard-glow-highlight-pill.md): 金色胶囊指引
+- [fui-hud-moves](cards/fui-hud-moves.md): 科幻 HUD 动效
+- [glow-flyline-moves](cards/glow-flyline-moves.md): 光斑与飞线
+- [icon-performance-moves](cards/icon-performance-moves.md): 图标表演动效
+- [impact-feedback](cards/impact-feedback.md): 冲击反馈
+- [light-play-moves](cards/light-play-moves.md): 光影动效
+- [line-boil](cards/line-boil.md): 线条沸腾
+- [radial-ripple-phone-chips](cards/radial-ripple-phone-chips.md): 同心波纹手机
+- [riso-print-hits](cards/riso-print-hits.md): 孔版印刷冲击
+- [scan-bracket-sweep](cards/scan-bracket-sweep.md): 取景括号扫描
+- [scanline-annotate-focus](cards/scanline-annotate-focus.md): 扫描取景标注
+- [scanline-assemble-flyin](cards/scanline-assemble-flyin.md): 扫描装配飞入
+- [slam-entrance-moves](cards/slam-entrance-moves.md): 砸入式登场
+- [spotlight-sweep-moves](cards/spotlight-sweep-moves.md): 暗场聚光显影
+
+### Outro / 收尾
+
+- [edit-hook-moves](cards/edit-hook-moves.md): 剪辑钩子
+- [grain-dissolve](cards/grain-dissolve.md): 文字砂化凝聚
+- [logo-shrink-wordmark-lockup](cards/logo-shrink-wordmark-lockup.md): 图标收束落位
+- [neon-triple-marquee](cards/neon-triple-marquee.md): 三行霓虹跑马灯
+- [outro-group-photo-launch](cards/outro-group-photo-launch.md): 发布会合影收场
+- [ui-strip-away-outro](cards/ui-strip-away-outro.md): 减法收尾
+- [ui-to-brand-morph](cards/ui-to-brand-morph.md): UI 变品牌

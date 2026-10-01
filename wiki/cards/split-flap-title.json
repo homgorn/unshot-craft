@@ -1,0 +1,39 @@
+{
+  "name": "split-flap-title",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "翻牌屏标题",
+  "summary_en": "Characters flip through two incorrect glyphs before locking into the title in a left-to-right mechanical wave.",
+  "intention": "文字三式的第三式：压印（paper-title-card）是纸上落墨的\"低语\"，打字机 （document-typewriter-reveal）是文档被人写出来的\"叙述\"，翻牌是车站大屏的 \"播报\"——带机械宣告腔。选翻牌的语境：倒计时/发车感（版本发布、截止日）、 数据播报感（指标揭晓）、或想给标题一层复古机械质感。它天然是等宽深底 格子，在库内纸墨审美里读作\"纸面上摆了一块机械显示屏\"——异色块本身 就是看点，背景产品画面压暗降饱和给它让位。",
+  "use": "开场/章节大标题；倒计时、发布日期、数据播报类文案；需要\"机械宣告感\"的一拍",
+  "duration_frames": 140,
+  "duration_text": "约 4.7s（140f：≥20f 乱码静止建立 + 级联翻牌 + ≥15f 停定静止）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（持续的机械动感，非瞬时冲击）",
+  "styles": [
+    "split-flap-flip"
+  ],
+  "tags": [
+    "opening",
+    "typography"
+  ],
+  "params": [
+    "单次翻牌",
+    "翻牌次数",
+    "级联",
+    "停定咔哒",
+    "明暗",
+    "翻牌格",
+    "配色字体",
+    "节拍"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/split-flap-title.md",
+  "demo": "references/shots/typography/split-flap-title.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#split-flap-title"
+  ],
+  "wiki": "wiki/cards/split-flap-title.md"
+}

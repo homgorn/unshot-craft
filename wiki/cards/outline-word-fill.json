@@ -1,0 +1,38 @@
+{
+  "name": "outline-word-fill",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "空心字点亮",
+  "summary_en": "An outlined word snaps down from triple size while a dashed circle and horizontal guides close in, then the stroke flips to solid white in a single frame with one brief glow.",
+  "intention": "一个词要打成钉子，靠的不是慢慢淡入而是**两次落定**：先是巨大空心字 急速收缩到位（这是尺寸的落定），再是描边在一帧内变实心白（这是质感的 落定）。中间那 1.5s 的虚线圆收缩与水平虚线内伸是\"瞄准\"过程——技术 制图语汇，让点亮那一下读作\"确认\"。填充**必须是瞬时**的：慢扫填充会把 钉子变成缓慢的美化动画。",
+  "use": "单词式利益点/口号的重锤一拍；节奏卡点上的\"钉子\"镜；深底品牌片的强调帧",
+  "duration_frames": 75,
+  "duration_text": "约 2.5s（75f@30fps，短促单拍）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（3.2 倍收缩 + 瞬时点亮，短时高冲击）",
+  "styles": [
+    "outline-word-fill"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "收缩",
+    "字重字号",
+    "描边",
+    "虚线圆",
+    "水平虚线",
+    "瞬时填充",
+    "辉光",
+    "微尘"
+  ],
+  "pitfall_count": 7,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/outline-word-fill.md",
+  "demo": "references/shots/typography/outline-word-fill.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#outline-word-fill"
+  ],
+  "wiki": "wiki/cards/outline-word-fill.md"
+}

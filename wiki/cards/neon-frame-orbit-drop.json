@@ -1,0 +1,37 @@
+{
+  "name": "neon-frame-orbit-drop",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "霓虹框环绕齐落",
+  "summary_en": "After a neon frame draws itself, the camera arcs left to right while every page component drops from the air and lands on the same frame.",
+  "intention": "neon-frame-forerun 的孪生变体：同样框先行、内容后落，但镜头 不是固定的——从页面左侧视角连续弧线旋转到右侧视角，旋转进行 的同时全部组件从空中贴落。命门是**同时贴合**：所有组件和文字 同帧起落、同帧贴合、软影同步消失——这是\"整体登场\"的语法 （判例：错峰版被裁\"应该是所有组件和文字同时从空中往下贴合\"）。 错峰贴落属于巡礼镜（graze-face-tour/runway），一页一次性亮相 必须齐落，节奏语义不能混用。",
+  "use": "单页 UI 的一次性隆重登场（与巡礼/逐区亮相相对）；暗场霓虹调性段落的主视觉揭幕；neon-frame-forerun 的姊妹镜",
+  "duration_frames": 15,
+  "duration_text": "描框 ~0.5s + 旋转&同时贴落 ~2.5s + 落定 ~1s；全段 4–4.5s",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（一次性的大动作，落定即静）",
+  "styles": [
+    "neon-frame-forerun-orbit"
+  ],
+  "tags": [
+    "ui-entrance",
+    "camera",
+    "effects"
+  ],
+  "params": [
+    "贴落同时性",
+    "视角弧线",
+    "旋转×贴落耦合",
+    "悬浮高度/软影",
+    "描框"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/neon-frame-orbit-drop.md",
+  "demo": "references/shots/ui-entrance/neon-frame-orbit-drop.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#neon-frame-orbit-drop"
+  ],
+  "wiki": "wiki/cards/neon-frame-orbit-drop.md"
+}

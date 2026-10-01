@@ -1,0 +1,38 @@
+{
+  "name": "card-stack",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "牌堆扇展",
+  "summary_en": "Eight cards spring up from below the frame one after another and pile into a single stack, then the whole pile fans out into a 3D arc as each card rotates, slides sideways and steps back in depth.",
+  "intention": "一摞卡先聚成一个物体，再摊开成一组物体——顺序很关键：先给\"整体\"再给\"个体\"。 观众第一眼记住的是有分量的一摞（数量感），第二眼才看清每张不一样（多样性）。 展开动作留到最后一次性完成，是为了不和入场的节拍打架。",
+  "use": "需要交代\"我们有一组东西\"的产品段落；卡片墙/模板库/方案列表的建立镜头，也能当 logo 前的一拍蓄势",
+  "duration_frames": 126,
+  "duration_text": "约 4.2s（126f@30fps）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（入场是连续小爆发，展开段收成一次平滑的整体动作）",
+  "styles": [
+    "card-stack"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "卡数",
+    "入场 stagger",
+    "入场行程",
+    "spring 阻尼",
+    "展开窗",
+    "扇形张角",
+    "深度递退",
+    "旋转轴"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/card-stack.md",
+  "demo": "references/shots/ui-entrance/card-stack.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#card-stack"
+  ],
+  "wiki": "wiki/cards/card-stack.md"
+}

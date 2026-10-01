@@ -1,0 +1,36 @@
+{
+  "name": "card-flock-tumble",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "卡片翻飞收束",
+  "summary_en": "Three UI cards tumble in 3D from edge-on to a stepped formation, keep slowly rotating, then collapse inward and burst into a smoke ring under a giant word.",
+  "intention": "三张页卡像被甩出的扑克在 3D 空间翻飞列队，站定亮相后被瞬间 吸入中心，炸出一圈烟雾环，品牌巨字穿环而出——\"能力展示→能量 坍缩→口号爆发\"一气呵成。命门有三：**丝滑**（侧棱→翻飞→站定 一条 Catmull-Rom 样条导数连续，分段插值的顿挫会被读出来）、 **不许停**（站定后保持低角速度慢转到收束，静止段被裁\"不要停住， 保持旋转\"——高潮段没有静帧）、**全程清晰**（motion blur/景深糊 全删，被裁\"不要加模糊效果\"）。",
+  "use": "能量高潮段（功能页群→品牌口号的爆点转场）；霓虹暗场调性；\"多页面能力\"收束成一句话的段落",
+  "duration_frames": 45,
+  "duration_text": "翻飞 ~1.5s + 慢转展示 ~0.3s + 收束 0.3s + 烟环+巨字 ~2s；全段 4.5s",
+  "energy": "极高",
+  "energy_rank": 7,
+  "energy_text": "极高（全片能量顶点用）",
+  "styles": [
+    "card-flock-tumble"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "三卡间距/大小",
+    "站定慢转",
+    "收束时长",
+    "烟雾环",
+    "模糊",
+    "样条"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/card-flock-tumble.md",
+  "demo": "references/shots/transition/card-flock-tumble.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#card-flock-tumble"
+  ],
+  "wiki": "wiki/cards/card-flock-tumble.md"
+}

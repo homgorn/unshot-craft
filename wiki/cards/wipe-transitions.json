@@ -1,0 +1,38 @@
+{
+  "name": "wipe-transitions",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "几何擦除转场",
+  "summary_en": "Two geometric wipes: a radial clock sweep and twelve staggered vertical blinds.",
+  "intention": "转场库已有三族：穿越系（钻进去）、藏切系（遮住切）、体块系（页面是 实体）。本卡是第四族**几何擦除系**——新旧页都不动，一条几何边界扫过 完成交接，擦除的形状即语义：A 圆扫是\"仪表盘刷新了一屏数据\"，B 条扫 是\"百叶窗逐叶翻面换页\"。与 shot-transitions F 元素遮罩擦除的区别： F 用页面内真实元素当遮罩（依赖构图），本卡是纯几何形——通用性即定位。 按语义选：数据刷新用 A，横向推进翻页用 B。",
+  "use": "新旧页都不动、一条几何边界扫过完成交接的通用转场；不依赖构图里有合适元素，哪儿都能用",
+  "duration_frames": 20,
+  "duration_text": "单式 前态 ≥20f + 擦除 32–60f + 收尾 ≥40f，约 5s（150f）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中",
+  "styles": [
+    "blinds-slice",
+    "clock-wipe"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "A 扇形",
+    "A 扫速",
+    "A 亮线",
+    "B 波",
+    "B 缝亮线",
+    "摘罩",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 1,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/wipe-transitions.md",
+  "demo": "references/shots/transition/wipe-transitions.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#wipe-transitions"
+  ],
+  "wiki": "wiki/cards/wipe-transitions.md"
+}

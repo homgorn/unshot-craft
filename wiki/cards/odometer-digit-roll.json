@@ -1,0 +1,37 @@
+{
+  "name": "odometer-digit-roll",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "里程表数字滚动",
+  "summary_en": "A full-screen metric rolls each digit like an odometer, overshoots into place, and pulses when every column locks.",
+  "intention": "王牌数字的登场库内有\"砸\"（score-slam）和\"弹\"（damage-number）， 都是位移系。本卡是**机械系**：数字不是飞进来的，是\"算出来的\"—— 每位一条 0–9 滚轮高速转动，从左到右逐位减速、过冲半格、咔哒锁定， Vercel Ship/Stripe Sessions 指标段的标准语法。滚动过程自带悬念 （它会停在几？），逐位锁定自带节奏（哒、哒、哒、哒），比直接显示 终值多一整拍的期待感。与 VerticalTicker（backlog 待选）的区别： 有终值、逐位停稳，不是无限滚动墙。",
+  "use": "单个王牌指标的全屏亮相（\"10x\"/\"99.98%\"级）；与 impact-feedback B 式（伤害数字弹出）分工——那是元素级配菜，这是全屏级主菜",
+  "duration_frames": 63,
+  "duration_text": "滚动+逐位锁定 ~63f + 脉冲 8f + hold ≥45f，约 5s",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高",
+  "styles": [
+    "odometer-digit-roll"
+  ],
+  "tags": [
+    "typography",
+    "data"
+  ],
+  "params": [
+    "字号/字体",
+    "错峰",
+    "过冲",
+    "残影",
+    "终值脉冲",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/odometer-digit-roll.md",
+  "demo": "references/shots/data/odometer-digit-roll.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#odometer-digit-roll"
+  ],
+  "wiki": "wiki/cards/odometer-digit-roll.md"
+}

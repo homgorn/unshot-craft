@@ -1,0 +1,41 @@
+{
+  "name": "cycle-glass-node-morph",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "循环玻璃节点接管",
+  "summary_en": "One subject shrinks through a diagonal wipe into a three-stage cycle, then a continuous push-in lets three glass nodes rise and take over the labels before diagnostic markers lock the system state.",
+  "intention": "循环图最容易沦为“画三个圆加两支箭头”。本卡把机制解释建立在一个连续主体上： 主体不是被另一份灰阶副本替换，而是在对角擦除发生时同步缩入系统中心；循环文字先作为 黑色概念标签出现，推近后玻璃节点从它们下方升起，把同一标签转为白色节点标题。 观众因此读到的是**场景里的对象被解释成一套运行机制**，而不是切到另一页 PPT。",
+  "use": "AI agent/自动化/控制系统的感知—推理—执行循环；“一个对象背后有三段机制”的解释镜头；从真实场景过渡到抽象系统图的技术型 B-roll",
+  "duration_frames": 257,
+  "duration_text": "约 8.6s（257f@30fps；最终状态保留 34f）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（前段场景转换，中段循环建立，后段推近与三节点连续顶起）",
+  "styles": [
+    "cycle-glass-node-morph"
+  ],
+  "tags": [
+    "camera",
+    "data",
+    "interaction"
+  ],
+  "params": [
+    "场景 hold",
+    "主体缩入",
+    "对角擦除",
+    "标签节奏",
+    "弧线建立",
+    "连续推近",
+    "节点顶起",
+    "诊断标记",
+    "最终 hold"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/cycle-glass-node-morph.md",
+  "demo": "references/shots/data/cycle-glass-node-morph.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#cycle-glass-node-morph"
+  ],
+  "wiki": "wiki/cards/cycle-glass-node-morph.md"
+}

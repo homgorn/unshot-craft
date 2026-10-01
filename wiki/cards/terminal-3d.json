@@ -1,0 +1,36 @@
+{
+  "name": "terminal-3d",
+  "category": "camera",
+  "category_en": "Camera & Space",
+  "summary_zh": "终端空间飞行",
+  "summary_en": "Three terminal windows float at different poses in 3D space; the camera flies between them with a sine pull-back, and at each stop a command types out and its results slide in line by line.",
+  "intention": "终端输出天生是\"平面滚动\"的反电影语言，这张卡把它空间化：每条命令占据空间中一个实体窗口，相机像穿过机房一样逐窗拜访。飞行途中的拉远让观众瞥见\"还有更多窗口\"——工作流的全貌感。",
+  "use": "开发者产品的 CLI/工作流演示：把\"三步命令\"拍成三站空间旅程",
+  "duration_frames": 180,
+  "duration_text": "约 6.0s（180f@30fps；三站各约 1.6s 停留 + 0.85s 飞行）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（飞行给动感、打字给节奏，整体是沉稳的技术叙事）",
+  "styles": [
+    "terminal-3-d"
+  ],
+  "tags": [
+    "camera"
+  ],
+  "params": [
+    "拉远鼓包",
+    "飞行/停留比",
+    "聚焦衰减",
+    "打字速度",
+    "输出错峰",
+    "窗口姿态"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/camera/terminal-3d.md",
+  "demo": "references/shots/camera/terminal-3d.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#terminal-3d"
+  ],
+  "wiki": "wiki/cards/terminal-3d.md"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "collab-cursor-moves",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "协作光标演出",
+  "summary_en": "Two cursor performances: a duet of collaborator cursors dancing in a dark scene, and a five-cursor ensemble drifting and typing as ambience.",
+  "intention": "库内光标一直是\"操作工具\"（input-trigger-moves 的 cursor-performance 是单光标点击表演）。本卡把带身份名牌的协作光标升格成**演员**： A 式两枚具名光标在纯暗场用位移编排讲\"设计-开发交接\"——没有一个 UI 元素，观众照样看懂了剧情，光标位置关系就是台词；B 式五枚光标错峰 入场后持续漂移当氛围粒子，\"团队在场\"感全靠它，其中一枚还能停下来 打字（cameo 戏份）。SVG 光标+名牌 chip 成本极低、叙事密度极高， 是\"协作\"主题最便宜的视觉论证。",
+  "use": "协作/多人/交接主题的叙事段；A 撑起无 UI 的纯叙事拍，B 给画布场景铺\"团队在场\"体温",
+  "duration_frames": 140,
+  "duration_text": "A ~4.7s（140f）/ B ~4.7s（140f）",
+  "energy": "A 中",
+  "energy_rank": null,
+  "energy_text": "A 中（叙事密度高）/ B 低中（氛围层，可垫任何时长）",
+  "styles": [
+    "cursor-cast-ensemble",
+    "cursor-dialogue-duet"
+  ],
+  "tags": [
+    "interaction"
+  ],
+  "params": [
+    "A 位移",
+    "A 绕位",
+    "A 灯光交接",
+    "A 转场放大",
+    "B 入场",
+    "B 漂移",
+    "B 打字 cameo",
+    "B 聚拢"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/collab-cursor-moves.md",
+  "demo": "references/shots/interaction/collab-cursor-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#collab-cursor-moves"
+  ],
+  "wiki": "wiki/cards/collab-cursor-moves.md"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "slam-entrance-moves",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "砸入式登场",
+  "summary_en": "Three high-energy arrivals: a perspective snap, a score drop, and an impact burst that pushes nearby elements.",
+  "intention": "库内入场词汇的力度上限一直是 deck-deal-flyin 的\"发牌\"——快但不重。 本卡补\"砸\"这一档，三种口味：A 是方向感——卡片带鱼眼级夸张透视贴着 镜头甩进来，\"啪\"地弹平，动漫金田流的潇洒；B 是重量感——KPI 卡从 镜头前 2.5 倍大小砸落，圆环+尘点+震屏三件套同帧起爆，体育比分弹窗 的分量；C 是传导感——B 的三件套之上，冲击波前沿扫过左右邻卡时把 它们可见地推开再弹回，\"这一下震到了邻居\"，一件事说清力量大小。 选型按叙事需要：告诉观众\"它来了\"用 A，\"它很重\"用 B，\"它震动了 全场\"用 C。",
+  "use": "主角卡/KPI 卡的重拳入场；impact-feedback 管落位后的反馈，本卡管入场本身就是冲击",
+  "duration_frames": 22,
+  "duration_text": "单式动作段 6–22f + 冲击余波 ~16f + hold ≥45f",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高",
+  "styles": [
+    "impact-burst-kit",
+    "kanada-perspective-snap",
+    "score-slam"
+  ],
+  "tags": [
+    "ui-entrance",
+    "effects"
+  ],
+  "params": [
+    "A 甩入",
+    "A 落定",
+    "B 砸落",
+    "B 三件套",
+    "B 解耦命门",
+    "C 波及帧",
+    "收尾"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/slam-entrance-moves.md",
+  "demo": "references/shots/effects/slam-entrance-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#slam-entrance-moves"
+  ],
+  "wiki": "wiki/cards/slam-entrance-moves.md"
+}

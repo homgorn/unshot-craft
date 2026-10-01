@@ -1,0 +1,38 @@
+{
+  "name": "countdown-arc-scatter",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "表盘数字扫过",
+  "summary_en": "Numbers arranged tangentially along a large arc sweep past and brake to a stop, the winning digit sliding out of the dial to become the first character of the headline.",
+  "intention": "\"5 分钟装完\"写成静态字卡没人信。表盘扫过的做法把这个数字放进一个 **量程**里：45、35、28、22、17、10 一路扫过去，停在 5——观众看到的是 \"从很多降到很少\"，数字自带论证。停下后 \"5\" 不消失而是**平移变成标题的 首字符**，一个元素完成从仪表到文案的身份切换，这是本卡最值钱的一手。",
+  "use": "倒计时/时长承诺类文案（\"5 min to install\"）；数据揭晓的一拍；需要\"仪表盘\"语汇的浅底短镜",
+  "duration_frames": 33,
+  "duration_text": "约 1.1s（33f@30fps，极短单拍）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（96° 大幅扫动压进 17 帧，纯冲击）",
+  "styles": [
+    "countdown-arc-scatter"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "数列",
+    "弧半径",
+    "扫动",
+    "可视角窗",
+    "\"5\" 落位",
+    "其余淡出",
+    "刻度差速",
+    "末词染色"
+  ],
+  "pitfall_count": 7,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/countdown-arc-scatter.md",
+  "demo": "references/shots/typography/countdown-arc-scatter.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#countdown-arc-scatter"
+  ],
+  "wiki": "wiki/cards/countdown-arc-scatter.md"
+}

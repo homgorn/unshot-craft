@@ -1,0 +1,36 @@
+{
+  "name": "cursor-flyover",
+  "category": "camera",
+  "category_en": "Camera & Space",
+  "summary_zh": "四角巡览指点",
+  "summary_en": "After an overview fade-in the camera flies to each of four screen corners in turn while an SVG cursor arrives with it, pointing and leaving a click ripple at every stop.",
+  "intention": "替代\"四个功能四段剪辑\"的省镜方案：一个连续相机把四个角串成一条参观动线，光标是观众的注意力代理——它到哪、点哪，观众就看哪。空间连续让功能之间的位置关系也被顺带记住。",
+  "use": "单页产品的功能巡览：一镜带观众看完四个功能区，光标当\"导游手指\"",
+  "duration_frames": 180,
+  "duration_text": "约 6.0s（180f@30fps；俯瞰 0–1.2s · 四步各 0.7s 过渡 + 0.5s 停留）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（匀速巡航，节奏靠点击涟漪打点）",
+  "styles": [
+    "cursor-flyover"
+  ],
+  "tags": [
+    "camera"
+  ],
+  "params": [
+    "特写倍率",
+    "步进节奏",
+    "点击涟漪",
+    "光标补偿",
+    "巡览顺序",
+    "开场聚焦"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/camera/cursor-flyover.md",
+  "demo": "references/shots/camera/cursor-flyover.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#cursor-flyover"
+  ],
+  "wiki": "wiki/cards/cursor-flyover.md"
+}

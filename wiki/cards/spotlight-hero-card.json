@@ -1,0 +1,38 @@
+{
+  "name": "spotlight-hero-card",
+  "category": "opening",
+  "category_en": "Opening & Brand",
+  "summary_zh": "聚光主角卡",
+  "summary_en": "A spotlight selects one card, the camera pushes diagonally, the card lifts for two outline passes, then returns to the page.",
+  "intention": "开场只讲一件事：这一张卡就是产品的原子单位。聚光灯替观众做视线引导，弹起悬浮给它体积和重量，轮廓光束是\"扫描/检视\"的隐喻，最后贴回原位表示它属于这个页面。",
+  "use": "\"单一主角\"式产品开场；把一个核心对象（卡片/条目/模块）立成全片主角",
+  "duration_frames": 220,
+  "duration_text": "约 4.6s（82–220f）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（质感最高的一镜，节奏慢而稳）",
+  "styles": [
+    "spotlight-hero-card"
+  ],
+  "tags": [
+    "opening",
+    "camera",
+    "effects"
+  ],
+  "params": [
+    "选卡",
+    "相机",
+    "聚光灯",
+    "动作弧",
+    "轮廓光束",
+    "双层影"
+  ],
+  "pitfall_count": 3,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/opening/spotlight-hero-card.md",
+  "demo": "references/shots/opening/spotlight-hero-card.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#spotlight-hero-card"
+  ],
+  "wiki": "wiki/cards/spotlight-hero-card.md"
+}

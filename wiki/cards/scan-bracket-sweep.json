@@ -1,0 +1,37 @@
+{
+  "name": "scan-bracket-sweep",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "取景括号扫描",
+  "summary_en": "A skeleton document pops to center, black L-shaped framing brackets drop into its corners, and a thin line with a gradient trail sweeps up and down across it five times.",
+  "intention": "让观众看懂\"这份东西正在被机器逐行读过\"。取景括号先把目标框住（宣布检查 对象），扫描光带再往复走完全篇（宣布检查过程）。命门是**文档本身完全静止**： 一旦文档也在动，观众就分不清是\"被检查\"还是\"在加载\"。",
+  "use": "\"正在解析/校验这份内容\"的过程镜头；文档类产品的能力演示；上传→分析链路的中段",
+  "duration_frames": 150,
+  "duration_text": "约5.0s（150f@30fps）",
+  "energy": "中低",
+  "energy_rank": 3,
+  "energy_text": "中低（机械、克制，节奏全在往复扫掠的呼吸上）",
+  "styles": [
+    "scan-bracket-sweep"
+  ],
+  "tags": [
+    "effects"
+  ],
+  "params": [
+    "文档弹入",
+    "取景括号",
+    "扫描趟数",
+    "趟内缓动",
+    "光带",
+    "拖尾方向",
+    "裁切层"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/scan-bracket-sweep.md",
+  "demo": "references/shots/effects/scan-bracket-sweep.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#scan-bracket-sweep"
+  ],
+  "wiki": "wiki/cards/scan-bracket-sweep.md"
+}

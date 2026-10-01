@@ -1,0 +1,43 @@
+{
+  "name": "orbit-ring-title-open",
+  "category": "opening",
+  "category_en": "Opening & Brand",
+  "summary_zh": "环形卡阵标题开场",
+  "summary_en": "Eight 16:9 content cards orbit an ellipse at a constant rate with their contents frozen on the first frame, then all start playing together while the centred headline de-blurs into place and a marker block sweeps across the key phrase.",
+  "intention": "开场想说\"我们有一整套东西\"，最常见的做法是把截图排成网格——但网格是静止的，观众 读到的是\"一堆图片\"，不是\"一套会动的产品\"。这张卡把陈列改成**环形巡回**：八张卡沿 椭圆匀速公转，永远有卡在进画、有卡在出画，画面自带\"还有更多\"的暗示，而标题稳稳 钉在正中间不受影响。 关键的取舍是**卡内容要真的在播**。静态截图上环，观众只会认出\"轮播图\"；卡里跑着真 动效，同一个环立刻变成\"产品在工作\"。但八张卡同时开播会八个动效抢戏，谁也读不进去 ——所以入场期把卡内容**冻结在首帧**，等环撑开、标题起手之后再统一开播。观众的注意 力顺序因此是：先认出这是一圈产品画面 → 读标题 → 才注意到卡里都在动。",
+  "use": "开场第一镜 = 「这个产品有一整套东西」；素材库/模板库/功能矩阵/案例集的门面拍；需要用真实运动的产品画面托住一句主张，而不是把截图摆成静态九宫格",
+  "duration_frames": 130,
+  "duration_text": "约 4.3s（130f@30fps；标题落定 f50 到退场 f108 之间是 1.9s 稳态巡回）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（唯一的持续运动是匀速公转，全片只有马克块横扫一次冲击）",
+  "styles": [
+    "orbit-ring-title-open"
+  ],
+  "tags": [
+    "opening",
+    "ui-entrance"
+  ],
+  "params": [
+    "椭圆半径",
+    "卡数",
+    "公转速度",
+    "环入场",
+    "逐卡淡入",
+    "开播帧",
+    "纵深缩放",
+    "标题",
+    "逐字节奏",
+    "马克块",
+    "副行",
+    "退场"
+  ],
+  "pitfall_count": 8,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/opening/orbit-ring-title-open.md",
+  "demo": "references/shots/opening/orbit-ring-title-open.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#orbit-ring-title-open"
+  ],
+  "wiki": "wiki/cards/orbit-ring-title-open.md"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "paper-title-card",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "纸张标题卡",
+  "summary_en": "A sentence stamps onto paper word by word, highlights one amber italic term, and closes with a short rule.",
+  "intention": "在两段产品画面之间给观众一句话的喘息：说清\"接下来看什么、它值什么\"。letterpress 压印质感让字卡与纸墨风格的产品画面同属一个世界。",
+  "use": "章节转场/价值主张字卡；重要功能出场前的引导卡；全片呼吸位",
+  "duration_frames": 55,
+  "duration_text": "1.7–1.8s（50–55f）",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（呼吸位，隔开两段高能镜头）",
+  "styles": [
+    "paper-title-card"
+  ],
+  "tags": [
+    "typography",
+    "transition",
+    "rhythm"
+  ],
+  "params": [
+    "逐词入场",
+    "重点词",
+    "下划线",
+    "时长",
+    "版式",
+    "副行"
+  ],
+  "pitfall_count": 2,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/paper-title-card.md",
+  "demo": "references/shots/typography/paper-title-card.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#paper-title-card"
+  ],
+  "wiki": "wiki/cards/paper-title-card.md"
+}

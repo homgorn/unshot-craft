@@ -1,0 +1,36 @@
+{
+  "name": "gradient-word-sweep",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "渐变充能词",
+  "summary_en": "A gradient light sweeps left to right across a keyword, charging each character with glow that decays behind the wavefront until the whole word breathes.",
+  "intention": "整句白字里只有关键词被\"通电\"：渐变彩光从左到右快速扫过字符， 像能量注入——扫过的瞬间最亮（波前尾迹），随后衰减到稳态； 填满后字符之间跳起勾连的细闪电，词保持泛光呼吸。三个命门： **快**（扫充 15–20f，慢了读作进度条）、**波前最亮**（刚点亮的 字符效果最强，没有这个梯度就是静态渐变裁切）、**辉光克制** （AE 式多层泛光但别糊成一团，闪电细而稀疏才是点缀）。",
+  "use": "标语里给单个动词/卖点词充能（Supercharged/faster/AI…）；能量高潮段的文字戏；黑场品牌片的口号帧",
+  "duration_frames": 20,
+  "duration_text": "扫充 ~15–20f（要快）+ 稳态闪电呼吸 1–2s；全段 2.5–3.5s",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（一词爆点，前后都该让位）",
+  "styles": [
+    "gradient-word-sweep"
+  ],
+  "tags": [
+    "typography",
+    "effects"
+  ],
+  "params": [
+    "扫充时长",
+    "波前增亮带",
+    "稳态泛光",
+    "闪电线宽",
+    "闪电频率"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/gradient-word-sweep.md",
+  "demo": "references/shots/typography/gradient-word-sweep.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#gradient-word-sweep"
+  ],
+  "wiki": "wiki/cards/gradient-word-sweep.md"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "list-stack-press",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "列表堆叠压弹",
+  "summary_en": "List cards fly up from below, compress the growing stack on every landing, and advance a synchronized counter.",
+  "intention": "\"堆叠有重量\"：每张新卡落上来，已落定的整摞被压下再弹回——观众从物理反馈里读出\"这是实打实攒下来的东西\"。计数器同步跳格把数量感钉死。",
+  "use": "feed/雷达/收件箱类\"每天有新东西\"的镜头；强调持续积累的资产列表",
+  "duration_frames": 88,
+  "duration_text": "约 3s（18–88f）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中",
+  "styles": [
+    "list-stack-press"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "节拍",
+    "入场",
+    "堆叠压感",
+    "阴影",
+    "联动高亮",
+    "glaze 扫光",
+    "计数器（digit-roll 手法）",
+    "相机"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/list-stack-press.md",
+  "demo": "references/shots/ui-entrance/list-stack-press.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#list-stack-press"
+  ],
+  "wiki": "wiki/cards/list-stack-press.md"
+}

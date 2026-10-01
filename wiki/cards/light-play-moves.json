@@ -1,0 +1,39 @@
+{
+  "name": "light-play-moves",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "光影动效",
+  "summary_en": "Three controlled light effects: spotlight sweep, single sheen pass, and a halation bloom at impact.",
+  "intention": "库内\"光\"一直只有 spotlight-hero-card 一个点射手法；这三式把光做成 体系，三种笔触三种职责：A 是**扫**——暗场里几乎不可见的标题被锥形 光摆动扫亮，光到哪哪亮，与 spotlight-hero-card 的区别是那个打卡片、 这个扫文字；B 是**擦**——深墨主角卡上一道 45° 高光带缓扫一次，被 圆角裁住，无声的加冕；D 是**晕**——白字撞停帧一圈柔晕猛涨炸开再 回落成驻留呼吸光，与 B 的区别是 B 移动扫过、D 驻留在高光边缘。 全部深底或深主角——**白底上提亮不可见**（判例）是这整张卡的地基。",
+  "use": "把光当第四种笔触（扫/擦/晕）：暗场标题揭示（A）、主角卡加冕（B）、撞停帧冲击（D）",
+  "duration_frames": 159,
+  "duration_text": "A ~5.3s / B ~4.7s / D ~4.8s",
+  "energy": "A 中 / B 低 / D 高",
+  "energy_rank": null,
+  "energy_text": "A 中 / B 低 / D 高",
+  "styles": [
+    "halation-bloom",
+    "sheen-sweep-retry",
+    "spotlight-sweep-reveal"
+  ],
+  "tags": [
+    "typography",
+    "effects"
+  ],
+  "params": [
+    "A 反差",
+    "A 光斑",
+    "B 高光带",
+    "D 晕层",
+    "摘罩",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/light-play-moves.md",
+  "demo": "references/shots/effects/light-play-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#light-play-moves"
+  ],
+  "wiki": "wiki/cards/light-play-moves.md"
+}

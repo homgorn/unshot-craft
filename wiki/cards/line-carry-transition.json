@@ -1,0 +1,37 @@
+{
+  "name": "line-carry-transition",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "线条接力转场",
+  "summary_en": "A progress line exits scene A, guides the camera sideways, then turns corners to become the frame of scene B.",
+  "intention": "转场库三大族（穿越/藏切/体块）都在回答\"场景怎么换\"；本卡的回答是 **根本不换——一条线牵着你走过去**。进度条走满后末端延伸成长线冲出 卡缘，镜头跟着线横移 1920px 进入新世界，线在移动中拐直角围出 B 场景 的卡框，框闭合、内容淡入，从头到尾观众的眼睛没离开过这条线。图形 连续性本身就是转场。与 match-cut 的区别：那是切点两侧形状对位—— 终究还是切；这是连续绘制——**没有切**。线的身份要有叙事逻辑（进度条 \"走完了\"所以延伸出去），无来由的线只是装饰。",
+  "use": "两个有图形亲缘的场景之间（进度条→卡框、下划线→图表轴）；一支片子的招牌转场位，Catch Me If You Can 片头的图形接力",
+  "duration_frames": 60,
+  "duration_text": "~5.3s（进度条走满 + 横移 60f + 围框 + 内容淡入 + 静止 36f）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中",
+  "styles": [
+    "line-carry-transition"
+  ],
+  "tags": [
+    "camera",
+    "transition"
+  ],
+  "params": [
+    "线体",
+    "横移配比",
+    "笔头位置",
+    "拐角",
+    "框闭合",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/line-carry-transition.md",
+  "demo": "references/shots/transition/line-carry-transition.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#line-carry-transition"
+  ],
+  "wiki": "wiki/cards/line-carry-transition.md"
+}

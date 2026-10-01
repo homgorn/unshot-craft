@@ -1,0 +1,36 @@
+{
+  "name": "cloner-depth-echo",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "克隆纵深回响",
+  "summary_en": "A card duplicates into a diagonal depth trail, holds briefly, then accelerates back into one springy original.",
+  "intention": "Spline/C4D Cloner 语汇的 UI 翻译：一张主卡\"啪\"地复印出 7 个克隆体 沿 Z 轴向后等距排开（间隔 120px、透明度 100%→20% 递减），错峰弹出 成纵队；停 ~25f 让观众数得清\"有很多个\"；然后全体 ease-in 加速吸回 本体合一，合体瞬间本体弹 1.08x 收束。与 depth-layer-moves 视差 （不同内容分层）分工：这是**同一内容**的等距重影阵列，语义是规模 不是空间。",
+  "use": "\"多副本/多租户/规模感/批量处理\"卖点；一镜讲完\"一个=很多\"",
+  "duration_frames": 150,
+  "duration_text": "4–5s",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（陈列-收束型）",
+  "styles": [
+    "cloner-depth-echo"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "斜向错位",
+    "侧视角",
+    "克隆数/间隔",
+    "透明衰减",
+    "排开/吸回",
+    "合体弹跳"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/cloner-depth-echo.md",
+  "demo": "references/shots/ui-entrance/cloner-depth-echo.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#cloner-depth-echo"
+  ],
+  "wiki": "wiki/cards/cloner-depth-echo.md"
+}

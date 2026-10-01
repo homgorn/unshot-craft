@@ -1,0 +1,36 @@
+{
+  "name": "crane-rise-reveal",
+  "category": "opening",
+  "category_en": "Opening & Brand",
+  "summary_zh": "吊臂升起揭示",
+  "summary_en": "The camera starts tight on one data row, rises and pulls back, then reveals a full dashboard filling the frame.",
+  "intention": "开场定场库内已有 drone-dive-landing——从上帝视角砸进 hero 特写， \"全局→焦点\"。本卡是它的镜像：\"焦点→全局\"——先怼在一行真实数据上 让观众看清\"这是什么\"，再升降臂式拉升后退，一排排内容涌入画面， 最后整面产品铺满——\"你看到的这一行，只是这一面墙的一格\"。 适合以产品体量/内容丰富度为卖点的开场；两卡同片只用一个方向。",
+  "use": "\"从细节到全局\"的开场定场；与 drone-dive-landing（全局→单点俯冲）互为反向",
+  "duration_frames": 20,
+  "duration_text": "5s（特写 hold 20f + 拉升 100f + 满幅静止 30f）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（持续单向运动，无冲击拍）",
+  "styles": [
+    "crane-rise-reveal"
+  ],
+  "tags": [
+    "opening",
+    "camera",
+    "data"
+  ],
+  "params": [
+    "起点特写",
+    "拉升",
+    "行脉冲",
+    "收尾"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/opening/crane-rise-reveal.md",
+  "demo": "references/shots/opening/crane-rise-reveal.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#crane-rise-reveal"
+  ],
+  "wiki": "wiki/cards/crane-rise-reveal.md"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "icon-field-colorize",
+  "category": "opening",
+  "category_en": "Opening & Brand",
+  "summary_zh": "图标点阵翻色",
+  "summary_en": "A grid of grayscale icons staggers in to fill the screen, holds a beat, then brand-color bands ripple down and light the whole field at once.",
+  "intention": "先用灰阶把\"多\"摆足——上百个小图标错峰浮进来铺满画面，灰阶保证 读作背景纹理不抢戏；停一拍让观众意识到\"摆满了\"，然后品牌色以 横带波纹形式极快扫过全场，灰世界一瞬间被点亮。命门在**翻色不是 同帧硬翻**：原片实测是 ~0.5s 内多道色波依次向下快扫（蓝先覆盖全场， 橙/绿/红依次覆盖更低行带），终态呈四色横带分层——波纹感让\"点亮\" 有方向和速度，硬翻只读作换了张图。",
+  "use": "开场铺陈产品能力面（图标=功能宇宙）再一举打上品牌色；功能集合页、生态/集成规模展示、片头 logo 前垫场",
+  "duration_frames": 45,
+  "duration_text": "浮现 ~45f 错峰 + 静置 ~10f + 翻色 12–45f + 终态静置；全段 3–4s",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（浮现是铺垫，翻色瞬间是唯一爆点）",
+  "styles": [
+    "icon-field-colorize"
+  ],
+  "tags": [
+    "opening",
+    "ui-entrance",
+    "outro"
+  ],
+  "params": [
+    "图标数",
+    "浮现总长",
+    "翻色总长",
+    "波数",
+    "行差",
+    "翻色 pop"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/opening/icon-field-colorize.md",
+  "demo": "references/shots/opening/icon-field-colorize.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#icon-field-colorize"
+  ],
+  "wiki": "wiki/cards/icon-field-colorize.md"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "paper-plane-messenger",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "纸飞机信使",
+  "summary_en": "After Send is clicked the camera pulls back and a folded paper plane flies a bezier arc through parallax props to land at the receiving window.",
+  "intention": "transition-travel 是镜头钻进画面里的既有元素换景；本卡反过来——从 动作里**放出一个语义信使**，让镜头跟着它飞去下一个场景。\"发送\"这个 抽象动作被实体化成折纸飞机，A/B 两窗的空间关系被飞行轨迹真实丈量 过，观众对\"消息去了哪\"有了身体感。命门是 2.5D 相机管线：所有元素 挂在同一世界坐标系上，镜头中心 A→跟飞机→B、变焦拉远再推近，视差 道具按 depth 乘相机位移——重 3D 原片降级成一台\"假三维\"，成本掉一个 量级而纵深感保留。飞机俯仰角跟随弧线切线是\"它在飞\"而非\"它在平移\" 的全部区别。",
+  "use": "\"发送/邀请/分享\"动作连接两个人物/场景视角的叙事转场；抽象动作需要一个隐喻实体当转场载具时",
+  "duration_frames": 150,
+  "duration_text": "~5s（150f：点击 12f → 拉远 16–42f → 飞行 34–104f → B 接管 112–146f）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中",
+  "styles": [
+    "paper-plane-messenger"
+  ],
+  "tags": [
+    "camera",
+    "transition"
+  ],
+  "params": [
+    "变焦三段",
+    "飞行时长",
+    "切线采样",
+    "途中放大",
+    "视差层",
+    "B 接管"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/paper-plane-messenger.md",
+  "demo": "references/shots/transition/paper-plane-messenger.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#paper-plane-messenger"
+  ],
+  "wiki": "wiki/cards/paper-plane-messenger.md"
+}

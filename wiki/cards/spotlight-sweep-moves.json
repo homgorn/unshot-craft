@@ -1,0 +1,39 @@
+{
+  "name": "spotlight-sweep-moves",
+  "category": "effects",
+  "category_en": "Light & Emphasis",
+  "summary_zh": "暗场聚光显影",
+  "summary_en": "Three dark-scene spotlight moves: a wake-sleep sweep, an edge-glow pan with purple bleed, and a radial reveal expanding from a corner.",
+  "intention": "黑场里观众只能看见光给看的东西——聚光既是照明也是运镜和剪辑： 光到哪里哪里登场，光走即谢幕。三式共用\"贴边紫色辉光光线\"这个 身份元素（光线贴着 UI 边框/logo/顶边走，辉光要亮要糊，是光在 \"抚摸\"界面而不是描边动画）。命门是**匀速**：聚光的移动/扩张 严格 linear——缓动会让光有\"意图\"，匀速才读作探照灯的机械扫掠 （C 式判例：linear 但半径终值过大＝前 1/4 就饱和，观感照样不匀速）。",
+  "use": "暗色调品牌片里逐个介绍 UI 面板/功能区；黑场开场把界面\"点亮\"登场；段落间光转场",
+  "duration_frames": 135,
+  "duration_text": "单式 3.5–4.5s；A/B 可串联成巡礼段",
+  "energy": "中低",
+  "energy_rank": 3,
+  "energy_text": "中低（克制、神秘感，爆点在\"亮起\"瞬间）",
+  "styles": [
+    "corner-spotlight-reveal",
+    "glow-wake-sleep-panel",
+    "slide-spotlight-pan"
+  ],
+  "tags": [
+    "ui-entrance",
+    "transition",
+    "effects"
+  ],
+  "params": [
+    "聚光移动/扩张",
+    "C 式半径终值",
+    "贴边光线辉光",
+    "光线锚定",
+    "显影罩"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/effects/spotlight-sweep-moves.md",
+  "demo": "references/shots/effects/spotlight-sweep-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#spotlight-sweep-moves"
+  ],
+  "wiki": "wiki/cards/spotlight-sweep-moves.md"
+}

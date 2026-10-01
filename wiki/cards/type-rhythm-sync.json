@@ -1,0 +1,39 @@
+{
+  "name": "type-rhythm-sync",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "文字节奏同步",
+  "summary_en": "Two voice-and-beat synchronizations: font weight pulsing on percussion and spoken words filling like karaoke.",
+  "intention": "文字动效库内此前全是\"入场怎么进\"，没有词管\"在场的字怎么跟着声音活\"。 这两式补上：A 让标题变成节奏器官——笔画随低音鼓抽动变粗又弹回， 文字在蹦迪，适合高能段落的视觉低音炮；B 让标语变成跟读字幕—— 旁白读到哪个词哪个词从左到右填色点亮，视线被牵着走，适合口播/ 标语强调段。共同点是**字不动、属性动**：无位移、无入退场， 纯粹是字重/颜色在声音的拍点上呼吸。",
+  "use": "标题/标语与音轨强绑定的段落；A 绑节拍（鼓点），B 绑语音（旁白逐词）",
+  "duration_frames": 10,
+  "duration_text": "单式 4–5s；A 每拍占 10f 衰减窗、B 每词按语速 15–35f",
+  "energy": "A 高",
+  "energy_rank": null,
+  "energy_text": "A 高（蹦迪感）/ B 中（跟读引导）",
+  "styles": [
+    "font-weight-pump",
+    "karaoke-fill-sync"
+  ],
+  "tags": [
+    "typography",
+    "rhythm"
+  ],
+  "params": [
+    "A 脉冲包络",
+    "A 节拍",
+    "A 节拍参照物",
+    "B 词级时间表",
+    "B 填色实现",
+    "B 读指",
+    "收尾"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/type-rhythm-sync.md",
+  "demo": "references/shots/typography/type-rhythm-sync.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#type-rhythm-sync"
+  ],
+  "wiki": "wiki/cards/type-rhythm-sync.md"
+}

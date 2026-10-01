@@ -1,0 +1,41 @@
+{
+  "name": "deck-deal-flyin",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "发牌飞入",
+  "summary_en": "A physical card stack opens the scene, then cards accelerate into a live grid as the camera follows the growing page.",
+  "intention": "先给悬念（这一摞是什么？），再给答案（是几十个项目，它们自己飞进页面各就各位）。观众要感受到\"东西源源不断地涌进来\"，每张卡带着急迫感砸到位。",
+  "use": "展示\"内容量大/源源不断汇入\"的列表页与卡片墙；建立信息密度的第一印象",
+  "duration_frames": 113,
+  "duration_text": "约 2.6s 发牌段（36–113f），前接约 2s（62f）牌堆特写可选",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（节奏爬升段主力，不放开场第一镜）",
+  "styles": [
+    "deck-deal-flyin"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "orbit 环绕",
+    "堆叠高度",
+    "金属背景",
+    "预备拍",
+    "发牌节拍",
+    "卡量",
+    "单卡飞行",
+    "收尾拖拽层级",
+    "运动模糊（单卡）",
+    "运动模糊（相机）",
+    "追逐 scroll"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/deck-deal-flyin.md",
+  "demo": "references/shots/ui-entrance/deck-deal-flyin.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#deck-deal-flyin"
+  ],
+  "wiki": "wiki/cards/deck-deal-flyin.md"
+}

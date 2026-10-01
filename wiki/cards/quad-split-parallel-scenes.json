@@ -1,0 +1,36 @@
+{
+  "name": "quad-split-parallel-scenes",
+  "category": "rhythm",
+  "category_en": "Rhythm & Montage",
+  "summary_zh": "四宫并行蒙太奇",
+  "summary_en": "The frame hard-cuts into a 2×2 grid where four micro-scenes run in parallel — typing, a whip zoom, word pops, and a cursor interaction chain — with every beat offset by a few frames.",
+  "intention": "用并行密度替代顺序展示：四件事同时在眼前发生，观众来不及逐一细读，但每 3–6 帧就有一个象限\"动一下\"——扫视节奏被牢牢钉住。这是手法卡：格内内容全部可替换，错拍编排才是配方。",
+  "use": "节奏段\"功能很多、同时发生\"的蒙太奇拍；预告片中段的密度峰值",
+  "duration_frames": 63,
+  "duration_text": "约 2.1s（63f@30fps，全程无转场）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（四线并行 + 错拍冲击，标准的 BGM 副歌位）",
+  "styles": [
+    "quad-split-parallel-scenes"
+  ],
+  "tags": [
+    "rhythm"
+  ],
+  "params": [
+    "错拍间隔",
+    "TL 慢推",
+    "TR 急推",
+    "打字速度",
+    "BR 交互链",
+    "底色"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/rhythm/quad-split-parallel-scenes.md",
+  "demo": "references/shots/rhythm/quad-split-parallel-scenes.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#quad-split-parallel-scenes"
+  ],
+  "wiki": "wiki/cards/quad-split-parallel-scenes.md"
+}

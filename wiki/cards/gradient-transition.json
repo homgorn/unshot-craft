@@ -1,0 +1,36 @@
+{
+  "name": "gradient-transition",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "渐变参数变奏",
+  "summary_en": "The background morphs smoothly through linear, radial, and conic CSS gradients — angle, color stops, center, and radius each interpolated per-parameter with narrow cross-fades between types.",
+  "intention": "渐变不是静态贴图而是可动画的参数集：同类型渐变内部任何参数都能插值出丝滑变化，跨类型则用短交叉淡化衔接。作背景层用，给\"没有主体运动\"的段落一层持续的低速能量。",
+  "use": "氛围底/章节底色的连续变奏；给静态排版段落提供\"活着\"的背景层",
+  "duration_frames": 180,
+  "duration_text": "约 6.0s（180f@30fps；linear 0–2.4s · radial 2–4.2s · conic 4–6s）",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（纯背景运动，为前景内容让路）",
+  "styles": [
+    "gradient-transition"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "段窗口重叠",
+    "交叉淡化",
+    "HSL 插值",
+    "radial 迁移",
+    "conic 旋转",
+    "色标组"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/gradient-transition.md",
+  "demo": "references/shots/transition/gradient-transition.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#gradient-transition"
+  ],
+  "wiki": "wiki/cards/gradient-transition.md"
+}

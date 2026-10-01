@@ -1,0 +1,38 @@
+{
+  "name": "text-column-converge",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "双词合拢",
+  "summary_en": "Two words pinned at opposite screen edges hard-swap through options, then slide together exactly once to lock into the final phrase.",
+  "intention": "两词分踞左右像目录页对峙，观众以为只是轮换字幕；直到最后一词 停稳才发现左右其实是同一句话的两半——唯一一次连续合拢把整段 轮换追认为\"悬念铺垫\"。命门是**钉死**：轮换期两词位置一像素不动、 左右屏边距完全相等（原片实测 412 vs 413@1280），任何渐进收缩都会 提前剧透合拢、把揭晓稀释成进度条。合拢只许发生一次，且必须在 最后一词之后——这是收尾揭晓，不是持续动效。",
+  "use": "特性清单收束到产品名/口号的段落（\"NEW × 一串特性 → NEW <产品名>\"式）；发布会式 recap、版本号揭晓",
+  "duration_frames": 16,
+  "duration_text": "轮换 7–16f/词 × 8–9 词 + 合拢 ~36f + 小字后静置；全段约 5–6s",
+  "energy": "中低",
+  "energy_rank": 3,
+  "energy_text": "中低（机器节奏、小字规格清单气质，不是砸字）",
+  "styles": [
+    "text-column-converge"
+  ],
+  "tags": [
+    "typography",
+    "outro"
+  ],
+  "params": [
+    "屏边距",
+    "词停留",
+    "合拢触发",
+    "合拢时长",
+    "咬合步进",
+    "字号",
+    "小字浮现"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/text-column-converge.md",
+  "demo": "references/shots/typography/text-column-converge.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#text-column-converge"
+  ],
+  "wiki": "wiki/cards/text-column-converge.md"
+}

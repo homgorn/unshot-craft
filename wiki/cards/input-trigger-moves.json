@@ -1,0 +1,39 @@
+{
+  "name": "input-trigger-moves",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "输入触发动效",
+  "summary_en": "Two input triggers: a performing cursor, and a key strike used as a hard-cut fuse.",
+  "intention": "发布片的第一人称语法——观众不是在\"看\"产品，是在\"用\"产品：光标 是手、键帽是指尖、触发即叙事。两式共同点：**交互动作当扳机，产品 画面当枪响**。A 是慢扳机——放大光标带性格地滑入点击，镜头以点击点 推近再缓退，有去有回（区别 crash-zoom：慢速、锚定光标、会回来）； C 是引信——假 3D 键帽（⌘K）呼吸悬浮，3f 压扁+底部亮环溢出当引信， 按下引爆 30f 满屏轰鸣，最高潮一帧猛切成整齐静止全景， 按下→爆发→定论。选型：演示交互用 A，开场即高潮用 C。",
+  "use": "发布片的第一人称段落：演示核心交互、开场即高潮；观众\"在用\"而不是\"在看\"产品",
+  "duration_frames": 150,
+  "duration_text": "A ~5s / C ~5s",
+  "energy": "A 中 / C 高",
+  "energy_rank": null,
+  "energy_text": "A 中 / C 高",
+  "styles": [
+    "cursor-performance-punch-in",
+    "keycap-smash-cut"
+  ],
+  "tags": [
+    "opening",
+    "interaction"
+  ],
+  "params": [
+    "A 甩腕",
+    "A 悬停提亮",
+    "A 涟漪",
+    "A 推近",
+    "C 引信压扁",
+    "C 轰鸣",
+    "C 猛切"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/input-trigger-moves.md",
+  "demo": "references/shots/interaction/input-trigger-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#input-trigger-moves"
+  ],
+  "wiki": "wiki/cards/input-trigger-moves.md"
+}

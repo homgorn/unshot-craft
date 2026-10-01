@@ -1,0 +1,36 @@
+{
+  "name": "skeleton-reveal",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "骨架显影",
+  "summary_en": "Content develops in three stages — wobbling doodle placeholders, gray skeleton bars, then rows resolving into avatars and word-by-word text.",
+  "intention": "UI 登场库全是\"整页一次到位\"（飞入/落位/擦出）。本卡把登场拆成 **三级保真度跃迁**：手绘涂鸦（想法）→ 灰条骨架（结构）→ 真实内容 （产品），每次跃迁都是一拍\"变成真的\"的爽点，观众跟着走完\"从草图 到产品\"的叙事弧。骨架→内容的显影借的是加载态语法——用户天天见 skeleton screen，看到灰条就知道\"内容要来了\"，预期免费。与 document-typewriter-reveal 分工：那是**一份文档**被逐块写出来（内容是 主角、要读字）；本卡是**一个界面**逐级变真（结构是主角、字是最后 一级质感）。与 ai-stream-response 分工：那是证据行逐条\"汇入\"（列表 在生长），本卡是已就位的占位\"显影\"（布局早定，保真度在升级）。",
+  "use": "产品 UI 的\"从无到有\"登场叙事；开场后第一次亮产品界面的段落",
+  "duration_frames": 172,
+  "duration_text": "~5.7s（172f：涂鸦 1s + 换真 0.3s + 骨架滚入 1.2s + 推近显影 3s）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（叙事型登场，重点是\"变成真的\"那两次跃迁）",
+  "styles": [
+    "skeleton-reveal"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "煮沸周期",
+    "换真一拍",
+    "骨架滚入",
+    "显影节拍",
+    "逐词进场",
+    "晚半拍"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/skeleton-reveal.md",
+  "demo": "references/shots/ui-entrance/skeleton-reveal.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#skeleton-reveal"
+  ],
+  "wiki": "wiki/cards/skeleton-reveal.md"
+}

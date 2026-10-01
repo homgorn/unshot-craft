@@ -1,0 +1,37 @@
+{
+  "name": "gauge-readout-moves",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "仪表读数动效",
+  "summary_en": "Two instrument reads: a full-range needle self-test and a moving scale that races beneath a fixed pointer.",
+  "intention": "把\"报数值\"做成仪表的身体动作：A 是汽车点火自检——表盘指针先\"唰\"地 甩满全弧（270°）再回落定格真实值，多表错峰成波浪，先亮量程再报数， 开场宣誓感；B 是飞机空速带语法——指针/取景窗钉死画面正中，带刻度的 标尺整体从底下滚过，大数值跳变时刻度带 45px/f 冲刺、末尾 spring 刹车 带回摆过冲，\"世界动、针不动\"，数值大小变成看得见的位移距离。 与 odometer-digit-roll 分工：那是数字在窗里滚，B 是连刻度格线全在平移。",
+  "use": "dashboard 开场仪式/性能指标揭晓；A 多表盘开机感，B 单指标大跳变",
+  "duration_frames": 150,
+  "duration_text": "A 4–5s / B 4–5s",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（机械仪式型）",
+  "styles": [
+    "needle-sweep-selftest",
+    "tape-scroll-fixed-pointer"
+  ],
+  "tags": [
+    "data"
+  ],
+  "params": [
+    "A 甩弧幅度",
+    "A 过冲",
+    "A 错峰",
+    "B 冲刺速度",
+    "B 刹车",
+    "真静止"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/gauge-readout-moves.md",
+  "demo": "references/shots/data/gauge-readout-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#gauge-readout-moves"
+  ],
+  "wiki": "wiki/cards/gauge-readout-moves.md"
+}

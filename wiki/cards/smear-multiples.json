@@ -1,0 +1,35 @@
+{
+  "name": "smear-multiples",
+  "category": "rhythm",
+  "category_en": "Rhythm & Montage",
+  "summary_zh": "拖影分身",
+  "summary_en": "A fast-moving card leaves four countable translucent copies that collapse back into the original at the landing.",
+  "intention": "快速位移的速度感库内标准答案是 CameraMotionBlur（摄影隐喻：快门拖影， 连续的糊）。本卡给第二个答案，动漫演出的 smear frame 传统：残像是 **离散、清晰、可数的**完整副本——观众能数出 4 张卡，读作\"快到留下 分身\"而非\"快到糊掉\"。两者气质完全不同：blur 是实拍级质感，分身是 漫画级趣味；同一次位移二选一，叠用读作渲染错误。分身式还有一个 实用优势：残像里内容仍可辨，适合\"移动的东西本身是信息\"的场景。",
+  "use": "元素高速位移段想要\"漫画式速度感\"而非\"摄影式模糊\"时；与 CameraMotionBlur 二选一",
+  "duration_frames": 12,
+  "duration_text": "元素级技法（移动 12f + 合拢回弹 8f，寄生在位移动作上）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高",
+  "styles": [
+    "smear-multiples"
+  ],
+  "tags": [
+    "rhythm",
+    "effects"
+  ],
+  "params": [
+    "分身数/间隔",
+    "移动速度",
+    "合拢窗口",
+    "收尾"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/rhythm/smear-multiples.md",
+  "demo": "references/shots/rhythm/smear-multiples.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#smear-multiples"
+  ],
+  "wiki": "wiki/cards/smear-multiples.md"
+}

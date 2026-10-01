@@ -1,0 +1,36 @@
+{
+  "name": "bubble-swarm-takeover",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "气泡群幕布",
+  "summary_en": "Pearlescent bubbles drift in and swell until they cover the screen, hiding the scene switch at peak coverage before scattering to reveal the new page.",
+  "intention": "transition-hidden-cut 的前景遮挡式是\"一件东西扫过去的 1–3 帧\"， wipe-transitions 是一条几何边界扫过——都是\"边界\"思维。本卡是\"幕布\" 思维：让一**群**品牌实体花 2 秒飘入前景涨大遮屏，遮蔽峰值藏硬切， 再散开露出新场景。比几何擦除高级的地方在于幕布本身就是品牌资产， 转场时间越长品牌露出越足，反而不嫌慢。命门有二：**峰值必须真遮满** （6 颗巨型气泡按网格钉落点兜底，随机群只管氛围）；**洗白层压在页面 与气泡之间**——页面先被洗掉细节，气泡才接得住全部视线，切换在白纱 后面完成，观众无从对比前后帧。",
+  "use": "章节级换景且品牌世界里有\"实体装饰物\"可当幕布（气泡/花瓣/图标皆可换皮）；转场即品牌露出的段落",
+  "duration_frames": 130,
+  "duration_text": "~4.3s（130f：飘入 ~67f + 峰值藏切 + 散开 ~43f）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（持续群体涌动，无瞬时冲击）",
+  "styles": [
+    "bubble-swarm-takeover"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "峰值帧",
+    "气泡数",
+    "洗白",
+    "景深",
+    "散开",
+    "wobble"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/bubble-swarm-takeover.md",
+  "demo": "references/shots/transition/bubble-swarm-takeover.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#bubble-swarm-takeover"
+  ],
+  "wiki": "wiki/cards/bubble-swarm-takeover.md"
+}

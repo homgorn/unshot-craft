@@ -1,0 +1,36 @@
+{
+  "name": "ui-strip-away-outro",
+  "category": "outro",
+  "category_en": "Outro",
+  "summary_zh": "减法收尾",
+  "summary_en": "After Publish is clicked the editor UI evaporates layer by layer from the edges inward, leaving one button to slide center, grow, and hand off to the wordmark.",
+  "intention": "库内收尾全是\"加法\"：outro-group-photo-launch 元素飞来合影，logo sting 是定住再彩蛋。本卡是唯一的\"减法\"路线——点击引爆全 UI 退场， 黑场只留语义焦点（那颗被点的按钮），把\"发布 = 复杂性归零\"翻译成 动效叙事。命门有二：**蒸发要有秩序**——从外围到中心每 4f 一层、 每层带方向性位移（各自往画外散），乱序或同帧齐灭读作断电故障； **按钮是唯一幸存者且必须迁移**——蒸发期间从工具条角落滑到屏心 放大 1.5 倍、白晕随黑场增强，完成从\"UI 控件\"到\"仪式主角\"的升格， 最后淡出把黑场交给字标。",
+  "use": "\"发布/完成\"语义的 outro；想讲\"一键之后一切复杂性消失\"的产品收尾",
+  "duration_frames": 130,
+  "duration_text": "~4.3s（130f：光标就位 34f → 蒸发 ~40f → 按钮独占 → 字标接棒）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（前段安静操作，中段持续退场，无瞬时冲击）",
+  "styles": [
+    "ui-strip-away-outro"
+  ],
+  "tags": [
+    "outro"
+  ],
+  "params": [
+    "层间错峰",
+    "单层时长",
+    "蒸发顺序",
+    "位移幅度",
+    "按钮迁移",
+    "字标接棒"
+  ],
+  "pitfall_count": 7,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/outro/ui-strip-away-outro.md",
+  "demo": "references/shots/outro/ui-strip-away-outro.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#ui-strip-away-outro"
+  ],
+  "wiki": "wiki/cards/ui-strip-away-outro.md"
+}

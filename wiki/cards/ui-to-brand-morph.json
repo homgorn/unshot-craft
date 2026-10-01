@@ -1,0 +1,39 @@
+{
+  "name": "ui-to-brand-morph",
+  "category": "outro",
+  "category_en": "Outro",
+  "summary_zh": "UI 变品牌",
+  "summary_en": "Two UI-to-brand morphs: an icon flips flat and blooms into a logo mark, and an input field contracts into a capsule as glyphs assemble the logo.",
+  "intention": "品牌收尾库里已有三条路：brand-ink-open 是开场描画压印、 morph-from-primitive 是图元→UI 容器（方向相反）、 outro-group-photo-launch 是元素围拢合影（聚而不变）。本卡补第四条： **产品 UI 元素自己变形成品牌符号**——A 式是图标翻一个身变成 logo （同位实体交换），B 式是全片反复出现的输入框在最后一次发送后集结成 logo 单瓣（多元素落位拼装）。观众看到的不是\"logo 出现了\"，而是 \"刚才用的东西原来就是它\"，因果链本身就是品牌论证。",
+  "use": "品牌收尾/outro 前最后一拍；\"你每天用的那个 UI 就是这个品牌\"的视觉论证",
+  "duration_frames": 130,
+  "duration_text": "A ~4.3s（130f）/ B ~4.7s（140f）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（收尾点睛，一次完整变形讲完）",
+  "styles": [
+    "icon-flip-bloom-logo",
+    "input-morphs-into-logo"
+  ],
+  "tags": [
+    "outro"
+  ],
+  "params": [
+    "A anticipation",
+    "A 翻扁",
+    "A 绽放",
+    "A wordmark",
+    "B 发送反馈",
+    "B morph",
+    "B 三粒落下",
+    "B 落定呼吸"
+  ],
+  "pitfall_count": 7,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/outro/ui-to-brand-morph.md",
+  "demo": "references/shots/outro/ui-to-brand-morph.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#ui-to-brand-morph"
+  ],
+  "wiki": "wiki/cards/ui-to-brand-morph.md"
+}

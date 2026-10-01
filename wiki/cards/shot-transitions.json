@@ -1,0 +1,45 @@
+{
+  "name": "shot-transitions",
+  "category": "transition",
+  "category_en": "Transitions",
+  "summary_zh": "镜头交棒转场",
+  "summary_en": "Six handoff recipes for matching scene energy: flash cut, dark fly-through, focus relay, black title card, whip pan, and mask wipe.",
+  "intention": "库内各镜头卡只管自己的入场和收尾，镜与镜\"怎么接\"一直没有词汇—— 接缝裸切会把逐镜头攒出的电影感一次漏光。公认优秀的发布片 （Linear Releases/Agent，2026-07-11 抽帧逆向）全程没有一次裸切： 换景要么靠深度旅行、要么靠焦点接力、要么靠黑场字卡蓄力。",
+  "use": "任何两镜衔接处（技法卡，分镜阶段排完镜头后逐个接缝选一式）",
+  "duration_frames": null,
+  "duration_text": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+  "energy": "n/a",
+  "energy_rank": null,
+  "energy_text": "n/a（技法卡，不占能量位）",
+  "styles": [
+    "black-card-transition",
+    "dark-tunnel-transition",
+    "focus-handoff-transition",
+    "mask-wipe-real",
+    "portal-wipe-v-2",
+    "whip-brake-real",
+    "whip-pan-real"
+  ],
+  "tags": [
+    "transition"
+  ],
+  "params": [
+    "A flash-cut",
+    "B 暗场滑行",
+    "B 运动方向",
+    "C 焦点交换",
+    "D 黑场字卡",
+    "E 甩镜基本款",
+    "E 甩镜急刹款",
+    "F 穿窗",
+    "F 穿窗纵深款 portal-wipe"
+  ],
+  "pitfall_count": 7,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/transition/shot-transitions.md",
+  "demo": "references/shots/transition/shot-transitions.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#shot-transitions"
+  ],
+  "wiki": "wiki/cards/shot-transitions.md"
+}

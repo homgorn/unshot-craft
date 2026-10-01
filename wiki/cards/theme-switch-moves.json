@@ -1,0 +1,36 @@
+{
+  "name": "theme-switch-moves",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "主题切换动效",
+  "summary_en": "Two theme-change patterns: a diagonal sweep that recolors content in place, and a command-palette ripple with a clear cause and effect.",
+  "intention": "深浅模式切换的两种拍法。A（Notion/Figma/Linear 惯用）：15° 斜向 边界带亮线从左上扫到右下，边界经过处浅色**就地**变深色，同布局 双主题共存一瞬——观众看到的是\"同一个 UI 换肤\"，不是转场。 B（组合变异）：⌘K 面板输入 \"dark\" 回车，面板收缩成一个亮点， 深色涟漪**从该点**荡开扫过全 UI——\"命令引发换肤\"的因果链完整可读。 组合命门：涟漪圆心必须是面板收缩点、起始帧必须是收缩完成帧。",
+  "use": "深色模式/主题功能的叙事段落；同一 UI \"在你眼前变色\"而非切到新场景",
+  "duration_frames": 120,
+  "duration_text": "A 3–4s / B 5–6s",
+  "energy": "A 中 / B 中高",
+  "energy_rank": null,
+  "energy_text": "A 中 / B 中高（组合款有完整因果链）",
+  "styles": [
+    "palette-theme-ripple",
+    "theme-sweep-toggle"
+  ],
+  "tags": [
+    "interaction"
+  ],
+  "params": [
+    "深色版制作",
+    "A 斜边超扫",
+    "A 坐实",
+    "B 因果钉扎",
+    "B 浅色层"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/theme-switch-moves.md",
+  "demo": "references/shots/interaction/theme-switch-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#theme-switch-moves"
+  ],
+  "wiki": "wiki/cards/theme-switch-moves.md"
+}

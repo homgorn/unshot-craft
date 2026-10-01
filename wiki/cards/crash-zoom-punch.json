@@ -1,0 +1,36 @@
+{
+  "name": "crash-zoom-punch",
+  "category": "camera",
+  "category_en": "Camera & Space",
+  "summary_zh": "冲撞变焦",
+  "summary_en": "A six-frame push races from a wide view to a target close-up, ending with either an elastic overshoot or a heavy impact stop.",
+  "intention": "慢推近（spotlight-hero-card）是\"请看\"，急推是\"看这个！\"——一拍之内 从全景砸到特写，视线没有选择余地。落位质感分两款：回弹是弹性 （\"看这个\"），撞停震屏是重量（\"就是它\"），按强调级选。",
+  "use": "功能段\"点名\"镜头——把观众视线一拍按到目标卡/模块上；强调级用撞停",
+  "duration_frames": 11,
+  "duration_text": "约 0.5s 动作 + 前后 hold（动作 6–11f，前 hold ≥30f 建立全景、后 hold ≥45f 读特写）",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（瞬时冲击，非持续高能）",
+  "styles": [
+    "crash-impact-real",
+    "crash-zoom-real"
+  ],
+  "tags": [
+    "camera",
+    "effects"
+  ],
+  "params": [
+    "急推时长",
+    "目标 zoom",
+    "回弹幅度",
+    "震屏包络"
+  ],
+  "pitfall_count": 3,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/camera/crash-zoom-punch.md",
+  "demo": "references/shots/camera/crash-zoom-punch.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#crash-zoom-punch"
+  ],
+  "wiki": "wiki/cards/crash-zoom-punch.md"
+}

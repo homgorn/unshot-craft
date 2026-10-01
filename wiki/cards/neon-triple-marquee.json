@@ -1,0 +1,37 @@
+{
+  "name": "neon-triple-marquee",
+  "category": "outro",
+  "category_en": "Outro",
+  "summary_zh": "三行霓虹跑马灯",
+  "summary_en": "Three rows of outlined neon giants scroll in opposite directions across the full screen, lighting up in turn on a one-third phase offset.",
+  "intention": "一行 marquee 只是网页装饰；三行叠起来、奇偶反向、再让亮度按相位轮流 走，就成了\"主题词在观众眼前列队巡游\"。命门是**明暗轮唱**：任一时刻 只有一行是霓虹主角，其余压暗成细描边背景——三行全亮是灯牌事故， 轮流亮才是 recap。反向对滚制造\"包围感\"：上下行向右、中行向左， 视线被夹在中间，词从两侧源源不断流过，读作\"这三个词说不完\"。",
+  "use": "片尾主题词复读机段落；三连词口号的\"余韵\"拍法（cel-flash-stomp 砸完之后的低一档收尾）；音乐段无旁白铺陈",
+  "duration_frames": 150,
+  "duration_text": "4–5s（demo 150f：10f 淡入 + 循环体 + 20f 淡出）",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（持续流动 + 逐行脉冲，无瞬时冲击）",
+  "styles": [
+    "neon-triple-marquee"
+  ],
+  "tags": [
+    "typography",
+    "outro"
+  ],
+  "params": [
+    "字号/行距",
+    "滚速",
+    "脉冲周期",
+    "亮度区间",
+    "辉光",
+    "淡入淡出"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/outro/neon-triple-marquee.md",
+  "demo": "references/shots/outro/neon-triple-marquee.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#neon-triple-marquee"
+  ],
+  "wiki": "wiki/cards/neon-triple-marquee.md"
+}

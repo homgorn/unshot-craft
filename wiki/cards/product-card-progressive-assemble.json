@@ -1,0 +1,38 @@
+{
+  "name": "product-card-progressive-assemble",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "字段逐个落位",
+  "summary_en": "A product card builds itself field by field as image, title and pills pop in, the old price gets struck through while an accent new price springs out, and highlighter blocks sweep across the copy.",
+  "intention": "一张详情卡直接淡入，观众只看到\"有一张卡\"。逐字段落位则把卡变成一份**正在被填写的 表单**：每个字段各自到位，观众的注意力被牵着走一遍卡的信息结构——图在哪、标题在哪、 价格在哪、正文重点在哪。价格划线降级是全片唯一的语义事件（不是\"出现\"而是\"改变\"）， 所以它被安排在中段最显眼的位置。",
+  "use": "商品/条目详情页的能力展示；\"结构化抽取\"\"自动填充\"\"数据自己长出来\"类叙事的主镜头",
+  "duration_frames": 150,
+  "duration_text": "约 5.0s（150f@30fps）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（连续小事件密集排布，无单点爆发；靠前推保持推进感）",
+  "styles": [
+    "product-card-progressive-assemble"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "字段时间表",
+    "单字段行程",
+    "rise 位移",
+    "pop 起始缩放",
+    "价格降级点",
+    "新价 spring",
+    "高亮刷过",
+    "整卡前推"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/product-card-progressive-assemble.md",
+  "demo": "references/shots/ui-entrance/product-card-progressive-assemble.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#product-card-progressive-assemble"
+  ],
+  "wiki": "wiki/cards/product-card-progressive-assemble.md"
+}

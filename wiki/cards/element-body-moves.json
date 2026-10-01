@@ -1,0 +1,39 @@
+{
+  "name": "element-body-moves",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "元素形变",
+  "summary_en": "Two ways to give interface elements physicality: elastic axial stretch and a contact shadow that separates during lift.",
+  "intention": "库内运动卡全在管\"位置在变\"——飞入、滑动、弹跳，元素本身始终是刚体。 这两式管**身体在变**：A 给速度一个可见的肉身——飞得越快沿运动轴拉得 越长，一块糖稀，落点压扁回弹收正，squash & stretch 的 UI 翻译；B 给 悬浮一个可信的证据——卡抬起时正下方阴影同步放大变淡，纸片离桌， staging 法则给 2.5D 运镜垫的物理台词。与 smear-multiples 的区别：那是 可数残像（离散鬼影），A 是连续拉伸（糖稀不断丝）；与 CameraMotionBlur 的区别：快门拖影是相机的事，拉伸是身体的事，同一元素别叠加。",
+  "use": "给\"位置在变\"之外补\"身体在变\"：高速飞入给速度肉身（A）、卡片点名给悬浮证据（B）；A 配横冲入场，B 配 2.5D 运镜与逐张点名",
+  "duration_frames": 141,
+  "duration_text": "A ~4.7s / B ~5.3s",
+  "energy": "A 中高 / B 低中",
+  "energy_rank": null,
+  "energy_text": "A 中高 / B 低中",
+  "styles": [
+    "axial-stretch",
+    "contact-shadow-lift"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "A 拉伸映射",
+    "A origin/顺序",
+    "A 落点回弹",
+    "A 错峰",
+    "B 抬升幅度",
+    "B 阴影",
+    "B 落地",
+    "收尾"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/element-body-moves.md",
+  "demo": "references/shots/ui-entrance/element-body-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#element-body-moves"
+  ],
+  "wiki": "wiki/cards/element-body-moves.md"
+}

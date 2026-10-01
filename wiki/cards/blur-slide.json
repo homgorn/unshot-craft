@@ -1,0 +1,37 @@
+{
+  "name": "blur-slide",
+  "category": "typography",
+  "category_en": "Typography & Title Cards",
+  "summary_zh": "逐词模糊入场",
+  "summary_en": "Title words rise into place one after another as vertical offset, blur, and opacity converge on a single shared ease, with the subtitle following before the title settles.",
+  "intention": "这是文字 reveal 的**默认解**——没有奇观、没有机械感，只是把词一个个 柔和地放到位。它的专业感全来自一件事：y、blur、opacity 三个通道共用 同一个进度 `p`、同一条缓动，所以词是\"从虚焦里浮出来\"而不是\"滑进来 顺便淡一下\"。当一支片里已经有别的重手法（乱码/翻牌/滚轮），标题就该 用这一卡，让位给主角。",
+  "use": "几乎所有标题/副标题成对出现的场合；产品页首屏文案、章节小标题；需要\"专业但不抢戏\"的默认文字 reveal",
+  "duration_frames": 114,
+  "duration_text": "约 3.8s（114f@30fps）",
+  "energy": "低",
+  "energy_rank": 1,
+  "energy_text": "低（一次性收敛，无峰值无循环）",
+  "styles": [
+    "blur-slide"
+  ],
+  "tags": [
+    "typography"
+  ],
+  "params": [
+    "词间 stagger",
+    "单词入场窗",
+    "y 位移",
+    "blur 通道",
+    "主副错峰",
+    "字号字重",
+    "收尾 hold"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/typography/blur-slide.md",
+  "demo": "references/shots/typography/blur-slide.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#blur-slide"
+  ],
+  "wiki": "wiki/cards/blur-slide.md"
+}

@@ -1,0 +1,63 @@
+# transition-hidden-cut
+
+> One of 157 shot recipe cards in video-shotcraft. Machine index: `wiki/index.json#/cards/transition-hidden-cut`.
+
+## Identity
+
+- **slug**: `transition-hidden-cut` (join key across cards, demos, media and deep links)
+- **category**: `transition` — Transitions / 转场
+- **energy**: `n/a` — arc or n/a, not sortable
+- **suggested duration**: n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划） → not a timed card (technique card)
+- **cross-category tags**: `transition`
+- **upstream source**: references/shots/transition/transition-hidden-cut.md
+
+## Variants (styles)
+
+| letter | style key | duration | family | demo |
+|---|---|---|---|---|
+| A | `invisible-cut` | 54f | B | `demos/transition/transition-hidden-cut/InvisibleCut.tsx` |
+| C | `light-leak-burn` | —f | B | `demos/transition/transition-hidden-cut/LightLeakBurn.tsx` |
+| B | `versus-slam` | —f | B | `demos/transition/transition-hidden-cut/VersusSlam.tsx` |
+
+## What it does
+
+藏切点转场三式——前景遮挡隐形切、对撞开屏、暖色漏光，硬切藏进遮挡/撞击/光峰的 1-3 帧里，观众看不见剪刀
+
+**When to use it.** 两镜衔接处需要"无痕换景"或"仪式感开屏"时（技法卡，与 shot-transitions 六式同层选型）
+
+**Why this shot earns its place.** 与 shot-transitions A 式 flash-cut 同族：flash-cut 用一层白闪盖住硬切， 这三式换了三种"障眼物"——扫过的前景卡片（A）、对撞的撞击帧（B）、 爬到顶峰的漏光（C）。共同原理是魔术误导：观众的眼睛被大动作/强光 吸走的那 1-3 帧里完成硬切，回过神来景已经换了，全程"看不见剪刀"。 flash-cut 是最素的一款；要方向感选 A，要仪式感选 B，要温度选 C。
+
+## Parameters
+
+| parameter | typical value | how to tune |
+|---|---|---|
+| A 横扫 | 卡片 1600x1000 再 scale(1.6)，x 从 -2200→2600 共 14f，bezier(0.3,0,0.7,1)；切点在扫掠中点全遮帧（demo 里 f47） | 中点必须覆盖 -280..2280 糊满 1920 画幅；两端完全出画 |
+| A 糊感 | 全场包 `<CameraMotionBlur shutterAngle={300} samples={12}>` + 卡片自身 blur(8px)/skewX(-v·0.018°) + 4 层手动残影（opacity 0.35→0.07、blur 14px、间隔 0.55f） | 三层糊叠出"贴脸呼啸"；只靠 CameraMotionBlur 糊不满遮挡窗口 |
+| A 带风推挤 | 背景 ±40px：切前 A 被拖向扫掠方向（ease-in），切后 B 从反侧 13f 回稳（ease-out） | 卖"同一镜被风带了一下"的错觉，是无痕感的一半功劳 |
+| B 斜缝几何 | clip-path polygon 斜边约 78°（缝顶 x=1075→缝底 x=845）；两半屏从 ±1200px 以 ease-in(cubic) 10f 对冲到位 | ease-in 加速才有"砸"感；垂直缝读作 PPT 分屏 |
+| B 撞击三件套 | 撞击帧同发：白闪 0.9→0 共 3f + 整机 shake 12px·e^(−t/1.6) 约 5f 收干 + VS 字块 scale 1.6→1 back(2.6) overshoot 6f 压出 | 三件必须同帧起跑，错开一帧就散；震屏幅度须过肉眼阈值（可感性判例） |
+| C 光层 | 3 团径向渐变（#f6c878/#e8a44a/#d98a2b，直径 1500/1950/2400px，blur 90px，mixBlendMode screen）沿右上→左下扫约 70f | 光团偏移沿扫掠方向拖尾排布，避免完美同心的"手电筒感" |
+| C 光强包络 | ease-in 爬升 27f（蓄力）→ 峰值帧藏切 → ease-out 收敛 43f（余温）；峰值叠 8% 全屏暖罩 + 近白热核（opacity=intensity²） | 爬升慢收敛快会读作故障闪光；热核只在临近峰值烧起来 |
+| C 冲淡 | 峰值时页面 filter：contrast 降 45%、brightness 抬 35% | 这是"烧穿"感的来源——光只叠不冲淡，读作贴了张贴纸 |
+
+## Known pitfalls
+
+- demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，
+- C 式是 Q4 光效判例解封后首个入库光效手法——严守 Q4 三约束： _(rules Q4)_
+- A 式遮挡物必须真的全遮：demo 里 1600x1000 的卡要 scale(1.6) 才盖满
+- B 式 VS 字块语义仅适配"对比/对阵"内容——没有两方对峙关系时
+- 转场不叠加（规矩同 shot-transitions）：一个接缝只用一式；
+- 分镜表阶段就逐接缝标注（写进"关键动效"列），帧预算从相邻镜头划（R3） _(rules R3)_
+
+## Card structure
+
+`intention` | `variants` | `params` | `pitfalls` | `impl`
+
+**Implementations**
+- `demos/transition/transition-hidden-cut/InvisibleCut.tsx`
+- `demos/transition/transition-hidden-cut/LightLeakBurn.tsx`
+- `demos/transition/transition-hidden-cut/VersusSlam.tsx`
+
+---
+
+Generated from `platform/db/shotcraft.db` @ `5ddbf521038b`. Do not edit: regenerate with `python platform/wiki/build_wiki.py`.

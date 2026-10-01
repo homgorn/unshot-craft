@@ -1,0 +1,37 @@
+{
+  "name": "outro-group-photo-launch",
+  "category": "outro",
+  "category_en": "Outro",
+  "summary_zh": "发布会合影收场",
+  "summary_en": "Elements from the film assemble around the wordmark as a crane settle, stage light, and gold dust create a launch-event finale.",
+  "intention": "把看过的每个功能各抽一个代表元素叫回来合影，字标压轴登场——观众离场前最后记住的是\"这些东西属于同一个产品\"。规格必须是发布会级：能量推到全片最高。",
+  "use": "outro/品牌收尾；多功能产品的\"全家福\"式终镜",
+  "duration_frames": 145,
+  "duration_text": "约 4.8s（145f）",
+  "energy": "峰值",
+  "energy_rank": 8,
+  "energy_text": "峰值（全片最高点）",
+  "styles": [
+    "outro-group-photo-launch"
+  ],
+  "tags": [
+    "outro"
+  ],
+  "params": [
+    "元素飞入",
+    "飞入缓动",
+    "飞行姿态",
+    "退后排",
+    "crane 运镜",
+    "氛围三件套",
+    "字标"
+  ],
+  "pitfall_count": 3,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/outro/outro-group-photo-launch.md",
+  "demo": "references/shots/outro/outro-group-photo-launch.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#outro-group-photo-launch"
+  ],
+  "wiki": "wiki/cards/outro-group-photo-launch.md"
+}

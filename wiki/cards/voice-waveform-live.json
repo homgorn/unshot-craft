@@ -1,0 +1,37 @@
+{
+  "name": "voice-waveform-live",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "实时声纹",
+  "summary_en": "A recording capsule shows 64 live bars that surge with speech, shrink to a dotted line in pauses, and collapse on submit.",
+  "intention": "库里唯一的波形是 spectrum-morph-ui——那是标题下划线裂成频谱条的 **装饰性**音乐可视化。本卡是**功能性**声纹：\"正在听你说\"的实时 回执。区别在因果：spectrum 跟 BGM 跳、是包装；本卡跟\"用户说话\" 跳、是产品功能本身。说话时波形高耸、停顿时缩成一排点线、历史向左 滚出——观众从波形的起伏读出\"它真的在听\"，一段 6s+ 的画面全靠这份 活性撑住，不需要任何别的内容。与 gauge-readout-moves 分工：仪表是 \"报一个数值\"的机械仪式，本卡是\"持续监听\"的生命体征，没有终值。",
+  "use": "语音输入/AI 助手\"正在听你说\"的功能镜头；无 UI 内容可展示但需要持续活性撑画面的段落",
+  "duration_frames": 150,
+  "duration_text": "~5s（150f：入场 12f + 说 1.4s + 停 0.8s + 说 1.4s + 提交塌缩 0.8s）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（功能性活性，不是炫技）",
+  "styles": [
+    "voice-waveform-live"
+  ],
+  "tags": [
+    "interaction"
+  ],
+  "params": [
+    "条数/间隙",
+    "滚动速率",
+    "说停包络",
+    "音节噪声",
+    "中部权重",
+    "静默钳位",
+    "提交塌缩"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/voice-waveform-live.md",
+  "demo": "references/shots/interaction/voice-waveform-live.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#voice-waveform-live"
+  ],
+  "wiki": "wiki/cards/voice-waveform-live.md"
+}

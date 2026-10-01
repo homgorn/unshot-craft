@@ -1,0 +1,36 @@
+{
+  "name": "stroke-segment-build",
+  "category": "opening",
+  "category_en": "Opening & Brand",
+  "summary_zh": "描边分段构建",
+  "summary_en": "Disconnected title strokes illuminate in a scrambled order and become readable only when the final segments snap into place.",
+  "intention": "《异形》片头判例：标题不是被画出来的，是\"显影\"出来的——拆成离散 笔画段乱序点亮，观众前 70% 时间只看到神秘碎段，最后几段落位的瞬间 突然读出是什么字。\"认出的那一刻\"就是钩子，钩子的强度取决于 不可读期撑多久、钥匙段压多晚。",
+  "use": "开场吊悬念的产品名/大数字揭晓；一支片 ≤1 次；与 type-assembly/draw-svg-trace 分工：那些是\"看着字被组装/描画\"，本卡是\"意义延迟揭晓\"",
+  "duration_frames": 150,
+  "duration_text": "4–5s",
+  "energy": "低起中收",
+  "energy_rank": null,
+  "energy_text": "低起中收（悬念型，落位帧是能量点）",
+  "styles": [
+    "stroke-segment-build"
+  ],
+  "tags": [
+    "opening",
+    "typography"
+  ],
+  "params": [
+    "拆段粒度",
+    "乱序表",
+    "不可读期",
+    "落位脉冲",
+    "未亮段"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/opening/stroke-segment-build.md",
+  "demo": "references/shots/opening/stroke-segment-build.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#stroke-segment-build"
+  ],
+  "wiki": "wiki/cards/stroke-segment-build.md"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "avatar-bracket-carousel",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "对焦框轮换",
+  "summary_en": "A four-corner focus bracket stays locked mid-sentence while a vertical queue of avatars springs through it three times, each one sharpening and growing as it enters the frame and shrinking, dimming and blurring as it leaves.",
+  "intention": "\"我们有设计师、客服、分析师、写手\"列成四行就是一张清单。塞进一句话的一个槽位里， 它变成一个承诺加四次证明：句子不动，只有槽里的人在换。四角对焦框是这个手法的关键 ——它不参与轮换，但它把观众的眼睛钉死在那 92×92 的方框里，所以四次更换才读作 \"同一个位置\"而不是\"四张头像飘过\"。",
+  "use": "\"一个位置，多种角色\"的能力枚举；团队/身份/预设/人格类产品的核心一句话镜头",
+  "duration_frames": 156,
+  "duration_text": "约 5.2s（156f@30fps）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（三次等距切换构成稳定节拍器，对焦框脉冲是唯一装饰性动作）",
+  "styles": [
+    "avatar-bracket-carousel"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "切换点",
+    "切换行程",
+    "步距",
+    "缩放衰减",
+    "透明度衰减",
+    "模糊衰减",
+    "标签衰减",
+    "框脉冲"
+  ],
+  "pitfall_count": 6,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/avatar-bracket-carousel.md",
+  "demo": "references/shots/ui-entrance/avatar-bracket-carousel.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#avatar-bracket-carousel"
+  ],
+  "wiki": "wiki/cards/avatar-bracket-carousel.md"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "chip-lift-to-user-pill",
+  "category": "interaction",
+  "category_en": "Interaction & Feature Demo",
+  "summary_zh": "选中长成药丸",
+  "summary_en": "One chip in a grid hard-cuts to inverted black, the rest fade out in distance order, and the black chip grows rightward into a pill that types out a name and links to a badge.",
+  "intention": "让\"选中\"这件事有**两段完全不同的质感**：选中瞬间是硬的（3 帧台阶化反色， 像真实 UI 的 `:active`），选中之后是软的（药丸生长、逐字打字、绿点点亮）。 其余 chip 按距离交错淡出，是在告诉观众\"注意力从这里开始收拢\"—— 距离排序比时间排序重要，因为它给出了空间上的因果。",
+  "use": "\"从一堆候选里选中并展开这一个\"的交互链路；协作/通讯录/收件人类产品的功能演示；选中→详情的转场",
+  "duration_frames": 150,
+  "duration_text": "约5.0s（150f@30fps）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（选中那一下是硬爆点，之后全是从容的生长与打字）",
+  "styles": [
+    "chip-lift-to-user-pill"
+  ],
+  "tags": [
+    "interaction"
+  ],
+  "params": [
+    "反色时长",
+    "距离间隔",
+    "余项退场",
+    "药丸生长",
+    "逐字打字",
+    "绿点",
+    "连接线",
+    "徽标"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/interaction/chip-lift-to-user-pill.md",
+  "demo": "references/shots/interaction/chip-lift-to-user-pill.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#chip-lift-to-user-pill"
+  ],
+  "wiki": "wiki/cards/chip-lift-to-user-pill.md"
+}

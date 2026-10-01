@@ -1,0 +1,37 @@
+{
+  "name": "steep-tilt-glide",
+  "category": "camera",
+  "category_en": "Camera & Space",
+  "summary_zh": "侧立透视滑行",
+  "summary_en": "A page stands at a steep 60-degree perspective and glides across a fixed camera with speed ghosting while text settles onto the surface mid-flight.",
+  "intention": "把页面立成一堵斜墙：镜头钉死不动，60° 强透视让右缘贴脸、左缘 消失在灭点，页面自己沿自身平面横向滑移——内容像列车车厢一样 依次掠过。命门是**物动镜不动**：perspective/origin/rotY 全程常数， 唯一动的量是页面局部 translateX——镜头一动语义就变成运镜炫技， 这里的戏是\"页面在自我展示\"。角度经三轮收敛为精确 60° （-45°\"不对\"→-53°\"再大一点\"→-60°选中）。",
+  "use": "长页面/多区块 UI 的炫技巡览（内容依次滑过固定机位）；暗场霓虹调性；与贴面运镜卡互补的\"侧掠\"机位",
+  "duration_frames": 120,
+  "duration_text": "4s（120f）单镜；页面越宽越可拉长",
+  "energy": "中高",
+  "energy_rank": 5,
+  "energy_text": "中高（透视炫技+持续运动，但节奏是匀的）",
+  "styles": [
+    "steep-tilt-glide"
+  ],
+  "tags": [
+    "ui-entrance",
+    "camera"
+  ],
+  "params": [
+    "倾斜角",
+    "运动模型",
+    "滑移曲线",
+    "重影",
+    "页面宽度",
+    "悬空贴落"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/camera/steep-tilt-glide.md",
+  "demo": "references/shots/camera/steep-tilt-glide.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#steep-tilt-glide"
+  ],
+  "wiki": "wiki/cards/steep-tilt-glide.md"
+}

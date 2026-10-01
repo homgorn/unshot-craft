@@ -1,0 +1,40 @@
+{
+  "name": "floating-glossy-label-pills",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "高光胶囊横滑",
+  "summary_en": "Four wireframe dashboard panels topped with glossy pills queue up horizontally and step right in three beats, the centered one scaling up sharp while its neighbours shrink, sink and blur at the frame edges.",
+  "intention": "四个功能挨个全屏展示会切四刀，观众每次都要重新定位。走廊式 carousel 只有一个视觉 中心：居中的那块是主角，左右各露一截邻居的边缘告诉观众\"还有更多、这是同一条队列\"。 末段的光标是刻意的：它把叙事从\"系统在自动播放\"交回\"这是一个人在操作\"，为下一拍的 交互镜头做交接。",
+  "use": "多功能横向枚举（Feature A–D 各一屏）；产品概览、功能巡览类段落，也可作落地页 hero 的循环底",
+  "duration_frames": 120,
+  "duration_text": "约 4.0s（120f@30fps）",
+  "energy": "中",
+  "energy_rank": 4,
+  "energy_text": "中（三拍换位构成节拍，无爆点；光标是收尾的注意力交接）",
+  "styles": [
+    "floating-glossy-label-pills"
+  ],
+  "tags": [
+    "ui-entrance"
+  ],
+  "params": [
+    "拍点",
+    "首拍长尾",
+    "换位曲线",
+    "开场余量",
+    "中心距",
+    "邻位缩放",
+    "邻位下沉",
+    "邻位透明/模糊",
+    "光标",
+    "内容坐标系"
+  ],
+  "pitfall_count": 8,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/floating-glossy-label-pills.md",
+  "demo": "references/shots/ui-entrance/floating-glossy-label-pills.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#floating-glossy-label-pills"
+  ],
+  "wiki": "wiki/cards/floating-glossy-label-pills.md"
+}

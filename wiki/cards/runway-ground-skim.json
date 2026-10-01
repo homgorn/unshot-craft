@@ -1,0 +1,37 @@
+{
+  "name": "runway-ground-skim",
+  "category": "ui-entrance",
+  "category_en": "UI Entrance & Showcase",
+  "summary_zh": "跑道掠地贴落",
+  "summary_en": "From a low runway angle, UI cards rain down in overlapping fast drops with zero bounce, then the finished page tilts upright to camera.",
+  "intention": "把界面拍成跑道：低角度透视里 UI 卡片悬空在不同高度，随后按界面 位置顺序（行优先左→右）一阵急雨式贴落——掉落感=干脆利落。 三个命门：**重叠并行**（起点只错 1.5f、下落 9f ⇒ 空中恒有 5–6 张 同时在落，\"几乎一起但有涟漪感\"；串行等待两轮被裁）、**零回弹** （着地即停，弹起被裁）、**快**（下落 9f，15f 版被裁\"快一点\"）。 落齐后页面从躺倒立起（rotateX 66°→0°）、镜头拉远居中，观众从 \"看戏\"回到\"看界面\"。",
+  "use": "仪表盘/卡片流界面的登场（内容\"从天而降完成自己\"）；低角度炫技段后的收正；clickup 系悬空贴落语言的\"齐落\"重型版",
+  "duration_frames": 12,
+  "duration_text": "悬空展示 ~0.4s + 贴落 ~1.2s + 立起转正 ~1.8s；全段 4s",
+  "energy": "高",
+  "energy_rank": 6,
+  "energy_text": "高（掉落感是戏眼，立起转正是收束）",
+  "styles": [
+    "runway-ground-skim"
+  ],
+  "tags": [
+    "ui-entrance",
+    "camera"
+  ],
+  "params": [
+    "起点差",
+    "下落时长",
+    "回弹",
+    "悬浮高度",
+    "空中提亮",
+    "立起段"
+  ],
+  "pitfall_count": 4,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ui-entrance/runway-ground-skim.md",
+  "demo": "references/shots/ui-entrance/runway-ground-skim.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#runway-ground-skim"
+  ],
+  "wiki": "wiki/cards/runway-ground-skim.md"
+}

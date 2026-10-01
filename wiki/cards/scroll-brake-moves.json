@@ -1,0 +1,37 @@
+{
+  "name": "scroll-brake-moves",
+  "category": "data",
+  "category_en": "Data & Metrics",
+  "summary_zh": "滚动刹停",
+  "summary_en": "Two fast-scroll stops: a long page decelerating precisely onto a target, and the same stop paired with a locking reticle.",
+  "intention": "Linear changelog 视频语法：一整年的更新日志作为长卷高速掠过 （糊成色带），指数减速精准急刹停在本次发布那条上，该条抬升离面 高亮、其余退暗——密度感讲\"一直在发货\"，急停讲\"今天这条最大\"。 B 是组合变异：急刹帧**同帧**四个 L 角标从画外飞入咬合锁定停点 条目——急刹的\"哐\"与咬合的\"咔\"叠在同一帧共振（组合命门： 角标起跳帧=列表首停帧，错开退化成两招并置）。",
+  "use": "changelog/发布史/长列表段落：\"一直在发货，今天这条最大\"；要给停点更强打击感用 B",
+  "duration_frames": 150,
+  "duration_text": "A 4–5s / B 5s",
+  "energy": "高开中收",
+  "energy_rank": null,
+  "energy_text": "高开中收（速度对比型）",
+  "styles": [
+    "brake-reticle-lock",
+    "changelog-scroll-brake"
+  ],
+  "tags": [
+    "data",
+    "rhythm"
+  ],
+  "params": [
+    "减速曲线",
+    "blur 驱动",
+    "行高节奏",
+    "停位",
+    "B 共振帧"
+  ],
+  "pitfall_count": 5,
+  "critical_pitfalls": 0,
+  "source": "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/data/scroll-brake-moves.md",
+  "demo": "references/shots/data/scroll-brake-moves.md",
+  "demo_urls": [
+    "https://vincentwei1021.github.io/video-shotcraft/library.html#scroll-brake-moves"
+  ],
+  "wiki": "wiki/cards/scroll-brake-moves.md"
+}
