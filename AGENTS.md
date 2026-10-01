@@ -61,15 +61,42 @@ python platform/query.py cards --energy high --max-frames 60
 python platform/query.py card crash-zoom-punch # params + pitfalls + styles
 python platform/query.py search 弹簧           # works in zh, en and slugs
 python platform/mirror_site.py --media        # live site + mp4 release
-python platform/catalog/validate_schema.py    # catalog DDL applies + FK guard
-python platform/catalog/selftest.py           # catalog ingest invariants, 23 checks
+python platform/bump_upstream.py --check      # has upstream moved?
+python platform/brand_kit.py install shotcraft   # brand over the template
+python platform/catalog/import_cinematique.py     # re-import the catalog corpus
+python platform/catalog/build_briefs.py --lint    # 150 cinematic.brief/1 files
+python platform/catalog/selftest.py           # catalog invariants, 31 checks
 python platform/query.py technique --category lighting
-python platform/query.py optimize kicker-light --tool kling15
+python platform/query.py technique-motions dolly-shot
+python platform/query.py optimize-all dolly-shot   # every tool, every tested flag
 ```
 
-The last two need `F070` (ingest), which is now landed. Until the catalog is
-curated beyond its 20 seed techniques they report the real counts, and an absent
-corpus is a WARN rather than a failure — either corpus must build alone.
+An absent `data/cinematic/` is a WARN, not a failure — either corpus builds alone.
+The catalog is **150 techniques imported from the MIT-licensed `cinematique`
+project**, not authored here; 791 of 1050 cross-tool cells are filled and
+**0 are tested**, because the source matrix records a `FILLED`/`TODO` status and
+no verification column. A bump is `git clone && python
+platform/catalog/import_cinematique.py && git diff`.
+
+## Gates
+
+Every one of these has caught a real defect. `scripts\init.ps1` runs the first
+four and fails if any does.
+
+```powershell
+python platform/doctor.py                     # 0 error / 7 warn / 37 pass
+python platform/catalog/layer_gate.py         # no feature claims done that is not
+python platform/catalog/selftest.py           # 31/31
+python platform/api/selftest.py               # 53/53
+python platform/site/selftest.py              # 92/92, real Chrome
+python platform/wiki/audit_quality.py         # 28/28, 24 craft questions
+python platform/prompts/build_prompts.py --lint
+python platform/site/check_coverage.py        # ru is published at 72.8%
+```
+
+`platform/catalog/layer_gate.py` is the one to run before trusting the ledger: it
+re-runs each passing feature's cited verification and fails if it no longer
+holds. A `verified_by` note is an assertion; running it is evidence.
 
 Set `$env:PYTHONIOENCODING="utf-8"` before any of these on Windows, or CJK
 output prints as `?`. The files themselves are correct UTF-8 — the console is

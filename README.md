@@ -48,8 +48,7 @@ python platform/query.py licenses
 |---|---|
 | tuned parameters from `## 参数表` | 1,057 |
 | pitfalls from `## 已知坑` (3 marked 命门) | 792 |
-| easing/spring/timing extracted from `demos/**/*.tsx` | 1,607 |
-| distinct bezier curves, ranked by usage | 50 |
+| easing/spring/timing extracted from `demos/**/*.tsx` | 1,897 across 13 kinds |
 | aesthetic rules parsed from `references/aesthetic-rules.md` | 27 |
 
 The motion grammar exists only as literals inside the TSX. Nothing upstream

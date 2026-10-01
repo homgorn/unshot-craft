@@ -103,7 +103,7 @@ visible in `gallery_style` rather than silently dropped.
 |---|---|---|
 | `card_param` (参数表) | 1,057 rows | the tuned values and the pass/fail thresholds in "how to tune" |
 | `card_pitfall` (已知坑) | 792 rows, 3 marked 命门 | failure modes with rule citations (R1, Q8, P4…) |
-| `motion_param` | 1,607 occurrences | every `Easing.bezier`, `spring({config})`, `seg()`, `interpolate()` range, `exp()` envelope, extracted from the TSX |
+| `motion_param` | 1,897 occurrences, 13 kinds | every `Easing.bezier`, `spring({config})`, `seg()`, `interpolate()` range, `exp()` envelope, extracted from the TSX |
 | `easing_curve` | 50 distinct curves | ranks the house style: `bezier(0.3,0,0.2,1)` is the de-facto default |
 | `card_search` | 157 blobs | one searchable blob per card pooled across **all** locales |
 

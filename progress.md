@@ -43,11 +43,33 @@ schema, 7 categories and 7 tools seeded, 2 cross-corpus FKs declared and stubbed
     parameter string is only valid for the model version it was written against,
     so `kling15` and a future `kling2` are different tools. The gate's first probe
     used `kling` and hit the NOT NULL on `tool_id`; that is the constraint working.
-11. **33 unfilled matrix cells stay `NULL`.** Same rule as
-    `render.duration_frames` on the 5 upstream technique cards: an untested tool
-    parameter is an untested claim, and a plausible string in that cell is a
-    claim we cannot defend to a client. `doctor.py` will print
-    `filled_cross_tool_cells` so the number is visible rather than assumed.
+11. **259 unfilled matrix cells stay `NULL`, and all 791 filled ones are
+    `tested: no`.** Same rule as `render.duration_frames` on the 5 upstream
+    technique cards: an untested tool parameter is an untested claim, and a
+    plausible string in that cell is a claim we cannot defend to a client.
+    `doctor.py` prints `catalog.matrix` with filled/tested/null side by side,
+    and `catalog.tested_claims_backed` requires a `tested_at` date behind any
+    `tested=1` row — without one we cannot tell a real run from a flag someone
+    set. The tested count is **0** and that is the honest state, not a gap: the
+    source matrix has a `FILLED`/`TODO` status column and no verification column.
+12. **All 150 citations carry `url IS NULL`.** The source lists sources as
+    `Title — Publisher` with no link. `technique_citation.url` was `NOT NULL` and
+    is now nullable, because a fabricated URL beside a real title costs more than
+    a missing citation: a reviewer follows it, finds nothing, and stops trusting
+    every other citation in the row.
+13. **`visual-style` was removed from the category vocabulary rather than
+    populated.** It was always empty — the source corpus has no such group — and a
+    controlled-vocabulary entry nothing can populate makes `--category
+    visual-style` look broken rather than absent. `visual-effects` was added
+    alongside it, because the source has "Visual Effects & Promptable FX" as its
+    own group and squashing it into `visual-style` would have returned rows that
+    are not about visual style.
+14. **The catalog is imported, not authored here.** `data/cinematic/` comes from
+    a separate MIT-licensed project via `platform/catalog/import_cinematique.py`,
+    with a per-file `upstream_sha256` so any row traces to the exact byte it came
+    from. Editing one of those files by hand is a divergence from upstream, not a
+    local decision — a stricter rule than the one that applies to corpora we
+    author. See ADR-0007 for the reversal and what it cost.
 
 ### Relationship to the render blocker
 
@@ -85,16 +107,32 @@ object literals, and TSX motion literals). Output:
 | card→style links | 217 / 218 (only `clipcard-looping` is unlinked, upstream has no card for it) |
 | tuned parameters | 1,057 |
 | pitfalls | 792 (3 marked 命门) |
-| motion parameters extracted from TSX | 1,607 |
-| distinct bezier curves | 50 |
+| motion parameters extracted from TSX | 1,897 across 13 kinds |
 | aesthetic rules | 27 |
-| audio assets audited | 154 |
-| translation strings | 1,092 |
-| locales tracked | 9 |
+| audio assets audited | 154 (5 untraceable, `commercial_ok=0`) |
+| translation strings | 1,298 |
+| locales tracked | 9 (3 built: en, zh, ru) |
+| upstream files indexed | 989 + 150 catalog files |
 
-**The wiki — generated.** `wiki/` has `llms.txt`, `llms-full.txt` (~620 KB),
-`index.json` (~317 KB), 157 card pages (`.md` + `.json` each), 10 domain
-documents and an OpenAPI contract.
+**The catalog — imported.** `data/cinematic/` is 150 techniques from the
+MIT-licensed `cinematique` project, not authored here:
+
+| | |
+|---|---|
+| techniques | 150 across 7 categories |
+| cross-tool matrix cells | 1,050 (7 tools × 150) |
+| cells filled | 791 |
+| cells `NULL` | 259 (37 source rows are `TODO`) |
+| cells **tested against a model version** | **0** |
+| declared motion pairings | 233 across 142 / 150 techniques |
+| common-mistake entries | 450 |
+| citations | 150, **all with `url IS NULL`** |
+| reference videos | 41 (65 MB, committed) |
+
+**The wiki — generated.** `wiki/` has `llms.txt` (13 KB),
+`llms-full.txt` (~1.1 MB), `index.json` (~1.1 MB), 157 card pages
+(`.md` + `.json` each), 150 technique pages, 10 domain documents and a
+13-path OpenAPI contract.
 
 ### Findings that changed the design
 
