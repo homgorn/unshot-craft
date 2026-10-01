@@ -1,0 +1,218 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "gradient-word-sweep",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/typography/gradient-word-sweep.md",
+    "card_sha256": "a4a579e4f3ccbac35aa3a617c5639b3f42c04163b6e67973d6db0639f7979c64",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 20,
+    "duration_frames_hint": null,
+    "duration_verbatim": "扫充 ~15–20f（要快）+ 稳态闪电呼吸 1–2s；全段 2.5–3.5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "high",
+    "energy_label": {
+      "zh": "高",
+      "en": "high"
+    },
+    "energy_verbatim": "高（一词爆点，前后都该让位）",
+    "energy_rationale": "一词爆点，前后都该让位"
+  },
+  "intent_zh": "整句白字里只有关键词被\"通电\"：渐变彩光从左到右快速扫过字符， 像能量注入——扫过的瞬间最亮（波前尾迹），随后衰减到稳态； 填满后字符之间跳起勾连的细闪电，词保持泛光呼吸。三个命门： **快**（扫充 15–20f，慢了读作进度条）、**波前最亮**（刚点亮的 字符效果最强，没有这个梯度就是静态渐变裁切）、**辉光克制** （AE 式多层泛光但别糊成一团，闪电细而稀疏才是点缀）。",
+  "use_zh": "标语里给单个动词/卖点词充能（Supercharged/faster/AI…）；能量高潮段的文字戏；黑场品牌片的口号帧",
+  "summary_zh": "黑底标语里关键词被渐变彩光从左到右快速扫过\"充能\"——波前字符辉光最强向后衰减，填满后字符间勾连细紫红闪电、整词稳态泛光呼吸",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "渐变填充：关键词做双层文字（白/渐变彩），彩层用从左到右推进的"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "mask 揭开；斜切 mask 边缘略糊（~8% 词宽）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "波前尾迹增亮：跟随 mask 前沿一条 ~34% 词宽的增亮带，波前处"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        10
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "辉光最强、向后衰减；填充结束后 ~10f 淡出到稳态"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "辉光：4 层泛光（环境大柔光+中晕+近核+亮核），稳态 opacity"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": [
+        0.55,
+        0.72
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.55–0.72 档（实测：0.75–0.95 档被裁\"泛光感有点强\"）"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "闪电：填满后字符间勾连细闪电，紫红系三层描边（外晕 6/中 2.4/"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "亮核 1.4），mulberry32 种子随机跳位闪烁，稀疏零星（不是持续电弧）"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "禁：填充过程不带跟随移动的光点/星光（实测判例：跟随白色光点读作廉价装饰，删）"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "扫充时长",
+      "typical": "15–20f",
+      "feel": "原片\"速度很快\"；>28f 读作进度条"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "波前增亮带",
+      "typical": "~34% 词宽，波前最亮向后衰减",
+      "feel": "无梯度＝静态渐变；带太宽＝整词一起亮没有\"注入\"感"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "稳态泛光",
+      "typical": "4 层 opacity 0.55/0.55/0.62/0.72",
+      "feel": "0.75+ 档被裁太强；辉光层数<3 读作纯色"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "闪电线宽",
+      "typical": "外 6/中 2.4/核 1.4 @1080p",
+      "feel": "加倍即被裁\"粗\"；颜色偏紫红（magenta 216,60,190 系）"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "闪电频率",
+      "typical": "稀疏零星（同屏 ≤2 道，间歇 >8f）",
+      "feel": "频率高读作电弧故障；实测 demo 仍略密于原片"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "判例三条（用户逐字意见沉淀）：①填充过程禁跟随光点；②闪电",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 type-rhythm-sync/cel-flash-stomp 分工：那些是节拍/砸字；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "关键词外的正文保持纯白静止——全句都动就没有\"只有它通电\"的戏",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "gradient-word-sweep",
+      "variant_letter": null,
+      "upstream_key": "gradient-word-sweep",
+      "demo": "demos/typography/gradient-word-sweep/GradientWordSweep.tsx",
+      "component": "GradientWordSweep",
+      "duration_frames": 30,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

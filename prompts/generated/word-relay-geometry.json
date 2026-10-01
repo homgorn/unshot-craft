@@ -1,0 +1,441 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "word-relay-geometry",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/typography/word-relay-geometry.md",
+    "card_sha256": "b9b00644bf8a001a788eee67ec3f3b18ea8bfe79b3aa5d365e9f83643815673c",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 180,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 6.0s（180f@30fps：三段各 0.36 时长窗，段间重叠 0.04）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（三拍推进 + 全程几何运动 + 背景粒子，无静止帧）",
+    "energy_rationale": "三拍推进 + 全程几何运动 + 背景粒子，无静止帧"
+  },
+  "intent_zh": "三点式利益陈述最容易做成三张字卡硬切。接力的做法是给每个词配一套 **只属于它的几何**：虚线圆是\"在转\"（快）、三圆相扣是\"互相咬合\"（好）、 金属扫光是\"材质硬\"（强）——几何本身就在替形容词做论证。第三个词 留了升格待遇（sheen 扫光 + 收白），因为它是结论。背景 20 颗微尘上浮 把三拍缝成一个连续空间，不然还是三张卡。",
+  "use_zh": "三点式利益陈述（更快/更好/更强）；品牌价值观段落；需要\"一词一世界\"的中段推进",
+  "summary_zh": "三个利益词各带一套专属几何接力——虚线大圆自转收缩 → 三实线圆 trim 依次生长（相位差 0.06）→ 金属 sheen 扫过后一拍收成纯白；旧词缩到 0.86 淡出，新词描边→填充揭示",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三段时段带重叠：`[0, 0.36] / [0.32, 0.68] / [0.64, 1.0]`——每段入场窗"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        13
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.07（≈13f，outCubic），出场窗 0.05（≈9f，inQuad，落在段末），"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "重叠 0.04 是交接而非硬切；末段无出场（收在片尾）"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每词双层文字（56px/800）：`outline` 层 `-webkit-text-stroke:1px #6a7186`"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "+ 透明填充，`fill` 层纯白——**描边先到位，填充后揭示**"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "前两词的填充是横向擦入：`fill.clipPath = inset(-20% (1-fillp)·100% -20% 0)`，"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "inOutCubic",
+      "beziers": [],
+      "raw": "`fillp = seg(t, t0+0.06, t0+0.18, E.inOutCubic)`，同时 outline 透明度"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "降到 0.25（`1 - fillp·0.75`，留一点描边做重影）"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "第一词的虚线圆（r=100、`stroke-dasharray:5 7`）：`scale(lerp(grow,0.4,1))`"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "从 0.4 长到 1，同时 `rotate(-90 + t·30)`——**用全片 t 做自转**，所以它在"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "自己那一段里持续转，不是转完就停；第二词的三实线圆（r=62，x 轴"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "110/0/110）走 SVG trim：`pathLength=1` + `dasharray=1` + `dashoffset`"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "从 1 收到 0，三圆延迟 `d = 0/0.06/0.12` 依次生长，出场时 trim 反向减回去"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "Stronger 的 sheen：`linear-gradient(100deg, …#fff 50%…)` + `background-size:280%`"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "+ `background-clip:text`，`backgroundPosition` 从 100% 扫到 0%"
+    },
+    {
+      "ord": 15,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（窗 t0+0.08→+0.26，inOutCubic），随后 `white = seg(t0+0.27, t0+0.34)`"
+    },
+    {
+      "ord": 16,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "把 sheen 换成纯白 fill 并打 18px 白色辉光"
+    },
+    {
+      "ord": 17,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "出场统一 `scale(lerp(tout, 1, 0.86))` 缩小淡出（**缩小而非放大**，读作"
+    },
+    {
+      "ord": 18,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "\"退场\"不是\"冲出画面\"）；背景 20 颗微尘"
+    },
+    {
+      "ord": 19,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`y = (1 - ((t·sp + ph) % 1))·110 - 5`（%），速度 `sp = 0.5 + rand·0.8` 各异"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 183,
+      "name": "t",
+      "window": null,
+      "from": "t0",
+      "to": "t0 + 0.07",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 63,
+      "raw": "const tin = seg(t, t0, t0 + 0.07, E.outCubic);"
+    },
+    {
+      "style_id": 183,
+      "name": "t",
+      "window": null,
+      "from": "t1 - 0.05",
+      "to": "t1",
+      "ease": "E.inQuad",
+      "concrete": false,
+      "line_no": 64,
+      "raw": "const tout = isLast ? 0 : seg(t, t1 - 0.05, t1, E.inQuad);"
+    },
+    {
+      "style_id": 183,
+      "name": "t",
+      "window": null,
+      "from": "t0 + 0.06",
+      "to": "t0 + 0.18",
+      "ease": "E.inOutCubic",
+      "concrete": false,
+      "line_no": 68,
+      "raw": "const fillp = seg(t, t0 + 0.06, t0 + 0.18, E.inOutCubic);"
+    },
+    {
+      "style_id": 183,
+      "name": "t",
+      "window": null,
+      "from": "t0 + 0.05",
+      "to": "t0 + 0.2",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 70,
+      "raw": "const sh = seg(t, t0 + 0.05, t0 + 0.2, E.outQuad); // 出现（描边→sheen）"
+    },
+    {
+      "style_id": 183,
+      "name": "t",
+      "window": null,
+      "from": "t0 + 0.08",
+      "to": "t0 + 0.26",
+      "ease": "E.inOutCubic",
+      "concrete": false,
+      "line_no": 71,
+      "raw": "const sweep = seg(t, t0 + 0.08, t0 + 0.26, E.inOutCubic); // 扫光位置"
+    },
+    {
+      "style_id": 183,
+      "name": "t",
+      "window": null,
+      "from": "t0 + 0.27",
+      "to": "t0 + 0.34",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 72,
+      "raw": "const white = seg(t, t0 + 0.27, t0 + 0.34, E.outQuad); // 收为纯白"
+    },
+    {
+      "style_id": 183,
+      "name": "t",
+      "window": null,
+      "from": "t0 + 0.01",
+      "to": "t0 + 0.14",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 83,
+      "raw": "const grow = seg(t, t0 + 0.01, t0 + 0.14, E.outCubic);"
+    },
+    {
+      "style_id": 183,
+      "name": "t",
+      "window": null,
+      "from": "t1 - 0.06",
+      "to": "t1",
+      "ease": "E.inQuad",
+      "concrete": false,
+      "line_no": 102,
+      "raw": "seg(t, t1 - 0.06, t1, E.inQuad) * (isLast ? 0 : 1);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "三段时段",
+      "typical": "各 0.36（≈65f），重叠 0.04（≈7f）",
+      "feel": "每词约 2s 是\"读词 + 看几何\"的下限；重叠 <0.02 读作硬切，>0.08 两词同屏打架"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "入/出场窗",
+      "typical": "入 0.07 outCubic / 出 0.05 inQuad",
+      "feel": "出场比入场短是对的（退场要决绝）；出场用 out 曲线会读作\"舍不得走\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "outline→fill",
+      "typical": "窗 0.12（≈22f）inOutCubic，outline 留 0.25",
+      "feel": "留一点描边做重影是质感来源，降到 0 字变扁；窗 >0.25 擦入慢得像加载条"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "虚线圆",
+      "typical": "r=100、`dash 5 7`、scale 0.4→1、自转 `t·30`°",
+      "feel": "自转绑全片 t 所以永不停——这是\"快\"的证据；scale 起点 >0.7 就没有\"长出来\""
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "trim 生长",
+      "typical": "`pathLength=1` + dashoffset 1→0，相位差 0.06",
+      "feel": "相位差是\"依次相扣\"的关键，同时生长读作三个独立圆；窗 0.12 与 fill 同步收敛"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "sheen 扫光",
+      "typical": "`100deg` 渐变、`background-size:280%`、位置 100%→0%",
+      "feel": "280% 保证白带只占字宽一小段（=金属高光）；100% 时整字一起变亮，不是扫光"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "收白",
+      "typical": "`seg(t0+0.27, t0+0.34)` ≈13f + 18px 辉光",
+      "feel": "这一下是全片唯一的\"结论\"待遇；删了三个词就是平级，第三点没有落点"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "字号配色",
+      "typical": "56px/800、描边 `#6a7186`、几何 `#565e78`、底 `#07080c`，微尘 20 颗",
+      "feel": "几何色比描边略暗一档是层级，几何比字亮就抢主角；微尘是把三拍缝成一个空间的胶水，>40 颗读作雪"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**三个词必须是同一句法的三点（demo 都是比较级单词，6–8 字母）**：",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "`-webkit-text-stroke` 是前缀属性：Chromium/WebKit 才有，Firefox 下描边层",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "SVG trim 用的 `pathLength=1` 归一化在部分老版本浏览器上对 `<circle>`",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "出场 trim 是\"入场 trim 减出场 seg\"直接相减：两段窗若靠得太近",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "sheen 层与 fill 层是叠着的两个 DOM：切换靠透明度交叉，若把 `white` 窗",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 6,
+      "text": "第三个词的升格待遇只能给一次：全片三个词都上 sheen 就没有结论感",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "word-relay-geometry",
+      "variant_letter": null,
+      "upstream_key": "word-relay-geometry",
+      "demo": "demos/typography/word-relay-geometry/WordRelayGeometry.tsx",
+      "component": "WordRelayGeometry",
+      "duration_frames": 180,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

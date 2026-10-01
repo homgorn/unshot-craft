@@ -1,0 +1,244 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "slam-entrance-moves",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "ui-entrance",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/slam-entrance-moves.md",
+    "card_sha256": "3e806bbe0df7487d5dc26a8441c28b0eab0bd8ec6913cc5315f7c4d4e1218498",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 22,
+    "duration_frames_hint": null,
+    "duration_verbatim": "单式动作段 6–22f + 冲击余波 ~16f + hold ≥45f",
+    "width": 1920,
+    "height": 1080,
+    "energy": "high",
+    "energy_label": {
+      "zh": "高",
+      "en": "high"
+    },
+    "energy_verbatim": "高",
+    "energy_rationale": null
+  },
+  "intent_zh": "库内入场词汇的力度上限一直是 deck-deal-flyin 的\"发牌\"——快但不重。 本卡补\"砸\"这一档，三种口味：A 是方向感——卡片带鱼眼级夸张透视贴着 镜头甩进来，\"啪\"地弹平，动漫金田流的潇洒；B 是重量感——KPI 卡从 镜头前 2.5 倍大小砸落，圆环+尘点+震屏三件套同帧起爆，体育比分弹窗 的分量；C 是传导感——B 的三件套之上，冲击波前沿扫过左右邻卡时把 它们可见地推开再弹回，\"这一下震到了邻居\"，一件事说清力量大小。 选型按叙事需要：告诉观众\"它来了\"用 A，\"它很重\"用 B，\"它震动了 全场\"用 C。",
+  "use_zh": "主角卡/KPI 卡的重拳入场；impact-feedback 管落位后的反馈，本卡管入场本身就是冲击",
+  "summary_zh": "高能砸入三式——kanada-perspective-snap 金田透视急停、score-slam 比分砸落、impact-burst-kit 落点冲击套件（波及邻卡）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [
+        18
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A kanada-perspective-snap | perspective 300→1500px + rotate3d 58°→0 + scale 1.7→1 甩入 18f，末 4f 过冲 +5° 弹平，长斜影收正 | 单卡潇洒亮相；调性偏动漫/轻快 |"
+    },
+    {
+      "ord": 3,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B score-slam | 卡从 scale 2.5/rotate 5° 六帧 Easing.in(quad) 砸落，落点帧圆环扩散+尘点飞散+震屏同帧 | KPI/比分类重磅数字登场 |"
+    },
+    {
+      "ord": 4,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| C impact-burst-kit | B 三件套 + 冲击波前沿按半径-距离精算扫过邻卡帧，邻卡外推 30px + rotate ±3° 阻尼弹回 | 页面上已有邻居时的\"全场震动\" |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 甩入",
+      "typical": "18f Easing.out(cubic)，translateX -700→0 与透视变形同跑；途中 blur 2px 落定即摘",
+      "feel": "快于 12f 读不到鱼眼畸变，慢于 24f 泄劲"
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 落定",
+      "typical": "rotateY 过冲 +5° 4f 回 0 + 6px 震屏 2f + 斜长影收正常投影",
+      "feel": "\"啪\"在过冲回弹那一下，不在位移结束"
+    },
+    {
+      "ord": 2,
+      "variant": "B",
+      "key": "B 砸落",
+      "typical": "6f Easing.in(quad)（加速砸，不是减速落）",
+      "feel": "ease-out 落地是\"放下\"，ease-in 才是\"砸\""
+    },
+    {
+      "ord": 3,
+      "variant": "B",
+      "key": "B 三件套",
+      "typical": "圆环 80→860px/14f + 尘点 18–30px 飞 160–320px + 震屏 18px 指数衰减 4f",
+      "feel": "原案(720px/10px 尘/8px 震)全档不可感，实渲已 ×1.5–2"
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 解耦命门",
+      "typical": "环/尘的\"扩散\"用 out-cubic、\"消散\"用线性帧时间",
+      "feel": "同用 out-cubic 前段跑太快，刚扩开就淡没"
+    },
+    {
+      "ord": 5,
+      "variant": "C",
+      "key": "C 波及帧",
+      "typical": "前沿过邻卡中心距反解（460px 距 ≈ 落点后 3f）；包络 cos(t/2)·e^(−t/8)，40f 硬钳 0",
+      "feel": "邻卡与主卡同帧动读作整版抖动，晚 3f 才是\"被波及\""
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "收尾",
+      "typical": "全部余波归零后真静止 ≥45f",
+      "feel": "重拳 hold 按平常两倍给（同 beat-cut B 判例）"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "三式都带震屏，震屏族（impact-feedback、montage-rhythm A/C）同一镜头",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "声音强依赖：A 的\"啪\"、B/C 的音爆必须同帧钉（sound-design §4.5），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "C 式邻卡必须先驻场稳定 ≥15f 再被波及——邻卡自己还在入场时被推开，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "与 domino-cascade（montage-rhythm C 式）的区别要守住：domino 是",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "全片砸入 ≤2 次；三次以上每次都响等于都不响（P4）",
+      "critical": false,
+      "rules": "P4"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "P4",
+      "family": "P",
+      "title": "规则：开拍前列产品功能清单（dashboard/详情/论文/周报/品牌）逐一映射镜头，核心功能漏拍等于返工；一种手法（飞入/堆叠/翻页）全片只当一次主角；剪辑自查按\"这个镜头给了什么新信息\"过滤，同一素材/信息全片只出现一次，重复即删。",
+      "check_question": "自检：功能清单每项都有对应镜头吗？有没有两个镜头在用同一种手法当主角、或讲同一件事？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "impact-burst-kit",
+      "variant_letter": "C",
+      "upstream_key": "impact-burst-kit",
+      "demo": "demos/effects/slam-entrance-moves/ImpactBurstKit.tsx",
+      "component": "ImpactBurstKit",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "kanada-perspective-snap",
+      "variant_letter": "A",
+      "upstream_key": "kanada-perspective-snap",
+      "demo": "demos/effects/slam-entrance-moves/KanadaPerspectiveSnap.tsx",
+      "component": "KanadaPerspectiveSnap",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "score-slam",
+      "variant_letter": "B",
+      "upstream_key": "score-slam",
+      "demo": "demos/effects/slam-entrance-moves/ScoreSlam.tsx",
+      "component": "ScoreSlam",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

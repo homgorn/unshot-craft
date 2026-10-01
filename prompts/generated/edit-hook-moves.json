@@ -1,0 +1,150 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "edit-hook-moves",
+  "category": "outro",
+  "category_label": {
+    "en": "Outro",
+    "zh": "收尾",
+    "ru": "Финал"
+  },
+  "tags": [
+    "outro"
+  ],
+  "source": {
+    "card": "references/shots/outro/edit-hook-moves.md",
+    "card_sha256": "591f451c24b182eebf3bf893c13ceff7483fe1a03161d78fa970ec240c5b9638",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "~5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "低→瞬时中→低",
+    "energy_rationale": null
+  },
+  "intent_zh": "库内声画卡管的都是\"画面上的事\"；这一式管**时间线本身的修辞**—— 终点的反悔：收黑→logo 淡入定住（观众以为结束）→突然 12f UI 特写 彩蛋硬切插入→切回 logo 收尾，预告片 button ending，留最后一个钩子。 拿观众的\"已经结束了\"的预期开玩笑。",
+  "use_zh": "片尾收束（全片 ≤1 次）",
+  "summary_zh": "logo-sting-button 片尾钩子——片尾 logo 定住后突插 12f 彩蛋再收，预告片 button ending",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "单式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "单式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "单式选型",
+      "window": null,
+      "frame_hints": [
+        10,
+        12,
+        30,
+        60
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B logo-sting-button | 收黑 6f→logo 入场 10f（opacity+scale 0.96→1）→定住 30f→彩蛋 12f 硬切插入→切回 logo 真静止 ≥60f | 片尾；正片收束后再给一记 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "彩蛋时长",
+      "typical": "12f 级，内含 tick 圆点只亮第 4–5f（2f，条件挂载）",
+      "feel": "长于 20f 就不是\"眨眼\"是一个镜头"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "彩蛋构图",
+      "typical": "面板 translate+scale(2.4) 特写按钮行，平移量把 sidebar 完全推出画面",
+      "feel": "彩蛋里露出旧构图残边读作切错了"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "像素级一致",
+      "typical": "logo 段 interpolate 全 clamp 到终值，彩蛋前后 logo 共用同一分支渲染",
+      "feel": "硬切回来 logo 跳 1px 都读作抖动"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "剪辑方式",
+      "typical": "全程硬切分支渲染（frame 区间 return 不同子树），无交叉溶解",
+      "feel": "节奏靠剪不靠淡；任何溶解都泄劲"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "全片 ≤1 次且只在片尾——中段用 button ending 变成故障，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "彩蛋内容必须是全片未见的新特写——复用旧镜头读作剪辑失误",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "logo-sting-button",
+      "variant_letter": "B",
+      "upstream_key": "logo-sting-button",
+      "demo": "demos/outro/edit-hook-moves/LogoStingButton.tsx",
+      "component": "LogoStingButton",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

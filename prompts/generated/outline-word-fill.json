@@ -1,0 +1,474 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "outline-word-fill",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/typography/outline-word-fill.md",
+    "card_sha256": "9573a7d752e9486e25730c0c8f6182c6ee02a5261e0c40f4b47df6c8ff09c9d3",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 75,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 2.5s（75f@30fps，短促单拍）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "high",
+    "energy_label": {
+      "zh": "高",
+      "en": "high"
+    },
+    "energy_verbatim": "高（3.2 倍收缩 + 瞬时点亮，短时高冲击）",
+    "energy_rationale": "3.2 倍收缩 + 瞬时点亮，短时高冲击"
+  },
+  "intent_zh": "一个词要打成钉子，靠的不是慢慢淡入而是**两次落定**：先是巨大空心字 急速收缩到位（这是尺寸的落定），再是描边在一帧内变实心白（这是质感的 落定）。中间那 1.5s 的虚线圆收缩与水平虚线内伸是\"瞄准\"过程——技术 制图语汇，让点亮那一下读作\"确认\"。填充**必须是瞬时**的：慢扫填充会把 钉子变成缓慢的美化动画。",
+  "use_zh": "单词式利益点/口号的重锤一拍；节奏卡点上的\"钉子\"镜；深底品牌片的强调帧",
+  "summary_zh": "空心词（1px 灰描边、500 字重）从 3.2 倍急缓收缩落位，虚线大圆随后从 2.8 倍收到字周围并缓慢自转，左右水平虚线从画框边缘内伸；描边先微微增亮，实心白在 0.6 帧内瞬间点亮，一闪辉光即定格",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": [
+        0.05,
+        0.19
+      ],
+      "frame_hints": [
+        14
+      ],
+      "ease": "outCubic",
+      "beziers": [],
+      "raw": "空心字急缓收缩：`zoom = seg(t, 0.05, 0.19, E.outCubic)`（约 4f→14f，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": [
+        0.05,
+        0.14
+      ],
+      "frame_hints": [
+        10
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "仅 10f），`scale(lerp(zoom, 3.2, 1))`；同期 `born = seg(t, 0.05, 0.14)`"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        10
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "淡入——**收缩窗只 10f**，快到几乎是一次冲击"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "双层字：`outline`（`color:transparent` + `-webkit-text-stroke:1px #565b63`）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "与 `solid`（纯白，初始 opacity 0）叠放，48px / **500 字重**"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（中等字重，不是标题的 800——空心字太粗会糊成块）"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "虚线大圆（SVG r=88、`dasharray:6 8`）：出现 `cin = seg(0.16, 0.3)`，"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outCubic",
+      "beziers": [],
+      "raw": "收缩 `shrink = seg(0.16, 0.76, E.outCubic)` 从 2.8 倍收到 1——"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        45
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "收缩窗 45f，横跨大半片**，是全片最慢的一条曲线；同时 `rotate(t·18)`"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "全程缓慢自转"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outCubic",
+      "beziers": [],
+      "raw": "左右水平虚线（`dasharray:5 7`）：`ext = seg(0.5, 0.72, E.outCubic)`，x2 从"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "±240 向内推进 144（画框边缘 → 圆边），透明度同步等于 ext；随后"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": [
+        0.742,
+        0.762
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "瞬时填充** `pop = seg(t, 0.742, 0.762)`——窗仅 0.02（约 0.6 帧），"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "solid 与 outline 透明度硬交叉，视觉上是硬切"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outQuad",
+      "beziers": [],
+      "raw": "一闪即逝的辉光：`flash = pop · (1 - seg(0.762, 0.86, E.outQuad))`，"
+    },
+    {
+      "ord": 15,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`0 0 flash·16px rgba(255,255,255,.45)`，约 7f 内衰完后定格纯白"
+    },
+    {
+      "ord": 16,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outQuad",
+      "beziers": [],
+      "raw": "描边预热：`bright = seg(0.66, 0.73, E.outQuad)`，灰度 86→145 —— 点亮前"
+    },
+    {
+      "ord": 17,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "先亮一档，给那 0.6 帧的硬切一个\"充能\"前奏；底层 14 颗静态微尘"
+    },
+    {
+      "ord": 18,
+      "heading": "动效核心",
+      "window": [
+        0.06,
+        0.2
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（不动，随机位置 + 0.06–0.2 透明度）"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 162,
+      "name": "t",
+      "window": [
+        0.05,
+        0.14
+      ],
+      "from": "0.05",
+      "to": "0.14",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 22,
+      "raw": "const born = seg(t, 0.05, 0.14, E.outCubic);"
+    },
+    {
+      "style_id": 162,
+      "name": "t",
+      "window": [
+        0.05,
+        0.19
+      ],
+      "from": "0.05",
+      "to": "0.19",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 23,
+      "raw": "const zoom = seg(t, 0.05, 0.19, E.outCubic);"
+    },
+    {
+      "style_id": 162,
+      "name": "t",
+      "window": [
+        0.66,
+        0.73
+      ],
+      "from": "0.66",
+      "to": "0.73",
+      "ease": "E.outQuad",
+      "concrete": true,
+      "line_no": 25,
+      "raw": "const bright = seg(t, 0.66, 0.73, E.outQuad);"
+    },
+    {
+      "style_id": 162,
+      "name": "t",
+      "window": [
+        0.16,
+        0.3
+      ],
+      "from": "0.16",
+      "to": "0.3",
+      "ease": "E.outQuad",
+      "concrete": true,
+      "line_no": 28,
+      "raw": "const cin = seg(t, 0.16, 0.3, E.outQuad);"
+    },
+    {
+      "style_id": 162,
+      "name": "t",
+      "window": [
+        0.16,
+        0.76
+      ],
+      "from": "0.16",
+      "to": "0.76",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 29,
+      "raw": "const shrink = seg(t, 0.16, 0.76, E.outCubic);"
+    },
+    {
+      "style_id": 162,
+      "name": "t",
+      "window": [
+        0.5,
+        0.72
+      ],
+      "from": "0.5",
+      "to": "0.72",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 31,
+      "raw": "const ext = seg(t, 0.5, 0.72, E.outCubic);"
+    },
+    {
+      "style_id": 162,
+      "name": "t",
+      "window": [
+        0.742,
+        0.762
+      ],
+      "from": "0.742",
+      "to": "0.762",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 33,
+      "raw": "const pop = seg(t, 0.742, 0.762);"
+    },
+    {
+      "style_id": 162,
+      "name": "t",
+      "window": [
+        0.762,
+        0.86
+      ],
+      "from": "0.762",
+      "to": "0.86",
+      "ease": "E.outQuad",
+      "concrete": true,
+      "line_no": 35,
+      "raw": "const flash = pop * (1 - seg(t, 0.762, 0.86, E.outQuad));"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "收缩",
+      "typical": "`scale 3.2 → 1`，窗 10f，outCubic",
+      "feel": "3.2 倍是\"从脸前退开\"的量；<2 倍读作普通缩放；窗 >20f 就成了缓慢 zoom，冲击全失"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "字重字号",
+      "typical": "48px / **500** / `letter-spacing:.5px`，占画宽约三成",
+      "feel": "空心字上 700+ 会让 1px 描边包住一大块空白，读作气球字；500 是空心字的甜点"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "描边",
+      "typical": "`1px #565b63`，点亮前预热到灰度 145",
+      "feel": "1px 细描边是\"制图\"语汇；2px+ 变涂鸦；预热那一档删了硬切显得没由来"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "虚线圆",
+      "typical": "r=88、`dash 6 8`、scale 2.8→1（45f）、自转 `t·18`°",
+      "feel": "45f 慢收缩是全片的\"呼吸\"，与 10f 的字收缩形成快慢对比；窗压到 20f 两者撞在一起"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "水平虚线",
+      "typical": "`dash 5 7`，从 ±240 内伸 144，窗 0.5→0.72",
+      "feel": "内伸终点要停在圆边（不进圆内）；伸满全宽读作十字准星，过头了"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "瞬时填充",
+      "typical": "`seg(0.742, 0.762)`（≈0.6f）",
+      "feel": "**这一下是全卡的目的**：任何形式的慢扫（>3f）都会把钉子降级成美化动画"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "辉光",
+      "typical": "峰值 16px，`rgba(255,255,255,.45)`，7f 衰完",
+      "feel": "一闪即逝才像\"点亮\"；持续辉光读作发光字体，质感立刻廉价"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "微尘",
+      "typical": "14 颗，静态不动",
+      "feel": "静态是对的（本卡只 2.5s，动尘会抢戏）；数量 >25 底噪太脏"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**只适合单个短词（demo `Faster`，6 字母）**：字号与虚线圆半径是写死的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "`-webkit-text-stroke` 是前缀属性，Chromium/WebKit 才生效；Firefox 下",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "瞬时填充窗 `0.02` 在 75f 片长下不足一帧：这是**故意的**（要的就是硬切），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "时间窗注释里的秒数（4.83→5.15s 等）是原片时间轴的残留，与本卡",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "深底专用：`#050505` 底 + 白描边 + 辉光是效果的全部；浅底上空心字",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 6,
+      "text": "声音强依赖：点亮那一帧必须有一记短促重音（金属/开关/低频撞击），",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "outline-word-fill",
+      "variant_letter": null,
+      "upstream_key": "outline-word-fill",
+      "demo": "demos/typography/outline-word-fill/OutlineWordFill.tsx",
+      "component": "OutlineWordFill",
+      "duration_frames": 75,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

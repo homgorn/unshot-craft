@@ -1,0 +1,244 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "neon-triple-marquee",
+  "category": "outro",
+  "category_label": {
+    "en": "Outro",
+    "zh": "收尾",
+    "ru": "Финал"
+  },
+  "tags": [
+    "typography",
+    "outro"
+  ],
+  "source": {
+    "card": "references/shots/outro/neon-triple-marquee.md",
+    "card_sha256": "870ec36be87a897d547a4a344f76523f9468ade5d033e1bde993b6859ed9348f",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "4–5s（demo 150f：10f 淡入 + 循环体 + 20f 淡出）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（持续流动 + 逐行脉冲，无瞬时冲击）",
+    "energy_rationale": "持续流动 + 逐行脉冲，无瞬时冲击"
+  },
+  "intent_zh": "一行 marquee 只是网页装饰；三行叠起来、奇偶反向、再让亮度按相位轮流 走，就成了\"主题词在观众眼前列队巡游\"。命门是**明暗轮唱**：任一时刻 只有一行是霓虹主角，其余压暗成细描边背景——三行全亮是灯牌事故， 轮流亮才是 recap。反向对滚制造\"包围感\"：上下行向右、中行向左， 视线被夹在中间，词从两侧源源不断流过，读作\"这三个词说不完\"。",
+  "use_zh": "片尾主题词复读机段落；三连词口号的\"余韵\"拍法（cel-flash-stomp 砸完之后的低一档收尾）；音乐段无旁白铺陈",
+  "summary_zh": "三行对向霓虹跑马灯 recap——BETTER/FASTER/STRONGER 空心描边巨字上中下排满全屏，奇偶行反向匀速无限横滚，三行按 1/3 相位轮流亮起，结尾整组淡出",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "无缝回绕：副本按固定 unitW 等距绝对定位，`(frame*speed) % unitW`"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "取模平移——匀速 linear（marquee 类是库内 linear 豁免项）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "空心描边字：`-webkit-text-stroke`，color transparent；亮度脉冲"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "同时驱动三件事——描边宽 5→8px、opacity 0.35→1、双层 drop-shadow"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "辉光（8→30px + 20→70px）——只调 opacity 不调辉光读不出\"霓虹通电\""
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        15,
+        45
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "轮唱相位：周期 45f，行间相位差 15f（周期/3），余弦软包络且每行"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "只占周期前 1/3 亮、后 2/3 归零——保证\"一亮俩暗\"永远成立"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三行配色蓝/粉/琥珀（#4d9fff/#ff4dd2/#ffb347），深底 #050308；"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "中行反向且略快（14/17/14 px/f）——同速对滚读作镜像，破掉"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "词尾加分隔点（•）撑词间距，unitW = 估宽 + 1.3 倍字号空隙"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "字号/行距",
+      "typical": "300px，行距 350px 排满 1080",
+      "feel": "行间留白 >80px 读作三条横幅广告而非一面词墙"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "滚速",
+      "typical": "14/17/14 px/f，中行反向",
+      "feel": ">25 读不清词只见光带；三行同速同向读作整版平移"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "脉冲周期",
+      "typical": "45f，相位差 15f",
+      "feel": "周期 <30f 三行抢闪读作故障；>70f 轮唱感断掉"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "亮度区间",
+      "typical": "opacity 0.35→1 + stroke 5→8px",
+      "feel": "暗态 <0.25 暗行消失，\"三行\"结构丢了"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "辉光",
+      "typical": "双层 drop-shadow，亮态 30/70px",
+      "feel": "单层或 <20px 读作普通描边字不读作霓虹"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "淡入淡出",
+      "typical": "入 10f / 出 20f 整组 opacity",
+      "feel": "循环体无始无终，掐头去尾全靠这两端；硬切进出读作素材没铺满"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 page-waterfall-wall 分工：那卡是页面截图纵向瀑布做\"内容体量感\"，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 outro-group-photo-launch 分工：全家福是峰值终镜（元素合影+发布会收场），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "与 cel-flash-stomp 同吃\"三连词口号\"文案：那卡逐词砸（高能宣告），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "副本数按 `ceil(1920/unitW)+3` 留冗余——短词（≤4 字符）unitW 小，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "实战品牌色版：三行可统一品牌色靠明暗区分，但辉光对比须 ≥ demo 的",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "neon-triple-marquee",
+      "variant_letter": null,
+      "upstream_key": "neon-triple-marquee",
+      "demo": "demos/outro/neon-triple-marquee/NeonTripleMarquee.tsx",
+      "component": "NeonTripleMarquee",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

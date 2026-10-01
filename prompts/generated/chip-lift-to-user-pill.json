@@ -1,0 +1,423 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "chip-lift-to-user-pill",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/chip-lift-to-user-pill.md",
+    "card_sha256": "9ec3169bd8450804cac2f829008afb5d8fe88cbe84af39af4228b6e967f96cc3",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约5.0s（150f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（选中那一下是硬爆点，之后全是从容的生长与打字）",
+    "energy_rationale": "选中那一下是硬爆点，之后全是从容的生长与打字"
+  },
+  "intent_zh": "让\"选中\"这件事有**两段完全不同的质感**：选中瞬间是硬的（3 帧台阶化反色， 像真实 UI 的 `:active`），选中之后是软的（药丸生长、逐字打字、绿点点亮）。 其余 chip 按距离交错淡出，是在告诉观众\"注意力从这里开始收拢\"—— 距离排序比时间排序重要，因为它给出了空间上的因果。",
+  "use_zh": "\"从一堆候选里选中并展开这一个\"的交互链路；协作/通讯录/收件人类产品的功能演示；选中→详情的转场",
+  "summary_zh": "网格里的目标 chip 先 3 帧硬切反色成黑底白字，其余 chip 按到它的曼哈顿距离交错淡出缩小；黑 chip 左缘锚定向右生长成药丸，内部逐字打出人名并点亮绿点，再拉一条 1px 连接线接到圆形徽标",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "4×3 网格（chip 40×24、间距 10/9），目标位于第 2 列第 2 行，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "选中前先 `appendChild` 提到最上层"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**反色硬切**：`a = seg(0.04→0.085, linear)` 再台阶化成"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`a<0.34 ? 0 : a<0.67 ? 0.5 : 1`——只有 3 个取值，得到 3 帧硬切感；"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "背景 `#fff→INK`、描边 `LINE→INK`、文字 `TXT→#fff` 同步跳变"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**距离交错淡出**：其余 chip 按曼哈顿距离 `|Δcol|+|Δrow|`，"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`d0 = 0.10 + dist*0.022`，各 0.075 走完（outQuad），"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "opacity 1→0 + `scale 1→0.9`"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**左缘锚定生长**：`g = seg(0.26→0.44, outCubic)` 驱动 width 40→190px，"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`left` 不变——生长方向单一，读作\"展开\"而非\"移动\""
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "人名逐字：以 `g` 为自变量（不是 t），字符 `0.18 + i*0.062` 起、"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "各 0.05 走完，`translateY 2→0`；原 2 字母标签在 `g*5` 内先撤掉"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "绿点 `#35D07F` + `0 0 8px` 辉光，在 `g` 的 0.85→1 段 outBack 弹出，"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`left = w − 15` 始终吸在药丸右端"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "连接线 `0.47→0.57` outQuad 从 0 拉到 90px → 徽标 `0.56→0.63`"
+    },
+    {
+      "ord": 15,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "scale 0.8→1 淡入 → 字幕 `0.6→0.66` 出现并逐词加深到 0.92"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 70,
+      "name": "t",
+      "window": [
+        0.04,
+        0.085
+      ],
+      "from": "0.04",
+      "to": "0.085",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 62,
+      "raw": "const a = seg(t, 0.04, 0.085, E.linear);"
+    },
+    {
+      "style_id": 70,
+      "name": "t",
+      "window": [
+        0.26,
+        0.44
+      ],
+      "from": "0.26",
+      "to": "0.44",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 66,
+      "raw": "const g = seg(t, 0.26, 0.44, E.outCubic);"
+    },
+    {
+      "style_id": 70,
+      "name": "g",
+      "window": [
+        0.85,
+        1.0
+      ],
+      "from": "0.85",
+      "to": "1",
+      "ease": "E.outBack",
+      "concrete": true,
+      "line_no": 68,
+      "raw": "const dq = seg(g, 0.85, 1, E.outBack);"
+    },
+    {
+      "style_id": 70,
+      "name": "t",
+      "window": [
+        0.47,
+        0.57
+      ],
+      "from": "0.47",
+      "to": "0.57",
+      "ease": "E.outQuad",
+      "concrete": true,
+      "line_no": 71,
+      "raw": "const cw = seg(t, 0.47, 0.57, E.outQuad);"
+    },
+    {
+      "style_id": 70,
+      "name": "t",
+      "window": [
+        0.56,
+        0.63
+      ],
+      "from": "0.56",
+      "to": "0.63",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 72,
+      "raw": "const bp = seg(t, 0.56, 0.63, E.outCubic);"
+    },
+    {
+      "style_id": 70,
+      "name": "t",
+      "window": [
+        0.6,
+        0.66
+      ],
+      "from": "0.6",
+      "to": "0.66",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 73,
+      "raw": "const capShow = seg(t, 0.6, 0.66);"
+    },
+    {
+      "style_id": 70,
+      "name": "t",
+      "window": [
+        0.6,
+        0.92
+      ],
+      "from": "0.6",
+      "to": "0.92",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 74,
+      "raw": "const capInn = seg(t, 0.6, 0.92);"
+    },
+    {
+      "style_id": 70,
+      "name": "t",
+      "window": null,
+      "from": "d0",
+      "to": "d0 + 0.075",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 93,
+      "raw": "const p = seg(t, d0, d0 + 0.075, E.outQuad);"
+    },
+    {
+      "style_id": 70,
+      "name": "g",
+      "window": null,
+      "from": "0.18 + i * 0.062",
+      "to": "0.18 + i * 0.062 + 0.05",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 186,
+      "raw": "const p = seg(g, 0.18 + i * 0.062, 0.18 + i * 0.062 + 0.05, E.outQuad);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "反色时长",
+      "typical": "t 0.04→0.085，台阶化成 3 档",
+      "feel": "**不要给它缓动**：连续插值读作\"渐变高亮\"，台阶才读作按下"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "距离间隔",
+      "typical": "0.022 / 曼哈顿距离",
+      "feel": "按 index 排序也能错峰，但按距离才有\"从选中点扩散\"的空间因果"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "余项退场",
+      "typical": "各 0.075、opacity→0 + scale→0.9",
+      "feel": "只淡出不缩小会显得\"被擦掉\"；缩到 0.9 才像退到后面"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "药丸生长",
+      "typical": "width 40→190px，t 0.26→0.44 outCubic，左缘锚定",
+      "feel": "双向生长（居中扩张）会把它读成弹窗，不是同一个 chip 长大"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "逐字打字",
+      "typical": "以 g 为自变量，间隔 0.062、各 0.05",
+      "feel": "挂在 g 上而不是 t 上：改生长时长时打字节奏自动跟随"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "绿点",
+      "typical": "7px + 0 0 8px 辉光，g 的 0.85→1 段 outBack",
+      "feel": "必须在生长收尾才亮：早了就成了\"已在线\"，不是\"刚接上\""
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "连接线",
+      "typical": "0→90px，t 0.47→0.57 outQuad",
+      "feel": "线要在药丸完全定型后才起笔，否则读作药丸在被拽"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "徽标",
+      "typical": "26px，0.56→0.63 outCubic，scale 0.8→1",
+      "feel": "与连接线抵达重叠 0.01，才有\"线到即物到\"的交棒"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "目标 chip 必须在动画前提到 DOM 最上层，否则生长时被右侧 chip 盖住",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "药丸内的人名容器 `left:13px` 是按 24px 高的 chip 配的内边距；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "绿点的 `left = w − 15` 每帧重算——写死坐标后一改 PW1 就飞出药丸",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "连接线与徽标的坐标全部基于 `PX + PW1`（药丸终态右缘），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "占位内容：12 个双字母标签 + 人名 \"Casey Doe\" + 字幕",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "chip-lift-to-user-pill",
+      "variant_letter": null,
+      "upstream_key": "chip-lift-to-user-pill",
+      "demo": "demos/interaction/chip-lift-to-user-pill/ChipLiftToUserPill.tsx",
+      "component": "ChipLiftToUserPill",
+      "duration_frames": 150,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

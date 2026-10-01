@@ -1,0 +1,229 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "cursor-flyover",
+  "category": "camera",
+  "category_label": {
+    "en": "Camera & Space",
+    "zh": "运镜与空间",
+    "ru": "Камера и пространство"
+  },
+  "tags": [
+    "camera"
+  ],
+  "source": {
+    "card": "references/shots/camera/cursor-flyover.md",
+    "card_sha256": "9acb7525c27f23d8e20d610dbb412edb62fefe4c2d376678e0594b49d083b426",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 180,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 6.0s（180f@30fps；俯瞰 0–1.2s · 四步各 0.7s 过渡 + 0.5s 停留）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（匀速巡航，节奏靠点击涟漪打点）",
+    "energy_rationale": "匀速巡航，节奏靠点击涟漪打点"
+  },
+  "intent_zh": "替代\"四个功能四段剪辑\"的省镜方案：一个连续相机把四个角串成一条参观动线，光标是观众的注意力代理——它到哪、点哪，观众就看哪。空间连续让功能之间的位置关系也被顺带记住。",
+  "use_zh": "单页产品的功能巡览：一镜带观众看完四个功能区，光标当\"导游手指\"",
+  "summary_zh": "整页俯瞰淡入后，相机依次飞到四个角落 zoom-in 特写，SVG 光标同步跟到位指点并留下点击涟漪",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "相机是查表步进：CAM[0] 俯瞰（scale 0.8 居中）→ 四角特写（scale 1.72，tx/ty 各角），五通道 `tx/ty/s/cx/cy` 用 `acc` + inOutCubic 插值"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "变换公式 `translate(50-tx*s%, 50-ty*s%) scale(s)`——tx/ty 是\"相机对准点\"，改表即换巡览路线"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "四段窗口 `[0.20,0.32][0.40,0.52][0.60,0.72][0.79,0.91]`：过渡 0.12 + 停留 0.08，等长节奏像\"参观脚步\""
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "光标（SVG 箭头 + 投影）坐标 cx/cy 与相机同表同插值——**相机和光标是一个系统**，永远同时到位；光标 `scale(1/s)` 抵消画面缩放保持视觉等大"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每段落位瞬间（WIN[i][1] 起 0.055）触发点击涟漪：26px 圆环从 0.3 扩到 1.9 倍并淡出，光标头同拍闪白"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "开场 0–0.14 整页从 blur 5px 淡入聚焦"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 4,
+      "name": "t",
+      "window": null,
+      "from": "kf.at[0]",
+      "to": "kf.at[1]",
+      "ease": "ease",
+      "concrete": false,
+      "line_no": 17,
+      "raw": "const u = seg(t, kf.at[0], kf.at[1], ease);"
+    },
+    {
+      "style_id": 4,
+      "name": "t",
+      "window": [
+        0.0,
+        0.14
+      ],
+      "from": "0",
+      "to": "0.14",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 66,
+      "raw": "const fade = seg(t, 0, 0.14, E.outCubic);"
+    },
+    {
+      "style_id": 4,
+      "name": "t",
+      "window": null,
+      "from": "WIN[i][1]",
+      "to": "WIN[i][1] + 0.055",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 72,
+      "raw": "const c = seg(t, WIN[i][1], WIN[i][1] + 0.055, E.outCubic);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "特写倍率",
+      "typical": "s=1.72（俯瞰 0.8）",
+      "feel": ">2.2 时占位截图纹理会糊，换真实高分截图后可推到 2.5"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "步进节奏",
+      "typical": "过渡 0.12 / 停留 0.08",
+      "feel": "停留是读功能位，短于 0.05 变\"扫过\"没有\"参观\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "点击涟漪",
+      "typical": "0.055 时长，scale 0.3→1.9",
+      "feel": "涟漪是节拍器，四次点击均匀落在 0.32/0.52/0.72/0.91——配 SFX click 四连"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "光标补偿",
+      "typical": "scale(1/s)",
+      "feel": "砍掉则特写时光标巨大化；保持\"光标是 UI 层\"的错觉必需"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "巡览顺序",
+      "typical": "左上→右上→右下→左下（Z 形反向）",
+      "feel": "改 CAM 表即换路线；保持相邻角相邻访问，对角跳跃会晕"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "开场聚焦",
+      "typical": "0–0.14 blur 5px→0",
+      "feel": "与俯瞰同拍完成\"这是全景\"的交代；直接从特写开跳过它"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "占位截图（窗口 chrome+侧栏+四象限控件）必须换成真实产品截图，四个 cx/cy 光标落点要重新标到真实控件中心",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "相机表的 tx/ty 是内容百分比坐标，截图宽高比变了（如换竖屏）需整表重标",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "光标与相机绑定同一插值意味着\"光标先飞相机后到\"这类编排做不了——需要解耦时给光标单独一张同结构的表",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "停留段完全静止，1080p 大屏下会显得\"卡住\"——可给 world 加 ±0.5px 的呼吸位移（确定性 sin），但幅度别过 1px",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "cursor-flyover",
+      "variant_letter": null,
+      "upstream_key": "cursor-flyover",
+      "demo": "demos/camera/cursor-flyover/CursorFlyover.tsx",
+      "component": "CursorFlyover",
+      "duration_frames": 180,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

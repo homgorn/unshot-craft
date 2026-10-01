@@ -1,0 +1,252 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "pill-slot-cycle",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/typography/pill-slot-cycle.md",
+    "card_sha256": "33b0c1b263c23f71093b76ee5a79561642fd1cd32295e3f091e2c02c0cf6cc27",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 12,
+    "duration_frames_hint": null,
+    "duration_verbatim": "入场 12f + 每拍 21f × 词数 + 收束 14f + hold；6 词约 5.8s（demo 175f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（稳定节拍器，无峰值）",
+    "energy_rationale": "稳定节拍器，无峰值"
+  },
+  "intent_zh": "罗列六个功能，列表要六行、逐条淡入要六拍还占满屏。词槽轮换把它们 塞进**一句话的一个槽位**里：句干 \"One AI tool to ___\" 是承诺，槽里 滚过的每个 pill 是证据，最后 pill 飞走、\"do it all.\" 落位——证据 列举完毕，结论盖章。结构自带三幕：承诺→列举→收束。命门是句干 **纹丝不动**：观众的眼睛全程钉在槽位上，句干一晃列举感就散。",
+  "use_zh": "\"功能列举\"类文案的最优雅解法（比逐条列表快、比乱码解码有语义）；一句话卖点 + 多个动词短语的段落",
+  "summary_zh": "句中词槽轮换——固定句干钉死不动，句尾 pill 徽章每 ~0.7s 老虎机滚一格（旧的上飞加速淡出、新的从下带模糊滑入），连换 N 个功能词后落成完整句子收束",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "句干绝对定位左端锚死——**不能用 flex 居中**，pill 宽度变化会带着"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "句干重排（首轮踩过的坑，已是判例）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        13,
+        21
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "每拍 21f（~0.7s），前 8f 完成换位、后 13f 静置——静置段是给观众"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "读词的，读不完的拍子等于没换"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "入场：translateY 120→0 + blur 14→4→0，Easing.out(cubic)；"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "离场：translateY 0→-130 + blur 0→10，Easing.in(cubic) 加速飞出"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——新来的减速落定、旧的加速逃走，方向感是\"向上翻页\""
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "槽内用隐形占位 pill（visibility hidden）撑宽度，新旧两枚绝对定位"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "叠放——槽宽随当前词自然变化但不抖"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "收束拍：末 pill 上飞（7f ease-in），\"do it all.\" 从下 90px 带"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "Easing.back(1.4) 过冲落位——全片唯一一次过冲，留给结论"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "拍长",
+      "typical": "21f/词，5–7 词",
+      "feel": "<16f 读不完短语；>28f 节拍器感散掉；8+ 词观众开始数数"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "换位窗",
+      "typical": "拍内前 8f",
+      "feel": "拉长到 12f+ 新旧同屏太久，读作两个 pill 打架"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "飞行距离",
+      "typical": "入 +120 / 出 -130px",
+      "feel": "<80px 读作原地闪换；入出不对称（出略远）让离场更决绝"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "运动模糊",
+      "typical": "入 14→0 / 出 0→10px blur",
+      "feel": "去掉 blur 换位读作硬弹；>20px 中间帧糊成色块"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "收束过冲",
+      "typical": "Easing.back(1.4)，14f",
+      "feel": ">2 结论落位像卡通；无过冲结论与列举没有档次差"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "收尾 hold",
+      "typical": "完整句静置 ≥45f",
+      "feel": "这句话是全段目的，不 hold 等于白列举"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 odometer-digit-roll / split-flap-title 分工：那两卡是字符/数位级",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 typewriter-moves 分工：打字机是\"一个字一个字造句\"，本卡是",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "与 type-rhythm-sync 分工：那是既有文字随音轨变属性（不换内容），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "pill 短语长度要接近（demo 最长 \"Draft an agenda\"）——长短差 >2 倍",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "收束句与句干字号字重必须完全一致（demo 都是 96px/800）——",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "pill-slot-cycle",
+      "variant_letter": null,
+      "upstream_key": "pill-slot-cycle",
+      "demo": "demos/typography/pill-slot-cycle/PillSlotCycle.tsx",
+      "component": "PillSlotCycle",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

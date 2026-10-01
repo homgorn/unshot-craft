@@ -30,6 +30,29 @@ Plus `jianying-export/` (export the film as an editable CapCut CN draft) and
 ## 2. What we are building
 
 ```
+        upstream/video-shotcraft              data/cinematic/
+        (pinned git SHA, read-only)           (authored, committed, ours -- ADR 0007)
+                    |                                    |
+        platform/ingest/run.py              platform/catalog/schema.sql
+          (pure function of the tree)       (same rules, own file: no merge conflict)
+                    |                                    |
+                    +-----------------+------------------+
+                                      |
+                    platform/db/shotcraft.db  <---- the single source of truth
+                                      |
+        +-----------------+---------+---------+------------------+
+        |                 |                   |                  |
+    wiki/ (LLM)      site/ (i18n)     platform/query.py      research/
+    llms.txt         locales/*.json     CLI for agents      competitors,
+    llms-full.txt    <locale>/*.html   card/param/rule     opportunities,
+    cards/*.md       hreflang+sitemap  technique/optimize  licensing audit
+    techniques/*.md  queries           queries
+    domains/*.md (10)
+```
+
+Two corpora, one DB. `upstream/` answers *how a shot moves*; `data/cinematic/`
+answers *what to shoot*. They are consecutive stages of one pipeline and meet in
+`technique_motion`, which is a **declared** relation, never a name match.
                     upstream/video-shotcraft        (pinned git SHA, read-only)
                               |
                     platform/ingest/run.py         (pure function of the tree)
@@ -51,6 +74,10 @@ That is the whole architectural bet: **one parse, many consumers.**
 ## 3. The data layer
 
 `platform/ingest/schema.sql` — 24 tables, 4 FTS5 indexes, run idempotently.
+`platform/catalog/schema.sql` — 9 more tables and a 5th FTS5 index, for the
+cinematic corpus (ADR 0007). Applied **after** the upstream schema: two FKs cross
+the boundary on purpose (`source_file_id`, `style_id`) so a catalog row is
+traceable to its authored byte and a motion pairing points at a real style.
 
 Three decisions inside it worth calling out:
 

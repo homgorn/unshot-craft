@@ -1,0 +1,246 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "glow-flyline-moves",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "data",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/glow-flyline-moves.md",
+    "card_sha256": "99a4f446cee9160c302801d45f691db79c0c278854f32fddd2e429227ec4db5c",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "A ~5s / B ~4.7s / C ~5.2s",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "A 低（底噪级）/ B 中 / C 中高",
+    "energy_rationale": "底噪级"
+  },
+  "intent_zh": "这是库内第一张整卡住在**暗场**的卡。白底提亮不可见判例反过来读就是： 要玩光，先去暗场。A 是空间的呼吸——近黑底三团重 blur 光斑有机漂移， 中央深卡边缘随最近光斑靠近而泛光，背景不再是死的；B 是数据的动词—— 发光弧线从 A 卡\"打\"到 B 卡，亮点头领跑、渐隐光尾，落点描边脉冲点亮， 指标关联第一次有了方向；C 是 A+B 的焊接——飞线落点帧邻近光斑同帧 涨亮一拍，氛围层与事件层**同帧共振**，互相搭腔而非各演各的（组合命门： 拆开共振帧就退化成两张卡并置）。",
+  "use_zh": "全片唯一暗场段落的氛围与数据叙事：铺底噪用 A、讲数据流向用 B、要背景给前景搭腔用 C；Linear 官网味",
+  "summary_zh": "暗场光斑与飞线三式——glow-orb-ambient 光斑底噪、flyline-arc 飞线连接、orb-flyline-relay 同帧共振组合",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A glow-orb-ambient | 三团 500–700px radial 光斑 + blur(100px)，双正弦漂移；卡缘辉光按光斑距离 [180,720]px→[1,0] 加权取 max 驱动 | 暗场段落铺底；卡呼吸感 |"
+    },
+    {
+      "ord": 3,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [
+        22
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B flyline-arc | 手写 bezier 100 段采样，22f out-cubic 生长；光头条件挂载领跑，段 opacity 按离头距离渐隐；落点描边脉冲，可接力 | 数据流向/指标关联；dashboard 叙事 |"
+    },
+    {
+      "ord": 4,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [
+        15
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| C orb-flyline-relay | A+B 焊接：光斑 surge 与卡脉冲共用落点帧，涨亮 1+1.6×surge、5f 起升 15f 消散 | 暗场高光段；三卡接力收束 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 光斑",
+      "typical": "峰值 opacity 0.32/0.22/0.18；漂移振幅合计 ≥240px、周期 92–134f 交叉不等",
+      "feel": "同周期漂移读作整体晃动不是\"有机\""
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 卡缘辉光",
+      "typical": "box-shadow 0→28px 白 0.25",
+      "feel": "无辉光光斑与卡互不认识"
+    },
+    {
+      "ord": 2,
+      "variant": "A",
+      "key": "A 收敛",
+      "typical": "90–120f out-sine 收敛冻结（起始斜率≈0.94 近似连续），末 30f 真静止",
+      "feel": "硬停一帧读作卡死；缓动收敛才有真静止"
+    },
+    {
+      "ord": 3,
+      "variant": "B",
+      "key": "B 线体",
+      "typical": "白线 4.5px + 9px 深色衬底；暗场版可去衬底",
+      "feel": "浅底无衬底白线直接消失（demo 判例）"
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 光头",
+      "typical": "白点 9px + halo，仅生长期条件挂载",
+      "feel": "opacity 到 0 不算摘罩，永不真静止"
+    },
+    {
+      "ord": 5,
+      "variant": "B",
+      "key": "B 脉冲",
+      "typical": "描边扩散 out-cubic 6f / 消散线性 12f",
+      "feel": "白底禁提亮——用加深罩 0.16 替代"
+    },
+    {
+      "ord": 6,
+      "variant": "C",
+      "key": "C 共振",
+      "typical": "落点帧同帧起 surge；卡 8f 亮到 1 + 描边脉冲残余 0.3",
+      "feel": "错 2f 以上共振读不出\"搭腔\""
+    },
+    {
+      "ord": 7,
+      "variant": "C",
+      "key": "C 时间轴",
+      "typical": "动作 f98 前结束、光斑 f120 冻结，末 35f 真静止",
+      "feel": "氛围层最后冻，事件层先收"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "暗场段与纸墨浅底主视觉切换成本高——全片暗场段 ≤1 段，进出",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "光斑漂移末段**必须**缓动收敛到静止再冻结——匀速漂移直接 clamp",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "实战品牌色版：光斑用品牌色对（如蓝紫），灰阶参数只保证明度关系，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "B 接力线 ≥3 条时改用 C——纯飞线连打读作大屏模板，共振才有作者感",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "声音：B/C 每次落点一声轻打点，A 无声（sound-design §4.5）",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "flyline-arc",
+      "variant_letter": "B",
+      "upstream_key": "flyline-arc",
+      "demo": "demos/effects/glow-flyline-moves/FlylineArc.tsx",
+      "component": "FlylineArc",
+      "duration_frames": 22,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "glow-orb-ambient",
+      "variant_letter": "A",
+      "upstream_key": "glow-orb-ambient",
+      "demo": "demos/effects/glow-flyline-moves/GlowOrbAmbient.tsx",
+      "component": "GlowOrbAmbient",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "orb-flyline-relay",
+      "variant_letter": "C",
+      "upstream_key": "orb-flyline-relay",
+      "demo": "demos/effects/glow-flyline-moves/OrbFlylineRelay.tsx",
+      "component": "OrbFlylineRelay",
+      "duration_frames": 24,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

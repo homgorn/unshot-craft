@@ -1,0 +1,249 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "platform-hinge-rise",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "opening",
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/platform-hinge-rise.md",
+    "card_sha256": "bedc67acf8dcd560bca46a4747954036b76dc5f3af943dede37a181a5ac994eb",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 104,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 3.5s（104f@30fps；结论落定后保留 30f 静止）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（中段双主体同时翻起是唯一主动作，结尾只做稳重升台）",
+    "energy_rationale": "中段双主体同时翻起是唯一主动作，结尾只做稳重升台"
+  },
+  "intent_zh": "先让平台成为可信的“承托关系”，再让两个主体从平台后方翻起，观众会自然把它们 理解为同组证据；最后从下方升起的结论台不是第三个平级元素，而是对前两者的归纳。 固定机位和明确的遮挡顺序让这张卡适合解释性 B-roll，也能换成产品卡、人物、建筑或 对比方案。核心不是“东西从下方出现”，而是**两个相邻铰点产生方向相反的展开力**。",
+  "use_zh": "两个主体/方案/品牌并列登场；建筑、设备、卡片从基座后升起；需要在一个固定机位里完成“先摆证据再下结论”的解释镜头",
+  "summary_zh": "承托平台先横向建立，两块主体从相邻底部铰点反向翻起并做一次克制阻尼回摆，最后结论台从画外升入，形成“舞台→证据→结论”的三段式揭示",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f0–15：182×16 的梯形平台从中心 seed 以 `scaleX 0.012→1` 建立，缓动"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [
+        [
+          0.16,
+          1.0,
+          0.3,
+          1.0
+        ]
+      ],
+      "raw": "`cubic-bezier(.16,1,.3,1)`；必须先看见承托面，主体才能随后成立"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f12–32：背景语境圆 `scale .88→1`、`translateY 18→0`、opacity 0→1，"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "比主体早 2f 起步、晚 2f 收尾，作为低能量背景层"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [
+        [
+          0.4,
+          0.0,
+          0.2,
+          1.0
+        ]
+      ],
+      "raw": "f14–30：左右主体共用 `cubic-bezier(.4,0,.2,1)`，分别从 `translateY 112/90px`"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "与 `rotate -18°/+18°` 回到 0；两块的 transform-origin 分别钉在相邻的右下/左下铰点"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f30–46：左块 1.5°、右块 -1.2° 的三半波阻尼回摆，振幅乘 `(1-p)^2`；"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "右块延迟 1f，避免完全镜像的机械感"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f52–74：结论台 `translateY 96→0`，opacity 在前 18% 行程先到 0.45 再收至 1；"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f74–103 完全静止，让结论可读"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "平台建立",
+      "typical": "f0–15，scaleX .012→1",
+      "feel": "少于 10f 像硬切，多于 22f 会拖慢主体登场"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "语境圆",
+      "typical": "f12–32，scale .88→1，rise 18px",
+      "feel": "背景必须先于主体可辨认，但不能先完成太久"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "双主体翻起",
+      "typical": "f14–30；左 rise 112px/-18°，右 rise 90px/+18°",
+      "feel": "**命门**：两块必须从相邻铰点反向展开；同向旋转会失去“打开舞台”的力学关系"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "阻尼回摆",
+      "typical": "16f；左 1.5°，右 1.2°，右延迟 1f",
+      "feel": "只允许一次可感回摆；振幅 >2° 会像卡片玩具"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "结论台",
+      "typical": "f52–74，rise 96px",
+      "feel": "与主体落定至少隔 6f，避免证据和结论同时抢读"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "收尾 hold",
+      "typical": "30f",
+      "feel": "结论文字若超过 8 个汉字，继续延长总时长，不要压缩升台动作"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "主体必须被平台上缘或独立遮罩裁住底部；没有遮挡会暴露它们从画外平移而非从平台后翻起",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "`transform-origin` 不能放在各自主体中心：中心旋转读作两张卡在晃，只有相邻底部铰点才读作展开",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "左右块不要做成完全同尺寸、同高度、同振幅；轻微不对称是让双主体保持可辨认轮廓的关键",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "结论台是总结层，视觉对比应低于两个主体；若给它更深颜色或更大过冲，会反客为主",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "demo 只含原创通用 DOM 形状和占位文字，不依赖复刻研究里的品牌、建筑或视频素材",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "platform-hinge-rise",
+      "variant_letter": null,
+      "upstream_key": "platform-hinge-rise",
+      "demo": "demos/ui-entrance/platform-hinge-rise/PlatformHingeRise.tsx",
+      "component": "PlatformHingeRise",
+      "duration_frames": 104,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "pill-chip-slot-cycle-handled",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/typography/pill-chip-slot-cycle-handled.md",
+    "card_sha256": "e457a52e821ac236241e3610959e55b6ea739579e414faf1dd71e927421d6a6f",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 5.0s（150f@30fps：静置 → 3 次切换（0.25/0.47/0.69）→ 尾部静置）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（三拍稳定节拍，宽度伸缩是唯一的连续运动）",
+    "energy_rationale": "三拍稳定节拍，宽度伸缩是唯一的连续运动"
+  },
+  "intent_zh": "词槽轮换有两派：让句子躲开变化（宽度固定的滚轮），或者让句子**接受** 变化（胶囊撑宽、两侧文字被挤开）。这卡是后者，代价是必须把宽度算准， 回报是句子读起来活的——\"Your\" 和 \"Handled\" 被推着走，观众感到胶囊里 的词有分量。上下露出的灰色幽灵项是第二个记号：它明示\"这是个可以滚的 列表\"，让观众预期还有下一个词。",
+  "use_zh": "\"我们替你搞定 ___\" 这类句式卖点；SaaS 功能列举的一句话收口；浅底品牌片主视觉一拍",
+  "summary_zh": "白底句式 \"Your `chip` Handled\" 里深色胶囊内词竖向滚轮轮换，胶囊宽度按预量文本宽插值平滑伸缩、两侧文字被自然挤开收拢，胶囊上下露出 13% 透明度的灰色幽灵项",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "宽度预量：setup 期用隐藏 `<span>` 逐词量 `offsetWidth`，各加 74px 内边距"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "存成 `widths[]`（带 `o.w.length·13` 兜底，防 setup 时未挂载量不到）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "位置量 `pos` 由 3 段窗累加：切换点 `[0.25, 0.47, 0.69]`，每窗 0.12"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        18
+      ],
+      "ease": "inOutCubic",
+      "beziers": [],
+      "raw": "（≈18f），缓动 `E.inOutCubic`——**两头都缓**，对应\"滚轮起步与停稳\""
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "内列 `colIn` 竖移 `-pos·48`px（行高 48 = 胶囊高）；胶囊宽度取"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`lerp(frac, widths[ci], widths[ci+1])`，**帧内插值**所以伸缩是连续的，"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "两侧 `flex:none` 的文字被 flex 布局自然挤开"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "幽灵项在胶囊外（chipWrap 内）上 -38px / 下 58px，取 `near = round(pos)`"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "的前后邻居文本，随滚动微移 `(pos-near)·48·0.5`（**半速视差**，比胶囊内"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "的词慢一半，才像\"外圈\"）"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "幽灵项透明度 `0.13 · (0.4 + settle·0.6)`，`settle = 1 - min(1, |pos-near|·3)`"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——滚动中途更淡、落定时最清楚"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每行内是 emoji + 词的两段结构（emoji 18px、词 700 22px 白字），"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "胶囊 `#1a1c24` 底 + `0 8px 24px rgba(20,22,40,.22)` 投影 + `overflow:hidden`"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 164,
+      "name": "t",
+      "window": null,
+      "from": "s0",
+      "to": "s0 + 0.12",
+      "ease": "E.inOutCubic",
+      "concrete": false,
+      "line_no": 47,
+      "raw": "for (const s0 of [0.25, 0.47, 0.69]) pos += seg(t, s0, s0 + 0.12, E.inOutCubic);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "词表",
+      "typical": "4 词 + emoji（Sales/Workflow/Admin/Reports），3 次切换",
+      "feel": "词长差决定挤开幅度的观感：demo 最短 5 字母最长 8 字母；差 >2 倍胶囊跳变太猛，句子重心左右甩"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "切换点",
+      "typical": "`[0.25, 0.47, 0.69]`，窗 0.12（≈18f）",
+      "feel": "段间约 0.10（≈15f）静置读词；起手 0.25 前的静置让观众先认出句式"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "缓动",
+      "typical": "`E.inOutCubic`",
+      "feel": "两头缓才像滚轮起停；outCubic（只后缓）读作被甩上来，胶囊宽度也会跟着突变"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "胶囊",
+      "typical": "高 48px、圆角 99、`#1a1c24`、宽 = 文本宽 + 74",
+      "feel": "+74 是左右内边距 + emoji 位；<50 词贴边，>100 胶囊胖成按钮"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "幽灵项",
+      "typical": "上 -38 / 下 58px，基础透明度 0.13",
+      "feel": "0.13 是\"看得见但不抢\"的甜点；>0.25 读作三行并列文字，不是幽灵；删了列表暗示就没了"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "幽灵视差",
+      "typical": "`(pos-near)·48·0.5`（半速）",
+      "feel": "半速是\"外圈更远\"的立体感来源；同速则三行像一整块滑动，幽灵失去意义"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "句子字号",
+      "typical": "两侧 30px/800、胶囊内 22px/700",
+      "feel": "胶囊内比句子小是正确层级（徽章依附句子）；等大或更大就读作两个标题打架"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "配色",
+      "typical": "底 `#fbfbfd`、句子 `#15171d`、胶囊白字",
+      "feel": "浅底 + 单一深色块是本卡的身份证；深底版会让胶囊消失，需整套重配"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**宽度靠 setup 期 `offsetWidth` 实测**：字体没加载完时量到的是回退字体",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "词长差要控制在 2 倍内：宽度自适应是本卡的卖点也是风险，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "两侧文字必须 `flex:none`：不然 flex 会去压缩它们而不是移动它们，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "幽灵项文本取 `round(pos)` 的邻居，所以在切换的正中间（pos=x.5）会",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "emoji 在不同平台字形宽度不一（尤其 `⚙️` 带变体选择符），会让实测宽度",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 6,
+      "text": "与 vertical-word-roll-blur-cycle 分工：那卡宽度固定、裸词、带滚筒 blur",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "pill-chip-slot-cycle-handled",
+      "variant_letter": null,
+      "upstream_key": "pill-chip-slot-cycle-handled",
+      "demo": "demos/typography/pill-chip-slot-cycle-handled/PillChipSlotCycleHandled.tsx",
+      "component": "PillChipSlotCycleHandled",
+      "duration_frames": 150,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

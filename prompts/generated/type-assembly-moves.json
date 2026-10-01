@@ -1,0 +1,252 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "type-assembly-moves",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/typography/type-assembly-moves.md",
+    "card_sha256": "ea732ccf5a119e71fc2e097c4d6ad2749cebe40fee14a0d2ebb029ff8b9154e9",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 56,
+    "duration_frames_hint": null,
+    "duration_verbatim": "单式 4–5s（动作段 A ~56f / B ~104f / C ~58f / D ~99f，均含 hold）",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "A 中 / B 中高 / C 低中 / D 中",
+    "energy_rationale": null
+  },
+  "intent_zh": "标题入场已有\"原位变形系\"四式（乱码解码/字符坠落/翻牌/打字机——字 在原地换形态）。本卡补\"集结系\"：字符从别处**汇聚成**标题，运动轨迹 本身有戏。A 琴键式——每字从看不见的裁切线下滑升，理性利落，通用度 最高；B 片头式——字符四散带模糊漂入、逐个锁定加深，Stranger Things 的仪式感，适合品牌名亮相;C 呼吸式——字母从叠压一团吸一口气展开， 最安静的一式，适合抒情段落；D 语义式——字符沿一条上升曲线鱼贯流入 再摆正，曲线可以正好描着图表增长线走，文字与数据同框叙事。",
+  "use_zh": "大标题/标语的入场；与 type-entrance-moves 两式、split-flap-title、document-typewriter-reveal 同属标题入场大品类，全片 ≤2 种",
+  "summary_zh": "文字集结四式——split-text-stagger 逐字裂升、letterform-drift-assembly 漂移合拢、tracking-expand-reveal 字距呼吸、text-on-path 沿线流入",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "四式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "四式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "四式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A split-text-stagger 裂升 | 每字 overflow 盒内 translateY(115%→0) 带 10% 过冲，delay i×2f，基线同步生长 | 通用默认；利落理性 |"
+    },
+    {
+      "ord": 3,
+      "heading": "四式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B drift-assembly 漂移合拢 | 字符 seed 方向 ±300px + blur 8px 漂入错峰归位，锁定帧加深脉冲，合体后整词呼吸 1.04 | 品牌名/片头级亮相 |"
+    },
+    {
+      "ord": 4,
+      "heading": "四式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| C tracking-expand 字距呼吸 | 字母从 −0.42em 叠压展开到 0.14em，blur 10→0 同曲线 | 安静抒情段；副标题跟进 |"
+    },
+    {
+      "ord": 5,
+      "heading": "四式选型",
+      "window": null,
+      "frame_hints": [
+        12
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| D text-on-path 沿线流入 | 字符沿贝塞尔曲线鱼贯滑入（切线角旋转），到达后 12f 摆正水平 | 曲线有语义时（增长线/流程线） |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 过冲",
+      "typical": "10%（原案 6% 可测不可感，实渲加码）",
+      "feel": "正常速度要看得见回落那一下"
+    },
+    {
+      "ord": 1,
+      "variant": "B",
+      "key": "B 锁定脉冲",
+      "typical": "字色深到 #000 + 描边 0→3px→0 / 8f",
+      "feel": "白底上加深+描边，不用发光（判例）"
+    },
+    {
+      "ord": 2,
+      "variant": "B",
+      "key": "B 漂移三绑定",
+      "typical": "位移 (1−p)、blur 8(1−p)、opacity 0.35→1 共用一条 p",
+      "feel": "三者分曲线走，字会\"到了还糊着\""
+    },
+    {
+      "ord": 3,
+      "variant": "C",
+      "key": "C 实现命门",
+      "typical": "letter-spacing 恒为终态，逐字符 span 只做 translateX=(1−p)(i−词心)(−0.56em)",
+      "feel": "直接动 letter-spacing 逐帧重排必抖"
+    },
+    {
+      "ord": 4,
+      "variant": "D",
+      "key": "D 摆正",
+      "typical": "到达停 8f 再 12f lerp 到水平基线（y 拉平 rotate→0）",
+      "feel": "不摆正就永远是\"挂在线上\"，读不出标题"
+    },
+    {
+      "ord": 5,
+      "variant": "D",
+      "key": "D 曲线",
+      "typical": "evolve（dashoffset）随最前字符同步生长",
+      "feel": "曲线先画完字再走，读作两个动画"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "收尾",
+      "typical": "全员落定真静止 ≥30f",
+      "feel": "R1"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "标题入场大品类现已八式（本卡四式 + type-entrance-moves 两式 +",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "B 式与 D 式都是高注意力入场，别再叠相机动作——字在飞的时候镜头必须稳",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "C 式幅度命门：起始叠压至少 −0.4em 级（每缝 80px+ 位移）才可感，",
+      "critical": true,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "D 式字符在曲线低段会短暂交叠，是鱼贯读感的一部分；但字号 >80px 时",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "letterform-drift-assembly",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/typography/type-assembly-moves/LetterformDriftAssembly.tsx",
+      "component": "LetterformDriftAssembly",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "split-text-stagger",
+      "variant_letter": "A",
+      "upstream_key": "split-text-stagger",
+      "demo": "demos/typography/type-assembly-moves/SplitTextStagger.tsx",
+      "component": "SplitTextStagger",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "text-on-path",
+      "variant_letter": "D",
+      "upstream_key": "text-on-path",
+      "demo": "demos/typography/type-assembly-moves/TextOnPath.tsx",
+      "component": "TextOnPath",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "tracking-expand-reveal",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/typography/type-assembly-moves/TrackingExpandReveal.tsx",
+      "component": "TrackingExpandReveal",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

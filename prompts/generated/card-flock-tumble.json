@@ -1,0 +1,234 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "card-flock-tumble",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/card-flock-tumble.md",
+    "card_sha256": "a3bc3e10cdac63a293232704bb4b5ce219bc10f423a7a8777df79eae339ca6a5",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 45,
+    "duration_frames_hint": null,
+    "duration_verbatim": "翻飞 ~1.5s + 慢转展示 ~0.3s + 收束 0.3s + 烟环+巨字 ~2s；全段 4.5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "very-high",
+    "energy_label": {
+      "zh": "极高",
+      "en": "very high"
+    },
+    "energy_verbatim": "极高（全片能量顶点用）",
+    "energy_rationale": "全片能量顶点用"
+  },
+  "intent_zh": "三张页卡像被甩出的扑克在 3D 空间翻飞列队，站定亮相后被瞬间 吸入中心，炸出一圈烟雾环，品牌巨字穿环而出——\"能力展示→能量 坍缩→口号爆发\"一气呵成。命门有三：**丝滑**（侧棱→翻飞→站定 一条 Catmull-Rom 样条导数连续，分段插值的顿挫会被读出来）、 **不许停**（站定后保持低角速度慢转到收束，静止段被裁\"不要停住， 保持旋转\"——高潮段没有静帧）、**全程清晰**（motion blur/景深糊 全删，被裁\"不要加模糊效果\"）。",
+  "use_zh": "能量高潮段（功能页群→品牌口号的爆点转场）；霓虹暗场调性；\"多页面能力\"收束成一句话的段落",
+  "summary_zh": "三张 UI 页卡从侧棱薄边 3D 翻飞成阶梯站定（全程清晰、样条连续丝滑），站定后保持慢转不停，快速收束吸入中心，炸出单个湍流烟雾环扩散，巨字横贯收场",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "翻飞：三卡各自 k0（近 90° 侧棱薄边）→k1（翻飞中段）→k2（阶梯"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        44
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "站定）Catmull-Rom 样条，Easing.out(cubic) 驱动，~44f"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        14
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "站定慢转：idle 漂移 ry +0.34°/f、rx -0.1°/f、rz +0.05°/f（14f"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "平方缓入避免与样条衔接顿挫），到收束时刻不停"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        10
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "收束：10f Easing.in(quad) 从慢转姿态直接加速吸入中心缩小，"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "透明度前 60% 满格（\"吸入\"运动要清晰可读）"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "烟雾环：**单个**（多圈被裁），feTurbulence 三组位移（絮边/亮斑/"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "暗斑）+上桃下紫渐变——破碎絮边、明暗斑块、减速外扩缓慢长大、"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "衰减极慢驻留，中心无水面光；粒子效果零残留（被裁）"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "巨字：横贯全屏渐显+微放大，霓虹渐变描边"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "三卡间距/大小",
+      "typical": "大幅重叠成一叠阶梯、scale 1.6–1.74",
+      "feel": "两轮加码判例：\"再靠近一些，再大些\"——阶梯要读作一组不是三张"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "站定慢转",
+      "typical": "ry ~0.34°/f 连续",
+      "feel": "**不许静止**（判例）；>1°/f 读作还没站定"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "收束时长",
+      "typical": "10f ease-in",
+      "feel": "22f 版被裁\"要快\"；透明度早退=吸入不可读（返工判例）"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "烟雾环",
+      "typical": "单圈、湍流絮边、衰减极慢",
+      "feel": "多圈被裁；平滑霓虹圈/粒子版被裁——对照原片密帧做湍流质感"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "模糊",
+      "typical": "全程零 blur",
+      "feel": "翻飞/收束加 blur 均被裁"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "样条",
+      "typical": "一条 Catmull-Rom 贯穿",
+      "feel": "分段 lerp 有速度台阶，\"丝滑流畅\"是裁决原话"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "烟雾环质感判例：干净图形环（描边圆/同心波）三轮被裁，最终版",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 particle-celebrate-hits 分工：那张是粒子礼花打击点；本卡",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "与 bubble-swarm-takeover 分工：那张是群体涌入接管；本卡是",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "card-flock-tumble",
+      "variant_letter": null,
+      "upstream_key": "card-flock-tumble",
+      "demo": "demos/transition/card-flock-tumble/CardFlockTumble.tsx",
+      "component": "CardFlockTumble",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "draw-svg-trace",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "typography",
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/draw-svg-trace.md",
+    "card_sha256": "37c299c5f8c785c4bd609c53fcc9588707cb6a380ce716b1a9613ba43e8e7a5e",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 40,
+    "duration_frames_hint": null,
+    "duration_verbatim": "描边 40f + 闪黑交棒 16f + hold ≥35f，约 3–4s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中",
+    "energy_rationale": null
+  },
+  "intent_zh": "\"画出来\"是纸墨审美里最顺手的入场隐喻：元素不是飞进来也不是淡进来， 而是被一支看不见的笔当场描出来。库内 wall-reveal-moves C 式已有整页 蓝图版（全屏线框逐段画+区域点亮），本卡是它的**元素级特写版**—— 一条线、一个主体、一次闭合，笔头可见、方向可读，适合\"接下来讲它\" 的点名时刻。第二用法是标题下划线生长：同一套路 18f 短版，给重点词 一笔手绘强调，与马克笔审美 token 天然同族。",
+  "use_zh": "单个卡片/图表/标题的被点名入场；元素级手法（整页级蓝图描线归 wall-reveal-moves C 式）",
+  "summary_zh": "描边生长圈注——一条带笔头的墨线沿元素轮廓跑一圈把它\"画\"出来，闭合瞬间闪黑交棒、内容淡入；同套路可给标题画下划线",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**免测周长**：SVG rect/path 设 `pathLength={1}`，strokeDasharray=\"1\"，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        40
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "dashoffset 1→0（40f Easing.inOut(cubic)）——不用 getTotalLength"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**笔头**：同一路径再叠一层更粗（4→7px）的短 dash"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（dasharray \"0.045 0.955\"），dashoffset = 笔头相位 − p，天然跑在最前；"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "没有笔头就只是\"边框在变长\"，有笔头才是\"有人在画\""
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        50,
+        56
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "闭合闪：48–50f 描边冲纯黑 + 4→8px 加粗，50–56f out quad 回落"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——白底上加深加粗，不用发光（判例）"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        64
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "交棒：54–64f 描边层淡出、元素自身 border 淡入，同窗内容 8f 淡入"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——闭合即\"画完了\"，内容跟着\"上色\""
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "描边速度",
+      "typical": "一整圈 40f（inOut cubic 起收有呼吸）",
+      "feel": "<28f 读不出\"在画\"，>60f 读作加载中"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "笔头",
+      "typical": "7px、dash 长 0.045",
+      "feel": "笔头≤主线粗细就消失在主线里"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "闭合闪",
+      "typical": "2f 冲黑+加粗，6f 回落",
+      "feel": "没有这一下，\"画完\"没有句号"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "下划线版",
+      "typical": "18f out cubic 单向生长，画完常驻",
+      "feel": "用在单个重点词；一屏 ≥2 条读作装饰线"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "收尾",
+      "typical": "交棒完成真静止 ≥35f",
+      "feel": "R1"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 wall-reveal-moves C 式（整页蓝图描线）同族互斥：同片二选一，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "描边路径必须与元素真实轮廓吻合（圆角 rx 一致）——线画的是 14px",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "真实素材上内容淡入别抢在闭合前：线还没画完内容先出来，\"画\"的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "一次点名画一个主体；同屏多元素排队各画一圈读作加载动画",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "draw-svg-trace",
+      "variant_letter": null,
+      "upstream_key": "draw-svg-trace",
+      "demo": "demos/ui-entrance/draw-svg-trace/DrawSvgTrace.tsx",
+      "component": "DrawSvgTrace",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

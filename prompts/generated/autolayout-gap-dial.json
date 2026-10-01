@@ -1,0 +1,245 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "autolayout-gap-dial",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/autolayout-gap-dial.md",
+    "card_sha256": "ac58e6786bd458d75b909a2fd3138d2e5be30d71dc7257753c16b0e7a2788625",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 120,
+    "duration_frames_hint": null,
+    "duration_verbatim": "~4s（120f：框选入场 + 拉松 38f + hold + 弹簧回弹）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（工具理性型，爽点在数字与位移的锁定同步）",
+    "energy_rationale": "工具理性型，爽点在数字与位移的锁定同步"
+  },
+  "intent_zh": "\"参数改了、UI 变了\"是设计工具的核心承诺，但通常拍成\"点面板→切 结果\"的前后对比，因果被剪掉了。本卡把因果拍成连续镜头：间距徽章 数字逐格跳，链接块**同帧**被推开，测量线实时拉长——数字就是缰绳， 布局就是马。框选描边+8 手柄+间距标注全是设计工具的母语，观众一眼 认出\"这是在工具里调参数\"。回程故意用欠阻尼弹簧过冲（缩到比起点 更紧再回稳），把\"归位\"做成一次有弹性的收尾。与 type-and-filter 分工：那是\"输入内容→列表收敛\"的检索因果，本卡是\"拨数值→几何 重排\"的参数因果。",
+  "use_zh": "设计工具/低代码产品的\"改一个数、界面跟着动\"卖点镜头；\"用设计工具语义做包装\"的品类语言",
+  "summary_zh": "间距拨盘驱动布局——一排链接块带框选描边+缝隙间距标注，徽章数字逐格跳动、块被参数实时推开再弹簧回弹归位；\"参数驱动布局\"的可视化",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**gap 一个参数管全部**：块位置由 gap 重算（整排保持居中）、测量"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "线宽=gap、徽章钉缝隙中心——所有元素从同一数值派生，锁定同步"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "是本卡的全部说服力"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        14,
+        38
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "参数曲线：去程 12→110 走 38f Easing.inOut(cubic)；hold 14f；"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "回程 spring(damping 9, stiffness 80, mass 1.1) 故意过冲到起点"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "以下再回稳"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "徽章数字步进 2 显示（Math.round(gap/2)*2），跳数时 scale 脉冲"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "1+0.10·|sin|；顶部大 GAP 读数块同步"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "框选描边 spring 入场，8 手柄（四角+四边中点）；间距标注 = 竖直"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        16
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "延长线 ×2 + 水平测量线 + 跟随徽章，8–16f 淡入"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "gap 幅度",
+      "typical": "12→110px（原片 20→24，demo 按裁决加大）",
+      "feel": "原片幅度肉眼几乎不可感——可感性判例：看不出就加大做极端版；实战至少 4–5 倍行程"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "去程时长",
+      "typical": "38f inOut cubic",
+      "feel": "快了读作抽搐；慢过 60f 数字跳动和位移的绑定感松掉"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "回程弹簧",
+      "typical": "damping 9 → 过冲到起点以下再回稳",
+      "feel": "过冲是\"松手回弹\"的手感来源；damping ≥13 直落可惜"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "数字步进",
+      "typical": "步进 2 + 跳数 scale 脉冲 0.10",
+      "feel": "逐 1 跳太碎读作毫秒表；步进是\"拨盘咔哒\"的颗粒感"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "标注几何",
+      "typical": "延长线 62px、测量线钉块底 +56px、徽章钉缝隙中心",
+      "feel": "标注必须随 gap 实时重算——任何一处滞后即穿帮"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "块宽",
+      "typical": "不等宽（230/190/265/210/245）",
+      "feel": "等宽读作示意图；不等宽才像真导航"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "数字与位移必须同源同帧：徽章显示值和块坐标都从同一个 gap 派生，分开动画哪怕差 1f，\"参数驱动\"的信任即碎",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "demo 顶部大 GAP 读数块是灰阶示意的讲解字幕，实战里若画面已有真实工具面板就删掉，别双重报数",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "同族扩展：gap 只是一维，radius/padding/rotation 同语法可换参数——但一镜只拨一个参数，两个以上读作乱调",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "框选描边+手柄是\"设计工具语义\"借用（figma/framer 母语），非设计工具受众的片子慎用，读不懂框选就只剩块在挪",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "声音：徽章每跳一格一声极轻 tick（拨盘咔哒），回弹落定一声 pop；tick 密度跟步进走",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "autolayout-gap-dial",
+      "variant_letter": null,
+      "upstream_key": "autolayout-gap-dial",
+      "demo": "demos/interaction/autolayout-gap-dial/AutolayoutGapDial.tsx",
+      "component": "AutolayoutGapDial",
+      "duration_frames": 52,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

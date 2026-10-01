@@ -1,0 +1,276 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "glitch-cycle",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/typography/glitch-cycle.md",
+    "card_sha256": "838619381cdd1128dc9aeeced7a422348c940af328d24c9cb849259153bdbbcd",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 168,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 5.6s（168f@30fps，4 条短语各 42f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（持续的高频噪声脉冲，切换点是峰值）",
+    "energy_rationale": "持续的高频噪声脉冲，切换点是峰值"
+  },
+  "intent_zh": "状态播报最笨的做法是四行字逐条淡入。轮播把它们压进**一个槽位**： 短语头尾用乱码\"熔断\"再\"凝固\"，中段几乎干净只偶尔抽一下——观众读到的 是\"系统在一步步推进\"，而不是四条独立文案。乱码浓度是这卡的语法： 浓 = 正在切换，淡 = 正在这一状态里。底部进度条把四拍串成一条时间线， 最后一条把概率收到 0，落定即结束。",
+  "use_zh": "加载/构建/部署过程的状态播报；技术型片头的\"系统自述\"；需要机器口吻推进时间的一段垫底",
+  "summary_zh": "同一行等宽槽位循环轮播 4 条状态短语，每条头尾按概率关键帧 [1,0,0,0.1,0,0,1] 全乱码、中段偶发单字抖动，切换瞬间叠 RGB 分离与整行位移；末条概率收 0 保证收尾干净",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "槽位按最长短语预建 `MAXCH` 个 span（`min-width:0.66em` 固定槽宽），"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "短短语右侧填空格——**字符不增删，只换内容**，整行永不重排"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        42
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "时段等分：`slot = floor(t·4)`，短语内进度 `p = t·4 - slot`（每条 42f）"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "glitch 概率关键帧 `KF=[1,0,0,0.1,0,0,1]` 按 p 线性插值：**开头 1.0 全乱、"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "中段 0、约 p=0.5 处回弹到 0.1（偶发抽字）、结尾又回 1.0 熔进下一条**"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "末条专用 `KF_LAST=[1,0,0,0.1,0,0,0]`，结尾概率归零 → t=1 画面干净"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "逐字符判定：`rand(i·31 + bucket·17 + slot·97) < g` 才替换成字池字符，"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "命中字随机上 #6c8cff 蓝或 #4a5270 暗灰；`bucket = floor(frame/2)`，"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "即每 2 帧重掷一次"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "整行抖动与 RGB 分离强度全部乘 g：`jx = ±g·10`px、`jy = ±g·4`px，"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`text-shadow` 左红右青各偏 `g·3`px（g>0.04 才开）——**噪声浓度一个变量"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "同时驱动换字、位移、色散**，所以三者永不打架；底部 120×2px 进度条"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`width = t·100%` 线性走满，与四拍无关地铺底"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "短语表",
+      "typical": "4 条，最长 17 字符（`COMPILING SHADERS`）",
+      "feel": "每条 42f 是\"读得完一个状态\"的下限；5 条以上单条不足 34f 观众只看到闪"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "概率关键帧",
+      "typical": "`[1,0,0,0.1,0,0,1]`（6 段）",
+      "feel": "中间那个 0.1 是\"活着\"的证据，删了短语中段死板；把 0 段调到 0.3+ 全片糊成故障"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "重掷频率",
+      "typical": "每 2 帧（`floor(frame/2)`）",
+      "feel": "1 帧一换糊成灰带；4 帧以上乱码看得清是\"另一个词\"，不像噪声"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "抖动幅度",
+      "typical": "`x ±g·10` / `y ±g·4`px",
+      "feel": "x 大于 y 是横向撕裂的关键（等比抖动读作地震）；>20px 整行跳出槽位"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "RGB 分离",
+      "typical": "左红右青各 `g·3`px，阈值 g>0.04",
+      "feel": "这是\"电子故障\"的身份证；无阈值时中段那 0.1 的概率会让字常年带毛边"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "槽宽字体",
+      "typical": "SF Mono 26px、`letter-spacing:3px`、槽 `0.66em`",
+      "feel": "等宽 + 固定槽宽是刚需；字距 3px 让乱码之间有呼吸，挤在一起读作乱码块"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "进度条",
+      "typical": "120×2px，`#6c8cff` 填充，线性",
+      "feel": "唯一的线性元素，给四拍噪声一个稳定参照；删了轮播读不出\"在推进\""
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**换项目文案时四条短语字符数要接近（demo 12–17 字符）**：槽位数按最长",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "概率关键帧是 6 段等分映射到短语内进度：短语条数变了单条时长跟着变，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "末条必须用 `KF_LAST`（结尾收 0）：用普通 KF 会让 t=1 停在满乱码上，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "深底专用：#0a0b10 底 + 冷蓝噪声是整套配色的地基，浅底上 RGB 分离",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "与 scramble 分工：那卡是**一次性解密**（乱→定，不再乱），本卡是",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "glitch-cycle",
+      "variant_letter": null,
+      "upstream_key": "glitch-cycle",
+      "demo": "demos/typography/glitch-cycle/GlitchCycle.tsx",
+      "component": "GlitchCycle",
+      "duration_frames": 168,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

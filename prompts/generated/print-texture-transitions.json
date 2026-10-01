@@ -1,0 +1,151 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "print-texture-transitions",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/print-texture-transitions.md",
+    "card_sha256": "42b2ee8362cb5a202192a81c4f644278c8a56209798e5b5a7e9e6909db15e6fb",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 80,
+    "duration_frames_hint": null,
+    "duration_verbatim": "4–4.5s（洇开段 55–80f + 静止收尾 ≥30f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（渐进显形，无冲击拍）",
+    "energy_rationale": "渐进显形，无冲击拍"
+  },
+  "intent_zh": "转场语言已有交棒（shot-transitions 六式）和穿越（transition-travel） ，都是空间/光学隐喻。本式开第三族：**介质隐喻**——新画面不是\"到来\" 而是\"印染\"出来的，直接调用库内纸墨审美的物理想象：像一滴墨落在 宣纸上洇开吃掉旧景，有机、书写感。天然亲和 paper/ink 调性的片子， 是 light-leak-burn（强调色漏光）之外的另一个\"介质系\"接缝选择。",
+  "use_zh": "换景接缝的纸墨审美款；与交棒六式/穿越三式并列的第三族——\"介质显影\"型转场",
+  "summary_zh": "印刷质感转场——ink-bleed-reveal 墨渗揭示（须状渗边洇开吃掉旧景）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "单式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "单式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "单式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B ink-bleed-reveal 墨渗揭示 | 新页透过须状渗边的有机圆形遮罩从落墨点洇开，快慢不匀吃掉旧景 | 旧景→新景替换；书写感、叙事调性 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "渗边",
+      "typical": "SVG mask 白圆挂 `feTurbulence(fractalNoise, baseFrequency 0.02, octaves 3, seed 固定)` + `feDisplacementMap scale 60→160 随帧涨`",
+      "feel": "filter 只揉遮罩形状、内容始终清晰；seed 必须写死（确定性）"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "洇开",
+      "typical": "半径 [20,98f]→[0,1450px] Easing.out(quad)，乘 `1+0.08·sin(0.32f)·env` 快慢不匀扰动（env 末 20f 衰减归零）",
+      "feel": "匀速圆扩张读作普通 iris——扰动即\"墨的脾气\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "收尾摘罩",
+      "typical": "洇满后（帧 ~100）摘掉 SVG mask 直接铺新景",
+      "feel": "feTurbulence 有亚像素抖动，不摘则结尾永不真静止（本批实渲判例）"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "收尾",
+      "typical": "新景就位后真静止 ≥30f",
+      "feel": "R1"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "一缝一式规矩同 shot-transitions：介质转场不与白闪/震屏叠加；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "洇开中段旧景内容会透过噪声孔洞碎片式短暂露出——读作墨渍肌理",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "慢转场（55–80f 动作段），高节奏连打段落别用——那里去 E 式甩镜",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "ink-bleed-reveal",
+      "variant_letter": "B",
+      "upstream_key": "ink-bleed-reveal",
+      "demo": "demos/transition/print-texture-transitions/InkBleedReveal.tsx",
+      "component": "InkBleedReveal",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

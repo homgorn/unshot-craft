@@ -1,0 +1,324 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "counter-confetti",
+  "category": "data",
+  "category_label": {
+    "en": "Data & Metrics",
+    "zh": "数据与指标",
+    "ru": "Данные и метрики"
+  },
+  "tags": [
+    "data"
+  ],
+  "source": {
+    "card": "references/shots/data/counter-confetti.md",
+    "card_sha256": "7bc5b817371d1773a4fbbc73d4052df88775d6a696b32aa3acb5000e965394d9",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 138,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 4.6s（138f@30fps；计数 0.3–2.6s · 纸屑 2.4s 起 · 落定 3.3s）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "high",
+    "energy_label": {
+      "zh": "高",
+      "en": "high"
+    },
+    "energy_verbatim": "高（计数蓄力 + 爆点释放，标准的情绪峰值镜头）",
+    "energy_rationale": "计数蓄力 + 爆点释放，标准的情绪峰值镜头"
+  },
+  "intent_zh": "数字不是\"显示\"出来的，是\"冲线\"的：计数曲线前快后慢像百米冲刺进入慢镜，纸屑在数字到位**之前**抢拍爆开——庆祝比结果先到半拍，情绪压过信息，观众先兴奋再看清数字。",
+  "use_zh": "里程碑/成绩数字的庆祝拍：用户数、营收、下载量等\"值得开香槟\"的指标揭示",
+  "summary_zh": "大数字 easeOutQuart 冲刺计数并带 scale 过冲，到位前一拍 52 片彩纸从两侧抛物线炸入，冲击环扩散、标签字距收紧收尾",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": [
+        0.06,
+        0.56
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "计数走 easeOutQuart（t=0.06–0.56）：前 1/3 时间跑完 2/3 数值，符合\"冲刺-减速-压线\"的体感；`toLocaleString` 千分位格式"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "数字 scale 两段：0.2→1.3 冲入（outCubic），计数到位后 1.3→1 回落（outBack 轻弹）——大一号入场、落定收正"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**抢拍**：纸屑 BURST=0.52 早于计数到位 0.56——庆祝先于结果 0.04（约 5 帧），这半拍是这张卡的灵魂"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "52 片纸屑真物理：从画面两侧 ±250px 出发，初速 vx 150–450 向中冲 / vy −230~−450 上抛，重力 g 900–1420 拉回，自转 ±750°，每片错峰 ≤0.06"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "到位冲击环：0.545 起 scale 0.35→2.95 扩散淡出（outQuart）；标签 0.62 淡入且字距 11px→5px 收紧——\"落章\"感"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 23,
+      "name": "t",
+      "window": [
+        0.06,
+        0.56
+      ],
+      "from": "0.06",
+      "to": "0.56",
+      "ease": "E.outQuart",
+      "concrete": true,
+      "line_no": 37,
+      "raw": "const p = seg(t, 0.06, 0.56, E.outQuart);"
+    },
+    {
+      "style_id": 23,
+      "name": "t",
+      "window": [
+        0.06,
+        0.3
+      ],
+      "from": "0.06",
+      "to": "0.3",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 40,
+      "raw": "const s1 = seg(t, 0.06, 0.3, E.outCubic);"
+    },
+    {
+      "style_id": 23,
+      "name": "t",
+      "window": [
+        0.56,
+        0.72
+      ],
+      "from": "0.56",
+      "to": "0.72",
+      "ease": "E.outBack",
+      "concrete": true,
+      "line_no": 41,
+      "raw": "const s2 = seg(t, 0.56, 0.72, E.outBack);"
+    },
+    {
+      "style_id": 23,
+      "name": "t",
+      "window": [
+        0.545,
+        0.75
+      ],
+      "from": "0.545",
+      "to": "0.75",
+      "ease": "E.outQuart",
+      "concrete": true,
+      "line_no": 44,
+      "raw": "const rp = seg(t, 0.545, 0.75, E.outQuart);"
+    },
+    {
+      "style_id": 23,
+      "name": "t",
+      "window": [
+        0.5,
+        0.62
+      ],
+      "from": "0.5",
+      "to": "0.62",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 58,
+      "raw": "opacity: 0.35 + seg(t, 0.5, 0.62, E.outCubic) * 0.65 - seg(t, 0.72, 1) * 0.5,"
+    },
+    {
+      "style_id": 23,
+      "name": "t",
+      "window": [
+        0.02,
+        0.12
+      ],
+      "from": "0.02",
+      "to": "0.12",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 82,
+      "raw": "opacity: Math.min(1, seg(t, 0.02, 0.12) * 1.2),"
+    },
+    {
+      "style_id": 23,
+      "name": "t",
+      "window": [
+        0.62,
+        0.78
+      ],
+      "from": "0.62",
+      "to": "0.78",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 101,
+      "raw": "opacity: seg(t, 0.62, 0.78, E.outCubic),"
+    },
+    {
+      "style_id": 23,
+      "name": "t",
+      "window": [
+        0.62,
+        0.82
+      ],
+      "from": "0.62",
+      "to": "0.82",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 102,
+      "raw": "letterSpacing: lerp(seg(t, 0.62, 0.82, E.outCubic), 11, 5),"
+    },
+    {
+      "style_id": 23,
+      "name": "t",
+      "window": null,
+      "from": "BURST + b.d",
+      "to": "1",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 127,
+      "raw": "const u = seg(t, BURST + b.d, 1);"
+    },
+    {
+      "style_id": 23,
+      "name": "u",
+      "window": [
+        0.74,
+        1.0
+      ],
+      "from": "0.74",
+      "to": "1",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 143,
+      "raw": "opacity: u <= 0 ? 0 : Math.min(1, u * 8) * (1 - seg(u, 0.74, 1) * 0.95),"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "计数曲线",
+      "typical": "easeOutQuart，0.06–0.56",
+      "feel": "换 outCubic 冲刺感减弱；线性计数是最常见的\"没有情绪\"写法"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "抢拍量",
+      "typical": "BURST 提前 0.04",
+      "feel": "提前 0–0.02 读作同拍；>0.08 纸屑像\"别人的庆祝\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "纸屑数量",
+      "typical": "52 片（8 色调色板）",
+      "feel": "<30 稀疏不成雨；>80 遮数字。PAL 是\"演出彩纸\"，一般不随品牌换色"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "重力/初速比",
+      "typical": "g≈2.5×",
+      "feel": "vy"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "scale 过冲",
+      "typical": "1.3 峰值 + outBack 回落",
+      "feel": "数字是主角，过冲 >1.5 会撞到标签排版"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "终值",
+      "typical": "p*1000（演示值）",
+      "feel": "换真实数字：保持\"从 0 滚到终值\"，跳变起点会丢冲刺感"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "纸屑物理用 `life = u*1.1` 的归一化秒——改 dur 后重力体感会变（同 u 对应不同真实时长），需重调 g/vy",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "抢拍差 0.04 是硬编码在 BURST 与计数终点两处的常量，改计数窗口时同步平移 BURST 保持提前量",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "纸屑 opacity 尾段 0.74 起衰减到 0.05——别让纸屑活到 t=1 还在飞，落定段（标签收字距）需要干净背景",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "配 SFX：计数段 tick 渐密 + BURST 拍 pop/confetti + 到位拍 impact——三层缺一情绪都塌（对照 sound-design.md counter 类）",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "counter-confetti",
+      "variant_letter": null,
+      "upstream_key": "counter-confetti",
+      "demo": "demos/data/counter-confetti/CounterConfetti.tsx",
+      "component": "CounterConfetti",
+      "duration_frames": 138,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

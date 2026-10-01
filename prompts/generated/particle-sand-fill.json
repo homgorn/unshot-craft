@@ -1,0 +1,144 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "particle-sand-fill",
+  "category": "data",
+  "category_label": {
+    "en": "Data & Metrics",
+    "zh": "数据与指标",
+    "ru": "Данные и метрики"
+  },
+  "tags": [
+    "data",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/data/particle-sand-fill.md",
+    "card_sha256": "3b4b0995b59bafa84121ea479a67a02fede29af1f6b4cf03aed582da17732b4c",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "4–5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（构筑感入场）",
+    "energy_rationale": "构筑感入场"
+  },
+  "intent_zh": "把柱状图入场从\"长高动画\"换成\"落体堆积\"：每根柱上方下一场方块雨， 粒子逐颗坠落（重力加速）、触堆积面即停+15% 回弹，一层压一层堆到目标 高度后粒子面淡出换实体柱、顶部数值标签弹出。数据的\"量\"变成看得见的 \"一颗一颗攒出来\"——与 unit-dot-swarm-regroup（点群平面迁徙聚形） 分工：那是同一批点改队形，这是落体材料筑成图形。",
+  "use_zh": "柱状图/量级对比入场；讲\"积累/汇聚\"语义的数据段落",
+  "summary_zh": "粒子落斗成柱——柱状图不长高而是\"下雨下出来\"：方点粒子逐颗坠落堆积成柱，堆满凝成实体+数值弹出",
+  "beats": [],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "粒径",
+      "typical": "14px 方点",
+      "feel": "词汇原案 4px 不可感，QA 中加码 3.5 倍"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "每柱粒子数",
+      "typical": "~50 颗",
+      "feel": "太少堆积感稀疏，太多单颗不可辨"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "坠落",
+      "typical": "重力加速，落地帧闭式预解析",
+      "feel": "堆积高度=已落数×粒径，禁真碰撞模拟"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "回弹",
+      "typical": "触面 15% 单次回弹",
+      "feel": "无回弹读作贴图；多次回弹拖节奏"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "柱间错峰",
+      "typical": "6f 逐柱启动",
+      "feel": "齐落读作机械；错峰有\"雨势推移\"感"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "收束",
+      "typical": "堆满→粒子面淡出→实体柱+标签 back-out 弹出",
+      "feel": "粒子态直接定格显脏，必须凝成实体"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "落地帧全部闭式预解析（每颗粒子的落点/落帧编译期可算），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "只适合 3–5 根柱的量级对比；十几根柱的密集图表用常规入场",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "与\"碎块解体\"否决判例的界限：这是构筑（从无到有堆出图形），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "声音：细密颗粒落地声铺底，每柱堆满一声轻\"叩\"，标签弹出一声 tick",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "particle-sand-fill",
+      "variant_letter": null,
+      "upstream_key": "particle-sand-fill",
+      "demo": "demos/data/particle-sand-fill/ParticleSandFill.tsx",
+      "component": "ParticleSandFill",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

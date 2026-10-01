@@ -1,0 +1,231 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "list-stack-press",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/list-stack-press.md",
+    "card_sha256": "f103bd212bab98d125f4935f8d1c2158c260fb031fbe589089a4f23d0b1abb87",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 88,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 3s（18–88f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中",
+    "energy_rationale": null
+  },
+  "intent_zh": "\"堆叠有重量\"：每张新卡落上来，已落定的整摞被压下再弹回——观众从物理反馈里读出\"这是实打实攒下来的东西\"。计数器同步跳格把数量感钉死。",
+  "use_zh": "feed/雷达/收件箱类\"每天有新东西\"的镜头；强调持续积累的资产列表",
+  "summary_zh": "列表卡从画面底部逐张飞上摞起，每张落地压弹整摞、计数器同步跳一格",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**预备拍（anticipation，借鉴迪士尼法则 2）**：首张升入前给一拍段落级预备——计数器先于首卡 4–6f 亮起归零/微缩 scale(0.96)→1，把视线引到堆叠区，再让首卡入画。只做段落级一次，不逐卡加"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "卡从画面下方升入，交替微倾斜收平，等距节拍逐张摞起"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每张到场压下整摞 6px、8f 弹回（stackPress 脉冲——即法则 5 的 follow-through：新卡的动能传给整摞再缓冲耗散，这一笔就是\"有重量\"的来源）"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "落地后按拖拽层级依次收尾（法则 5）：卡体先停 → 整摞弹回 → 高亮条再长出（滞后 2–4f）——三者同帧发生读作贴图切换"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "收尾一道 glaze 扫光掠过整摞"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "屏幕空间 DigitRoll 计数器落一张滚一格；相机跟随堆叠向下"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "节拍",
+      "typical": "CUES=[18,30,42,54,66]（12f 等距），每张飞 22f，bezier(0.45,0.05,0.25,1.12) 末端过冲",
+      "feel": "少量卡（5 张）可以等距；大批量入场才需要递加速（对照 deck-deal 的 R2）"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "入场",
+      "typical": "从下方 600px 升入，交替 ±2° tilt 收平，scale 1.06→1",
+      "feel": "交替倾斜打破对称；同向倾斜读作复制粘贴"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "堆叠压感",
+      "typical": "后一张到场时整摞压下 6px、8f 弹回（脉冲 [cue,cue+4,cue+8]→[0,6,0]）",
+      "feel": "这是\"有重量\"的关键一笔，砍掉后堆叠变成简单排版"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "阴影",
+      "typical": "空中 `0 32px 64px`、落定 `0 2px 8px`",
+      "feel": "阴影随高度收敛，和 deck-deal/spotlight 同一套语言"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "联动高亮",
+      "typical": "落地后滞后 2–4f 于 72% 高度处长出 40% 宽强调色（模板片为琥珀）底色（7f 长 + 5f 淡）；最后一张离切点仅 ~12f 需压缩节拍",
+      "feel": "高亮是次级动作（法则 5/8）：在主动作（落地压弹）之后跟进，不与之同帧抢戏；末尾元素的节拍要按剩余帧预算压缩，不能照抄前面的"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "glaze 扫光",
+      "typical": "420px 宽、rotate 14°、mixBlendMode overlay，帧 82→96 从 −700 扫到 2600",
+      "feel": "扫光全镜头只此一次、扫整摞不逐卡（Q4）"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "计数器（digit-roll 手法）",
+      "typical": "连续里程计位置 pos：每张卡落地让 pos 沿数字带 +1 格，单格 8f 滚定，bezier(0.25,0.8,0.25,1)；滚动量=pos·lineH 沿双份 0-9 带连续下滚",
+      "feel": "计数与落地不同步立刻穿帮；**单格滚动必须短于落卡间距（12f）且尾格在镜头收尾前滚定**——以 count 为 key 重挂重滚的写法每次都要从 0 滚 22f，12f 节拍下前一次永远滚不完、尾帧停在 4（PR #40 判例）；数字带双份拼接+overflow hidden+tabular-nums（不开 tabular 会横向抖）"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "相机",
+      "typical": "zoom 1.35→0.9 五键跟随堆叠向下",
+      "feel": "正视机位（见已知坑），相机只做纵向跟随"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "堆叠/列表信息镜头必须正视（Q6）——全片倾斜化时本镜头曾被单独回滚回正视；风格化机位逐镜头验证，不全局套用",
+      "critical": false,
+      "rules": "Q6"
+    },
+    {
+      "ord": 1,
+      "text": "逐卡 glint 高亮扫过被否两次（Q4），高亮用静态强调色底色条即可，动感交给压弹",
+      "critical": false,
+      "rules": "Q4"
+    },
+    {
+      "ord": 2,
+      "text": "与 history-list-stack（document-typewriter-reveal 卡尾段）是同一动作词汇——全片同一手法只当一次主角（P4），两处并用时一处必须降为配角",
+      "critical": false,
+      "rules": "P4"
+    },
+    {
+      "ord": 3,
+      "text": "anticipation/拖拽层级参数借鉴自迪士尼 12 法则（pixel2motion skill 内置提炼版），非用户判例——是默认建议不是令；与判例冲突时判例优先",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "预备动作幅度必须过肉眼阈值（deck-deal 判例 2026-07-09：小幅度用户完全无感，放大 12 倍才通过）——渲染后自查\"不逐帧能否看出蓄力\"",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "P4",
+      "family": "P",
+      "title": "规则：开拍前列产品功能清单（dashboard/详情/论文/周报/品牌）逐一映射镜头，核心功能漏拍等于返工；一种手法（飞入/堆叠/翻页）全片只当一次主角；剪辑自查按\"这个镜头给了什么新信息\"过滤，同一素材/信息全片只出现一次，重复即删。",
+      "check_question": "自检：功能清单每项都有对应镜头吗？有没有两个镜头在用同一种手法当主角、或讲同一件事？"
+    },
+    {
+      "rule_id": "Q4",
+      "family": "Q",
+      "title": "规则：glint/泛光划过类特效不做群发——批量元素入场靠运动本身而非逐个发光；保留的光效必须被承载元素的 border-radius/overflow 裁剪，光溢出圆角是廉价感的典型来源。光效类技术路径本身不封杀：单点、给主角、实现质量过硬的 sheen/泛光可以做，做完对着渲染帧自问\"好看吗\"再交。",
+      "check_question": "自检：数一数全片 glint/sweep 出现次数：有没有超过\"主角元素一次\"？每处光效是否被圆角裁剪？留下的每处光效，正常速度回放自己看过并觉得好看吗？"
+    },
+    {
+      "rule_id": "Q6",
+      "family": "Q",
+      "title": "规则：风格化机位按镜头逐个决定——叙事/情绪镜头可倾斜，列表/堆叠等信息密集镜头保持正视；含文字的卡片特写用侧向水平机位，避免大角度仰拍/俯拍破坏文字可读性；禁止全局一刀切套用某种机位风格。",
+      "check_question": "自检：每个倾斜机位镜头：斜的理由是什么？画面里的文字在这个角度还读得清吗？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "list-stack-press",
+      "variant_letter": null,
+      "upstream_key": "list-stack-press",
+      "demo": "demos/ui-entrance/list-stack-press/ListStackPress.tsx",
+      "component": "ListStackPress",
+      "duration_frames": 88,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

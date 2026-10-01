@@ -1,0 +1,217 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "depth-layer-moves",
+  "category": "camera",
+  "category_label": {
+    "en": "Camera & Space",
+    "zh": "运镜与空间",
+    "ru": "Камера и пространство"
+  },
+  "tags": [
+    "camera"
+  ],
+  "source": {
+    "card": "references/shots/camera/depth-layer-moves.md",
+    "card_sha256": "db03b4aa97e5b56a2879d7793120a33e8db0c63d59ad3f4c9a0221d326888708",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "视差滑轨 4–5s 持续；dolly-zoom 3–4s 单向行程",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "视差=中（质感型）；dolly-zoom=中高（压迫感渐强）",
+    "energy_rationale": "质感型"
+  },
+  "intent_zh": "整页平移是\"看页面\"，分层深度是\"在页面的空间里\"。视差滑轨给横移 加纵深（迪士尼多平面摄影机原理，Linear 片同款质感）；伪 dolly-zoom 反过来——主角纹丝不动、全世界压过来，给戏剧性时刻蓄力。",
+  "use_zh": "平面截图要\"有厚度\"的段落；戏剧性蓄力时刻用 dolly-zoom（一支片 ≤1 次）",
+  "summary_zh": "分层深度两款运镜——多层视差滑轨（3 层速度梯度横移出纵深）与伪 dolly-zoom（主体钉死、背景膨胀压来）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**视差滑轨（3 层）**：背景整页（系数 0.35 + blur 2px + 降饱和"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.92 + opacity 0.85，退成环境）、中景真实卡切片（系数 0.7，"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "主阅读层，无 blur）、前景浮块（系数 1.4 + blur 3px，掠过镜头）。"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "同一条 drive 位移乘各层系数"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**伪 dolly-zoom**：主体高清卡固定 px 钉屏中（不参与任何变换）；"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "背景层（整页 + 卡群一体）scale 1→2.25 从画面中心膨胀 + blur 0→3.5px"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "渐深；主体落影随进程加深（12→28px offset）强化\"钉住感\""
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "两款都不拆真实页面排版：整页作为一体成层，独立元素用切片另起层"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——层间关系是\"景深\"，不是\"页面被撕开\""
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "视差层系数",
+      "typical": "0.35 / 0.7 / 1.4",
+      "feel": "梯度 ≥2 倍层间才可辨；层数 ≤4 防过载"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "层次锚",
+      "typical": "前后景 blur + 背景降饱和",
+      "feel": "没有 blur/饱和锚，读作\"贴片乱飞\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "dolly 膨胀行程",
+      "typical": "scale 1→2.0–2.5",
+      "feel": "行程小了压迫感不足；背景 opacity ≤0.6 防读作故障"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "主阅读层/主体必须高清纹理且无 blur——观众在读它",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "视差与 PageCam rot 3D 的组合（斜拍视差）未验证，实战先渲 still 确认",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "dolly-zoom 是\"戏剧调料\"：一支片 ≤1 次，日常段落用视差滑轨",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "参数经占位素材调校转正，非实战定稿，首次实战后回验",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "dolly-zoom-real",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/camera/depth-layer-moves/DollyZoomReal.tsx",
+      "component": "DollyZoomReal",
+      "duration_frames": 135,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "multiplane-real",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/camera/depth-layer-moves/MultiplaneReal.tsx",
+      "component": "MultiplaneReal",
+      "duration_frames": 135,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

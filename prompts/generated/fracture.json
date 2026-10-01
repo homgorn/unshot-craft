@@ -1,0 +1,230 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "fracture",
+  "category": "opening",
+  "category_label": {
+    "en": "Opening & Brand",
+    "zh": "开场与品牌",
+    "ru": "Открытие и бренд"
+  },
+  "tags": [
+    "opening"
+  ],
+  "source": {
+    "card": "references/shots/opening/fracture.md",
+    "card_sha256": "0cca2aad5f967730735c60e1a37ef4c70fe5cc546d07a04bd47764f44e9b8530",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 156,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 5.2s（156f@30fps；聚合 0–2.6s · hold 1s · 飞散 1.5s）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "high",
+    "energy_label": {
+      "zh": "高",
+      "en": "high"
+    },
+    "energy_verbatim": "高（两头高能、中段静止，适合压 BGM 重音起收）",
+    "energy_rationale": "两头高能、中段静止，适合压 BGM 重音起收"
+  },
+  "intent_zh": "把\"产品成形\"拍成物理事件：碎片从三维空间各自带着旋转飞回原位，观众看着一面完整画面从无序中长出来；hold 读字后再整体炸出画面，把注意力干净地交给下一镜。进出对称，一支素材可正反两用。",
+  "use_zh": "开场第一镜\"从混沌到成形\"的品牌/海报揭示；倒放或只取后半可作硬转场",
+  "summary_zh": "5×5 瓦片从 3D 碎片态按中心波纹逐圈聚合成整面海报，停一拍亮字，随后全部碎片背离中心加速旋转飞出画面",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "25 块瓦片各自持有确定性伪随机的初始姿态：位移 ±450/±300/±490px（x/y/z）+ 三轴 ±180° 旋转，由 `rand(seed)` 生成，渲染可复现"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "入场按曼哈顿距离波纹 stagger：`delay = (|r-2|+|c-2|) * 0.045`，中心先就位、四角最后，每块 0.34 时长走 `inOutCubic`"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "opacity 以 `tin * 2.5` 快速升到 1——碎片远处即近乎实体，避免\"淡入感\"稀释物理感"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": [
+        0.42,
+        0.52
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "中央 \"REASSEMBLE\" 字样 t=0.42–0.52 淡入、0.7–0.78 淡出，占住 hold 段视线"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "退场不淡出：每块沿背离画面中心的方向（`atan2` 计算 + ±0.8 抖动）飞出 620–880px 并加旋 ±150°，`inCubic` 加速，实体出画"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 86,
+      "name": "t",
+      "window": null,
+      "from": "tl.delay",
+      "to": "tl.delay + 0.34",
+      "ease": "E.inOutCubic",
+      "concrete": false,
+      "line_no": 58,
+      "raw": "const tin = seg(t, tl.delay, tl.delay + 0.34, E.inOutCubic);"
+    },
+    {
+      "style_id": 86,
+      "name": "t",
+      "window": null,
+      "from": "0.70 + tl.delay * 0.5",
+      "to": "0.70 + tl.delay * 0.5 + 0.18",
+      "ease": "E.inCubic",
+      "concrete": false,
+      "line_no": 60,
+      "raw": "const tout = seg(t, 0.70 + tl.delay * 0.5, 0.70 + tl.delay * 0.5 + 0.18, E.inCubic);"
+    },
+    {
+      "style_id": 86,
+      "name": "t",
+      "window": [
+        0.42,
+        0.52
+      ],
+      "from": "0.42",
+      "to": "0.52",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 91,
+      "raw": "opacity: seg(t, 0.42, 0.52) - seg(t, 0.7, 0.78),"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "网格",
+      "typical": "5×5，380×230px，perspective 900px",
+      "feel": "瓦片更多波纹更细腻但单块存在感下降；persp <700 透视夸张易穿帮"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "初始散布",
+      "typical": "dx±450 / dy±300 / dz −210~+490",
+      "feel": "放大散布开场更混沌，但聚合路径变长需同步加 delay 窗口"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "波纹间隔",
+      "typical": "0.045/环（曼哈顿距离）",
+      "feel": ">0.07 波纹感变\"逐圈点名\"；<0.03 全体近同时到位失去波纹"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "入场时长",
+      "typical": "每块 0.34（inOutCubic）",
+      "feel": "缩短更\"啪\"地成形；配合波纹间隔保证末块 ≤0.6 就位"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "退场窗口",
+      "typical": "0.70 + delay×0.5 起飞，0.18 时长（inCubic）",
+      "feel": "**窗口必须收在 t≈0.97 前**：曾因 0.72+delay×0.7/0.26 导致角瓦片出画不完、卡在画框边一秒（判例 2026-08-05）"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "退场距离",
+      "typical": "620–880px（背离中心 + 随机抖动）",
+      "feel": "距离不足会残留在画框边；中心瓦片方向随机（无\"背离\"可言）"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "瓦片配色",
+      "typical": "`ACCENT_HUE=218` 派生 5 个邻近色相，饱和 14–20%",
+      "feel": "改一个色相常量整面换色；饱和拉高即从\"中性海报\"变品牌色块墙"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "退场用位移出画而非 opacity 淡出——淡出会读作\"消失\"而非\"飞走\"，物理感尽失；改参数时保持 `opacity = min(1, tin*2.5)` 不挂退场项",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "所有随机量必须走确定性 `rand(seed)`（等价 Remotion `random()`），真随机会渲染间抖动",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "hold 段（t≈0.6–0.7）是唯一读字窗口，加长文案要同步拉开 label 淡出与首块起飞的间隔，否则字还没读完瓦片已散",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "用作转场时建议只取 t=0.7–1 的飞散段倒放/正放各半，两侧素材分别贴在瓦片面上需另做纹理映射",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "fracture",
+      "variant_letter": null,
+      "upstream_key": "fracture",
+      "demo": "demos/opening/fracture/Fracture.tsx",
+      "component": "Fracture",
+      "duration_frames": 156,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

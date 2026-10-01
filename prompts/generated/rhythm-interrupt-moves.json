@@ -1,0 +1,192 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "rhythm-interrupt-moves",
+  "category": "rhythm",
+  "category_label": {
+    "en": "Rhythm & Montage",
+    "zh": "节奏与蒙太奇",
+    "ru": "Ритм и монтаж"
+  },
+  "tags": [
+    "rhythm"
+  ],
+  "source": {
+    "card": "references/shots/rhythm/rhythm-interrupt-moves.md",
+    "card_sha256": "b6a5460ee445ecd476b58e0c0784113f92d617678e325205a33334ce661db7d9",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 135,
+    "duration_frames_hint": null,
+    "duration_verbatim": "B ~4.5s / C ~4.5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "B 中 / C 高",
+    "energy_rationale": null
+  },
+  "intent_zh": "库内节奏卡管的都是\"怎么切、切多密\"；这两式管**怎么断**——观众预期 连续，你偏打断，打断方式即表达：B 是空间断——同构图三次无补间跳大 （1x→1.6x→2.6x），戈达尔跳切的顿挫，比连续推近更有\"看这里、再近点、 就是它\"的指令感；C 是存在断——画面与纯黑交替频闪且间隔收紧， 高潮前的窒息倒数。选型：强制聚焦指标用 B，高潮前蓄压用 C。",
+  "use_zh": "用\"打断连续性\"本身当节奏器：顿挫推近（B）、窒息逼近（C）；与 beat-cut-moves（切点排布）、montage-rhythm（段落呼吸）互补",
+  "summary_zh": "打断节奏两式——jump-cut-punch-in 三级跳切推近、strobe-black-frames 频闪黑帧",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B jump-cut-punch-in | transform-origin 钉目标中心，三档 scale 阶梯跳变（零补间），每跳 2f 加深脉冲当 tick | 逐级逼近核心指标；纪录片式盯住 |"
+    },
+    {
+      "ord": 3,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| C strobe-black-frames | 全屏黑帧按写死帧号表闪现（每次 2f，间隔 8f→3f 收敛），末闪掀开即硬切放大落定 | 全片最高潮前的倒数蓄压 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "B",
+      "key": "B 跳挡",
+      "typical": "1.0→1.6→2.6，各 hold ≥35f",
+      "feel": "挡差 <1.5× 读作画面抖了一下"
+    },
+    {
+      "ord": 1,
+      "variant": "B",
+      "key": "B tick",
+      "typical": "跳变帧起 2f brightness 0.92 全画面脉冲",
+      "feel": "无 tick 的跳切读作丢帧"
+    },
+    {
+      "ord": 2,
+      "variant": "C",
+      "key": "C 帧号表",
+      "typical": "[40,48,55,61,66,70,73,76,79] 各 2f 纯黑",
+      "feel": "间隔必须收敛；等距频闪只是闪没有\"逼近\""
+    },
+    {
+      "ord": 3,
+      "variant": "C",
+      "key": "C 落锤",
+      "typical": "末闪掀开一帧到位 scale 1.35 + 2f 加深脉冲",
+      "feel": "掀开后还在原构图，频闪就白憋了"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "收尾",
+      "typical": "B 末挡 ≥45f / C 硬切后 ≥50f 真静止",
+      "feel": "打断系事后 hold 从重给"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "两式与 speed-ramp-freeze 都动\"时间轴\"，同一镜头只能有一个时间",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "C 式**光敏警示**：频闪画面需注意光敏性癫痫观众提示；且必须配乐",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "B 式三挡构图必须同 origin（钉死目标中心）——每挡重新构图就是",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "声音强依赖：B 每跳一声 tick、C 每闪一声打点（sound-design §4.5）",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "jump-cut-punch-in",
+      "variant_letter": "B",
+      "upstream_key": "jump-cut-punch-in",
+      "demo": "demos/rhythm/rhythm-interrupt-moves/JumpCutPunchIn.tsx",
+      "component": "JumpCutPunchIn",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "strobe-black-frames",
+      "variant_letter": "C",
+      "upstream_key": "strobe-black-frames",
+      "demo": "demos/rhythm/rhythm-interrupt-moves/StrobeBlackFrames.tsx",
+      "component": "StrobeBlackFrames",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

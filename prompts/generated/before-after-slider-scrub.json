@@ -1,0 +1,233 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "before-after-slider-scrub",
+  "category": "data",
+  "category_label": {
+    "en": "Data & Metrics",
+    "zh": "数据与指标",
+    "ru": "Данные и метрики"
+  },
+  "tags": [
+    "data",
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/data/before-after-slider-scrub.md",
+    "card_sha256": "4182eeed6cb35eac70bb318b416c4afd219a09f7e6037f09486d5e5ad1c60f7e",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "4–5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（快甩是打击点，慢扫是阅读期）",
+    "energy_rationale": "快甩是打击点，慢扫是阅读期"
+  },
+  "intent_zh": "AI 图像产品发布片的标准对比语法：同一画面\"处理前\"（低对比灰蒙） 与\"处理后\"（清晰版）叠放，带圆手柄的竖分割杆先从左端猛甩到 70% （overshoot 回弹）、停一拍，再以约 1/5 的速度慢扫回来让观众看清 差异——**快甩慢扫的速度对比就是节奏**：快甩宣告\"变了\"， 慢扫证明\"变在哪\"。",
+  "use_zh": "AI 增强/优化/重构类功能的效果对比段落（\"用前 vs 用后\"一镜讲清）",
+  "summary_zh": "前后对比拉杆——\"处理前/后\"两版叠放，分割杆先猛甩后慢扫，杆过处新版\"显影\"揭出",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 阶段 | 帧段参考 | 内容 |"
+    },
+    {
+      "ord": 1,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|------|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 1 静置 | f0–14 | 杆停 8%，画面几乎全是\"处理前\" |"
+    },
+    {
+      "ord": 3,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [
+        12
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 2 快甩 | 12f | 8%→76%（out cubic）过冲 |"
+    },
+    {
+      "ord": 4,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [
+        12
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 3 回弹 | 12f | 76%→70% |"
+    },
+    {
+      "ord": 5,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [
+        18
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 4 停顿 | ~18f | 让观众看清 after |"
+    },
+    {
+      "ord": 6,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [
+        48
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 5 慢扫 | ~48f | 70%→40% 二次展示差异 |"
+    },
+    {
+      "ord": 7,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [
+        40
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 6 定格 | 末 ≥40f | 真静止 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "速度比",
+      "typical": "快甩 12f vs 慢扫 48f，约 5:1",
+      "feel": "比例 <3:1 节奏对比不可感"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "揭示",
+      "typical": "after 层 clip-path inset 右边界跟随杆 x",
+      "feel": "杆和揭示边界错位即穿帮"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "手柄",
+      "typical": "圆形手柄 + 速度差分驱动 scaleX 微拉伸（峰值 1.18），静止自动归 1",
+      "feel": "拉伸给手柄\"被甩\"的重量感"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "before 处理",
+      "typical": "低对比灰蒙版",
+      "feel": "before 太难看是自黑，\"差\"要可信（真实旧版/未优化态）"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "角标",
+      "typical": "BEFORE/AFTER 角标放内容区",
+      "feel": "demo 判例：初版压住侧栏/头像穿帮"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "两版必须同布局同机位——布局不同读作两个页面，对比失效",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "实战 before/after 都用真实截图（Q1）：before 是注入旧数据/关闭",
+      "critical": false,
+      "rules": "Q1"
+    },
+    {
+      "ord": 3,
+      "text": "慢扫终点停 40% 而非 0%——留一段 after 在画面上定格（结论可见）",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "声音：快甩一声 whoosh + 回弹轻 tick，慢扫无声或极轻摩擦音（S4）",
+      "critical": false,
+      "rules": "S4"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "Q1",
+      "family": "Q",
+      "title": "规则：凡是表现产品既有页面的镜头，第一步就用无头浏览器截真实页面（整页纹理 + 元素级抠图 + 坐标 json），不手搓仿真贴图复刻；非复刻场景（抽象开场/品牌段/页面上不存在的独立展示组件）允许手搓 UI，但质量（出版级质感，对照 Q10 标准）与表达明确性（观众一眼看懂它是什么）是硬门槛，达不到回截图路线。公开演示数据只有在产品简报明确确认后可保留；客户、个人、内部、密钥、实时或其他敏感内容必须先虚构、脱敏或冻结。对手搓素材同样适用该口径。",
+      "check_question": "自检：每块 UI 素材：它在复刻既有页面吗？是则必须来自截图；手搓件的质感和表达能过 Q10 级审视吗？源数据是否符合已确认的数据口径，且不含未授权的客户、个人、内部或密钥信息？"
+    },
+    {
+      "rule_id": "S4",
+      "family": "S",
+      "title": "规则：画面里发生什么动作就配什么声音（打字画面配键盘声、逐条落入配逐个 pop），泛用 swoosh 盖不住有辨识度的画面动作；长样本按画面段落裁剪（Sequence 截断），时长与动作严格等长。",
+      "check_question": "自检：每个有辨识度的画面动作（打字/点击/落地）有没有自己的拟音？音效有没有拖到动作结束之后还在响？每条音效在成片里真的听得见吗（轻音素材音量够不够）？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "before-after-slider-scrub",
+      "variant_letter": null,
+      "upstream_key": "before-after-slider-scrub",
+      "demo": "demos/data/before-after-slider-scrub/BeforeAfterSliderScrub.tsx",
+      "component": "BeforeAfterSliderScrub",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

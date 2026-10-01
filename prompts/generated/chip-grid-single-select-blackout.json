@@ -1,0 +1,398 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "chip-grid-single-select-blackout",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/chip-grid-single-select-blackout.md",
+    "card_sha256": "ce46956254b0b2fe08a602688c1d93b52dc36337c4883322c61d3db67ae69027",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约5.0s（150f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-low",
+    "energy_label": {
+      "zh": "中低",
+      "en": "mid-low"
+    },
+    "energy_verbatim": "中低（唯一的爆点是那一帧灰闪，其余都在收）",
+    "energy_rationale": "唯一的爆点是那一帧灰闪，其余都在收"
+  },
+  "intent_zh": "一帧灰闪 + 三帧反黑，是把真实 UI 的 `:active → :selected` 两级状态 拆开演。观众看到的是\"手指按下\"再\"系统确认\"，而不是一次渐变。其余 chip 降到 18% 而**位置绝不移动**：一旦重排，观众会以为页面刷新了， \"单选\"的语义就丢了。",
+  "use_zh": "单选/套餐/档位选择的交互演示；\"选了它之后会怎样\"的因果镜头；价格/参数结算类链路",
+  "summary_zh": "五个选项 chip 以 3+2 居中排布逐个淡入；选中帧先插一帧灰色按压块，紧接数帧内底色变纯黑、文字变白并做 1→1.04→1 极轻回弹，其余 chip 淡到 18% 但位置锁死；随后余项归零，黑 chip 上移收窄，下方浮现算式行",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "5 个 chip 分 3+2 两行居中（top 96/136，gap 10，高 30、圆角 15），"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "按 `d = 0.05 + i*0.028` 逐个 outQuad 淡入（各 0.04）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**1 帧按压灰闪**：`seg(FS, FS+0.006) * (1 − seg(FS+0.006, FS+0.014))`，"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`rgba(120,120,120,.5)` 覆盖层（FS=0.44，0.006×5000ms ≈ 1 帧）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**反黑**：`seg(FS+0.008 → FS+0.04, linear)`（≈5 帧）驱动"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "背景 `#fff→INK`、描边 `LINE→INK`、文字 `TXT→#fff`"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**按压回弹**：`sc = 1 + sin(pr·π)*0.04`，`pr` 走 FS+0.008→FS+0.075"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——正弦保证起止都精确回到 1，不需要额外关键帧"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**余项降级**：`fade = seg(FS+0.008 → FS+0.075, outQuad)` 把 opacity"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "压到 `lerp(fade, 1, 0.18)` = 18%，`transform` 恒为 `none`"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**收束**：`lift = seg(FS+0.30 → FS+0.42, inOutCubic)`（选中后≈1.5s）"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "余项 opacity 归零，黑 chip `translate(cx·lift, −46·lift)` + `scale→0.82`；"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`cx = 220 − (offsetLeft + width/2)` 只测一次，让它上移时同时回到中线"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "算式行 `FS+0.36→FS+0.42` 浮现，随后逐词加深到 t≈0.98"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 69,
+      "name": "t",
+      "window": null,
+      "from": "FS + 0.36",
+      "to": "FS + 0.42",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 53,
+      "raw": "const capShow = seg(t, FS + 0.36, FS + 0.42);"
+    },
+    {
+      "style_id": 69,
+      "name": "t",
+      "window": null,
+      "from": "FS + 0.37",
+      "to": "0.98",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 54,
+      "raw": "const capInn = seg(t, FS + 0.37, 0.98);"
+    },
+    {
+      "style_id": 69,
+      "name": "t",
+      "window": [
+        0.02,
+        0.1
+      ],
+      "from": "0.02",
+      "to": "0.1",
+      "ease": "E.outQuad",
+      "concrete": true,
+      "line_no": 81,
+      "raw": "opacity: seg(t, 0.02, 0.1, E.outQuad),"
+    },
+    {
+      "style_id": 69,
+      "name": "t",
+      "window": null,
+      "from": "d",
+      "to": "d + 0.04",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 104,
+      "raw": "const inP = seg(t, d, d + 0.04, E.outQuad);"
+    },
+    {
+      "style_id": 69,
+      "name": "t",
+      "window": null,
+      "from": "FS",
+      "to": "FS + 0.006",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 113,
+      "raw": "flashO = (seg(t, FS, FS + 0.006) * (1 - seg(t, FS + 0.006, FS + 0.014))).toFixed(3);"
+    },
+    {
+      "style_id": 69,
+      "name": "t",
+      "window": null,
+      "from": "FS + 0.008",
+      "to": "FS + 0.04",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 114,
+      "raw": "const bk = seg(t, FS + 0.008, FS + 0.04, E.linear);"
+    },
+    {
+      "style_id": 69,
+      "name": "t",
+      "window": null,
+      "from": "FS + 0.008",
+      "to": "FS + 0.075",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 119,
+      "raw": "const pr = seg(t, FS + 0.008, FS + 0.075, E.linear);"
+    },
+    {
+      "style_id": 69,
+      "name": "t",
+      "window": null,
+      "from": "FS + 0.30",
+      "to": "FS + 0.42",
+      "ease": "E.inOutCubic",
+      "concrete": false,
+      "line_no": 121,
+      "raw": "const lift = seg(t, FS + 0.30, FS + 0.42, E.inOutCubic);"
+    },
+    {
+      "style_id": 69,
+      "name": "t",
+      "window": null,
+      "from": "FS + 0.008",
+      "to": "FS + 0.075",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 127,
+      "raw": "const fade = seg(t, FS + 0.008, FS + 0.075, E.outQuad);"
+    },
+    {
+      "style_id": 69,
+      "name": "t",
+      "window": null,
+      "from": "FS + 0.30",
+      "to": "FS + 0.35",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 128,
+      "raw": "const gone = seg(t, FS + 0.30, FS + 0.35, E.outQuad);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "入场",
+      "typical": "间隔 0.028、各 0.04、outQuad",
+      "feel": "5 个 chip 在前 0.2 铺完，把时间留给选中段"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "选中时刻",
+      "typical": "FS = 0.44（约全片中点）",
+      "feel": "前半读题、后半看结果；FS 早于 0.3 观众还没读完选项"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "灰闪",
+      "typical": "0.006 亮 + 0.008 落，rgba(120,120,120,.5)",
+      "feel": "**就一帧**：给 2 帧以上就读作 hover 高亮，不是按下"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "反黑",
+      "typical": "FS+0.008→FS+0.04 linear（≈5f）",
+      "feel": "linear 是故意的：加 ease 会让\"变黑\"这件事有过程感，太软"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "按压回弹",
+      "typical": "1 + sin(pr·π)·0.04，跨 0.067",
+      "feel": "0.04 是极轻；到 0.1 就成了弹跳按钮，抢戏"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "余项降级",
+      "typical": "降到 18%，位置 transform:none",
+      "feel": "**位置锁死是命门**：降到 18% 仍在原位，才读作\"没被选中\"而非\"消失了\""
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "收束时刻",
+      "typical": "FS+0.30（选中后≈1.5s）起，0.12 inOutCubic",
+      "feel": "1.5s 是让观众看清选中态的最短驻留；缩到 0.5s 就赶"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "上移收窄",
+      "typical": "translateY −46px、scale→0.82，横向补 cx 回中线",
+      "feel": "不补 cx 的话上移后会偏在左边，读作\"被拖走\""
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "`cx` 用 `measured` 标志只测一次（首帧 `offsetWidth` 可能为 0 所以要",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "其余 chip 的 `transform` 必须显式写 `'none'`，靠 flex 自动重排会让",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "选中项要在同一个 flex 行里做 translate，不能改 `position`，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "占位内容：5 条 \"Option … plan\" 选项名 + 算式行",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "与 `chip-lift-to-user-pill` 分工：那张选中后**横向生长成新对象**，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "chip-grid-single-select-blackout",
+      "variant_letter": null,
+      "upstream_key": "chip-grid-single-select-blackout",
+      "demo": "demos/interaction/chip-grid-single-select-blackout/ChipGridSingleSelectBlackout.tsx",
+      "component": "ChipGridSingleSelectBlackout",
+      "duration_frames": 150,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

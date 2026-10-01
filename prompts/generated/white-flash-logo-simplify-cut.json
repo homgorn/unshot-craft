@@ -1,0 +1,232 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "white-flash-logo-simplify-cut",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/white-flash-logo-simplify-cut.md",
+    "card_sha256": "b050b2c3192b907e1536100d8ed75fcb2174a4563244e9884e4686a6801e0fc5",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 108,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 3.6s（108f@30fps；静置流光 0–1.2s · 冲白 1.2–1.5s · 扁平定格 1.7–2.7s）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（一次脉冲式重音，前后都是静场）",
+    "energy_rationale": "一次脉冲式重音，前后都是静场"
+  },
+  "intent_zh": "先给足华丽（六色液态渐变在字面上流动、柔光扫掠），再用一次白闪把它\"净化\"成扁平三色字标——观众读到的是\"演出结束，这就是它的正式形象\"。降维是修辞：从感性质感切到理性识别。",
+  "use_zh": "品牌段落收束（华丽演绎→干净定妆）；情绪从炫技切换到正式宣告的转场拍",
+  "summary_zh": "彩色液态渐变字标静置流光，画面一拍冲白过曝，白底上扁平版字标淡入定格——一次闪白完成质感降维",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "液态层：六色渐变 `background-size:320%`，`backgroundPosition = t*100%` 全程缓慢流动；一块 220×120 径向柔光（blur 6px + screen 混合）随 t 横移 ±30px 做高光扫掠"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": [
+        0.34,
+        0.42
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "冲白 t=0.34–0.42（inQuad 加速冲入）白层盖满；同窗口给液态层一个 `sin(π)` 脉冲：blur 0→5px + brightness 1→2.2——\"过曝烧穿\"的一帧"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "白层冲入后**保持不退**，后半场全程白底"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": [
+        0.48,
+        0.74
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "扁平字标 t=0.48–0.74 淡入 + scale 0.96→1（outCubic），字色是三段线性渐变（`GRAD_A/B/C` 常量，可按项目替换）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "柔光层随冲白同步熄灭（`1-flashK`），不残留在白底上"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 149,
+      "name": "t",
+      "window": [
+        0.34,
+        0.42
+      ],
+      "from": "0.34",
+      "to": "0.42",
+      "ease": "E.inQuad",
+      "concrete": true,
+      "line_no": 23,
+      "raw": "const flashK = seg(t, 0.34, 0.42, E.inQuad);"
+    },
+    {
+      "style_id": 149,
+      "name": "t",
+      "window": [
+        0.34,
+        0.46
+      ],
+      "from": "0.34",
+      "to": "0.46",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 24,
+      "raw": "const blurPulse = Math.sin(seg(t, 0.34, 0.46) * Math.PI);"
+    },
+    {
+      "style_id": 149,
+      "name": "t",
+      "window": [
+        0.48,
+        0.74
+      ],
+      "from": "0.48",
+      "to": "0.74",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 26,
+      "raw": "const lk = seg(t, 0.48, 0.74, E.outCubic);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "冲白窗口",
+      "typical": "0.34–0.42（inQuad）",
+      "feel": "换算 0.29s@3.6s——冲白必须\"快进慢不退\"；用 outQuad 会显得白光是飘进来的"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "过曝脉冲",
+      "typical": "blur 5px + brightness ×2.2，sin 包络",
+      "feel": "砍掉脉冲则冲白像纯剪辑；>8px blur 液态字彻底糊掉反而看不出\"是它在烧\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "扁平入场",
+      "typical": "0.48–0.74，scale 0.96→1",
+      "feel": "与冲白间隔 0.06 的白屏静默是呼吸位；缩太短观众来不及\"清屏\""
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "液态流速",
+      "typical": "backgroundPosition t*100%",
+      "feel": "拉长 dur 时流速自动变慢，静置段够 1s 以上流动感才可读"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "字标字号",
+      "typical": "液态 62px / 扁平 58px",
+      "feel": "扁平版略小一号是\"落定收束\"暗示；同号会读作换皮不换人"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "渐变常量",
+      "typical": "`GRAD_A/B/C`（块顶定义）",
+      "feel": "换成项目品牌三色即完成收编；液态层六色一般保留（它是\"演出\"不是品牌）"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "白层是\"冲入后保持\"，不是闪一下回黑——后半场底色即白色，若下一镜是暗场需另接转场，或复用本卡结尾白底直切",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "`WORDMARK` 常量是占位字标（5 字母），换长词需同步缩字号与 letter-spacing，两层（液态/扁平）都要改",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "冲白配 SFX 是必选项（impact/whoosh-bright 类），无声的白闪读作素材丢帧",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "mix-blend-mode:screen 的柔光层在白底上不可见属预期，别在冲白后调它",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "white-flash-logo-simplify-cut",
+      "variant_letter": null,
+      "upstream_key": "white-flash-logo-simplify-cut",
+      "demo": "demos/transition/white-flash-logo-simplify-cut/WhiteFlashLogoSimplifyCut.tsx",
+      "component": "WhiteFlashLogoSimplifyCut",
+      "duration_frames": 108,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

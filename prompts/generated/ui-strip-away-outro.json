@@ -1,0 +1,286 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "ui-strip-away-outro",
+  "category": "outro",
+  "category_label": {
+    "en": "Outro",
+    "zh": "收尾",
+    "ru": "Финал"
+  },
+  "tags": [
+    "outro"
+  ],
+  "source": {
+    "card": "references/shots/outro/ui-strip-away-outro.md",
+    "card_sha256": "eaeacaf8059ba41331741a0f01d8a8312c2a41280024cef46029ced281f68be6",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 130,
+    "duration_frames_hint": null,
+    "duration_verbatim": "~4.3s（130f：光标就位 34f → 蒸发 ~40f → 按钮独占 → 字标接棒）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（前段安静操作，中段持续退场，无瞬时冲击）",
+    "energy_rationale": "前段安静操作，中段持续退场，无瞬时冲击"
+  },
+  "intent_zh": "库内收尾全是\"加法\"：outro-group-photo-launch 元素飞来合影，logo sting 是定住再彩蛋。本卡是唯一的\"减法\"路线——点击引爆全 UI 退场， 黑场只留语义焦点（那颗被点的按钮），把\"发布 = 复杂性归零\"翻译成 动效叙事。命门有二：**蒸发要有秩序**——从外围到中心每 4f 一层、 每层带方向性位移（各自往画外散），乱序或同帧齐灭读作断电故障； **按钮是唯一幸存者且必须迁移**——蒸发期间从工具条角落滑到屏心 放大 1.5 倍、白晕随黑场增强，完成从\"UI 控件\"到\"仪式主角\"的升格， 最后淡出把黑场交给字标。",
+  "use_zh": "\"发布/完成\"语义的 outro；想讲\"一键之后一切复杂性消失\"的产品收尾",
+  "summary_zh": "减法式收尾——点击 Publish 后整个编辑器 UI 从外围到中心层层错峰蒸发，黑场上只剩那颗按钮滑到屏心放大，按钮再淡出交棒字标定版",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "6 个蒸发层：侧栏→属性面板→画布卡→工具条两端→画布底→工具条中段，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        14
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "点击后 +4f 起每 4f 一层；每层 STRIP_DUR 14f，Easing.in(quad)"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "离场加速，fade + 方向性位移（侧栏 −140,0 / 面板 −90,20 /"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "工具条两端 ∓80,−60 / 画布底 0,40 / 工具条中段 0,−50）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "画布内 4 张卡再各错峰 3f，位移左右交替（±70px）——大块整体消失"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "会读作图层被删，碎开走才是\"蒸发\""
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        20
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "背景压黑：随画布底层蒸发（+20f 起 20f）灰底 → #111110"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "按钮：点击 spring(damping 12, stiffness 220) 压缩脉冲；蒸发期"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        18
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "位置/尺寸插值滑向屏心（18f，inOut cubic），scale ×1.5，白晕"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        12,
+        52
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "30→70px 随黑场增强；+52f 起 12f 淡出"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        62
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "字标接棒：+62f spring(damping 14, stiffness 90) 淡入 +"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "86%→100% 缩放，黑场定版"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        10
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "光标点击后 10f 内淡出——主角换人，光标必须退场"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "层间错峰",
+      "typical": "4f × 6 层",
+      "feel": "同帧齐灭读作断电；>8f 拖成慢拆迁，仪式感散"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "单层时长",
+      "typical": "14f，ease-in 加速",
+      "feel": "ease-out 离场读作\"飘走\"不读作\"蒸发\"；>20f 黏"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "蒸发顺序",
+      "typical": "外围 → 中心，按钮所在层最后",
+      "feel": "中心先空读作故障；按钮层先走全卡崩塌"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "位移幅度",
+      "typical": "50–140px，方向各自向画外",
+      "feel": "无位移纯 fade 读作调透明度；同方向读作整屏平移"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "按钮迁移",
+      "typical": "18f 滑到屏心 + scale ×1.5 + 晕光增强",
+      "feel": "不迁移则黑场上一颗角落小钮，读作漏删；先迁后灭顺序不可反"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "字标接棒",
+      "typical": "按钮淡出后 ~10f 进，spring 定版",
+      "feel": "与按钮同屏抢戏；黑场空窗 >20f 像放完了"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 outro-group-photo-launch 分工：全家福是\"加法\"峰值终镜（多功能",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 edit-hook-moves B（logo-sting-button）衔接：本卡字标定版后可接",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "蒸发的每层必须是**语义完整的 UI 区块**（侧栏/面板/工具条），按",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "按钮迁移全程 zIndex 压最顶——任何蒸发层从按钮前面飘过都是穿帮",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "触发动作必须是\"终结性\"语义（Publish/Ship/Done）；拿 Save 或普通",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 6,
+      "text": "实战按钮用品牌高亮色（原片是 Framer 蓝），demo 的白钮只是灰阶占位",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "ui-strip-away-outro",
+      "variant_letter": null,
+      "upstream_key": "ui-strip-away-outro",
+      "demo": "demos/outro/ui-strip-away-outro/UiStripAwayOutro.tsx",
+      "component": "UiStripAwayOutro",
+      "duration_frames": 14,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

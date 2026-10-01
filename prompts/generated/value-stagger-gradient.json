@@ -1,0 +1,358 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "value-stagger-gradient",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/value-stagger-gradient.md",
+    "card_sha256": "f93f8e679948b8bdd599e087c2d8ca3e7db234fa9e150aacbad00a15c185aae8",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 5.0s（150f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（第一拍是连续铺开，第二拍中心脉冲是明确的一次峰值）",
+    "energy_rationale": "第一拍是连续铺开，第二拍中心脉冲是明确的一次峰值"
+  },
+  "intent_zh": "stagger 通常只被用来错开时间。这张卡要说的是它还能错开**值**——同一个索引既决定 \"什么时候动\"，也决定\"动到多少\"。两拍是一组对照实验：第一拍原点在首位（梯度从左到 右单调铺开），第二拍原点换到中心（梯度以中轴对称铺开）。观众看到的不是两个动画， 而是同一个配方换了一个参数。屏幕上的代码字幕同步换成对应的 stagger 调用，明说这件事。",
+  "use_zh": "技法演示与参数化能力的展示镜头；也可直接当数据/频谱/均衡器类界面的入场",
+  "summary_zh": "16 根柱入场时 delay 是时间错峰，同时高度/色相/位移/模糊四个属性各自铺成从首到末的数值梯度；第二拍把错峰原点换成中心，脉冲幅度以中心为最大重新铺开",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "核心工具是一个 8 行的 `staggerVal(i, n, a, b, ease)`：把索引归一化成 `k = i/(n-1)`"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "再 `lerp(k, a, b)`——等价 anime.js 的 `stagger([a, b])` 值模式，可选 ease 让梯度非线性"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "静态梯度（写在 setup 里，一次算完）：色相 `staggerVal(i,N,200,320)`、"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "最大高度 `staggerVal(i,N,92,32)`——16 根柱天生是一道从蓝到紫、从高到矮的斜坡"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "动态梯度（每帧用）：位移量 `staggerVal(i,N,46,14)`、模糊量 `staggerVal(i,N,8,2)`"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——首位柱要走 46px、糊 8px，末位只走 14px、糊 2px。**同一次入场里每根柱的行程都不同**"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outCubic",
+      "beziers": [],
+      "raw": "第一拍时间错峰：`d = i*0.02`，`e = seg(t, 0.06+d, 0.28+d, E.outCubic)`——从首位起，"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "16 根摊在 0.3 的窗上；`opacity = e`、`filter = blur((1-e)*b0)`、"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`transform = translateY((1-e)*y0) scaleY(e)`，三者都被同一个 e 驱动"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "第二拍换原点：`distC = |i - 7.5| / 7.5` 是到中心的归一化距离，"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`w = seg(t, 0.56 + distC*0.13, +0.18)`——中心柱先动，波向两端扩，这就是 `from:'center'`"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "第二拍的幅度也是梯度：`amp = lerp(1-distC, 0.06, 0.42)`，中心柱脉冲 42%、末端只有 6%；"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`pulse = sin(w*π)` 是纯脉冲，同时叠进 `scaleY(e*(1+pulse*amp))` 与"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`brightness(1+pulse*0.55)`"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "字幕在 t=0.52 硬切文案，从 `scale: stagger([1, 0.35])  hue: stagger([200, 320])`"
+    },
+    {
+      "ord": 15,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "换成 `pulse: stagger([.06, .42], { from: 'center' })`——正好卡在两拍之间"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 215,
+      "name": "t",
+      "window": null,
+      "from": "0.06 + d",
+      "to": "0.28 + d",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 43,
+      "raw": "const e = seg(t, 0.06 + d, 0.28 + d, E.outCubic);"
+    },
+    {
+      "style_id": 215,
+      "name": "t",
+      "window": null,
+      "from": "0.56 + distC * 0.13",
+      "to": "0.74 + distC * 0.13",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 47,
+      "raw": "const w = seg(t, 0.56 + distC * 0.13, 0.74 + distC * 0.13);"
+    },
+    {
+      "style_id": 215,
+      "name": "t",
+      "window": [
+        0.04,
+        0.12
+      ],
+      "from": "0.04",
+      "to": "0.12",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 93,
+      "raw": "opacity: 0.5 + 0.5 * seg(t, 0.04, 0.12),"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "柱数",
+      "typical": "N=16（`left: 8+i*5.4%`，宽 3.4%）",
+      "feel": "16 根让梯度有足够分档；<8 根梯度读作\"每根都不一样\"而非一道斜坡，>24 根柱间距要重算"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "时间错峰",
+      "typical": "`d = i*0.02`（≈3f/根，总 0.3）",
+      "feel": "3f 是连绵的铺开；>0.05 会变成逐根点名，梯度的\"整体感\"丢失"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "单柱行程",
+      "typical": "窗 0.22（≈33f，outCubic）",
+      "feel": "行程是总错峰的 0.73 倍 → 大部分时间十来根同时在动；行程 < 错峰总量时变成一根接一根"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "高度梯度",
+      "typical": "`stagger([92, 32])`px",
+      "feel": "首末 2.9 倍差是明确斜坡；比值 <1.5 读不出梯度，>4 末端柱矮到看不见"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "色相梯度",
+      "typical": "`stagger([200, 320])`",
+      "feel": "120° 跨度（蓝→紫）；跨度 <40° 时色相白给，>200° 会绕回红色让斜坡读作环形"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "位移/模糊梯度",
+      "typical": "`stagger([46,14])`px / `stagger([8,2])`px",
+      "feel": "这两条是本卡的\"值 stagger\"主证据——把它们改成常量，动效立刻退化成普通的 stagger 入场"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "第二拍原点",
+      "typical": "`from:'center'`，`distC*0.13`",
+      "feel": "0.13 是从中心到端点的传播延迟（≈4f）；归零则整排同时脉冲，`from` 参数就没有意义了"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "脉冲幅度梯度",
+      "typical": "`lerp(1-distC, 0.06, 0.42)`",
+      "feel": "中心 42% / 端点 6% 是 7 倍差，波形明显；两端也给大幅度会读作整排一起鼓，中心原点看不出"
+    },
+    {
+      "ord": 8,
+      "variant": null,
+      "key": "亮度脉冲",
+      "typical": "`brightness(1 + pulse*0.55)`",
+      "feel": "55% 提亮让脉冲在暗底上可读；这一项没做梯度（全柱同幅），是有意的——太多梯度叠一起观众读不清哪个是主角"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "第一拍与第二拍首尾相接：末柱入场结束于 `0.28+15*0.02 = 0.58`，而中心柱的脉冲在 0.56",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "端点柱的第二拍窗口是 `0.69→0.87`，之后到 t=1 有约 0.13（20f）的完全静止。这是给",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "`distC` 的分母 `C=(N-1)/2` 在 N=1 时会除零；`staggerVal` 里已用 `n<=1 ? 0` 兜住，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "柱位 `left: 8+i*5.4%` 与宽 `3.4%` 是为 N=16 手配的（末柱右缘 8+15*5.4+3.4 = 92.4%）。",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "字幕是 anime.js 的 API 调用字符串，本质是**技法说明**而不是内容。用在真实成片里",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "底部的 16 个小圆点（`bottom:17%`，opacity .35）是静态装饰，不参与任何动画；它们的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 6,
+      "text": "深底（`#0a0b10`）+ 高饱和柱（85%/66%）+ 12px 光晕是一套；浅色主题下光晕与",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "value-stagger-gradient",
+      "variant_letter": null,
+      "upstream_key": "value-stagger-gradient",
+      "demo": "demos/ui-entrance/value-stagger-gradient/ValueStaggerGradient.tsx",
+      "component": "ValueStaggerGradient",
+      "duration_frames": 150,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

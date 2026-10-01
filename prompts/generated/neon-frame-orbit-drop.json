@@ -1,0 +1,198 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "neon-frame-orbit-drop",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance",
+    "camera",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/neon-frame-orbit-drop.md",
+    "card_sha256": "c8f32574df3e116fa7deb17768ef9fa8b928916dc057922f6789f174ffd9e87f",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 15,
+    "duration_frames_hint": null,
+    "duration_verbatim": "描框 ~0.5s + 旋转&同时贴落 ~2.5s + 落定 ~1s；全段 4–4.5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（一次性的大动作，落定即静）",
+    "energy_rationale": "一次性的大动作，落定即静"
+  },
+  "intent_zh": "neon-frame-forerun 的孪生变体：同样框先行、内容后落，但镜头 不是固定的——从页面左侧视角连续弧线旋转到右侧视角，旋转进行 的同时全部组件从空中贴落。命门是**同时贴合**：所有组件和文字 同帧起落、同帧贴合、软影同步消失——这是\"整体登场\"的语法 （判例：错峰版被裁\"应该是所有组件和文字同时从空中往下贴合\"）。 错峰贴落属于巡礼镜（graze-face-tour/runway），一页一次性亮相 必须齐落，节奏语义不能混用。",
+  "use_zh": "单页 UI 的一次性隆重登场（与巡礼/逐区亮相相对）；暗场霓虹调性段落的主视觉揭幕；neon-frame-forerun 的姊妹镜",
+  "summary_zh": "霓虹框先行描框后，镜头绕页面左→右弧线旋转，页面全部组件/文字**同帧**从空中往下贴合（同形软影同步收敛）——整体登场式的框内安放",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        14
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "霓虹描框：渐变霓虹框 ~14f 奔画成型（同 neon-frame-forerun）"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "视角弧线：rotateY +38° → -26° 连续弧线（透视原点 30%→64% 随动"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "近似相机环绕），贯穿全片"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "同时贴落：全部元素统一 LAND 时刻（归一化 ~0.52）——同帧离地"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "悬空、同帧空中下降、同帧贴合；FloatWrap 同形软影（blur/offset/"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "opacity 随高度）全体同步收敛"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "背景霓虹管框群衬场，主面板落定后让位"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "贴落同时性",
+      "typical": "全元素同帧起落（零错峰）",
+      "feel": "**命门**；任何错峰都会读成巡礼语法（判例裁决原话见上）"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "视角弧线",
+      "typical": "rotateY +38°→-26°、透视原点随动",
+      "feel": "弧度小读作抖动；只转不落=空转"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "旋转×贴落耦合",
+      "typical": "贴落窗口居中于旋转行程",
+      "feel": "旋转完才落=两段戏；落完还在转=收不了尾"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "悬浮高度/软影",
+      "typical": "同 graze-face-tour（100–180px、影随高度）",
+      "feel": "影不可感=没做（累计判例）"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "描框",
+      "typical": "~14f 奔画",
+      "feel": "同 neon-frame-forerun"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "参数经占位素材两轮调校通过，非实战定稿，首次实战须以真实素材回验",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**贴落节奏语义判例**（本卡与 graze-face-tour 互为反例）：",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 neon-frame-forerun 分工：那张镜头固定、错峰贴落+页面点亮",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "弧线旋转是透视原点近似而非真实 3D 相机环绕，极端角度下框辉光",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "neon-frame-forerun-orbit",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/ui-entrance/neon-frame-orbit-drop/NeonFrameForerunOrbit.tsx",
+      "component": "NeonFrameForerunOrbit",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

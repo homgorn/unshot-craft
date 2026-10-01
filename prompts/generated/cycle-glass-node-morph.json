@@ -1,0 +1,281 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "cycle-glass-node-morph",
+  "category": "data",
+  "category_label": {
+    "en": "Data & Metrics",
+    "zh": "数据与指标",
+    "ru": "Данные и метрики"
+  },
+  "tags": [
+    "camera",
+    "data",
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/data/cycle-glass-node-morph.md",
+    "card_sha256": "fdd8a55153c15d853ce535f2792120b96416e44bc110a839435e0a7310eb49a9",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 257,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 8.6s（257f@30fps；最终状态保留 34f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（前段场景转换，中段循环建立，后段推近与三节点连续顶起）",
+    "energy_rationale": "前段场景转换，中段循环建立，后段推近与三节点连续顶起"
+  },
+  "intent_zh": "循环图最容易沦为“画三个圆加两支箭头”。本卡把机制解释建立在一个连续主体上： 主体不是被另一份灰阶副本替换，而是在对角擦除发生时同步缩入系统中心；循环文字先作为 黑色概念标签出现，推近后玻璃节点从它们下方升起，把同一标签转为白色节点标题。 观众因此读到的是**场景里的对象被解释成一套运行机制**，而不是切到另一页 PPT。",
+  "use_zh": "AI agent/自动化/控制系统的感知—推理—执行循环；“一个对象背后有三段机制”的解释镜头；从真实场景过渡到抽象系统图的技术型 B-roll",
+  "summary_zh": "单一主体在对角擦除中缩入机制图，三段循环标签沿弧线依次建立，连续推近时三枚玻璃节点从下方托起并接管原标签，最后诊断标记错峰钉住系统状态",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f0–61：大主体与上下文条完整静置；先让观众看清“被解释的对象”，不要一开场就缩小"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f62–94：主体用 `inOutCubic` 连续缩小并向系统位置靠拢；f66–90 同时由左上到右下"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "推进对角擦除，揭出浅色机制场；两者共用同一主体 DOM，不做双主体交叉淡化"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f66–110：背景内容圆从 .3× 长到 1×；f84–90 机制标题短促落位"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f124/129/134：三段标签按 5f 错峰，用七帧 `亮→灭→灭→亮→暗→亮→暗→锁定`"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "的可控闪现建立；它们继续沿弧线滑到宽机位的最终位置，而不是闪完就停"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f127–176：上下两条弧线同步描边生长，箭头头部随线端行进；到 f176 才形成闭环"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f176–198：整组做一次连续推近，关键状态 scale `.61→.659→.935→1`；中间关键帧"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "只约束路径，不允许停顿或二次起步"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f184–208：三枚 64px 玻璃节点每隔 8f 从下方 86px 依次顶起，带一次 18px 量级的"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "outBack 越位后落定；节点覆盖处把标签由黑转白"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f208–222：左、上、右三个三角诊断标记独立错峰落位；f222–256 全部静止"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "场景 hold",
+      "typical": "f0–61",
+      "feel": "至少留 1.5s 看清主体；缩短后会像片头缓冲失败"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "主体缩入",
+      "typical": "f62–94，宽 332→154px",
+      "feel": "**命门**：始终是同一个主体对象；复制一份灰阶主体叠化会破坏连续性"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "对角擦除",
+      "typical": "f66–90，135° 硬边 gradient stop -40%→140%",
+      "feel": "擦除线必须越过两个对角并与主体缩入同时发生；提前结束会露出“双世界”接缝"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "标签节奏",
+      "typical": "f124/129/134 起，七帧闪现后锁定",
+      "feel": "闪现只是“系统识别”口吻；全程随机 glitch 会牺牲可读性"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "弧线建立",
+      "typical": "f127–176",
+      "feel": "约 1.6s 的持续生长让观众能顺着关系读；压到 20f 只剩装饰扫线"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "连续推近",
+      "typical": "f176–198，scale .61→1",
+      "feel": "中间关键帧不得做 hold；分三段 easing 后速度归零会产生三次启停"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "节点顶起",
+      "typical": "f184/192/200 起，各 8f，rise 86px",
+      "feel": "每枚只允许一次越位回落；三枚同时弹出会丢掉阅读顺序"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "诊断标记",
+      "typical": "f208/213/217 起，5–6f",
+      "feel": "标记是收尾证据，不与节点共享 transform，避免“整组一起弹”"
+    },
+    {
+      "ord": 8,
+      "variant": null,
+      "key": "最终 hold",
+      "typical": "f222–256",
+      "feel": "34f 是三段机制通读时间；若标签更长，优先延长总时长"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "对角擦除边界必须从画外进入并越过另一侧画外；只插值 0%→100% 会在起止帧残留旧场景角落",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "主体、背景圆、弧线和标签的 z-index 必须明确：主体在圆上、弧线在圆上但不盖主体、节点最后压过标签",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "玻璃节点需要真实 `backdrop-filter`、内高光与外阴影三层质感；单一半透明灰填充会像普通圆形按钮",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "标签变白必须只发生在玻璃圆覆盖区域。demo 用节点内同文白字模拟；落地到长标签时应使用圆形 mask 裁切同一文字层，避免双文本错位",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "推近作用于机制组，不作用于开场背景和对角擦除层；把整画面一起缩放会让转场边界漂移",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "demo 为原创通用 DOM/SVG 重构，不含参考研究中的车辆、品牌、道路或 UI 资产",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "cycle-glass-node-morph",
+      "variant_letter": null,
+      "upstream_key": "cycle-glass-node-morph",
+      "demo": "demos/data/cycle-glass-node-morph/CycleGlassNodeMorph.tsx",
+      "component": "CycleGlassNodeMorph",
+      "duration_frames": 257,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

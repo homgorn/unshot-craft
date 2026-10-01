@@ -1,0 +1,206 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "wipe-transitions",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/wipe-transitions.md",
+    "card_sha256": "69a44a30b898dc5bdbb25882aa7537796451944a8ea7196d957a2ba4b92fc7de",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 20,
+    "duration_frames_hint": null,
+    "duration_verbatim": "单式 前态 ≥20f + 擦除 32–60f + 收尾 ≥40f，约 5s（150f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中",
+    "energy_rationale": null
+  },
+  "intent_zh": "转场库已有三族：穿越系（钻进去）、藏切系（遮住切）、体块系（页面是 实体）。本卡是第四族**几何擦除系**——新旧页都不动，一条几何边界扫过 完成交接，擦除的形状即语义：A 圆扫是\"仪表盘刷新了一屏数据\"，B 条扫 是\"百叶窗逐叶翻面换页\"。与 shot-transitions F 元素遮罩擦除的区别： F 用页面内真实元素当遮罩（依赖构图），本卡是纯几何形——通用性即定位。 按语义选：数据刷新用 A，横向推进翻页用 B。",
+  "use_zh": "新旧页都不动、一条几何边界扫过完成交接的通用转场；不依赖构图里有合适元素，哪儿都能用",
+  "summary_zh": "几何擦除转场两式——clock-wipe 时钟扫描（雷达指针扫一圈换页）与 blinds-slice 百叶窗切条（12 竖条错峰翻换成波）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A clock-wipe | B 页上层套扇形 clip-path polygon，指针从屏心 12 点顺时针匀速扫 360°，扫过处露 B；扫描沿带多层亮线 | 数据/状态刷新语义；仪表盘类页面 |"
+    },
+    {
+      "ord": 3,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B blinds-slice | 12 根 160px 竖条 overflow hidden + 内层整页负 margin 对位；条内 A scaleX(1-p) 左缘收缩、B scaleX(p) 右缘展开，错峰 delay 成波，缝上亮线随波扫 | 翻页/推进语义；横向阅读动线页面 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 扇形",
+      "typical": "中心屏心(960,540)、半径 1400 盖满四角，固定 73 顶点(SEGS=72)",
+      "feel": "顶点数恒定且够密（40+）防锯齿跳变——命门"
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 扫速",
+      "typical": "30–90f 指针 0→360° 纯 linear，双向 clamp",
+      "feel": "雷达要匀速；加缓动就不是雷达是钟摆"
+    },
+    {
+      "ord": 2,
+      "variant": "A",
+      "key": "A 亮线",
+      "typical": "四层 SVG line：26px 白 0.35 柔光 + 13px 白 0.60 + 9px 黑 0.55 暗描边 + 4px 白核",
+      "feel": "白底判例：纯提亮不可见，必须加暗描边；首渲 3px 白线太弱，加码 1.5x 才过"
+    },
+    {
+      "ord": 3,
+      "variant": "B",
+      "key": "B 波",
+      "typical": "20–52f：delay=列号×2f，每条 10f Easing.in(cubic)",
+      "feel": "交接点恒为 x+160(1-p)，数学上无露底"
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 缝亮线",
+      "typical": "三层 SVG：16px 白 0.45 柔光 + 6px 黑 0.55 暗描边 + 3px 白核，进出各 2f 淡入淡出",
+      "feel": "同 A 白底判例"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "摘罩",
+      "typical": "A 96f / B 52f 起条件卸载全部擦除结构，B 页直出",
+      "feel": "opacity 0 不算摘，残留 clip-path 毁真静止"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "收尾",
+      "typical": "A 54f / B 98f 真静止（≥40f）",
+      "feel": "R1"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "擦除边界必须带亮线/高光——无亮线的 wipe 读作 PPT 转场，命门；",
+      "critical": true,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "A 与 circle-match-iris 的区别：iris 是从锚点炸开的圆（半径在长），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "几何擦除全片 ≤2 次，且 A/B 别同片连用（两次\"边界扫过\"读作模板感）",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "亮线淡出与摘罩必须同帧衔接（A 90–96f 淡出、96f 卸载），",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "blinds-slice",
+      "variant_letter": "B",
+      "upstream_key": "blinds-slice",
+      "demo": "demos/transition/wipe-transitions/BlindsSlice.tsx",
+      "component": "BlindsSlice",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "clock-wipe",
+      "variant_letter": "A",
+      "upstream_key": "clock-wipe",
+      "demo": "demos/transition/wipe-transitions/ClockWipe.tsx",
+      "component": "ClockWipe",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

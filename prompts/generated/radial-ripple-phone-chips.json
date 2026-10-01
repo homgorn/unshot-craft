@@ -1,0 +1,290 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "radial-ripple-phone-chips",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/radial-ripple-phone-chips.md",
+    "card_sha256": "6f515fd14bf10208a0fca9aeb0e2876fd0b098048d6eb177bd049d1397f66378",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 168,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约5.6s（168f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "low",
+    "energy_label": {
+      "zh": "低",
+      "en": "low"
+    },
+    "energy_verbatim": "低（安静、有呼吸感，靠同心圆的持续起伏撑住不冷场）",
+    "energy_rationale": "安静、有呼吸感，靠同心圆的持续起伏撑住不冷场"
+  },
+  "intent_zh": "用最少的动作把手机放在画面正中并让它\"活着\"：同心圆负责氛围呼吸， 屏内自动滚屏负责证明\"里面有内容在跑\"，两侧 chip 负责点出功能名。 三层动作各自极慢，叠起来才不会显得静止——这是产品定格镜头的标准配法。",
+  "use_zh": "移动端产品的\"这就是它\"定格镜头；功能点分列两侧的介绍段；片头/片尾的产品全景",
+  "summary_zh": "浅灰底四层同心圆错相呼吸如水波，中央手机 mockup 屏内 feed 自动缓滚，两侧白色 chip 先后 spring pop 入场并悬浮",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "4 层同心圆（560/440/320/210px，#d7dbe1→#eef0f3 由深到浅）各自"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`scale 1 ± 0.06`，全片走 1.5 个正弦周期，相邻层相位差 1.7 rad"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——错相是\"水波\"而不是\"整体缩放\"的关键"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "手机 mockup 132×264、22px 圆角、`0 24px 50px rgba(58,64,74,.35)`"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "的落地投影，屏内 8 张骨架卡组成 feed"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "feed `translateY 0→−150px`，窗口 `t 0.08→0.98` **匀速无缓动**"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "chip pop：`seg(t0, t0+0.12, outBack)` 驱动 scale 0.8→1，opacity 在"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "前 0.08 就跳满；左 chip 起 0.22、右 chip 起 0.40"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "pop 完接 `sin` 悬浮 ±3px（2 周期/全片），并由 `seg(t0+0.12, t0+0.3)`"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "渐渐介入——不是一落位就开始飘"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 53,
+      "name": "t",
+      "window": null,
+      "from": "t0",
+      "to": "t0 + 0.12",
+      "ease": "E.outBack",
+      "concrete": false,
+      "line_no": 31,
+      "raw": "const p = seg(t, t0, t0 + 0.12, E.outBack);"
+    },
+    {
+      "style_id": 53,
+      "name": "t",
+      "window": null,
+      "from": "t0 + 0.12",
+      "to": "t0 + 0.3",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 32,
+      "raw": "const fl = Math.sin(t * Math.PI * 2 * 2 + ph) * 3 * seg(t, t0 + 0.12, t0 + 0.3);"
+    },
+    {
+      "style_id": 53,
+      "name": "t",
+      "window": null,
+      "from": "t0",
+      "to": "t0 + 0.08",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 34,
+      "raw": "opacity: seg(t, t0, t0 + 0.08),"
+    },
+    {
+      "style_id": 53,
+      "name": "t",
+      "window": [
+        0.08,
+        0.98
+      ],
+      "from": "0.08",
+      "to": "0.98",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 94,
+      "raw": "transform: `translateY(${-seg(t, 0.08, 0.98) * 150}px)`,"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "同心圆层数/尺寸",
+      "typical": "4 层 560/440/320/210px",
+      "feel": "3 层撐不满画面，5 层以上最外层被裁掉只剩色带"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "呼吸幅度",
+      "typical": "scale 1±0.06，1.5 周期/全片",
+      "feel": "0.06 已是上限；到 0.1 就读作\"脉冲动画\"而非水波"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "相位差",
+      "typical": "相邻层 1.7 rad",
+      "feel": "相位全同 = 整块放大缩小；差 1.7 才有波从中心荡开的错觉"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "手机投影",
+      "typical": "0 24px 50px rgba(58,64,74,.35)",
+      "feel": "投影是手机\"浮在波上\"的唯一依据，去掉就贴平了"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "自动滚屏",
+      "typical": "translateY 0→−150px，t 0.08→0.98 匀速",
+      "feel": "加 ease 立刻读作\"有人在滑\"；匀速才是自动播放"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "chip pop",
+      "typical": "outBack、0.12 时长、scale 0.8→1",
+      "feel": "outBack 的过冲量是\"弹出\"的全部质感，换 outCubic 就平了"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "chip 时序",
+      "typical": "左 0.22 / 右 0.40（≈0.6s 差）",
+      "feel": "同时出现读作两个标签；错开才有\"一个一个说\"的节奏"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "chip 悬浮",
+      "typical": "±3px、2 周期，pop 后 0.18 内渐入",
+      "feel": "幅度超过 5px 就和同心圆的呼吸抢戏"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "chip 用 `calc(50% + 86px)` 贴着手机边缘定位；改手机宽度必须同步改",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "屏内 feed 是 8 张骨架卡的占位内容，落地换真实截图时总高必须",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "同心圆是实色叠放（不是描边圆环），层序必须由大到小 append，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "ACCENT_RGB（默认 `122,134,153` 中性灰蓝）只作用于屏内缩略图渐变，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "radial-ripple-phone-chips",
+      "variant_letter": null,
+      "upstream_key": "radial-ripple-phone-chips",
+      "demo": "demos/effects/radial-ripple-phone-chips/RadialRipplePhoneChips.tsx",
+      "component": "RadialRipplePhoneChips",
+      "duration_frames": 168,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

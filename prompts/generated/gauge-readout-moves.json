@@ -1,0 +1,198 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "gauge-readout-moves",
+  "category": "data",
+  "category_label": {
+    "en": "Data & Metrics",
+    "zh": "数据与指标",
+    "ru": "Данные и метрики"
+  },
+  "tags": [
+    "data"
+  ],
+  "source": {
+    "card": "references/shots/data/gauge-readout-moves.md",
+    "card_sha256": "4794f881a136fd6c2e20988d595935b3042cec5f2c24288dc154c8bb94a1e8ed",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "A 4–5s / B 4–5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（机械仪式型）",
+    "energy_rationale": "机械仪式型"
+  },
+  "intent_zh": "把\"报数值\"做成仪表的身体动作：A 是汽车点火自检——表盘指针先\"唰\"地 甩满全弧（270°）再回落定格真实值，多表错峰成波浪，先亮量程再报数， 开场宣誓感；B 是飞机空速带语法——指针/取景窗钉死画面正中，带刻度的 标尺整体从底下滚过，大数值跳变时刻度带 45px/f 冲刺、末尾 spring 刹车 带回摆过冲，\"世界动、针不动\"，数值大小变成看得见的位移距离。 与 odometer-digit-roll 分工：那是数字在窗里滚，B 是连刻度格线全在平移。",
+  "use_zh": "dashboard 开场仪式/性能指标揭晓；A 多表盘开机感，B 单指标大跳变",
+  "summary_zh": "仪表读数两式——needle-sweep-selftest 满弧扫针（点火自检指针甩满全弧再回落真值）与 tape-scroll-fixed-pointer 滚带定针（针不动刻度带滚过+冲刺刹车）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [
+        12,
+        20
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A needle-sweep-selftest | 指针去程 ~12f ease-out 甩满弧，回程 ~20f 带 5–8° 过冲回摆落真值；多表错峰 3–5f；落定同帧盘下数值弹出 | dashboard 开场/系统就绪仪式 |"
+    },
+    {
+      "ord": 3,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [
+        25
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B tape-scroll-fixed-pointer | 长刻度带 translate：慢爬段→45px/f 冲刺 ~25f→spring 刹车过冲回摆停位；窗内读数同步刷新 | 单指标大跳变（性能翻倍/配额提升） |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 甩弧幅度",
+      "typical": "满量程 270°",
+      "feel": "只甩到真值=没有自检仪式感；满弧再回落才是\"先亮量程\""
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 过冲",
+      "typical": "回落带 5–8° 回摆",
+      "feel": "无过冲读作电子表；过冲=机械指针的质量"
+    },
+    {
+      "ord": 2,
+      "variant": "A",
+      "key": "A 错峰",
+      "typical": "3–5f/表",
+      "feel": "齐甩读作复制粘贴；错峰成波浪"
+    },
+    {
+      "ord": 3,
+      "variant": "B",
+      "key": "B 冲刺速度",
+      "typical": "45px/f（大跳变段）",
+      "feel": "慢了读作匀速爬升，\"世界动\"不成立"
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 刹车",
+      "typical": "spring 过冲（冲过头再弹回停位）",
+      "feel": "词汇原案的回摆是\"哐\"的来源，直停可惜"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "真静止",
+      "typical": "停位后 ≥30f 全锁死",
+      "feel": "指针类最忌尾漂"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "同批 ring-close-overfill（合环过盈）改改再看无附言——环形进度类",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "A 的表盘是自绘 SVG（弧刻度+指针），实战贴真 dashboard 时优先找",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "声音：A 甩针一声\"唰\"+落定\"嗒\"（多表错峰各一声）；B 冲刺段",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "needle-sweep-selftest",
+      "variant_letter": "A",
+      "upstream_key": "needle-sweep-selftest",
+      "demo": "demos/data/gauge-readout-moves/NeedleSweepSelftest.tsx",
+      "component": "NeedleSweepSelftest",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "tape-scroll-fixed-pointer",
+      "variant_letter": "B",
+      "upstream_key": "tape-scroll-fixed-pointer",
+      "demo": "demos/data/gauge-readout-moves/TapeScrollFixedPointer.tsx",
+      "component": "TapeScrollFixedPointer",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

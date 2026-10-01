@@ -1,0 +1,250 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "panel-grid-moves",
+  "category": "rhythm",
+  "category_label": {
+    "en": "Rhythm & Montage",
+    "zh": "节奏与蒙太奇",
+    "ru": "Ритм и монтаж"
+  },
+  "tags": [
+    "ui-entrance",
+    "rhythm"
+  ],
+  "source": {
+    "card": "references/shots/rhythm/panel-grid-moves.md",
+    "card_sha256": "96745aa4166c6a31f92e85c47b523a33d87a18ace5cdcb251c231fd63b0fa0c9",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 141,
+    "duration_frames_hint": null,
+    "duration_verbatim": "A ~4.7s / B ~4.8s / C ~5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "A 高 / B 中 / C 中高",
+    "energy_rationale": null
+  },
+  "intent_zh": "与 wall-reveal-moves 的区别是本卡的定位锚：那是\"整墙怎么入场\" （一次性揭示），这是\"格子怎么当节奏器\"——分格、重排、并列都发生 在节拍上，格变即鼓点。A 是填：3×3 格按十六分音符乱序逐格啪啪硬入， 填满停一拍，中心格放大吞掉全屏——功能矩阵一秒全亮相；B 是移：6 张卡 在节拍点集体直线换位（横排→3×2 网格），半秒落定 + 加深脉冲收束—— 布局重排本身当一个鼓点；C 是并：画面咔咔切成 3 个斜线分格，同一产品 三种机位同时定格，停半拍后一格斜边扩张吃掉全屏——Scott Pilgrim 的 分屏语言。按需选：多功能亮相用 A，布局叙事用 B，单品多视角用 C。",
+  "use_zh": "把\"格子\"当节奏器：逐格踩拍亮相（A）、节拍点集体换位（B）、同主体多机位定格并列（C）；三式都吃拍点",
+  "summary_zh": "分格节奏三式——grid-flash-mosaic 九宫格闪切填墙吞屏、flip-grid-reflow 网格集体重排、comic-panel-split 漫画斜格三机位并列",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [
+        14
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A grid-flash-mosaic | 3×3 格每 2f 一格按 h(i) 乱序条件挂载硬入（入格 3f scale 1.18→1 + 2f 加深脉冲），满墙呼吸一拍，中心格 14f Easing.in(cubic) 放大 3.28x 吞屏 | 功能矩阵一秒全亮相；高潮前铺排 |"
+    },
+    {
+      "ord": 3,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [
+        16
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B flip-grid-reflow | 预写两套坐标表（横排/3×2 网格），每卡 delay=i×1.5f、16f inOut cubic 直线飞行 + scale 1→1.28 带 1.02 过冲；落定后 6f brightness 0.78 全画面脉冲 | 布局叙事：并列→分组的语义换挡 |"
+    },
+    {
+      "ord": 4,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [
+        12,
+        18
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| C comic-panel-split | 三格各一份整页 clip-path 12° 斜边裁切 + translate/scale 摆机位（1x/1.9x/2.6x），逐格 2f 间隔弹入；定格 18f 各格缓推保活，末格斜边 12f out-cubic 扩张吃屏 | 同一主体多视角并列；漫画感段落 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 硬入",
+      "typical": "未到拍点直接不渲染（条件挂载），零淡化",
+      "feel": "逐格硬入无淡化——命门；淡入就不是\"啪\""
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 描边",
+      "typical": "每格 3px 深色描边（border-box）",
+      "feel": "白底提亮不可见判例的反向应用：白卡靠描边分格"
+    },
+    {
+      "ord": 2,
+      "variant": "A",
+      "key": "A 吞屏",
+      "typical": "中心格塞 0.3125x 整页，放大 3.28（>3.2）让描边滑出画外",
+      "feel": "描边残在收尾满屏上就穿帮"
+    },
+    {
+      "ord": 3,
+      "variant": "B",
+      "key": "B 坐标",
+      "typical": "两套表预写（行 y=330 / 网格列 571.6/960/1348.4、行 416.2/663.8），纯 transform",
+      "feel": "免真 FLIP 量测；帧确定无随机"
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 交错",
+      "typical": "偶数索引上排、奇数下排，轨迹互不对穿",
+      "feel": "乱排轨迹会恶性穿帮"
+    },
+    {
+      "ord": 5,
+      "variant": "B",
+      "key": "B 脉冲",
+      "typical": "f58–64 brightness 0.78，filter 仅窗口内条件挂载",
+      "feel": "摘罩判例；窗口外挂 filter 毁真静止"
+    },
+    {
+      "ord": 6,
+      "variant": "C",
+      "key": "C 斜缝",
+      "typical": "SVG 双线：16px 墨 #2f2f2f 底 + 10px 白核，12° 斜角",
+      "feel": "斜缝白线是漫画感命门；直缝读作分屏工具"
+    },
+    {
+      "ord": 7,
+      "variant": "C",
+      "key": "C 保活",
+      "typical": "定格 18f 各格 scale 缓推 +3%/+5.5%/+8%",
+      "feel": "三格全静读作截图拼贴"
+    },
+    {
+      "ord": 8,
+      "variant": null,
+      "key": "收尾",
+      "typical": "A 68f / B 81f / C 93f 真静止（≥40f）",
+      "feel": "R1；C 摘罩帧与扩张终值对齐防跳变"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "C 三格必须是**同一主体的不同机位**——三格塞不同内容读作 bento",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "三式都吃拍点、声音强依赖：A 逐格一声啪、B 起飞与脉冲各一声、",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "同片分格系 ≤1 段——格子语言辨识度太强，两段就撞",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "A 与 wall-reveal-moves 别同片连用（都是\"墙\"，观众分不出",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "comic-panel-split",
+      "variant_letter": "C",
+      "upstream_key": "comic-panel-split",
+      "demo": "demos/rhythm/panel-grid-moves/ComicPanelSplit.tsx",
+      "component": "ComicPanelSplit",
+      "duration_frames": 45,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "flip-grid-reflow",
+      "variant_letter": "B",
+      "upstream_key": "flip-grid-reflow",
+      "demo": "demos/rhythm/panel-grid-moves/FlipGridReflow.tsx",
+      "component": "FlipGridReflow",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "grid-flash-mosaic",
+      "variant_letter": "A",
+      "upstream_key": "grid-flash-mosaic",
+      "demo": "demos/rhythm/panel-grid-moves/GridFlashMosaic.tsx",
+      "component": "GridFlashMosaic",
+      "duration_frames": 14,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

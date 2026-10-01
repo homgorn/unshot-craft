@@ -1,0 +1,338 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "quad-split-parallel-scenes",
+  "category": "rhythm",
+  "category_label": {
+    "en": "Rhythm & Montage",
+    "zh": "节奏与蒙太奇",
+    "ru": "Ритм и монтаж"
+  },
+  "tags": [
+    "rhythm"
+  ],
+  "source": {
+    "card": "references/shots/rhythm/quad-split-parallel-scenes.md",
+    "card_sha256": "cb5e9093dc5cde38ebb76e3155710497d5cd01c154035f06d7b4f24cf9faffd3",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 63,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 2.1s（63f@30fps，全程无转场）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "high",
+    "energy_label": {
+      "zh": "高",
+      "en": "high"
+    },
+    "energy_verbatim": "高（四线并行 + 错拍冲击，标准的 BGM 副歌位）",
+    "energy_rationale": "四线并行 + 错拍冲击，标准的 BGM 副歌位"
+  },
+  "intent_zh": "用并行密度替代顺序展示：四件事同时在眼前发生，观众来不及逐一细读，但每 3–6 帧就有一个象限\"动一下\"——扫视节奏被牢牢钉住。这是手法卡：格内内容全部可替换，错拍编排才是配方。",
+  "use_zh": "节奏段\"功能很多、同时发生\"的蒙太奇拍；预告片中段的密度峰值",
+  "summary_zh": "画面硬切 2×2 四宫格，四个象限并行跑各自的微场景（打字、急推、逐词、交互链），关键节拍错开 3–6 帧制造信息轰炸",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": [
+        0.42,
+        0.54
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "四象限独立场景（内容为示例）：TL 迷你浏览器逐字符打字 + 6 个 tab 依次 outBack 弹入 + 全程 inQuad 慢推 1→1.45；TR mono 打字 + t=0.42–0.54 whip 急推 scale 1→2.1（带 sin 包络 blur 4px）；BL 三词按 0.24/0.46/0.56 逐词 outBack 弹入；BR 五步交互链（pill 滑入→光标贝塞尔巡游→点击缩放→改写文字→卡片弹出）"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**错拍是灵魂**：TL tab 从 0.08 起每 0.13 一枚、TR 急推 0.42、BL 三词 0.24/0.46/0.56、BR 点击 0.42/0.74——任意相邻事件间隔 3–6 帧，永远有东西在动但从不齐动"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "两处打字机光标闪烁频率错开（16 帧周期 vs 14 帧周期 +5 相位），避免同闪"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "BR 光标走两段二次贝塞尔（`qBez`）巡游，点击瞬间 `sin(π)` 缩放 0.7 回弹"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "四格底色深浅交替（#c3c6cc/#f2f1ef/#e7e6e3/#b8bcc3）保证格线可读，无需描边"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": [
+        0.02,
+        0.95
+      ],
+      "from": "0.02",
+      "to": "0.95",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 34,
+      "raw": "const n1 = Math.floor(seg(t, 0.02, 0.95) * TXT1.length);"
+    },
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": null,
+      "from": "0.08 + i * 0.13",
+      "to": "0.08 + i * 0.13 + 0.09",
+      "ease": "E.outBack",
+      "concrete": false,
+      "line_no": 57,
+      "raw": "const k = seg(t, 0.08 + i * 0.13, 0.08 + i * 0.13 + 0.09, E.outBack);"
+    },
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": [
+        0.06,
+        0.9
+      ],
+      "from": "0.06",
+      "to": "0.9",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 104,
+      "raw": "const n2 = Math.floor(seg(t, 0.06, 0.9) * TXT2.length);"
+    },
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": [
+        0.42,
+        0.54
+      ],
+      "from": "0.42",
+      "to": "0.54",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 105,
+      "raw": "const zip = seg(t, 0.42, 0.54, E.inOutCubic);"
+    },
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": [
+        0.12,
+        0.3
+      ],
+      "from": "0.12",
+      "to": "0.3",
+      "ease": "E.outBack",
+      "concrete": true,
+      "line_no": 183,
+      "raw": "const slide = seg(t, 0.12, 0.3, E.outBack);"
+    },
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": [
+        0.3,
+        0.42
+      ],
+      "from": "0.3",
+      "to": "0.42",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 184,
+      "raw": "const m1 = seg(t, 0.3, 0.42, E.inOutCubic);"
+    },
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": [
+        0.62,
+        0.74
+      ],
+      "from": "0.62",
+      "to": "0.74",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 185,
+      "raw": "const m2 = seg(t, 0.62, 0.74, E.inOutCubic);"
+    },
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": [
+        0.42,
+        0.47
+      ],
+      "from": "0.42",
+      "to": "0.47",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 188,
+      "raw": "const c1 = seg(t, 0.42, 0.47);"
+    },
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": [
+        0.74,
+        0.79
+      ],
+      "from": "0.74",
+      "to": "0.79",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 189,
+      "raw": "const c2 = seg(t, 0.74, 0.79);"
+    },
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": [
+        0.46,
+        0.62
+      ],
+      "from": "0.46",
+      "to": "0.62",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 190,
+      "raw": "const n4 = Math.floor(seg(t, 0.46, 0.62) * 9);"
+    },
+    {
+      "style_id": 111,
+      "name": "t",
+      "window": [
+        0.8,
+        0.88
+      ],
+      "from": "0.8",
+      "to": "0.88",
+      "ease": "E.outBack",
+      "concrete": true,
+      "line_no": 191,
+      "raw": "const pop = seg(t, 0.8, 0.88, E.outBack);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "错拍间隔",
+      "typical": "相邻事件 3–6 帧",
+      "feel": "<2 帧读作同拍（齐动=呆板）；>8 帧密度散掉，轰炸感消失"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "TL 慢推",
+      "typical": "inQuad 1→1.45，origin 50% 78%",
+      "feel": "全程缓慢加速的\"底噪运动\"，让静格也不静；>1.6 会裁掉 tab 行"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "TR 急推",
+      "typical": "0.42–0.54，scale 2.1 + blur 峰值 4px",
+      "feel": "这是全卡最重的一拍，压 BGM 重音；blur 包络必须 sin（进出对称）"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "打字速度",
+      "typical": "TXT1 25 字符 / 0.02–0.95",
+      "feel": "换文案保持字符数近似，否则打字节奏与其他象限错拍关系漂移"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "BR 交互链",
+      "typical": "滑入 0.12→巡游 0.3→点击 0.42→打字 0.46→二段巡游 0.62→点击 0.74→卡片 0.8",
+      "feel": "五步环环相扣，改任何一步需顺延后续；卡片 outBack 弹出是链尾重音"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "底色",
+      "typical": "中性灰阶四档交替",
+      "feel": "换项目主题色时保持相邻格明度差 ≥15%，否则格线感消失"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "这是手法卡：四格内容整体可换（产品截图/录屏/其他动效卡），但**错拍表必须重排**——新内容的关键帧继承原时刻表，否则四格变四个独立视频拼贴",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "2.1s 是密度上限时长，拉长到 3s+ 时每象限需加第二轮事件，否则后半段\"没东西动\"",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "光标闪烁走 `floor(t*63)` 帧计算，改 dur 后重新核对两个光标的错相位",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "四格同时打字/同时弹入是最常见的退化写法——检查方式：逐帧过一遍，任何一帧不应有两个象限同时发生\"重事件\"",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "quad-split-parallel-scenes",
+      "variant_letter": null,
+      "upstream_key": "quad-split-parallel-scenes",
+      "demo": "demos/rhythm/quad-split-parallel-scenes/QuadSplitParallelScenes.tsx",
+      "component": "QuadSplitParallelScenes",
+      "duration_frames": 63,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

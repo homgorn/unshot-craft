@@ -1,0 +1,271 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "gradient-transition",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/gradient-transition.md",
+    "card_sha256": "333562de9c1a61073b1bab3b9cdd60c68b4bf388acfc932eedff92a063102864",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 180,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 6.0s（180f@30fps；linear 0–2.4s · radial 2–4.2s · conic 4–6s）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "low",
+    "energy_label": {
+      "zh": "低",
+      "en": "low"
+    },
+    "energy_verbatim": "低（纯背景运动，为前景内容让路）",
+    "energy_rationale": "纯背景运动，为前景内容让路"
+  },
+  "intent_zh": "渐变不是静态贴图而是可动画的参数集：同类型渐变内部任何参数都能插值出丝滑变化，跨类型则用短交叉淡化衔接。作背景层用，给\"没有主体运动\"的段落一层持续的低速能量。",
+  "use_zh": "氛围底/章节底色的连续变奏；给静态排版段落提供\"活着\"的背景层",
+  "summary_zh": "背景在 linear、radial、conic 三类 CSS 渐变间平滑过渡——角度、色标、中心、半径逐参数插值，段间交叉淡化换类型",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三层各持一种渐变类型，同一时刻只有一层主导，交叉淡化窗口很窄（0.08）"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "linear 段（t=0–0.4）：角度 40°→230°，两组色标在 HSL 空间三通道插值（`mixH` 对 h/s/l 分别 lerp）——比 RGB 插值不发灰"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": [
+        0.33,
+        0.7
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "radial 段（t=0.33–0.7）：圆心 (28%,66%)→(72%,32%) 对角迁移 + 半径 45%→85% 扩张，暗色外圈近黑，光斑像在画面里游走"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "conic 段（t=0.66–1）：七段彩虹色环 `from` 角 0→300° 旋转，首尾同色（hsl 0 出现两次）可无缝循环"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "中央玻璃 pill 标签实时显示当前类型（LINEAR/RADIAL/CONIC），demo 用；实用时删掉"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 129,
+      "name": "t",
+      "window": [
+        0.0,
+        0.4
+      ],
+      "from": "0",
+      "to": "0.4",
+      "ease": "E.inOutQuad",
+      "concrete": true,
+      "line_no": 26,
+      "raw": "const p1 = seg(t, 0, 0.4, E.inOutQuad);"
+    },
+    {
+      "style_id": 129,
+      "name": "t",
+      "window": [
+        0.33,
+        0.7
+      ],
+      "from": "0.33",
+      "to": "0.7",
+      "ease": "E.inOutQuad",
+      "concrete": true,
+      "line_no": 33,
+      "raw": "const p2 = seg(t, 0.33, 0.7, E.inOutQuad);"
+    },
+    {
+      "style_id": 129,
+      "name": "t",
+      "window": [
+        0.66,
+        1.0
+      ],
+      "from": "0.66",
+      "to": "1",
+      "ease": "E.inOutQuad",
+      "concrete": true,
+      "line_no": 40,
+      "raw": "const p3 = seg(t, 0.66, 1, E.inOutQuad);"
+    },
+    {
+      "style_id": 129,
+      "name": "t",
+      "window": [
+        0.3,
+        0.38
+      ],
+      "from": "0.3",
+      "to": "0.38",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 49,
+      "raw": "<div style={layerStyle(bg1, 1 - seg(t, 0.3, 0.38))} />"
+    },
+    {
+      "style_id": 129,
+      "name": "t",
+      "window": [
+        0.3,
+        0.38
+      ],
+      "from": "0.3",
+      "to": "0.38",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 50,
+      "raw": "<div style={layerStyle(bg2, seg(t, 0.3, 0.38) - seg(t, 0.63, 0.71))} />"
+    },
+    {
+      "style_id": 129,
+      "name": "t",
+      "window": [
+        0.63,
+        0.71
+      ],
+      "from": "0.63",
+      "to": "0.71",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 51,
+      "raw": "<div style={layerStyle(bg3, seg(t, 0.63, 0.71))} />"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "段窗口重叠",
+      "typical": "相邻段起点比前段终点早 0.07",
+      "feel": "重叠保证淡化时两层都在动；无重叠会看到\"接管瞬间静止\""
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "交叉淡化",
+      "typical": "0.30–0.38 / 0.63–0.71，各 0.08",
+      "feel": "拉宽会同屏看到两种渐变结构打架；窄淡化 + 参数同动是\"换类型不换气\"的关键"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "HSL 插值",
+      "typical": "h/s/l 三通道独立 lerp",
+      "feel": "色相差 >180° 时会绕远路（如 340→160），需要短路径时给起点 +360"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "radial 迁移",
+      "typical": "中心对角走位 + 半径近倍扩",
+      "feel": "中心不动只扩半径会读作\"呼吸\"不是\"游走\""
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "conic 旋转",
+      "typical": "from 0→300°（不满一圈）",
+      "feel": "转满 360° 收尾与开头同帧，接循环时用；单次播放留 60° 缺口避免\"回到原点\"感"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "色标组",
+      "typical": "每段两组 HSL 起止",
+      "feel": "换项目色时保持\"亮色+暗色\"配对结构，radial 外圈必须暗（光斑成立的前提）"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "这是背景卡：前景放排版/UI 时把 label pill 删掉，并把整层 opacity 压到 0.6–0.8 或叠暗色 scrim，否则彩虹 conic 段会吃掉前景对比度",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "CSS 渐变字符串每帧重写触发 repaint 而非 composite——大画幅 + 低端设备需实测；Remotion 服务端渲染无此顾虑",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "conic 段的七段色环是\"演出\"性质，品牌化场景建议换成三色循环（A→B→C→A）",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "三段各自独立可拆用：只要 linear 段（0–0.4 重归一化到 0–1）就是一张\"角度扫过\"的极简底",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "gradient-transition",
+      "variant_letter": null,
+      "upstream_key": "gradient-transition",
+      "demo": "demos/transition/gradient-transition/GradientTransition.tsx",
+      "component": "GradientTransition",
+      "duration_frames": 180,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

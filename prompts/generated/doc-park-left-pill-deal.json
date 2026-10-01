@@ -1,0 +1,365 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "doc-park-left-pill-deal",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/doc-park-left-pill-deal.md",
+    "card_sha256": "6a0054cc0a86d5ff0c3165c6eb08d8629c6e053253b4c1aaeb409e12039f9c1c",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 174,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 5.8s（174f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "low",
+    "energy_label": {
+      "zh": "低",
+      "en": "low"
+    },
+    "energy_verbatim": "低（慢发牌节奏，全片无峰值；靠自动滚动维持活性）",
+    "energy_rationale": "慢发牌节奏，全片无峰值；靠自动滚动维持活性"
+  },
+  "intent_zh": "结论要一条一条给，观众才记得住。但如果把来源文档淡出，结论就变成了空中楼阁——观众 不知道这些话从哪来。这张卡的解法是**让来源留在画面里**：文档靠左驻留只露一截，还在 缓慢滚动（说明它正在被读），右侧的每条结论都是从这份文档里长出来的。发牌节奏刻意慢， 是为了给旁白留出说完一句的时间。",
+  "use_zh": "旁白驱动的\"分析结论逐条给出\"段落；文档理解、推荐理由、审阅意见类产品的核心说明镜头",
+  "summary_zh": "文档不淡出而是向左滑出只露约 35% 宽并微缩到 0.92，右侧按旁白节奏慢速发牌三张白底描边药丸（outBack 弹入），每张落定后其下方字幕逐词加深、下一张到来前整句淡出，左侧文档全程极缓慢自动滚动保持\"正在被读\"",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": [
+        0.06,
+        0.24
+      ],
+      "frame_hints": [],
+      "ease": "inOutCubic",
+      "beziers": [],
+      "raw": "驻留（park）不是淡出：`seg(t, 0.06, 0.24, E.inOutCubic)` 驱动"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`translateX(0→-55%) scale(1→0.92)`，`transform-origin: 0% 50%` 让缩放以左边缘为锚，"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "文档缩小时不会离开画框左侧——最终只露约 35% 宽"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "常驻自动滚动：`doc.inner.style.transform = translateY(-(t*3 % 1) * 40)`，内容高度"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "比容器多 60px，全片走 3 个整数周期各 40px。取模保证 t=1 时回到 0，末帧画面稳定"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        38
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "慢发牌：三张药丸起点写死在 `T0 = [0.26, 0.48, 0.70]`——间隔 0.22（约 38f / 1.27s），"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "这是一句短旁白的长度，不是 UI 常规的 stagger"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outQuad",
+      "beziers": [],
+      "raw": "每张药丸两条曲线并行：`o = seg(t, f, f+0.035, E.outQuad)` 管透明度（快，约 6f），"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        11
+      ],
+      "ease": "outBack",
+      "beziers": [],
+      "raw": "`b = seg(t, f, f+0.062, E.outBack)` 管 `translateY(14→0) scale(0.94→1)`（慢，约 11f"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "且带过冲）——先看见、再落定，比单曲线更有\"接住\"的手感"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "字幕四段编排：起点 `cs = f+0.05`（药丸落定后约 3 帧），`show` 用 0.02 的窗快速出现，"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`inn` 逐词加深摊在 `(ce-cs)*0.7` 上，`ce` 是下一张的起点减 0.03（末张 ce=0.98），"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`out` 在 `ce-0.05→ce` 淡出——每句字幕在下一张药丸入场前就已清场，画面永远只有一句"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "药丸终态是静态列表（`top = 54 + k*48`），三张全部落位后一直留在画面上，读作"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "\"结论清单已成形\""
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 191,
+      "name": "t",
+      "window": [
+        0.06,
+        0.24
+      ],
+      "from": "0.06",
+      "to": "0.24",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 130,
+      "raw": "const park = seg(t, 0.06, 0.24, E.inOutCubic);"
+    },
+    {
+      "style_id": 191,
+      "name": "t",
+      "window": null,
+      "from": "f",
+      "to": "f + 0.035",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 201,
+      "raw": "const o = seg(t, f, f + 0.035, E.outQuad);"
+    },
+    {
+      "style_id": 191,
+      "name": "t",
+      "window": null,
+      "from": "f",
+      "to": "f + 0.062",
+      "ease": "E.outBack",
+      "concrete": false,
+      "line_no": 202,
+      "raw": "const b = seg(t, f, f + 0.062, E.outBack);"
+    },
+    {
+      "style_id": 191,
+      "name": "t",
+      "window": null,
+      "from": "cs",
+      "to": "cs + 0.02",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 205,
+      "raw": "const showV = seg(t, cs, cs + 0.02);"
+    },
+    {
+      "style_id": 191,
+      "name": "t",
+      "window": null,
+      "from": "ce - 0.05",
+      "to": "ce",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 207,
+      "raw": "const outP = seg(t, ce - 0.05, ce, E.outQuad);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "发牌起点",
+      "typical": "`T0 = [0.26, 0.48, 0.70]`，间隔 0.22（≈38f）",
+      "feel": "间隔就是旁白句长；压到 0.12 以下字幕的\"逐词加深\"来不及走完，读作字幕闪一下就没了"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "驻留窗",
+      "typical": "0.06→0.24（inOutCubic）",
+      "feel": "必须在首张药丸（0.26）之前收住；重叠会出现\"文档还在滑、药丸已在发\"的浑浊"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "驻留幅度",
+      "typical": "`translateX -55%` + `scale 0.92`，露约 35%",
+      "feel": "露太少（<25%）文档变成装饰失去\"来源\"语义；露太多右侧放不下 172px 宽的药丸"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "药丸透明度窗",
+      "typical": "0.035（≈6f，outQuad）",
+      "feel": "比位移窗短是有意的——先实后稳；两窗等长会读作普通淡入"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "药丸位移窗",
+      "typical": "0.062（≈11f，outBack），y 14→0、scale 0.94→1",
+      "feel": "outBack 的过冲是\"发牌落桌\"的手感；换 outCubic 会变成平淡的浮上来"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "字幕延迟",
+      "typical": "`cs = f + 0.05`（≈9f）",
+      "feel": "药丸落定（0.062）之后才起字幕；提前会出现字幕先于结论出现"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "字幕加深行程",
+      "typical": "`(ce-cs)*0.7`",
+      "feel": "占该句可见时长的 70%，末 30% 是全实态的静置阅读时间；调到 1.0 则字幕刚读完就被淡出"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "自动滚动",
+      "typical": "`t*3 % 1` × 40px（3 个整数周期）",
+      "feel": "3 周期在 5.8s 上约 0.7px/f，是\"正在读\"的暗示级速度；>3px/f 会抢注意力变成滚动展示"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "自动滚动的周期数必须是整数，否则末帧文档停在半个周期上，接下一镜时位置对不上；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "末张字幕的 `ce = 0.98` 意味着它在 0.93→0.98 淡出，末帧只剩三张药丸没有字幕。若要",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "药丸位置写死为 `left:214px, top:54+k*48`、宽 172px，是 480 宽画布下与驻留后文档",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "三条药丸文案（Quick Start / Bundle Plan / Starter Kit）与三句字幕都是占位，且字幕",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "药丸数写死为 3（`T0` 的长度）。加到 4 条时间就不够：末张起点会超过 0.9，字幕根本",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "字幕的 `ce` 依赖 `T0[k+1]`，改任一张的起点都会连带改变前一张字幕的可见时长——这",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "doc-park-left-pill-deal",
+      "variant_letter": null,
+      "upstream_key": "doc-park-left-pill-deal",
+      "demo": "demos/ui-entrance/doc-park-left-pill-deal/DocParkLeftPillDeal.tsx",
+      "component": "DocParkLeftPillDeal",
+      "duration_frames": 174,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

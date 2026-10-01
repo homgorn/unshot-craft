@@ -1,0 +1,394 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "scanline-assemble-flyin",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/scanline-assemble-flyin.md",
+    "card_sha256": "c453c6e36264c2e2dec1911cfbc9ae50c688585600f1410ddf6bd60dd6b1e848",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 138,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约4.6s（138f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（扫描线是稳的，但每次组件飞入都是一个爆点，密度递进）",
+    "energy_rationale": "扫描线是稳的，但每次组件飞入都是一个爆点，密度递进"
+  },
+  "intent_zh": "让\"页面被生成\"这件事有一个可信的施工顺序：扫描线是施工进度条， 组件从画外飞进来贴合是施工动作。关键是**扫完那一刻恰好装完最后一块** ——扫描线提前收工或组件拖尾都会让\"扫描驱动装配\"的因果关系散掉。",
+  "use_zh": "\"页面自己生成\"的开场；AI 建站/自动排版类产品的核心演示；从空白到成品的能力叙事",
+  "summary_zh": "页面开场是空的暗底网格，一条亮扫描线自上而下掠过；扫到每个区块的落点，该处组件就从画外飞入贴合，带残影模糊与落位闪边——扫完整页恰好装配完成",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "空页底只有暗网格（24px 双向 `repeating-linear-gradient`，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`rgba(255,255,255,.025)`、整层 opacity .5）——组件飞入前唯一可见的东西"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "扫描线 `t 0.05→0.72` 匀速走 y −30→300，"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.03→0.08 淡入、0.72→0.77 淡出"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "触发时刻由组件落点 y 反算：`ft = 0.05 + ((y+30)/330)*0.67 − 0.02`，"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "再钳制最小间隔 0.045；提前 0.02 起飞让组件与扫描线**同时**到位"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "7 个组件各有独立飞入方案 `from:[dx,dy]` + `rot`：顶栏自上（0,−70），"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "logo 自左（−160,−30, −6°），模块卡自右（230,40, 5°），H1 自左下"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（−260,60, −4°），CTA 自下（−60,130, 3°），页脚/社交自下方两侧"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "飞入 `seg(ft, ft+0.15, outBack)` 过冲贴合；运动中按 `1−a` 加"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`blur(≤2.2px)` 残影，`a>0.97` 即清零"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "落位瞬间闪一道细亮边：`inset:-3px` 的 1px 强调色描边，"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`ft+0.11→+0.15` 亮起、`+0.15→+0.26` 收掉"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "状态行统计 `a≥0.99` 的组件数显示 `BUILD · 0n/07`，"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`0.80→0.86` 后切 `ASSEMBLY · COMPLETE`"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 58,
+      "name": "t",
+      "window": [
+        0.05,
+        0.72
+      ],
+      "from": "0.05",
+      "to": "0.72",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 42,
+      "raw": "const ly = lerp(seg(t, 0.05, 0.72), -30, 300);"
+    },
+    {
+      "style_id": 58,
+      "name": "t",
+      "window": [
+        0.03,
+        0.08
+      ],
+      "from": "0.03",
+      "to": "0.08",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 43,
+      "raw": "const lineOpacity = seg(t, 0.03, 0.08) * (1 - seg(t, 0.72, 0.77));"
+    },
+    {
+      "style_id": 58,
+      "name": "t",
+      "window": null,
+      "from": "ft",
+      "to": "ft + 0.15",
+      "ease": "E.outBack",
+      "concrete": false,
+      "line_no": 47,
+      "raw": "const a = seg(t, ft, ft + 0.15, E.outBack);"
+    },
+    {
+      "style_id": 58,
+      "name": "t",
+      "window": null,
+      "from": "ft",
+      "to": "ft + 0.06",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 52,
+      "raw": "opacity: vis * Math.min(1, seg(t, ft, ft + 0.06) * 1.4),"
+    },
+    {
+      "style_id": 58,
+      "name": "t",
+      "window": null,
+      "from": "ft + 0.11",
+      "to": "ft + 0.15",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 63,
+      "raw": "opacity: seg(t, ft + 0.11, ft + 0.15) * (1 - seg(t, ft + 0.15, ft + 0.26)),"
+    },
+    {
+      "style_id": 58,
+      "name": "t",
+      "window": null,
+      "from": "pl.ft",
+      "to": "pl.ft + 0.15",
+      "ease": "E.outBack",
+      "concrete": false,
+      "line_no": 68,
+      "raw": "const placed = PLAN.reduce((acc, pl) => acc + (seg(t, pl.ft, pl.ft + 0.15, E.outBack) >= 0.99 ? 1 : 0), 0);"
+    },
+    {
+      "style_id": 58,
+      "name": "t",
+      "window": [
+        0.8,
+        0.86
+      ],
+      "from": "0.8",
+      "to": "0.86",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 69,
+      "raw": "const done = seg(t, 0.8, 0.86);"
+    },
+    {
+      "style_id": 58,
+      "name": "t",
+      "window": [
+        0.02,
+        0.07
+      ],
+      "from": "0.02",
+      "to": "0.07",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 181,
+      "raw": "opacity: seg(t, 0.02, 0.07),"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "扫描线",
+      "typical": "t 0.05→0.72 匀速，y −30→300",
+      "feel": "收工时刻要略晚于最后一块落位，才读作\"扫完即装完\""
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "触发换算",
+      "typical": "ft = 0.05 + ((y+30)/330)·0.67 − 0.02",
+      "feel": "那个 −0.02 是提前起飞量：去掉就变成\"扫过之后才动\"，慢半拍"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "最小间隔",
+      "typical": "prev + 0.045",
+      "feel": "y 接近的页脚/社交会同时飞；钳制后才有\"一块一块\"的密度"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "飞入位移",
+      "typical": "画外 60–260px，按组件所在方位定",
+      "feel": "位移小于 60px 读作\"抖一下就位\"，不是从画外来"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "飞入旋转",
+      "typical": "±3–8°",
+      "feel": "超过 12° 就读作\"翻滚\"，贴合时不服帖"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "飞入缓动",
+      "typical": "outBack，0.15 时长",
+      "feel": "outBack 的过冲是\"吸附贴合\"的手感；outCubic 就成了滑入"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "残影模糊",
+      "typical": "blur ≤2.2px，随 1−a 衰减，a>0.97 清零",
+      "feel": "不清零会留一层永久糊；阈值必须留裕量"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "落位闪边",
+      "typical": "inset −3px、1px 强调色，0.04 亮 / 0.11 落",
+      "feel": "闪边是\"咬合\"的听觉替代品，去掉后落位没有实感"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "**触发时刻与 plan 里的落点 y 绑定**：换页面模板后每个组件的 y 要重测，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "`filter` 与 `transform` 同时作用于组件节点，落位后必须把 filter 设回",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "闪边层是 append 到组件内部的子节点，组件本身若有 `overflow:hidden`",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "与 `scanline-annotate-focus` 共用同一套页面模板与扫描线；两张卡可以",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "页面内容为中性占位模板，ACCENT（`#9fb6e8`）可按项目替换",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "scanline-assemble-flyin",
+      "variant_letter": null,
+      "upstream_key": "scanline-assemble-flyin",
+      "demo": "demos/effects/scanline-assemble-flyin/ScanlineAssembleFlyin.tsx",
+      "component": "ScanlineAssembleFlyin",
+      "duration_frames": 138,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "neon-frame-forerun",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/neon-frame-forerun.md",
+    "card_sha256": "0a486a498d8fd7b51a56ee285a635ffce358823510fb428c651bceae702be843",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 18,
+    "duration_frames_hint": null,
+    "duration_verbatim": "框奔画 ~0.6s + 点亮&贴落 ~2s + 背景熄灭收束 ~0.8s；全段 4–4.5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（三层动作叠进，但都服务同一次登场）",
+    "energy_rationale": "三层动作叠进，但都服务同一次登场"
+  },
+  "intent_zh": "先立框后填肉：霓虹线框像跑道灯一样两头奔画圈出位置，宣告 \"这里要出现东西\"；页面在框内由暗转亮的同时，组件从空中带影 贴落——观众看见界面被\"安放\"进框里。三层动作（框奔画/页面点亮/ 组件贴落）必须**同步咬合**：贴落进程与点亮进程同步推进、稍滞后 收尾，框光最终并入面板辉光。背景霓虹管群终段熄灭，把亮度让给 主角完成收束。",
+  "use_zh": "暗场品牌片里给 UI 面板做\"登场仪式\"（框先到、内容后落）；功能区首次亮相；霓虹/赛博调性的段落开场",
+  "summary_zh": "强透视直角霓虹框自左缘两头奔画先行成型，页面在框内由暗转亮，同时框内组件/文字从 3D 上空带同形软影错峰贴落、随页面点亮同步完成贴合，背景霓虹管群终段熄灭让位",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "霓虹框：强透视直角框（梯形），自左缘中点两头同时奔画（描边"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "动画），带辉光亮头；成型后框光渐并入面板辉光"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        54
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "页面点亮：框内面板由暗灰到亮的显影推进（lit 窗口 ~54f）"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "组件贴落：框内全部元素套 FloatWrap（graze-face-tour 同款模式）："
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "初始抬高 100–150px、easeFall 加速贴落、同形软影随高度收敛、"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "侧栏自上而下/主区自上而下错峰落位；贴落窗口与点亮窗口同步"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        20
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "推进、稍滞后 ~20f 收尾"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "背景：大霓虹管群先亮衬气氛，终段中亮尾熄（先中间后两端熄灭）"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "框奔画",
+      "typical": "~18f 两头对奔",
+      "feel": "单头描画读作画图；>30f 观众等不及内容"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "悬浮高度",
+      "typical": "100–150px、影随高度收敛",
+      "feel": "判例：高度过小+启动过早=影子不可感（v3 第 1 轮返工加大 1.7x 并延后）"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "贴落窗口",
+      "typical": "与点亮窗口同步、滞后 ~20f 收尾",
+      "feel": "贴落先于点亮完＝黑屋子里落家具；滞后太多读作两段戏"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "错峰",
+      "typical": "错开起点、下落重叠并行",
+      "feel": "串行等待被裁（掉落节奏通用判例）"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "背景熄灭",
+      "typical": "终段中亮尾熄 ~22f",
+      "feel": "不熄灭主角不突出；同帧全熄读作断电"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "贴落粒度",
+      "typical": "行/卡级（原片为逐 UI 卡片级，更细）",
+      "feel": "粒度越细越贵；行级已验证可读"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "悬空贴落=clickup 语言核心签名（已验证的口味信号），本卡",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 brand-frame-snap 分工：那张是品牌框咔哒定位的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "衍生方向备忘：视角旋转变体（镜头左→右弧线旋转+同时贴落）",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "neon-frame-forerun",
+      "variant_letter": null,
+      "upstream_key": "neon-frame-forerun",
+      "demo": "demos/ui-entrance/neon-frame-forerun/NeonFrameForerun.tsx",
+      "component": "NeonFrameForerun",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

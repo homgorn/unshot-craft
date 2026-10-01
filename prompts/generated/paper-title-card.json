@@ -1,0 +1,177 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "paper-title-card",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography",
+    "transition",
+    "rhythm"
+  ],
+  "source": {
+    "card": "references/shots/typography/paper-title-card.md",
+    "card_sha256": "c747ee4c5c80b839fde2245c837e1f3085428c635caf495c7eb3c6372d5d5d6c",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 55,
+    "duration_frames_hint": null,
+    "duration_verbatim": "1.7–1.8s（50–55f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "low",
+    "energy_label": {
+      "zh": "低",
+      "en": "low"
+    },
+    "energy_verbatim": "低（呼吸位，隔开两段高能镜头）",
+    "energy_rationale": "呼吸位，隔开两段高能镜头"
+  },
+  "intent_zh": "在两段产品画面之间给观众一句话的喘息：说清\"接下来看什么、它值什么\"。letterpress 压印质感让字卡与纸墨风格的产品画面同属一个世界。",
+  "use_zh": "章节转场/价值主张字卡；重要功能出场前的引导卡；全片呼吸位",
+  "summary_zh": "一句话逐词压印上纸、一个词标强调色斜体、短划线收束",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "单句文案逐词入场：scale 从大压到 1 + blur→0 + opacity（letterpress 压印配方）"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每句恰好一个重点词：italic + 强调色（模板片为琥珀）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "强调色短下划线 scaleX 0→1 收束"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "尾部整卡淡出交棒；可挂 mono 小字副行 + DigitRoll 数字"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "逐词入场",
+      "typical": "第 i 词 delay = 4 + i·4、9f，bezier(0.2,0.75,0.3,1)；scale 1.28→1 + blur 7px→0 + opacity",
+      "feel": "scale 起点 1.28 是\"压印\"读感的甜点——对照暗场版 TitleCard 用 40px 上移+blur 10，同配方明暗两版"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "重点词",
+      "typical": "italic + 强调色 oklch(52% 0.115 65)，一句恰好一个 accent",
+      "feel": "两个 accent 等于没有 accent；重点词选功能名/收益词（C2）"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "下划线",
+      "typical": "16→34f scaleX 0→1，220×6px 强调色",
+      "feel": "下划线是收束信号，出现即预告本卡快结束"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "时长",
+      "typical": "全片 4 张字卡均 50–55f（≈1.8s）",
+      "feel": "字卡时长定式化——观众读一句话的时间，长了拖节奏短了读不完"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "版式",
+      "typical": "字号 116/serif；纸底 oklch(97.5% 0.008 82) + 中心暖光 radial；尾部 8f 淡出",
+      "feel": "纸底+暖光与产品画面同色系，字卡才不像广告插播"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "副行",
+      "typical": "mono 小字 + DigitRoll（如 \"5 of 31 fetched today\"）；digit-roll 参数见 list-stack-press 卡计数器行",
+      "feel": "副行给具体数字最有说服力；数字滚动必须在本卡淡出前落定（教训）——排节拍从本卡淡出帧倒推"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "文案要具体：带产品功能名+具体收益，抽象隐喻词被用户逐字改掉（C2——\"one board\"→\"one place to go\"、加 \"Paper Radar\"）；文案在画面锁定后按最终镜头重写一遍（C1）",
+      "critical": false,
+      "rules": "C1,C2"
+    },
+    {
+      "ord": 1,
+      "text": "重要功能出场前要有引导字卡（C2 判例：文档镜头前应加一句引导，如 \"Every project, linked to your weekly report\"）——字卡不是装饰，是章节路标",
+      "critical": false,
+      "rules": "C2"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "C1",
+      "family": "C",
+      "title": "规则：初稿文案只是占位——画面定稿后对照成片逐镜头重写；纯动画镜头配短解说 caption，不留\"哑巴段落\"（品牌收尾镜头除外，保持干净）。",
+      "check_question": "自检：逐句对照：每句文案和它所在的画面匹配吗？有没有超过 3 秒的无解说动画段落？"
+    },
+    {
+      "rule_id": "C2",
+      "family": "C",
+      "title": "规则：标语要具体、带产品功能名（Paper Radar / weekly report），避免抽象隐喻词（board/place 类泛化口号）；重要功能出场前加一张引导字卡。",
+      "check_question": "自检：每句标语里有没有具体的功能名/收益词？有没有只靠隐喻撑着的句子？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "paper-title-card",
+      "variant_letter": null,
+      "upstream_key": "paper-title-card",
+      "demo": "demos/typography/paper-title-card/PaperTitleCard.tsx",
+      "component": "PaperTitleCard",
+      "duration_frames": 55,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

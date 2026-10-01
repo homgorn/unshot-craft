@@ -1,0 +1,202 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "icon-performance-moves",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "interaction",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/icon-performance-moves.md",
+    "card_sha256": "b7cc6084113beb4a1fd29ef55750cc892cb855526757bba5119c035ac63a213a",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 120,
+    "duration_frames_hint": null,
+    "duration_verbatim": "A 3–4s / B 4–5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "A 高潮点缀 / B 蓄势引入",
+    "energy_rationale": null
+  },
+  "intent_zh": "库内图标动画品类首批入库：icon 是镜头怼着拍的表演者，不是 UI 角落的 微交互。A 是确认时刻的三连爆——大对勾先缩 0.6x 蓄力 3f、弹 1.35x 过冲 落回，同帧中心射出 10 根短线粒子+一圈描边环从边缘扩到 2.5 倍直径淡出， \"部署成功\"不是画出来的是炸出来的；B 是 macOS Dock 语汇——app 图标 原地连跳 4 次一次比一次高（0.5→1.2 倍 icon 高），每次落地压扁 （宽 1.2x 高 0.8x）+溅尘点，跳最高那下镜头向它轻推 8%（被吸引）， 落定后弹开功能面板——把\"用户注意力\"剪进叙事。",
+  "use_zh": "半屏级 icon 特写段落；A \"完成/成功\"的标点符号，B 新功能引出",
+  "summary_zh": "图标表演两式——pop-burst-confirm 爆花确认（对勾蓄力弹大+炸粒子+扩散环）与 attention-bounce 求关注弹跳（图标连跳递增+落地压扁+镜头被吸引）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [
+        20
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A pop-burst-confirm | scale 蓄力-过冲-落回 spring + N 条径向 line translate + 圆环 scale/opacity，全程 ~20f，随后标签弹出 | 任务完成/部署成功/打勾时刻，卡点音效 |"
+    },
+    {
+      "ord": 3,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B attention-bounce | translateY 弹跳缓动递增 + 落地帧 scaleX/Y 挤压 + 尘点，峰值帧镜头 scale 1.08 推近，落定触发面板卡弹出 | 新功能引出：\"看我\"→镜头看它→它开面板 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "icon 尺寸",
+      "typical": "400–500px 高（半屏特写）",
+      "feel": "角落小图标做表演没人看见——表演者必须占 C 位"
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 蓄力",
+      "typical": "缩 0.6x 停 3f",
+      "feel": "anticipation：无蓄力的弹出没有\"爆\"感"
+    },
+    {
+      "ord": 2,
+      "variant": "A",
+      "key": "A 粒子/环",
+      "typical": "10 根短线飞 40–60px + 环扩 2.5 倍",
+      "feel": "三件套同帧齐发是\"爆花\"成立条件"
+    },
+    {
+      "ord": 3,
+      "variant": "B",
+      "key": "B 递增弹跳",
+      "typical": "4 跳 0.5→1.2 倍 icon 高",
+      "feel": "等高连跳读作 loading；递增才是\"越喊越大声\""
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 落地挤压",
+      "typical": "宽 1.2x 高 0.8x（1–2f）",
+      "feel": "squash 缺席=没有重量"
+    },
+    {
+      "ord": 5,
+      "variant": "B",
+      "key": "B 镜头推近",
+      "typical": "峰值帧 8%",
+      "feel": "镜头动作把\"被吸引\"的观众视角演出来"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "同批 bell-swing-alert（铃铛甩摆）淘汰无附言——挂点摆动型 icon",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "A 与 particle-celebrate-hits 同属爆发点缀，同一段落二选一",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "B 首版曾出画框（末跳最高点顶出），弹跳高度与画面上留白先算像素",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "声音：A 蓄力静默→爆发帧\"pop\"+粒子细响；B 每次落地一声\"duk\"",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "attention-bounce",
+      "variant_letter": "B",
+      "upstream_key": "attention-bounce",
+      "demo": "demos/effects/icon-performance-moves/AttentionBounce.tsx",
+      "component": "AttentionBounce",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "pop-burst-confirm",
+      "variant_letter": "A",
+      "upstream_key": "pop-burst-confirm",
+      "demo": "demos/effects/icon-performance-moves/PopBurstConfirm.tsx",
+      "component": "PopBurstConfirm",
+      "duration_frames": 120,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

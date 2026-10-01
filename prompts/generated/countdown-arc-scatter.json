@@ -1,0 +1,396 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "countdown-arc-scatter",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/typography/countdown-arc-scatter.md",
+    "card_sha256": "335b8fe632b312d99c5c2bd3090ddefeafc0288e5e5586ae4881dd834f700f46",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 33,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 1.1s（33f@30fps，极短单拍）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "high",
+    "energy_label": {
+      "zh": "高",
+      "en": "high"
+    },
+    "energy_verbatim": "高（96° 大幅扫动压进 17 帧，纯冲击）",
+    "energy_rationale": "96° 大幅扫动压进 17 帧，纯冲击"
+  },
+  "intent_zh": "\"5 分钟装完\"写成静态字卡没人信。表盘扫过的做法把这个数字放进一个 **量程**里：45、35、28、22、17、10 一路扫过去，停在 5——观众看到的是 \"从很多降到很少\"，数字自带论证。停下后 \"5\" 不消失而是**平移变成标题的 首字符**，一个元素完成从仪表到文案的身份切换，这是本卡最值钱的一手。",
+  "use_zh": "倒计时/时长承诺类文案（\"5 min to install\"）；数据揭晓的一拍；需要\"仪表盘\"语汇的浅底短镜",
+  "summary_zh": "白底表盘 9 个等大数字沿大弧切向排布，整盘扫过 96° 后减速急停，\"5\" 停在弧顶随即平移落位成标题首字符，其余数字带 blur 原地散去，标题逐词模糊淡入、末词转强调色",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "弧线排布：9 个数字挂在零尺寸 `pivot`（left 50%/top 58%）上，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`ang = (i-6)·24`°，位置 `x = sin·R0`、`y = -cos·R0`（R0=150），"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "自身再 `rotate(位置角)` —— **切向排布**，数字随弧倾斜像刻在盘面上"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": [
+        0.0,
+        0.52
+      ],
+      "frame_hints": [
+        17
+      ],
+      "ease": "outCubic",
+      "beziers": [],
+      "raw": "整盘扫动：`rot = lerp(seg(t, 0, 0.52, E.outCubic), 96, 0)`（约 17f 内"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "96°→0°），outCubic 的减速急停是\"到位\"的全部力道"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "弧两端淡入淡出：`op = clamp((70 - |pa|)/22)`，位置角超过 ±70° 就归零、"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "±48° 起渐显——**不用遮罩，用角度算透明度**，所以数字是\"转进视野\"的"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`i=6` 的 \"5\" 角度设计为 0（扫完正停弧顶），随后 `hand = seg(0.52, 0.7,"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "inOutCubic",
+      "beziers": [],
+      "raw": "E.inOutCubic)` 把它平移到标题左端 `(-148, -30)`，同时自转 `rSelf·(1-hand)`"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "回正——落位与回正同一条曲线"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "inQuad",
+      "beziers": [],
+      "raw": "其余 8 个数字 `out = seg(0.5, 0.7, E.inQuad)`：透明度 `·(1-out)`"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "+ `blur(out·3)`px 原地散掉（**不位移**，位移会跟 \"5\" 的平移抢戏）；"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "短刻度线（3×26px 深色）挂在 `tickRot` 上跟转但只跟 `rot·0.35`"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——**0.35 倍差速**，两条转速造出\"盘面 + 指针\"的层次"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "标题三词逐词 `blur((1-p)·6)` + 淡入，窗 `[0.54,0.68] / [0.62,0.78] /"
+    },
+    {
+      "ord": 15,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "[0.7,0.9]`（重叠约 0.06）；末词在 `seg(0.84, 0.98)` 从 `#17181c` 逐通道"
+    },
+    {
+      "ord": 16,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "插值到 ACCENT——库内\"末双字母收尾染色\"手法的延续"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 156,
+      "name": "t",
+      "window": [
+        0.0,
+        0.52
+      ],
+      "from": "0",
+      "to": "0.52",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 41,
+      "raw": "const rot = lerp(seg(t, 0, 0.52, E.outCubic), 96, 0);"
+    },
+    {
+      "style_id": 156,
+      "name": "t",
+      "window": [
+        0.52,
+        0.7
+      ],
+      "from": "0.52",
+      "to": "0.7",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 42,
+      "raw": "const hand = seg(t, 0.52, 0.7, E.inOutCubic); // \"5\" 落位平移"
+    },
+    {
+      "style_id": 156,
+      "name": "t",
+      "window": [
+        0.5,
+        0.7
+      ],
+      "from": "0.5",
+      "to": "0.7",
+      "ease": "E.inQuad",
+      "concrete": true,
+      "line_no": 43,
+      "raw": "const out = seg(t, 0.5, 0.7, E.inQuad); // 其余数字原地淡出"
+    },
+    {
+      "style_id": 156,
+      "name": "t",
+      "window": [
+        0.84,
+        0.98
+      ],
+      "from": "0.84",
+      "to": "0.98",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 45,
+      "raw": "const bl = seg(t, 0.84, 0.98);"
+    },
+    {
+      "style_id": 156,
+      "name": "t",
+      "window": null,
+      "from": "win[0]",
+      "to": "win[1]",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 127,
+      "raw": "const p = seg(t, win[0], win[1], E.outCubic);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "数列",
+      "typical": "`[45,35,28,22,17,10,5,4,3]`，间距 24°",
+      "feel": "递减不等距（45→35→28…）才像真量程，等差数列读作刻度尺；\"5\" 必须在 i=6 位（前 6 个扫过、后 2 个预留）"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "弧半径",
+      "typical": "R0 = 150px，pivot 在 top 58%",
+      "feel": "半径决定弧的曲度：<100 数字挤成小圈，>220 弧近乎直线，表盘感消失"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "扫动",
+      "typical": "96° → 0°，窗 0.52（≈17f），outCubic",
+      "feel": "96° 约等于扫过 4 格；outCubic 的急停是唯一的\"到位\"信号，改 inOut 就成了缓缓停下，没有仪表的干脆"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "可视角窗",
+      "typical": "`(70-",
+      "feel": "pa"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "\"5\" 落位",
+      "typical": "窗 0.52→0.7（≈6f），目标 `(-148,-30)`，同步回正",
+      "feel": "落位窗紧接扫停，中间不留静置——留了就断成两个动作；目标点必须正好是标题首字符位"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "其余淡出",
+      "typical": "窗 0.5→0.7 inQuad + `blur(out·3)`",
+      "feel": "淡出**早于** \"5\" 落位 0.02 起手，先让路；blur 让散去像失焦而非消失"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "刻度差速",
+      "typical": "`rot·0.35`；标题逐词窗重叠约 0.06、`blur (1-p)·6`px",
+      "feel": "差速是\"盘 vs 指针\"的层次来源，1.0（同速）读作一整块贴图在转；逐词窗重叠才是\"一句话\"，排队读作三个词各自出场"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "末词染色",
+      "typical": "`seg(0.84, 0.98)` → ACCENT",
+      "feel": "全片唯一的颜色事件，落在最后一个词上就是句子的落点"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**1.1s（33f）是极限压缩**：扫动只 17f、\"5\" 落位 6f、三词淡入各约 5f，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "**换文案时字符数要贴近占位（`min` / `to` / `install`）**：标题的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "数字必须**等大同字重**（40px/600）：大小不一读作数据可视化，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "\"5\" 的角度设计（i=6 → ang=0）是本卡的地基：改数列长度或改哪个数字",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "白底专用：`#fff` 底 + `#17181c` 墨色数字是这卡的干净感来源；深底版",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 6,
+      "text": "声音：扫停那一下 + 落位那一下是两个紧连的节奏点（相隔仅 6f），",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "countdown-arc-scatter",
+      "variant_letter": null,
+      "upstream_key": "countdown-arc-scatter",
+      "demo": "demos/typography/countdown-arc-scatter/CountdownArcScatter.tsx",
+      "component": "CountdownArcScatter",
+      "duration_frames": 33,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

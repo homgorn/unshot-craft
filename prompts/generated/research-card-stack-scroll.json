@@ -1,0 +1,284 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "research-card-stack-scroll",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/research-card-stack-scroll.md",
+    "card_sha256": "afb2c4d35007fde738bbf2a0c7a3e337de19b4b9254790878c1577eca6f904bb",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 144,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 4.8s（144f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（匀速高频，无爆发但持续压迫）",
+    "energy_rationale": "匀速高频，无爆发但持续压迫"
+  },
+  "intent_zh": "要说的是\"数量\"，但一次给 13 张卡会读成一堵墙。改成流水线：卡一张一张进，每张都被 读过（最上一张永远是全文渲染的那张），读完就沉进堆里变模糊。观众感受到的是持续不断 的吞吐量，而不是一个静态的堆。背景 grid 同速下移是速度参照——没有它，堆积会读作 \"卡在原地缩小\"。",
+  "use_zh": "\"读了大量资料/处理了海量文档\"的量级交代；研究类、检索类、批处理类产品的能力镜头",
+  "summary_zh": "深色论文卡每 12 帧一张沿右下轴线飞入中心叠压，落位带 1 帧压缩，只有最上一张全清晰渲染标题+作者+摘要，下方卡按堆积深度递增模糊变暗只露标题条，背景横向 grid 同步下移做速度参照",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "时间轴用真实帧号而非归一化 t：内部 `F=144`，每张卡的本地时间 `e = t*144 - i*12`，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "一切编排（入场、堆积、深度）都以 `PER=12` 帧为节拍单位写死"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outCubic",
+      "beziers": [],
+      "raw": "入场是 6 帧短促动作：`seg(clamp((e+6)/6), 0, 1, E.outCubic)`——注意起点是 `e=-6`，"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "即卡在自己的节拍到达前 6 帧就开始飞，`translateY(-40→0)` + `scale(0.94→1)`"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "落位 squash：`e ∈ [0, 1.6)` 时 y 轴 scale 额外乘 0.97，只压 1.6 帧——短到读不出是"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "变形，只读作\"砸实了\""
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "堆积漂移：落位后 `drift = e/12*30`，每个节拍向下 30px、向右 `XOFF=9`px，形成微微"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "向右下的轴线；轴线的存在让 13 张卡不是同心叠放而是有厚度的一叠"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "深度衰减：`depth = min(1, drift/(30*3))`——三个节拍内衰减到底，`blur(depth*4)` +"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`brightness(1-depth*0.25)`；再往下 `(drift-30*3.2)/(30*1.6)` 把 opacity 拉到 0 回收"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "焦点唯一：`focus = floor(f/12)`，只有 `i === focus` 的卡显示 body（作者行 + 4 条摘要"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "骨架），其余卡的 body 直接 `opacity:0` 只留标题——\"正在读的那一张\"永远只有一张"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "背景 grid：`translateY((f/12*30*S) % 24)`，位移量与卡的 drift 用同一个 `GAP=30`"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "推导，所以 grid 与卡堆严格同速；对 24px 取模让它无缝循环"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "节拍",
+      "typical": "PER=12 帧/张，13 张",
+      "feel": "12f 是\"紧但看得清\"的下限；<8f 标题来不及读，>20f 量级感垮掉变成逐张展示"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "入场行程",
+      "typical": "6 帧（outCubic），提前量 -6 帧",
+      "feel": "行程只有节拍的一半 → 每张在下一张来之前已经落定；行程 ≥ PER 时会有两张同时在飞"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "入场位移/缩放",
+      "typical": "`translateY(-40→0)`、`scale 0.94→1`",
+      "feel": "40px 相对 96px 卡高是小幅——卡是\"落进去\"不是\"飞进来\"；缩放差只有 0.06，再大就读作弹窗"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "落位压缩",
+      "typical": "1.6 帧，y 轴 ×0.97",
+      "feel": "3% 是刚好能感知的量；>6% 或时长 >3f 会看出橡皮变形"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "堆积轴线",
+      "typical": "每节拍 y+30px、x+9px",
+      "feel": "9/30 的比值决定轴线斜度；x 归零会变成正下方同心叠压，厚度感消失"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "深度衰减",
+      "typical": "`depth = drift/90`，blur 0→4px、brightness 1→0.75",
+      "feel": "90px（3 个节拍）内衰减完 → 画面里始终只有约 3 张是\"半清晰\"的；衰减距离拉长会让下方糊卡堆太厚，画面变脏"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "回收窗",
+      "typical": "`drift > 96px` 起淡出，48px 内到 0",
+      "feel": "回收太早会看到卡在画面中央消失；太晚 13 张全在场，DOM 与 blur 开销都上去"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "内容坐标系",
+      "typical": "逻辑 420×250，整体 `scale(min(W/420, H/250))`",
+      "feel": "所有像素值写在逻辑坐标系里，改画布尺寸不用重排；卡 296×96、字号 9.5px 都是逻辑值"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "卡数与节拍是绑定的：`13 张 × 12 帧 = 156 帧 > F=144`，末两张在 t=1 时仍在入场途中，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "`focus = floor(f/12)` 会超出卡数上界（f=144 时 focus=12，正好是最后一张）——加卡数",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "全部时间常量都写死在 144 帧的假设上（`F=144`, `fr=f/F`）。改时长必须同时改 F，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "标题是 13 条真实感的论文标题占位、`preprint:24xx` 编号由索引生成，落地要换成项目",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "深色卡（`INK` 底 + `#2A2A2A` 描边）压在 `#FAFAFA` 浅底上是这套对比度的前提；卡色",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "research-card-stack-scroll",
+      "variant_letter": null,
+      "upstream_key": "research-card-stack-scroll",
+      "demo": "demos/ui-entrance/research-card-stack-scroll/ResearchCardStackScroll.tsx",
+      "component": "ResearchCardStackScroll",
+      "duration_frames": 144,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

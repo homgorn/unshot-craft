@@ -1,0 +1,206 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "basic-3d-scene",
+  "category": "camera",
+  "category_label": {
+    "en": "Camera & Space",
+    "zh": "运镜与空间",
+    "ru": "Камера и пространство"
+  },
+  "tags": [
+    "camera"
+  ],
+  "source": {
+    "card": "references/shots/camera/basic-3d-scene.md",
+    "card_sha256": "85aaeaf4dc87e4ecc10755839177b4f866e923de9ecfab99eb9313edcf885a65",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 180,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 6.0s（180f@30fps；四站，三段飞行各 0.96s）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（每次转场有空间惊喜，停留段安静读卡）",
+    "energy_rationale": "每次转场有空间惊喜，停留段安静读卡"
+  },
+  "intent_zh": "把\"翻页\"变成\"在想法的空间里旅行\"：每张卡不仅有位置还有姿态（第二步侧转 40°、第三步整个画框转 90°），相机对齐它时观众的世界也跟着转——空间变化本身成为\"进入新章节\"的仪式感。",
+  "use_zh": "概念/路线图/三步法的空间化讲述；替代平面 slides 的\"每一步都换个空间视角\"",
+  "summary_zh": "impress.js 式空间演示：卡片以不同位置/旋转/缩放散布 3D 空间，相机取各步姿态之逆依次飞行对齐，末步拉到 OVERVIEW 总览",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "核心配方一行：**camera = stepTransform.inverse()**。每步只写卡片自己的 pose（x/y/z/rx/ry/rz/s），相机变换按 `scale(1/s) rotateZ(-rz) rotateY(-ry) rotateX(-rx) translate3d(-x,-y,-z)` 取逆，顺序严格相反"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "四站姿态各有戏剧点：STEP01 原点正视 → STEP02 右移 520px + ry−40°（世界左转）→ STEP03 rz90°（画框侧躺，相机跟着转正它）→ OVERVIEW s=3.1（相机 1/3.1 拉远总览）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "飞行链式插值：三段 `flyAt=[0.22,0.48,0.76]` 各 0.16（inOutCubic），cam 从当前值向下一站 lerp——中断任一段都是合法姿态"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "enter/exit 聚焦：`af`（累计飞行进度）与卡片序号距离决定 `opacity 0.28–1 + blur 0–3.5px`；OVERVIEW 段强制全员点亮（`max(1-d, over)`）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "OVERVIEW 卡本身放大 3.1 倍但内容预除 2.2——总览时它是\"标题牌\"而非巨物"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 1,
+      "name": "t",
+      "window": null,
+      "from": "FLY_AT[i]",
+      "to": "FLY_AT[i] + FLY",
+      "ease": "E.inOutCubic",
+      "concrete": false,
+      "line_no": 30,
+      "raw": "const f = seg(t, FLY_AT[i], FLY_AT[i] + FLY, E.inOutCubic);"
+    },
+    {
+      "style_id": 1,
+      "name": "t",
+      "window": null,
+      "from": "FLY_AT[2]",
+      "to": "FLY_AT[2] + FLY",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 38,
+      "raw": "const over = seg(t, FLY_AT[2], FLY_AT[2] + FLY);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "站点姿态",
+      "typical": "每站至少一个新变换维度",
+      "feel": "只挪 x/y 是平移幻灯片；rz 站（画框旋转）是记忆点，一支片用一次"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "飞行时长",
+      "typical": "0.16（约 0.96s）",
+      "feel": "有旋转的段别快于 0.12，观众需要时间理解\"世界在转\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "停留间隔",
+      "typical": "0.10–0.12",
+      "feel": "读卡位；卡内文字多时优先加停留而不是减飞行"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "OVERVIEW 缩放",
+      "typical": "s=3.1（相机拉远 1/3.1）",
+      "feel": "值越大总览越\"高空\"；保证所有卡都进画框再留 10% 边距"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "聚焦衰减",
+      "typical": "opacity 0.28 底 + blur 3.5px 峰",
+      "feel": "底值别低于 0.2——离焦卡要\"在场\"，纯黑会丢空间感"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "perspective",
+      "typical": "1000px",
+      "feel": "与最大"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "逆变换的旋转顺序（Z→Y→X 反着正变换的 X→Y→Z）不能乱——乱序在单轴旋转时看不出来，多轴复合站会歪",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "卡片 pose 写在卡自身 transform 和相机公式两处消费，加站只改 poses 表，两处 transform 字符串别动",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "rz90° 站的卡内文字会跟着躺倒，相机转正后才可读——这是设计（转正瞬间\"啊看懂了\"），但该站文案要短",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "OVERVIEW 后无返程，作段落收尾用；要循环回 STEP01 就在末尾加一段 fly back（cam 再 lerp 回 poses[0]）",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "basic-3d-scene",
+      "variant_letter": null,
+      "upstream_key": "basic-3d-scene",
+      "demo": "demos/camera/basic-3d-scene/Basic3DScene.tsx",
+      "component": "Basic3DScene",
+      "duration_frames": 180,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "brand-ink-open",
+  "category": "opening",
+  "category_label": {
+    "en": "Opening & Brand",
+    "zh": "开场与品牌",
+    "ru": "Открытие и бренд"
+  },
+  "tags": [
+    "opening",
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/opening/brand-ink-open.md",
+    "card_sha256": "b9f5402c5afb47607fcd6324835d95215a901b2adfb0293c828c2eae6104e2cf",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 83,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 2.8s（83f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "low",
+    "energy_label": {
+      "zh": "低",
+      "en": "low"
+    },
+    "energy_verbatim": "低（起步位，为后续镜头留爬升空间）",
+    "energy_rationale": "起步位，为后续镜头留爬升空间"
+  },
+  "intent_zh": "第一拍先给品牌记忆点：观众在任何产品画面出现之前，先看清并记住名字。安静、纸墨质感、有一个完整的静止时刻。",
+  "use_zh": "品牌开场；任何\"先立名号再进产品\"的片头",
+  "summary_zh": "墨线十字准星描画→字标逐字压印→打字机副标→满一秒静止再上浮消散",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "SVG 十字准星笔画描画（pathLength dashoffset），先竖后横，画完淡出"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "字标逐字 letterpress：scale 从大压到 1 + blur→0，字底强调色（模板片为琥珀）glint 短划闪过"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "kicker 副标打字机逐字符出现，强调色块光标周期闪烁"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "lockup 完整静止满 1 秒，然后整体上浮 + 缩小 + 淡出，交棒 dashboard"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "准星描画",
+      "typical": "竖线 0→9f、横线 8→18f，24→34f 淡出",
+      "feel": "描画完必须淡出，残留准星会和字标抢焦点"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "字标逐字",
+      "typical": "第 i 字 delay=10+i·3、12f；scale 1.6→1（origin center bottom）+ blur 6px→0",
+      "feel": "\"opacity+位移/scale+blur→0\"是全片入场三件套定式，缺 blur 会显得硬"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "kicker 打字机",
+      "typical": "0.7f/字符（28 起 ~43.4 完），光标 2f 周期闪、74f 停闪",
+      "feel": "0.7f/字符只适用于装饰性小字；正文交互打字要 3f/字符（对照 type-and-filter，用户嫌快返工过）"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "品牌 hold",
+      "typical": "46→76 帧整整 1 秒",
+      "feel": "硬底线：用户两轮点名\"出现后延长停留1秒\"（R1）；短于 1s 必返工"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "退场",
+      "typical": "7f 上浮 40px + 缩 12% + 淡出",
+      "feel": "退场快于入场——观众已读完，拖长反而泄气"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "hold 要给的是 wordmark 落定时刻，不是普通字卡/内容卡（R1）——曾把 hold 错加给普通内容卡后很快回滚；指代含糊的\"停留\"反馈先确认对象再动手（P3）",
+      "critical": false,
+      "rules": "P3,R1"
+    },
+    {
+      "ord": 1,
+      "text": "开场能量必须低起步：全片能量曲线低开→中段推进→outro 峰值，开场炫技会压死后面的爬升（对照 Q8 的能量曲线要求）",
+      "critical": false,
+      "rules": "Q8"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "P3",
+      "family": "P",
+      "title": "规则：\"第一个标题\"式模糊反馈先确认所指再动手；落错对象立即整 commit revert 重来；每个改动保持独立 commit 以便干净回滚。",
+      "check_question": "自检：这条反馈的指代对象我确定吗？当前 commit 粒度出了错能一键回滚吗？"
+    },
+    {
+      "rule_id": "Q8",
+      "family": "Q",
+      "title": "规则：多功能产品的收尾用\"全家福\"结构——每个已展示过的功能抽一个代表元素多方向飞入定格；规格匹配全片能量峰值（crane 运镜 + 舞台光 + 粒子），初版收尾几乎总是偏保守，默认加码一档。",
+      "check_question": "自检：结尾是不是全片能量最高点？合影里是否每个已展示的功能都有代表元素？"
+    },
+    {
+      "rule_id": "R1",
+      "family": "R",
+      "title": "规则：承载信息的元素（字卡/数字/网格全貌）落定后静止 ≥1s 再切镜；呼吸感停顿优先给品牌记忆点（wordmark 落定时刻），不给普通内容卡片。",
+      "check_question": "自检：每个\"想让观众记住的画面\"是否有完整静止时刻？停顿给的是品牌/关键信息，还是随手给了普通元素？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "brand-ink-open",
+      "variant_letter": null,
+      "upstream_key": "brand-ink-open",
+      "demo": "demos/typography/brand-ink-open/BrandInkOpen.tsx",
+      "component": "BrandInkOpen",
+      "duration_frames": 104,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

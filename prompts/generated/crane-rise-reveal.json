@@ -1,0 +1,209 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "crane-rise-reveal",
+  "category": "opening",
+  "category_label": {
+    "en": "Opening & Brand",
+    "zh": "开场与品牌",
+    "ru": "Открытие и бренд"
+  },
+  "tags": [
+    "opening",
+    "camera",
+    "data"
+  ],
+  "source": {
+    "card": "references/shots/opening/crane-rise-reveal.md",
+    "card_sha256": "2e05ba97de6cdd99f4b1fdaac6083a1d8f7d4b367f657cb411a8cca135b61a3c",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 20,
+    "duration_frames_hint": null,
+    "duration_verbatim": "5s（特写 hold 20f + 拉升 100f + 满幅静止 30f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（持续单向运动，无冲击拍）",
+    "energy_rationale": "持续单向运动，无冲击拍"
+  },
+  "intent_zh": "开场定场库内已有 drone-dive-landing——从上帝视角砸进 hero 特写， \"全局→焦点\"。本卡是它的镜像：\"焦点→全局\"——先怼在一行真实数据上 让观众看清\"这是什么\"，再升降臂式拉升后退，一排排内容涌入画面， 最后整面产品铺满——\"你看到的这一行，只是这一面墙的一格\"。 适合以产品体量/内容丰富度为卖点的开场；两卡同片只用一个方向。",
+  "use_zh": "\"从细节到全局\"的开场定场；与 drone-dive-landing（全局→单点俯冲）互为反向",
+  "summary_zh": "升降臂拉升揭示——开场怼在一行数据特写，相机沿 Y 轴减速升起后拉，行行涌入直到整面 dashboard 铺满全幅",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "transform-origin 固定左上，联动公式 `translate = 屏幕中心 − 对准点×scale`；"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "对准点沿 (底行中心)→(页面中心) 与 scale 3.2→1.0 **共用同一条"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "Easing.out(quad) 进度**——一条 p = 一台相机一次机动（同 C 式判例）"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "减速曲线（先快后慢）是\"升降臂\"的手感：起步有劲、临顶缓停"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "逐行脉冲：相机可见区上缘 `visTop = fy − 540/s` 首次越过某行顶边时，"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        18
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "该行深灰脉冲一拍（4f 起 18f 落，G.ink 叠层 opacity 0→0.22→0）——"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "\"涌入\"的可读性来源；触发帧逐帧解出，与运镜严格同步"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "白底上\"提亮\"不可见，**加深才可感**（本批实渲判例：brightness 提亮"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "在白卡上等于没做，改深色叠层脉冲）"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "起点特写",
+      "typical": "scale 3.2，对准最底行（一行占满画幅）",
+      "feel": "hold ≥20f 让\"这是一行数据\"可读再起飞"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "拉升",
+      "typical": "100f Easing.out(quad)，scale 3.2→1.0",
+      "feel": "快于 80f 行脉冲追不上；慢于 130f 中段拖"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "行脉冲",
+      "typical": "越线触发，0→0.22→0 深色叠层 22f",
+      "feel": "脉冲跟不上相机（固定间隔触发）立刻穿帮"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "收尾",
+      "typical": "满幅后真静止 ≥30f",
+      "feel": "R1；满幅帧即标准构图，不再补推"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "起点特写 = 一行内容被放大 3.2 倍盯着看，真实素材先过",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "快速拉升段可包 CameraMotionBlur（参数见 deck-deal-flyin 运动模糊行），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "与 drone-dive-landing 同片不并用（一升一降互为镜像，观众读作同一招）；",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "crane-rise-reveal",
+      "variant_letter": null,
+      "upstream_key": "crane-rise-reveal",
+      "demo": "demos/opening/crane-rise-reveal/CraneRiseReveal.tsx",
+      "component": "CraneRiseReveal",
+      "duration_frames": 120,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

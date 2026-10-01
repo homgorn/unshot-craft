@@ -1,0 +1,309 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "vertical-word-roll-blur-cycle",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/typography/vertical-word-roll-blur-cycle.md",
+    "card_sha256": "67152dd32e5badbfa0a5bd2ab451d04475ef0f343cc1e69db902840e79c13f4d",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 5.0s（150f@30fps：静置 → 3 次换词 → 尾部整组淡出）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（稳定三拍，无峰值）",
+    "energy_rationale": "稳定三拍，无峰值"
+  },
+  "intent_zh": "句尾换词的最优解是滚轮而不是淡入淡出：滚轮自带**方向**（往上翻页）， 观众知道\"还有下一个\"。这卡的两个身份记号是相邻行的**垂直 blur** （滚轮景深，模拟机械转筒的失焦）和落定时的**染色**（灰→强调色， \"这个才是答案\"）。句干 `Built for` 全程纹丝不动——眼睛钉在滚轮上， 句干一晃列举感就散。",
+  "use_zh": "\"Built for ___\" 这类句干 + 受众/对象列举的一句话卖点；浅底品牌片的干净一拍",
+  "summary_zh": "句尾词换成竖向滚轮，3 次换词各 0.55s（outQuint 七成 + outBack 三成，前快后极慢带微过冲），相邻行按距离上垂直 blur 与灰度，中心词落定瞬间从灰染成强调色",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "位置量 `p` 由 3 段窗累加：`STEPS = [0.16, 0.36, 0.56]`，每段窗 0.11"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        16
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "（≈16f，约 0.55s），段间留 0.09 静置给观众读词"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outQuint",
+      "beziers": [],
+      "raw": "每段缓动是**混合曲线**：`0.7·E.outQuint(u) + 0.3·E.outBack(u)`——"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "outQuint 给\"前快后极慢\"的机械减速，outBack 那三成给落定的微过冲回落"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "reel 定位 `translateY(ROW - p·ROW)`，ROW=44px，mask 高 `ROW·3`=132px"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（露三行）——中心行恒定是 mask 第二行"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "距离驱动的三通道，`d = |i - p|`："
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "blur：`d<1` 时 `3d`，`d≥1` 时 `3 + 2·min(d-1,1)`（最远 5px）"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "opacity：`d<1` 时 `1 - 0.65d`，否则 `max(0.1, 0.35 - 0.23(d-1))`"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "颜色：`mixHex(ACCENT_DIM, ACCENT, clamp01(1 - 2.4d))` —— **d>0.42 就完全"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "是暗色**，所以只有真正落定的那一刻才是强调色，滚动中途全程灰"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": [
+        0.9,
+        0.985
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "收尾 `seg(t, 0.9, 0.985)` 整组（句干 + 滚轮）淡出，不留残影给下一镜"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 181,
+      "name": "t",
+      "window": null,
+      "from": "s",
+      "to": "s + 0.11",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 33,
+      "raw": "const u = seg(t, s, s + 0.11);"
+    },
+    {
+      "style_id": 181,
+      "name": "t",
+      "window": [
+        0.9,
+        0.985
+      ],
+      "from": "0.9",
+      "to": "0.985",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 55,
+      "raw": "opacity: 1 - seg(t, 0.9, 0.985) * 0.999,"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "词表",
+      "typical": "4 词（Apps→Teams→Data→Everyone），3 次换词",
+      "feel": "末词是结论（最宽那个词），前三个是例子；>5 词观众开始数，<3 词读不出\"列举\""
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "拍点",
+      "typical": "`[0.16, 0.36, 0.56]`，窗 0.11（≈16f）",
+      "feel": "段间 0.09（≈13f）静置是给读词的，读不完的拍子等于没换；窗 >0.18 新旧同屏太久"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "缓动配方",
+      "typical": "`0.7·outQuint + 0.3·outBack`",
+      "feel": "outQuint 是机械减速的来源；outBack 那三成给落定\"咔\"一下，纯 outQuint 读作电子屏滑动"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "行高/视窗",
+      "typical": "ROW 44px、mask `44×3`px、词宽 190px",
+      "feel": "露三行才有滚筒感（露一行读作淡入淡出）；宽度写死 190 是为不挤句干，词更长要同步加"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "相邻行 blur",
+      "typical": "邻行 3px，最远 5px，**仅垂直向感知**",
+      "feel": "blur 是\"滚筒景深\"的身份证，删了退化成词条平移；>8px 邻行糊成灰条看不出是字"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "落定染色",
+      "typical": "`1 - 2.4d` 映射 ACCENT_DIM→ACCENT",
+      "feel": "系数 2.4 让染色只发生在落定瞬间；<1.5 滚动中途就上色，答案感散掉"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "字号字重",
+      "typical": "句干与滚轮同为 30px/800、`letter-spacing:-.5px`",
+      "feel": "必须完全一致——滚轮词比句干大就读作两个元素，不是一句话"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "收尾淡出",
+      "typical": "`seg(t, 0.9, 0.985)` 整组",
+      "feel": "末词落定后约 40f 静置再淡出；不 hold 等于白列举"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**mask 宽度写死 190px**：换词表时最长词（demo `Everyone`）必须能装进去，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "词长差别不宜过大：mask 宽度是固定的（本卡不做宽度自适应，那是",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "句干必须钉死：demo 用 `flex + gap:14px` 是因为 mask 宽度恒定不会推挤",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "`p` 是三段窗**累加**出来的，所以三段窗不能重叠：重叠会让 p 在一帧内",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "与 pill-chip-slot-cycle-handled 分工：那卡是深色胶囊 + 宽度自适应挤开",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 6,
+      "text": "声音：每次落定是一个节奏点，配轻机械/开关音；三连发要交替双样本",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "vertical-word-roll-blur-cycle",
+      "variant_letter": null,
+      "upstream_key": "vertical-word-roll-blur-cycle",
+      "demo": "demos/typography/vertical-word-roll-blur-cycle/VerticalWordRollBlurCycle.tsx",
+      "component": "VerticalWordRollBlurCycle",
+      "duration_frames": 150,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

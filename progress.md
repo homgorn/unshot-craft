@@ -1,5 +1,70 @@
 # progress
 
+## 2026-09-28 — cinematic catalog layer specified (ADR 0007, F070–F074)
+
+### What was set up
+
+**A second corpus, specified but not implemented.** The shot cards answer *how a
+shot moves*. They cannot answer *what to shoot* — upstream renders design-system
+demos, not films, so no card has an opinion on focal length, key direction or
+colour science. The 150-technique cinematic catalog does, and it carries the
+commercially interesting half: a cross-tool parameter matrix for Midjourney v6.1,
+Runway Gen-3, Veo 2, Kling 1.5, Luma Dream Machine, Pika 1.5 and Sora.
+
+| artifact | path | state |
+|---|---|---|
+| ADR | `docs/adr/0007-cinematic-catalog-layer.md` | accepted |
+| Spec | `specs/features/F070-cinematic-catalog-ingest.md` | specified, `passes: false` |
+| Ledger | `specs/feature-list.json` → `F070`–`F074` | 5 features, all `passes: false` |
+| Source contract | `data/README.md` | written; `data/cinematic/` awaits 150 authored files |
+| DDL | `platform/catalog/schema.sql` | 9 tables + 1 FTS5 index, **validated** |
+| DDL gate | `platform/catalog/validate_schema.py` | applies the DDL, guards the FK assumption |
+
+Verified: SQLite 3.49.1, FTS5 available, DDL applies clean after the upstream
+schema, 7 categories and 7 tools seeded, 2 cross-corpus FKs declared and stubbed,
+`[Subject]` survives compilation, 150 × 7 = 1,050 possible matrix cells of which
+**117 are filled**.
+
+### Findings that changed the design
+
+8. **The catalog DDL cannot be applied standalone.** Two FKs cross the corpus
+   boundary on purpose — `cinematic_technique.source_file_id` → `source_file` and
+   `technique_motion.style_id` → `style` — because a row must be traceable to its
+   authored byte and a motion pairing must point at a real style. Found by
+   `validate_schema.py` on its first run. Fixed by ordering the schema files and
+   by making the gate assert the count is exactly 2, so a third reference fails
+   loudly instead of silently passing on stubs.
+9. **The DDL ships as `platform/catalog/schema.sql`, not appended to
+   `platform/ingest/schema.sql`.** The upstream schema is being edited for the
+   upstream corpus; a 150-line append from another workstream is a merge conflict
+   waiting to happen. The section number is kept so the two schemas read in the
+   same order.
+10. **`ai_tool.key` is version pinned** — `mj61`, `kling15`, `runway_gen3`. A
+    parameter string is only valid for the model version it was written against,
+    so `kling15` and a future `kling2` are different tools. The gate's first probe
+    used `kling` and hit the NOT NULL on `tool_id`; that is the constraint working.
+11. **33 unfilled matrix cells stay `NULL`.** Same rule as
+    `render.duration_frames` on the 5 upstream technique cards: an untested tool
+    parameter is an untested claim, and a plausible string in that cell is a
+    claim we cannot defend to a client. `doctor.py` will print
+    `filled_cross_tool_cells` so the number is visible rather than assumed.
+
+### Relationship to the render blocker
+
+The bridge makes a prompt decision and a motion curve meet in one query. It does
+**not** unblock rendering: `F060` stays blocked on the Remotion commercial
+licence question and the `video-talkcraft` PolyForm question, see
+`docs/monetization/0002-blocking-issues.md`. The 109 missing video benchmarks are
+a separate gap and are not produced by this layer.
+
+### Next
+
+F070–F074 need `data/cinematic/` populated with 150 authored files before the
+ingest can be implemented against real input rather than a schema. The authoring
+contract is `data/README.md`; the three rules that matter are: `[Subject]` is a
+slot and is never expanded, an untested tool parameter is an empty cell, and
+`styles:` is a declared relation rather than a guess.
+
 ## 2026-10-01 — project baseline (architecture phase)
 
 ### What was set up

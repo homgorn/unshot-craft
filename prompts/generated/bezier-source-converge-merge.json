@@ -1,0 +1,486 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "bezier-source-converge-merge",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/bezier-source-converge-merge.md",
+    "card_sha256": "ab362f933a2c46a812cefc3c9595875e2a7428f7b1609e61ddee9626652b3f34",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 168,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 5.6s（168f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（长镜慢速推进，靠数据包滑行维持活性；吞并瞬间是唯一小高点）",
+    "energy_rationale": "长镜慢速推进，靠数据包滑行维持活性；吞并瞬间是唯一小高点"
+  },
+  "intent_zh": "\"我们把四个来源统一了\"是一句抽象话。这个动效把它变成可看的物理过程：先建立四条独立 的通路（draw-on 是\"连上了\"），再让四个来源真的顺着通路走进同一个点并被吸进去（缩小 到 0 是\"被吞并\"），最后擦掉通路只留徽标（\"现在只有一个\"）。三段叙事各自有明确的 起止，观众不需要旁白就能读出因果。",
+  "use_zh": "\"多源整合/统一接入/数据汇聚\"的核心机制镜头；集成、聚合、单一入口类产品的说明段落",
+  "summary_zh": "左侧四个来源节点各有一条细贝塞尔曲线连向右侧同一汇聚点，曲线先错峰由左向右 draw-on，节点沿自己的曲线滑向汇聚点并三段式加速缩小到消失，强调色数据包全程沿路径滑行，吞并完成后曲线从左端反向擦除只留圆形徽标",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "路径几何：每条 `d = \"M -22,y L 74,y C 186,y 214,120 332,120\"`——起点在画框外 -22，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "74 处是来源节点的驻留位，之后一段三次贝塞尔弯向汇聚点 (332,120)。四条只差起始 y"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（36/92/148/204），所以它们的曲率天然不同，汇入角度也不同"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "draw-on 用 `stroke-dasharray = len` + `dashoffset = len*(1-draw)`，`seg(t, 0.04+i*0.045,"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outQuad",
+      "beziers": [],
+      "raw": "+0.17, E.outQuad)`——0.045 的错峰让四条线像被依次接通而不是一起亮"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "节点定位用 `getPointAtLength`：先在 prime 阶段以 40 步扫描求出 x≈74 对应的路径比例"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": [
+        0.34,
+        0.74
+      ],
+      "frame_hints": [],
+      "ease": "inOutCubic",
+      "beziers": [],
+      "raw": "`f0`，运行时 `frac = f0 + (1-f0)*conv`，`conv = seg(t, 0.34, 0.74, E.inOutCubic)`——"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "节点是**沿真实曲线**走的，不是两点间插值"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三段式缩小：`conv < 0.75` 时 44→15px（缓慢瘦身），`conv ≥ 0.75` 时 15→0px（最后"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "1/4 行程掉光）——后段的尺寸变化率是前段的 4 倍多，这就是\"被吸进去\"的加速感；"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "字号跟着 `size*0.26` 同步缩，标签不会脱离节点"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": [
+        0.1,
+        0.74
+      ],
+      "frame_hints": [],
+      "ease": "linear",
+      "beziers": [],
+      "raw": "数据包：`pkCycle = (seg(t, 0.1, 0.74, E.linear)*2) % 1` 走两个整数周期，各路加"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`i*0.13` 相位偏移；透明度用 `1 - |cycle-0.5|*0.6` 让包在路径中段最亮、两端淡——"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "避免看到包在起点凭空出现"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": [
+        0.78,
+        0.9
+      ],
+      "frame_hints": [],
+      "ease": "outQuad",
+      "beziers": [],
+      "raw": "擦除：`erase = seg(t, 0.78, 0.9, E.outQuad)` 把 dashoffset 推成负值（`-erase*len`），"
+    },
+    {
+      "ord": 15,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "于是虚线从**起点**方向退走，方向与 draw-on 相反，读作\"通路收回\""
+    },
+    {
+      "ord": 16,
+      "heading": "动效核心",
+      "window": [
+        0.16,
+        0.26
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "徽标：`seg(t, 0.16, 0.26)` 淡入并从 0.7 放到 1，吞并时刻（0.7→0.78 outBack 加 12%，"
+    },
+    {
+      "ord": 17,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.78→0.86 outQuad 减回）做一次接收脉冲；末尾 `endCap` 字幕在 0.84 后淡入"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 185,
+      "name": "t",
+      "window": [
+        0.34,
+        0.74
+      ],
+      "from": "0.34",
+      "to": "0.74",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 100,
+      "raw": "const conv = seg(t, 0.34, 0.74, E.inOutCubic);            // 汇聚主进度"
+    },
+    {
+      "style_id": 185,
+      "name": "t",
+      "window": [
+        0.78,
+        0.9
+      ],
+      "from": "0.78",
+      "to": "0.9",
+      "ease": "E.outQuad",
+      "concrete": true,
+      "line_no": 101,
+      "raw": "const erase = seg(t, 0.78, 0.9, E.outQuad);               // 从起点擦除"
+    },
+    {
+      "style_id": 185,
+      "name": "t",
+      "window": [
+        0.1,
+        0.74
+      ],
+      "from": "0.1",
+      "to": "0.74",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 102,
+      "raw": "const pkCycle = (seg(t, 0.1, 0.74, E.linear) * 2) % 1;    // 数据包循环（t=1 时整数周期）"
+    },
+    {
+      "style_id": 185,
+      "name": "t",
+      "window": [
+        0.16,
+        0.26
+      ],
+      "from": "0.16",
+      "to": "0.26",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 105,
+      "raw": "const bp = seg(t, 0.16, 0.26, E.outCubic);"
+    },
+    {
+      "style_id": 185,
+      "name": "t",
+      "window": [
+        0.7,
+        0.78
+      ],
+      "from": "0.7",
+      "to": "0.78",
+      "ease": "E.outBack",
+      "concrete": true,
+      "line_no": 106,
+      "raw": "const badgeScale = lerp(bp, 0.7, 1) * (1 + seg(t, 0.7, 0.78, E.outBack) * 0.12 - seg(t, 0.78, 0.86, E.outQuad) * 0.12);"
+    },
+    {
+      "style_id": 185,
+      "name": "t",
+      "window": [
+        0.84,
+        0.9
+      ],
+      "from": "0.84",
+      "to": "0.9",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 107,
+      "raw": "const capShow = seg(t, 0.84, 0.9);"
+    },
+    {
+      "style_id": 185,
+      "name": "t",
+      "window": [
+        0.84,
+        1.0
+      ],
+      "from": "0.84",
+      "to": "1",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 108,
+      "raw": "const capInn = seg(t, 0.84, 1);"
+    },
+    {
+      "style_id": 185,
+      "name": "t",
+      "window": null,
+      "from": "0.04 + i * 0.045",
+      "to": "0.04 + i * 0.045 + 0.17",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 128,
+      "raw": "const draw = seg(t, 0.04 + i * 0.045, 0.04 + i * 0.045 + 0.17, E.outQuad);"
+    },
+    {
+      "style_id": 185,
+      "name": "t",
+      "window": null,
+      "from": "0.02 + i * 0.04",
+      "to": "0.02 + i * 0.04 + 0.1",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 154,
+      "raw": "const appear = seg(t, 0.02 + i * 0.04, 0.02 + i * 0.04 + 0.1, E.outCubic);"
+    },
+    {
+      "style_id": 185,
+      "name": "t",
+      "window": [
+        0.1,
+        0.16
+      ],
+      "from": "0.1",
+      "to": "0.16",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 158,
+      "raw": "const pkOn = seg(t, 0.1, 0.16) * (1 - seg(t, 0.7, 0.76));"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "来源数",
+      "typical": "4 条（y=36/92/148/204，间距 56）",
+      "feel": "4 条是曲率差异明显又不打结的甜点；>6 条中间几条的贝塞尔几乎重合，汇入角读不出区别"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "draw-on",
+      "typical": "起点 `0.04+i*0.045`，窗 0.17，outQuad",
+      "feel": "0.045 的错峰约 7f；归零会读作四条线一起刷出，失去\"逐路接通\"的语义"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "汇聚窗",
+      "typical": "0.34→0.74（inOutCubic）",
+      "feel": "占全片 40%，是主段落；inOut 的缓起是\"启动\"、缓收是\"到位\"，换 linear 立刻变成匀速传送带"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "三段缩小",
+      "typical": "44→15px（前 75%）→ 0（后 25%）",
+      "feel": "拐点 0.75 越靠后吸入越突然；把它挪到 0.5 会变成\"一路缩小\"，吞并的那一下就没了"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "数据包周期",
+      "typical": "2 个整数周期（0.1→0.74 线性）",
+      "feel": "必须是整数周期，否则末帧包停在半路；周期加密到 4 会读作数据流很急，也更容易和节点重叠"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "包相位偏移",
+      "typical": "`i*0.13`",
+      "feel": "错开四路的包，避免它们排成一行同时汇入；0 会看到四个包整齐并进，像一次发车"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "擦除",
+      "typical": "0.78→0.9，dashoffset 取负",
+      "feel": "12f 完成；擦除必须在节点全部消失（conv=0.74 结束、节点 0.92 前淡完）之后，否则线先没了节点悬在空中"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "徽标脉冲",
+      "typical": "outBack +12%（0.7→0.78）→ 回落（0.78→0.86）",
+      "feel": "12% 是\"接收到了\"的量级；>25% 会抢过汇聚本身的注意力"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "`getTotalLength` / `getPointAtLength` 必须在 SVG 已挂到文档且完成布局之后才有效，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "`f0` 是用 40 步线性扫描找出的\"x 首次 ≥74\"的比例，精度只有 1/40。曲线形状改动大时",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "节点 opacity 在 `conv > 0.92` 后才开始淡出，而 conv 在 t=0.74 就到 1，所以节点是在",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "节点是 `S1`–`S4` 的中性灰阶占位圆（灰度分层仅用于区分四路），落地要换成真实来源",
+      "critical": false,
+      "rules": "S1,S4"
+    },
+    {
+      "ord": 4,
+      "text": "汇聚点 (332,120) 与 SVG 视口 440×240、`overflow:visible` 是绑定的一组坐标。改画布",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "字幕 \"Four sources unified\" 是占位文案，出现在 0.84 之后——如果要配旁白，这句的",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "S1",
+      "family": "S",
+      "title": "规则：产品宣传片 SFX 词汇表 = whoosh(运镜)/impact(落地)/riser(铺垫)/sparkle(光效)/transition(转场)，禁用游戏音包音色；BGM 选强鼓点、强节奏的电子底（tech-house 类），候选曲必须垫进成片试听——单听曲子无法判断气质。",
+      "check_question": "自检：闭眼只听音轨：像产品发布会预告，还是像手机游戏？BGM 是在成片里试听后选定的吗？每个 UI 类音效，是真实物件质感还是游戏反馈提示音？"
+    },
+    {
+      "rule_id": "S4",
+      "family": "S",
+      "title": "规则：画面里发生什么动作就配什么声音（打字画面配键盘声、逐条落入配逐个 pop），泛用 swoosh 盖不住有辨识度的画面动作；长样本按画面段落裁剪（Sequence 截断），时长与动作严格等长。",
+      "check_question": "自检：每个有辨识度的画面动作（打字/点击/落地）有没有自己的拟音？音效有没有拖到动作结束之后还在响？每条音效在成片里真的听得见吗（轻音素材音量够不够）？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "bezier-source-converge-merge",
+      "variant_letter": null,
+      "upstream_key": "bezier-source-converge-merge",
+      "demo": "demos/ui-entrance/bezier-source-converge-merge/BezierSourceConvergeMerge.tsx",
+      "component": "BezierSourceConvergeMerge",
+      "duration_frames": 168,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

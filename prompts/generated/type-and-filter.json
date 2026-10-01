@@ -1,0 +1,182 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "type-and-filter",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/type-and-filter.md",
+    "card_sha256": "0050464bc817fbec16cbfc0e4fcfa9e8a2adc04c7e117e49c170e852a31f3b2c",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 190,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 2.5s（118–190f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（发牌高能段之后的从容一拍）",
+    "energy_rationale": "发牌高能段之后的从容一拍"
+  },
+  "intent_zh": "让观众\"跟着做一遍\"：看清输入了什么、页面怎么响应、点了哪里。这是全片唯一模拟真人操作的镜头，节奏必须像人手，不能像脚本。",
+  "use_zh": "功能演示的\"操作叙事\"段；搜索/筛选/进入详情的任何交互链路",
+  "summary_zh": "真实 UI 上打字搜索、网格自己收敛成一张卡、点击穿透进详情页",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "相机上移到搜索框，逐字符打字，光标常亮→闪烁"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "打完留一口气，然后非目标卡按阅读序错峰淡出下沉，网格收敛"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "目标卡滑到首行槽位，途中浮起 + 阴影变宽"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "双圈强调色（模板片为琥珀）ripple 点击确认，相机推进穿透进详情页交棒转场"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "打字速度",
+      "typical": "3f/字符（TYPE_START=128，\"nano-lab\" 8 字符 ≈149 收尾）",
+      "feel": "初版嫌快返工后的定稿值（\"unhurried\"）；交互演示按真人操作速度走（R3）"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "呼吸位",
+      "typical": "打完到过滤 FILTER_START=160，留 ~11f（0.37s）",
+      "feel": "打完立刻过滤读作机器自动，观众跟不上因果"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "光标",
+      "typical": "打字时常亮，之后 8f 周期闪烁；点击 176f，光标 185f 消失",
+      "feel": "打字中闪烁会读作卡顿；常亮→闪烁的切换本身就是\"打完了\"的信号"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "过滤退场",
+      "typical": "25 张非目标卡按阅读序 0.4f 间隔错峰，各 5f 淡出+下沉 8px",
+      "feel": "同时消失读作页面崩溃；错峰哪怕只差 0.4f 也够"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "目标卡滑位",
+      "typical": "10f 滑到首行槽位，bezier(0.35,0,0.2,1)，途中 sin 浮起 z 18px、scale +0.02、阴影随浮起变宽",
+      "feel": "终点必须是布局真实槽位（Q9），滑到画面中央悬停就假了"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "点击确认",
+      "typical": "两圈同心强调色 ripple（起点差 3f、各 10f、半径 14→54/78）+ 3px 描边 + 40px 辉光，随后相机 16f 推进 zoom 2.2",
+      "feel": "单圈 ripple 太轻看不见；推进交棒给 flash-cut 盖住换页硬切（组件见 assets/lib/FlashCut.tsx，用法：from = 切点 − 5，跨骑硬切两侧各 5f）"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "搜索框",
+      "typical": "页面底色补丁盖掉纹理里的 placeholder（保留放大镜图标），文字层叠上去打",
+      "feel": "直接在截图纹理上叠字会和烤入的 placeholder 重影"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "初版打字+过滤\"太快了\"被返工（R3）——交互镜头的第一版几乎总是偏快，起稿就按 3f/字符",
+      "critical": false,
+      "rules": "R3"
+    },
+    {
+      "ord": 1,
+      "text": "过滤后目标卡若不归位到真实槽位、悬浮在网格上方，读作假（Q9，曾因此近乎整文件重写）",
+      "critical": false,
+      "rules": "Q9"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "Q9",
+      "family": "Q",
+      "title": "规则：元素飞入后要\"嵌入\"页面（归位到真实格位、扩展滚动流），不落地悬浮其上会显得假。",
+      "check_question": "自检：每个飞入元素落定后，它在页面布局里有真实坐标吗？有没有元素永久浮在页面之上？"
+    },
+    {
+      "rule_id": "R3",
+      "family": "R",
+      "title": "规则：开场主体动作（聚焦→悬浮→归位一条完整弧线）至少 3 秒；模拟真实交互（打字、筛选、点击）按人真实操作的速度走，观众要能跟着做一遍；排时间线时预留 hold/rest 帧预算——第一版几乎总是偏快。",
+      "check_question": "自检：把每个镜头当第一次看：哪里没看清？交互段落自己能不能跟着操作一遍？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "type-and-filter",
+      "variant_letter": null,
+      "upstream_key": "type-and-filter",
+      "demo": "demos/interaction/type-and-filter/TypeAndFilter.tsx",
+      "component": "TypeAndFilter",
+      "duration_frames": 73,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

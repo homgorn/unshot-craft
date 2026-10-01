@@ -1,0 +1,218 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "letterspace-materialize",
+  "category": "opening",
+  "category_label": {
+    "en": "Opening & Brand",
+    "zh": "开场与品牌",
+    "ru": "Открытие и бренд"
+  },
+  "tags": [
+    "opening",
+    "typography",
+    "outro"
+  ],
+  "source": {
+    "card": "references/shots/opening/letterspace-materialize.md",
+    "card_sha256": "2763bae5d10423d52612bacf659ddebd94e4d3eb2e34527769026f679fdbb4b3",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 15,
+    "duration_frames_hint": null,
+    "duration_verbatim": "静置 ~15f + 描画 ~50f + 终态静置 ≥30f；全段 3–4s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "low",
+    "energy_label": {
+      "zh": "低",
+      "en": "low"
+    },
+    "energy_verbatim": "低（静谧仪式感，一次呼吸完成）",
+    "energy_rationale": "静谧仪式感，一次呼吸完成"
+  },
+  "intent_zh": "字标不是淡入也不是打字机，而是\"结晶\"：全部字母的笔画同时 开始连续生长，像一只看不见的手同时写所有字母，同一瞬间齐收 成词。两个命门：**连续**（笔画必须是连续画出的过程，不许遮罩 分段——先半截再另半截会被读穿；任何中间帧都该像\"写到一半\"）； **同步**（所有字母同帧起笔、同帧完成——逐字错峰是打字机语义， 这里是整词一体的仪式感）。",
+  "use_zh": "片尾/片头品牌字标登场（SUPERHUMAN 式大字距全大写）；章节题字；needs 静谧/高级感的收束帧",
+  "summary_zh": "大字距字标全字符并行连续描画结晶——所有字母同帧起笔、笔画像手写一样连续生长、同帧齐收成词；氛围底景上的品牌字标显影",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每个字符用骨架笔画 SVG path（单线条字形），pathLength 归一 +"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "strokeDashoffset 从 1→0 连续描画"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "全字符共享同一进度 p：同帧起笔、pathLength 归一保证不同笔画"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "长度的字母同帧齐收（不做 per-char delay/jitter）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "字形比例：方正略宽（字面宽高比 ≈1.07，实测判例：竖长字形被"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "裁\"太竖长\"）；细笔画+大字距（letterSpacing ≈0.6em）"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "描画曲线：整体 ease-in-out，中段略快首尾略缓（起笔收笔的手感）"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "底景：氛围渐变/实拍空镜（暮色山景类），字标是画面唯一动作"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "描画时长",
+      "typical": "~50f（f16 起 f68 收 @30fps）",
+      "feel": "<30f 读不出\"画\"的过程；>80f 拖"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "同步性",
+      "typical": "全字符同帧起收、零错峰",
+      "feel": "判例：逐字错峰版被裁\"所有字母是在同一个时间完成书写\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "连续性",
+      "typical": "pathLength 连续生长、无分段跳变",
+      "feel": "判例：遮罩分段版被裁\"应该是连续的笔画画出来\""
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "字形",
+      "typical": "骨架单线、字面宽高比 ~1.07、笔画细",
+      "feel": "竖长（比 <0.8）被裁；粗笔画丢结晶感"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "字距",
+      "typical": "~0.6em",
+      "feel": "大字距是本卡身份；<0.3em 改用普通描画卡"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "终态静置",
+      "typical": "≥30f",
+      "feel": "结晶完成后必须让观众读一次整词"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 draw-svg-trace 分工：那张是通用描画（图标/插画/单元素）；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 type-assembly-moves 分工：那张是字块组装（位移拼合）；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "骨架字形需手绘 path（现成字体轮廓是双线勾边，描画观感不同）；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "原片（superhuman-promo）底景是实拍暮色山景+水面倒影；demo 为",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "letterspace-materialize",
+      "variant_letter": null,
+      "upstream_key": "letterspace-materialize",
+      "demo": "demos/opening/letterspace-materialize/LetterspaceMaterialize.tsx",
+      "component": "LetterspaceMaterialize",
+      "duration_frames": 52,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

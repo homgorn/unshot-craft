@@ -1,0 +1,353 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "glass-pill-dictation-typing",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/glass-pill-dictation-typing.md",
+    "card_sha256": "19609c4444f60de6a8e4a75bec45432c656fba3eb0825c797163c61bf0d760c9",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 50,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约1.7s（50f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "low",
+    "energy_label": {
+      "zh": "低",
+      "en": "low"
+    },
+    "energy_verbatim": "低（全片最安静的一拍，只有光在退）",
+    "energy_rationale": "全片最安静的一拍，只有光在退"
+  },
+  "intent_zh": "用\"光随输入熄灭\"讲一件很小的事：待命时它在发光（等你说话），你一开口 它就把光让给文字。1.7s 里只做三件事——弹出、打字、光退。任何额外动作 （弹跳、色变、图标动画）都会让这一拍不再是休止符。",
+  "use_zh": "语音/AI 输入框的登场；\"跟它说话\"的交互提示镜头；高能段之间的一个安静过渡拍",
+  "summary_zh": "纯黑底上一条定宽玻璃胶囊以约 1.25 倍略大弹出后缓落到位，内部自左暗到右亮铺一层强调色光；光标先行、随后打字出现占位句，光随打字进度渐渐熄灭，收尾成中性深色玻璃条",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "胶囊高 46px、圆角 23px、`padding: 0 8px 0 16px`，**定宽**"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`PW = 文本实测宽 + 168px`（≈整句宽度的 2 倍），不随打字伸缩"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "出场 `scale 1.25→1`，`seg(0→0.22, outCubic)`（≈0.36s）；"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "opacity 在前 0.025 就跳满——先\"在了\"再落位"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "内嵌强调色光是一层 `linear-gradient(90deg, α0 → α.35 @42% → α.95 @100%)`"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "的左暗右亮渐层（光在胶囊**内部**，不是外部光晕）"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "打字：光标 t≈0.025 先行出现，字符 `seg(0.06→0.73)` 匀速铺完 18 字符，"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "尾段保持；光标 `0.75→0.8` 撤掉"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "光熄灭 `g = 1 − seg(0.08→0.76, inOutQuad)`，与打字进度同窗口；"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`g` 同时驱动三层阴影收敛：内描边 `0.16+0.1g`、内顶光"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`0.03+0.04g`、外泛光 `26g px / 0.28g`"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "右端 30px 描边圆角方块内 5 根竖条声波，基准高 `[13,7,10,6,9]`"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（左高右低），叠 `±1.6·sin(t·18 + i·1.7)` 极轻呼吸"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 74,
+      "name": "t",
+      "window": [
+        0.0,
+        0.22
+      ],
+      "from": "0",
+      "to": "0.22",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 32,
+      "raw": "const s = lerp(seg(t, 0, 0.22, E.outCubic), 1.25, 1);"
+    },
+    {
+      "style_id": 74,
+      "name": "t",
+      "window": [
+        0.06,
+        0.73
+      ],
+      "from": "0.06",
+      "to": "0.73",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 34,
+      "raw": "const n = Math.floor(seg(t, 0.06, 0.73) * TEXT.length + 1e-6);"
+    },
+    {
+      "style_id": 74,
+      "name": "t",
+      "window": [
+        0.025,
+        0.045
+      ],
+      "from": "0.025",
+      "to": "0.045",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 35,
+      "raw": "const caretO = seg(t, 0.025, 0.045) * (1 - seg(t, 0.75, 0.8));"
+    },
+    {
+      "style_id": 74,
+      "name": "t",
+      "window": [
+        0.08,
+        0.76
+      ],
+      "from": "0.08",
+      "to": "0.76",
+      "ease": "E.inOutQuad",
+      "concrete": true,
+      "line_no": 37,
+      "raw": "const g = 1 - seg(t, 0.08, 0.76, E.inOutQuad);"
+    },
+    {
+      "style_id": 74,
+      "name": "t",
+      "window": [
+        0.0,
+        0.025
+      ],
+      "from": "0",
+      "to": "0.025",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 70,
+      "raw": "opacity: seg(t, 0, 0.025),"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "胶囊定宽",
+      "typical": "文本实测宽 + 168px（≈句宽 2 倍）",
+      "feel": "**定宽是关键**：随字伸缩会读作 chip 而不是输入条"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "出场缩放",
+      "typical": "scale 1.25→1，t 0→0.22 outCubic",
+      "feel": "1.25 倍是\"从观众面前落回去\"的量；1.5 倍就成了 pop 弹窗"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "opacity 时序",
+      "typical": "前 0.025 跳满（早于缩放落位）",
+      "feel": "同步淡入会让它像\"渐渐出现\"，失掉那一下轻微的实感"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "内嵌光",
+      "typical": "90deg、0 → .35@42% → .95@100%",
+      "feel": "光必须在胶囊内部；改成外 glow 就成了\"待通知\"而不是\"待输入\""
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "打字",
+      "typical": "18 字符，t 0.06→0.73 匀速",
+      "feel": "匀速 ≈ 3f/字符；加 ease 就读作\"有人在犹豫\""
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "光熄灭",
+      "typical": "1 → 0，t 0.08→0.76 inOutQuad",
+      "feel": "与打字同窗口是全片唯一的因果：光让位给文字"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "阴影收敛",
+      "typical": "内描边 0.16+0.1g / 内顶光 0.03+0.04g / 外泛光 26g px",
+      "feel": "三层都挂在同一个 g 上，收尾自然落到\"中性深色玻璃条\""
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "声波竖条",
+      "typical": "5 根、基准 [13,7,10,6,9]、±1.6px、频率 18",
+      "feel": "幅度到 4px 就成了\"正在录音\"的活跃态，与\"待命\"矛盾"
+    },
+    {
+      "ord": 8,
+      "variant": null,
+      "key": "光标",
+      "typical": "t≈0.025 先行、0.75→0.8 撤",
+      "feel": "光标先于文字出现，是\"输入框已就绪\"的信号"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "定宽靠一个 `visibility:hidden` 的测量节点算 `offsetWidth`，字体必须",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "声波竖条是持续呼吸（不受 t 分段控制），所以首尾帧的高度不同——",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "打字进度 `floor(seg(…)*len + 1e-6)`，那个 epsilon 是防止末字符在",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "ACCENT_RGB（默认 `146,126,212` 紫）内嵌光与外泛光共用，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "占位句 \"Speak or type here\"（18 字符）；换句要保持字符数接近，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "glass-pill-dictation-typing",
+      "variant_letter": null,
+      "upstream_key": "glass-pill-dictation-typing",
+      "demo": "demos/interaction/glass-pill-dictation-typing/GlassPillDictationTyping.tsx",
+      "component": "GlassPillDictationTyping",
+      "duration_frames": 50,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

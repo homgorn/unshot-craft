@@ -1,0 +1,235 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "color-block-step-wipe",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/color-block-step-wipe.md",
+    "card_sha256": "f5a2e7fb762c7ce97c64d7b2838168dbf23c8f7a4dd6c8a38bb1a9cf22982edb",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 44,
+    "duration_frames_hint": null,
+    "duration_verbatim": "A ~2.5s（生长 44f + 徽章 + hold）/ B ~1.5–2s（3 跳 30f + hold）；demo 合计 150f",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（能量来自\"跳变\"的顿挫而非速度）",
+    "energy_rationale": "能量来自\"跳变\"的顿挫而非速度"
+  },
+  "intent_zh": "库里 wipe 类全是连续扫过——边界匀速或缓动地推过去。本卡反着来： **全程零插值零缓动**，色块像老式像素游戏的方块生长，每一跳都是硬切， 跳与跳之间完全静止。顿挫本身就是节奏：3–5 声\"咔、咔、咔\"比一次 平滑扫过更有宣告感。变体 B 再加一层：色块推进时携带一张内容卡同拍 离散跳位——卡不做补间，读作\"整块被搬进来\"，色块是运货的不是装饰的。",
+  "use_zh": "品牌色转场/章节交接；\"硬朗无缓动\"的像素游戏手感段落；接管后的纯色场当下一段的舞台",
+  "summary_zh": "离散阶跃色块吞屏两式——A 中央小条按 3–5 步硬跳阶跃扩成全屏（接管后徽章两跳弹出），B 色块从角落斜向 3 步吃屏并携带一张页面卡逐跳前进",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "核心是 stepVal 帧阈值查表：frame 越过阈值瞬间跳到新值，无插值——"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "这是本卡的语法宪法，任何一处混进缓动整卡手感就破"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "A 式：宽/高两轴分步跳（demo：w 0→280→820→1340→1920 @ 8f 间隔；"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "h 先横条后纵向补齐），先长条后铺满——两轴不同步才有\"生长\"感"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        63
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "A 收尾徽章也用阶跃模拟过冲：scale 0→0.55→1.12→1 三跳（52/58/63f）"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——同一语法贯穿到底，徽章若用 spring 会显得\"来自另一部片\""
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "B 式：clipPath polygon 对角线推进量 p 分 3 档硬跳（0→42→106→200，"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "p=200 全覆盖）；携带卡按同一批阈值查表跳位（画外→3 个停靠点）"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        12
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "跳位间隔 6–12f 不等距——等距读作 GIF 掉帧，不等距读作\"节拍\""
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "步数",
+      "typical": "A 4–5 跳 / B 3 跳",
+      "feel": "≥7 跳读作低帧率滚动而非阶跃；2 跳读作闪切"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "跳位间隔",
+      "typical": "6–12f",
+      "feel": "<5f 眼睛跟不上\"跳了几步\"；>16f 中段静止读作卡死"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "徽章过冲",
+      "typical": "0.55→1.12→1 三档硬跳",
+      "feel": "改成连续 spring 破语法；过冲档 >1.2 读作弹跳动画"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "携带卡",
+      "typical": "与色块同拍跳位，rotate -4° 定角",
+      "feel": "卡若做补间滑动，\"整块搬运\"手感全失；逐跳换角度读作抖动"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "斜角 clip",
+      "typical": "polygon 直角三角形从角落长出",
+      "feel": "边缘加圆角/羽化即破\"硬边\"人设"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "接管 hold",
+      "typical": "铺满后 ≥30f 纯色静置再进下段内容",
+      "feel": "刚铺满就上内容，\"吞屏\"这一拍没呼吸完"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 wipe-transitions 分工：clock-wipe/blinds 是连续几何边界扫过（顺滑系），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 shot-transitions 的关系：本卡是\"转场+接管\"复合体（色块留下当新场底色），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "**声音强依赖**：每跳一声打点（同 cel-flash-stomp 的 kick 逻辑）——",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "阶跃的\"故意感\"靠对比成立：同段落其他元素须是顺滑补间，全片到处阶跃",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "实战品牌色：色块用品牌主色，A/B 两式同片可各一次但换色（demo 蓝/红）；",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "color-block-step-wipe",
+      "variant_letter": null,
+      "upstream_key": "color-block-step-wipe",
+      "demo": "demos/transition/color-block-step-wipe/ColorBlockStepWipe.tsx",
+      "component": "ColorBlockStepWipe",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

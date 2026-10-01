@@ -1,0 +1,196 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "ai-stream-response",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/ai-stream-response.md",
+    "card_sha256": "c06bb0707267723b06b83609debc59f5877b227ecdc987cc66e6da09daa25899",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 4–5s（120–150f，含 ≥15f 完成态静止）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（信息持续增加，但阅读优先于速度炫技）",
+    "energy_rationale": "信息持续增加，但阅读优先于速度炫技"
+  },
+  "intent_zh": "把“AI 正在工作”拍成可读的因果链，而不是日志刷屏：观众先看懂答案摘要， 再看到证据/子任务逐条补齐，最后由完成态确认这轮工作结束。",
+  "use_zh": "AI 助手/agent/search/copilot 的结果生成镜头；强调“结论先到、证据随后、任务完成”",
+  "summary_zh": "AI 响应面板先落一句可读摘要，再让带状态图标的证据行逐条汇入，最后统一收束成完成态",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "用目标产品真实响应面板截图做 backplate；动态区截图前隐藏，按 layout 坐标重叠回真实槽位（Q1/Q9）"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        12
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "面板进入后摘要句先以短 wipe/淡入落定，落定后至少 12f 才起首条证据"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "6–8 条证据行自下方 14–24px + 轻微 blur 逐行汇入；间隔逐渐收紧但保留可数节拍"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "行体先停，状态图标晚 2–4f 由 pending 转 running/done，形成主次拖拽层级"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（模式已沉为 assets/lib/helpers/motion.ts lagged）"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        15
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "末条完成后只做一次面板级完成脉冲，随后全画面静止 ≥15f；不逐行 glint"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "摘要",
+      "typical": "cue 18，10–14f reveal；摘要落定后 hold ≥12f，首行 cue ≥42",
+      "feel": "摘要与首行粘连会失去“结论先到”的叙事；正常速度必须能先读到一句完整结论"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "行节拍",
+      "typical": "`cue[i]=42+[0,11,21,30,38,45,51,56][i]`，每行 10–14f",
+      "feel": "间隔 11→5f 逐渐收紧，表达工作加速；不要密到所有行同时糊成一团（R2）"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "行入场",
+      "typical": "y 18px→0，blur 6px→0，opacity 0→1，bezier(0.2,0.75,0.25,1)",
+      "feel": "位移须过正常速度肉眼阈值；大幅横飞会像通知列表，不像证据归档"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "状态图标",
+      "typical": "比行体 cue 晚 3f；pending 环 → running 缺口环 → done 实心勾，6–8f",
+      "feel": "图标是状态回执，不抢行文本；同帧切换全部图标会读作假 loading"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "完成收束",
+      "typical": "末图标 done 后 6f，面板边框/摘要底色 opacity 0.25→0.55→0.25 共 10f",
+      "feel": "只做面板级一次，不逐行发光（Q4）；完成脉冲后留 ≥15f 真静止（R1）"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "相机",
+      "typical": "信息密集默认正视，zoom 1.04→1.0 微退；暗场斜拍仅作情绪变体",
+      "feel": "Linear 参考片的斜拍不是通用命令；文字读不清时立即回正视（Q6）"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "逐字符流式打字会把视线困在字符层；宣传片时长里优先按“语义块”揭示摘要，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "行体和状态图标若同帧落定，会像静态列表整体切换；保留 2–4f 拖拽层级",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "行终点必须是截图里真实列表槽位，不在面板上方悬浮；动态内容也必须用虚构数据",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "此卡借鉴 Linear Agent 发布片 t≈13–17s（进化轮 #3 breakdown #6），非用户判例；",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "stream-response",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/interaction/ai-stream-response/StreamResponse.tsx",
+      "component": "StreamResponse",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

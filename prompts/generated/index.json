@@ -1,0 +1,2294 @@
+{
+  "schema": "shotcraft.brief/1/index",
+  "count": 157,
+  "generated_from": {
+    "db": "platform/db/shotcraft.db",
+    "cards": 157,
+    "fps": 30
+  },
+  "notes": [
+    "copy.authored is false everywhere in this tree by construction",
+    "duration_frames is null for technique cards; see duration_frames_hint",
+    "beats[].window is scraped from prose and is null when not stated"
+  ],
+  "briefs": [
+    {
+      "slug": "ai-stream-response",
+      "category": "interaction",
+      "duration_frames": 150,
+      "energy": "mid-high",
+      "beats": 6,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "assemble-then-type-flyin",
+      "category": "effects",
+      "duration_frames": 156,
+      "energy": "mid-high",
+      "beats": 14,
+      "parameters": 9,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "effects"
+      ]
+    },
+    {
+      "slug": "aurora-bloom-bg-flip",
+      "category": "effects",
+      "duration_frames": 156,
+      "energy": null,
+      "beats": 11,
+      "parameters": 9,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "effects"
+      ]
+    },
+    {
+      "slug": "autolayout-gap-dial",
+      "category": "interaction",
+      "duration_frames": 120,
+      "energy": "mid",
+      "beats": 10,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "avatar-bracket-carousel",
+      "category": "ui-entrance",
+      "duration_frames": 156,
+      "energy": "mid",
+      "beats": 14,
+      "parameters": 8,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "avatar-grid-radial-build-colorize",
+      "category": "data",
+      "duration_frames": 168,
+      "energy": "mid",
+      "beats": 6,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "slug": "basic-3d-scene",
+      "category": "camera",
+      "duration_frames": 180,
+      "energy": "mid",
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "camera"
+      ]
+    },
+    {
+      "slug": "beat-cut-moves",
+      "category": "rhythm",
+      "duration_frames": 49,
+      "energy": "high",
+      "beats": 4,
+      "parameters": 9,
+      "pitfalls": 6,
+      "styles": 2,
+      "rules": 1,
+      "tags": [
+        "transition",
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "beat-step-list-theme-cycle",
+      "category": "rhythm",
+      "duration_frames": 30,
+      "energy": "high",
+      "beats": 12,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "before-after-slider-scrub",
+      "category": "data",
+      "duration_frames": 150,
+      "energy": "mid",
+      "beats": 8,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 2,
+      "tags": [
+        "data",
+        "interaction"
+      ]
+    },
+    {
+      "slug": "bezier-source-converge-merge",
+      "category": "ui-entrance",
+      "duration_frames": 168,
+      "energy": "mid",
+      "beats": 18,
+      "parameters": 8,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 2,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "blur-slide",
+      "category": "typography",
+      "duration_frames": 114,
+      "energy": "low",
+      "beats": 11,
+      "parameters": 7,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "bottom-push-stack-wipe",
+      "category": "transition",
+      "duration_frames": 30,
+      "energy": "mid",
+      "beats": 10,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "brace-expand",
+      "category": "typography",
+      "duration_frames": 114,
+      "energy": "mid",
+      "beats": 15,
+      "parameters": 7,
+      "pitfalls": 7,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "brand-frame-snap",
+      "category": "effects",
+      "duration_frames": 130,
+      "energy": "mid",
+      "beats": 8,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 1,
+      "tags": [
+        "transition",
+        "effects"
+      ]
+    },
+    {
+      "slug": "brand-ink-open",
+      "category": "opening",
+      "duration_frames": 83,
+      "energy": "low",
+      "beats": 4,
+      "parameters": 5,
+      "pitfalls": 2,
+      "styles": 1,
+      "rules": 3,
+      "tags": [
+        "opening",
+        "typography"
+      ]
+    },
+    {
+      "slug": "bubble-swarm-takeover",
+      "category": "transition",
+      "duration_frames": 130,
+      "energy": "mid-high",
+      "beats": 12,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "canvas-materialize-moves",
+      "category": "interaction",
+      "duration_frames": 130,
+      "energy": "mid",
+      "beats": 4,
+      "parameters": 9,
+      "pitfalls": 6,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "interaction"
+      ]
+    },
+    {
+      "slug": "card-flip-reveal",
+      "category": "transition",
+      "duration_frames": 26,
+      "energy": "mid-high",
+      "beats": 8,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "data",
+        "transition"
+      ]
+    },
+    {
+      "slug": "card-flock-tumble",
+      "category": "transition",
+      "duration_frames": 45,
+      "energy": "very-high",
+      "beats": 10,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "card-stack",
+      "category": "ui-entrance",
+      "duration_frames": 126,
+      "energy": "mid-high",
+      "beats": 11,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "carousel-3d",
+      "category": "ui-entrance",
+      "duration_frames": 168,
+      "energy": "mid",
+      "beats": 15,
+      "parameters": 8,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "cel-flash-stomp",
+      "category": "typography",
+      "duration_frames": 30,
+      "energy": "high",
+      "beats": 9,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "chart-live-moves",
+      "category": "data",
+      "duration_frames": 180,
+      "energy": "mid-high",
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 3,
+      "rules": 0,
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "slug": "chip-grid-single-select-blackout",
+      "category": "interaction",
+      "duration_frames": 150,
+      "energy": "mid-low",
+      "beats": 14,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "chip-lift-to-user-pill",
+      "category": "interaction",
+      "duration_frames": 150,
+      "energy": "mid",
+      "beats": 16,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "circle-match-iris",
+      "category": "transition",
+      "duration_frames": 30,
+      "energy": "mid-high",
+      "beats": 10,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "cloner-depth-echo",
+      "category": "ui-entrance",
+      "duration_frames": 150,
+      "energy": "mid",
+      "beats": 0,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "collab-cursor-moves",
+      "category": "interaction",
+      "duration_frames": 140,
+      "energy": null,
+      "beats": 4,
+      "parameters": 8,
+      "pitfalls": 6,
+      "styles": 2,
+      "rules": 1,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "color-block-step-wipe",
+      "category": "transition",
+      "duration_frames": 44,
+      "energy": "mid-high",
+      "beats": 9,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "command-palette-summon",
+      "category": "interaction",
+      "duration_frames": 150,
+      "energy": "mid",
+      "beats": 8,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 2,
+      "tags": [
+        "ui-entrance",
+        "interaction"
+      ]
+    },
+    {
+      "slug": "countdown-arc-scatter",
+      "category": "typography",
+      "duration_frames": 33,
+      "energy": "high",
+      "beats": 17,
+      "parameters": 8,
+      "pitfalls": 7,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "counter-confetti",
+      "category": "data",
+      "duration_frames": 138,
+      "energy": "high",
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "slug": "crane-rise-reveal",
+      "category": "opening",
+      "duration_frames": 20,
+      "energy": "mid-high",
+      "beats": 9,
+      "parameters": 4,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "camera",
+        "data"
+      ]
+    },
+    {
+      "slug": "crash-zoom-punch",
+      "category": "camera",
+      "duration_frames": 11,
+      "energy": "high",
+      "beats": 6,
+      "parameters": 4,
+      "pitfalls": 3,
+      "styles": 2,
+      "rules": 1,
+      "tags": [
+        "camera",
+        "effects"
+      ]
+    },
+    {
+      "slug": "cube-navigation",
+      "category": "transition",
+      "duration_frames": 180,
+      "energy": "mid",
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "cursor-flyover",
+      "category": "camera",
+      "duration_frames": 180,
+      "energy": "mid",
+      "beats": 6,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "camera"
+      ]
+    },
+    {
+      "slug": "cycle-glass-node-morph",
+      "category": "data",
+      "duration_frames": 257,
+      "energy": "mid-high",
+      "beats": 12,
+      "parameters": 9,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "camera",
+        "data",
+        "interaction"
+      ]
+    },
+    {
+      "slug": "dashboard-glow-highlight-pill",
+      "category": "effects",
+      "duration_frames": 60,
+      "energy": "high",
+      "beats": 16,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "effects"
+      ]
+    },
+    {
+      "slug": "dataviz-landscape-open",
+      "category": "opening",
+      "duration_frames": 240,
+      "energy": null,
+      "beats": 5,
+      "parameters": 9,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 1,
+      "tags": [
+        "opening",
+        "camera",
+        "data"
+      ]
+    },
+    {
+      "slug": "deck-deal-flyin",
+      "category": "ui-entrance",
+      "duration_frames": 113,
+      "energy": "high",
+      "beats": 4,
+      "parameters": 11,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 2,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "depth-layer-moves",
+      "category": "camera",
+      "duration_frames": 150,
+      "energy": null,
+      "beats": 9,
+      "parameters": 3,
+      "pitfalls": 4,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "camera"
+      ]
+    },
+    {
+      "slug": "doc-park-left-pill-deal",
+      "category": "ui-entrance",
+      "duration_frames": 174,
+      "energy": "low",
+      "beats": 15,
+      "parameters": 8,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "document-typewriter-reveal",
+      "category": "typography",
+      "duration_frames": 110,
+      "energy": "low-mid",
+      "beats": 5,
+      "parameters": 7,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 2,
+      "tags": [
+        "typography",
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "draw-svg-trace",
+      "category": "ui-entrance",
+      "duration_frames": 40,
+      "energy": "mid",
+      "beats": 9,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "edit-hook-moves",
+      "category": "outro",
+      "duration_frames": 150,
+      "energy": null,
+      "beats": 3,
+      "parameters": 4,
+      "pitfalls": 3,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "outro"
+      ]
+    },
+    {
+      "slug": "element-body-moves",
+      "category": "ui-entrance",
+      "duration_frames": 141,
+      "energy": null,
+      "beats": 4,
+      "parameters": 8,
+      "pitfalls": 6,
+      "styles": 2,
+      "rules": 1,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "floating-glossy-label-pills",
+      "category": "ui-entrance",
+      "duration_frames": 120,
+      "energy": "mid",
+      "beats": 26,
+      "parameters": 10,
+      "pitfalls": 8,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "flying-words",
+      "category": "typography",
+      "duration_frames": 180,
+      "energy": "high",
+      "beats": 13,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "fracture",
+      "category": "opening",
+      "duration_frames": 156,
+      "energy": "high",
+      "beats": 5,
+      "parameters": 7,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "opening"
+      ]
+    },
+    {
+      "slug": "fui-hud-moves",
+      "category": "effects",
+      "duration_frames": 120,
+      "energy": null,
+      "beats": 4,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 1,
+      "tags": [
+        "ui-entrance",
+        "effects"
+      ]
+    },
+    {
+      "slug": "gauge-readout-moves",
+      "category": "data",
+      "duration_frames": 150,
+      "energy": "mid-high",
+      "beats": 4,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "slug": "glass-pill-dictation-typing",
+      "category": "interaction",
+      "duration_frames": 50,
+      "energy": "low",
+      "beats": 13,
+      "parameters": 9,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "glitch-cycle",
+      "category": "typography",
+      "duration_frames": 168,
+      "energy": "mid-high",
+      "beats": 13,
+      "parameters": 7,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "glow-flyline-moves",
+      "category": "effects",
+      "duration_frames": 150,
+      "energy": null,
+      "beats": 5,
+      "parameters": 8,
+      "pitfalls": 6,
+      "styles": 3,
+      "rules": 0,
+      "tags": [
+        "data",
+        "effects"
+      ]
+    },
+    {
+      "slug": "gradient-transition",
+      "category": "transition",
+      "duration_frames": 180,
+      "energy": "low",
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "gradient-word-sweep",
+      "category": "typography",
+      "duration_frames": 20,
+      "energy": "high",
+      "beats": 9,
+      "parameters": 5,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "effects"
+      ]
+    },
+    {
+      "slug": "grain-dissolve",
+      "category": "outro",
+      "duration_frames": 60,
+      "energy": "mid-high",
+      "beats": 6,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "outro"
+      ]
+    },
+    {
+      "slug": "graze-face-tour",
+      "category": "camera",
+      "duration_frames": 150,
+      "energy": "mid-high",
+      "beats": 10,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "camera"
+      ]
+    },
+    {
+      "slug": "hashtag-to-pill-materialize",
+      "category": "interaction",
+      "duration_frames": 40,
+      "energy": "mid",
+      "beats": 11,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "interaction"
+      ]
+    },
+    {
+      "slug": "hatch-depth",
+      "category": "data",
+      "duration_frames": 132,
+      "energy": "mid",
+      "beats": 6,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "slug": "icon-field-colorize",
+      "category": "opening",
+      "duration_frames": 45,
+      "energy": "mid",
+      "beats": 9,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "ui-entrance",
+        "outro"
+      ]
+    },
+    {
+      "slug": "icon-performance-moves",
+      "category": "effects",
+      "duration_frames": 120,
+      "energy": null,
+      "beats": 4,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "interaction",
+        "effects"
+      ]
+    },
+    {
+      "slug": "impact-feedback",
+      "category": "effects",
+      "duration_frames": null,
+      "energy": "high",
+      "beats": 4,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "effects"
+      ]
+    },
+    {
+      "slug": "input-trigger-moves",
+      "category": "interaction",
+      "duration_frames": 150,
+      "energy": null,
+      "beats": 4,
+      "parameters": 7,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "interaction"
+      ]
+    },
+    {
+      "slug": "integration-hub-map",
+      "category": "ui-entrance",
+      "duration_frames": 15,
+      "energy": "mid-high",
+      "beats": 8,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "effects"
+      ]
+    },
+    {
+      "slug": "lead-word-zoom-assemble",
+      "category": "typography",
+      "duration_frames": 84,
+      "energy": "mid-high",
+      "beats": 27,
+      "parameters": 13,
+      "pitfalls": 9,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "typography"
+      ]
+    },
+    {
+      "slug": "letterspace-materialize",
+      "category": "opening",
+      "duration_frames": 15,
+      "energy": "low",
+      "beats": 8,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "typography",
+        "outro"
+      ]
+    },
+    {
+      "slug": "light-play-moves",
+      "category": "effects",
+      "duration_frames": 159,
+      "energy": null,
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 3,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "effects"
+      ]
+    },
+    {
+      "slug": "line-boil",
+      "category": "effects",
+      "duration_frames": null,
+      "energy": "low",
+      "beats": 9,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "effects"
+      ]
+    },
+    {
+      "slug": "line-carry-transition",
+      "category": "transition",
+      "duration_frames": 60,
+      "energy": "mid",
+      "beats": 9,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "camera",
+        "transition"
+      ]
+    },
+    {
+      "slug": "list-reveal",
+      "category": "ui-entrance",
+      "duration_frames": 108,
+      "energy": "low",
+      "beats": 10,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "list-stack-press",
+      "category": "ui-entrance",
+      "duration_frames": 88,
+      "energy": "mid",
+      "beats": 6,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 3,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "logo-shrink-wordmark-lockup",
+      "category": "outro",
+      "duration_frames": 132,
+      "energy": "mid",
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "outro"
+      ]
+    },
+    {
+      "slug": "magician-card-flourish",
+      "category": "opening",
+      "duration_frames": 9,
+      "energy": "high",
+      "beats": 16,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "ui-entrance",
+        "effects"
+      ]
+    },
+    {
+      "slug": "marker-underline-title",
+      "category": "typography",
+      "duration_frames": 12,
+      "energy": "low",
+      "beats": 7,
+      "parameters": 5,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "montage-rhythm-moves",
+      "category": "rhythm",
+      "duration_frames": 129,
+      "energy": "high",
+      "beats": 5,
+      "parameters": 10,
+      "pitfalls": 6,
+      "styles": 3,
+      "rules": 0,
+      "tags": [
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "morph-from-primitive",
+      "category": "ui-entrance",
+      "duration_frames": 20,
+      "energy": "mid-low",
+      "beats": 9,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "mosaic-reframe",
+      "category": "transition",
+      "duration_frames": 180,
+      "energy": "mid",
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "neon-frame-forerun",
+      "category": "ui-entrance",
+      "duration_frames": 18,
+      "energy": "mid-high",
+      "beats": 8,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "effects"
+      ]
+    },
+    {
+      "slug": "neon-frame-orbit-drop",
+      "category": "ui-entrance",
+      "duration_frames": 15,
+      "energy": "mid-high",
+      "beats": 7,
+      "parameters": 5,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "camera",
+        "effects"
+      ]
+    },
+    {
+      "slug": "neon-triple-marquee",
+      "category": "outro",
+      "duration_frames": 150,
+      "energy": "mid-high",
+      "beats": 10,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "outro"
+      ]
+    },
+    {
+      "slug": "odometer-digit-roll",
+      "category": "data",
+      "duration_frames": 63,
+      "energy": "mid-high",
+      "beats": 10,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "data"
+      ]
+    },
+    {
+      "slug": "orbit-ring-title-open",
+      "category": "opening",
+      "duration_frames": 130,
+      "energy": "mid",
+      "beats": 24,
+      "parameters": 12,
+      "pitfalls": 8,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "outline-word-fill",
+      "category": "typography",
+      "duration_frames": 75,
+      "energy": "high",
+      "beats": 19,
+      "parameters": 8,
+      "pitfalls": 7,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "outro-group-photo-launch",
+      "category": "outro",
+      "duration_frames": 145,
+      "energy": "peak",
+      "beats": 5,
+      "parameters": 7,
+      "pitfalls": 3,
+      "styles": 1,
+      "rules": 2,
+      "tags": [
+        "outro"
+      ]
+    },
+    {
+      "slug": "overhead-camera-moves",
+      "category": "camera",
+      "duration_frames": 144,
+      "energy": null,
+      "beats": 4,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "camera",
+        "transition"
+      ]
+    },
+    {
+      "slug": "page-turn-transitions",
+      "category": "transition",
+      "duration_frames": 30,
+      "energy": "mid-high",
+      "beats": 4,
+      "parameters": 7,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "page-waterfall-wall",
+      "category": "ui-entrance",
+      "duration_frames": 180,
+      "energy": "mid",
+      "beats": 9,
+      "parameters": 7,
+      "pitfalls": 4,
+      "styles": 2,
+      "rules": 1,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "panel-grid-moves",
+      "category": "rhythm",
+      "duration_frames": 141,
+      "energy": null,
+      "beats": 5,
+      "parameters": 9,
+      "pitfalls": 5,
+      "styles": 3,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "paper-craft-moves",
+      "category": "ui-entrance",
+      "duration_frames": 120,
+      "energy": null,
+      "beats": 4,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 1,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "paper-plane-messenger",
+      "category": "transition",
+      "duration_frames": 150,
+      "energy": "mid",
+      "beats": 12,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "camera",
+        "transition"
+      ]
+    },
+    {
+      "slug": "paper-title-card",
+      "category": "typography",
+      "duration_frames": 55,
+      "energy": "low",
+      "beats": 4,
+      "parameters": 6,
+      "pitfalls": 2,
+      "styles": 1,
+      "rules": 2,
+      "tags": [
+        "typography",
+        "transition",
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "particle-celebrate-hits",
+      "category": "data",
+      "duration_frames": 120,
+      "energy": "high",
+      "beats": 4,
+      "parameters": 5,
+      "pitfalls": 4,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "data",
+        "effects"
+      ]
+    },
+    {
+      "slug": "particle-sand-fill",
+      "category": "data",
+      "duration_frames": 150,
+      "energy": "mid-high",
+      "beats": 0,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "data",
+        "effects"
+      ]
+    },
+    {
+      "slug": "picker-carousel-feature-cycle",
+      "category": "interaction",
+      "duration_frames": 108,
+      "energy": "mid",
+      "beats": 13,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "pill-chip-slot-cycle-handled",
+      "category": "typography",
+      "duration_frames": 150,
+      "energy": "mid",
+      "beats": 14,
+      "parameters": 8,
+      "pitfalls": 7,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "pill-slot-cycle",
+      "category": "typography",
+      "duration_frames": 12,
+      "energy": "mid",
+      "beats": 11,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "platform-hinge-rise",
+      "category": "ui-entrance",
+      "duration_frames": 104,
+      "energy": "mid",
+      "beats": 10,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "print-texture-transitions",
+      "category": "transition",
+      "duration_frames": 80,
+      "energy": "mid",
+      "beats": 3,
+      "parameters": 4,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "product-card-progressive-assemble",
+      "category": "ui-entrance",
+      "duration_frames": 150,
+      "energy": "mid",
+      "beats": 14,
+      "parameters": 8,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "quad-split-parallel-scenes",
+      "category": "rhythm",
+      "duration_frames": 63,
+      "energy": "high",
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "radial-ripple-phone-chips",
+      "category": "effects",
+      "duration_frames": 168,
+      "energy": "low",
+      "beats": 10,
+      "parameters": 8,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "effects"
+      ]
+    },
+    {
+      "slug": "radial-wave",
+      "category": "ui-entrance",
+      "duration_frames": 114,
+      "energy": "mid-high",
+      "beats": 10,
+      "parameters": 7,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "research-card-stack-scroll",
+      "category": "ui-entrance",
+      "duration_frames": 144,
+      "energy": "mid-high",
+      "beats": 14,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "rhythm-interrupt-moves",
+      "category": "rhythm",
+      "duration_frames": 135,
+      "energy": null,
+      "beats": 4,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "ring-diagram-annotation-reveal",
+      "category": "data",
+      "duration_frames": 190,
+      "energy": "mid-high",
+      "beats": 10,
+      "parameters": 8,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "camera",
+        "data"
+      ]
+    },
+    {
+      "slug": "riso-print-hits",
+      "category": "effects",
+      "duration_frames": 120,
+      "energy": "high",
+      "beats": 4,
+      "parameters": 9,
+      "pitfalls": 6,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "rhythm",
+        "effects"
+      ]
+    },
+    {
+      "slug": "row-embed",
+      "category": "ui-entrance",
+      "duration_frames": 68,
+      "energy": "mid",
+      "beats": 4,
+      "parameters": 6,
+      "pitfalls": 2,
+      "styles": 1,
+      "rules": 2,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "runway-ground-skim",
+      "category": "ui-entrance",
+      "duration_frames": 12,
+      "energy": "high",
+      "beats": 8,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "camera"
+      ]
+    },
+    {
+      "slug": "sakuga-timing-shift",
+      "category": "rhythm",
+      "duration_frames": 150,
+      "energy": "mid-high",
+      "beats": 9,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "scan-bracket-sweep",
+      "category": "effects",
+      "duration_frames": 150,
+      "energy": "mid-low",
+      "beats": 10,
+      "parameters": 7,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "effects"
+      ]
+    },
+    {
+      "slug": "scanline-annotate-focus",
+      "category": "effects",
+      "duration_frames": 138,
+      "energy": "mid",
+      "beats": 13,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "effects"
+      ]
+    },
+    {
+      "slug": "scanline-assemble-flyin",
+      "category": "effects",
+      "duration_frames": 138,
+      "energy": "mid-high",
+      "beats": 15,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "effects"
+      ]
+    },
+    {
+      "slug": "scramble",
+      "category": "typography",
+      "duration_frames": 96,
+      "energy": "mid-high",
+      "beats": 11,
+      "parameters": 7,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "scroll-brake-moves",
+      "category": "data",
+      "duration_frames": 150,
+      "energy": null,
+      "beats": 4,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "data",
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "segmented-thumb-hero",
+      "category": "interaction",
+      "duration_frames": 110,
+      "energy": "mid",
+      "beats": 10,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "shot-transitions",
+      "category": "transition",
+      "duration_frames": null,
+      "energy": null,
+      "beats": 8,
+      "parameters": 9,
+      "pitfalls": 7,
+      "styles": 7,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "skeleton-reveal",
+      "category": "ui-entrance",
+      "duration_frames": 172,
+      "energy": "mid",
+      "beats": 10,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 1,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "slam-entrance-moves",
+      "category": "effects",
+      "duration_frames": 22,
+      "energy": "high",
+      "beats": 5,
+      "parameters": 7,
+      "pitfalls": 6,
+      "styles": 3,
+      "rules": 1,
+      "tags": [
+        "ui-entrance",
+        "effects"
+      ]
+    },
+    {
+      "slug": "smear-multiples",
+      "category": "rhythm",
+      "duration_frames": 12,
+      "energy": "mid-high",
+      "beats": 10,
+      "parameters": 4,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "rhythm",
+        "effects"
+      ]
+    },
+    {
+      "slug": "space-camera-moves",
+      "category": "camera",
+      "duration_frames": 150,
+      "energy": "high",
+      "beats": 4,
+      "parameters": 7,
+      "pitfalls": 4,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "camera"
+      ]
+    },
+    {
+      "slug": "spectrum-morph-ui",
+      "category": "rhythm",
+      "duration_frames": 64,
+      "energy": "mid",
+      "beats": 8,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "speed-ramp-freeze",
+      "category": "rhythm",
+      "duration_frames": 40,
+      "energy": "mid-high",
+      "beats": 10,
+      "parameters": 3,
+      "pitfalls": 3,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "split-flap-title",
+      "category": "typography",
+      "duration_frames": 140,
+      "energy": "mid",
+      "beats": 8,
+      "parameters": 8,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 1,
+      "tags": [
+        "opening",
+        "typography"
+      ]
+    },
+    {
+      "slug": "spotlight-hero-card",
+      "category": "opening",
+      "duration_frames": 220,
+      "energy": "mid",
+      "beats": 6,
+      "parameters": 6,
+      "pitfalls": 3,
+      "styles": 1,
+      "rules": 3,
+      "tags": [
+        "opening",
+        "camera",
+        "effects"
+      ]
+    },
+    {
+      "slug": "spotlight-sweep-moves",
+      "category": "effects",
+      "duration_frames": 135,
+      "energy": "mid-low",
+      "beats": 9,
+      "parameters": 5,
+      "pitfalls": 4,
+      "styles": 3,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "transition",
+        "effects"
+      ]
+    },
+    {
+      "slug": "steep-tilt-glide",
+      "category": "camera",
+      "duration_frames": 120,
+      "energy": "mid-high",
+      "beats": 10,
+      "parameters": 6,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance",
+        "camera"
+      ]
+    },
+    {
+      "slug": "stroke-segment-build",
+      "category": "opening",
+      "duration_frames": 150,
+      "energy": null,
+      "beats": 6,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 1,
+      "tags": [
+        "opening",
+        "typography"
+      ]
+    },
+    {
+      "slug": "svg-shape-morph",
+      "category": "ui-entrance",
+      "duration_frames": 156,
+      "energy": "low",
+      "beats": 18,
+      "parameters": 9,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "tear-streak-transitions",
+      "category": "transition",
+      "duration_frames": 40,
+      "energy": "high",
+      "beats": 3,
+      "parameters": 5,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition",
+        "effects"
+      ]
+    },
+    {
+      "slug": "tension-camera-moves",
+      "category": "camera",
+      "duration_frames": 150,
+      "energy": null,
+      "beats": 6,
+      "parameters": 10,
+      "pitfalls": 6,
+      "styles": 4,
+      "rules": 0,
+      "tags": [
+        "camera"
+      ]
+    },
+    {
+      "slug": "terminal-3d",
+      "category": "camera",
+      "duration_frames": 180,
+      "energy": "mid",
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "camera"
+      ]
+    },
+    {
+      "slug": "text-as-mask",
+      "category": "opening",
+      "duration_frames": 20,
+      "energy": "mid-high",
+      "beats": 10,
+      "parameters": 4,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "typography"
+      ]
+    },
+    {
+      "slug": "text-column-converge",
+      "category": "typography",
+      "duration_frames": 16,
+      "energy": "mid-low",
+      "beats": 10,
+      "parameters": 7,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "outro"
+      ]
+    },
+    {
+      "slug": "theme-switch-moves",
+      "category": "interaction",
+      "duration_frames": 120,
+      "energy": null,
+      "beats": 4,
+      "parameters": 5,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 1,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "timeline-travel",
+      "category": "data",
+      "duration_frames": 150,
+      "energy": "mid-high",
+      "beats": 6,
+      "parameters": 4,
+      "pitfalls": 5,
+      "styles": 1,
+      "rules": 1,
+      "tags": [
+        "camera",
+        "data"
+      ]
+    },
+    {
+      "slug": "title-demote-to-label",
+      "category": "typography",
+      "duration_frames": 92,
+      "energy": "low-mid",
+      "beats": 12,
+      "parameters": 6,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "transition"
+      ]
+    },
+    {
+      "slug": "trailer-grammar-moves",
+      "category": "rhythm",
+      "duration_frames": 141,
+      "energy": null,
+      "beats": 5,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 3,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "transition",
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "transition-hidden-cut",
+      "category": "transition",
+      "duration_frames": null,
+      "energy": null,
+      "beats": 5,
+      "parameters": 8,
+      "pitfalls": 6,
+      "styles": 3,
+      "rules": 2,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "transition-travel",
+      "category": "transition",
+      "duration_frames": null,
+      "energy": null,
+      "beats": 4,
+      "parameters": 5,
+      "pitfalls": 4,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "camera",
+        "transition"
+      ]
+    },
+    {
+      "slug": "type-and-filter",
+      "category": "interaction",
+      "duration_frames": 190,
+      "energy": "mid",
+      "beats": 4,
+      "parameters": 7,
+      "pitfalls": 2,
+      "styles": 1,
+      "rules": 2,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "type-assembly-moves",
+      "category": "typography",
+      "duration_frames": 56,
+      "energy": null,
+      "beats": 6,
+      "parameters": 7,
+      "pitfalls": 5,
+      "styles": 4,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "type-entrance-moves",
+      "category": "typography",
+      "duration_frames": 66,
+      "energy": "mid-high",
+      "beats": 4,
+      "parameters": 7,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "type-rhythm-sync",
+      "category": "typography",
+      "duration_frames": 10,
+      "energy": null,
+      "beats": 4,
+      "parameters": 7,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 1,
+      "tags": [
+        "typography",
+        "rhythm"
+      ]
+    },
+    {
+      "slug": "typewriter-moves",
+      "category": "typography",
+      "duration_frames": 150,
+      "energy": null,
+      "beats": 4,
+      "parameters": 8,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "opening",
+        "typography"
+      ]
+    },
+    {
+      "slug": "typing-code-block",
+      "category": "typography",
+      "duration_frames": 138,
+      "energy": "mid",
+      "beats": 13,
+      "parameters": 7,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "ui-strip-away-outro",
+      "category": "outro",
+      "duration_frames": 130,
+      "energy": "mid",
+      "beats": 13,
+      "parameters": 6,
+      "pitfalls": 7,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "outro"
+      ]
+    },
+    {
+      "slug": "ui-to-brand-morph",
+      "category": "outro",
+      "duration_frames": 130,
+      "energy": "mid-high",
+      "beats": 4,
+      "parameters": 8,
+      "pitfalls": 7,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "outro"
+      ]
+    },
+    {
+      "slug": "value-stagger-gradient",
+      "category": "ui-entrance",
+      "duration_frames": 150,
+      "energy": "mid-high",
+      "beats": 16,
+      "parameters": 9,
+      "pitfalls": 7,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "vertical-word-roll-blur-cycle",
+      "category": "typography",
+      "duration_frames": 150,
+      "energy": "mid",
+      "beats": 12,
+      "parameters": 8,
+      "pitfalls": 7,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    },
+    {
+      "slug": "voice-waveform-live",
+      "category": "interaction",
+      "duration_frames": 150,
+      "energy": "mid",
+      "beats": 9,
+      "parameters": 7,
+      "pitfalls": 6,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "slug": "wall-reveal-moves",
+      "category": "ui-entrance",
+      "duration_frames": 150,
+      "energy": "mid",
+      "beats": 5,
+      "parameters": 7,
+      "pitfalls": 6,
+      "styles": 3,
+      "rules": 2,
+      "tags": [
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "white-flash-logo-simplify-cut",
+      "category": "transition",
+      "duration_frames": 108,
+      "energy": "mid-high",
+      "beats": 5,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "wipe-transitions",
+      "category": "transition",
+      "duration_frames": 20,
+      "energy": "mid",
+      "beats": 4,
+      "parameters": 7,
+      "pitfalls": 5,
+      "styles": 2,
+      "rules": 0,
+      "tags": [
+        "transition"
+      ]
+    },
+    {
+      "slug": "word-relay-filmstrip",
+      "category": "typography",
+      "duration_frames": 60,
+      "energy": "mid-low",
+      "beats": 8,
+      "parameters": 6,
+      "pitfalls": 4,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography",
+        "ui-entrance"
+      ]
+    },
+    {
+      "slug": "word-relay-geometry",
+      "category": "typography",
+      "duration_frames": 180,
+      "energy": "mid-high",
+      "beats": 20,
+      "parameters": 8,
+      "pitfalls": 7,
+      "styles": 1,
+      "rules": 0,
+      "tags": [
+        "typography"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "paper-craft-moves",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/paper-craft-moves.md",
+    "card_sha256": "95ce68a851b0af47c7a4469b1a6601cc9dec0f556dcbd7fabe268f68fb79084b",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 120,
+    "duration_frames_hint": null,
+    "duration_verbatim": "A 3–4s / B 4–5.5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "A 中（两拍打击）/ B 中高（立墙有纵深冲击）",
+    "energy_rationale": "两拍打击"
+  },
+  "intent_zh": "Wes Anderson 手账美术与立体书纸艺的 UI 翻译。A：卡片轻飘入位后 悬着微晃（未固定的纸），两条撕边半透明胶带\"啪、啪\"先后拍在对角， 第二条拍下**同帧**卡片停晃、投影变薄、整卡下沉——\"按死\"的定妆 一瞬是主角，两声\"啪\"是天然音效点。B：整页平躺如摊开书页（俯视）， 卡片像贴在页上的纸片沿各自底边错峰立起成墙，立到 95° 回弹 90° （纸的韧性），根部投影随立起收窄。",
+  "use_zh": "纸墨主视觉片的实体材料语言：单卡定妆入场用 A、整版 dashboard 开场建立用 B；与纸墨+强调色的主视觉（模板片为纸/墨/琥珀）天然同源",
+  "summary_zh": "纸艺两式——masking-tape-slap 纸胶带拍定（悬浮微晃被\"啪啪\"按死）与 popup-book-rise 立体书立起（卡片沿底边错峰立墙）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A masking-tape-slap | 晃动=幅度包络×正弦（rot ±1.5°/bob ±5px）；胶带扑入 6f：scale 1.45→1 + rotate 欠 16°→过冲 7°→回正 + 落帧 scaleY 0.72 一帧压扁；撕边 14 点 clipPath 锯齿 | 单卡/徽章的定妆入场；文案重音对齐 |"
+    },
+    {
+      "ord": 3,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B popup-book-rise | 双层 3D：场景 rotateX 75° 俯视（persp 2600），每卡 rotateX 0→-90° spring（damping 11 过冲 -95°），origin 底边，preserve-3d 贯通；远排先近排后错峰 7f | 整版 dashboard 开场；\"系统被搭建起来\" |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 按死三件套",
+      "typical": "同帧：晃动 2f 归零 + 投影 34px→8px + 全卡下沉 2px",
+      "feel": "三件拆帧就没有\"按死\"感；第一条胶带只把包络衰到 0.45（半死）"
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 胶带质感",
+      "typical": "半透明 + 锯齿撕边 + 落点故意歪 2–3°",
+      "feel": "歪斜是设计的手工感；直挺挺读作 UI 元素"
+    },
+    {
+      "ord": 2,
+      "variant": "B",
+      "key": "B 立起方向",
+      "typical": "rotateX 0→**-90°**（向观众立起）",
+      "feel": "demo 判例：方向写反卡片往画面里倒被底板裁切"
+    },
+    {
+      "ord": 3,
+      "variant": "B",
+      "key": "B 根部投影",
+      "typical": "blur 矩形不随卡立起，高 104→14px、透明度 0.26→0.1 随角度插值",
+      "feel": "无投影纸片浮空；投影跟着立起来穿帮"
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 收尾",
+      "typical": "全部站定后场景 75°→68° 轻回正（in-out cubic）",
+      "feel": "直接定住少一口呼吸"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "A 的晃动是\"未固定\"的叙事铺垫不是手持抖动（Q3 边界）：",
+      "critical": false,
+      "rules": "Q3"
+    },
+    {
+      "ord": 2,
+      "text": "B 与 tilt-reveal 分工：tilt 是**机位**抬头看静止页面，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "B 立墙后卡片呈 90° 侧立态，文字不可读——立墙是构图动作，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "声音：A 两声\"啪\"（纸拍击拟音）；B 每排立起一声轻纸响，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "Q3",
+      "family": "Q",
+      "title": "规则：亮场 UI 宣传片禁用 handheld shake；相机噪声只在暗场氛围片明确追求纪实感时用极小值，且必须自查渲染帧确认无意外抖动。",
+      "check_question": "自检：逐镜头看渲染帧：有没有任何非叙事意图的相机抖动？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "masking-tape-slap",
+      "variant_letter": "A",
+      "upstream_key": "masking-tape-slap",
+      "demo": "demos/ui-entrance/paper-craft-moves/MaskingTapeSlap.tsx",
+      "component": "MaskingTapeSlap",
+      "duration_frames": 38,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "popup-book-rise",
+      "variant_letter": "B",
+      "upstream_key": "popup-book-rise",
+      "demo": "demos/ui-entrance/paper-craft-moves/PopupBookRise.tsx",
+      "component": "PopupBookRise",
+      "duration_frames": 34,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

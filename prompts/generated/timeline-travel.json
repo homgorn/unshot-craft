@@ -1,0 +1,195 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "timeline-travel",
+  "category": "data",
+  "category_label": {
+    "en": "Data & Metrics",
+    "zh": "数据与指标",
+    "ru": "Данные и метрики"
+  },
+  "tags": [
+    "camera",
+    "data"
+  ],
+  "source": {
+    "card": "references/shots/data/timeline-travel.md",
+    "card_sha256": "c5f7ceceaf74cb9b88368e9a89d7006afdf53734ec5919ea6d79f4a0ca77fe14",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "4–5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（加速→急刹的节奏型镜头）",
+    "energy_rationale": "加速→急刹的节奏型镜头"
+  },
+  "intent_zh": "把产品的版本史拍成一次沿时间轴的旅行（《反恐王国》片头判例）： 镜头缓起→冲刺→急刹三段变速横移，v1.0/v2.0/v3.0 刻度依次掠过， 每过一格对应卡片从刻度线上 spring 弹立——历史在窗外闪过， 急停在\"今天\"并推近。速度本身讲\"发展快\"，急停讲\"现在最重要\"。",
+  "use_zh": "changelog/里程碑/发展史段落（\"我们一直在发货\"的另一种拍法）；与 scroll-brake-moves 分工：那卡是纵向列表急刹，本卡是横向时间旅行",
+  "summary_zh": "时间轴横移——镜头沿水平刻度轴加速掠过版本刻度，每过一格卡片弹立短停，末刻度急停推近",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 阶段 | 帧段参考 | 内容 |"
+    },
+    {
+      "ord": 1,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|------|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 1 静置 | f0–12 | 空轴 + 首刻度定住 |"
+    },
+    {
+      "ord": 3,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 2 加速掠过 | ~f12–100 | 世界层 translateX 分段缓动：缓起→冲刺→末 12% 急刹 |"
+    },
+    {
+      "ord": 4,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 3 弹卡 | 掠过中 | 相机扫过刻度前 6f 卡片起弹（spring damping ~11 明显过冲），底边为轴 scaleY 立起 |"
+    },
+    {
+      "ord": 5,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [
+        10,
+        30
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 4 急停推近 | 急停帧起 10f | scale 1→1.28 推近末刻度（out cubic），接静止 ≥30f |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "变速曲线",
+      "typical": "输入断点 [0,0.15,0.88,1]→输出 [0,0.055,0.9,1]",
+      "feel": "中段不够快就没有\"旅行感\"；全程匀速即廉价 PPT"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "弹立时机",
+      "typical": "相机到达刻度前 6f 起弹，由 camXAt 反查",
+      "feel": "到了才弹观众已经错过；早太多读作预告"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "刻度密度",
+      "typical": "主刻度 3–5 个 + 次刻度小点若干",
+      "feel": "次刻度点是速度感的参照物，删掉就感觉不到快"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "急停推近",
+      "typical": "1→1.28 / 10f",
+      "feel": "不推近急停就只是\"停了\"，推近才是\"到了\""
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "中段冲刺快到卡片糊时可叠 CameraMotionBlur（只包快速段，轮 #8 判例）",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "急停后静止预算前置：demo 首版静止只有 25f 不达标，急停帧前移才够",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "每张弹立卡片是信息位：实战放真实版本亮点截图/一句话，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "声音：每次弹立一声轻打点，急停一声 impact（S2 同源）",
+      "critical": false,
+      "rules": "S2"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "S2",
+      "family": "S",
+      "title": "规则：SFX 用\"帧号 + 音源 + 音量\"的声明式表集中管理，逐条注释对应的画面动作，杜绝凭感觉铺音效；同类元素连发时防机枪感靠三招——双样本交替、沿序列音量阶梯递减（如 0.40→0.25 六级）、间隔跟随动画曲线加速，密到糊成一片时让声音淡出成 swoosh（本仓库实证无 playbackRate 变调，防机枪不靠变调）。",
+      "check_question": "自检：每条 SFX 是否钉在具体帧号并注释了对应动作？连发段落听起来是\"数得出来的节奏\"还是机械复读？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "timeline-travel",
+      "variant_letter": null,
+      "upstream_key": "timeline-travel",
+      "demo": "demos/data/timeline-travel/TimelineTravel.tsx",
+      "component": "TimelineTravel",
+      "duration_frames": 104,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

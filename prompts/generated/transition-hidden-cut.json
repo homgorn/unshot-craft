@@ -1,0 +1,254 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "transition-hidden-cut",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/transition-hidden-cut.md",
+    "card_sha256": "3faad5c8f960c4ca0fa69400b0a84edcc65152cd4cf012b490c4f52ad881cf6c",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": null,
+    "duration_frames_hint": null,
+    "duration_verbatim": "n/a（技法卡；各式占用帧数见参数表，从相邻镜头预算里划）",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "n/a（技法卡，不占能量位）",
+    "energy_rationale": "技法卡，不占能量位"
+  },
+  "intent_zh": "与 shot-transitions A 式 flash-cut 同族：flash-cut 用一层白闪盖住硬切， 这三式换了三种\"障眼物\"——扫过的前景卡片（A）、对撞的撞击帧（B）、 爬到顶峰的漏光（C）。共同原理是魔术误导：观众的眼睛被大动作/强光 吸走的那 1-3 帧里完成硬切，回过神来景已经换了，全程\"看不见剪刀\"。 flash-cut 是最素的一款；要方向感选 A，要仪式感选 B，要温度选 C。",
+  "use_zh": "两镜衔接处需要\"无痕换景\"或\"仪式感开屏\"时（技法卡，与 shot-transitions 六式同层选型）",
+  "summary_zh": "藏切点转场三式——前景遮挡隐形切、对撞开屏、暖色漏光，硬切藏进遮挡/撞击/光峰的 1-3 帧里，观众看不见剪刀",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用接缝 |"
+    },
+    {
+      "ord": 1,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|----------|"
+    },
+    {
+      "ord": 2,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A invisible-cut 前景遮挡隐形切 | 一张超画幅卡片带重运动模糊贴脸横扫，糊满全屏的遮挡帧内背景 A→B 硬切，卡片飞出观众以为还是同一镜 | 想让换景完全无痕的页面→页面；伪\"一条 take\"的主力款 |"
+    },
+    {
+      "ord": 3,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B versus-slam 对撞开屏 | 左右两半屏带斜切边从画外加速对冲撞合，撞击帧白闪+震屏+VS 盖章，切点就是撞击本身 | 对比/对阵语义的开屏或章节头（新旧方案、双产品、before/after）|"
+    },
+    {
+      "ord": 4,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| C light-leak-burn 暖色漏光 | 三团暖色柔光沿对角线斜扫，光峰帧吞掉旧页约七成时硬切新页，光退散时新页已就位 | 想要暖调/胶片味的章节过渡；比白闪柔、有方向、有温度 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 横扫",
+      "typical": "卡片 1600x1000 再 scale(1.6)，x 从 -2200→2600 共 14f，bezier(0.3,0,0.7,1)；切点在扫掠中点全遮帧（demo 里 f47）",
+      "feel": "中点必须覆盖 -280..2280 糊满 1920 画幅；两端完全出画"
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 糊感",
+      "typical": "全场包 `<CameraMotionBlur shutterAngle={300} samples={12}>` + 卡片自身 blur(8px)/skewX(-v·0.018°) + 4 层手动残影（opacity 0.35→0.07、blur 14px、间隔 0.55f）",
+      "feel": "三层糊叠出\"贴脸呼啸\"；只靠 CameraMotionBlur 糊不满遮挡窗口"
+    },
+    {
+      "ord": 2,
+      "variant": "A",
+      "key": "A 带风推挤",
+      "typical": "背景 ±40px：切前 A 被拖向扫掠方向（ease-in），切后 B 从反侧 13f 回稳（ease-out）",
+      "feel": "卖\"同一镜被风带了一下\"的错觉，是无痕感的一半功劳"
+    },
+    {
+      "ord": 3,
+      "variant": "B",
+      "key": "B 斜缝几何",
+      "typical": "clip-path polygon 斜边约 78°（缝顶 x=1075→缝底 x=845）；两半屏从 ±1200px 以 ease-in(cubic) 10f 对冲到位",
+      "feel": "ease-in 加速才有\"砸\"感；垂直缝读作 PPT 分屏"
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 撞击三件套",
+      "typical": "撞击帧同发：白闪 0.9→0 共 3f + 整机 shake 12px·e^(−t/1.6) 约 5f 收干 + VS 字块 scale 1.6→1 back(2.6) overshoot 6f 压出",
+      "feel": "三件必须同帧起跑，错开一帧就散；震屏幅度须过肉眼阈值（可感性判例）"
+    },
+    {
+      "ord": 5,
+      "variant": "C",
+      "key": "C 光层",
+      "typical": "3 团径向渐变（#f6c878/#e8a44a/#d98a2b，直径 1500/1950/2400px，blur 90px，mixBlendMode screen）沿右上→左下扫约 70f",
+      "feel": "光团偏移沿扫掠方向拖尾排布，避免完美同心的\"手电筒感\""
+    },
+    {
+      "ord": 6,
+      "variant": "C",
+      "key": "C 光强包络",
+      "typical": "ease-in 爬升 27f（蓄力）→ 峰值帧藏切 → ease-out 收敛 43f（余温）；峰值叠 8% 全屏暖罩 + 近白热核（opacity=intensity²）",
+      "feel": "爬升慢收敛快会读作故障闪光；热核只在临近峰值烧起来"
+    },
+    {
+      "ord": 7,
+      "variant": "C",
+      "key": "C 冲淡",
+      "typical": "峰值时页面 filter：contrast 降 45%、brightness 抬 35%",
+      "feel": "这是\"烧穿\"感的来源——光只叠不冲淡，读作贴了张贴纸"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "C 式是 Q4 光效判例解封后首个入库光效手法——严守 Q4 三约束：",
+      "critical": false,
+      "rules": "Q4"
+    },
+    {
+      "ord": 2,
+      "text": "A 式遮挡物必须真的全遮：demo 里 1600x1000 的卡要 scale(1.6) 才盖满",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "B 式 VS 字块语义仅适配\"对比/对阵\"内容——没有两方对峙关系时",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "转场不叠加（规矩同 shot-transitions）：一个接缝只用一式；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "分镜表阶段就逐接缝标注（写进\"关键动效\"列），帧预算从相邻镜头划（R3）",
+      "critical": false,
+      "rules": "R3"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "Q4",
+      "family": "Q",
+      "title": "规则：glint/泛光划过类特效不做群发——批量元素入场靠运动本身而非逐个发光；保留的光效必须被承载元素的 border-radius/overflow 裁剪，光溢出圆角是廉价感的典型来源。光效类技术路径本身不封杀：单点、给主角、实现质量过硬的 sheen/泛光可以做，做完对着渲染帧自问\"好看吗\"再交。",
+      "check_question": "自检：数一数全片 glint/sweep 出现次数：有没有超过\"主角元素一次\"？每处光效是否被圆角裁剪？留下的每处光效，正常速度回放自己看过并觉得好看吗？"
+    },
+    {
+      "rule_id": "R3",
+      "family": "R",
+      "title": "规则：开场主体动作（聚焦→悬浮→归位一条完整弧线）至少 3 秒；模拟真实交互（打字、筛选、点击）按人真实操作的速度走，观众要能跟着做一遍；排时间线时预留 hold/rest 帧预算——第一版几乎总是偏快。",
+      "check_question": "自检：把每个镜头当第一次看：哪里没看清？交互段落自己能不能跟着操作一遍？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "invisible-cut",
+      "variant_letter": "A",
+      "upstream_key": "invisible-cut",
+      "demo": "demos/transition/transition-hidden-cut/InvisibleCut.tsx",
+      "component": "InvisibleCut",
+      "duration_frames": 54,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "light-leak-burn",
+      "variant_letter": "C",
+      "upstream_key": "light-leak-burn",
+      "demo": "demos/transition/transition-hidden-cut/LightLeakBurn.tsx",
+      "component": "LightLeakBurn",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "versus-slam",
+      "variant_letter": "B",
+      "upstream_key": "versus-slam",
+      "demo": "demos/transition/transition-hidden-cut/VersusSlam.tsx",
+      "component": "VersusSlam",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

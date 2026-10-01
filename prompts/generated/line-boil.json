@@ -1,0 +1,222 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "line-boil",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "typography",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/line-boil.md",
+    "card_sha256": "b9413f1858b17592250cc51144d275d3864f02af7d8525c5cf49a895c945e65c",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": null,
+    "duration_frames_hint": null,
+    "duration_verbatim": "寄生型——沸腾段随宿主 hold 长度，无自身时长",
+    "width": 1920,
+    "height": 1080,
+    "energy": "low",
+    "energy_label": {
+      "zh": "低",
+      "en": "low"
+    },
+    "energy_verbatim": "低（底噪级）",
+    "energy_rationale": "底噪级"
+  },
+  "intent_zh": "库内 R 系判例要求落定后\"真静止\"，但长字卡（3s+ 的黑场字卡、片尾） 完全冻结会读作\"片子卡了\"。本卡给第三种状态：**活着的静止**——轮廓 每 3 帧被\"重描\"一次，位置内容全然不动，只有线条边缘在极轻微地呼吸， 手绘动画 hold 帧的百年惯例。与 noise-drift（被否决）的区别正是可感性： 漂移是整体 1–3px 位移（肉眼读不出），沸腾是轮廓形变+阶梯跳变（每次 换 seed 都是一次可见的\"重描\"）。纸墨审美里这是\"手工感\"的直接来源。",
+  "use_zh": "标题字卡/描边元素的长 hold 段（黑场字卡升级首选）；质感层手法，寄生在别的镜头上",
+  "summary_zh": "线条沸腾——hold 期间文字/描边轮廓每 3 帧轻微扭动一次，像手绘逐帧重描，静止画面保持\"活着\"的呼吸感",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "SVG filter：feTurbulence(fractalNoise, baseFrequency 0.015,"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "numOctaves 2) + feDisplacementMap **scale=8**（原案 3–6 不可感，"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "已加码）作用于文字/描边层"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**seed = Math.floor(f/3) 阶梯换**——每 3 帧跳一次新形变，"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "10fps 的手翻书质感；逐帧换 seed 读作电噪不是手绘"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**摘罩命门**（feTurbulence 判例）：沸腾段之外 filter 与 SVG defs"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "根本不渲染（条件挂载），不是 opacity 到 0——否则永不真静止"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        35,
+        70
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "结构靠对比：demo 用 静止 35f → 沸腾 70f → 摘罩静止 35f 三段"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "自证可感；实战沸腾段直接铺满宿主 hold"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "displacement scale",
+      "typical": "8（大字标题）；小字/细线 5–6",
+      "feel": ">12 读作故障扭曲；<4 不可感"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "seed 节拍",
+      "typical": "floor(f/3)，即每 3 帧重描",
+      "feel": "/2 太贼、/4 以上读作卡顿跳帧"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "baseFrequency",
+      "typical": "0.015（形变尺度约字高级）",
+      "feel": "0.05+ 变成毛边噪点，不是\"重描\""
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "适用对象",
+      "typical": "大标题、描边框、手绘圈注",
+      "feel": "实心小元素（图标/头像）沸腾读作模糊"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "与 R 系关系",
+      "typical": "沸腾段视作合法 hold；宿主镜头收尾若需绝对静止则提前 ≥15f 摘罩",
+      "feel": "摘罩瞬间轮廓归位本身就是一次收束"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "全片同时沸腾的元素 ≤1 组——标题在沸腾、卡片框也在沸腾，观众",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 speed-lines/集中线的\"沸腾\"（impact-feedback C 式每 2 帧换形态）",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "SVG filter 对大面积层有渲染开销；1920 全幅文字层可接受，整页",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "paper-title-card/黑场字卡（shot-transitions D 式）是本卡首选宿主，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "line-boil",
+      "variant_letter": null,
+      "upstream_key": "line-boil",
+      "demo": "demos/effects/line-boil/LineBoil.tsx",
+      "component": "LineBoil",
+      "duration_frames": 105,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "spotlight-hero-card",
+  "category": "opening",
+  "category_label": {
+    "en": "Opening & Brand",
+    "zh": "开场与品牌",
+    "ru": "Открытие и бренд"
+  },
+  "tags": [
+    "opening",
+    "camera",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/opening/spotlight-hero-card.md",
+    "card_sha256": "7c385bf0ae77b389c46d86d1fe170bada22cf8751d4e5c86400d53257fd23cbb",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 220,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 4.6s（82–220f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（质感最高的一镜，节奏慢而稳）",
+    "energy_rationale": "质感最高的一镜，节奏慢而稳"
+  },
+  "intent_zh": "开场只讲一件事：这一张卡就是产品的原子单位。聚光灯替观众做视线引导，弹起悬浮给它体积和重量，轮廓光束是\"扫描/检视\"的隐喻，最后贴回原位表示它属于这个页面。",
+  "use_zh": "\"单一主角\"式产品开场；把一个核心对象（卡片/条目/模块）立成全片主角",
+  "summary_zh": "聚光灯扫过页面锁定一张卡，斜 45° 推进后卡片弹起悬浮、光束沿轮廓两圈、贴回原位",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "游走聚光灯经几个中间站后锁定卡心，光池收拢 + 锁定瞬间脉冲，外部 vignette 压暗"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "相机从全页正视推进到斜侧特写（左侧机位主导），焦点略偏让卡落在画面偏右"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "卡片 rise（带过冲）→ 悬停 sin bob → reseat（落地微压）"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "SVG rounded-rect 轮廓光束跑两圈：第一圈快而亮、第二圈慢而弱"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "卡起飞后原位铺页面底色补丁 + 强调色（模板片为琥珀）呼吸描边，落地瞬间增亮消失"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        12,
+        40,
+        44
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "可选加配 3D 悬空注记（hover-3d-annotation 手法）：悬停期在卡左侧浮现大衬线两行注记（字号 37、宽 230px），translateZ 92 + sin 3px bob（周期 44f，与卡 40f 相近但不同步——\"共感\"而非镜像），关键词背后 12f 长出马克笔荧光条 oklch(88% 0.095 85)，向页面投椭圆软影；注记必须活在同一 3D 空间、同一台相机透视（C3）——第一版平面叠字被否决后重做（平面叠字破坏 3D 空间统一）；出场早于卡片 reseat"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "选卡",
+      "typical": "cards[3]，中心 x 恰为 960（页面中心）",
+      "feel": "主角卡先按\"推进后构图居中\"选，不是随便挑一张"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "相机",
+      "typical": "静止全页 zoom 0.78（82–114f）→ 16f 推进 zoom 2.6；rotY 34° 主导 + rotX 仅 8°，persp 1200；焦点取卡心左移 30px；reseat 触地后 cx/cy/zoom/rot 全锁死 ≥15f",
+      "feel": "侧向水平机位读感优于俯拍（\"从左侧拍摄而不是从下方\"，Q6）；收尾禁用 zoom 2.6→2.58 一类尾漂，呼吸必须是真静止（R1）"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "聚光灯",
+      "typical": "4 个中间站（86→130f），光池半径 620→420→360 收拢，锁定 +6% 脉冲；vignette 0.16→0.42",
+      "feel": "中间站让\"随机照射\"可信；直奔目标读作程序化"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "动作弧",
+      "typical": "rise 10f（bezier(0.2,1.25,0.3,1) 过冲）→ 悬停 54f（sin bob 振幅 4px 周期 40f，z=110px·lift）→ reseat 18f，落地 press 0.997",
+      "feel": "锁定→落地 ≈98f≈3.3s——质感镜头要\"放慢到 3 秒\"（R3），初版几乎总是偏快"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "轮廓光束",
+      "typical": "lap1 142→156f（strokeWidth 5+2.5 双层）、lap2 162→182f（3.5+1.75、整体 opacity 0.62）；strokeDasharray \"0.14 1\" 走 dashoffset",
+      "feel": "两圈快慢有别才读作\"持续扫描\"，一圈是眨眼；光束只给主角一次（Q4）"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "双层影",
+      "typical": "`0 8·lift px …, 0 46·lift px 90·lift px` 随高度生长",
+      "feel": "影子不随高度长，悬浮就不成立"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "开场多卡群舞撑不起第一印象（Q5）——开场曾反复推倒多次才收敛到单卡；直接从单主角+完整动作弧起稿",
+      "critical": false,
+      "rules": "Q5"
+    },
+    {
+      "ord": 1,
+      "text": "推进特写下卡上文字会糊，根因是纹理栅格化分辨率不是 DoF——配套技法展开见审美准则 Q2",
+      "critical": false,
+      "rules": "Q2"
+    },
+    {
+      "ord": 2,
+      "text": "逐卡 glint 闪烁被两次否决（\"不需要每个卡片都闪烁一下\"，Q4），光效严格只给主角",
+      "critical": false,
+      "rules": "Q4"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "Q2",
+      "family": "Q",
+      "title": "规则：3D 场景里的 UI 纹理按显示尺寸的 2–4 倍原生栅格化、在 3D 里向下采样（放大走布局级 CSS zoom 而非 transform scale）；文字模糊先查栅格化路径，别先动相机/DoF。",
+      "check_question": "自检：放大/透视镜头逐帧截图看文字边缘：有没有像素方块？纹理源分辨率是否 ≥ 显示尺寸 2 倍？"
+    },
+    {
+      "rule_id": "Q4",
+      "family": "Q",
+      "title": "规则：glint/泛光划过类特效不做群发——批量元素入场靠运动本身而非逐个发光；保留的光效必须被承载元素的 border-radius/overflow 裁剪，光溢出圆角是廉价感的典型来源。光效类技术路径本身不封杀：单点、给主角、实现质量过硬的 sheen/泛光可以做，做完对着渲染帧自问\"好看吗\"再交。",
+      "check_question": "自检：数一数全片 glint/sweep 出现次数：有没有超过\"主角元素一次\"？每处光效是否被圆角裁剪？留下的每处光效，正常速度回放自己看过并觉得好看吗？"
+    },
+    {
+      "rule_id": "Q5",
+      "family": "Q",
+      "title": "规则：开场信息宁少而聚焦——一个主角元素、一条完整弧线（聚光→推近→悬浮→描边光→归位），多元素并舞撑不起第一印象。",
+      "check_question": "自检：开场镜头有几个\"想让观众看\"的东西？主角的动作弧是否完整（起-承-落）？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "spotlight-hero-card",
+      "variant_letter": null,
+      "upstream_key": "spotlight-hero-card",
+      "demo": "demos/opening/spotlight-hero-card/SpotlightHeroCard.tsx",
+      "component": "SpotlightHeroCard",
+      "duration_frames": 139,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "aurora-bloom-bg-flip",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/aurora-bloom-bg-flip.md",
+    "card_sha256": "1b4c197ac14df6bdf1cfe39f38eb5d9d4c0aeb5a5439f9dc03123f125c97d546",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 156,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约5.2s（156f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "由低到高（前 2/3 是酝酿，压暗那一瞬是全片重音）",
+    "energy_rationale": "前 2/3 是酝酿，压暗那一瞬是全片重音"
+  },
+  "intent_zh": "把\"底色反转\"当成重音符号用：前 62% 让极光慢慢升起、观众适应浅底， 然后用不到 0.4s 把整个画面压到近黑——这一下比任何缩放/闪白都更像 \"翻页\"。文案的换句必须卡在反转之后，且中间留空档，让观众先接住画面 变化再读新句。",
+  "use_zh": "叙事转折点（\"多年以来…→一切都变了\"）；品牌片从铺垫拉到重音的那一拍；深浅色系之间的段落切换",
+  "summary_zh": "浅灰底从底部升起紫橙柔焦 blob，随后整个底色在约 0.36s 内压暗到近黑、blob 压成余晖；文案同步 blur-out 换句 blur-in，换句间留空档不 cross-fade",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三层 `blur(60px)` blob 从画框底部升起：主紫 `rgba(107,79,224,.85)`"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "90%×85%、橙核 `rgba(217,122,74,.9)`、白色融边 `rgba(255,255,255,.8)`"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "升起 `seg(0.04→0.62, outCubic)`：`translateY 32%→−6%` + `scale 1→1.25`"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "反转 `flip = seg(0.63→0.70, inOutQuad)`（归一化 0.07 ≈ 0.36s）："
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "底色 `mix([236,236,236] → [10,10,18])`，blob opacity 1→0.4 压成余晖，"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "白色融边层 `1−flip` 直接收掉"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "橙核独立 `translateX ±8%`（2.2 周期/全片）横向慢漂，让 blob 内部"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "有相对运动而不是整块升降"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "A 句逐词 `blur 0→8px` + 淡出（stagger 0.04、各 0.10、inQuad）；"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "B 句逐词 `outQuint` blur-in（stagger 0.06、各 0.11），落位后 0.16 内"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "由 DEEPP 紫收色到白"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 37,
+      "name": "t",
+      "window": [
+        0.04,
+        0.62
+      ],
+      "from": "0.04",
+      "to": "0.62",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 28,
+      "raw": "const rise = seg(t, 0.04, 0.62, E.outCubic);"
+    },
+    {
+      "style_id": 37,
+      "name": "t",
+      "window": [
+        0.63,
+        0.7
+      ],
+      "from": "0.63",
+      "to": "0.7",
+      "ease": "E.inOutQuad",
+      "concrete": true,
+      "line_no": 29,
+      "raw": "const flip = seg(t, 0.63, 0.7, E.inOutQuad); // 快速压暗，故意只 ~0.35s"
+    },
+    {
+      "style_id": 37,
+      "name": "t",
+      "window": null,
+      "from": "0.46 + i * 0.04",
+      "to": "0.56 + i * 0.04",
+      "ease": "E.inQuad",
+      "concrete": false,
+      "line_no": 98,
+      "raw": "const out = seg(t, 0.46 + i * 0.04, 0.56 + i * 0.04, E.inQuad);"
+    },
+    {
+      "style_id": 37,
+      "name": "t",
+      "window": null,
+      "from": "d0",
+      "to": "d0 + 0.11",
+      "ease": "E.outQuint",
+      "concrete": false,
+      "line_no": 119,
+      "raw": "const a = seg(t, d0, d0 + 0.11, E.outQuint);"
+    },
+    {
+      "style_id": 37,
+      "name": "t",
+      "window": null,
+      "from": "d0 + 0.1",
+      "to": "d0 + 0.26",
+      "ease": "E.outQuad",
+      "concrete": false,
+      "line_no": 120,
+      "raw": "const c = seg(t, d0 + 0.1, d0 + 0.26, E.outQuad);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "blob 模糊/尺寸",
+      "typical": "blur(60px)，主层 90%×85%，容器 inset −10%",
+      "feel": "模糊小于 40px 就看得出是圆，成了\"色球\"不是\"光\""
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "升起",
+      "typical": "translateY 32%→−6% + scale 1→1.25，t 0.04→0.62 outCubic",
+      "feel": "占掉 60% 时长是故意的：酝酿越长，反转越有分量"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "反转时长",
+      "typical": "t 0.63→0.70 inOutQuad ≈ 0.36s",
+      "feel": "**命门**：拉到 1s 就不是重音而是渐变过场"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "底色",
+      "typical": "#ececec → #0a0a12（不是纯黑）",
+      "feel": "纯黑会让余晖 blob 边缘出现色阶断层"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "blob 压暗",
+      "typical": "opacity 1→0.4，白色融边层同步归零",
+      "feel": "不压暗 blob，暗场里紫橙会过曝糊成一团"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "橙核漂移",
+      "typical": "translateX ±8%，2.2 周期/全片",
+      "feel": "幅度到 15% 就看得出是\"一个球在动\""
+    },
+    {
+      "ord": 6,
+      "variant": "A",
+      "key": "A 句 blur-out",
+      "typical": "逐词 stagger 0.04、各 0.10、inQuad、blur→8px",
+      "feel": "inQuad 让消失是加速的，读作\"被光吞掉\""
+    },
+    {
+      "ord": 7,
+      "variant": "B",
+      "key": "B 句 blur-in",
+      "typical": "逐词 stagger 0.06、各 0.11 outQuint + 0.16 内紫→白",
+      "feel": "收色比入场晚一点，落定瞬间才转白，是\"定稿\"的信号"
+    },
+    {
+      "ord": 8,
+      "variant": null,
+      "key": "换句空档",
+      "typical": "A 收完 t≈0.64 → B 起 0.76（≈0.6s 无字）",
+      "feel": "cross-fade 会把两句糊在一起，空档才读出\"翻篇\""
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "白色融边层（blobC）只在浅底成立，反转时必须 `1−flip` 收掉，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "DEEPP/PURPLE 是这个效果的**本体光色**，不是品牌色槽位；要换成项目色",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "文案是中性占位（\"For many years\" / \"everything changed\"），逐词",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "底色用 JS 逐帧写 `background`（`mix()` 出实色），不要用 CSS transition，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "aurora-bloom-bg-flip",
+      "variant_letter": null,
+      "upstream_key": "aurora-bloom-bg-flip",
+      "demo": "demos/effects/aurora-bloom-bg-flip/AuroraBloomBgFlip.tsx",
+      "component": "AuroraBloomBgFlip",
+      "duration_frames": 156,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

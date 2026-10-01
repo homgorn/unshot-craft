@@ -1,0 +1,222 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "light-play-moves",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "typography",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/light-play-moves.md",
+    "card_sha256": "2f88831409254dfc7b5ea59b843fb69f0c35efee67acdf095a55ece70e2b9bee",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 159,
+    "duration_frames_hint": null,
+    "duration_verbatim": "A ~5.3s / B ~4.7s / D ~4.8s",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "A 中 / B 低 / D 高",
+    "energy_rationale": null
+  },
+  "intent_zh": "库内\"光\"一直只有 spotlight-hero-card 一个点射手法；这三式把光做成 体系，三种笔触三种职责：A 是**扫**——暗场里几乎不可见的标题被锥形 光摆动扫亮，光到哪哪亮，与 spotlight-hero-card 的区别是那个打卡片、 这个扫文字；B 是**擦**——深墨主角卡上一道 45° 高光带缓扫一次，被 圆角裁住，无声的加冕；D 是**晕**——白字撞停帧一圈柔晕猛涨炸开再 回落成驻留呼吸光，与 B 的区别是 B 移动扫过、D 驻留在高光边缘。 全部深底或深主角——**白底上提亮不可见**（判例）是这整张卡的地基。",
+  "use_zh": "把光当第四种笔触（扫/擦/晕）：暗场标题揭示（A）、主角卡加冕（B）、撞停帧冲击（D）",
+  "summary_zh": "光效三式——spotlight-sweep 聚光扫字、sheen 单点扫光、halation-bloom 撞停晕染",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A spotlight-sweep | 双层同文本：暗版 0.07 常驻，亮版 radial mask 随光斑走，锥形光摆两个来回后全亮定格 | 暗场大标题揭示开场 |"
+    },
+    {
+      "ord": 3,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B sheen-sweep | 深墨卡上 45° 高光带 translateX 扫一次，overflow hidden 圆角裁剪 | 主角卡静止段的一次加冕 |"
+    },
+    {
+      "ord": 4,
+      "heading": "三式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| D halation-bloom | 文字复制底层 blur+brightness 当晕层，撞停帧起猛涨一圈回落成稳态柔光 | crash-zoom 撞停帧的冲击加成 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 反差",
+      "typical": "暗版 0.07 vs 全亮 1.0，白 #f5f5f3 对 #2a2a28 暗场",
+      "feel": "反差是本式全部；暗版 >0.15 就没有\"点亮\"了"
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 光斑",
+      "typical": "circle 380px（0.95 硬芯+柔边），x = 960+560·sin(2πf/55)，两来回至 f110",
+      "feel": "f110–125 全亮 out-cubic、光效线性消散（扩散/消散解耦判例）"
+    },
+    {
+      "ord": 2,
+      "variant": "B",
+      "key": "B 高光带",
+      "typical": "宽 1.6×卡宽，115° 渐变峰值 rgba(255,255,255,0.32)，40–68f inOut cubic 扫一次",
+      "feel": "0.32 在深墨底上足够响；双向 clamp 保证只扫一次"
+    },
+    {
+      "ord": 3,
+      "variant": "D",
+      "key": "D 晕层",
+      "typical": "blur 22px + brightness 1.8；scale 1→1.3 用 6f out-cubic 猛涨，opacity 20f 线性回落 0.35 再 15f 缓收 0.22 稳态",
+      "feel": "扩散 out-cubic/消散线性解耦（判例）；同快涨快消读作闪光灯"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "摘罩",
+      "typical": "三式光效层全部条件挂载，扫完/消散完即卸载",
+      "feel": "opacity 0 残留 = 永不真静止（feTurbulence 摘罩判例同族）"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "收尾",
+      "typical": "A 35f / B 72f / D 89f 真静止",
+      "feel": "—"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**全片光效合计 ≤2 次**——光是最快掉价的手法，每个卡都闪一下",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "B 式是高标准重试通过：旧否决（2026-07-13 判例）针对当时实现不好看，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "深底是地基：三式全部依赖深底/深主角，白底上做光效直接跳过本卡",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "D 与 crash-zoom-punch 撞停帧天然联动（撞停即起晕）；A 与",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "halation-bloom",
+      "variant_letter": "D",
+      "upstream_key": "halation-bloom",
+      "demo": "demos/effects/light-play-moves/HalationBloom.tsx",
+      "component": "HalationBloom",
+      "duration_frames": 17,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "sheen-sweep-retry",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/effects/light-play-moves/SheenSweepRetry.tsx",
+      "component": "SheenSweepRetry",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "spotlight-sweep-reveal",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/effects/light-play-moves/SpotlightSweepReveal.tsx",
+      "component": "SpotlightSweepReveal",
+      "duration_frames": 110,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

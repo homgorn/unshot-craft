@@ -26,12 +26,39 @@ if (-not (Test-Path "upstream/video-shotcraft/.git")) {
 # 2. the database -- a pure function of the pinned tree
 python platform/ingest/run.py | Out-Null
 if ($LASTEXITCODE -ne 0) { throw "ingest failed; see platform/ingest/run.py" }
-$stats = python platform/query.py stats | ConvertFrom-Json
-Step ("db: {0} cards / {1} styles / {2} motion params" -f $stats.cards, $stats.styles, $stats.motion_params)
+$stats = python platform/query.py stats
+$cards = [regex]::Match($stats, '"cards":\s*(\d+)').Groups[1].Value
+$styles = [regex]::Match($stats, '"styles":\s*(\d+)').Groups[1].Value
+$params = [regex]::Match($stats, '"motion_params":\s*(\d+)').Groups[1].Value
+$techs = [regex]::Match($stats, 'techniques\s*:\s*(\d+)').Groups[1].Value
+Step ("db: {0} cards / {1} styles / {2} motion params / {3} techniques" -f $cards, $styles, $params, $techs)
 
 # 3. the wiki -- generated from the database, never hand-edited
 python platform/wiki/build_wiki.py | Out-Null
 if ($LASTEXITCODE -ne 0) { throw "wiki build failed" }
 Step ("wiki: " + (Get-ChildItem wiki/cards/*.md).Count + " card pages + llms-full.txt")
+
+# 4. the localized site -- extraction is the source of truth, then the build.
+#    Skipped when the upstream gallery is absent, so this stays a *fast* command.
+if (Test-Path "upstream/video-shotcraft/gallery/library.html") {
+    python platform/site/extract_locales.py | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "locale extraction failed" }
+    python platform/site/build_site.py | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "site build failed" }
+    python platform/site/prerender.py | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "site prerender failed" }
+    $locales = (Get-ChildItem site/dist -Directory | Where-Object { Test-Path (Join-Path $_.FullName "library.html") }).Count
+    Step ("site: " + $locales + " locales built to site/dist/")
+} else {
+    Step "site: skipped (no upstream gallery)"
+}
+
+# 5. the catalog corpus (ADR 0007). Absent is a WARN, not a failure: either
+#    corpus must build alone.
+if (Test-Path "data/cinematic") {
+    python platform/catalog/selftest.py | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "catalog selftest failed; see platform/catalog/selftest.py" }
+    Step "catalog: invariants hold"
+}
 
 Write-Host "ok -- query with: python platform/query.py cards --energy high"

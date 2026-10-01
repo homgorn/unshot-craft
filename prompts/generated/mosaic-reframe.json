@@ -1,0 +1,209 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "mosaic-reframe",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/mosaic-reframe.md",
+    "card_sha256": "8d2a08545f6f58f345a9e976b9adfca3421fd946c7b1cf983db78b94ff226c79",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 180,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 6.0s（180f@30fps；浮现 0–0.6s · A→B 1.6–2.5s · hold · B→C 3.7–4.8s）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（连续流动的重排，无爆点，气质从容）",
+    "energy_rationale": "连续流动的重排，无爆点，气质从容"
+  },
+  "intent_zh": "让观众看见\"布局本身在思考\"：同样 12 张内容，从整齐档案态（网格）变成有主次的策展态（feature mosaic），再变成有态度的动态态（对角瀑布）。三段排版是三种叙事语气，变形过程即产品能力。",
+  "use_zh": "\"同一批内容多种看法\"的陈列转场：作品集/模板库/相册产品的布局能力展示",
+  "summary_zh": "12 张瓦片在规则网格、feature mosaic、对角瀑布串三种排版间连续变形，位置宽高各自插值、逐片微错峰，段间留 hold",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三套布局硬编码为坐标表：A=4×3 规则网格；B=6×4 单元格 mosaic（首片占 3×2 大位）；C=对角瀑布 `x=1+i*6.4, y=-7+i*7.6, rot=-15+i*3°` 递增旋转"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每片对 `x/y/w/h/rot` 五个通道**独立插值**（`acc` 按段查表 + smoothstep），不走 transform 整体缩放——宽高真实变化，圆角阴影不变形"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": [
+        0.26,
+        0.42
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "段窗口 A→B t=0.26–0.42、B→C t=0.62–0.80，之间留 ≥0.2 的 hold 读版面"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "逐片微 stagger `i*0.007`（约每片错 2 帧）：重排像波浪扫过而非整版闪变"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "开场逐片浮现：`i*0.012` 错峰 + scale 0.82→1 + opacity（outCubic），首片始终 zIndex 抬高（它是 mosaic 段的主图）"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 131,
+      "name": "t",
+      "window": null,
+      "from": "kf.at[0]",
+      "to": "kf.at[1]",
+      "ease": "ease",
+      "concrete": false,
+      "line_no": 22,
+      "raw": "const u = seg(t, kf.at[0], kf.at[1], ease);"
+    },
+    {
+      "style_id": 131,
+      "name": "t",
+      "window": null,
+      "from": "i * 0.012",
+      "to": "i * 0.012 + 0.14",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 63,
+      "raw": "const pop = seg(t, i * 0.012, i * 0.012 + 0.14, E.outCubic); // 开场逐片浮现"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "段窗口",
+      "typical": "每段变形 0.16–0.18，hold ≥0.2",
+      "feel": "hold 是读版面的呼吸位，压缩到 <0.1 三段糊成一段"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "微 stagger",
+      "typical": "0.007/片（≈2 帧）",
+      "feel": "0 = 整版机械闪变；>0.02 波浪太明显抢过版面本身"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "瀑布参数",
+      "typical": "间距 6.4/7.6%，rot −15°+3°/片",
+      "feel": "旋转递增是\"串\"的灵魂；等角会退化成斜排网格"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "mosaic 大位",
+      "typical": "首片 3×2 单元格",
+      "feel": "换 slots 表可重排主次；保证有一块 ≥2×2 的锚点位"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "浮现节奏",
+      "typical": "0.012/片 + 0.14 时长",
+      "feel": "12 片合计约 0.27 进完；作转场用时可砍掉浮现直接从 A 态起"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "瓦片内容",
+      "typical": "渐变底 + 圆点 + 双信息条（占位）",
+      "feel": "换真实截图/图片时保留 overflow:hidden 圆角容器，宽高插值不裁坏内容"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "五通道独立插值意味着**不能**换成 `transform: scale`——宽高动画会引发子元素重排，占位内容用了百分比定位可自适应，换成真实图片要用 `object-fit: cover`",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "C 段瓦片有意越出画框（y 从 −7% 到 91%），画框裁切是构图的一部分，别加 padding \"修复\"",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "三套坐标表都以 92% 内容区 + 4% 边距为基准，改画幅比例需整表重算",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "段窗口与 stagger 叠加后末片 B→C 到 0.887 才结束，再加段落需压缩前段而不是顺延（保证 t=1 前全部落定）",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "mosaic-reframe",
+      "variant_letter": null,
+      "upstream_key": "mosaic-reframe",
+      "demo": "demos/transition/mosaic-reframe/MosaicReframe.tsx",
+      "component": "MosaicReframe",
+      "duration_frames": 180,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

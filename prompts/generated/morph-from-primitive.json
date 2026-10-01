@@ -1,0 +1,225 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "morph-from-primitive",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "opening",
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/morph-from-primitive.md",
+    "card_sha256": "5e5cd5ceb3d2d28d721a601e5c5f9dd2ac80afb07e61f2f6c96fa6ea1dc5e420",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 20,
+    "duration_frames_hint": null,
+    "duration_verbatim": "~4.7s（呼吸 20f + 变形 24f + 内容淡入 12f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-low",
+    "energy_label": {
+      "zh": "中低",
+      "en": "mid-low"
+    },
+    "energy_verbatim": "中低",
+    "energy_rationale": null
+  },
+  "intent_zh": "入场库全是\"从外面进来\"——飞入、砸落、翻面，主体都预先存在于画外； 本卡是**就地长出来**：画面中心一个描边正圆先鼓一口气（scale 1→1.12→1），随即轮廓连续变形为圆角矩形卡片，内容再淡入。原型 停留加呼吸这一拍就是预备动作——迪士尼 anticipation 的图形学翻译： 圆先\"吸气\"，观众就知道它要变，变形本身因此不需要任何解释。 仅适用图形/图标/卡轮廓类主体——位图截图不能 morph。",
+  "use_zh": "图形/图标/卡轮廓类主体的入场；logo→UI 容器的经典原语",
+  "summary_zh": "原型变形——正圆呼吸一拍（anticipation）后 SVG path 插值 24f 长成圆角卡轮廓，内容淡入",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**圆与圆角矩形写成同构 path**：M + 8 段 cubic（4 直边段三等分点"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "做退化 cubic + 4 圆角段 kappa 公式 k=4/3·tan(Δθ/4)），逐命令"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "数值 lerp 生成 d 字符串，帧驱动全确定性"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "圆锚点取矩形锚点同方位角，保证 t=0 是标准正圆、中途无自交"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "呼吸拍 scale 1→1.12→1（spec 1.06 看不清，加码后可感——可感性"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "判例同族）；呼吸与变形都用 Easing.inOut(cubic)，interpolate 全 clamp"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        12
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "内容是 HTML 层叠在 SVG 上，变形完成后 12f 淡入，不做 path 内嵌"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        140
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "时间轴 140f：0–10 静置｜10–30 呼吸｜30–54 变形｜56–68 内容"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        72
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "淡入｜68–140 真静止 72f"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "呼吸幅度",
+      "typical": "1→1.12→1，20f inOut cubic",
+      "feel": "<1.1 读不出\"吸气\"；>1.2 像要爆炸不是要变形"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "原型停留",
+      "typical": "静置 10f + 呼吸 20f，合计 30f 才起变形",
+      "feel": "停留 <15f 读不出\"预备\"，变形显得突兀"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "变形时长",
+      "typical": "24f",
+      "feel": "太快像切换、太慢像融化；24f 是\"生长\"的速度"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "目标形态",
+      "typical": "520×300 圆角矩形卡（demo 值）",
+      "feel": "圆角越大与圆同构性越好、中段越顺"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "内容淡入",
+      "typical": "变形落定后 2f 起，12f 淡入",
+      "feel": "变形没完就进内容 = 内容跟着轮廓扭"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**变形中途别叠其他动画**——morph 本身就是全部信息，同时飞入/",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "位图截图不能 morph：本卡只对矢量轮廓成立，页面截图请回",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "path 插值两端命令数必须严格同构（同为 M+8C），命令数不齐",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "变形中段呈\"桶形\"过渡是正常形态（QA 判例），不是穿帮；",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "morph-from-primitive",
+      "variant_letter": null,
+      "upstream_key": "morph-from-primitive",
+      "demo": "demos/ui-entrance/morph-from-primitive/MorphFromPrimitive.tsx",
+      "component": "MorphFromPrimitive",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

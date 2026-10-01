@@ -1,0 +1,308 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "product-card-progressive-assemble",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/product-card-progressive-assemble.md",
+    "card_sha256": "06c8e142964f64fb0c21beceb6577b4cfc0a5f94849307381946a988dcb56abe",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 5.0s（150f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（连续小事件密集排布，无单点爆发；靠前推保持推进感）",
+    "energy_rationale": "连续小事件密集排布，无单点爆发；靠前推保持推进感"
+  },
+  "intent_zh": "一张详情卡直接淡入，观众只看到\"有一张卡\"。逐字段落位则把卡变成一份**正在被填写的 表单**：每个字段各自到位，观众的注意力被牵着走一遍卡的信息结构——图在哪、标题在哪、 价格在哪、正文重点在哪。价格划线降级是全片唯一的语义事件（不是\"出现\"而是\"改变\"）， 所以它被安排在中段最显眼的位置。",
+  "use_zh": "商品/条目详情页的能力展示；\"结构化抽取\"\"自动填充\"\"数据自己长出来\"类叙事的主镜头",
+  "summary_zh": "详情卡像被逐字段抓取般自建——图→标题→breadcrumb pill 依次 pop→原价出现后被划线降级、强调色新价 spring 跳出→正文逐行揭示且高亮块由左向右刷过→色卡点亮，整卡全程极慢 scale 前推",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "字段时间表用\"配方帧\"书写：`F = f => f/60`，把 60 分母的帧号折成 t。图 f=0、标题 f=4、"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三枚 pill f=8/10/12、价格行 f=16、三行正文 f=30/32/34、三块色卡 f=40/42/44 ——"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "相邻字段间隔只有 2 帧，是\"抓取\"的密度而非\"逐条展示\"的密度"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outCubic",
+      "beziers": [],
+      "raw": "每个字段共享同一条落位曲线：`seg(t, t0, t0+0.1, E.outCubic)`，两种落位模式——"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`rise` 是 `translateY(6→0)`（图/标题/价格行/正文行），`pop` 是"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outBack",
+      "beziers": [],
+      "raw": "`scale(lerp(E.outBack(k), 0.4, 1))`（pill 与色卡）；小件用 pop 大件用 rise"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "价格降级发生在 f=26（配方帧），是**硬切**：`oldP` 同帧换色（`#17181c`→`#9a9da6`）、"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "加 `line-through`、字号 21px→15px 三件事一起发生；紧接 `seg(t, F(26), +0.12)` 让"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "spring",
+      "beziers": [],
+      "raw": "强调色新价用 `E.spring(nk, 0.35)` 从 1.15 收到 1"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "马克笔高亮：两个高亮片段各有一层绝对定位的 `ACCENT_SOFT` 底块，`transform-origin:"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "left center` + `scaleX(0→1)`，窗口是 `F(30+li*2+4)` 起、行程 0.085（≈5f）——比字段"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "落位还快，读作\"笔一划过去\""
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": [
+        0.0,
+        0.75
+      ],
+      "frame_hints": [],
+      "ease": "outQuad",
+      "beziers": [],
+      "raw": "整卡呼吸：`seg(t, 0, 0.75, E.outQuad)` 驱动 `scale(1→1.06)`，缓起缓收摊在前 75%——"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "这层运动与所有字段无关，作用是让密集的小事件之间画面仍在推进"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 208,
+      "name": "t",
+      "window": [
+        0.0,
+        0.75
+      ],
+      "from": "0",
+      "to": "0.75",
+      "ease": "E.outQuad",
+      "concrete": true,
+      "line_no": 37,
+      "raw": "const push = seg(t, 0, 0.75, E.outQuad);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "字段时间表",
+      "typical": "配方帧 0/4/8/10/12/16/30/32/34/40/42/44（`F(f)=f/60`）",
+      "feel": "同类字段间隔 2 帧、跨类间隔 4–14 帧——间隔的疏密就是信息分组；全部改成等间隔会读作机械点名"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "单字段行程",
+      "typical": "0.1（≈15f）",
+      "feel": "行程远大于间隔 → 同时有五六个字段在动，画面是\"涌\"而非\"点\"；压到 0.04 以下会变成逐个硬闪"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "rise 位移",
+      "typical": "6px",
+      "feel": "只有 6px，字段是\"沉下去一点点\"；>20px 会与整卡前推的方向感打架"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "pop 起始缩放",
+      "typical": "0.4 + `E.outBack`",
+      "feel": "0.4 是明确的\"从无到有\"；pill 与色卡尺寸小，过冲不会撞到邻居，大件用 pop 就会显得廉价"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "价格降级点",
+      "typical": "配方帧 26（t≈0.433）",
+      "feel": "安排在价格行落位（f=16）之后 10 帧——必须留出\"先看清原价\"的时间，紧贴落位会读作从来就是打折价"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "新价 spring",
+      "typical": "`E.spring(nk, 0.35)`，1.15→1，窗 0.12",
+      "feel": "全片唯一的过冲量级事件；阻尼调小会抖两下，与旁边的划线动作抢注意力"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "高亮刷过",
+      "typical": "窗 0.085（≈5f），`scaleX` 从左",
+      "feel": "5f 是马克笔速度；>0.15 读作背景色渐变而不是划线"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "整卡前推",
+      "typical": "`scale 1→1.06`，窗 0→0.75，outQuad",
+      "feel": "6% 摊在 3.75s 上是纯呼吸；>12% 卡会撞到画框，且 4.5% 的 padding 内的文字会被推出边界"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "时间表用的是 60 分母的\"配方帧\"，而实际时长 5000ms = 150f@30fps。这两套帧号不通约：",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "最后一个字段在 t≈0.733 落位，之后 1.3s 只有整卡前推（且前推在 t=0.75 停止）——",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "三行正文用 `white-space: nowrap` 写死不换行，卡宽 78%。换更长文案或中文时会溢出",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "所有内容都是占位（\"Sample Product Title\"、`$249/$189`、\"Placeholder copy for…\"、",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "高亮块的 `t0 = F(30+li*2+4)` 比所在行的落位（`F(30+li*2)`）晚 4 配方帧，两者是耦合",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "`ACCENT` / `ACCENT_SOFT` 是全卡唯一色相来源（新价文字 + 两块高亮），换品牌色改这",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "product-card-progressive-assemble",
+      "variant_letter": null,
+      "upstream_key": "product-card-progressive-assemble",
+      "demo": "demos/ui-entrance/product-card-progressive-assemble/ProductCardProgressiveAssemble.tsx",
+      "component": "ProductCardProgressiveAssemble",
+      "duration_frames": 150,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

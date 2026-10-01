@@ -1,0 +1,325 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "assemble-then-type-flyin",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/assemble-then-type-flyin.md",
+    "card_sha256": "dbd81a6fcb9372818ab3057820d86490e441d2ae9107ae78954e7e6dfc7425e6",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 156,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约5.2s（156f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（骨架段稀疏、文字段密集，能量单调上升到收尾）",
+    "energy_rationale": "骨架段稀疏、文字段密集，能量单调上升到收尾"
+  },
+  "intent_zh": "把\"页面生成\"拆成两个语义清楚的阶段：先立骨架（框、卡片、分隔线、 色块，全部无字），再填文字。文字用逐字 3D 旋转落位，是因为骨架段 只有平面位移——两段的运动维度必须不同，否则观众读不出\"这是第二步\"。",
+  "use_zh": "页面/海报\"自己长出来\"的开场；排版类产品的能力展示；从骨架到成稿的两段式叙事",
+  "summary_zh": "空的暗底网格上，无文字的组件骨架先从四面八方飞入贴合；随后各处文字逐字从 3D 空间旋转着飞来落位，先大标题后小标注，全部落位后页面成形",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "6 个骨架件（顶栏 url pill、右侧短线、logo 点阵、模块卡、CTA pill、"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "社交方块）按 `ft` 0.04/0.07/0.10/0.13/0.17/0.20 依次飞入，"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`seg(ft, ft+0.14, outBack)` 过冲贴合，`from` 位移 60–220px + ±8° 旋转"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "骨架运动中 `blur(≤2px)` 残影，`a>0.97` 清零为 `none`"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "13 个文字块按 `start` 0.34→0.76 依次开始：大标题最先（0.34/0.40），"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "然后 logo 字标、装饰大字，最后各处 MONO 小标注"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "逐字 3D：每个字符持有确定性种子随机的"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`dx ±170px / dy ±130px / dz −120→−420 / rotateX ±170° / rotateY ±190° /"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "rotateZ ±120°`，走 `perspective(600px) translate3d + rotateX/Y/Z`，"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`seg(ft, ft+0.13, outCubic)` 落位，`a>=1` 时 transform 直接设 `none`"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "块内字符间隔自适应：`step = clamp((0.94 − start − 0.13)/字符数, 0.002, 0.012)`"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——保证不论块多长都在 t≈0.95 前落完"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "随机全部来自 `rand(i) = frac(sin(i*127.1 + 311.7) * 43758.5453)`，"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "确定性、可 seek"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 36,
+      "name": "t",
+      "window": null,
+      "from": "ft",
+      "to": "ft + 0.14",
+      "ease": "E.outBack",
+      "concrete": false,
+      "line_no": 70,
+      "raw": "const a = seg(t, ft, ft + 0.14, E.outBack);"
+    },
+    {
+      "style_id": 36,
+      "name": "t",
+      "window": null,
+      "from": "ft",
+      "to": "ft + 0.05",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 74,
+      "raw": "opacity: t >= ft ? Math.min(1, seg(t, ft, ft + 0.05) * 1.5) : 0,"
+    },
+    {
+      "style_id": 36,
+      "name": "t",
+      "window": null,
+      "from": "ft",
+      "to": "ft + 0.13",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 165,
+      "raw": "const a = seg(t, ft, ft + 0.13, E.outCubic);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "骨架时序",
+      "typical": "6 件，ft 0.04→0.20（间隔 0.03–0.04）",
+      "feel": "骨架段占前 35%；压缩到 0.15 内就和文字段糊在一起"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "骨架飞入",
+      "typical": "outBack、0.14 时长、位移 60–220px + ±8°",
+      "feel": "与 `scanline-assemble-flyin` 同一手法，去掉扫描线后靠时序读顺序"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "骨架残影",
+      "typical": "blur ≤2px，a>0.97 设 none",
+      "feel": "阈值留 3% 裕量；直接判 a>=1 会因浮点残留一层糊"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "文字起点",
+      "typical": "大标题 0.34/0.40，小标注 0.58→0.76",
+      "feel": "大字先落是可读性要求：小字先落观众会去读小字"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "逐字位移",
+      "typical": "dx ±170 / dy ±130 / dz −120→−420",
+      "feel": "dz 是\"从远处来\"的主力；只给 dx/dy 就成了平面散入"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "逐字旋转",
+      "typical": "rotateX/Y/Z 各 ±120°–190°",
+      "feel": "大角度才有\"翻着飞\"的手感；±30° 只像抖动"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "perspective",
+      "typical": "600px（写在每个字符自己的 transform 里）",
+      "feel": "值越小透视越夸张；1200px 以上 3D 感基本消失"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "字间隔",
+      "typical": "clamp((0.94−start−0.13)/n, 0.002, 0.012)",
+      "feel": "自适应上限 0.012 是\"逐字可辨\"的下限速度"
+    },
+    {
+      "ord": 8,
+      "variant": null,
+      "key": "落位清零",
+      "typical": "a>=1 → transform:'none'",
+      "feel": "不清零会留下 13 个块的合成层，长片会掉帧"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "字符 span 走正常排版流（`display:inline-block`），动画只动 transform——",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "空格字符必须显式塞成 `' '`（代码里用 `ch === ' ' ? ' ' : ch`），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "`start` 是手写的 13 个数值，换文案（尤其字符数变化大时）要回看",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "内容为中性占位模板（\"The headline for your product here\" / \"Acme Studio\"",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "与 `scanline-assemble-flyin` 的区别是**没有扫描线**：那张靠扫描线",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "assemble-then-type-flyin",
+      "variant_letter": null,
+      "upstream_key": "assemble-then-type-flyin",
+      "demo": "demos/effects/assemble-then-type-flyin/AssembleThenTypeFlyin.tsx",
+      "component": "AssembleThenTypeFlyin",
+      "duration_frames": 156,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "theme-switch-moves",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/theme-switch-moves.md",
+    "card_sha256": "d0098f78a3801397f350c3098af73e9d5743688921337311ecb1f835878df96f",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 120,
+    "duration_frames_hint": null,
+    "duration_verbatim": "A 3–4s / B 5–6s",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "A 中 / B 中高（组合款有完整因果链）",
+    "energy_rationale": "组合款有完整因果链"
+  },
+  "intent_zh": "深浅模式切换的两种拍法。A（Notion/Figma/Linear 惯用）：15° 斜向 边界带亮线从左上扫到右下，边界经过处浅色**就地**变深色，同布局 双主题共存一瞬——观众看到的是\"同一个 UI 换肤\"，不是转场。 B（组合变异）：⌘K 面板输入 \"dark\" 回车，面板收缩成一个亮点， 深色涟漪**从该点**荡开扫过全 UI——\"命令引发换肤\"的因果链完整可读。 组合命门：涟漪圆心必须是面板收缩点、起始帧必须是收缩完成帧。",
+  "use_zh": "深色模式/主题功能的叙事段落；同一 UI \"在你眼前变色\"而非切到新场景",
+  "summary_zh": "主题切换两式——theme-sweep 斜向扫场（边界扫过处就地换肤）与 palette-ripple 组合款（⌘K 面板收缩成点、涟漪从点荡开换肤）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [
+        38
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A theme-sweep-toggle | 深色版 clip-path polygon 15° 斜边扫场（out poly3 先快后缓 ~38f），边界 4px 白亮线+18px 辉光，扫完 2f 淡出；深版 scale 1→0.995→1 坐实 | 主题功能直接展示 |"
+    },
+    {
+      "ord": 3,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B palette-theme-ripple | 面板 back(1.9) 弹落→逐字输入→回车面板 ease-in 收缩到 0 + 白色高光核钉住位置→圆形 clip 半径 12→1250px cubic-out 荡开，边缘 5px 白环双向辉光 | 命令面板+主题联动的高光段 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "深色版制作",
+      "typical": "对色板逐键手工映射（bg/card/border 各自定深色值）",
+      "feel": "滤镜反转出来的深色是错的（图像/头像全反）"
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 斜边超扫",
+      "typical": "底端超出 SLANT+40px",
+      "feel": "不超扫右下角残留浅色三角"
+    },
+    {
+      "ord": 2,
+      "variant": "A",
+      "key": "A 坐实",
+      "typical": "scale 0.995 幅度偏微妙（demo 自评）",
+      "feel": "实战可加大到 0.985"
+    },
+    {
+      "ord": 3,
+      "variant": "B",
+      "key": "B 因果钉扎",
+      "typical": "高光核在收缩点挂 10f，涟漪圆心=该点坐标",
+      "feel": "圆心错位/错帧就断了\"命令→换肤\"因果（组合命门）"
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 浅色层",
+      "typical": "扫场完成后条件卸载",
+      "feel": "真静止前提"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "两版布局必须逐像素一致——布局有出入就读作\"切换到另一个页面\"，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "真实页面实战：深浅两版分别真实截图（Q1），不做滤镜假深色",
+      "critical": false,
+      "rules": "Q1"
+    },
+    {
+      "ord": 3,
+      "text": "一支片主题切换 ≤1 次：它是功能叙事不是转场，反复切读作演示事故",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "声音：A 扫场一声长 whoosh；B 回车一声确认 + 涟漪荡开接 whoosh",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "Q1",
+      "family": "Q",
+      "title": "规则：凡是表现产品既有页面的镜头，第一步就用无头浏览器截真实页面（整页纹理 + 元素级抠图 + 坐标 json），不手搓仿真贴图复刻；非复刻场景（抽象开场/品牌段/页面上不存在的独立展示组件）允许手搓 UI，但质量（出版级质感，对照 Q10 标准）与表达明确性（观众一眼看懂它是什么）是硬门槛，达不到回截图路线。公开演示数据只有在产品简报明确确认后可保留；客户、个人、内部、密钥、实时或其他敏感内容必须先虚构、脱敏或冻结。对手搓素材同样适用该口径。",
+      "check_question": "自检：每块 UI 素材：它在复刻既有页面吗？是则必须来自截图；手搓件的质感和表达能过 Q10 级审视吗？源数据是否符合已确认的数据口径，且不含未授权的客户、个人、内部或密钥信息？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "palette-theme-ripple",
+      "variant_letter": "B",
+      "upstream_key": "palette-theme-ripple",
+      "demo": "demos/interaction/theme-switch-moves/PaletteThemeRipple.tsx",
+      "component": "PaletteThemeRipple",
+      "duration_frames": 95,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "theme-sweep-toggle",
+      "variant_letter": "A",
+      "upstream_key": "theme-sweep-toggle",
+      "demo": "demos/interaction/theme-switch-moves/ThemeSweepToggle.tsx",
+      "component": "ThemeSweepToggle",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

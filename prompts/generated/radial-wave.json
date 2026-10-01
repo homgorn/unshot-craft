@@ -1,0 +1,247 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "radial-wave",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/radial-wave.md",
+    "card_sha256": "587f58625f5815e0376101b35ac552e977e5a57622959bed594d1decb9b53dc0",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 114,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 3.8s（114f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（起手爆发一次，波前过后转为常亮低能量底子）",
+    "energy_rationale": "起手爆发一次，波前过后转为常亮低能量底子"
+  },
+  "intent_zh": "把\"很多点同时存在\"这件静态事实，改写成\"能量从一个源头扩散到全体\"的动态事实。观众 看到的不是一张点阵图，而是一次通电：中心先亮，亮度像水波推过去，走完之后整张阵列 留在常亮态——为下一拍要放的内容铺好底。第二道反向波是回执，告诉观众这个系统会回应。",
+  "use_zh": "产品/品牌开场的\"系统上电\"一拍；也用作数据网格、节点地图、覆盖范围类叙事的建立镜头",
+  "summary_zh": "17×9 圆点阵列按到波源的欧氏距离错峰点亮，每点 scale 过冲到 1.5 再落回常亮，第一道波扫完后第二道亮蓝脉冲从外圈反向收拢回中心",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "阵列 17×9 共 153 点，dot 用百分比定位（`left:(c+0.5)/COLS`），因此改变行列数不需要"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "重算坐标；每点预存归一化距离 `dist = hypot(c-cx, r-cy) / maxD`（maxD = hypot(8,4)）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outCubic",
+      "beziers": [],
+      "raw": "第一道波：`seg(t, dist*0.35, dist*0.35+0.18, E.outCubic)`——起点由距离线性推迟（最外"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "圈延后 0.35），单点自己的行程恒定 0.18；波前是\"起点错峰\"而不是变速"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每点的 scale 不是简单 0→1，而是 `w1*(1+0.5*sin(w1*π))`：中途鼓到约 1.5 再收回 1，"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "正弦包络让过冲发生在行程正中而非落位时"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "第二道波：`seg(t, 0.62+(1-dist)*0.25, +0.15)` 把偏移量反号（外圈先动），取"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`sin(w2*π)` 做纯脉冲，叠加 0.8 的 scale 增量与 0.25 的透明度增量，走完不留状态"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "脉冲峰值处（`pulse2 > 0.3`）硬切成 `#b9f2ff` 并挂 `0 0 12px #7fd8ff` 光晕——只有第二"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "道波带发光，第一道波全程是 `#6c8cff` 常色，两道波在视觉上不会混成一件事"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 209,
+      "name": "t",
+      "window": null,
+      "from": "dist * 0.35",
+      "to": "dist * 0.35 + 0.18",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 32,
+      "raw": "const w1 = seg(t, dist * 0.35, dist * 0.35 + 0.18, E.outCubic);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "阵列规模",
+      "typical": "COLS=17 / ROWS=9（153 点）",
+      "feel": "点数决定波前的\"分辨率\"；<8 列时距离分档太粗，波读作三四圈同心环在跳"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "波速系数",
+      "typical": "`dist*0.35`",
+      "feel": "这个 0.35 就是波速倒数：调大波走得慢、拖尾长；>0.5 时最外圈要等到全片过半才亮"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "单点行程",
+      "typical": "0.18（≈21f）",
+      "feel": "决定波前的厚度；<0.1 波前锐利像扫描线，>0.3 全场几乎同时亮，扩散感消失"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "过冲幅度",
+      "typical": "`1+0.5*sin(w1*π)` → 峰值 1.5",
+      "feel": "系数 0.5 是\"弹一下\"的量；去掉正弦项就是平淡的 0→1 淡入，>0.8 点会互相咬边"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "第二道波",
+      "typical": "起点 `0.62+(1-dist)*0.25`，窗 0.15，幅度 0.8",
+      "feel": "0.62 是两波之间的呼吸；提前到 0.5 以下会和第一道波尾巴叠在一起读作一团乱闪"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "常亮底",
+      "typical": "`opacity = 0.25 + w1*0.5 + pulse2*0.25`",
+      "feel": "0.25 是未点亮点的存在感；调到 0 则波前之外一片黑，阵列的\"规模\"交代不出来"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "高亮阈值",
+      "typical": "`pulse2 > 0.3` 切色 + 光晕",
+      "feel": "阈值越低发光段越长；这是硬切不是渐变，阈值贴近 0 时会看到明显的开关跳变"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "波源写死在几何中心（`cx=(COLS-1)/2, cy=(ROWS-1)/2`）。要改成从角落或某个\"节点\"起波，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "末帧不完全静止：中心点（dist=0）的第二道波窗是 0.87→1.02，t=1 时才走到 87%，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "dot 的 `width:10px` 与 `margin:-5px` 是绑定的一对（靠负 margin 居中），改点径必须同步改",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "颜色只有两档（常色 `#6c8cff` / 峰值 `#b9f2ff`），换品牌色要改这两处加光晕色共三处；",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "radial-wave",
+      "variant_letter": null,
+      "upstream_key": "radial-wave",
+      "demo": "demos/ui-entrance/radial-wave/RadialWave.tsx",
+      "component": "RadialWave",
+      "duration_frames": 114,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

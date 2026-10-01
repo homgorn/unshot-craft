@@ -1,0 +1,235 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "text-as-mask",
+  "category": "opening",
+  "category_label": {
+    "en": "Opening & Brand",
+    "zh": "开场与品牌",
+    "ru": "Открытие и бренд"
+  },
+  "tags": [
+    "opening",
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/opening/text-as-mask.md",
+    "card_sha256": "be4a3a64acd09ec94d57bf8d50f01ea3bdde6bc378060119ad08b8b510026211",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 20,
+    "duration_frames_hint": null,
+    "duration_verbatim": "5s（hold 20f + 字内漂移 80f + 放大接管 30f + 静止 20f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（漂移段沉稳，接管段一次爆发）",
+    "energy_rationale": "漂移段沉稳，接管段一次爆发"
+  },
+  "intent_zh": "标题和产品画面抢屏幕是老问题——先字后画慢，画上压字挤。这一式让 两者同体：字形就是遮罩，产品只透过笔画显形，观众同时读到词和画面 质感；结尾字形胀开溢出画幅，产品自然接管全屏——\"从品牌词走进产品\" 一条镜头说完，兼任章节转场（与 transition-travel C 字腔穿越同族： 那边是镜头钻进字腔，这边是字形自己胀开，前者相机动、后者门动）。",
+  "use_zh": "品牌词/口号与产品画面二合一的开场或章节卡；字是门、产品在门里",
+  "summary_zh": "文字视频遮罩——超粗大标题字内部透出缓慢平移的产品画面，结尾字形放大 26 倍溢出、内部画面接管全屏",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "深底 + SVG 白字黑底 data-URI 交给 CSS `mask-image`，遮罩层套住产品画面"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        80
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "字内漂移：产品层 scale 1.15 + translateX 匀速漂 ~220px/80f——"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "字形静止、内容流动，\"窗外有世界\"的错觉即手法本体"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        30
+      ],
+      "ease": null,
+      "beziers": [
+        [
+          0.4,
+          0.0,
+          0.2,
+          1.0
+        ]
+      ],
+      "raw": "放大接管 30f 单段 bezier(0.4,0,0.2,1)：mask wrapper `scale(1→26)`，"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "transform-origin 必须钉在实心笔画内**（demo 取 L 竖笔 61.5% 处）——"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "钉在字腔空洞里则放大后透出的是底色"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "内容层反向补偿：套一层 `scale(1/maskS)` 抵消 mask 放大，产品画面"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "不随遮罩几何畸变（与 shot-transitions F 式\"窗几何与窗内景同步驱动\"同一命门的镜像）"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "接管保险：另叠一个共享同一 translateX/scale 变换的无遮罩全屏层在"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": [
+        0.25,
+        0.9
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "放大后段（endT 0.25–0.9）淡入——纯 mask 放大在字缝处会留深底残余"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "字号/字重",
+      "typical": "≥360px / 900",
+      "feel": "笔画就是视口——细字重等于把产品塞进门缝"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "漂移速度",
+      "typical": "~2.75px/f 匀速",
+      "feel": "快了字内画面读不清；漂移方向选画面信息密的轴"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "放大倍率",
+      "typical": "26x（按字形/画幅比配，洞撑满即可）",
+      "feel": "不足则接管帧还看得到字边残影"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "收尾",
+      "typical": "接管后真静止 ≥20f",
+      "feel": "R1；接管完成帧产品应落在标准构图"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "字内透出的产品画面全程被特写盯着看——真实素材先过",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "换词/换字体后 origin 手推值必失效——渲后看放大方向，洞不对中就微调",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "与 transition-travel C 字腔穿越同片不并用——同为\"字里长出世界\"，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "mask 层与内容层的 transform 必须分离驱动（wrapper 放大/内容反向补偿），",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "text-as-mask",
+      "variant_letter": null,
+      "upstream_key": "text-as-mask",
+      "demo": "demos/opening/text-as-mask/TextAsMask.tsx",
+      "component": "TextAsMask",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

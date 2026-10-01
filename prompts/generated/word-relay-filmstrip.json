@@ -1,0 +1,211 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "word-relay-filmstrip",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography",
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/typography/word-relay-filmstrip.md",
+    "card_sha256": "4400ad7aed208bc3f85c943d3915d390eed3a0c169eb107ed62b925b79ab2d5e",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 60,
+    "duration_frames_hint": null,
+    "duration_verbatim": "每词期 ~1.5–2s × 3–4 词；全段 5–7s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-low",
+    "energy_label": {
+      "zh": "中低",
+      "en": "mid-low"
+    },
+    "energy_verbatim": "中低（编辑部气质，节奏靠切词的\"咔哒\"感）",
+    "energy_rationale": "编辑部气质，节奏靠切词的\"咔哒\"感"
+  },
+  "intent_zh": "左边是证据（页面截图胶片），右边是论点（大词）：动词换一次， 胶片就步进一格给出新证据——文字与画面互为注脚。命门是**步进制**： 左列平时完全静止，只在切词瞬间滚动一格（滚动=换证据的机械动作）， 持续滚动会让左列沦为背景装饰、切词失去\"咔哒\"感。第二命门是 **对齐**：大词块垂直中心必须与当前页面卡中点精确对齐（像素级）， 歪了整个版式的\"编辑部严谨感\"就塌了。",
+  "use_zh": "\"一个主体 × 多种能力\"的枚举段（Computer researches/builds/codes…）；作品集/案例流展示；产品多场景巡礼",
+  "summary_zh": "左列黑白相间等高页面卡步进滚动、右侧衬线大词原位接力（名词恒定+动词轮换）——切词瞬间才滚动一格，词块垂直中心与当前页面卡中点精确对齐",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "左列：等高页面卡纵向排列，黑白（深浅）强制相间以显滚动步进；"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "切词窗口内 ease-in-out 滚动恰好一卡高，其余时间零位移"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "右侧：衬线体（Didot 类）两行——主体名词恒定，动词原位接力："
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "旧词灰化淡出（先出），新词落位（后进），先出后进不许叠影"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（判例：v2 叠影\"resebuilds\"被抓）"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "对齐：词块总高的垂直中心 = 当前卡顶 + 卡高/2（实测 y=540@1080p，"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "精确到个位像素）"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "滚动与切词同步：滚动起点=旧词开始灰化，滚动终点=新词落稳"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "页面卡",
+      "typical": "等高（530px@1080p）、黑白相间、约半屏宽",
+      "feel": "不等高/同色系读不出步进；卡太窄失去\"证据\"分量"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "词期",
+      "typical": "~45–60f/词",
+      "feel": "<40f 读不完词+胶片看不清；词期不必均匀"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "滚动窗口",
+      "typical": "~12f ease-in-out，恰一卡高",
+      "feel": "持续滚动=命门违例；滚过头/不足读作机械故障"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "词接力",
+      "typical": "旧词 4–6f 灰化淡出 → 新词 6–8f 落位",
+      "feel": "同帧交叉必叠影；间隙 >10f 读作断片"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "垂直对齐",
+      "typical": "词块中心=当前卡中点（像素级）",
+      "feel": "用户单点意见\"文字高度和中间的页面中点要对齐\"；差 >8px 可感"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "字体",
+      "typical": "衬线 Didot 类、动词字重比名词轻或同",
+      "feel": "无衬线会丢\"编辑部\"气质"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 text-column-converge 分工：那张是左右对峙合拢的揭晓戏；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 pill-slot-cycle 分工：那张是胶囊槽位轮换 UI 元素；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "实战素材：页面卡应使用真实截图（demo 为灰条示意，残余差距",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "word-relay-filmstrip",
+      "variant_letter": null,
+      "upstream_key": "word-relay-filmstrip",
+      "demo": "demos/typography/word-relay-filmstrip/WordRelayFilmstrip.tsx",
+      "component": "WordRelayFilmstrip",
+      "duration_frames": 16,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

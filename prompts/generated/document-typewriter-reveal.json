@@ -1,0 +1,204 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "document-typewriter-reveal",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography",
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/typography/document-typewriter-reveal.md",
+    "card_sha256": "2dcf03f62ebe3a54d38edefca9d88a3f95d04af8ff8ffbbe15c74a8b12df10a7",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 110,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 3.7s（110f，含 history-list-stack 尾段）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "low-mid",
+    "energy_label": {
+      "zh": "低中",
+      "en": "low-mid"
+    },
+    "energy_verbatim": "低中（信息密度最高，节奏放稳让观众读字）",
+    "energy_rationale": "信息密度最高，节奏放稳让观众读字"
+  },
+  "intent_zh": "观众会读清屏幕上每个字——这一镜的说服力全在\"文档是真的\"。打字机式写入把静态页面变成\"正在被写出来的文档\"，侧栏历史条目落入补上\"持续产出\"的时间纵深。",
+  "use_zh": "文档/报告/笔记类功能镜头；信息密度最高的一拍",
+  "summary_zh": "整页真排版文档在光标后自己\"写\"出来、侧栏跟进、历史条目逐个落入轨道",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "内容块两两一对按节拍写入：页面底色遮罩右锚左→右收窄，强调色 caret 骑在揭示前沿"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "人名 @-mention 在 wipe 完成后长出强调色底色"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "左右双栏靠底色补丁上→下收走入场，内缘强调色细线随揭示生长后淡去"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "尾段（history-list-stack）：6 条历史条目从上方逐个落入侧栏轨道，每落一条配一声 pop"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "相机从标题特写拉到全页（双栏必须都入画），之后只做微呼吸"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "写入节拍",
+      "typical": "20 块两两一对，第 g 对 cue = 6 + g·3.5，每块 wipe 8f，最后一对 ~49f 完成（赶在 64f 全页 settle 前）",
+      "feel": "逐块写会超预算——\"块数×节拍要先对预算\"是这卡的核心算术，先算再写"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "写入手法",
+      "typical": "底色遮罩 width 100%→0，bezier(0.4,0,0.6,1)；强调色 caret 2px 只跟最新块，写完 2f 淡出",
+      "feel": "caret 同时出现多个立刻穿帮；永远只有一个\"笔尖\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "li 圆点",
+      "typical": "遮罩向左多盖 28px（::marker 在文本左 ~22px）",
+      "feel": "不多盖圆点会提前穿帮——截图纹理里烤入的排版细节都要这样排查"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "@-mention",
+      "typical": "wipe 完成后 4f 起、8f 长出强调色底色 opacity 0.7；跳过非人名标题",
+      "feel": "高亮晚于写入才读作\"重点被标出\"；同帧出现读作贴图"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "双栏入场",
+      "typical": "左栏 cue 46 / 右栏 cue 54，底色补丁上→下 10f 收走 + 内缘 1.5px 强调色线随揭示生长、24f 淡去",
+      "feel": "双栏与正文错开节拍，同时入场会互相抢视线"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "历史条目落入",
+      "typical": "6 条，cue = 58 + i·5（排在侧栏 wipe 完成 56f 后），每条 8f 落下；起点 −44px，bezier(0.2,1.15,0.3,1) 轻弹跳，空中影 `0 10·air px 20·air px`",
+      "feel": "条目几何紧贴烤入纹理已有条目的下方、行高对齐——DOM 重绘条目必须和纹理里的活条目严格对齐"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "相机",
+      "typical": "标题特写 zoom 1.25 → 64f 全页 zoom 0.997，78/102f 1.003/0.995 微呼吸",
+      "feel": "全页时双栏必须都入画——文档镜头砍掉侧栏等于砍掉\"完整产品\"的说服力（Q10）"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "mock 内容必须出版级：产品原生排版、文字铺满、侧栏完整入镜（Q10）——\"贴图+标语\"级的敷衍文档会导致整镜头重做",
+      "critical": false,
+      "rules": "Q10"
+    },
+    {
+      "ord": 1,
+      "text": "数据合规：mock 内容里绝不出现客户/成员真名（Q1）",
+      "critical": false,
+      "rules": "Q1"
+    },
+    {
+      "ord": 2,
+      "text": "素材页面是活数据源（协作文档类）时，全量重采会刷掉已定稿纹理——用增量脚本只刷单页单键",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "强调色示例（caret/@-mention/内缘线）在模板片中为琥珀色，适配新品牌时统一换成目标品牌强调色",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "Q1",
+      "family": "Q",
+      "title": "规则：凡是表现产品既有页面的镜头，第一步就用无头浏览器截真实页面（整页纹理 + 元素级抠图 + 坐标 json），不手搓仿真贴图复刻；非复刻场景（抽象开场/品牌段/页面上不存在的独立展示组件）允许手搓 UI，但质量（出版级质感，对照 Q10 标准）与表达明确性（观众一眼看懂它是什么）是硬门槛，达不到回截图路线。公开演示数据只有在产品简报明确确认后可保留；客户、个人、内部、密钥、实时或其他敏感内容必须先虚构、脱敏或冻结。对手搓素材同样适用该口径。",
+      "check_question": "自检：每块 UI 素材：它在复刻既有页面吗？是则必须来自截图；手搓件的质感和表达能过 Q10 级审视吗？源数据是否符合已确认的数据口径，且不含未授权的客户、个人、内部或密钥信息？"
+    },
+    {
+      "rule_id": "Q10",
+      "family": "Q",
+      "title": "规则：观众会读清屏幕上每个字——文档/报告类镜头的 mock 必须用产品原生排版灌满真实密度的假内容，侧栏/评论栏等版式元素完整入镜；\"贴图+标语\"级别的假文档整镜头返工。",
+      "check_question": "自检：暂停在文档镜头任意一帧：内容读起来像真的吗？版式（侧栏/评论/页眉）完整吗？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "document-typewriter-reveal",
+      "variant_letter": null,
+      "upstream_key": "document-typewriter-reveal",
+      "demo": "demos/ui-entrance/document-typewriter-reveal/DocumentTypewriterReveal.tsx",
+      "component": "DocumentTypewriterReveal",
+      "duration_frames": 110,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

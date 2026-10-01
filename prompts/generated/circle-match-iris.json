@@ -1,0 +1,231 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "circle-match-iris",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/circle-match-iris.md",
+    "card_sha256": "adb860df9623ee51bd14b04b367331aed4aa652139e49baf2a532cf167643303",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 30,
+    "duration_frames_hint": null,
+    "duration_verbatim": "4.7s（锚点脉冲 30f + 光圈扩张 45f + 图表生长 55f + 静止 40f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高",
+    "energy_rationale": null
+  },
+  "intent_zh": "普通 iris 光圈（词汇表原条目）从任意点开圈，观众只读到\"换页了\"。 本卡把它和 match-cut 焊死：光圈必须从前景一个**真实圆形元素**的圆心 炸开，圈内长出的新页里有个圆形图表恰好接在同一个圆上——观众看到的 是\"头像的圆变成了图表的圆\"，圆形本身完成叙事（这个人→这个人的数据）。 这是 match-cut 在 UI 语境里的落地形态：不靠构图巧合，靠语义圆对圆。 与穿越三式同属\"后景在前景里预先在场\"，但锚点是抽象形状而非容器。",
+  "use_zh": "前景有圆形元素（头像/图标/圆钮）、后景有圆形主体（donut 图/圆环进度）的接缝；转场技法卡",
+  "summary_zh": "圆心匹配光圈切——光圈从页面上圆形元素的圆心炸开，圈内新页的圆形图表接在同一个圆上；匹配剪辑给光圈一个语义锚点",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**两景的圆严格同心是命门**：锚点圆心写死为一组常量（demo：CX=308,"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "CY=384.8，手算自布局），clip-path circle、新景圆环、脉冲光环全部"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "引用同一组常量——坐标各算各的必然错心"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        30
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "定睛引导：光圈开圈前锚点元素两次放大脉冲 + 两道扩散光环（30f），"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "把视线钉在圆上再动"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        45
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "光圈 `clip-path: circle(r at x y)`，r 22→2100px（45f inOut cubic）；"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "新景圆环同窗从 22→170px 生长——**接圆发生在扩张中途**（观众在"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "光圈还没吃满屏时就看到圆被接住了），不是开完圈再画图"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "圆环 sweep：strokeDasharray = sweep×周长，rotate(-90) 从顶部起笔，"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "中央数字随 sweep 同步计数"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "锚点脉冲",
+      "typical": "2 次 scale 1→1.15 + 光环扩两道 / 30f",
+      "feel": "没有定睛引导，开圈瞬间观众找不到圆心"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "光圈扩张",
+      "typical": "22→2100px / 45f Easing.inOut(cubic)",
+      "feel": "快于 30f 接圆读不到；圆心偏移 >10px 一眼穿帮"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "接圆时机",
+      "typical": "圆环在光圈扩张中途（~40% 进度）即可见并同心生长",
+      "feel": "开完圈再长图表 = 普通转场+普通图表动画，匹配感归零"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "sweep",
+      "typical": "45–100f 到目标值，数字同步计数",
+      "feel": "数字与 sweep 异步读作两个动画"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "收尾",
+      "typical": "sweep 完成后真静止 ≥40f",
+      "feel": "R1"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "真实素材上锚点坐标从截图量测（devtools/标尺），量到的是元素盒不是",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "前景锚点必须是**真圆**：圆角方块（border-radius < 50%）当锚点，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "语义要成对：头像→个人数据、产品图标→产品指标——圆对圆只是形，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "一缝一式规矩同 shot-transitions；本卡自带图表生长段，圈内新景",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "circle-match-iris",
+      "variant_letter": null,
+      "upstream_key": "circle-match-iris",
+      "demo": "demos/transition/circle-match-iris/CircleMatchIris.tsx",
+      "component": "CircleMatchIris",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

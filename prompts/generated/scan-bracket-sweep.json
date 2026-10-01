@@ -1,0 +1,289 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "scan-bracket-sweep",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/scan-bracket-sweep.md",
+    "card_sha256": "4b4751b8c124595e2bfcfd2c064a37bcc6f241a48c3d14fb2713a4b13a752111",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约5.0s（150f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-low",
+    "energy_label": {
+      "zh": "中低",
+      "en": "mid-low"
+    },
+    "energy_verbatim": "中低（机械、克制，节奏全在往复扫掠的呼吸上）",
+    "energy_rationale": "机械、克制，节奏全在往复扫掠的呼吸上"
+  },
+  "intent_zh": "让观众看懂\"这份东西正在被机器逐行读过\"。取景括号先把目标框住（宣布检查 对象），扫描光带再往复走完全篇（宣布检查过程）。命门是**文档本身完全静止**： 一旦文档也在动，观众就分不清是\"被检查\"还是\"在加载\"。",
+  "use_zh": "\"正在解析/校验这份内容\"的过程镜头；文档类产品的能力演示；上传→分析链路的中段",
+  "summary_zh": "骨架文档弹到中央，四角落下 L 形取景括号，一条 2.5px 实线带渐变拖尾在文档上往复扫 5 趟——文档全程静止，只有光在读它",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "文档 `seg(0→0.11, outCubic)` 从 scale 0.86 弹到 1，opacity 走 `dp*3`"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "提前满亮，落位比缩放早——先\"在了\"再\"稳了\""
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "四角 34px 的 L 形括号按 `i*0.022` stagger 依次落位，各 0.055 走完，"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "沿内外对角带 8px 位移收敛（`(1-p)*8*dx/dy`）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "扫描窗口 `t 0.17→0.95` 严格 linear 切成 5 趟，趟内 `inOutSine`"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "两端慢中间快，末尾留 12% 完全停顿（`local=(raw-pi)/0.88`）"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "拖尾 82px、`rgba(20,20,22,.5)→0`，方向随 `dir` 翻转：下行时挂在光带"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "上方（`top:-82px`）、上行时挂在下方（`top:2.5px`），渐变同步反向"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "整条光带裁在与文档同 10px 圆角的 `overflow:hidden` 层里，"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`0.16→0.20` 淡入、`0.93→0.99` 淡出"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 56,
+      "name": "t",
+      "window": [
+        0.0,
+        0.11
+      ],
+      "from": "0",
+      "to": "0.11",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 52,
+      "raw": "const dp = seg(t, 0, 0.11, E.outCubic);"
+    },
+    {
+      "style_id": 56,
+      "name": "t",
+      "window": [
+        0.17,
+        0.95
+      ],
+      "from": "0.17",
+      "to": "0.95",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 55,
+      "raw": "const sp = seg(t, 0.17, 0.95, E.linear);"
+    },
+    {
+      "style_id": 56,
+      "name": "t",
+      "window": [
+        0.16,
+        0.2
+      ],
+      "from": "0.16",
+      "to": "0.2",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 63,
+      "raw": "const clipOp = Number((seg(t, 0.16, 0.2) * (1 - seg(t, 0.93, 0.99))).toFixed(3));"
+    },
+    {
+      "style_id": 56,
+      "name": "t",
+      "window": null,
+      "from": "0.08 + i * 0.022",
+      "to": "0.08 + i * 0.022 + 0.055",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 209,
+      "raw": "const p = seg(t, 0.08 + i * 0.022, 0.08 + i * 0.022 + 0.055, E.outCubic);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "文档弹入",
+      "typical": "scale 0.86→1，t 0→0.11 outCubic",
+      "feel": "起始值低于 0.8 就成了\"从远处飞来\"，弹入要小幅度才像 UI"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "取景括号",
+      "typical": "臂长 34px、描边 2px、外扩 −7px；stagger 0.022 / 各 0.055",
+      "feel": "四角同时出现读作静态边框；差 0.022 就够读出\"依次落下\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "扫描趟数",
+      "typical": "PASSES=5，窗口 t 0.17→0.95 linear",
+      "feel": "3 趟不够读作\"往复\"，7 趟以上在 5s 内每趟太快"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "趟内缓动",
+      "typical": "inOutSine + 末尾 12% 停顿",
+      "feel": "停顿是\"看清了这一趟\"的换气位；去掉就成了匀速来回摆"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "光带",
+      "typical": "2.5px 实线 + 82px 拖尾 rgba(20,20,22,.5)→0",
+      "feel": "线太粗（>4px）读作遮罩边缘而不是光"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "拖尾方向",
+      "typical": "下行 top:−82px / 上行 top:2.5px，渐变一并翻转",
+      "feel": "只翻其一 → 拖尾跑到运动前方，读作\"光在往回吸\""
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "裁切层",
+      "typical": "与文档同 10px 圆角 overflow:hidden",
+      "feel": "漏到文档外就是\"扫画面\"不是\"扫文档\""
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "光带必须裁在文档 bbox 内，且圆角与文档一致——漏出一点就丢掉\"扫描",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "拖尾的 `top` 和 gradient 方向是两处独立写法，改扫描方向时必须同改，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "括号的 34px 臂长与 −7px 外扩是按 300×178 的文档尺寸配的；换真实截图",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "INK 是唯一的颜色变量（括号 + 光带 + 拖尾共用），换肤只改它",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "scan-bracket-sweep",
+      "variant_letter": null,
+      "upstream_key": "scan-bracket-sweep",
+      "demo": "demos/effects/scan-bracket-sweep/ScanBracketSweep.tsx",
+      "component": "ScanBracketSweep",
+      "duration_frames": 150,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

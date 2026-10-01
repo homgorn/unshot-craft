@@ -1,0 +1,387 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "scanline-annotate-focus",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/scanline-annotate-focus.md",
+    "card_sha256": "b092b29fada6b795c4f85bdddaa3b7dd226fca6ef212a4008d43956b4b5178de",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 138,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约4.6s（138f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（机械冷静，节奏由扫描线匀速推动，标注是节拍点）",
+    "energy_rationale": "机械冷静，节奏由扫描线匀速推动，标注是节拍点"
+  },
+  "intent_zh": "把\"分析\"这件抽象事做成可见的因果链：扫描线走到哪，那块就被框住、被 命名。观众读的是\"机器的视线\"，所以扫描线必须匀速、标注必须严格滞后于 扫描线过境——**先扫到再弹框**，顺序一旦错乱就变成了预先编排的动画。",
+  "use_zh": "\"AI 正在读你的页面/品牌\"的分析镜头；设计系统/品牌规范的拆解介绍；产品能力的自我说明段",
+  "summary_zh": "一条亮扫描线自上而下掠过页面，扫过之处按先后顺序弹出相机取景框（1.75 倍收拢对准 + 轻微过冲），随后旁侧打出等宽小字标注，顶部状态行同步计数 00/06→06/06",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "扫描线 `t 0.06→0.66` 匀速（无缓动）从 y=−30 走到 300，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.04→0.09 淡入、0.66→0.71 淡出"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "触发时刻由目标 bbox 反算：`ft = 0.06 + ((y+h+30)/330)*0.60`，即扫描线"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "越过 bbox **下缘**的那一刻；再按 y 排序钳制最小间隔 0.05"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（`ft = max(rawT, prev+0.05)`）避免两框同时弹"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "取景框由 4 个 9px L 角组成，`outBack` 驱动 `scale 1.75→1`（0.13 内"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "走完，过冲后回稳），opacity 走 `min(1, a*1.6)` 抢先满亮"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "框内白色 `fill` 层闪一下：0.07 峰值，`ft+0.04→+0.09` 起、"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`+0.09→+0.22` 落——像相机对焦成功的确认闪"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "标注 `ft+0.05→+0.16 outCubic` 淡入 + `translateY 4→0`，"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "6.5px MONO、`letter-spacing:1.5px`、`#b8bdc7`"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "状态行实时数已触发的框（`fired`）显示 `SCAN · 0n/06`，"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`0.74→0.80` 后切 `ANALYSIS · COMPLETE` 并转强调色"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 57,
+      "name": "t",
+      "window": [
+        0.06,
+        0.66
+      ],
+      "from": "0.06",
+      "to": "0.66",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 52,
+      "raw": "const ly = lerp(seg(t, 0.06, 0.66), -30, 300);"
+    },
+    {
+      "style_id": 57,
+      "name": "t",
+      "window": [
+        0.04,
+        0.09
+      ],
+      "from": "0.04",
+      "to": "0.09",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 53,
+      "raw": "const lineOpacity = seg(t, 0.04, 0.09) * (1 - seg(t, 0.66, 0.71));"
+    },
+    {
+      "style_id": 57,
+      "name": "t",
+      "window": null,
+      "from": "tg.ft",
+      "to": "tg.ft + 0.11",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 56,
+      "raw": "const fired = TARGETS.reduce((acc, tg) => acc + (seg(t, tg.ft, tg.ft + 0.11, E.outCubic) > 0 ? 1 : 0), 0);"
+    },
+    {
+      "style_id": 57,
+      "name": "t",
+      "window": [
+        0.74,
+        0.8
+      ],
+      "from": "0.74",
+      "to": "0.8",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 57,
+      "raw": "const done = seg(t, 0.74, 0.8);"
+    },
+    {
+      "style_id": 57,
+      "name": "t",
+      "window": null,
+      "from": "tg.ft",
+      "to": "tg.ft + 0.11",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 116,
+      "raw": "const a = seg(t, tg.ft, tg.ft + 0.11, E.outCubic); // 弹出进度"
+    },
+    {
+      "style_id": 57,
+      "name": "t",
+      "window": null,
+      "from": "tg.ft",
+      "to": "tg.ft + 0.13",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 117,
+      "raw": "const s = lerp(E.outBack(seg(t, tg.ft, tg.ft + 0.13)), 1.75, 1); // 1.75 倍收拢 + 过冲回稳"
+    },
+    {
+      "style_id": 57,
+      "name": "t",
+      "window": null,
+      "from": "tg.ft + 0.04",
+      "to": "tg.ft + 0.09",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 118,
+      "raw": "const fillO = 0.07 * seg(t, tg.ft + 0.04, tg.ft + 0.09) * (1 - seg(t, tg.ft + 0.09, tg.ft + 0.22)); // 对准瞬间白色微闪"
+    },
+    {
+      "style_id": 57,
+      "name": "t",
+      "window": null,
+      "from": "tg.ft + 0.05",
+      "to": "tg.ft + 0.16",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 119,
+      "raw": "const la = seg(t, tg.ft + 0.05, tg.ft + 0.16, E.outCubic); // 标注淡入上移"
+    },
+    {
+      "style_id": 57,
+      "name": "t",
+      "window": [
+        0.03,
+        0.08
+      ],
+      "from": "0.03",
+      "to": "0.08",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 193,
+      "raw": "opacity: seg(t, 0.03, 0.08),"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "扫描线",
+      "typical": "t 0.06→0.66 匀速，y −30→300",
+      "feel": "**零缓动**：加 ease 就读作\"有人在拖进度条\""
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "触发换算",
+      "typical": "ft = 0.06 + ((y+h+30)/330)·0.60",
+      "feel": "分母 330 = 扫描行程；改扫描窗口必须同改，否则框在扫描线到达前就弹"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "最小间隔",
+      "typical": "prev + 0.05（≈1.5f）",
+      "feel": "两个 y 接近的目标会同时弹；钳制后才逐个读得清"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "取景框收拢",
+      "typical": "scale 1.75→1，outBack，0.13",
+      "feel": "1.75 倍是\"从外面收进来\"的下限；1.2 倍看不出对准动作"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "角标",
+      "typical": "臂长 9px、描边 1.5px",
+      "feel": "臂长超过目标短边 1/3 就变成完整边框，丢掉\"取景\"语义"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "对焦闪",
+      "typical": "fill opacity 峰值 0.07",
+      "feel": "超过 0.15 就盖住内容，读作\"选中高亮\"而非对焦确认"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "标注",
+      "typical": "ft+0.05 起、0.11 走完、translateY 4→0",
+      "feel": "滞后 0.05 是\"框稳了才命名\"的因果；同时出现就乱"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "计数行",
+      "typical": "按 fired 实时统计，7px MONO，2px 字距",
+      "feel": "写死时间轴的计数一改 bbox 就对不上；必须实时数"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "**扫描线触发时刻与目标 bbox 强绑定**：换页面内容后 targets 的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "bbox 是手动微调留边的（不是自动量元素），改页面模板不会自动跟随",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "标注用 `white-space:nowrap` + 手写 `lx/ly`，词变长会顶出画外；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "与 `scanline-assemble-flyin` 分工：那张是\"扫到即装配\"（页面从空到有），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "ACCENT（`#9fb6e8`）与 `A_RGB` 是同一个色的两种写法，换肤要同改两处",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "scanline-annotate-focus",
+      "variant_letter": null,
+      "upstream_key": "scanline-annotate-focus",
+      "demo": "demos/effects/scanline-annotate-focus/ScanlineAnnotateFocus.tsx",
+      "component": "ScanlineAnnotateFocus",
+      "duration_frames": 138,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

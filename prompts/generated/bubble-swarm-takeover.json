@@ -1,0 +1,265 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "bubble-swarm-takeover",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/bubble-swarm-takeover.md",
+    "card_sha256": "605de4edf0f0d52aa2b9b02dd4bb4ce7975d8b120f52f5df81e8b1b36601e0cb",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 130,
+    "duration_frames_hint": null,
+    "duration_verbatim": "~4.3s（130f：飘入 ~67f + 峰值藏切 + 散开 ~43f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（持续群体涌动，无瞬时冲击）",
+    "energy_rationale": "持续群体涌动，无瞬时冲击"
+  },
+  "intent_zh": "transition-hidden-cut 的前景遮挡式是\"一件东西扫过去的 1–3 帧\"， wipe-transitions 是一条几何边界扫过——都是\"边界\"思维。本卡是\"幕布\" 思维：让一**群**品牌实体花 2 秒飘入前景涨大遮屏，遮蔽峰值藏硬切， 再散开露出新场景。比几何擦除高级的地方在于幕布本身就是品牌资产， 转场时间越长品牌露出越足，反而不嫌慢。命门有二：**峰值必须真遮满** （6 颗巨型气泡按网格钉落点兜底，随机群只管氛围）；**洗白层压在页面 与气泡之间**——页面先被洗掉细节，气泡才接得住全部视线，切换在白纱 后面完成，观众无从对比前后帧。",
+  "use_zh": "章节级换景且品牌世界里有\"实体装饰物\"可当幕布（气泡/花瓣/图标皆可换皮）；转场即品牌露出的段落",
+  "summary_zh": "珠光气泡群幕布转场——大小不一的气泡从画外飘入越涨越大遮满整屏，页面同步\"洗白\"，遮蔽峰值处藏切换，气泡向外散开后已是新场景；可混入 i18n 文字胶囊变体",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "气泡 = CSS 径向渐变圆（高光偏 34%/28%，四组粉/紫/蓝/青色相微差）"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "+ inset 白晕 + 外辉光；三层景深：远 blur7 / 中层实 / 近景 blur9 焦外"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        50
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "34 颗常规气泡 seed 随机（mulberry32）：入场时刻 8–50f、四边画外"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "起点、落点撒满全屏；正弦 wobble（振幅 10–32px）让群体\"活着\""
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        36
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "6 颗巨型气泡（r 430–570）按 2×3 网格落点、22–36f 入场——峰值全"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "覆盖靠它们，不靠运气"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "峰值帧 75 硬切场景（frame < PEAK ? A : B）；洗白层 opacity"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        68,
+        104
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "0→0.92（42–68f）→0（82–104f），白色 overlay 夹在页面与气泡之间"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "散开 = 以画面中心为极心沿径向外推 1700px，ease-in 加速离场 +"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "缩小 35% + 尾段淡出；入场 ease-out、离场 ease-in，呼吸方向相反"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "i18n 胶囊变体：文字胶囊挂在指定气泡上随宿主漂（+微转），演\"多语言\""
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "等抽象能力时启用；胶囊 ≤3 枚，多了变词云（那是另一个手法）"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "峰值帧",
+      "typical": "75/130",
+      "feel": "藏切点；峰值前飘入 ≥60f 才有\"涨潮\"感，<40f 读作扑脸"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "气泡数",
+      "typical": "34 随机 + 6 网格巨型",
+      "feel": "巨型是遮屏保底，删了必漏缝；随机 <20 颗群感散"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "洗白",
+      "typical": "0→0.92→0，峰值区间持续 0.92",
+      "feel": "<0.8 新旧场景对比穿帮；1.0 变纯白闪，气泡被吞"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "景深",
+      "typical": "blur 7 / 0.5 / 9 三层",
+      "feel": "全实心读作贴纸雨；近景不虚就没有\"穿过泡群\"的纵深"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "散开",
+      "typical": "径向 1700px ease-in + scale ×0.65 + 尾段淡出",
+      "feel": "原路退回读作倒放；只淡出不外推读作气泡\"爆了\""
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "wobble",
+      "typical": "sin(f×0.09) × 10–32px",
+      "feel": "去掉后群体像贴图平移；>50px 读作乱流"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 transition-hidden-cut 分工：那卡是 1–3 帧的\"看不见剪刀\"（遮挡物",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 wipe-transitions/shot-transitions 同层选型：几何擦除/流白是中性",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "珠光渐变的高光偏移（34%/28%）是\"3D 球\"错觉来源，改成居中径向渐变",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "峰值帧前后各 ±2f 内不得有任何气泡 opacity <1 的空隙露底——检查",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "实战换皮（花瓣/logo/表情）时保持三层景深 + 网格保底两条铁律，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "bubble-swarm-takeover",
+      "variant_letter": null,
+      "upstream_key": "bubble-swarm-takeover",
+      "demo": "demos/transition/bubble-swarm-takeover/BubbleSwarmTakeover.tsx",
+      "component": "BubbleSwarmTakeover",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

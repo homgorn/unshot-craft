@@ -1,0 +1,237 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "odometer-digit-roll",
+  "category": "data",
+  "category_label": {
+    "en": "Data & Metrics",
+    "zh": "数据与指标",
+    "ru": "Данные и метрики"
+  },
+  "tags": [
+    "typography",
+    "data"
+  ],
+  "source": {
+    "card": "references/shots/data/odometer-digit-roll.md",
+    "card_sha256": "36b0f6a53454f1d087f8195ac5aa79b734b8f8ed801153c009a6e4d132a838a5",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 63,
+    "duration_frames_hint": null,
+    "duration_verbatim": "滚动+逐位锁定 ~63f + 脉冲 8f + hold ≥45f，约 5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高",
+    "energy_rationale": null
+  },
+  "intent_zh": "王牌数字的登场库内有\"砸\"（score-slam）和\"弹\"（damage-number）， 都是位移系。本卡是**机械系**：数字不是飞进来的，是\"算出来的\"—— 每位一条 0–9 滚轮高速转动，从左到右逐位减速、过冲半格、咔哒锁定， Vercel Ship/Stripe Sessions 指标段的标准语法。滚动过程自带悬念 （它会停在几？），逐位锁定自带节奏（哒、哒、哒、哒），比直接显示 终值多一整拍的期待感。与 VerticalTicker（backlog 待选）的区别： 有终值、逐位停稳，不是无限滚动墙。",
+  "use_zh": "单个王牌指标的全屏亮相（\"10x\"/\"99.98%\"级）；与 impact-feedback B 式（伤害数字弹出）分工——那是元素级配菜，这是全屏级主菜",
+  "summary_zh": "里程表数字滚动大字报——全屏巨号指标每个数位像老虎机滚轮独立纵向滚动带残影，从左到右逐位过冲停稳，全部锁定瞬间整体加深脉冲",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每位一个 overflow:hidden 数位盒 + 0–9×2 纵列 strip，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`translateY = −(pos % 10) × 行高`，posAt(f, i) 纯帧函数"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        16
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "位 i 于 20+i×7f 开始 16f Easing.out(cubic) 减速至目标 +0.5 行"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "过冲半格**，再 6f 弹回整数锁定——锁定帧即各位的\"哒\""
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "滚动期每位叠 2 个错帧残影副本（translateY ±行高×0.5，"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "opacity 0.25/0.12），按相邻帧速度门控，停稳自动摘——纵向拖影"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "与 smear-multiples 同理（可数残影不是模糊）"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "全体锁定帧：整体 ink→#000→ink 加深脉冲 8f + 1.035 微缩放 +"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "下方标签条淡入——\"合计确认\"的句号"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "小数点与 % 等非数字位全程驻场不滚"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "字号/字体",
+      "typical": "190px fw800 + fontVariantNumeric: tabular-nums",
+      "feel": "非等宽数字每滚一格整行抖动（同 scramble 等宽判例）"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "错峰",
+      "typical": "20+i×7f 起停，从左到右",
+      "feel": "从右往左停读作倒着算；同时停失去\"哒哒哒\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "过冲",
+      "typical": "+0.5 行再 6f 弹回",
+      "feel": "无过冲读作滑到即停，机械感减半"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "残影",
+      "typical": "2 副本 0.25/0.12，速度门控",
+      "feel": "3+ 副本高速下糊成一条（行高小于卡片场景）"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "终值脉冲",
+      "typical": "加深 + 1.035 缩放 8f",
+      "feel": "只加深不缩放在 190px 黑字上不可感（实渲加码）"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "收尾",
+      "typical": "脉冲归零后真静止 ≥45f",
+      "feel": "R1"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "数位 ≤6（含小数点前后）——每多一位多 7f 错峰，8 位滚完 >2.5s",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 impact-feedback B（伤害数字）同片可共存但分工要清：全屏主菜",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "滚动的数字必须是**真值的各位**——终值 99.98 就滚 9/9/9/8，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "声音强依赖候选位：逐位锁定\"哒\"×N + 终值确认一声低音",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "odometer-digit-roll",
+      "variant_letter": null,
+      "upstream_key": "odometer-digit-roll",
+      "demo": "demos/data/odometer-digit-roll/OdometerDigitRoll.tsx",
+      "component": "OdometerDigitRoll",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

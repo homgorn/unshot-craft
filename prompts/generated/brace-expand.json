@@ -1,0 +1,340 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "brace-expand",
+  "category": "typography",
+  "category_label": {
+    "en": "Typography & Title Cards",
+    "zh": "文字与字卡",
+    "ru": "Типографика и титры"
+  },
+  "tags": [
+    "typography"
+  ],
+  "source": {
+    "card": "references/shots/typography/brace-expand.md",
+    "card_sha256": "9ba30ae39fb48e45e59808ab27805c7991bd20246a99dda15aea7683c63760ef",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 114,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 3.8s（114f@30fps：7f 出现 → 弹开 → 落定后字距松弛 → hold）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（单次过冲是唯一峰值，其余静止）",
+    "energy_rationale": "单次过冲是唯一峰值，其余静止"
+  },
+  "intent_zh": "标题揭示的手法里，本卡最省：不做遮罩条、不做逐字、不做位移——只让 一对括号往两边走，文字被\"括出来\"。它天生带代码语感（`{}` 是花括号）， 所以在技术产品语境里读作\"这就是内容本体\"。命门是 clip 宽度**必须严格 绑括号位置**：一旦文字自己淡入或自己擦入，括号就退化成装饰，幕布感全失。",
+  "use_zh": "开发者/技术产品的标题字卡；章节开场；需要\"一个符号完成揭示\"的极简一拍",
+  "summary_zh": "一对花括号先小字号出现在正中，随即带过冲向左右滑到 ±148px 并放大到标题级，文字 clip 宽度严格绑括号间距、像被拉开幕布般揭示，落定后字距再细微松弛",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "括号先单独出现：`on = t >= 0.07 ? 1 : 0`（约 7f 处，**硬切不淡入**），"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "此时还是 44px 原字号且左右紧贴——先建立\"这是一对括号\""
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": [
+        0.13,
+        0.34
+      ],
+      "frame_hints": [
+        15,
+        24,
+        39
+      ],
+      "ease": "outBack",
+      "beziers": [],
+      "raw": "弹开 `ex = seg(t, 0.13, 0.34, E.outBack)`（约 15f→39f，24f 内完成），"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "过冲约 8% 再回弹"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "同步放大 `sc = lerp(ex, 0.6, 1)`，括号最终半距 `x = HALF · ex · sc`"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（HALF=148）——**位移与缩放乘在一起**，所以放大本身也在推开括号，"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "比单独两条曲线更像\"撑开\""
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "文字揭示宽度 `clip.width = max(0, x·2 - 34)`：减 34 是给括号本体留位，"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "不减的话字会压在括号笔画上"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "文字同步 `scale(sc)`（38px 基准 × 0.6→1），与括号共用同一个 sc（不同倍率"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "就读作两个元素各自动）；落定后字距松弛"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": [
+        0.42,
+        0.62
+      ],
+      "frame_hints": [],
+      "ease": "inOutQuad",
+      "beziers": [],
+      "raw": "`letterSpacing = lerp(seg(t, 0.42, 0.62, E.inOutQuad), 1, 2.6)`px"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        48,
+        71
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "（约 48f→71f）——\"呼一口气\"的细节，全片最后一次运动"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "定位用 `root` 零尺寸中心锚点 + 三个绝对定位子元素"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（`translate(-50%,-50%)`），**不用 flex**：宽度全程在变，flex 会重排"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 153,
+      "name": "t",
+      "window": [
+        0.13,
+        0.34
+      ],
+      "from": "0.13",
+      "to": "0.34",
+      "ease": "E.outBack",
+      "concrete": true,
+      "line_no": 35,
+      "raw": "const ex = seg(t, 0.13, 0.34, E.outBack); // 弹开：过冲约 8% 再回弹"
+    },
+    {
+      "style_id": 153,
+      "name": "t",
+      "window": [
+        0.42,
+        0.62
+      ],
+      "from": "0.42",
+      "to": "0.62",
+      "ease": "E.inOutQuad",
+      "concrete": true,
+      "line_no": 39,
+      "raw": "const ls = lerp(seg(t, 0.42, 0.62, E.inOutQuad), 1, 2.6);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "括号出现",
+      "typical": "`t >= 0.07`（≈7f）硬切",
+      "feel": "硬切是对的（符号\"啪\"地在那儿）；改淡入就少了 2 帧的\"先看清括号\"，弹开显得突然"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "弹开窗",
+      "typical": "0.13→0.34（≈24f），`E.outBack`",
+      "feel": "outBack 的过冲是全片唯一峰值；纯 outCubic 读作滑开，没有\"撑\"的力道；窗 <14f 看不清文字揭示"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "半距",
+      "typical": "HALF = 148px",
+      "feel": "决定标题可容纳的字数；文案变长必须同步加大，不然字被 clip 裁掉（clip 只裁不缩字）"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "缩放",
+      "typical": "`lerp(ex, 0.6, 1)`，括号 44px / 字 38px",
+      "feel": "0.6 起点是\"小字号\"的量；起点 >0.85 就看不出放大，<0.4 括号一开始小得像标点"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "clip 留位",
+      "typical": "`x·2 - 34`px",
+      "feel": "34 是括号笔画宽的经验值；不减则字压括号，减太多字被裁得早、露不全"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "字距松弛",
+      "typical": "`1 → 2.6`px，窗 0.42→0.62 inOutQuad",
+      "feel": "这一下是\"落定后的呼吸\"；>4px 标题散架，删了收尾略僵但不算错"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "布局",
+      "typical": "零尺寸 `root` + 三个绝对定位子元素",
+      "feel": "宽度全程变化，**必须绝对定位**；用 flex 会让括号随 clip 宽度被推着走（判例）"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**文案长度必须与 HALF 匹配**：占位文案是 `Your title`（10 字符），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "clip 宽度是从 0 长起来的，所以文字**总是从中间往两边露**：文案的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "括号与文字必须共用同一个 `sc`：分别写两条缩放曲线（哪怕数值相同）",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "过冲只此一次：全片其他运动都无过冲，这是把注意力压在\"撑开\"这一",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "`overflow:hidden` 的 clip 高度写死 60px，字号大改时要同步——不然",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 6,
+      "text": "声音：弹开那一下值得一记短促的机械/木质开合音，落定后无声；",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "brace-expand",
+      "variant_letter": null,
+      "upstream_key": "brace-expand",
+      "demo": "demos/typography/brace-expand/BraceExpand.tsx",
+      "component": "BraceExpand",
+      "duration_frames": 114,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

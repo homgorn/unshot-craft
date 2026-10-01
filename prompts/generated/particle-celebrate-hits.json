@@ -1,0 +1,191 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "particle-celebrate-hits",
+  "category": "data",
+  "category_label": {
+    "en": "Data & Metrics",
+    "zh": "数据与指标",
+    "ru": "Данные и метрики"
+  },
+  "tags": [
+    "data",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/data/particle-celebrate-hits.md",
+    "card_sha256": "74a3315dd63445a395e4cefd97b903a675cf241c5f0d0fd4ba578d9c4f6b96fc",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 120,
+    "duration_frames_hint": null,
+    "duration_verbatim": "A 3–4s / B 4–5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "high",
+    "energy_label": {
+      "zh": "高",
+      "en": "high"
+    },
+    "energy_verbatim": "高潮点缀型（爆发后必须落回纯净静止）",
+    "energy_rationale": "爆发后必须落回纯净静止"
+  },
+  "intent_zh": "给\"数字揭晓\"配可听感的视觉打点：A 是揭晓瞬间的句号——画面左下右下 两门炮同帧开火，上百颗翻转彩屑抛物线交叉飞过全屏再落出画外，纯庆祝 语义；B 是过程中的逗号——计数器每跳过一个整千，数字顶部\"叮\"地溅一撮 小火星坠落熄灭，终值那跳翻倍爆一大撮+数字弹 1.1x。两式都是闭式弹道 （初速+重力+衰减逐帧公式），免物理引擎、帧确定。",
+  "use_zh": "里程碑数字/KPI 揭晓/成就段落；A 一次性大庆祝，B 持续小打点",
+  "summary_zh": "庆祝粒子两式——confetti-crossfire 双侧礼炮（里程碑揭晓帧双炮交叉彩屑弹幕）与 counter-tick-sparks 数字溅火（计数器每破整千顶部迸火星）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [
+        90
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A confetti-crossfire | 双炮各 50 颗矩形彩屑：初速 90–150px/f（decay 0.9 下总程 ~900–1500px 才能交叉过中线）、spread 55°、每帧翻转 8–15°；~90f 全部落出画外后条件卸载 | 终值揭晓/发布宣言的一次性高潮 |"
+    },
+    {
+      "ord": 3,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [
+        18
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B counter-tick-sparks | tick 帧由计数器同一 interpolate 派生；每 tick 6–10 颗 2px 火星（初速向上 4–6px/f、重力 12–18f 坠灭），终值跳翻倍 20 颗+数字弹 1.1x | 计数爬升过程的节奏打点 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 初速",
+      "typical": "90–150px/f",
+      "feel": "词汇原案 18px/f 在 decay 下只飞 180px 不可感——弹道类幅度按总位移倒推"
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 配色",
+      "typical": "灰阶为主 + 1/3 强调色",
+      "feel": "全彩读作 B 端不合品牌；全灰读不出庆祝"
+    },
+    {
+      "ord": 2,
+      "variant": "B",
+      "key": "B 火星量",
+      "typical": "常规 6–10、终值 20",
+      "feel": "默认档最含蓄，嫌弱可 3 倍量做极端版"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "弹道",
+      "typical": "闭式公式（seed 伪随机初速角度）",
+      "feel": "每帧独立可算，禁 Math.random"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "收尾",
+      "typical": "粒子寿命耗尽条件卸载",
+      "feel": "结尾必须真静止，残留粒子=脏帧"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "同批组合款 ring-confetti-blowout（合环×礼炮）、lights-out-tick-burst",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "A 只配\"值得开炮\"的时刻，一片一次；连开读作廉价",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "声音：A 双炮\"砰砰\"错开 1–2f 更有层次；B 每 tick 一声细\"叮\"",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "confetti-crossfire",
+      "variant_letter": "A",
+      "upstream_key": "confetti-crossfire",
+      "demo": "demos/data/particle-celebrate-hits/ConfettiCrossfire.tsx",
+      "component": "ConfettiCrossfire",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "counter-tick-sparks",
+      "variant_letter": "B",
+      "upstream_key": "counter-tick-sparks",
+      "demo": "demos/data/particle-celebrate-hits/CounterTickSparks.tsx",
+      "component": "CounterTickSparks",
+      "duration_frames": 78,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

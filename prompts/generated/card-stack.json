@@ -1,0 +1,286 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "card-stack",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/card-stack.md",
+    "card_sha256": "5eb748e98e70b11dcf78a862b1cb08927bd21451afa7283bab42a5bd8b88082f",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 126,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 4.2s（126f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（入场是连续小爆发，展开段收成一次平滑的整体动作）",
+    "energy_rationale": "入场是连续小爆发，展开段收成一次平滑的整体动作"
+  },
+  "intent_zh": "一摞卡先聚成一个物体，再摊开成一组物体——顺序很关键：先给\"整体\"再给\"个体\"。 观众第一眼记住的是有分量的一摞（数量感），第二眼才看清每张不一样（多样性）。 展开动作留到最后一次性完成，是为了不和入场的节拍打架。",
+  "use_zh": "需要交代\"我们有一组东西\"的产品段落；卡片墙/模板库/方案列表的建立镜头，也能当 logo 前的一拍蓄势",
+  "summary_zh": "8 张卡从屏幕下方逐张 spring 弹入叠成一摞，全员落位后整摞一次性展成 3D 扇面——每张按序号偏转 8°、横移 34px、向后退一层 z",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "两层运动分离叠加：入场（每张自己的 spring）与扇形（全员共享的一条展开进度），"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "最终 transform 是 `translate3d(tx, y, tz) rotate(rot)` 里两层各自算出的分量合成"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "spring",
+      "beziers": [],
+      "raw": "入场：`seg(t, 0.02+i*0.033, +0.3)` 后过 `E.spring(inT, 0.3)`，`y` 从 300px 抬到 0——"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "起点在画框外，stagger 0.033（约 4f）让 8 张连成一串而不是一起飞"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": [
+        0.55,
+        0.8
+      ],
+      "frame_hints": [],
+      "ease": "inOutCubic",
+      "beziers": [],
+      "raw": "扇形：`seg(t, 0.55, 0.8, E.inOutCubic)` 是唯一的展开时钟，扇形终态是静态偏移量"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（`k = i-3.5`，`rot = k*8°`、`tx = k*34px`、`tz = -10*|k|`）乘上这条进度"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`transform-origin: 50% 130%` 把旋转轴放到卡片下缘之外——扇柄在手里，卡片是绕手腕"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "转开的，不是绕自己中心转"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "透明度用 `min(1, inT*4)` 提前吃满：卡在飞行前 1/4 段就已经全实，观众看到的是实体"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "运动而不是淡入"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`zIndex = 20 - |k*2|`：中间的卡压在最上层，扇面向两侧递退，配合 `tz` 一起给深度"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 186,
+      "name": "t",
+      "window": null,
+      "from": "0.02 + i * 0.033",
+      "to": "0.02 + i * 0.033 + 0.3",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 31,
+      "raw": "const inT = seg(t, 0.02 + i * 0.033, 0.02 + i * 0.033 + 0.3);"
+    },
+    {
+      "style_id": 186,
+      "name": "t",
+      "window": [
+        0.55,
+        0.8
+      ],
+      "from": "0.55",
+      "to": "0.8",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 34,
+      "raw": "const fan = seg(t, 0.55, 0.8, E.inOutCubic);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "卡数",
+      "typical": "N=8（hue 222→334，每张 +16°）",
+      "feel": "8 张是扇面 56° 总张角的舒适上限；>10 张要把每张角度降到 5–6°，否则两端卡飞出画框"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "入场 stagger",
+      "typical": "0.033/张（≈4f）",
+      "feel": "4f 是\"一串\"的手感；≥8f 读作逐张点名，≤2f 读作一团一起冒"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "入场行程",
+      "typical": "窗 0.3（≈38f），y 300→0",
+      "feel": "300px 保证起点在画框外；行程缩到 0.15 以内 spring 的回弹会被截断，落位变硬"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "spring 阻尼",
+      "typical": "`E.spring(inT, 0.3)`",
+      "feel": "0.3 是可见但不夸张的一次回弹；调小回弹次数增多，卡会\"抖两下\"，成组时抖动会互相干扰"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "展开窗",
+      "typical": "0.55→0.8（inOutCubic）",
+      "feel": "inOut 让展开缓起缓收像一只手在摊牌；换 outBack 会过冲成\"甩开\"，与前段的 spring 撞手感"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "扇形张角",
+      "typical": "`k*8°`，横移 `k*34px`",
+      "feel": "角度与横移要同比调：只加角度不加横移，卡会互相穿插；34/8 的比值决定扇面是\"疏\"还是\"叠\""
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "深度递退",
+      "typical": "`tz = -10*",
+      "feel": "k"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "旋转轴",
+      "typical": "`transform-origin: 50% 130%`",
+      "feel": "130% 决定\"扇柄\"离卡多远；改成 50% 50% 立刻退化成风车式散开，失去手持感"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "两段时间窗刚好首尾相接：末张入场结束于 `0.02+7*0.033+0.3 = 0.551`，展开始于 0.55。",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "卡数为偶数时 `k` 取半整数（±0.5, ±1.5…），`zIndex = 20-|k*2|` 让中间两张同层，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "卡片尺寸 110×150 与 `margin:-85px 0 0 -55px` 是绑定的居中量，改尺寸要一起改 margin",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "卡面内容是灰阶骨架条 + 单个几何字符的占位，落地必须换成真实页面切片；hue 色环是",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "展开后没有收尾动作，末帧停在扇面终态。要接下一镜就在 0.8 之后切，别让扇面白停太久",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "card-stack",
+      "variant_letter": null,
+      "upstream_key": "card-stack",
+      "demo": "demos/ui-entrance/card-stack/CardStack.tsx",
+      "component": "CardStack",
+      "duration_frames": 126,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

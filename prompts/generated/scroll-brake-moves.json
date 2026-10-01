@@ -1,0 +1,195 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "scroll-brake-moves",
+  "category": "data",
+  "category_label": {
+    "en": "Data & Metrics",
+    "zh": "数据与指标",
+    "ru": "Данные и метрики"
+  },
+  "tags": [
+    "data",
+    "rhythm"
+  ],
+  "source": {
+    "card": "references/shots/data/scroll-brake-moves.md",
+    "card_sha256": "87ed59443a6f994fe85f0352b1c4ded03f0227e0c1b72e81a341c3393b090165",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "A 4–5s / B 5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "高开中收（速度对比型）",
+    "energy_rationale": "速度对比型"
+  },
+  "intent_zh": "Linear changelog 视频语法：一整年的更新日志作为长卷高速掠过 （糊成色带），指数减速精准急刹停在本次发布那条上，该条抬升离面 高亮、其余退暗——密度感讲\"一直在发货\"，急停讲\"今天这条最大\"。 B 是组合变异：急刹帧**同帧**四个 L 角标从画外飞入咬合锁定停点 条目——急刹的\"哐\"与咬合的\"咔\"叠在同一帧共振（组合命门： 角标起跳帧=列表首停帧，错开退化成两招并置）。",
+  "use_zh": "changelog/发布史/长列表段落：\"一直在发货，今天这条最大\"；要给停点更强打击感用 B",
+  "summary_zh": "长卷急刹两式——changelog-scroll-brake 基本款（高速长卷指数减速精准停位+目标抬升）与 brake-reticle-lock 组合款（急刹帧同帧准星咬合）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [
+        50
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A changelog-scroll-brake | translateY 扫 ~2400px（out exp 指数减速 ~50f），blur 由帧间位移差分驱动（0–6px 自动清零）；停点行 scale 1.03 抬升+阴影+3px 描边，其余 opacity 退 0.38 | changelog 段落基本款 |"
+    },
+    {
+      "ord": 3,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B brake-reticle-lock | 滚动三段：sin-in 加速→cubic-out 猛减速冲过头 +30px→回弹落定；blur=v×0.12 封顶 24px；角标从 ±620/±320 画外 Easing.back(2.4) 飞入咬合，高亮 6f 内完成、标签 back(2.6) 弹出 | 停点需要更强打击感的高光段 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "减速曲线",
+      "typical": "A 纯 out-exp；B 加\"冲过头 30px 回弹\"",
+      "feel": "匀速滚读作跑马灯；B 的过头回弹是\"哐\"的来源"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "blur 驱动",
+      "typical": "帧间位移差分 `",
+      "feel": "p(f)-p(f-1)"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "行高节奏",
+      "typical": "72/94/116 三档错落",
+      "feel": "等高行高速掠过时色带无节奏"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "停位",
+      "typical": "目标行停画面纵向正中",
+      "feel": "停偏读作事故"
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 共振帧",
+      "typical": "角标挂载起跳帧 = 列表首次停住帧（严格同帧）",
+      "feel": "组合命门，错 2f 以上就散"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 timeline-travel 分工：本卡纵向列表急刹停\"最新\"，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "高速段条目内容不用真实可读文本——反正糊成色带，占位灰块即可；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "停点后其余行退暗 0.38 是构图动作：别退到 0（上下文消失）",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "声音：高速段低频 riser 铺垫，急刹一声 impact；B 咬合帧",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "brake-reticle-lock",
+      "variant_letter": "B",
+      "upstream_key": "brake-reticle-lock",
+      "demo": "demos/data/scroll-brake-moves/BrakeReticleLock.tsx",
+      "component": "BrakeReticleLock",
+      "duration_frames": 150,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "changelog-scroll-brake",
+      "variant_letter": "A",
+      "upstream_key": "changelog-scroll-brake",
+      "demo": "demos/data/scroll-brake-moves/ChangelogScrollBrake.tsx",
+      "component": "ChangelogScrollBrake",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

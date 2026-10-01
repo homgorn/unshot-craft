@@ -1,0 +1,246 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "segmented-thumb-hero",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/segmented-thumb-hero.md",
+    "card_sha256": "e02c8b02a82d39363e2134c6c5095af3e4cf23091ac295c334084e856b3f8df3",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 110,
+    "duration_frames_hint": null,
+    "duration_verbatim": "~3.5s（demo 110f：浮入 18f + 光标 24f + 点击 + 滑动 8f + 图标弹出 + hold）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（微交互特写，精致不轰）",
+    "energy_rationale": "微交互特写，精致不轰"
+  },
+  "intent_zh": "产品切到新模式，通常拍法是整个界面换掉。本卡反着来：把 segmented control 放大到 1080px 宽拍特写，**thumb 那 8 帧位移本身就是叙事**—— \"我们从 A 走到了 B\"。没有任何页面上下文，控件即舞台。因果链完整： 光标滑入（有人来了）→ 按下+涟漪（做了决定）→ thumb 滑动（世界响应） → 新图标弹出（新身份确立）。四拍缺一不可，缺了光标就是 UI 自己在动， 缺了图标弹出就是切换没有奖励。",
+  "use_zh": "\"模式切换/二选一\"功能的宣告镜头（Ask→Computer、Chat→Agent 式）；一个 UI 微交互撑一整镜的特写拍法",
+  "summary_zh": "分段控件 thumb 位移当主角特写——超大胶囊 segmented control 弹簧浮入，描边箭头光标画外滑入按下，白 thumb 8f ease-out 滑到另一段，到位瞬间新图标 spring 弹出、旧图标收起",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "控件特写尺寸 1080×220，从下 200px 弹簧浮入"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（spring damping 14 / stiffness 120），大阴影随落位收小（24→12px）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        24
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "光标是超大描边箭头（130px，白底墨描边）：24f Easing.out(cubic)"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "从右下画外滑到目标段上；按下 scale 1→0.86→1（3f 下 4f 回）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        60
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "**thumb 严格 8f** Easing.out(cubic)（demo 52→60f）——还原原片手感；"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "这 8f 是全镜的心跳，前后各拍都在为它服务"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "到位瞬间双动作同帧起：新图标 spring(damping 10, stiffness 220)"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "过冲弹出；旧图标 6f Easing.in 塌缩且 width 同步归零让文字自然回流"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        12
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "点击涟漪：4px 描边圆环 12f 从点击点扩散淡出（Easing.out(quad)）"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——涟漪确认\"按下\"发生过，无涟漪点击读作光标路过"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "控件尺寸",
+      "typical": "1080×220，thumb 内缩 16px",
+      "feel": "缩到 <600px 宽就不是特写了，thumb 位移读不出重量"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "thumb 时长",
+      "typical": "8f Easing.out(cubic)",
+      "feel": ">14f 读作慢动作演示视频；<5f 读作瞬移，\"滑\"没了"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "光标滑入",
+      "typical": "24f 从画外，ease-out",
+      "feel": "linear 或 <14f 读作光标被扔进来；起点必须画外"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "按下",
+      "typical": "scale 0.86 + 涟漪 12f",
+      "feel": "无按下直接滑 thumb，因果链断，读作自动播放"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "图标弹出",
+      "typical": "spring damping 10/stiffness 220",
+      "feel": "damping <8 弹三下抢 thumb 的戏；旧图标不收起文字会挤出控件"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "收尾 hold",
+      "typical": "新态静置 ≥30f",
+      "feel": "切换完立刻切镜，\"新模式\"没被看清"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 input-trigger-moves 分工：cursor-performance 是光标在完整页面里",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "图标塌缩用 width 归零而不是只 scale——只 scale 会留空位，文字不回流，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "二段以上（3+ 段）控件慎用：thumb 跨多段滑行 8f 太快读不出停靠，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "涟漪圆环要 zIndex 压在 thumb 之上、圆心锁点击点——跟着 thumb 走",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "实战替换素材：段标签/图标换成真功能名即可，但\"新段图标带表情\"",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "segmented-thumb-hero",
+      "variant_letter": null,
+      "upstream_key": "segmented-thumb-hero",
+      "demo": "demos/interaction/segmented-thumb-hero/SegmentedThumbHero.tsx",
+      "component": "SegmentedThumbHero",
+      "duration_frames": 60,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

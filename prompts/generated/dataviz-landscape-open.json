@@ -1,0 +1,227 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "dataviz-landscape-open",
+  "category": "opening",
+  "category_label": {
+    "en": "Opening & Brand",
+    "zh": "开场与品牌",
+    "ru": "Открытие и бренд"
+  },
+  "tags": [
+    "opening",
+    "camera",
+    "data"
+  ],
+  "source": {
+    "card": "references/shots/opening/dataviz-landscape-open.md",
+    "card_sha256": "4ae372f03d82d1079b76af258d750ce6f2f2e00c2709d7691d170a7773fdbfd4",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 240,
+    "duration_frames_hint": null,
+    "duration_verbatim": "5–8s（开场氛围段，一支片 ≤1 次）",
+    "width": 1920,
+    "height": 1080,
+    "energy": null,
+    "energy_label": {
+      "zh": null,
+      "en": null
+    },
+    "energy_verbatim": "低开缓升（起步位，为后续爬升留空间）",
+    "energy_rationale": "起步位，为后续爬升留空间"
+  },
+  "intent_zh": "Linear Releases 发布片开场实证的品牌级开场品类：把产品背后的数据世界 拍成一片**暗场地景**——支流线束从画面深处汇入一条主干（\"无数工作流 汇成一个产品\"的隐喻），真实感来自三样东西：①虚构 issue/任务 ID 标签 浮在线上（观众认出\"这是我每天看到的那种东西\"）；②重景深——近景大虚焦 流过、中景标签清晰可读、远景渐隐，三层纵深让平面 SVG 读作空间； ③相机低速匀稳飞越——这是氛围段不是炫技段，速度感交给后面的镜头。 手搓 UI 合规依据：非复刻场景（页面上不存在此画面），按核心理念 1 修订版走质量+表达明确性门槛。",
+  "use_zh": "品牌级抽象开场（\"数据宇宙\"隐喻），接亮场产品段或字标；与 glow-flyline-moves 分工：那卡是段落内卡片之间的连线叙事，本卡是开场专用的全画幅地景",
+  "summary_zh": "暗场支流线束地景开场——多条流线汇入主干、虚构 ID 标签浮在线上、相机重景深低速飞越",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 阶段 | 帧段（@30fps 参考） | 内容 |"
+    },
+    {
+      "ord": 1,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|------|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 1 生长 | f0–45 | 流线自远端向汇点 draw-on 生长（out-cubic），主干先行、支流错峰跟进 |"
+    },
+    {
+      "ord": 3,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 2 飞越 | f30–150 | 相机沿主干方向低速推移（与生长期跨骑），标签非均匀错峰浮现 |"
+    },
+    {
+      "ord": 4,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [
+        45
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 3 交棒 | 末 30–45f | 汇点方向留亮部引导视线，接 shot-transitions 藏切/B 式穿暗场，或减速停稳接字标 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "线束规模",
+      "typical": "支流 8–14 条汇入 1 条主干；分层 近 2–3 / 中 5–8 / 远 4–6",
+      "feel": "超过 ~16 条读作屏保/科技模板；主干必须唯一（单主角原则的地景版）"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "汇流拓扑",
+      "typical": "支流以 bezier 切向汇入主干（切线连续），汇点偏画面一侧 1/3 处",
+      "feel": "垂直相交读作电路图不是水系；汇点居中构图死板"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "景深三层",
+      "typical": "近景 blur 10–16px + 线宽 6–10px + 亮度 0.15–0.25；中景清晰 2–3px 亮度 0.5–0.8;远景 1–1.5px 亮度 0.2–0.35",
+      "feel": "近景不虚焦则三层塌成一张平面图；远景过亮抢中景"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "相机飞越",
+      "typical": "世界画布 ≥2× 视口，横移速度 2–5px/f 匀稳 + 视差（近 1.4×/中 1×/远 0.6×），可叠极缓 zoom 1.0→1.06",
+      "feel": "快了变追逐镜头（那是 crash-zoom 的活）；无视差立刻穿帮为平面滚动"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "视差可见性",
+      "typical": "近/远层线条必须与运动方向成角（斜率明显）或带画内可见特征点（端点/交叉/节点标记穿过画面）",
+      "feel": "**平行于运动方向的线横移时沿自身滑动，视差机制再对也不可见**（L2 评估判例：0.6×/1×/1.4× 全写对，正常播放只有中景在动）"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "流动感",
+      "typical": "draw-on 完成后线条保持\"活\"：沿线明暗脉冲/虚线相位低速漂向汇点（速度 1–2px/f，透明度 ≤0.3 叠加）",
+      "feel": "生长期结束后无流动元素，后半段退化成\"路线图飞越\"不是\"数据流\""
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "标签",
+      "typical": "中景层 5–9 枚：方块图钉 + 等宽字 ID（如 APP-1843），错峰 6–10f 间隔淡入 + 沿线微漂",
+      "feel": "ID 一律虚构（合规底线）；标签挂近景/远景层会因虚焦/过暗不可读；图钉方块要落在线上（钉线分离读作浮尘不是锚点）"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "生长节奏",
+      "typical": "主干 30–40f out-cubic 先行，支流每条错峰 3–6f",
+      "feel": "全部同帧生长读作 loading 动画"
+    },
+    {
+      "ord": 8,
+      "variant": null,
+      "key": "收尾",
+      "typical": "交棒帧前 ≥15f 标签停止新增、相机斜率连续（不急刹）",
+      "feel": "氛围段急刹是一次可见的顿挫（glow-orb 收敛判例同源）"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "借鉴来源：Linear Releases 开场（进化轮 #3 breakdown #7），单例样本",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 glow-flyline-moves 别混用在相邻段落：两卡都是\"暗场发光线\"，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "暗场进出成本同 glow 卡：接亮场产品段用 shot-transitions 藏切族垫，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "线条纯白全亮会糊成蛛网——亮度按层拉开（见参数表），中景才是主角层；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "标签字号在目标画幅下 ≥18px 等效，否则\"可读\"沦为装饰噪点（Q6 同源）",
+      "critical": false,
+      "rules": "Q6"
+    },
+    {
+      "ord": 5,
+      "text": "声音：铺 riser/低频 pad 底噪，标签浮现不逐枚打点（批量不逐个发声，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "Q6",
+      "family": "Q",
+      "title": "规则：风格化机位按镜头逐个决定——叙事/情绪镜头可倾斜，列表/堆叠等信息密集镜头保持正视；含文字的卡片特写用侧向水平机位，避免大角度仰拍/俯拍破坏文字可读性；禁止全局一刀切套用某种机位风格。",
+      "check_question": "自检：每个倾斜机位镜头：斜的理由是什么？画面里的文字在这个角度还读得清吗？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "dataviz-landscape-open",
+      "variant_letter": null,
+      "upstream_key": "dataviz-landscape-open",
+      "demo": "demos/opening/dataviz-landscape-open/DatavizLandscapeOpen.tsx",
+      "component": "DatavizLandscapeOpen",
+      "duration_frames": 165,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

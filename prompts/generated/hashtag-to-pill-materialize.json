@@ -1,0 +1,246 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "hashtag-to-pill-materialize",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "typography",
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/hashtag-to-pill-materialize.md",
+    "card_sha256": "8f10b731549b782435da41041b252098266a4f6d369bbd67c8ae095570e20d21",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 40,
+    "duration_frames_hint": null,
+    "duration_verbatim": "打字 ~40f + 硬切胶囊 hold ~18f + 缩移 ~14f + 硬切揭示后静置；全段约 3.5s（原片 18–21.5s）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（干脆利落，靠硬切给劲，不靠弹跳）",
+    "energy_rationale": "干脆利落，靠硬切给劲，不靠弹跳"
+  },
+  "intent_zh": "文字变实体的常规做法是渐变/morph/展开，原片帧级拆解证明 Bear 反着 来：**实体化是 1 帧硬切**——上一帧还是文字+光标，下一帧就是完整 胶囊，无展开无 cross-fade 无回弹。硬切给的是\"啪、成了\"的确定感， 任何渐变都会把\"实体\"软化成\"特效\"。全段骨架是**两次硬切夹一次 滑动**：硬切实体化 → 平滑缩移归位 → 硬切揭示成品页。唯一的连续 运动（缩移）被两记硬切框住，才显得又快又稳。这个节奏骨架是命门， 三段挪动任何一段的性质（把硬切改渐变、把滑动改硬切）整卡就塌。",
+  "use_zh": "标签/分类/关键词功能的演示段（笔记 app 打 tag、话题聚合）；\"输入 → 变成 UI 实体 → 归位到成品\"的三段式叙事",
+  "summary_zh": "话题词打字实体化——居中打出 \"#word\"（红实心光标恒亮），1 帧硬切变成宽大胶囊标签，hold 后缩小左移落到页面标签位，再 1 帧硬切揭示成品页；\"两次硬切一次滑动\"的节奏骨架",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "打字段：几何无衬线（Futura 气质）居中打 \"#word\"，**红实心光标"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "恒亮不闪**（原片实测，别加 blink）；人手节奏 4–6f/字带确定性抖动"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**实体化 = 1 帧硬切**：文字+光标整层消失，同帧出现无描边浅灰"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "胶囊 + 图标 + 词（字号不变、原位等大，# 被图标替换）；仅允许"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "3f 1.03→1 微落定防死板"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "胶囊 hold ~0.6s → 一段 bezier easeInOut 缩小左移（~0.55x、"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        14
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "~14f）落到页面标签位，位置/缩放同曲线同起止，中途不分段"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "落位后**再 1 帧硬切**揭示成品页：底色/标题/正文/胶囊配色同帧"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "全变，之后真静止收尾"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "实现要点：胶囊按大字号绘制、整体 transform 缩放，且"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "transformOrigin 必须 0 0 + translate 先行，否则落位中心漂移"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "打字节奏",
+      "typical": "4–6f/字（原片 ~6 字/秒），mulberry32 抖动",
+      "feel": "均匀间隔读作机打；光标必须恒亮（**原片实测**不闪烁）"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "实体化",
+      "typical": "**1 帧硬切**（原片帧级实测无任何过渡）+ 3f 1.03→1 微落定",
+      "feel": "加淡入/展开立刻降级成普通 morph；微落定 >4f 读作弹跳"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "胶囊几何",
+      "typical": "740×236@1920（**原片实测** 493×157@720p ×1.5），无描边",
+      "feel": "胶囊要\"宽大过头\"才有实体感；加描边读作按钮"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "hold",
+      "typical": "~18f（0.6s，**原片实测**）",
+      "feel": "<12f 观众没看清胶囊长啥样就飞了"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "缩移",
+      "typical": "~0.55x（**原片实测** 273/493）、14f、bezier(0.5,0,0.25,1)",
+      "feel": "缩放与位移必须同曲线；分开调会读作两个动画"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "揭示",
+      "typical": "落位 +3f 再 1 帧硬切全页",
+      "feel": "揭示若做转场，第二记硬切没了，骨架塌一半"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 typewriter-moves/ai-stream-response（打字呈现）、",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "早期版本曾杜撰\"胶囊飞入下方滑入笔记卡\"段，原片对照证伪已砍；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "transformOrigin 默认 50% 50% 会让缩放落位中心漂移 (1−s)×半宽，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "与原片残余差距：音符图标手绘 SVG 曲线、Futura 回退字重、揭示帧",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "hashtag-to-pill-materialize",
+      "variant_letter": null,
+      "upstream_key": "hashtag-to-pill-materialize",
+      "demo": "demos/interaction/hashtag-to-pill-materialize/HashtagToPillMaterialize.tsx",
+      "component": "HashtagToPillMaterialize",
+      "duration_frames": 80,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

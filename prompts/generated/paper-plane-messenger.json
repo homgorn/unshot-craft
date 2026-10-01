@@ -1,0 +1,270 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "paper-plane-messenger",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "camera",
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/paper-plane-messenger.md",
+    "card_sha256": "2ac23914273286b14c3ca9f016fea34cbafc542659b7b936862d37a62d6d3f64",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "~5s（150f：点击 12f → 拉远 16–42f → 飞行 34–104f → B 接管 112–146f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中",
+    "energy_rationale": null
+  },
+  "intent_zh": "transition-travel 是镜头钻进画面里的既有元素换景；本卡反过来——从 动作里**放出一个语义信使**，让镜头跟着它飞去下一个场景。\"发送\"这个 抽象动作被实体化成折纸飞机，A/B 两窗的空间关系被飞行轨迹真实丈量 过，观众对\"消息去了哪\"有了身体感。命门是 2.5D 相机管线：所有元素 挂在同一世界坐标系上，镜头中心 A→跟飞机→B、变焦拉远再推近，视差 道具按 depth 乘相机位移——重 3D 原片降级成一台\"假三维\"，成本掉一个 量级而纵深感保留。飞机俯仰角跟随弧线切线是\"它在飞\"而非\"它在平移\" 的全部区别。",
+  "use_zh": "\"发送/邀请/分享\"动作连接两个人物/场景视角的叙事转场；抽象动作需要一个隐喻实体当转场载具时",
+  "summary_zh": "纸飞机信使转场——点击\"发送\"后镜头拉远脱离窗口 A，折纸飞机沿贝塞尔弧线飞出（俯仰跟随切线），镜头伴飞穿过多层视差道具，飞抵窗口 B 门前落定，B 放大接管全屏",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "世界坐标系相机：`screen = 960 + (world − camCenter) × zoom × depth`；"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "镜头中心 A(520,560) → 跟飞机 → B(3200,600)，变焦 1.55（贴脸 A）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "→ 0.62（拉远伴飞）→ 3.1（B 接管全屏）"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "飞机三次贝塞尔：A 发送按钮 → 高抛控制点（y=−80）→ 下压控制点 →"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "B 门前；朝向 = bez(t) 与 bez(t+0.012) 的 atan2 切线角"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [
+        [
+          0.45,
+          0.05,
+          0.25,
+          1.0
+        ]
+      ],
+      "raw": "飞行整体缓动 Easing.bezier(0.45,0.05,0.25,1)（起飞加速、落定"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        70
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "减速）70f；途中 scale 放大 1.7 倍保可读，落定收回 1.1"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "视差道具 16 件（圆环/圆角方块，seed 随机）分 depth 0.45/0.75/1.3"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三层，远层 blur3、近层 blur8 焦外；各带正弦漂浮"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "飞机 = SVG 三块折面（白/浅灰/深灰示折痕）+ 描边；入场"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "Easing.back(1.6) 弹出，B 接管期 opacity 淡出不留残影"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        12
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "点击脉冲：按钮 scale ×1.22 + 扩散圈（CLICK 12f 起 3f 峰值）"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "变焦三段",
+      "typical": "1.55 → 0.62 → 3.1",
+      "feel": "不先拉远直接跟飞，观众不知道 B 在哪个方位；拉远 <0.7 才装得下旅程感"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "飞行时长",
+      "typical": "70f，ease-in-out",
+      "feel": "<45f 读作弹射；匀速读作拖拽平移"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "切线采样",
+      "typical": "dt = 0.012",
+      "feel": "太大角度滞后、太小抖动；俯仰角是\"飞\"的命门，删掉立即变贴图滑动"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "途中放大",
+      "typical": "×1.7（0.25–0.75 区间），落定 ×1.1",
+      "feel": "拉远后飞机只剩几十像素，不放大就丢主角"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "视差层",
+      "typical": "depth 0.45/0.75/1.3，远 blur3 近 blur8",
+      "feel": "全同 depth 就没有穿越感；近景不虚会抢飞机视线"
+    },
+    {
+      "ord": 5,
+      "variant": "B",
+      "key": "B 接管",
+      "typical": "112–146f，变焦推到 3.1，道具/飞机同步淡出",
+      "feel": "道具不淡出会在推近时变成巨大糊块扫过全屏"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 transition-travel 分工：那卡钻进**画面里既有的**元素/容器完成",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 glow-flyline-moves B（flyline-arc）分工：飞线是暗场数据流向的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "信使实体必须来自动作语义（发送→纸飞机、上传→气球、部署→火箭），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "相机三段（拉远/伴飞/接管）的切换帧上中心与变焦都要连续——demo 里",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "2.5D 的极限：道具只能是剪影级形状，写实道具会暴露\"没有真透视\"；",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "paper-plane-messenger",
+      "variant_letter": null,
+      "upstream_key": "paper-plane-messenger",
+      "demo": "demos/transition/paper-plane-messenger/PaperPlaneMessenger.tsx",
+      "component": "PaperPlaneMessenger",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

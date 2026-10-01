@@ -1,0 +1,370 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "svg-shape-morph",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/svg-shape-morph.md",
+    "card_sha256": "5f959664fb65b94db0c1593ebe0b1eefcc56e91d1014eb43aaff91817331d224",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 156,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 5.2s（156f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "low",
+    "energy_label": {
+      "zh": "低",
+      "en": "low"
+    },
+    "energy_verbatim": "低（无爆点的连续流动，适合当旁白底或呼吸拍）",
+    "energy_rationale": "无爆点的连续流动，适合当旁白底或呼吸拍"
+  },
+  "intent_zh": "\"形态会变\"这件事，用两张图交叉淡入是说不清的——观众看到的是两个东西重叠。真正的 morph 要让观众相信这一直是**同一个东西**在改变形状。等点数重采样加逐点插值就是这个 \"同一性\"的技术保证：没有点的生成或消失，只有半径在变。变回原形是为了闭环——观众 看到往返，才知道这是可逆的能力而不是一次性的变身。",
+  "use_zh": "抽象概念的\"形态转换/自适应/有机生长\"表达；开场 logo 前的氛围一拍，或章节之间的过渡形",
+  "summary_zh": "一条 140 点闭合轮廓平滑变形为另一条再变回，两形状先在极坐标下重采样到相同点数、逐点半径插值 + inOutCubic，变形中段叠轻微 scale 呼吸、缓慢自转与色相从 185° 漂到 305°",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "两形状用极坐标函数定义，不是路径字符串："
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`rA(θ) = 76*(1 + 0.30*cos(3θ) + 0.05*sin(7θ+0.8))`、"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`rB(θ) = 76*(1 + 0.26*sin(5θ+1.2) + 0.06*cos(2θ))`——三瓣形与五瓣形，各带一层高频"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "扰动做\"有机\"细节"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "重采样：两形状都在 `i/140 * 2π` 上取样存进 `radA/radB` 数组，天生等点数且一一对应"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——这就是 morphTo 需要的点数对齐，只不过在极坐标下免费获得"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "插值只发生在半径上：`r = lerp(m, radA[i], radB[i])`，角度恒定。这保证插值中间态一定"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "是一条不自交的闭合曲线，不会出现路径插值常见的打结"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": [
+        0.08,
+        0.42
+      ],
+      "frame_hints": [],
+      "ease": "inOutCubic",
+      "beziers": [],
+      "raw": "往返用两条窗口相减：`m1 = seg(t, 0.08, 0.42, E.inOutCubic)`（A→B）、"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": [
+        0.58,
+        0.92
+      ],
+      "frame_hints": [],
+      "ease": "inOutCubic",
+      "beziers": [],
+      "raw": "`m2 = seg(t, 0.58, 0.92, E.inOutCubic)`（B→A），`m = m1 - m2`——0 是 A、1 是 B，"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        25
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "中间 0.42→0.58 是 B 形态的静置段（约 25f）"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "呼吸与自转是叠加的第二层：`breath = 1 + 0.045*(sin(m1*π) + sin(m2*π))` 让缩放在两次"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "变形的**中途**各鼓一次（形状最不稳定时鼓得最多）；`rot = sin(t*2π)*4°` 走一个整数"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "周期，末帧回零"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "色相跟形态绑定：`hue = lerp(m, 185, 305)`，同时驱动描边 `hsl(hue,90%,66%)`、"
+    },
+    {
+      "ord": 15,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "填充 `hsla(hue,80%,58%,.14)` 与 `drop-shadow` 光晕——颜色是形态的读数，不是独立装饰"
+    },
+    {
+      "ord": 16,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "字幕在 `m > 0.5` 时切换 `morphTo(shapeB)` / `morphTo(shapeA)`，透明度"
+    },
+    {
+      "ord": 17,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`0.4 + 0.6*|m-0.5|*2` 在形态最\"纯\"时最亮、变形中途最淡"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 214,
+      "name": "t",
+      "window": [
+        0.08,
+        0.42
+      ],
+      "from": "0.08",
+      "to": "0.42",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 42,
+      "raw": "const m1 = seg(t, 0.08, 0.42, E.inOutCubic); // A → B"
+    },
+    {
+      "style_id": 214,
+      "name": "t",
+      "window": [
+        0.58,
+        0.92
+      ],
+      "from": "0.58",
+      "to": "0.92",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 43,
+      "raw": "const m2 = seg(t, 0.58, 0.92, E.inOutCubic); // B → A"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "采样点数",
+      "typical": "N=140",
+      "feel": "140 点在 480×270 上足够平滑（`L` 直线段肉眼看不出）；<60 点能看到多边形棱角，>300 点是纯浪费"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "基半径",
+      "typical": "BASE=76，中心 (240,138)",
+      "feel": "76 相对 270 高度约占 56%——留边给光晕；调大要检查 `0.30` 的凸起是否顶出 viewBox"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "形状 A",
+      "typical": "`1 + 0.30cos(3θ) + 0.05sin(7θ+0.8)`",
+      "feel": "3θ 定瓣数、0.30 定凸起深度；深度 >0.5 时凹处半径趋近 0，形状会掐出尖角"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "形状 B",
+      "typical": "`1 + 0.26sin(5θ+1.2) + 0.06cos(2θ)`",
+      "feel": "与 A 的瓣数不同（5 vs 3）才有变形张力；瓣数相同只会看到形状\"转了转\""
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "变形窗",
+      "typical": "0.08→0.42 / 0.58→0.92，均 inOutCubic",
+      "feel": "行程 0.34（≈53f）；inOut 的缓起缓收是\"有机\"的关键，换 linear 立刻读作机械插值"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "中段静置",
+      "typical": "0.42→0.58（≈25f）",
+      "feel": "这是让观众认清 B 形态的时间；砍掉会读作一次来回摆动而不是 A→B→A"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "呼吸幅度",
+      "typical": "0.045 × `sin(m*π)`",
+      "feel": "4.5% 的呼吸在变形中途达峰；>10% 会读作缩放动画而不是形变"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "自转",
+      "typical": "`sin(t*2π)*4°`（1 个整数周期）",
+      "feel": "4° 是暗示级别的漂移，末帧回零可循环；>15° 会看出是整体旋转，与形变抢注意力"
+    },
+    {
+      "ord": 8,
+      "variant": null,
+      "key": "色相区间",
+      "typical": "185°→305°（青→紫）",
+      "feel": "跨度 120° 让两个形态有明确的身份差；跨度 <40° 时颜色变化读不出，色相就白给了"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "极坐标定义天生只能表达\"从中心看每个角度一个半径\"的形状——星形、花瓣、水滴都行，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "路径用 `L` 直线段拼接而非曲线段，靠点数密度掩盖。如果做大幅放大（>2 倍）或极粗",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "每帧重建整条 `d` 字符串（140 点字符串拼接 × 2 个 path）。480×270 无压力，但如果同屏",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "两条形状函数写死在 setup 里，没有做成参数。要换形状是改函数体而不是传参——移植时",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "字幕 `morphTo(shapeB)` 是 anime.js API 的自我说明式占位文案，成片里应换成有语义的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "背景写死 `#0a0b10`，整套颜色（90% 饱和描边 + 8px 光晕）依赖深底。白底上光晕失效，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "svg-shape-morph",
+      "variant_letter": null,
+      "upstream_key": "svg-shape-morph",
+      "demo": "demos/ui-entrance/svg-shape-morph/SvgShapeMorph.tsx",
+      "component": "SvgShapeMorph",
+      "duration_frames": 156,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

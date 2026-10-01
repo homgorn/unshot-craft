@@ -1,0 +1,220 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "speed-ramp-freeze",
+  "category": "rhythm",
+  "category_label": {
+    "en": "Rhythm & Montage",
+    "zh": "节奏与蒙太奇",
+    "ru": "Ритм и монтаж"
+  },
+  "tags": [
+    "rhythm"
+  ],
+  "source": {
+    "card": "references/shots/rhythm/speed-ramp-freeze.md",
+    "card_sha256": "58541f7eada6870f13b5c03796004e370f83154524bf79e86bcacbf9f205d70f",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 40,
+    "duration_frames_hint": null,
+    "duration_verbatim": "变速全程 4–5s（慢速窗 ≥40f）；定格标注全程 4–5s（定格段 ≥45f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（速度反差本身即energy beat）",
+    "energy_rationale": "速度反差本身即energy beat"
+  },
+  "intent_zh": "匀速流读作 PPT（R2），全程快流观众抓不住重点（R3）。变速在一条 运动里制造\"冲刺-凝视-冲刺\"；定格标注更进一步——干脆停下来， 马克笔圈出重点再走。两款同一技术根（帧号 remap），语义不同： 变速是\"路过时多看一眼\"，定格是\"停课划重点\"。",
+  "use_zh": "卡片流/长横移中把一个重点\"放慢/停下给人看\"；教学解说语境用定格标注",
+  "summary_zh": "帧号非线性 remap 的两款节奏手法——变速（快→0.2x 凝视→快）与定格标注（流动→定格圈注→解冻）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "源动画匀速，输出帧对源帧做非线性 remap："
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`src = interpolate(frame, [0,40,85,135], [0,88,97,207])`（斜率即速率）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "变速款：快段斜率 ≥2、慢窗斜率 ≈0.2（≥10 倍反差才可感）；"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "blur 联动速率开关**——快段包 CameraMotionBlur、慢窗裸渲，"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "\"快糊-慢清\"反差是手法成立的一半"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "定格款：定格段斜率 =0（瞬时切换，无缓入——定格要干脆）；"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "定格期强调色马克笔 SVG 椭圆 8f 描边（stroke-dashoffset）圈住目标 +"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "箭头 6f 点题，feTurbulence（scale≈7）给手绘抖动；解冻段斜率 >1"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "补偿时长，圈注 8f 淡出"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "目标卡用高清纹理并对位屏中（凝视/圈注对象必须锐利、居中）"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "慢窗/定格时长",
+      "typical": "≥40f / ≥45f",
+      "feel": "短了凝视不成立（R3 宁慢勿快）"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "快慢斜率反差",
+      "typical": "≥10 倍",
+      "feel": "反差不足读不出\"慢下来了\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "圈注描边",
+      "typical": "8f 划完 + 抖动 scale 7",
+      "feel": "太慢像加载动画；无抖动像机械标注"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "变速段 SFX 钉帧跟**输出帧**不跟源帧（画面动作在输出时间轴上发生）；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "定格标注一支 30s 片 ≤2 次（同 D 式克制原则）",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "参数经占位素材调校转正，非实战定稿，首次实战后回验",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "freeze-annotate-real",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/rhythm/speed-ramp-freeze/FreezeAnnotateReal.tsx",
+      "component": "FreezeAnnotateReal",
+      "duration_frames": 135,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "speed-ramp-real",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/rhythm/speed-ramp-freeze/SpeedRampReal.tsx",
+      "component": "SpeedRampReal",
+      "duration_frames": 135,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

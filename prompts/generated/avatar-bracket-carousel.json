@@ -1,0 +1,313 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "avatar-bracket-carousel",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/avatar-bracket-carousel.md",
+    "card_sha256": "4778f32201507922fc971efb87f1ef0f708b5259b1eb2cab5d0220e3a7ed5d4a",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 156,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 5.2s（156f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（三次等距切换构成稳定节拍器，对焦框脉冲是唯一装饰性动作）",
+    "energy_rationale": "三次等距切换构成稳定节拍器，对焦框脉冲是唯一装饰性动作"
+  },
+  "intent_zh": "\"我们有设计师、客服、分析师、写手\"列成四行就是一张清单。塞进一句话的一个槽位里， 它变成一个承诺加四次证明：句子不动，只有槽里的人在换。四角对焦框是这个手法的关键 ——它不参与轮换，但它把观众的眼睛钉死在那 92×92 的方框里，所以四次更换才读作 \"同一个位置\"而不是\"四张头像飘过\"。",
+  "use_zh": "\"一个位置，多种角色\"的能力枚举；团队/身份/预设/人格类产品的核心一句话镜头",
+  "summary_zh": "\"Your ___ teammates\" 填空排版，四角对焦框钉在句中不动，头像队列在框内垂直 spring 轮换三次，入框放大清晰、出框按距离缩小淡化模糊，角色标签同步更换，切换瞬间对焦框呼吸 7%",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "位置量 `pos` 是三段 spring 的累加：`[0.24, 0.46, 0.68].forEach(s0 => pos +="
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "spring",
+      "beziers": [],
+      "raw": "seg(t, s0, s0+0.14, k => E.spring(k, 0.25)))`——不是索引跳变，而是连续量，所以任意"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "时刻都能算出每个头像离槽位有多远"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "距离驱动一切：`d = |k - pos|`，然后 `scale = max(0.5, 1-d*0.38)`、"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`opacity = max(0, 1-d*0.62)`、`blur = min(3, d*2.4)`、`translateY = (k-pos)*76`——"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "四个属性同源于一个距离量，所以入框/出框的变化天然同步，不需要单独排时间"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "队列是绝对定位在 `slot` 的 0×0 锚点上叠放的（`left:-29px, top:-29px` 自居中），"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "垂直位移全靠 `(k-pos)*STEP`；框外的头像照样在渲染，只是被 opacity 和 blur 藏掉"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "入场是叠在轮换之上的另一层：`el.style.opacity = op * seg(t, 0.02+k*0.03, 0.12+k*0.03)`"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——四张按 0.03 错峰在开场 0.15 内建立队列，之后这一项恒为 1，轮换全权接管"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "角色标签独立一套但共享 `pos`：`opacity = max(0, 1-|k-pos|*2.2)`，衰减斜率 2.2 比"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "头像的 0.62 陡得多——标签在 0.45 格距离外就完全消失，永远不会出现两个标签同屏"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "对焦框呼吸：`breath = Σ sin(seg(t, s0, s0+0.1) * π)`，取 `min(1, breath)` 后乘 0.07"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "加到 scale 上；正弦包络让脉冲在切换动作的正中达峰，走完归零"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 184,
+      "name": "t",
+      "window": null,
+      "from": "s0",
+      "to": "s0 + 0.1",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 38,
+      "raw": "breath += Math.sin(seg(t, s0, s0 + 0.1) * Math.PI);"
+    },
+    {
+      "style_id": 184,
+      "name": "t",
+      "window": null,
+      "from": "0.02 + k * 0.03",
+      "to": "0.12 + k * 0.03",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 82,
+      "raw": "opacity: op * seg(t, 0.02 + k * 0.03, 0.12 + k * 0.03),"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "切换点",
+      "typical": "0.24 / 0.46 / 0.68，间隔 0.22（≈34f / 1.14s）",
+      "feel": "间隔就是\"读得完一个角色\"的时长；<0.12 观众来不及看标签，>0.3 节拍器感散掉"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "切换行程",
+      "typical": "窗 0.14（≈22f），`E.spring(k, 0.25)`",
+      "feel": "行程占间隔的 64% → 静置时间约 12f；阻尼 0.25 是明确一次回弹，调小会抖两下与相邻切换互相干扰"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "步距",
+      "typical": "STEP=76px（框 92px、头像 58px）",
+      "feel": "步距必须大于头像直径否则相邻两张会咬边；76/92 意味着出框的头像仍露出一角，队列的存在被暗示"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "缩放衰减",
+      "typical": "`1 - d*0.38`，下限 0.5",
+      "feel": "一格距离缩到 0.62；斜率调大出框更决绝，但下限 0.5 会更早触顶，队列变成\"两档尺寸\""
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "透明度衰减",
+      "typical": "`1 - d*0.62`",
+      "feel": "1.6 格距离外完全消失 → 画面里始终有约 3 张可见；斜率降到 0.3 会看到整列四张都在，取景框的\"锁定\"语义被削弱"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "模糊衰减",
+      "typical": "`d*2.4`，上限 3px",
+      "feel": "模糊是景深暗示，2.4 的斜率让邻位约 2.4px；>4px 邻位糊成色块，队列读不出是头像"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "标签衰减",
+      "typical": "`1 - d*2.2`",
+      "feel": "斜率必须显著大于头像的 0.62——标签是文字，两句同时半透明叠着最难读"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "框脉冲",
+      "typical": "窗 0.1，`sin(·π)` × 0.07",
+      "feel": "7% 是\"咬合了一下\"的量；>15% 框自己变成主角，抢过头像更换"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "四张头像对三次切换：`pos` 最终停在 3，正好是末位。加第五张必须加第四次切换（且",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "切换点是硬编码数组，出现两处（`pos` 累加与 `breath` 累加）。改节拍必须同时改两处，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "入场 stagger 与首次切换的间隔只有 0.09（入场末 0.15 → 切换 0.24）。加头像数会推后",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "头像是 emoji + 中性灰阶底色圆（灰度分层仅用于区分队列项），强调色只用在对焦框的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "对焦框 SVG 的四条 path 与 92×92 viewBox 是写死的坐标（`M4,26 L4,4 L26,4` 等）。改",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "句子 \"Your ___ teammates\" 用 flex + gap:22px 居中，槽宽固定 92px 所以句干不会因",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "avatar-bracket-carousel",
+      "variant_letter": null,
+      "upstream_key": "avatar-bracket-carousel",
+      "demo": "demos/ui-entrance/avatar-bracket-carousel/AvatarBracketCarousel.tsx",
+      "component": "AvatarBracketCarousel",
+      "duration_frames": 156,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

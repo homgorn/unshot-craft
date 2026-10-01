@@ -1,0 +1,318 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "picker-carousel-feature-cycle",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/picker-carousel-feature-cycle.md",
+    "card_sha256": "509ab2ec075dd40544c87785ca5c439cb4fab2d997ae6d16e84c3d762379eed6",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 108,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约3.6s（108f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（每一次吸附都是一个节拍点，5 拍匀速推进）",
+    "energy_rationale": "每一次吸附都是一个节拍点，5 拍匀速推进"
+  },
+  "intent_zh": "把\"选择\"这件事的物理感做出来：焦点框是固定的，是内容在滚动并被吸住。 每项停下后必须**真的静止几帧**——连续滚动读作 loading 动画，停顿才读作 \"这一项被选中了\"。距离衰减（透明度 + 字号 + 灰度三通道同时衰减）是让 观众视线始终锁在中间那一行的唯一手段。",
+  "use_zh": "逐个念出功能名/场景名的列表镜头；\"选一个\"的交互演示；移动端产品的 picker 类控件展示",
+  "summary_zh": "移动端风竖向选择器——焦点药丸不动、内容穿过它，每项带明显 outQuint 减速吸附后完全静止，按到中心距离分层控制透明度/字号/灰度，落定时药丸做 scaleY 极轻呼吸",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "视口 300×170px（5 行 × rowH 34），焦点药丸固定在第 3 行位置"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（`top: rowH*2`），白底 + 1px `#E3E3E6` 描边 + `0 2px 8px rgba(0,0,0,.06)`"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "全程 `t 0.05→0.95` 匀速切成 STEPS=5 步；步内位移"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`outQuint(min(1, local/(1−HOLD)))`，HOLD=5/14 的尾段完全不动"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（每步≈0.65s = 走位≈0.42s + 静止≈0.23s）"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "列表整体 `translateY(rowH*2 − pos*rowH)`——移动的是内容，药丸零位移"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "距离衰减（`d = |i − pos|`）分三段：opacity `d≤1` 时 1→0.55、"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`1<d≤2` 时 0.55→0.18；fontSize 17→14px（按 `d/2`）；"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "color `d<0.5` 用 INK、`d<1.5` 用 MID、更远用 `#B9B9BE`"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "行内图标 opacity `max(0, 1 − d*1.6)`——只有焦点行看得见图标"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "落定后药丸 `scaleY 1 + sin(min(1, land/0.6)·π)*0.06` 呼吸一下"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（`land` 只在 HOLD 段内 >0，即吸附完成才呼吸）"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "视口上下各 26% 的 PAPER→透明渐变遮罩，让进出项自然消隐"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 78,
+      "name": "t",
+      "window": [
+        0.05,
+        0.95
+      ],
+      "from": "0.05",
+      "to": "0.95",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 32,
+      "raw": "const g = seg(t, 0.05, 0.95) * STEPS;"
+    },
+    {
+      "style_id": 78,
+      "name": "t",
+      "window": [
+        0.0,
+        0.05
+      ],
+      "from": "0",
+      "to": "0.05",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 64,
+      "raw": "opacity: seg(t, 0, 0.05),"
+    },
+    {
+      "style_id": 78,
+      "name": "t",
+      "window": [
+        0.02,
+        0.09
+      ],
+      "from": "0.02",
+      "to": "0.09",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 155,
+      "raw": "opacity: seg(t, 0.02, 0.09),"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "行高/可见行数",
+      "typical": "rowH 34px × 5 行，焦点在第 3 行",
+      "feel": "可见行数必须是奇数，否则焦点行不在视觉正中"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "步数",
+      "typical": "STEPS=5，窗口 t 0.05→0.95 匀速",
+      "feel": "5 拍是 3.6s 的舒适上限；7 拍每拍就压到 0.46s 读不清"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "HOLD",
+      "typical": "5/14 ≈ 0.357（每步尾段静止≈0.23s）",
+      "feel": "**命门**：HOLD 归零就变成匀速滚动，完全丢掉\"吸附\"语义"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "吸附缓动",
+      "typical": "outQuint（作用在 local/(1−HOLD) 上）",
+      "feel": "outQuint 的急减速就是\"被磁铁吸住\"的手感，outCubic 太软"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "opacity 衰减",
+      "typical": "1 → 0.55（d≤1）→ 0.18（d≤2）",
+      "feel": "相邻行留 0.55 是让观众感知\"上下还有内容\"；降到 0.3 就孤立了"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "fontSize 衰减",
+      "typical": "17→14px，按 min(1, d/2)",
+      "feel": "字号差是第二重景深；只做透明度会显得扁"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "图标可见性",
+      "typical": "max(0, 1 − d·1.6)",
+      "feel": "只有焦点行带图标，是\"当前项\"的额外标记"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "药丸呼吸",
+      "typical": "scaleY 1→1.06→1，落定后 0.6·HOLD 内走完",
+      "feel": "0.06 已到上限；再大就读作药丸自己在动，抢了内容的戏"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "药丸必须是 **`translateY` 零位移的固定层**，`scaleY` 呼吸也不能带",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "距离衰减写在 `fontSize` 上会触发逐帧重排（行高固定所以布局不跳），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "渐变遮罩的颜色要与背景 PAPER 完全一致，差一档就露出边界带",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "左外侧 26×22 的方形 AI 徽标用 `margin:-11px 0 0 -186px` 相对画面中心",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "ITEMS 是 7 条占位功能名（\"Data Cleanup\" 等），落地换真实功能名时",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "picker-carousel-feature-cycle",
+      "variant_letter": null,
+      "upstream_key": "picker-carousel-feature-cycle",
+      "demo": "demos/interaction/picker-carousel-feature-cycle/PickerCarouselFeatureCycle.tsx",
+      "component": "PickerCarouselFeatureCycle",
+      "duration_frames": 108,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

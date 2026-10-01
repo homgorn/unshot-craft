@@ -1,0 +1,495 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "floating-glossy-label-pills",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/floating-glossy-label-pills.md",
+    "card_sha256": "70853f3953f4fe607e59db8551c5286c5f373792009c8be486921814a0ae1fc7",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 120,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 4.0s（120f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（三拍换位构成节拍，无爆点；光标是收尾的注意力交接）",
+    "energy_rationale": "三拍换位构成节拍，无爆点；光标是收尾的注意力交接"
+  },
+  "intent_zh": "四个功能挨个全屏展示会切四刀，观众每次都要重新定位。走廊式 carousel 只有一个视觉 中心：居中的那块是主角，左右各露一截邻居的边缘告诉观众\"还有更多、这是同一条队列\"。 末段的光标是刻意的：它把叙事从\"系统在自动播放\"交回\"这是一个人在操作\"，为下一拍的 交互镜头做交接。",
+  "use_zh": "多功能横向枚举（Feature A–D 各一屏）；产品概览、功能巡览类段落，也可作落地页 hero 的循环底",
+  "summary_zh": "四块浅灰 dashboard wireframe 面板各顶一枚高光胶囊标签横向排队，轨道三拍向右换位（缓起→中段冲→缓收，首拍更慢带长尾），居中者放大清晰、两侧缩到 0.62 并下沉变淡微模糊形成走廊感，末段黑色描白边光标从右上斜滑到末位胶囊右端静止",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "这是**手法模板**：面板内容全是通用 wireframe 占位（顶栏 + 左侧导航 + 三栏卡片 /"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "折线图仪表盘 / 列表表格 / 表单开关列表四种页型），只用灰条与色块拼出，落地时整块"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "换成真实页面截图即可"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "轨道是逐帧实测拟合出来的三拍，写在 `BEATS` 里：起点 0.200 / 0.483 / 0.688，行程"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.185 / 0.150 / 0.150。归一化进度对 `inOutCubic` 拟合极好（缓起→中段冲→缓收），"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "不是**常见的\"快进慢出\""
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "inOutCubic",
+      "beziers": [],
+      "raw": "首拍带长尾，用两条曲线加权混合：`0.85*seg(t, b, b+0.185, E.inOutCubic) +"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": "outCubic",
+      "beziers": [],
+      "raw": "0.15*seg(t, b, b+0.28, E.outCubic)`——主体在 0.185 内完成，剩 15% 拖到 0.48 才收住，"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "所以首拍读起来明显比后两拍软"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": [
+        0.0,
+        0.19
+      ],
+      "frame_hints": [],
+      "ease": "outQuart",
+      "beziers": [],
+      "raw": "开场有上一拍的收尾余量：`trackX = -11 * (1 - seg(t, 0, 0.19, E.outQuart))`，t=0 时"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "轨道偏左 11px，在 0.19 内缓缓归位——一进画就\"正在收尾\"而非从静止启动"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "环形轨道：`wx = ((trackX - i*SP) % RING + RING*1.5) % RING - RING/2`（SP=232，"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "RING=4*232），把每块折进 ±RING/2 的窗口里。任一拍都保证左右各有一个邻居贴在画面"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "边缘，走廊不断"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "一切属性由离心距离 `d = min(1, |wx|/SP)` 驱动：`scale = lerp(1-d, 0.62, 1)`、"
+    },
+    {
+      "ord": 15,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`opacity = lerp(min(1, (1-d)*2.4), 0.78, 1)`、`blur = d*1.3px`、"
+    },
+    {
+      "ord": 16,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`zIndex = (1-d) > 0.5 ? 2 : 1`"
+    },
+    {
+      "ord": 17,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "面板与胶囊下沉曲线**不同**：面板 `translateY(d*80)`，胶囊 `translateY(d*92)`——"
+    },
+    {
+      "ord": 18,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "胶囊沉得更多，离心时会贴近面板顶边（实测中心 y 从 45 沉到 102）"
+    },
+    {
+      "ord": 19,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "胶囊的\"高光\"是三层叠出来的：180° 渐变（亮→主→深）+ 内阴影上白下暗"
+    },
+    {
+      "ord": 20,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（`inset 0 2px 3px rgba(255,255,255,.65)` / `inset 0 -4px 8px rgba(34,39,47,.5)`）+"
+    },
+    {
+      "ord": 21,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "一枚 76% 宽的白色渐变 shine 覆在上 38%"
+    },
+    {
+      "ord": 22,
+      "heading": "动效核心",
+      "window": [
+        0.717,
+        0.9
+      ],
+      "frame_hints": [],
+      "ease": "outQuart",
+      "beziers": [],
+      "raw": "光标：`seg(t, 0.717, 0.90, E.outQuart)`，opacity 在 0.717→0.725 内**硬现**（约 2f），"
+    },
+    {
+      "ord": 23,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "位置从 (403,36) 减速滑到 (281,56)，之后到底几乎静止（每帧 <1px）"
+    },
+    {
+      "ord": 24,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三块漂移雾块走不同周期的 sin/cos（`t*2π*0.5` 与 `t*2π*0.4`），是唯一与轨道无关的"
+    },
+    {
+      "ord": 25,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "背景活性层"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 196,
+      "name": "t",
+      "window": [
+        0.0,
+        0.19
+      ],
+      "from": "0",
+      "to": "0.19",
+      "ease": "E.outQuart",
+      "concrete": true,
+      "line_no": 194,
+      "raw": "let trackX = -11 * (1 - seg(t, 0, 0.19, E.outQuart));"
+    },
+    {
+      "style_id": 196,
+      "name": "t",
+      "window": null,
+      "from": "B.b",
+      "to": "B.b + B.d",
+      "ease": "E.inOutCubic",
+      "concrete": false,
+      "line_no": 197,
+      "raw": "? 0.85 * seg(t, B.b, B.b + B.d, E.inOutCubic) + 0.15 * seg(t, B.b, B.b + B.tail, E.outCubic)"
+    },
+    {
+      "style_id": 196,
+      "name": "t",
+      "window": null,
+      "from": "B.b",
+      "to": "B.b + B.d",
+      "ease": "E.inOutCubic",
+      "concrete": false,
+      "line_no": 198,
+      "raw": ": seg(t, B.b, B.b + B.d, E.inOutCubic);"
+    },
+    {
+      "style_id": 196,
+      "name": "t",
+      "window": [
+        0.717,
+        0.9
+      ],
+      "from": "0.717",
+      "to": "0.90",
+      "ease": "E.outQuart",
+      "concrete": true,
+      "line_no": 204,
+      "raw": "const cp = seg(t, 0.717, 0.90, E.outQuart);"
+    },
+    {
+      "style_id": 196,
+      "name": "t",
+      "window": [
+        0.717,
+        0.725
+      ],
+      "from": "0.717",
+      "to": "0.725",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 341,
+      "raw": "opacity: seg(t, 0.717, 0.725),"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "拍点",
+      "typical": "0.200 / 0.483 / 0.688，行程 0.185 / 0.150 / 0.150",
+      "feel": "首拍比后两拍慢 23%（含长尾更慢）——这个不均匀是实测来的手感，改成等长会读作机械播片"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "首拍长尾",
+      "typical": "0.85×主曲线 + 0.15×`outCubic(0.28)`",
+      "feel": "15% 的权重摊在 1.5 倍时长上；权重调到 0.3 以上尾巴会拖得能看出\"还在动\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "换位曲线",
+      "typical": "`E.inOutCubic`",
+      "feel": "缓起缓收是关键；换 outQuad（快进慢出）立刻读作被甩过去，走廊的从容感消失"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "开场余量",
+      "typical": "左偏 11px，0.19 内 outQuart 归位",
+      "feel": "11px 是\"上一拍刚结束\"的暗示量；归零则开场是死的，>30px 会读作又一次换位"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "中心距",
+      "typical": "SP=232px（面板 W≈252）",
+      "feel": "SP < W 时邻居会压住居中面板边缘；SP 比 W 略小（232 vs 252）正是\"露出一截\"的来源"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "邻位缩放",
+      "typical": "`lerp(close, 0.62, 1)`",
+      "feel": "0.62 是实测值；>0.75 时主次不分，<0.5 邻居小到读作缩略图而不是同类面板"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "邻位下沉",
+      "typical": "面板 `d*80px` / 胶囊 `d*92px`",
+      "feel": "两条曲线的差（12px）让胶囊离心时贴住面板顶边；改成同值会看到胶囊悬在面板上方"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "邻位透明/模糊",
+      "typical": "opacity 下限 0.78、blur `d*1.3px`",
+      "feel": "**邻位必须仍清楚可见**——原片左右始终露着相邻面板边缘；opacity 压到 0.4 或 blur >3px 走廊就断了"
+    },
+    {
+      "ord": 8,
+      "variant": null,
+      "key": "光标",
+      "typical": "0.717 硬现（2f），outQuart 滑到 0.90 后静止",
+      "feel": "硬现是\"指针本来就在那\"；给它淡入会读作 UI 元素出现。outQuart 的强减速是鼠标的物理本能"
+    },
+    {
+      "ord": 9,
+      "variant": null,
+      "key": "内容坐标系",
+      "typical": "内部 330×255，整体 `scale(252/330)`",
+      "feel": "所有 wireframe 像素值写在 330×255 里，改面板尺寸只改 CS 一处"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "整卡只有一个色相来源：`ACCENT` 及其 `ACCENT_LIGHT` / `ACCENT_DEEP` 三档，加上对应的",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "例外：表格行的状态色块（淡红/淡绿）与表单的开关（开=蓝 `#2f7de1`）是**保留的功能色**，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "轨道拍点是从原片逐帧实测拟合的，不是设计出来的整数。别\"顺手对齐\"到 0.2/0.5/0.7，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "三拍只走完 4 块中的 3 次换位（0→1→2→3），末位面板在 0.838 之后一直居中到底，约 0.16",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "`phase: i*1.9` 在 groups 里计算了但**没有被使用**（轨道位置全由 `wx` 环形折算决定）。",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "面板 W/H、SP、PANEL_TOP、胶囊 top 与两条下沉斜率都是 480×270 裁切系下的实测常量。",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 6,
+      "text": "胶囊文案 Feature A–D 与 wireframe 内容都是占位。`rand(i)` 生成的骨架条宽度是确定性",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 7,
+      "text": "光标终点 (281,56) 是对着末位胶囊右端标的。换胶囊文案会改变胶囊宽度，光标就会停错",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "floating-glossy-label-pills",
+      "variant_letter": null,
+      "upstream_key": "floating-glossy-label-pills",
+      "demo": "demos/ui-entrance/floating-glossy-label-pills/FloatingGlossyLabelPills.tsx",
+      "component": "FloatingGlossyLabelPills",
+      "duration_frames": 120,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

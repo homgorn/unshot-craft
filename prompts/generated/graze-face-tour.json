@@ -1,0 +1,235 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "graze-face-tour",
+  "category": "camera",
+  "category_label": {
+    "en": "Camera & Space",
+    "zh": "运镜与空间",
+    "ru": "Камера и пространство"
+  },
+  "tags": [
+    "ui-entrance",
+    "camera"
+  ],
+  "source": {
+    "card": "references/shots/camera/graze-face-tour.md",
+    "card_sha256": "4b3cb5300e5992b67a61f911d3ba7d524ca7bd569e8681d2dee249853c61f61b",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "单段 4–5s；可多段接力延长",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（运镜持续推进+元素连续落位，信息密度高）",
+    "energy_rationale": "运镜持续推进+元素连续落位，信息密度高"
+  },
+  "intent_zh": "把 UI 拍成地形：大倾角特写让侧栏树、导航、列表行变成掠过的地貌， 浅景深强化\"贴面\"。戏眼是**文字空中贴落**：文字/组件不是原地淡入， 而是悬浮在界面上空（3D z 轴抬高），在空中时往界面投同形软影， 随镜头行进先后加速贴落、影子随高度收敛消失——观众看见界面在 镜头经过时\"完成自己\"。影子是可感命门：没有影子，悬浮读作 普通位移入场；有影子，空间关系瞬间成立。",
+  "use_zh": "功能区巡礼（把 UI 当地景飞掠）；配合暗场+霓虹缘光做产品\"内部世界\"段落；界面内容逐区登场",
+  "summary_zh": "大倾角贴面游走特写——镜头贴着 UI 表面低飞掠过（侧栏树/顶栏/列表当地形），页面文字初始悬浮在界面上空带同形软影，随镜头行进先后加速贴落回界面",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "机位：CSS perspective + rotateX/rotateY 大倾角（面几乎侧掠），"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "沿界面一条路径持续推进；浅景深＝远处 blur 渐强"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "悬浮元素：初始悬浮高度 H≈120–180px（沿面法线方向抬起），"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "easeFall 加速下落+软着陆（落地不回弹或极微回弹）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "同形软影：元素原位渲染模糊压暗投影，blur/offset/opacity 全部"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "随当前悬浮高度变化（高＝影大而糊而淡，落地＝影与本体重合消失）"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "错峰贴落：各元素落地时刻按镜头行进方向排布（先经过的先落），"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "界面在镜头前\"依次完成\""
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "长镜可拆段接力：段间用相邻段交叉淡化（判例：透明度窗口不重叠"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "会产生黑闪帧）"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "悬浮高度",
+      "typical": "120–180px",
+      "feel": "<80px 影子和位移都读不出；>250px 落地砸得太重"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "影子参数",
+      "typical": "blur/offset/opacity 随高度线性收敛",
+      "feel": "影子恒定不随高度变＝贴纸感；落地影必须归零"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "贴落错峰",
+      "typical": "按镜头行进方向 0.2→0.85 归一化排布",
+      "feel": "同帧齐落读作开关；乱序落读作 bug；**错峰=错开起点但下落过程重叠并行**，串行等待（一个落完另一个才开始）被裁（runway 判例）"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "下落曲线",
+      "typical": "easeFall 加速+软着陆",
+      "feel": "ease-out 下落读作气球飘落，重力感靠加速"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "段间接力",
+      "typical": "相邻段交叉淡化 ≥8f",
+      "feel": "透明度窗口不搭接会黑闪（返工判例 f100 纯黑帧）"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "景深",
+      "typical": "远处 blur 渐强",
+      "feel": "全清晰读作平面滚动，浅景深才有\"贴面\"体感"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "悬空元素别被环境压黑带吞掉（邻候选 runway 判例）：空中元素",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 space-camera-moves/tension-camera-moves 分工：那两张是相机",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "**贴落节奏语义判例**（与 neon-frame-orbit-drop 互为反例）：",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "原片（clickup-30）是一条连续上行长镜；复刻用三段接力，段落",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "graze-face-tour",
+      "variant_letter": null,
+      "upstream_key": "graze-face-tour",
+      "demo": "demos/camera/graze-face-tour/GrazeFaceTour.tsx",
+      "component": "GrazeFaceTour",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

@@ -1,0 +1,443 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "dashboard-glow-highlight-pill",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/dashboard-glow-highlight-pill.md",
+    "card_sha256": "40c6624cf289ebd41a5b4121348e6229cff4d594e9310f98e81c18a416e8a6f7",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 60,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约2.0s（60f@30fps）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "high",
+    "energy_label": {
+      "zh": "高",
+      "en": "high"
+    },
+    "energy_verbatim": "高（2s 里塞了升入 + 巡游 + 描边 + 弹窗四段，交棒必须密不透风）",
+    "energy_rationale": "2s 里塞了升入 + 巡游 + 描边 + 弹窗四段，交棒必须密不透风"
+  },
+  "intent_zh": "用一束光把观众的注意力从\"整个仪表盘\"收到\"这一个弹窗\"上。光斑先在 面板间巡游（宣布有东西要来），拉成胶囊（蓄力），再从胶囊落点起笔 描出弹窗轮廓（交棒）——三段是同一束光的连续变形，任何一处断开就 变成三个不相干的动画。全片仅 2s，每段都靠上一段的落点做起点。",
+  "use_zh": "金融/数据类产品的重功能揭示；\"注意这里\"的高级指引；黑金调品牌片的核心一拍",
+  "summary_zh": "金字悬于黑场，数据仪表盘自底带透视升入并持续 3D 漂移；金色光斑从右侧巡游到底部拉成胶囊，再由它起笔描出弹窗的辉光轮廓",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "金字 \"Ready.\" 用 `background-clip:text` + `drop-shadow` 三层辉光，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "满亮保持到 t≈0.30 再 `inQuad` 淡出；辉光走 `0.85±0.15·sin(t·π·9)` 呼吸"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "仪表盘走 10 段 POSE 关键帧（`[t, rotateX, rotateY, tx%, ty%, scale]`，"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "段间 `inOutQuad`）：0.300 时 `rotateX 34°/scale 1.62` 只露顶栏切片，"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.365 就基本摆正满幅，之后 yaw 由 −13° 缓扫到 +2.6°，"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.62→0.72 有一次 `scale 0.943→0.707` 的后拉让位给弹窗"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "背景虚化\"先起后退\"：`blur 0→4.5px`（0.58→0.66 inOutQuad）后在"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.80→0.93 退掉 52%，压暗层 `dim` 峰值 0.22 保留"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "光斑 6 段关键帧从 `(80.5%,42%) 22×22` 单调走到 `(44.1%,67.4%) 96×16`"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "——向左下 + 持续横向拉长，中途不回摆；0.655→0.678 淡出交棒"
+    },
+    {
+      "ord": 10,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "辉光描边 `stroke-dashoffset` draw-on（0.655→0.775 outQuad），起笔点"
+    },
+    {
+      "ord": 11,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`SX` 由光斑末帧 x=44.1% 反算；0.79→0.93 收敛：笔宽 2.9→1.0px、"
+    },
+    {
+      "ord": 12,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "`#fff0c4→#e6c887`、辉光几乎撤掉，变成常驻金色细框"
+    },
+    {
+      "ord": 13,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "弹窗底板 0.665→0.75 先到（opacity×0.72），文字 0.715→0.84 才清晰；"
+    },
+    {
+      "ord": 14,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "弹窗与描边共用完全相同的 transform 链，并按相机姿态的 0.45/0.5 倍"
+    },
+    {
+      "ord": 15,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "做半幅漂移"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 39,
+      "name": "t",
+      "window": [
+        0.3,
+        0.355
+      ],
+      "from": "0.3",
+      "to": "0.355",
+      "ease": "E.inQuad",
+      "concrete": true,
+      "line_no": 134,
+      "raw": "const yOut = seg(t, 0.3, 0.355, E.inQuad);"
+    },
+    {
+      "style_id": 39,
+      "name": "t",
+      "window": [
+        0.298,
+        0.315
+      ],
+      "from": "0.298",
+      "to": "0.315",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 139,
+      "raw": "const dashOp = t >= 0.298 ? seg(t, 0.298, 0.315) : 0;"
+    },
+    {
+      "style_id": 39,
+      "name": "t",
+      "window": [
+        0.58,
+        0.66
+      ],
+      "from": "0.58",
+      "to": "0.66",
+      "ease": "E.inOutQuad",
+      "concrete": true,
+      "line_no": 142,
+      "raw": "const blUp = seg(t, 0.58, 0.66, E.inOutQuad);"
+    },
+    {
+      "style_id": 39,
+      "name": "t",
+      "window": [
+        0.8,
+        0.93
+      ],
+      "from": "0.8",
+      "to": "0.93",
+      "ease": "E.inOutQuad",
+      "concrete": true,
+      "line_no": 143,
+      "raw": "const blDown = seg(t, 0.8, 0.93, E.inOutQuad);"
+    },
+    {
+      "style_id": 39,
+      "name": "t",
+      "window": [
+        0.385,
+        0.425
+      ],
+      "from": "0.385",
+      "to": "0.425",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 147,
+      "raw": "const gOn = seg(t, 0.385, 0.425, E.outCubic);"
+    },
+    {
+      "style_id": 39,
+      "name": "t",
+      "window": [
+        0.655,
+        0.678
+      ],
+      "from": "0.655",
+      "to": "0.678",
+      "ease": "E.inQuad",
+      "concrete": true,
+      "line_no": 148,
+      "raw": "const gOff = seg(t, 0.655, 0.678, E.inQuad);"
+    },
+    {
+      "style_id": 39,
+      "name": "t",
+      "window": [
+        0.655,
+        0.775
+      ],
+      "from": "0.655",
+      "to": "0.775",
+      "ease": "E.outQuad",
+      "concrete": true,
+      "line_no": 152,
+      "raw": "const dr = seg(t, 0.655, 0.775, E.outQuad);"
+    },
+    {
+      "style_id": 39,
+      "name": "t",
+      "window": [
+        0.79,
+        0.93
+      ],
+      "from": "0.79",
+      "to": "0.93",
+      "ease": "E.inOutQuad",
+      "concrete": true,
+      "line_no": 153,
+      "raw": "const settle = seg(t, 0.79, 0.93, E.inOutQuad);"
+    },
+    {
+      "style_id": 39,
+      "name": "t",
+      "window": [
+        0.665,
+        0.75
+      ],
+      "from": "0.665",
+      "to": "0.75",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 156,
+      "raw": "const mBase = seg(t, 0.665, 0.75, E.outCubic);"
+    },
+    {
+      "style_id": 39,
+      "name": "t",
+      "window": [
+        0.715,
+        0.84
+      ],
+      "from": "0.715",
+      "to": "0.84",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 157,
+      "raw": "const mc = seg(t, 0.715, 0.84, E.outCubic);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "金字淡出",
+      "typical": "满亮到 t≈0.30，0.30→0.355 inQuad",
+      "feel": "要和仪表盘升入叠着走；先清场再升入就断了"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "仪表盘升入",
+      "typical": "rotateX 34°→5.5°、scale 1.62→1.055，t 0.300→0.365",
+      "feel": "0.065（≈4f）内摆正是故意的：慢了读作\"面板飘上来\"而非\"镜头压下去\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "常驻 3D 漂移",
+      "typical": "yaw −13°→+2.6°，scale 0.943→0.707",
+      "feel": "漂移不能停：一静止就露出这是张贴图"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "光斑巡游",
+      "typical": "6 帧关键帧，22×22 → 96×16",
+      "feel": "单调向左下 + 只拉长不回摆；回摆一次就读作\"光在找东西\""
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "背景虚化",
+      "typical": "blur 峰值 4.5px，0.80→0.93 退掉 52%，dim 0.22",
+      "feel": "只起不退 = 结尾整幅糊；退到 0 又失去弹窗的层次"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "描边 draw-on",
+      "typical": "dashoffset 0.655→0.775 outQuad，从底边起笔逆时针",
+      "feel": "outQuad 快起步才接得住胶囊的\"甩出去\"的势"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "描边收敛",
+      "typical": "0.79→0.93：2.9→1.0px、#fff0c4→#e6c887",
+      "feel": "收敛是\"光变成 UI\"的语义；不收敛就一直是特效"
+    },
+    {
+      "ord": 7,
+      "variant": null,
+      "key": "弹窗淡入",
+      "typical": "底板 0.665→0.75（上限 0.72 透明度）、文字 0.715→0.84",
+      "feel": "底板先于文字，才有\"框先在、内容后填\"的顺序"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "**描边 SVG 与弹窗必须共用同一个盒子和 1:1 px 的 viewBox**。曾用",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "光斑不能用 `mix-blend-mode:screen`：root 上有 `perspective` 会把混合",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "描边起笔点 `SX` 必须由光斑末帧 x 反算。写死坐标后一改巡游路径，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "金字用 `background-clip:text`，辉光只能走 `filter: drop-shadow`——",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "仪表盘的订单簿/K 线/买卖面板与弹窗文案全是占位数据（确定性随机",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "dashboard-glow-highlight-pill",
+      "variant_letter": null,
+      "upstream_key": "dashboard-glow-highlight-pill",
+      "demo": "demos/effects/dashboard-glow-highlight-pill/DashboardGlowHighlightPill.tsx",
+      "component": "DashboardGlowHighlightPill",
+      "duration_frames": 60,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

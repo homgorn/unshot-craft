@@ -1,0 +1,252 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "page-waterfall-wall",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/page-waterfall-wall.md",
+    "card_sha256": "d9deb4152568d09938ba7fdd04068d824b39fc5bcedb12420836af9511f5182e",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 180,
+    "duration_frames_hint": null,
+    "duration_verbatim": "4–6s（无限循环体，时长由段落需要裁）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（流动陈列型）",
+    "energy_rationale": "流动陈列型"
+  },
+  "intent_zh": "流动式一览：让观众在几秒内\"看到很多页面流过\"，读感是体量而非细节。 与 outro-group-photo-launch 分工：那是**聚拢式**一览（元素飞来围住 字标定格合影，语义\"属于同一产品\"），本卡是**流动式**一览（内容持续 流过不定格，语义\"还有很多没给你看完\"）。与 odometer-digit-roll 分工： 那是有终值的机械滚轮（逐位停稳读数字），本卡无终值无限循环。 与 wall-reveal-moves 分工：那是整墙**入场动作**，本卡是墙的**持续状态**， 可用那卡入场后交棒本卡续流。",
+  "use_zh": "\"多页面/多功能/多模板\"体量感段落；montage 中段铺陈或 intro 后的产品广度镜头",
+  "summary_zh": "页面瀑布墙——真实页面截图切成 3–4 列在 3D 后仰墙面上差速反向无限滚动，视差 + 镜头缓推做\"内容多到流不完\"的一览",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "lib 组件 `assets/lib/VerticalTicker.tsx`：父层 perspective(1000px)"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "rotateX(20°) scale(1.2) 后仰成墙；每列 [...items,...items] 翻倍 +"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "progress 取模 translateY 0→-50% 无缝循环；上下渐变遮罩收边"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "差速反向是视差命门：3 列 loop 时长错开（如 12/9/14s），中列反向——"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "等速同向读作一张大图在滚，差速反向才读出\"独立的列\""
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "镜头缓推寄生在外层（scale 1→1.06 线性铺满全镜），墙自身循环、"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "镜头单向，两个运动源方向不同不打架"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "素材：真实页面截图切片（Q1 脱敏后），卡片级切块比整页长图好——"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "整页切片滚动时观众来不及读，卡片块有完整轮廓可辨识"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "列数",
+      "typical": "3（1080p）/ 4（超宽）",
+      "feel": "2 列读不出\"墙\"，5 列单列过窄纹理糊"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "loop 时长",
+      "typical": "相邻列差 ≥25%（12/9/14s）",
+      "feel": "差速太小视差读不出；最快列 <7s 开始读作\"刷屏\""
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "方向",
+      "typical": "中列反向（-1,1,-1 或交替）",
+      "feel": "全同向=一张大图；反向列是\"独立列\"的最强证据"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "倾角/透视",
+      "typical": "rotateX 20° / perspective 1000px",
+      "feel": ">25° 顶部行文字透视压糊（Q2）；<12° 读不出墙面后仰"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "scale",
+      "typical": "1.2 基础 + 缓推至 ~1.26",
+      "feel": "1.2 是补透视收缩的底值，低于它四角露底"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "遮罩高度",
+      "typical": "200px",
+      "feel": "太矮行硬进硬出；太高可视区剩不下 2 行"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "循环周期",
+      "typical": "-50% 位移必须恰等于单副本周期（内容高+n·gap）",
+      "feel": "lib 已用 marginBottom 保证；自写实现用 flex gap 会差 gap/2 跳帧"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "**参数借鉴自外部实现（remotion-3d-ticker），非实战定稿；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "每列 items 总高必须 ≥ 视口有效高（否则同屏见同一切片两次，穿帮）；",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "本卡是氛围/铺陈镜头不是信息镜头：切片上文字只求\"看得出是真页面\"",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "P4 去重：与 outro 合影同片共存没问题（一流动一聚拢），但全片",
+      "critical": false,
+      "rules": "P4"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "P4",
+      "family": "P",
+      "title": "规则：开拍前列产品功能清单（dashboard/详情/论文/周报/品牌）逐一映射镜头，核心功能漏拍等于返工；一种手法（飞入/堆叠/翻页）全片只当一次主角；剪辑自查按\"这个镜头给了什么新信息\"过滤，同一素材/信息全片只出现一次，重复即删。",
+      "check_question": "自检：功能清单每项都有对应镜头吗？有没有两个镜头在用同一种手法当主角、或讲同一件事？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "page-waterfall-wall",
+      "variant_letter": null,
+      "upstream_key": "page-waterfall-wall",
+      "demo": "demos/ui-entrance/page-waterfall-wall/PageWaterfallWall.tsx",
+      "component": "PageWaterfallWall",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "vertical-ticker",
+      "variant_letter": null,
+      "upstream_key": null,
+      "demo": "demos/ui-entrance/page-waterfall-wall/VerticalTicker.tsx",
+      "component": "VerticalTicker",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

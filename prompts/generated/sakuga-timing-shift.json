@@ -1,0 +1,222 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "sakuga-timing-shift",
+  "category": "rhythm",
+  "category_label": {
+    "en": "Rhythm & Montage",
+    "zh": "节奏与蒙太奇",
+    "ru": "Ритм и монтаж"
+  },
+  "tags": [
+    "ui-entrance",
+    "rhythm"
+  ],
+  "source": {
+    "card": "references/shots/rhythm/sakuga-timing-shift.md",
+    "card_sha256": "6415786c62e6c58b07ee5050970c91ddf6a8fa34fe69f7ea7c2edd78e0a4d5c9",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "~5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高",
+    "energy_rationale": null
+  },
+  "intent_zh": "库内时间轴操纵已有 speed-ramp 连续变速与 hit-counter 的局部顿帧。 本卡是另一种——**改的不是速度是帧率本身**： 顿挫段驱动帧 q=floor(f/3)*3，元素每 3 帧才动一步（10fps 手翻书）， 切换帧起改用原始 f 逐帧驱动，丝滑冲刺。一拍三的钝与一拍一的滑 同屏对切，日式作画的拍数演出（shooting on 3s / on 1s）。顿挫段 不是低级感是手工感，切换点即高潮标记。",
+  "use_zh": "单元素的强调性位移（卡片入场、指标冲线）；需要\"手工感→高潮爆发\"反差的段落",
+  "summary_zh": "一拍三转一拍一——元素先以每 3 帧一步的手翻书顿挫移动，高潮瞬间切成逐帧丝滑冲刺，帧率量化的突变本身就是看点",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "顿挫段：q = Math.floor(f/3)*3 当驱动帧，位置线性 X 120→1380，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每步 ≈79px；姿势 sin(q) rotate ±5°，一步一个样"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "f48 切换：改原始 f 连续驱动，Easing.out(poly(4)) 高初速冲刺"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "折返中央 + 过冲 36px + 3f scaleX 0.9 回弹急停"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "冲刺段运动拉伸由位置差分速度驱动（scaleX 峰值 ≈1.35 /"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "scaleY 0.88），残影 2 层**条件挂载**——速度低即摘除，非 opacity 0"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "角标 \"on 3s\"/\"on 1s\" 随段切换，切换瞬间 pop 1.35×；角标"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "line-boil 用 h() 伪随机、f=108 后冻结"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        42
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "f108–150 真静止 42f，全画面无任何动画"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "拍数",
+      "typical": "顿挫段 floor(f/3)（一拍三）",
+      "feel": "/2 顿感不足、/4 以上读作播放器卡死"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "每步位移",
+      "typical": "≈79px（总程 ÷ 步数倒推）",
+      "feel": "<30px 读作卡顿掉帧不是顿挫——命门"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "步间姿势",
+      "typical": "sin(q) rotate ±5°",
+      "feel": "无姿势变化的纯位移顿挫像 bug 不像手翻书"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "切换帧",
+      "typical": "f48（顿挫:冲刺 ≈ 3:2）",
+      "feel": "切换必须一帧完成，任何补间都毁掉\"换拍\"感"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "冲刺缓动",
+      "typical": "Easing.out(poly(4)) + 过冲 36px + 3f 回弹",
+      "feel": "初速要猛，与顿挫段拉满反差"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "收尾",
+      "typical": "真静止 ≥42f，角标沸腾同步冻结",
+      "feel": "沸腾残留毁真静止（feTurbulence 摘罩判例同族）"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "同一镜头单一时间操纵者判例：与 speed-ramp / hit-counter 顿帧",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "顿挫段每步位移 ≥30px 才读得出\"顿\"——微步顿挫读作渲染掉帧，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "切换点必须有标注（角标 \"on 3s\"→\"on 1s\" 或一声打点，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "sakuga-timing-shift",
+      "variant_letter": null,
+      "upstream_key": "sakuga-timing-shift",
+      "demo": "demos/rhythm/sakuga-timing-shift/SakugaTimingShift.tsx",
+      "component": "SakugaTimingShift",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

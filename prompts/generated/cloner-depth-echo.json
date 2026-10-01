@@ -1,0 +1,137 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "cloner-depth-echo",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/cloner-depth-echo.md",
+    "card_sha256": "73f412358d1302fc453165a08f125be84c2d9237c045708960c198e339d299bd",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "4–5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（陈列-收束型）",
+    "energy_rationale": "陈列-收束型"
+  },
+  "intent_zh": "Spline/C4D Cloner 语汇的 UI 翻译：一张主卡\"啪\"地复印出 7 个克隆体 沿 Z 轴向后等距排开（间隔 120px、透明度 100%→20% 递减），错峰弹出 成纵队；停 ~25f 让观众数得清\"有很多个\"；然后全体 ease-in 加速吸回 本体合一，合体瞬间本体弹 1.08x 收束。与 depth-layer-moves 视差 （不同内容分层）分工：这是**同一内容**的等距重影阵列，语义是规模 不是空间。",
+  "use_zh": "\"多副本/多租户/规模感/批量处理\"卖点；一镜讲完\"一个=很多\"",
+  "summary_zh": "克隆纵队——主卡瞬间\"复印\"出 7 个半透明分身沿斜向纵深排开成队，停一拍后全体加速吸回本体合一+弹跳",
+  "beats": [],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "斜向错位",
+      "typical": "dx=64·idx / dy=−34·idx",
+      "feel": "**命门**：纯 translateZ 排开在正视角下克隆体全被本体挡住（不可感）；斜向错位让纵队肉眼可见"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "侧视角",
+      "typical": "整队 rotateY 16°",
+      "feel": "8° 仍近正视，16° 纵队清晰"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "克隆数/间隔",
+      "typical": "7 个 / 120px",
+      "feel": "少于 5 读不出\"队\"，多于 9 尾部糊成一团"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "透明衰减",
+      "typical": "100%→20% 线性",
+      "feel": "越远越淡=纵深证据；等透明读作贴纸阵"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "排开/吸回",
+      "typical": "spring 错峰 1.6f/个；merge ease-in 10f 全体同步",
+      "feel": "排开要错峰（复印感），吸回要同步（收束感）——节奏不对称是设计"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "合体弹跳",
+      "typical": "sin(spring×π) 单脉冲 1.08x",
+      "feel": "吸回无弹跳读作淡出；弹跳=质量证据"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "克隆体必须从后往前渲染保证遮挡正确；透明度 ≤0.005 条件卸载",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "同批 3D 渠道另两条（厚板转台淘汰、走廊改改再看）——纯陈列型",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "声音：排开一串细\"啪\"错峰，吸回一声上扬 whoosh，合体一声实\"咚\"",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "cloner-depth-echo",
+      "variant_letter": null,
+      "upstream_key": "cloner-depth-echo",
+      "demo": "demos/ui-entrance/cloner-depth-echo/ClonerDepthEcho.tsx",
+      "component": "ClonerDepthEcho",
+      "duration_frames": 10,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

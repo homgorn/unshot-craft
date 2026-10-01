@@ -1,0 +1,277 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "logo-shrink-wordmark-lockup",
+  "category": "outro",
+  "category_label": {
+    "en": "Outro",
+    "zh": "收尾",
+    "ru": "Финал"
+  },
+  "tags": [
+    "outro"
+  ],
+  "source": {
+    "card": "references/shots/outro/logo-shrink-wordmark-lockup.md",
+    "card_sha256": "2ada77e062bf9c68dcddc5c88a4df259f4ab7ec7efb48cb51f36c06745f3e8c8",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 132,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 4.4s（132f@30fps；收束 0.1–1.2s · 让位 1.5–2.1s · 字母 2–2.7s · 标语 3.2–3.7s）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（收束段有冲击力，整体是沉稳的落定节奏）",
+    "energy_rationale": "收束段有冲击力，整体是沉稳的落定节奏"
+  },
+  "intent_zh": "片尾的\"盖章\"动作：满屏的霓虹大环携能量坍缩成一枚小图标，愈合缺口、转为纯白（从演出态到标准态），然后按品牌 lockup 的规范一步步落位——图标让位、字标进场、标语押尾。观众看到的是品牌从动态里\"站定\"。",
+  "use_zh": "片尾品牌定妆：从满屏图形能量收束到\"图标+字标+标语\"的标准 lockup",
+  "summary_zh": "霓虹切口大环快速收束成中央实心小白 O 并带过冲刹车，图标左移让位，字母逐个滑入完成 lockup，强调色标语收尾",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": [
+        0.02,
+        0.28
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "收束主曲线：scale 5.4→1（t=0.02–0.28，inOutCubic），t=0.26–0.37 叠 `sin(π)*0.06` 的过冲刹车——到位瞬间胀 6% 再回落，\"急停带惯性\""
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": [
+        0.1,
+        0.28
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "缺口愈合与变色和收束同轨（t=0.10–0.28）：霓虹辉光层淡出、描边从 #dfe9ff 过半切 #fff、实心白 O 淡入——三层交叉在缩小过程中完成，落位时已是干净白标"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": [
+        0.34,
+        0.47
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "t=0.34–0.47 图标整体 translateX(−68px) 左移让位（inOutCubic），为字标腾出中轴右侧"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "五字母按 `0.46 + i*0.035` stagger 滑入：opacity 0→1 + translateX 8px→0，各 0.10 时长 outCubic"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": [
+        0.72,
+        0.84
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "标语（强调色 `ACCENT`，13px 宽字距）t=0.72–0.84 整行淡入，不逐字——层级低于字标一档"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 96,
+      "name": "t",
+      "window": [
+        0.02,
+        0.28
+      ],
+      "from": "0.02",
+      "to": "0.28",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 55,
+      "raw": "const k = seg(t, 0.02, 0.28, E.inOutCubic);"
+    },
+    {
+      "style_id": 96,
+      "name": "t",
+      "window": [
+        0.26,
+        0.37
+      ],
+      "from": "0.26",
+      "to": "0.37",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 56,
+      "raw": "const brake = Math.sin(seg(t, 0.26, 0.37) * Math.PI) * 0.06;"
+    },
+    {
+      "style_id": 96,
+      "name": "t",
+      "window": [
+        0.34,
+        0.47
+      ],
+      "from": "0.34",
+      "to": "0.47",
+      "ease": "E.inOutCubic",
+      "concrete": true,
+      "line_no": 59,
+      "raw": "const shift = seg(t, 0.34, 0.47, E.inOutCubic) * SHIFT;"
+    },
+    {
+      "style_id": 96,
+      "name": "t",
+      "window": [
+        0.1,
+        0.28
+      ],
+      "from": "0.10",
+      "to": "0.28",
+      "ease": "E.inOutQuad",
+      "concrete": true,
+      "line_no": 61,
+      "raw": "const heal = seg(t, 0.10, 0.28, E.inOutQuad);"
+    },
+    {
+      "style_id": 96,
+      "name": "t",
+      "window": null,
+      "from": "0.46 + i * 0.035",
+      "to": "0.46 + i * 0.035 + 0.10",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 113,
+      "raw": "const lk = seg(t, 0.46 + i * 0.035, 0.46 + i * 0.035 + 0.10, E.outCubic);"
+    },
+    {
+      "style_id": 96,
+      "name": "t",
+      "window": [
+        0.72,
+        0.84
+      ],
+      "from": "0.72",
+      "to": "0.84",
+      "ease": "E.outQuad",
+      "concrete": true,
+      "line_no": 141,
+      "raw": "opacity: seg(t, 0.72, 0.84, E.outQuad),"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "收束幅度",
+      "typical": "scale 5.4→1",
+      "feel": "起始倍率决定\"从多满收到多小\"；<3 冲击力不足，>7 初始态糊出画"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "刹车过冲",
+      "typical": "+6%，sin 包络 0.26–0.37",
+      "feel": "砍掉读作硬冻结；>10% 变果冻"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "愈合窗口",
+      "typical": "0.10–0.28（与收束同步）",
+      "feel": "愈合必须在落位前完成——落位后还在变色读作\"没准备好\""
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "左移让位",
+      "typical": "−68px，0.34–0.47",
+      "feel": "与字母首入（0.46）几乎无缝衔接，拉开间隔会有\"空等\"感"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "字母 stagger",
+      "typical": "0.035/字，各 0.10 时长",
+      "feel": "5 字母合计约 0.28；字更多时按 `(0.7-0.46)/n` 反算间隔保证 0.7 前进完"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "标语入场",
+      "typical": "0.72–0.84 整行淡入",
+      "feel": "有意不逐字：标语是注脚不是主角；`ACCENT` 常量换项目色"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "`WORDMARK`（5 字母）与标语 `BUILD. SHIP. REPEAT.`（20 字符）都是占位；换品牌词时字母 stagger 节奏依赖字数，标语保持近似字符数否则宽字距排版会溢出或过疏",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "图标是 SVG 双弧切口环（抽象几何 mark），替换为真实品牌 logo 时保留\"演出态→标准态\"两层结构：一层带效果（辉光/彩色），一层纯净态，用同一条 heal 曲线交叉",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "左移量 −68px 与字标宽度耦合（row 定位在 `50%-40px`）——字数变化时两处一起调，让 lockup 整体在画面居中",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "收尾后无循环回位设计，作 outro 最后一镜使用；需要循环时在 t=1 后接 1s 静帧",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "logo-shrink-wordmark-lockup",
+      "variant_letter": null,
+      "upstream_key": "logo-shrink-wordmark-lockup",
+      "demo": "demos/outro/logo-shrink-wordmark-lockup/LogoShrinkWordmarkLockup.tsx",
+      "component": "LogoShrinkWordmarkLockup",
+      "duration_frames": 132,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

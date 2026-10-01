@@ -1,0 +1,231 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "icon-field-colorize",
+  "category": "opening",
+  "category_label": {
+    "en": "Opening & Brand",
+    "zh": "开场与品牌",
+    "ru": "Открытие и бренд"
+  },
+  "tags": [
+    "opening",
+    "ui-entrance",
+    "outro"
+  ],
+  "source": {
+    "card": "references/shots/opening/icon-field-colorize.md",
+    "card_sha256": "1afd41f6130458e5f884ac4b271dffb1e283a3338aacaea54284161fb4cf0625",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 45,
+    "duration_frames_hint": null,
+    "duration_verbatim": "浮现 ~45f 错峰 + 静置 ~10f + 翻色 12–45f + 终态静置；全段 3–4s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（浮现是铺垫，翻色瞬间是唯一爆点）",
+    "energy_rationale": "浮现是铺垫，翻色瞬间是唯一爆点"
+  },
+  "intent_zh": "先用灰阶把\"多\"摆足——上百个小图标错峰浮进来铺满画面，灰阶保证 读作背景纹理不抢戏；停一拍让观众意识到\"摆满了\"，然后品牌色以 横带波纹形式极快扫过全场，灰世界一瞬间被点亮。命门在**翻色不是 同帧硬翻**：原片实测是 ~0.5s 内多道色波依次向下快扫（蓝先覆盖全场， 橙/绿/红依次覆盖更低行带），终态呈四色横带分层——波纹感让\"点亮\" 有方向和速度，硬翻只读作换了张图。",
+  "use_zh": "开场铺陈产品能力面（图标=功能宇宙）再一举打上品牌色；功能集合页、生态/集成规模展示、片头 logo 前垫场",
+  "summary_zh": "灰阶小图标点阵错峰浮现铺满全屏，停一拍后多道品牌色横带波纹极快向下扫翻全场——\"功能全景先摆满，品牌一瞬间点亮\"的开场/收束卡",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "图标场：150–200 个小图标网格排布（行间半格错位），灰阶 3–4 档"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "随机；mulberry32 定分组/灰度/形状"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "浮现：分 ~10 批错峰淡入（批间 4f + 批内 ≤3f 抖动），每个带"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "0.55→1.07→1 微弹（ease-out 入 + 7% 过冲回落）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        10
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "静置一拍（~10f）：让\"铺满\"被读到，翻色前的蓄力"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        25
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "翻色：多道色波按行推进，行差 ~1.4f + 列微倾 0.25f + 每图标 ≤1.5f"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "抖动（斜切波前沿，不是整行同帧）；每道波从自己的起始行向下覆盖，"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "后波覆盖更低行带 → 终态多色横带"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "翻色瞬间该图标 1.22x pop（正弦鼓包 3f），给波前沿加\"啪\"的质感"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "图标数",
+      "typical": "170（17×10 @1080p，CELL 110px）",
+      "feel": "<100 读不出\"原野\"；>250 单个太小翻色 pop 看不见"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "浮现总长",
+      "typical": "~45f（10 批 × 4f + 尾批淡入 8f）",
+      "feel": "太快读作闪现；>60f 观众等不及爆点"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "翻色总长",
+      "typical": "原片 ~12f 全场完成；demo 45f",
+      "feel": "越快越爆；教学/慢节奏场合才拉长"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "波数",
+      "typical": "4 道（对应终态色带数）",
+      "feel": "1 道=单色点亮也成立；波色=品牌色板"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "行差",
+      "typical": "1.4f/行 + 列 0.25f 微倾",
+      "feel": "行差 >3f 波读作逐行扫描仪；0 = 硬翻"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "翻色 pop",
+      "typical": "1.22x 正弦 3f",
+      "feel": "无 pop 波前沿读不出来；>1.4x 图标互相打架"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "**翻色不许同帧硬翻**——原片密帧核实为多道波纹快扫（bear-app",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "图标需可辨认的实心简笔形（心/星/闪电/对勾…）；抽象色块读不出",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "与 bubble-swarm-takeover 分工：那张是气泡群涌入接管",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "与 theme-switch-moves 分工：那张是 UI 界面明暗主题切换；本卡",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "icon-field-colorize",
+      "variant_letter": null,
+      "upstream_key": "icon-field-colorize",
+      "demo": "demos/opening/icon-field-colorize/IconFieldColorize.tsx",
+      "component": "IconFieldColorize",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

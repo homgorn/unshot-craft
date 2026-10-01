@@ -1,0 +1,225 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "command-palette-summon",
+  "category": "interaction",
+  "category_label": {
+    "en": "Interaction & Feature Demo",
+    "zh": "交互与功能演示",
+    "ru": "Взаимодействие и демо"
+  },
+  "tags": [
+    "ui-entrance",
+    "interaction"
+  ],
+  "source": {
+    "card": "references/shots/interaction/command-palette-summon.md",
+    "card_sha256": "b2805a15b83bebec28cb0ef761932fb24e94b63b902c28d5abc5a2a39bde311a",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 150,
+    "duration_frames_hint": null,
+    "duration_verbatim": "4–5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（仪式感型，弹落帧与收窄是两个小打击点）",
+    "energy_rationale": "仪式感型，弹落帧与收窄是两个小打击点"
+  },
+  "intent_zh": "Raycast/Linear 发布片的标志性仪式：一声轻响，整个 UI 世界压暗 让路，⌘K 面板从中心上方弹落，候选列表错峰浮现；敲两个字母， 列表实时收窄——\"你要的一切都在这个输入框里\"。模拟交互按真人 操作速度走（R3），收窄的\"挤压感\"来自行高塌缩而非淡出。",
+  "use_zh": "效率型产品的\"全产品在一个输入框里\"叙事；命令面板/搜索/快捷键功能的标志性登场",
+  "summary_zh": "命令面板降临——整屏压暗加模糊，⌘K 面板带过冲弹落，候选行错峰浮现，敲字列表实时收窄",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 阶段 | 帧段参考 | 内容 |"
+    },
+    {
+      "ord": 1,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|------|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 1 静置 | f0–12 | dashboard 初始状态 |"
+    },
+    {
+      "ord": 3,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 2 让路 | f12–22 | 背景压暗至 45% + blur 10px |"
+    },
+    {
+      "ord": 4,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 3 降临 | f18–33 | 面板 -20px 落入，过冲 +8px 回正（与压暗跨骑） |"
+    },
+    {
+      "ord": 5,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 4 候选浮现 | f32–56 | 5 行每 4f 错峰上浮 |"
+    },
+    {
+      "ord": 6,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 5 输入收窄 | ~f62–90 | 两次按键字符出现，行高塌缩收窄 5→2（塌缩完条件卸载） |"
+    },
+    {
+      "ord": 7,
+      "heading": "动作阶段",
+      "window": null,
+      "frame_hints": [
+        40
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 6 选中定格 | 末 ≥40f | 首条高亮（底色+左描边），光标转常亮，真静止 |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "压暗",
+      "typical": "亮度 45% + blur 10px，10f",
+      "feel": "压不够面板不突出；全黑失去上下文"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "弹落",
+      "typical": "起点上方 20px，overshoot 一拍回正",
+      "feel": "无过冲读作淡入，仪式感没了"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "候选错峰",
+      "typical": "4f/行",
+      "feel": "同帧出读作贴图"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "收窄",
+      "typical": "height→0 + overflow hidden 塌缩",
+      "feel": "淡出收窄没有\"挤压\"感；塌缩完必须卸载"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "光标",
+      "typical": "闪烁周期 16f；定格后强制常亮",
+      "feel": "闪到结尾就永不真静止（demo 判例）"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "输入节奏按真人打字速度（R3 判例），两键间隔 ≥12f",
+      "critical": false,
+      "rules": "R3"
+    },
+    {
+      "ord": 2,
+      "text": "组合款见 theme-switch-moves B 式（面板收缩成点引发主题涟漪）",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "实战候选行放真实功能名——这是功能清单的天然展位（P4 映射）",
+      "critical": false,
+      "rules": "P4"
+    },
+    {
+      "ord": 4,
+      "text": "声音：唤出一声轻响（非游戏音），按键 2 声键帽拟音，",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "P4",
+      "family": "P",
+      "title": "规则：开拍前列产品功能清单（dashboard/详情/论文/周报/品牌）逐一映射镜头，核心功能漏拍等于返工；一种手法（飞入/堆叠/翻页）全片只当一次主角；剪辑自查按\"这个镜头给了什么新信息\"过滤，同一素材/信息全片只出现一次，重复即删。",
+      "check_question": "自检：功能清单每项都有对应镜头吗？有没有两个镜头在用同一种手法当主角、或讲同一件事？"
+    },
+    {
+      "rule_id": "R3",
+      "family": "R",
+      "title": "规则：开场主体动作（聚焦→悬浮→归位一条完整弧线）至少 3 秒；模拟真实交互（打字、筛选、点击）按人真实操作的速度走，观众要能跟着做一遍；排时间线时预留 hold/rest 帧预算——第一版几乎总是偏快。",
+      "check_question": "自检：把每个镜头当第一次看：哪里没看清？交互段落自己能不能跟着操作一遍？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "command-palette-summon",
+      "variant_letter": null,
+      "upstream_key": "command-palette-summon",
+      "demo": "demos/interaction/command-palette-summon/CommandPaletteSummon.tsx",
+      "component": "CommandPaletteSummon",
+      "duration_frames": 104,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

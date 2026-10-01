@@ -1,0 +1,252 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "hatch-depth",
+  "category": "data",
+  "category_label": {
+    "en": "Data & Metrics",
+    "zh": "数据与指标",
+    "ru": "Данные и метрики"
+  },
+  "tags": [
+    "data"
+  ],
+  "source": {
+    "card": "references/shots/data/hatch-depth.md",
+    "card_sha256": "255300318082491ce27ced495435fa29583cc11d798aa717c7c2d5b68a86f51d",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 132,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 4.4s（132f@30fps；生长 0–1.7s · 蜕变 2.2–3.4s · 微颤收尾）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（信息渐进，无爆点，靠质感转换制造\"上线了\"的瞬间）",
+    "energy_rationale": "信息渐进，无爆点，靠质感转换制造\"上线了\"的瞬间"
+  },
+  "intent_zh": "把\"占位符变成真数据\"这个产品瞬间拍成看得见的材质转换：先用 45° 斜纹条画出\"这里将有数据\"的草稿感，再让实心色层原位替换——几何完全不动、只换皮肤，观众读到的是\"同一样东西活了\"。",
+  "use_zh": "\"从草稿到真实数据\"的叙事拍；dashboard/报表功能引入，或强调数据实时性的段落",
+  "summary_zh": "斜纹占位条逐条 wipe 伸长后，斜纹淡出、强调色实心层淡入并弹出数值，占位图蜕变为真数据条形图",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": [
+        0.4,
+        0.95
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "5 条横柱按 `0.06 + i*0.05` 错峰生长，各 0.22 时长 `outCubic` wipe 伸长到目标宽度（0.4–0.95 归一化）"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "生长阶段斜纹层（`repeating-linear-gradient 45°` + 同色描边）与实心层同宽同步长，但实心层 opacity=0——蜕变只是交叉淡化，宽度曲线共用，保证几何零跳变"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "t=0.5 起按 `0.5 + i*0.03` 逐条蜕变（0.14 时长）：斜纹 `1-morph` 淡出、实心 `morph` 淡入，标签同拍从灰变暗灰（视觉重心让给数据）"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "数值文字 `w*420 K` 挂在柱端 `left: calc(w% + 8px)`，随蜕变淡入"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": [
+        0.7,
+        0.85
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "t=0.7–0.85 全体柱宽乘 `1 + sin(t*30 + i*2.1)*0.02` 微颤——\"活数据在呼吸\"的暗示"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": [
+        0.62,
+        0.78
+      ],
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "表头 METRICS ● LIVE 行 t=0.62–0.78 从上方 30px 滑入，宣告蜕变完成"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 27,
+      "name": "t",
+      "window": [
+        0.62,
+        0.78
+      ],
+      "from": "0.62",
+      "to": "0.78",
+      "ease": "E.outCubic",
+      "concrete": true,
+      "line_no": 27,
+      "raw": "const headIn = seg(t, 0.62, 0.78, E.outCubic);"
+    },
+    {
+      "style_id": 27,
+      "name": "t",
+      "window": null,
+      "from": "0.06 + i * 0.05",
+      "to": "0.06 + i * 0.05 + 0.22",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 47,
+      "raw": "const grow = seg(t, 0.06 + i * 0.05, 0.06 + i * 0.05 + 0.22, E.outCubic);"
+    },
+    {
+      "style_id": 27,
+      "name": "t",
+      "window": null,
+      "from": "0.5 + i * 0.03",
+      "to": "0.5 + i * 0.03 + 0.14",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 48,
+      "raw": "const morph = seg(t, 0.5 + i * 0.03, 0.5 + i * 0.03 + 0.14);"
+    },
+    {
+      "style_id": 27,
+      "name": "t",
+      "window": [
+        0.7,
+        0.85
+      ],
+      "from": "0.7",
+      "to": "0.85",
+      "ease": "E.linear",
+      "concrete": true,
+      "line_no": 49,
+      "raw": "const wiggle = 1 + Math.sin(t * 30 + i * 2.1) * 0.02 * seg(t, 0.7, 0.85);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "错峰间隔",
+      "typical": "生长 0.05/条、蜕变 0.03/条",
+      "feel": "生长间隔可到 0.08 增强\"逐条点亮\"；蜕变间隔别超 0.05，拖长会读作故障闪烁"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "生长时长",
+      "typical": "0.22（outCubic）",
+      "feel": "缩到 0.15 更利落；配合错峰保证末条 ≤0.5 长完，给蜕变留窗口"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "蜕变窗口",
+      "typical": "0.5 起、每条 0.14 交叉淡化",
+      "feel": "这是卡点位——BGM 重音应压在首条蜕变（t=0.5）上"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "柱宽数据",
+      "typical": "[0.85, 0.55, 0.95, 0.4, 0.7]",
+      "feel": "换成真实数据比例即可；最长条 ≥0.9 保证画面有满幅锚点"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "微颤幅度",
+      "typical": "±2%，t=0.7–0.85",
+      "feel": ">4% 读作抖动 bug；不想要\"呼吸感\"可归零，但收尾会偏死板"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "强调色",
+      "typical": "`ACCENT='#5B8DEF'` / `ACCENT_HI='#8FB2F7'`",
+      "feel": "双常量整体换肤；HI 用于数值文字，保持同族但更亮"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "斜纹层和实心层宽度必须共用同一条 `grow` 曲线——分开算会在蜕变瞬间产生 1–2px 宽度跳变，\"原位换皮\"的错觉立刻穿帮",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "标签（SERIES_A 等）是占位词，换项目真实指标名时注意 70px 定宽标签列，超长会被裁",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "数值 `w*420` 是演示映射，接真数据时换成实际数值格式化函数，但保持\"随 grow 滚动\"（终值 ×grow）的读数感",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "微颤用全局 t 驱动（`sin(t*30)`），改动画总时长 dur 会改变颤动频率，需重新目检",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "hatch-depth",
+      "variant_letter": null,
+      "upstream_key": "hatch-depth",
+      "demo": "demos/data/hatch-depth/HatchDepth.tsx",
+      "component": "HatchDepth",
+      "duration_frames": 132,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

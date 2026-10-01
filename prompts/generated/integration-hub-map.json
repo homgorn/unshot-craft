@@ -1,0 +1,221 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "integration-hub-map",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/integration-hub-map.md",
+    "card_sha256": "a1474661f0e4158fd2223868742473cee903d9a33bdb51557638204c47522a09",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 15,
+    "duration_frames_hint": null,
+    "duration_verbatim": "前摇 ~0.5s + 快翻 ~1.2s + 图标齐现 → 光管齐连两拍 ~0.7s + 输送呼吸 ≥1.5s；全段 4.5–5s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高（翻面是爆点，输送段是余韵）",
+    "energy_rationale": "翻面是爆点，输送段是余韵"
+  },
+  "intent_zh": "翻面是\"换时代\"：旧文档页整个翻转 180° 得到新中枢页——必须是 完整翻面不是转个角度（判例），翻的动作**快翻+尾段减速**、一口气 完成无分段停顿（\"匀速\"判例：用户说的匀速=无停顿，不是字面 linear；90° 侧棱停顿版被裁）。侧棱时刻只\"闪一下\"（1–3f 脉冲， 长光晕平台被裁）。接入是**两拍制**：五图标同帧弹现（第一拍）→ 五管同帧起画齐连（第二拍）——齐，才读作\"生态一次到位\"；错峰 逐个连读作逐个谈判（两轮被裁）。连通后光管内亮脉冲沿图标→中枢 方向持续循环，\"输送感\"是终态的生命。",
+  "use_zh": "集成/生态能力段（一个产品连一切）；版本翻新叙事（旧页翻成新页）；暗场霓虹调性的功能高潮",
+  "summary_zh": "旧页面一次性快翻 180°（侧棱瞬间亮闪）落成新中枢页，五个集成 app 图标同帧弹现、随即五条彩虹光管同帧齐连，光管内输送脉冲持续流动——\"翻开新一页，生态一齐接入\"",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        35
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "翻面：rotateY 0→180°，35f，Easing.out(cubic)（前 41% 时间完成"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "80% 角度，尾段长减速缓着陆），双面卡（正面旧页/背面新页）"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "侧棱瞬闪：~90° 时刻 2f 脉冲 bloom（0→1→0.25→0，4f 内归零）"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        10
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "两拍制接入：五图标 tIcon 同帧（翻面落定 +3f）弹现；+10f 五管"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "tPipe 同帧起画，9f 齐长全亮"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "输送脉冲：光管 dash 亮斑沿图标→中枢方向循环（速度 ~4.6px/f，"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "各管相位错开），全连通后中枢页轻呼吸"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "背景：暗紫底噪 + 霓虹矩形浮现衬场"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "翻面时长",
+      "typical": "35f（曾 70f 被裁\"再快1倍\"）",
+      "feel": "<24f 读不出双面；尾段减速比例 ~60% 时间走 20% 角度"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "翻面曲线",
+      "typical": "ease-out 单调无停顿",
+      "feel": "侧棱停顿/分段被裁；严格 linear 起停生硬也被裁——快翻尾缓"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "侧棱闪",
+      "typical": "2f 脉冲、4f 归零",
+      "feel": "长光晕平台被裁\"闪一下就行\""
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "接入节奏",
+      "typical": "两拍制：图标同帧 → +10f 光管同帧",
+      "feel": "错峰逐连两轮被裁\"同时出现，然后同时连接\"；两拍间隔 <6f 读作一拍"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "光管生长",
+      "typical": "9f 齐长",
+      "feel": "18f 版偏慢；各管长度不同但同帧到达（按各自 len 归一）"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "输送脉冲",
+      "typical": "~4.6px/f 循环、相位错开",
+      "feel": "静态连线=没有\"输送的感觉\"（判例）；同相位读作闪烁"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "时序判例链完整记录在案：错峰连入 ×2 被裁 → 管齐图标错峰被裁 →",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 glow-flyline-moves 分工：那张是飞线本身的光效戏；本卡是",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "与 canvas-materialize-moves 分工：那张是画布元素实体化；本卡",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "双面卡实现：水平/垂直线 bbox=0 会使 SVG filter/渐变失效（三管",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "integration-hub-map",
+      "variant_letter": null,
+      "upstream_key": "integration-hub-map",
+      "demo": "demos/ui-entrance/integration-hub-map/IntegrationHubMap.tsx",
+      "component": "IntegrationHubMap",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

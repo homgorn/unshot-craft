@@ -18,6 +18,7 @@ A platform built **beside** an upstream open-source project
 | situation | agent |
 |---|---|
 | "where is X", "how does Y work", "which cards fit Z" | `explorer` |
+| "which cinematic techniques fit this brief", "what are the Kling params for X" | `explorer` |
 | make the change for the current feature | `implementer` |
 | prove a feature works end to end, then set `passes` | `verifier` |
 | run a build/render/mirror that produces lots of output | `runner` |
@@ -44,6 +45,10 @@ See `.opencode/agents/README.md`. **`verifier` is the only role allowed to set
    character queries. Both facts were found by testing.
 7. **FTS5 is matched by table name, never by alias** — `alias MATCH` raises
    `no such column`. Resolve hits through a CTE.
+8. **`data/cinematic/` is source and is versioned with us; `upstream/` is source
+   and is pinned to someone else's SHA.** Two corpora, one DB (ADR 0007). Never
+   edit `data/cinematic/*.md` from a generator, and never let an ingest write
+   into it. `[Subject]` in a prompt is a slot, not a token to expand.
 
 ## Commands
 
@@ -56,7 +61,15 @@ python platform/query.py cards --energy high --max-frames 60
 python platform/query.py card crash-zoom-punch # params + pitfalls + styles
 python platform/query.py search 弹簧           # works in zh, en and slugs
 python platform/mirror_site.py --media        # live site + mp4 release
+python platform/catalog/validate_schema.py    # catalog DDL applies + FK guard
+python platform/catalog/selftest.py           # catalog ingest invariants, 23 checks
+python platform/query.py technique --category lighting
+python platform/query.py optimize kicker-light --tool kling15
 ```
+
+The last two need `F070` (ingest), which is now landed. Until the catalog is
+curated beyond its 20 seed techniques they report the real counts, and an absent
+corpus is a WARN rather than a failure — either corpus must build alone.
 
 Set `$env:PYTHONIOENCODING="utf-8"` before any of these on Windows, or CJK
 output prints as `?`. The files themselves are correct UTF-8 — the console is
@@ -74,6 +87,7 @@ Read `docs/adr/` before proposing an architecture change:
 | 0004 | i18n: JSON dictionaries, locale-prefixed URLs, hreflang |
 | 0005 | independent fork, own brand, upstream credited |
 | 0006 | SDD loop with a verifier-owned completion gate |
+| 0007 | the cinematic-technique catalog is a second corpus in the same DB |
 
 ## Money and licensing
 

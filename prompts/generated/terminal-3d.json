@@ -1,0 +1,228 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "terminal-3d",
+  "category": "camera",
+  "category_label": {
+    "en": "Camera & Space",
+    "zh": "运镜与空间",
+    "ru": "Камера и пространство"
+  },
+  "tags": [
+    "camera"
+  ],
+  "source": {
+    "card": "references/shots/camera/terminal-3d.md",
+    "card_sha256": "b4c7d0446da787d6931aac0e4965da17440500059f57a8b848e2a05bcce3724b",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 180,
+    "duration_frames_hint": null,
+    "duration_verbatim": "约 6.0s（180f@30fps；三站各约 1.6s 停留 + 0.85s 飞行）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（飞行给动感、打字给节奏，整体是沉稳的技术叙事）",
+    "energy_rationale": "飞行给动感、打字给节奏，整体是沉稳的技术叙事"
+  },
+  "intent_zh": "终端输出天生是\"平面滚动\"的反电影语言，这张卡把它空间化：每条命令占据空间中一个实体窗口，相机像穿过机房一样逐窗拜访。飞行途中的拉远让观众瞥见\"还有更多窗口\"——工作流的全貌感。",
+  "use_zh": "开发者产品的 CLI/工作流演示：把\"三步命令\"拍成三站空间旅程",
+  "summary_zh": "三个终端窗散布 3D 空间，相机窗间飞行、途中正弦拉远，每到一窗打字机敲命令、结果逐行滑出——命令执行的空间叙事流",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三窗各持 pose（x/y/z/ry），相机走**逆变换**：`translateZ(300-pull) rotateY(-ry) translate3d(-x,-y,-z)`——写窗口姿态表即得相机路径"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "两段飞行窗口 STEP `[0.30,0.44][0.64,0.78]`（inOutCubic），途中 `sin(π)*210px` 正弦拉远鼓包——起飞时后撤、到站时贴近，\"呼吸式\"过渡"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "距离聚焦：每窗按与相机 x 距离算 focus，`opacity 0.34–1 + blur 0–2.2px + brightness 0.7–1`——离焦窗虚化成背景，不抢戏"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "打字机三要素：命令逐字符（0.09 窗口）、光标两种闪烁频率（打字中 40Hz 基快闪 / 打完 26Hz 慢闪）、输出行按 `0.022/行` 错峰从左滑入（−7px→0）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "打字起点 TYPE `[0.05,0.47,0.81]` 均在到站后——飞行中不打字，注意力不分裂"
+    }
+  ],
+  "segments": [
+    {
+      "style_id": 17,
+      "name": "t",
+      "window": null,
+      "from": "kf.at[0]",
+      "to": "kf.at[1]",
+      "ease": "ease",
+      "concrete": false,
+      "line_no": 23,
+      "raw": "const u = seg(t, kf.at[0], kf.at[1], ease);"
+    },
+    {
+      "style_id": 17,
+      "name": "t",
+      "window": null,
+      "from": "STEP[i][0]",
+      "to": "STEP[i][1]",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 68,
+      "raw": "const u = seg(t, STEP[i][0], STEP[i][1]);"
+    },
+    {
+      "style_id": 17,
+      "name": "t",
+      "window": null,
+      "from": "TYPE[i]",
+      "to": "TYPE[i] + 0.09",
+      "ease": "E.linear",
+      "concrete": false,
+      "line_no": 111,
+      "raw": "const ty = seg(t, TYPE[i], TYPE[i] + 0.09);"
+    },
+    {
+      "style_id": 17,
+      "name": "t",
+      "window": null,
+      "from": "TYPE[i] + 0.10 + k * 0.022",
+      "to": "TYPE[i] + 0.145 + k * 0.022",
+      "ease": "E.outCubic",
+      "concrete": false,
+      "line_no": 184,
+      "raw": "const ou = seg(t, TYPE[i] + 0.10 + k * 0.022, TYPE[i] + 0.145 + k * 0.022, E.outCubic);"
+    }
+  ],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "拉远鼓包",
+      "typical": "sin(π)×210px",
+      "feel": "砍掉后飞行是\"平移\"没有\"起降\"；>300 会穿出背景渐变边界"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "飞行/停留比",
+      "typical": "0.14 / 0.20",
+      "feel": "停留必须容下打字 0.09 + 输出 0.145 + 读秒余量"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "聚焦衰减",
+      "typical": "/420px，blur 峰值 2.2px",
+      "feel": "分母越小离焦越狠；三窗 x 间距（约 640px）应 >1.5 倍分母"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "打字速度",
+      "typical": "命令 0.09 归一化（约 16 字符）",
+      "feel": "换长命令保持字符数近似，或按字符数反算窗口宽度"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "输出错峰",
+      "typical": "0.022/行，各 0.035 时长",
+      "feel": "4 行输出合计约 0.15；行多时压缩间隔保证停留段内吐完"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "窗口姿态",
+      "typical": "ry ±16–32°，z −110~+90",
+      "feel": "角度差是\"空间散布感\"来源；全部朝正前会退化成平面轮播"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "相机是逆变换实现，**窗口自身 transform 与相机公式必须严格互逆**——改姿态表只改 pose 数据，别动两处 transform 字符串",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "命令/输出文案是通用工具链占位（git/npm/log），换项目真实命令时保持\"命令短、输出 3–4 行\"的信息结构",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "光标闪烁走 `floor(t*26/40)`，dur 改变后闪烁频率跟着变，需目检\"打字中快闪、待机慢闪\"的对比还在",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "第三窗打字 0.81 起步，输出到 0.955 + settle——TYPE 表后移时留 ≥0.04 尾量，否则末行没进完就切黑",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "terminal-3d",
+      "variant_letter": null,
+      "upstream_key": "terminal-3d",
+      "demo": "demos/camera/terminal-3d/Terminal3D.tsx",
+      "component": "Terminal3D",
+      "duration_frames": 180,
+      "duration_source": "_DURATION/_DUR export",
+      "uses_normalized_t": true,
+      "design_stage": 480,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

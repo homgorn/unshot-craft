@@ -1,0 +1,251 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "skeleton-reveal",
+  "category": "ui-entrance",
+  "category_label": {
+    "en": "UI Entrance & Showcase",
+    "zh": "界面登场与陈列",
+    "ru": "Появление UI"
+  },
+  "tags": [
+    "ui-entrance"
+  ],
+  "source": {
+    "card": "references/shots/ui-entrance/skeleton-reveal.md",
+    "card_sha256": "4cbefebfa75a818ab9bc34cb11ded123d8398ba246093d5f1d839fb652fd1e72",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 172,
+    "duration_frames_hint": null,
+    "duration_verbatim": "~5.7s（172f：涂鸦 1s + 换真 0.3s + 骨架滚入 1.2s + 推近显影 3s）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（叙事型登场，重点是\"变成真的\"那两次跃迁）",
+    "energy_rationale": "叙事型登场，重点是\"变成真的\"那两次跃迁"
+  },
+  "intent_zh": "UI 登场库全是\"整页一次到位\"（飞入/落位/擦出）。本卡把登场拆成 **三级保真度跃迁**：手绘涂鸦（想法）→ 灰条骨架（结构）→ 真实内容 （产品），每次跃迁都是一拍\"变成真的\"的爽点，观众跟着走完\"从草图 到产品\"的叙事弧。骨架→内容的显影借的是加载态语法——用户天天见 skeleton screen，看到灰条就知道\"内容要来了\"，预期免费。与 document-typewriter-reveal 分工：那是**一份文档**被逐块写出来（内容是 主角、要读字）；本卡是**一个界面**逐级变真（结构是主角、字是最后 一级质感）。与 ai-stream-response 分工：那是证据行逐条\"汇入\"（列表 在生长），本卡是已就位的占位\"显影\"（布局早定，保真度在升级）。",
+  "use_zh": "产品 UI 的\"从无到有\"登场叙事；开场后第一次亮产品界面的段落",
+  "summary_zh": "草稿→骨架→内容三级显影——手绘涂鸦占位（煮沸抖动）一拍被灰条骨架窗口替换，骨架列表滚入后镜头推近、灰条逐行显影成头像+逐词文字，末词晚半拍落地",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "涂鸦 = 种子抖动折线/blob 路径（mulberry32），SVG 圆头粗 stroke"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（11–14px）；**每 5f 换一套种子做\"煮沸\"**——静止的手绘读作贴图"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "换真一拍：涂鸦层 8f Easing.in 加速缩退（scale -14%）+ 淡出，"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "骨架窗口同时 spring(damping 16, stiffness 160) 弹入，交叠不留空场"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "骨架行 translateY 520→0 逐行错峰 6f 滚入（ease-out cubic）"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "显影 = 骨架/内容双层叠放 opacity 互换 + 头像 scale 0.7→1 长出，"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        76
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "伴随镜头 1→1.34 inOut 推近（76f）——推近给显影一个\"凑近看清\"的"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "视线动机"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        14
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "文字逐词 2.5f 步进上浮 14px 进场；末行末词 +14f 晚半拍（\"pink?\""
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "式收尾顿点）"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "煮沸周期",
+      "typical": "每 5f 换种子，抖幅 ±6–10px",
+      "feel": "<3f 抖成噪点；>8f 读作卡顿而非手绘活性"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "换真一拍",
+      "typical": "涂鸦 8f 加速缩退，骨架 spring 同帧弹入",
+      "feel": "这拍必须快而果断——拖长成 crossfade，\"跃迁\"就没了"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "骨架滚入",
+      "typical": "每行错峰 6f，各 22f ease-out",
+      "feel": "骨架期要短暂停留（观众登记\"结构\"）再显影，粘连读不出三级"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "显影节拍",
+      "typical": "每行错峰 13f，行内 12f；镜头推近同段起",
+      "feel": "逐行有节奏地变真；全屏同帧显影读作换图"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "逐词进场",
+      "typical": "2.5f/词，上浮 14px + 淡入",
+      "feel": "词级进场是最后一级质感；整行淡入降一档也成立"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "晚半拍",
+      "typical": "末行末词 +14f",
+      "feel": "收尾顿点让\"加载完成\"有句号；全部齐落平淡"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "三级布局必须严格同构：涂鸦的窗口/侧栏/消息行位置要和骨架、骨架要和真内容对得上——错位后\"显影\"变成\"换了个页面\"，叙事断",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "实战真内容层贴产品真实截图/排版时，骨架灰条的行高与槽位要按截图量（document-typewriter-reveal 卡\"烤入纹理对齐\"同族教训）",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "涂鸦线稿别画细节：粗圆头 blob + 波浪线足够，画得太像 UI 第一级和第二级就没差了",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "mock 文案合规：不出现客户/成员真名（Q1 通例）",
+      "critical": false,
+      "rules": "Q1"
+    },
+    {
+      "ord": 5,
+      "text": "声音：换真一拍钉一声 pop/whoosh，逐行显影各一声极轻 tick，末词晚半拍处配一声轻 chime 收束",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "Q1",
+      "family": "Q",
+      "title": "规则：凡是表现产品既有页面的镜头，第一步就用无头浏览器截真实页面（整页纹理 + 元素级抠图 + 坐标 json），不手搓仿真贴图复刻；非复刻场景（抽象开场/品牌段/页面上不存在的独立展示组件）允许手搓 UI，但质量（出版级质感，对照 Q10 标准）与表达明确性（观众一眼看懂它是什么）是硬门槛，达不到回截图路线。公开演示数据只有在产品简报明确确认后可保留；客户、个人、内部、密钥、实时或其他敏感内容必须先虚构、脱敏或冻结。对手搓素材同样适用该口径。",
+      "check_question": "自检：每块 UI 素材：它在复刻既有页面吗？是则必须来自截图；手搓件的质感和表达能过 Q10 级审视吗？源数据是否符合已确认的数据口径，且不含未授权的客户、个人、内部或密钥信息？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "skeleton-reveal",
+      "variant_letter": null,
+      "upstream_key": "skeleton-reveal",
+      "demo": "demos/ui-entrance/skeleton-reveal/SkeletonReveal.tsx",
+      "component": "SkeletonReveal",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

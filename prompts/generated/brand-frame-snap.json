@@ -1,0 +1,232 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "brand-frame-snap",
+  "category": "effects",
+  "category_label": {
+    "en": "Light & Emphasis",
+    "zh": "光效与强调",
+    "ru": "Свет и акценты"
+  },
+  "tags": [
+    "transition",
+    "effects"
+  ],
+  "source": {
+    "card": "references/shots/effects/brand-frame-snap.md",
+    "card_sha256": "64fce8f8c88afda6d68771fe424241d13ef176ddf8f663ee42abaa63d272c17d",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 130,
+    "duration_frames_hint": null,
+    "duration_verbatim": "单次翻色 ~4.3s（130f）；画框本身可全片驻场",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中（翻色瞬间高，其余时间是安静的包装层）",
+    "energy_rationale": "翻色瞬间高，其余时间是安静的包装层"
+  },
+  "intent_zh": "真实录屏直接铺满屏没有品牌存在感，加 logo 水印又廉价。本卡用一圈 粗品牌色画框把录屏\"装裱\"起来：画框**先于内容出现**（先立画框再放 画，仪式感），之后画框颜色成为全片的语义编码——蓝=Design、绿=Dev Mode。章节切换时整圈画框一帧内硬翻色，无渐变，颜色硬切就是\"换挡\" 声效的视觉等价物；窗内布局同帧 A→B、角标与徽标同步换字，三处同帧 共振把\"模式切换\"砸实。与 theme-switch-moves 分工：那换的是 UI 本体 肤色（有扫过边界），本卡换的是\"画框\"这个包装层（同帧无边界）， 语义是模式/章节切换不是主题切换。",
+  "use_zh": "双模式/双章节产品片的全片包装层（蓝=模式A、绿=模式B 颜色编码）；真实录屏素材的品牌化包裹",
+  "summary_zh": "品牌色画框语法——一圈粗纯色画框先于内容长出包住全屏，录屏窗口落进框内；模式切换时整圈画框同帧硬翻色+窗内布局同帧换，一个 borderColor 干完章节导航/状态提示/品牌露出三件事",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        18
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "画框用 4 条实体色带（非 border 属性），厚度 0→44px ease-out 18f"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "长出；翻色 = 同一帧换 background，帧确定"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "录屏窗口 spring(damping 16) 从下方 560px + scale 0.82→1 落进框内"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "（帧 14 起，画框长出中段——框未成形窗先到会读作框追窗）"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "翻色帧三件事同帧：画框换色 + 窗内布局 A→B 硬切 + 框带角标/窗口"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "徽标换字（DESIGN→DEV MODE）"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "翻色瞬间叠 2 帧白闪脉冲（opacity 0.55 起阶梯衰减）+ 画框厚度阻尼"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "弹跳（exp(-0.22t)·cos(0.9t)·10px），给\"换挡\"打击感"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "画框厚度",
+      "typical": "44px（1080p）",
+      "feel": "太薄读作描边不读作\"装裱\"；>60px 开始吃内容区"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "画框生长",
+      "typical": "18f ease-out，先于窗口 14f",
+      "feel": "画框必须先立——内容先到画框后包读作补救"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "窗口落位",
+      "typical": "spring(damping 16, stiffness 110)，y 560→0 + scale 0.82→1",
+      "feel": "落进\"框内\"是语义关键，落点必须完全在框带内侧"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "翻色时刻",
+      "typical": "demo 78f；停一拍（窗口落定后 ≥30f）再翻",
+      "feel": "落定没坐稳就翻，观众还没建立\"蓝=当前模式\"的编码"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "白闪脉冲",
+      "typical": "2–3f，0.55→0.19 阶梯",
+      "feel": "帮眼睛登记\"这一帧变了\"；>4f 抢了 cel-flash 的活"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "厚度弹跳",
+      "typical": "exp 衰减 cos，初幅 10px",
+      "feel": "纯硬切略干；弹跳是\"挡位卡进去\"的机械回馈"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "翻色必须真同帧：画框、窗内布局、角标文字三者错开哪怕 2f，\"换挡\"就散成三个小动画",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "颜色编码要全片守约：蓝框段落里不许出现绿色主 UI 元素，编码被稀释后翻色就只是换色",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "画框是包装层不是主角：全片翻色 ≤2 次，翻多了读作霓虹灯（P4 克制原则）",
+      "critical": false,
+      "rules": "P4"
+    },
+    {
+      "ord": 4,
+      "text": "两个模式的品牌色对比度要够（demo 蓝 #3E7BFA / 绿 #1BC47D）；同明度邻近色翻了等于没翻",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "声音：翻色帧钉一声干脆的机械 click/换挡声，白闪与声同帧；画框生长段可静",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "P4",
+      "family": "P",
+      "title": "规则：开拍前列产品功能清单（dashboard/详情/论文/周报/品牌）逐一映射镜头，核心功能漏拍等于返工；一种手法（飞入/堆叠/翻页）全片只当一次主角；剪辑自查按\"这个镜头给了什么新信息\"过滤，同一素材/信息全片只出现一次，重复即删。",
+      "check_question": "自检：功能清单每项都有对应镜头吗？有没有两个镜头在用同一种手法当主角、或讲同一件事？"
+    }
+  ],
+  "styles": [
+    {
+      "key": "brand-frame-snap",
+      "variant_letter": null,
+      "upstream_key": "brand-frame-snap",
+      "demo": "demos/effects/brand-frame-snap/BrandFrameSnap.tsx",
+      "component": "BrandFrameSnap",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

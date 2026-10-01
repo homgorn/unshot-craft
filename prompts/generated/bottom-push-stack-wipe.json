@@ -1,0 +1,251 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "bottom-push-stack-wipe",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/bottom-push-stack-wipe.md",
+    "card_sha256": "31d898d0d5a25f8cf588b86c51a2f94152fd458d0e09387e2ddaf2f424fba715",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 30,
+    "duration_frames_hint": null,
+    "duration_verbatim": "单次推入 30f + 章内 hold ~1s；demo 三连推 140f（~4.7s）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中",
+    "energy_rationale": null
+  },
+  "intent_zh": "wipe-transitions 是一条边界扫过、新旧页都不动；page-turn 是立方体 翻转。本卡是第三种物性：**新章把旧章顶出去**——两屏刚性接触、同速 同向位移，像自动售货机压栈。命门是\"连底色整屏走\"：底色+窗口卡+装饰 条焊成一块整料从底边推入，观众读到\"换了个世界\"而不是\"换了张卡\"。 重 ease-out（快进慢停）给推入一个\"哐\"的落位感；上缘 40px 接缝阴影 是两屏物理接触的证据。连推三章且底色饱和度拉满，换章本身就成了全片 的节拍器——slack 原片全片就靠这一招做骨架。",
+  "use_zh": "多章节产品片的换章骨架（每章一个卖点一种底色）；需要\"翻页节奏感\"贯穿全片的段落切换",
+  "summary_zh": "底边上推换章——新场景连底色整屏从底边向上推入，把旧场景物理顶出画外，连推数章各配一种饱和底色，内容钉死在各自色底坐标系里随底色走",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "每章一个整屏层：`translateY` 从 +1080 推到 0，旧章同步被顶到"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "−1080——两层位移严格同步同缓动，任何速差都读作\"滑动穿模\""
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [
+        [
+          0.12,
+          0.9,
+          0.2,
+          1.0
+        ]
+      ],
+      "raw": "推入缓动 = 重 ease-out `cubic-bezier(0.12, 0.9, 0.2, 1)`（快进"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        30
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "慢停），30f 完成；第 i 章的 y = (1−自己推入进度)×H − 下一章推入"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "进度×H，一条式子管进也管出"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "新章上缘带 40px 渐变接缝阴影（黑 0.30→透明，压在旧章上），落定"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "后归零——\"顶出\"的物理接触感全靠它"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "三章底色绿 #2bac76 / 蓝 #36c5f0 / 粉 #e01e5a（demo 取 slack 系"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "饱和色）；每章中央钉一张灰阶窗口卡 + 白色半透明装饰条"
+    },
+    {
+      "ord": 9,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        92
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "推入间隔 hold ~1s（demo 18/55/92f 起推）；出画的层及时卸载"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "推入时长",
+      "typical": "30f，重 ease-out",
+      "feel": "<20f 读作闪切；线性匀速读作卷帘门，\"哐\"感全无"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "章间 hold",
+      "typical": "~37f（1.2s 左右）",
+      "feel": "章内是内容表演区，<25f 观众没看清就被顶走"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "接缝阴影",
+      "typical": "上缘 40px，黑 0.30 渐变",
+      "feel": "去掉后两屏像叠影滑动；>80px 读作新章自带黑边"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "底色",
+      "typical": "每章一种饱和色，相邻章色相拉开",
+      "feel": "相邻章同色系则\"换章\"读作\"微调\"；灰阶章只能当第 0 章"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "内容钉死",
+      "typical": "窗口卡/装饰条用章内绝对坐标",
+      "feel": "内容若相对视口定位就会\"漂\"在推入动画上，穿帮"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "连推次数",
+      "typical": "2–4 章",
+      "feel": "1 次不成节奏；>4 次观众开始数底色，疲劳"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 wipe-transitions 分工：那卡新旧页都不动、一条几何边界扫过交接",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "与 shot-transitions 六式同层选型：本卡能量中档、方向固定向上，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "方向统一是骨架感的来源：全片所有章都从底边推，中途换成左推/顶推",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "推入进行中两章同屏，都是满屏层——章内动画（卡片入场等）避开推入",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 5,
+      "text": "实战底色用品牌色板的饱和档；底色饱和度不足时窗口卡\"钉在色底上\"",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "bottom-push-stack-wipe",
+      "variant_letter": null,
+      "upstream_key": "bottom-push-stack-wipe",
+      "demo": "demos/transition/bottom-push-stack-wipe/BottomPushStackWipe.tsx",
+      "component": "BottomPushStackWipe",
+      "duration_frames": 30,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

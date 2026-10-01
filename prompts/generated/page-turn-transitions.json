@@ -1,0 +1,206 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "page-turn-transitions",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/page-turn-transitions.md",
+    "card_sha256": "8778e52645cbc4d0426ba232be167c7e37f1d2864b9c433098a6abd1da17d352",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 30,
+    "duration_frames_hint": null,
+    "duration_verbatim": "单式 前态建立 30f + 转场 20–38f + 收尾 ≥40f，约 4.4–4.7s",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid-high",
+    "energy_label": {
+      "zh": "中高",
+      "en": "mid-high"
+    },
+    "energy_verbatim": "中高",
+    "energy_rationale": null
+  },
+  "intent_zh": "shot-transitions 六式和 transition-travel/hidden-cut 都把页面当\"场景\" ——相机在场景间移动。本卡把页面当**实体**：它有厚度、有重量、会翻面 会裂开。体块隐喻的仪式感更强，适合章节级大换页（功能 A 讲完→功能 B） 而非镜头级小交棒。A 立方体是\"空间上并列\"——两页是盒子的两面， 暗示同级关系；B 对开门是\"旧的让位\"——旧页从正中撕开滑走、新页 从底下迎上来，暗示取代关系。按语义选：并列翻篇用 A，新旧交替用 B。",
+  "use_zh": "章节级换页：两个并列大段落之间的\"翻篇\"仪式；与 shot-transitions 系（镜头交棒）分工——那是\"航拍机移过去\"，这是\"页面自己是实体\"",
+  "summary_zh": "整页体块转场两式——cube-rotate 立方体翻转（两页贴盒子相邻面转 90°）与 barn-door-split 对开门裂幕（旧页裂两半滑出、新页迎上）",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| 式 | 做法 | 适用 |"
+    },
+    {
+      "ord": 1,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "|----|------|------|"
+    },
+    {
+      "ord": 2,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| A cube-rotate | 两页贴立方体相邻面（rotateY 0/90° + translateZ W/2），场景层转 -90°；旧面转出压暗、新面转进变亮，45° 时两面夹一条暗棱 | 并列章节翻篇；产品两大功能区切换 |"
+    },
+    {
+      "ord": 3,
+      "heading": "两式选型",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "| B barn-door-split | 旧页两个 960px overflow 容器对位拼合，同时向外 Easing.in(cubic) 滑出画外；裂缝内边缘亮线+投影，新页底层 scale 1.06→1 迎上 | 新旧交替：改版前后、方案 A→方案 B |"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": "A",
+      "key": "A 结构命门",
+      "typical": "场景层 `translateZ(−W/2) rotateY(θ)` 把正面拉回 z=0",
+      "feel": "少了这层 hold 段页面尺度不对（被 perspective 推远）"
+    },
+    {
+      "ord": 1,
+      "variant": "A",
+      "key": "A 转速",
+      "typical": "θ 0→−90° / 38f inOut cubic；中段叠 blur 1.5px 落定摘",
+      "feel": "<28f 读不出体块感；>50f 读作慢慢挪"
+    },
+    {
+      "ord": 2,
+      "variant": "A",
+      "key": "A 亮度对切",
+      "typical": "旧面 1→0.55、新面 0.55→1 + 接缝竖向渐变阴影 sin(pπ)",
+      "feel": "无明暗对切两面读作同一张图在转"
+    },
+    {
+      "ord": 3,
+      "variant": "B",
+      "key": "B 预告",
+      "typical": "裂前中缝 2px 细线闪现两次（18–22/25–29f）",
+      "feel": "直接裂开观众没看到裂点在哪"
+    },
+    {
+      "ord": 4,
+      "variant": "B",
+      "key": "B 滑出",
+      "typical": "各 translateX ∓980px / 20f Easing.in(cubic) 加速",
+      "feel": "ease-out 滑出是\"被推走\"，ease-in 才是\"让位\""
+    },
+    {
+      "ord": 5,
+      "variant": "B",
+      "key": "B 撕裂边",
+      "typical": "内边缘 3px G.ink 亮线 + 8px 投影",
+      "feel": "无边线两半读作普通左右擦除"
+    },
+    {
+      "ord": 6,
+      "variant": null,
+      "key": "收尾",
+      "typical": "新页落定真静止 ≥40f",
+      "feel": "R1"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "一缝一式规矩同 shot-transitions；体块转场比镜头交棒更重，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "A 式官方 `@remotion/transitions` cube() 是付费件——本卡是 CSS 自实现，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "B 式两半必须**对位拼合无缝**（右半内层 translateX(−960px)）——",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "转场前后两页都要有 ≥30f 静止建立/收尾——两端都在动，体块感被",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "barn-door-split",
+      "variant_letter": "B",
+      "upstream_key": "barn-door-split",
+      "demo": "demos/transition/page-turn-transitions/BarnDoorSplit.tsx",
+      "component": "BarnDoorSplit",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    },
+    {
+      "key": "cube-rotate",
+      "variant_letter": "A",
+      "upstream_key": "cube-rotate",
+      "demo": "demos/transition/page-turn-transitions/CubeRotate.tsx",
+      "component": "CubeRotate",
+      "duration_frames": null,
+      "duration_source": null,
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      },
+      {
+        "id": "subtitle",
+        "max_chars": 80,
+        "hint": "Optional. Cards with N variants usually need a per-variant line.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}

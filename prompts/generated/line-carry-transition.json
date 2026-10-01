@@ -1,0 +1,234 @@
+{
+  "schema": "shotcraft.brief/1",
+  "slug": "line-carry-transition",
+  "category": "transition",
+  "category_label": {
+    "en": "Transitions",
+    "zh": "转场",
+    "ru": "Переходы"
+  },
+  "tags": [
+    "camera",
+    "transition"
+  ],
+  "source": {
+    "card": "references/shots/transition/line-carry-transition.md",
+    "card_sha256": "2ba5b900d3a7357910483a8ab3428443798b5f284a6e692607b565fa66ffae47",
+    "brief_kind": "generated"
+  },
+  "render": {
+    "fps": 30,
+    "duration_frames": 60,
+    "duration_frames_hint": null,
+    "duration_verbatim": "~5.3s（进度条走满 + 横移 60f + 围框 + 内容淡入 + 静止 36f）",
+    "width": 1920,
+    "height": 1080,
+    "energy": "mid",
+    "energy_label": {
+      "zh": "中",
+      "en": "mid"
+    },
+    "energy_verbatim": "中",
+    "energy_rationale": null
+  },
+  "intent_zh": "转场库三大族（穿越/藏切/体块）都在回答\"场景怎么换\"；本卡的回答是 **根本不换——一条线牵着你走过去**。进度条走满后末端延伸成长线冲出 卡缘，镜头跟着线横移 1920px 进入新世界，线在移动中拐直角围出 B 场景 的卡框，框闭合、内容淡入，从头到尾观众的眼睛没离开过这条线。图形 连续性本身就是转场。与 match-cut 的区别：那是切点两侧形状对位—— 终究还是切；这是连续绘制——**没有切**。线的身份要有叙事逻辑（进度条 \"走完了\"所以延伸出去），无来由的线只是装饰。",
+  "use_zh": "两个有图形亲缘的场景之间（进度条→卡框、下划线→图表轴）；一支片子的招牌转场位，Catch Me If You Can 片头的图形接力",
+  "summary_zh": "线条接力横移转场——场景 A 的进度条延伸出画，镜头跟线横移，线在移动中拐角围出场景 B 的卡框，全程无剪切",
+  "beats": [
+    {
+      "ord": 0,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        94
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "3840 宽世界容器 translateX 当镜头，34–94f 移 1920px，"
+    },
+    {
+      "ord": 1,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "Easing.inOut(cubic)"
+    },
+    {
+      "ord": 2,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "一条手写折线 path（进度条 560 + 冲出段 + 直角 + 560×330 矩形框，"
+    },
+    {
+      "ord": 3,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "总长 3980）全程 dasharray/dashoffset evolve，分段驱动 drawn 长度"
+    },
+    {
+      "ord": 4,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "**命门：横移段 drawn = 1100 + cam，线生长与镜头位移同速**——笔头"
+    },
+    {
+      "ord": 5,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "钉在画面 x≈1500 偏右，永不出画也永不落后；一旦失速，观众跟丢线"
+    },
+    {
+      "ord": 6,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [],
+      "ease": null,
+      "beziers": [],
+      "raw": "就等于跟丢了转场"
+    },
+    {
+      "ord": 7,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        118
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "笔头 r=11 墨点随线走，框闭合后 112–118f 线性消散并条件卸载"
+    },
+    {
+      "ord": 8,
+      "heading": "动效核心",
+      "window": null,
+      "frame_hints": [
+        36,
+        124,
+        160
+      ],
+      "ease": null,
+      "beziers": [],
+      "raw": "（摘罩判例）；B 内容 124f 前淡入完，124–160f 真静止 36f"
+    }
+  ],
+  "segments": [],
+  "parameters": [
+    {
+      "ord": 0,
+      "variant": null,
+      "key": "线体",
+      "typical": "6px ink 实线",
+      "feel": "太细横移中读丢；虚线读作未完成态"
+    },
+    {
+      "ord": 1,
+      "variant": null,
+      "key": "横移配比",
+      "typical": "1920px / 60f（32px/f）",
+      "feel": "更远的横移等比拉长时长，别提速——>40px/f 笔头开始拖影跟丢"
+    },
+    {
+      "ord": 2,
+      "variant": null,
+      "key": "笔头位置",
+      "typical": "画面 x≈1500（约 78% 处偏右）",
+      "feel": "居中读作\"线追镜头\"；贴边一颤就出画"
+    },
+    {
+      "ord": 3,
+      "variant": null,
+      "key": "拐角",
+      "typical": "直角硬拐，不倒圆",
+      "feel": "圆角软拐丢掉制图感，Saul Bass 味就没了"
+    },
+    {
+      "ord": 4,
+      "variant": null,
+      "key": "框闭合",
+      "typical": "闭合帧起 B 内容再淡入",
+      "feel": "框没闭合内容先出，线的悬念白搭"
+    },
+    {
+      "ord": 5,
+      "variant": null,
+      "key": "收尾",
+      "typical": "淡入完 ≥36f 真静止",
+      "feel": "笔头墨点必须条件卸载，残留即毁静止"
+    }
+  ],
+  "pitfalls": [
+    {
+      "ord": 0,
+      "text": "demo 在灰阶/占位素材上调校通过——参数是调校起点非实战定稿，",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 1,
+      "text": "与 draw-svg-trace 的关系：那是元素级描边点名（线属于元素），这是",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 2,
+      "text": "全片 ≤1 次——这是招牌转场不是常规转场，第二次出现魔法就穿帮",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 3,
+      "text": "起点必须是已有图形构件的自然延伸（进度条走满、下划线画完），",
+      "critical": false,
+      "rules": null
+    },
+    {
+      "ord": 4,
+      "text": "声音：线生长一声持续笔擦、框闭合一声轻叩（sound-design §4.5）",
+      "critical": false,
+      "rules": null
+    }
+  ],
+  "rules": [],
+  "styles": [
+    {
+      "key": "line-carry-transition",
+      "variant_letter": null,
+      "upstream_key": "line-carry-transition",
+      "demo": "demos/transition/line-carry-transition/LineCarryTransition.tsx",
+      "component": "LineCarryTransition",
+      "duration_frames": 3980,
+      "duration_source": "const scan",
+      "uses_normalized_t": false,
+      "design_stage": null,
+      "label_zh": null,
+      "description_zh": null
+    }
+  ],
+  "copy": {
+    "status": "unfilled",
+    "authored": false,
+    "note": "Structure below is generated from the recipe. Copy is NOT. Every slot must be filled before render, and a filled brief must set authored=true and record who wrote it.",
+    "slots": [
+      {
+        "id": "headline",
+        "max_chars": 40,
+        "hint": "One line. If a demo uses 2 title words, keep 2 words.",
+        "status": "unfilled"
+      }
+    ]
+  }
+}
