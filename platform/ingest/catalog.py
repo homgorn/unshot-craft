@@ -35,15 +35,22 @@ ROOT = Path(__file__).resolve().parents[2]
 CATALOG = ROOT / "data" / "cinematic"
 SLOT = "[Subject]"
 
-# Mirrors platform/ingest/schema.sql section 7: seven tools, seven categories.
+# Controlled vocabulary. Mirrors the rows seeded in platform/catalog/schema.sql.
 # Kept as data so the ingest can fail loudly on drift rather than import it.
+#
+# Seven. Cinematique's source catalog has "Visual Effects & Promptable FX" as its
+# own group, distinct from "Genres & Styles", so squashing it into visual-style
+# would have made `--category visual-style` return rows that are not about visual
+# style. There is no separate 'visual-style' key because the corpus has no such
+# group: a vocabulary entry nothing can populate is a broken filter, not a
+# category.
 CATEGORIES = {
     "camera-work": "Camera Work",
     "lighting": "Lighting",
     "composition": "Composition",
     "editing": "Editing",
     "narrative": "Narrative",
-    "visual-style": "Visual Style",
+    "visual-effects": "Visual Effects & Promptable FX",
     "genres": "Film Genres",
 }
 
@@ -112,6 +119,10 @@ def parse(path: Path) -> dict:
         # the parameter string, not the backticks. `` `` `` means "nothing here",
         # which must land as NULL rather than as a two-backtick string.
         value = pv.strip().strip("`").strip()
+        # A parameter string is `k=v | k=v | k=v`, so the pipes have to be escaped
+        # to survive a markdown table cell. Undo it here; storing `\|` would put a
+        # backslash into every tool parameter we ever send to a model.
+        value = value.replace("\\|", "|").strip()
         if not value or set(value) <= set("-: "):
             value = ""
         params.append({
@@ -122,9 +133,20 @@ def parse(path: Path) -> dict:
         })
 
     citations = []
-    for i, (label, url) in enumerate(LINK_RE.findall(sections.get("sources", ""))):
+    src_text = sections.get("sources", "")
+    # `[Title](url)` when the source gave a link, and `- Title` when it did not.
+    # The Cinematique corpus lists its sources as plain text with no URL at all,
+    # and storing a fabricated URL beside a real title would be the most damaging
+    # thing this ingest could do. A source with no link is stored with url NULL.
+    for i, (label, url) in enumerate(LINK_RE.findall(src_text)):
         if url.startswith("http"):
             citations.append({"ord": i, "title": label, "url": url})
+    if not citations:
+        for line in src_text.splitlines():
+            m = re.match(r"^\s*[-*]\s+(.+)$", line)
+            if m and len(m.group(1).strip()) > 8:
+                citations.append({"ord": len(citations), "title": m.group(1).strip(),
+                                  "url": None})
 
     related = []
     for label, target in LINK_RE.findall(sections.get("related", "")):
@@ -199,6 +221,21 @@ def ingest(conn, repo_root: Path = ROOT) -> dict:
                 (_upstream_repo_id(conn), p["source_path"], p["sha256"], p["bytes"])).lastrowid
 
     style_by_key = {r[0]: r[1] for r in conn.execute("SELECT key, id FROM style")}
+    # A `styles:` entry may name a shot card rather than a style. Cards are the
+    # level a client buys and the level our pairings table declares at, so
+    # resolving only against style keys silently dropped 51 of 155 declared
+    # links while still exiting 0.
+    #
+    # Every variant of the card is recorded, not just the first. Picking MIN(id)
+    # paired `crash-zoom-punch` — an 11-frame card — with `crash-impact-real`,
+    # a 120-frame hold, which is confidently wrong and looks researched.
+    style_by_card: dict[str, list[int]] = {}
+    for card, sid in conn.execute("""
+            SELECT sc.name, st.id FROM shot_card sc
+            JOIN card_variant v ON v.card_id = sc.id
+            JOIN style st ON st.id = v.style_id
+            ORDER BY st.key"""):
+        style_by_card.setdefault(card, []).append(sid)
     stats = {
         "techniques": 0, "mistakes": 0, "citations": 0,
         "cells_filled": 0, "cells_null": 0, "cells_tested": 0, "cells_unknown_tool": 0,
@@ -233,11 +270,14 @@ def ingest(conn, repo_root: Path = ROOT) -> dict:
             stats["citations"] += 1
 
         for key in p["declared_styles"]:
-            sid = style_by_key.get(key)
-            if sid:
-                conn.execute("INSERT OR IGNORE INTO technique_motion(technique_id,style_id,kind)"
-                             " VALUES(?,?,'declared')", (tid, sid))
-                stats["motions_declared"] += 1
+            sids = ([style_by_key[key]] if key in style_by_key
+                    else style_by_card.get(key))
+            if sids:
+                for sid in sids:
+                    conn.execute("INSERT OR IGNORE INTO technique_motion"
+                                 "(technique_id,style_id,kind) VALUES(?,?,'declared')",
+                                 (tid, sid))
+                    stats["motions_declared"] += 1
             else:
                 # Never infer: a name that does not resolve is recorded as a gap,
                 # not silently attached to whatever was closest.

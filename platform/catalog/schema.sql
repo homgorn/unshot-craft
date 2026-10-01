@@ -98,7 +98,13 @@ CREATE TABLE IF NOT EXISTS technique_citation (
   technique_id  INTEGER NOT NULL REFERENCES cinematic_technique(id) ON DELETE CASCADE,
   ord           INTEGER NOT NULL,
   title         TEXT NOT NULL,
-  url           TEXT NOT NULL
+  -- Nullable, deliberately. The source corpus lists its sources as
+  -- `Title — Publisher` with no link, so every one of its citations has a real
+  -- title and no URL. Storing a plausible URL next to a real title would be the
+  -- most damaging thing this layer could do: a reviewer would follow it and find
+  -- nothing, and every other citation in the row would stop being trusted. NULL
+  -- means "we have the citation, we do not have the link"; it is never a guess.
+  url           TEXT
 );
 
 -- Declared relation to the shot corpus. Populated only from an explicit
@@ -153,7 +159,16 @@ INSERT OR IGNORE INTO cinematic_category (key, label_en, sort_order) VALUES
   ('composition',  'Composition',  3),
   ('editing',      'Editing',      4),
   ('narrative',    'Narrative',    5),
-  ('visual-style', 'Visual Style', 6),
+  -- Cinematique's source catalog keeps "Visual Effects & Promptable FX" as its
+  -- own group alongside "Genres & Styles". Two rows rather than one squashed
+  -- key: a controlled vocabulary that does not match the corpus is how
+  -- `--category` stops being a filter.
+  --
+  -- There is deliberately no 'visual-style' key. An earlier draft had one, and it
+  -- was always empty: the source corpus has no such group. A controlled
+  -- vocabulary is a claim about what exists; an entry nothing can populate makes
+  -- `--category visual-style` look broken rather than absent.
+  ('visual-effects','Visual Effects & Promptable FX', 6),
   ('genres',       'Film Genres',  7);
 
 -- ---------------------------------------------------------------------------
