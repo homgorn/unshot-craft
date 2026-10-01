@@ -1,0 +1,473 @@
+{
+  "ai-stream-response": {
+    "title": "Поток ответа ИИ"
+  },
+  "assemble-then-type-flyin": {
+    "title": "Сборка интерфейса и влёт текста"
+  },
+  "aurora-bloom-bg-flip": {
+    "title": "Полярное сияние и инверсия фона"
+  },
+  "autolayout-gap-dial": {
+    "title": "Настройка интервалов между блоками"
+  },
+  "avatar-bracket-carousel": {
+    "title": "Смена аватаров в рамке фокуса"
+  },
+  "avatar-grid-radial-build-colorize": {
+    "title": "Радиальная сборка и раскраска"
+  },
+  "basic-3d-scene": {
+    "title": "Демонстрация 3D-сцены"
+  },
+  "beat-cut-moves": {
+    "title": "Резкая склейка в такт"
+  },
+  "beat-step-list-theme-cycle": {
+    "title": "Смена цвета списка в такт"
+  },
+  "before-after-slider-scrub": {
+    "title": "Ползунок сравнения до/после"
+  },
+  "bezier-source-converge-merge": {
+    "title": "Сведение кривых в одну точку"
+  },
+  "blur-slide": {
+    "title": "Появление слов из размытия"
+  },
+  "bottom-push-stack-wipe": {
+    "title": "Переход восходящим сдвигом"
+  },
+  "brace-expand": {
+    "title": "Раскрытие фигурных скобок"
+  },
+  "brand-frame-snap": {
+    "title": "Резкое появление фирменной рамки"
+  },
+  "brand-ink-open": {
+    "title": "Открытие чернильным логотипом"
+  },
+  "bubble-swarm-takeover": {
+    "title": "Захват экрана пузырями"
+  },
+  "canvas-materialize-moves": {
+    "title": "Появление на холсте"
+  },
+  "card-flip-reveal": {
+    "title": "Переворот карточек с раскрытием"
+  },
+  "card-flock-tumble": {
+    "title": "Кувырок карточек и сборка"
+  },
+  "card-stack": {
+    "title": "Веер из стопки карточек"
+  },
+  "carousel-3d": {
+    "title": "Карусель в 3D"
+  },
+  "cel-flash-stomp": {
+    "title": "Ударный титр со вспышкой фона"
+  },
+  "chart-live-moves": {
+    "title": "Анимация графика"
+  },
+  "chip-grid-single-select-blackout": {
+    "title": "Выбор пункта с инверсной вспышкой"
+  },
+  "chip-lift-to-user-pill": {
+    "title": "Превращение выбранного элемента в плашку"
+  },
+  "circle-match-iris": {
+    "title": "Круговая склейка по совпадению"
+  },
+  "cloner-depth-echo": {
+    "title": "Объёмное эхо клона"
+  },
+  "collab-cursor-moves": {
+    "title": "Анимация курсоров совместной работы"
+  },
+  "color-block-step-wipe": {
+    "title": "Ступенчатый переход цветными блоками"
+  },
+  "command-palette-summon": {
+    "title": "Появление командной палитры"
+  },
+  "countdown-arc-scatter": {
+    "title": "Числа по дуге с остановкой"
+  },
+  "counter-confetti": {
+    "title": "Счётчик с конфетти"
+  },
+  "crane-rise-reveal": {
+    "title": "Подъём камеры с раскрытием"
+  },
+  "crash-zoom-punch": {
+    "title": "Резкий зум"
+  },
+  "cube-navigation": {
+    "title": "Навигация по граням куба"
+  },
+  "cursor-flyover": {
+    "title": "Облёт четырёх углов"
+  },
+  "cycle-glass-node-morph": {
+    "title": "Цикл с появлением стеклянных узлов"
+  },
+  "dashboard-glow-highlight-pill": {
+    "title": "Наводка золотой плашкой"
+  },
+  "dataviz-landscape-open": {
+    "title": "Появление ландшафта данных"
+  },
+  "deck-deal-flyin": {
+    "title": "Раздача карточек"
+  },
+  "depth-layer-moves": {
+    "title": "Многослойное движение камеры"
+  },
+  "doc-park-left-pill-deal": {
+    "title": "Документ слева и раздача плашек"
+  },
+  "document-typewriter-reveal": {
+    "title": "Появление документа печатью"
+  },
+  "draw-svg-trace": {
+    "title": "Обводка SVG по контуру"
+  },
+  "edit-hook-moves": {
+    "title": "Монтажный акцент"
+  },
+  "element-body-moves": {
+    "title": "Деформация элементов"
+  },
+  "floating-glossy-label-pills": {
+    "title": "Глянцевые плашки в горизонтальной карусели"
+  },
+  "flying-words": {
+    "title": "Слова в перспективном тоннеле"
+  },
+  "fracture": {
+    "title": "Сборка и разлёт фрагментов"
+  },
+  "fui-hud-moves": {
+    "title": "Анимация научно-фантастического HUD"
+  },
+  "gauge-readout-moves": {
+    "title": "Анимация показаний приборов"
+  },
+  "glass-pill-dictation-typing": {
+    "title": "Диктовка в стеклянной плашке"
+  },
+  "glitch-cycle": {
+    "title": "Цикл помех"
+  },
+  "glow-flyline-moves": {
+    "title": "Свечение и световые линии"
+  },
+  "gradient-transition": {
+    "title": "Переход между градиентами"
+  },
+  "gradient-word-sweep": {
+    "title": "Градиентный блик на слове"
+  },
+  "grain-dissolve": {
+    "title": "Распад и сборка текста из зерна"
+  },
+  "graze-face-tour": {
+    "title": "Облёт поверхности интерфейса"
+  },
+  "hashtag-to-pill-materialize": {
+    "title": "Преобразование хештега в плашку"
+  },
+  "hatch-depth": {
+    "title": "Превращение штриховки в столбцы"
+  },
+  "icon-field-colorize": {
+    "title": "Раскрашивание поля значков"
+  },
+  "icon-performance-moves": {
+    "title": "Анимация значков"
+  },
+  "impact-feedback": {
+    "title": "Отклик на удар"
+  },
+  "input-trigger-moves": {
+    "title": "Анимация ввода"
+  },
+  "integration-hub-map": {
+    "title": "Карта интеграций"
+  },
+  "lead-word-zoom-assemble": {
+    "title": "Сборка фразы с зумом на первое слово"
+  },
+  "letterspace-materialize": {
+    "title": "Проявление логотипа с разрядкой"
+  },
+  "light-play-moves": {
+    "title": "Световые эффекты"
+  },
+  "line-boil": {
+    "title": "Живая дрожь линий"
+  },
+  "line-carry-transition": {
+    "title": "Переход по линии"
+  },
+  "list-reveal": {
+    "title": "Поэлементное появление списка"
+  },
+  "list-stack-press": {
+    "title": "Стопка карточек с нажимом"
+  },
+  "logo-shrink-wordmark-lockup": {
+    "title": "Сборка логотипа из значка"
+  },
+  "magician-card-flourish": {
+    "title": "Фокус с появлением карточки"
+  },
+  "marker-underline-title": {
+    "title": "Подчёркивание маркером"
+  },
+  "montage-rhythm-moves": {
+    "title": "Ритм монтажа"
+  },
+  "morph-from-primitive": {
+    "title": "Превращение фигуры"
+  },
+  "mosaic-reframe": {
+    "title": "Перестройка трёхчастной композиции"
+  },
+  "neon-frame-forerun": {
+    "title": "Неоновая рамка опережает интерфейс"
+  },
+  "neon-frame-orbit-drop": {
+    "title": "Появление компонентов с неоновой рамкой"
+  },
+  "neon-triple-marquee": {
+    "title": "Трёхстрочная неоновая бегущая строка"
+  },
+  "odometer-digit-roll": {
+    "title": "Прокрутка цифр как в одометре"
+  },
+  "orbit-ring-title-open": {
+    "title": "Заголовок и кольцо карточек"
+  },
+  "outline-word-fill": {
+    "title": "Заливка контурного текста"
+  },
+  "outro-group-photo-launch": {
+    "title": "Финал с командным фото"
+  },
+  "overhead-camera-moves": {
+    "title": "Верхний ракурс камеры"
+  },
+  "page-turn-transitions": {
+    "title": "Перелистывание страницы"
+  },
+  "page-waterfall-wall": {
+    "title": "Стена страниц водопадом"
+  },
+  "panel-grid-moves": {
+    "title": "Анимация сетки панелей"
+  },
+  "paper-craft-moves": {
+    "title": "Анимация бумажной аппликации"
+  },
+  "paper-plane-messenger": {
+    "title": "Бумажный самолёт-доставщик"
+  },
+  "paper-title-card": {
+    "title": "Бумажная титровая карточка"
+  },
+  "particle-celebrate-hits": {
+    "title": "Праздничные частицы и искры"
+  },
+  "particle-sand-fill": {
+    "title": "Столбцы из падающих частиц"
+  },
+  "picker-carousel-feature-cycle": {
+    "title": "Карусель выбора с фиксацией"
+  },
+  "pill-chip-slot-cycle-handled": {
+    "title": "Прокрутка слов в капсуле"
+  },
+  "pill-slot-cycle": {
+    "title": "Прокрутка слов в плашке"
+  },
+  "platform-hinge-rise": {
+    "title": "Подъём платформы на шарнирах"
+  },
+  "print-texture-transitions": {
+    "title": "Переход с текстурой печати"
+  },
+  "product-card-progressive-assemble": {
+    "title": "Поэтапная сборка карточки"
+  },
+  "quad-split-parallel-scenes": {
+    "title": "Параллельный монтаж в четырёх окнах"
+  },
+  "radial-ripple-phone-chips": {
+    "title": "Волны вокруг телефона"
+  },
+  "radial-wave": {
+    "title": "Волна точечной сетки"
+  },
+  "research-card-stack-scroll": {
+    "title": "Стопка карточек исследования"
+  },
+  "rhythm-interrupt-moves": {
+    "title": "Сбой ритма"
+  },
+  "ring-diagram-annotation-reveal": {
+    "title": "Схема-цикл с пояснениями"
+  },
+  "riso-print-hits": {
+    "title": "Ударный эффект ризографии"
+  },
+  "row-embed": {
+    "title": "Встраивание строки"
+  },
+  "runway-ground-skim": {
+    "title": "Скольжение карточек по поверхности"
+  },
+  "sakuga-timing-shift": {
+    "title": "Смена ритма в стиле сакуга"
+  },
+  "scan-bracket-sweep": {
+    "title": "Сканирующие рамки"
+  },
+  "scanline-annotate-focus": {
+    "title": "Разметка сканирующей линией"
+  },
+  "scanline-assemble-flyin": {
+    "title": "Сборка из сканирующей линии"
+  },
+  "scramble": {
+    "title": "Фиксация помех"
+  },
+  "scroll-brake-moves": {
+    "title": "Остановка прокрутки"
+  },
+  "segmented-thumb-hero": {
+    "title": "Крупный план сегментного переключателя"
+  },
+  "shot-transitions": {
+    "title": "Переходы со сменой сцены"
+  },
+  "skeleton-reveal": {
+    "title": "Проявление скелетона"
+  },
+  "slam-entrance-moves": {
+    "title": "Резкое появление"
+  },
+  "smear-multiples": {
+    "title": "Шлейфовые дубликаты"
+  },
+  "space-camera-moves": {
+    "title": "Пространственные движения камеры"
+  },
+  "spectrum-morph-ui": {
+    "title": "Спектр превращается в интерфейс"
+  },
+  "speed-ramp-freeze": {
+    "title": "Ускорение и стоп-кадр"
+  },
+  "split-flap-title": {
+    "title": "Заголовок на перекидном табло"
+  },
+  "spotlight-hero-card": {
+    "title": "Карточка в луче прожектора"
+  },
+  "spotlight-sweep-moves": {
+    "title": "Проявление прожектором в темноте"
+  },
+  "steep-tilt-glide": {
+    "title": "Скольжение в крутой перспективе"
+  },
+  "stroke-segment-build": {
+    "title": "Сборка из сегментов обводки"
+  },
+  "svg-shape-morph": {
+    "title": "Превращение SVG-фигуры"
+  },
+  "tear-streak-transitions": {
+    "title": "Рваный шлейф перехода"
+  },
+  "tension-camera-moves": {
+    "title": "Напряжённая работа камеры"
+  },
+  "terminal-3d": {
+    "title": "Полёт в пространстве терминала"
+  },
+  "text-as-mask": {
+    "title": "Текстовая маска"
+  },
+  "text-column-converge": {
+    "title": "Сведение двух слов"
+  },
+  "theme-switch-moves": {
+    "title": "Анимация смены темы"
+  },
+  "timeline-travel": {
+    "title": "Путешествие по таймлайну"
+  },
+  "title-demote-to-label": {
+    "title": "Заголовок становится меткой"
+  },
+  "trailer-grammar-moves": {
+    "title": "Монтажный язык трейлера"
+  },
+  "transition-hidden-cut": {
+    "title": "Незаметная склейка"
+  },
+  "transition-travel": {
+    "title": "Переход сквозь пространство"
+  },
+  "type-and-filter": {
+    "title": "Поиск с вводом текста"
+  },
+  "type-assembly-moves": {
+    "title": "Сборка текста"
+  },
+  "type-entrance-moves": {
+    "title": "Появление текста"
+  },
+  "type-rhythm-sync": {
+    "title": "Синхронизация текста с ритмом"
+  },
+  "typewriter-moves": {
+    "title": "Анимация печати"
+  },
+  "typing-code-block": {
+    "title": "Появление блока кода"
+  },
+  "ui-strip-away-outro": {
+    "title": "Финал через упрощение"
+  },
+  "ui-to-brand-morph": {
+    "title": "Превращение интерфейса в бренд"
+  },
+  "value-stagger-gradient": {
+    "title": "Градиентное раскрытие значений"
+  },
+  "vertical-word-roll-blur-cycle": {
+    "title": "Вертикальная прокрутка слов"
+  },
+  "voice-waveform-live": {
+    "title": "Анимация звуковой волны"
+  },
+  "wall-reveal-moves": {
+    "title": "Раскрытие стены"
+  },
+  "white-flash-logo-simplify-cut": {
+    "title": "Белая вспышка и упрощение логотипа"
+  },
+  "wipe-transitions": {
+    "title": "Геометрические шторки"
+  },
+  "word-relay-filmstrip": {
+    "title": "Эстафета слов на киноплёнке"
+  },
+  "word-relay-geometry": {
+    "title": "Эстафета преимуществ"
+  }
+}

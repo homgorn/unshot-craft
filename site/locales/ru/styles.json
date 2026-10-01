@@ -1,0 +1,290 @@
+{
+  "anime-impact": {
+    "title": "anime-impact"
+  },
+  "attention-bounce": {
+    "title": "attention-bounce"
+  },
+  "axial-stretch": {
+    "title": "axial-stretch"
+  },
+  "axis-rescale-shock": {
+    "title": "axis-rescale-shock"
+  },
+  "barn-door-split": {
+    "title": "barn-door-split"
+  },
+  "beat-cut-accelerando": {
+    "title": "beat-cut-accelerando"
+  },
+  "beat-pump": {
+    "title": "beat-pump"
+  },
+  "bento-light-up": {
+    "title": "bento-light-up"
+  },
+  "blinds-slice": {
+    "title": "blinds-slice"
+  },
+  "brake-reticle-lock": {
+    "title": "brake-reticle-lock"
+  },
+  "bullet-time-freeze-orbit": {
+    "title": "bullet-time-freeze-orbit"
+  },
+  "card-footage-cadence": {
+    "title": "card-footage-cadence"
+  },
+  "cast-ensemble": {
+    "title": "cast-ensemble"
+  },
+  "changelog-scroll-brake": {
+    "title": "changelog-scroll-brake"
+  },
+  "clock-wipe": {
+    "title": "clock-wipe"
+  },
+  "comic-panel-split": {
+    "title": "comic-panel-split"
+  },
+  "confetti-crossfire": {
+    "title": "confetti-crossfire"
+  },
+  "contact-shadow-lift": {
+    "title": "contact-shadow-lift"
+  },
+  "corner-spotlight-reveal": {
+    "title": "corner-spotlight-reveal"
+  },
+  "counter-tick-sparks": {
+    "title": "counter-tick-sparks"
+  },
+  "cube-rotate": {
+    "title": "cube-rotate"
+  },
+  "cursor-performance": {
+    "title": "cursor-performance"
+  },
+  "diagram-cascade": {
+    "title": "diagram-cascade"
+  },
+  "dialogue-duet": {
+    "title": "dialogue-duet"
+  },
+  "dolly-zoom": {
+    "title": "dolly-zoom"
+  },
+  "domino-cascade": {
+    "title": "domino-cascade"
+  },
+  "drift-assembly": {
+    "title": "drift-assembly"
+  },
+  "drone-dive-landing": {
+    "title": "drone-dive-landing"
+  },
+  "drop-blackout-slam": {
+    "title": "drop-blackout-slam"
+  },
+  "dutch-roll-to-level": {
+    "title": "dutch-roll-to-level"
+  },
+  "error-retype": {
+    "title": "error-retype"
+  },
+  "exploded-view": {
+    "title": "exploded-view"
+  },
+  "flash-cut": {
+    "title": "flash-cut"
+  },
+  "flip-grid-reflow": {
+    "title": "flip-grid-reflow"
+  },
+  "flyline-arc": {
+    "title": "flyline-arc"
+  },
+  "font-weight-pump": {
+    "title": "font-weight-pump"
+  },
+  "freeze-annotate": {
+    "title": "freeze-annotate"
+  },
+  "glow-orb-ambient": {
+    "title": "glow-orb-ambient"
+  },
+  "glow-wake-sleep-panel": {
+    "title": "glow-wake-sleep-panel"
+  },
+  "grid-flash-mosaic": {
+    "title": "grid-flash-mosaic"
+  },
+  "grid-wave-flip": {
+    "title": "grid-wave-flip"
+  },
+  "halation-bloom": {
+    "title": "halation-bloom"
+  },
+  "hit-counter": {
+    "title": "hit-counter"
+  },
+  "icon-flip-bloom": {
+    "title": "icon-flip-bloom"
+  },
+  "impact-burst-kit": {
+    "title": "impact-burst-kit"
+  },
+  "input-morph-assemble": {
+    "title": "input-morph-assemble"
+  },
+  "invisible-cut": {
+    "title": "invisible-cut"
+  },
+  "jump-cut-punch-in": {
+    "title": "jump-cut-punch-in"
+  },
+  "kanada-perspective-snap": {
+    "title": "kanada-perspective-snap"
+  },
+  "karaoke-fill-sync": {
+    "title": "karaoke-fill-sync"
+  },
+  "keycap-smash-cut": {
+    "title": "keycap-smash-cut"
+  },
+  "letter-drop-physics": {
+    "title": "letter-drop-physics"
+  },
+  "letterform-zoom": {
+    "title": "letterform-zoom"
+  },
+  "light-leak-burn": {
+    "title": "light-leak-burn"
+  },
+  "line-unfold-panel": {
+    "title": "line-unfold-panel"
+  },
+  "mask-wipe": {
+    "title": "mask-wipe"
+  },
+  "masking-tape-slap": {
+    "title": "masking-tape-slap"
+  },
+  "misregistration-hit": {
+    "title": "misregistration-hit"
+  },
+  "multiplane": {
+    "title": "multiplane"
+  },
+  "needle-sweep-selftest": {
+    "title": "needle-sweep-selftest"
+  },
+  "orb-flyline-relay": {
+    "title": "orb-flyline-relay"
+  },
+  "oscilloscope-stream": {
+    "title": "oscilloscope-stream"
+  },
+  "overhead-tabletop-drop": {
+    "title": "overhead-tabletop-drop"
+  },
+  "palette-theme-ripple": {
+    "title": "palette-theme-ripple"
+  },
+  "panel-to-canvas": {
+    "title": "panel-to-canvas"
+  },
+  "paparazzi-flash": {
+    "title": "paparazzi-flash"
+  },
+  "pop-burst-confirm": {
+    "title": "pop-burst-confirm"
+  },
+  "popup-book-rise": {
+    "title": "popup-book-rise"
+  },
+  "pull-back-isolation": {
+    "title": "pull-back-isolation"
+  },
+  "reticle-lock-on": {
+    "title": "reticle-lock-on"
+  },
+  "score-slam": {
+    "title": "score-slam"
+  },
+  "scramble-decode": {
+    "title": "scramble-decode"
+  },
+  "shared-element-morph": {
+    "title": "shared-element-morph"
+  },
+  "sheen-sweep": {
+    "title": "sheen-sweep"
+  },
+  "shot-transitions-4": {
+    "title": "shot-transitions-4"
+  },
+  "shot-transitions-5": {
+    "title": "shot-transitions-5"
+  },
+  "shot-transitions-6": {
+    "title": "shot-transitions-6"
+  },
+  "slide-spotlight-pan": {
+    "title": "slide-spotlight-pan"
+  },
+  "slow-push-in": {
+    "title": "slow-push-in"
+  },
+  "smash-cut": {
+    "title": "smash-cut"
+  },
+  "speed-ramp": {
+    "title": "speed-ramp"
+  },
+  "split-text-stagger": {
+    "title": "split-text-stagger"
+  },
+  "spotlight-sweep": {
+    "title": "spotlight-sweep"
+  },
+  "strobe-black-frames": {
+    "title": "strobe-black-frames"
+  },
+  "tape-scroll-fixed-pointer": {
+    "title": "tape-scroll-fixed-pointer"
+  },
+  "terminal-typewriter": {
+    "title": "terminal-typewriter"
+  },
+  "text-on-path": {
+    "title": "text-on-path"
+  },
+  "theme-sweep-toggle": {
+    "title": "theme-sweep-toggle"
+  },
+  "tilt-reveal": {
+    "title": "tilt-reveal"
+  },
+  "tracking-expand": {
+    "title": "tracking-expand"
+  },
+  "trailer-bumper": {
+    "title": "trailer-bumper"
+  },
+  "unit-dot-swarm-regroup": {
+    "title": "unit-dot-swarm-regroup"
+  },
+  "versus-slam": {
+    "title": "versus-slam"
+  },
+  "whip-pan": {
+    "title": "whip-pan"
+  },
+  "wireframe-draw-on": {
+    "title": "wireframe-draw-on"
+  },
+  "wright-triple-cut": {
+    "title": "wright-triple-cut"
+  }
+}

@@ -1,0 +1,630 @@
+{
+  "ai-stream-response": {
+    "description": "A readable AI summary lands first, followed by evidence rows that stream in and resolve into a completed state.",
+    "title": "ai-stream-response"
+  },
+  "assemble-then-type-flyin": {
+    "description": "Textless component shells fly in from every direction onto an empty dark grid, then every character arrives from 3D space with its own large rotation and settles into position.",
+    "title": "assemble-then-type-flyin"
+  },
+  "aurora-bloom-bg-flip": {
+    "description": "A soft purple-orange aurora blob rises from the bottom of a light frame, then the whole background slams dark in under half a second while the copy blur-swaps to a new line.",
+    "title": "aurora-bloom-bg-flip"
+  },
+  "autolayout-gap-dial": {
+    "description": "A gap value dial pushes a row of blocks apart in real time while badge digits tick, then everything springs back into place.",
+    "title": "autolayout-gap-dial"
+  },
+  "avatar-bracket-carousel": {
+    "description": "A four-corner focus bracket stays locked mid-sentence while a vertical queue of avatars springs through it three times, each one sharpening and growing as it enters the frame and shrinking, dimming and blurring as it leaves.",
+    "title": "avatar-bracket-carousel"
+  },
+  "avatar-grid-radial-build-colorize": {
+    "description": "A card grid grows ring by ring from the center — tiles holding initials, icons, or image placeholders — then about fifteen percent of them flush red at random moments to surface anomalies.",
+    "title": "avatar-grid-radial-build-colorize"
+  },
+  "basic-3d-scene": {
+    "description": "Impress-style spatial slides: cards sit at scattered 3D poses and the camera flies to align with each one by inverting its transform, ending on a pulled-back overview where every card lights up.",
+    "title": "basic-3d-scene"
+  },
+  "beat-cut-moves": {
+    "description": "Two hard-cut rhythms: an accelerating sequence with shrinking intervals, and a three-flash freeze montage.",
+    "title": "beat-cut-moves"
+  },
+  "beat-step-list-theme-cycle": {
+    "description": "An adjective list steps up one row per beat while a fixed center pill catches each word and the background recolors on the same beat.",
+    "title": "beat-step-list-theme-cycle"
+  },
+  "before-after-slider-scrub": {
+    "description": "Before and after views share one frame while a fast-then-slow slider reveals the processed result.",
+    "title": "before-after-slider-scrub"
+  },
+  "bezier-source-converge-merge": {
+    "description": "Four source nodes each draw a thin bezier curve toward one convergence point, then slide along their own curve and shrink as if swallowed, while accent data packets glide the paths and the curves erase backward.",
+    "title": "bezier-source-converge-merge"
+  },
+  "blur-slide": {
+    "description": "Title words rise into place one after another as vertical offset, blur, and opacity converge on a single shared ease, with the subtitle following before the title settles.",
+    "title": "blur-slide"
+  },
+  "bottom-push-stack-wipe": {
+    "description": "Each new scene pushes up from the bottom edge with its own saturated background color, physically shoving the old scene out of frame.",
+    "title": "bottom-push-stack-wipe"
+  },
+  "brace-expand": {
+    "description": "A tight pair of braces appears at center, then springs apart and scales up to title size, revealing the text through a clip width bound strictly to the brace gap.",
+    "title": "brace-expand"
+  },
+  "brand-frame-snap": {
+    "description": "A thick brand-color frame grows around the screen before content arrives, then hard-flips its color on the same frame the inner layout switches.",
+    "title": "brand-frame-snap"
+  },
+  "brand-ink-open": {
+    "description": "Ink crosshairs draw in, the wordmark stamps letter by letter, a subtitle types on, then the lockup holds and lifts away.",
+    "title": "brand-ink-open"
+  },
+  "bubble-swarm-takeover": {
+    "description": "Pearlescent bubbles drift in and swell until they cover the screen, hiding the scene switch at peak coverage before scattering to reveal the new page.",
+    "title": "bubble-swarm-takeover"
+  },
+  "canvas-materialize-moves": {
+    "description": "Two materialize moves: table rows arc out of a panel and morph into canvas cards, and a typed prompt grows a cascading diagram tree.",
+    "title": "canvas-materialize-moves"
+  },
+  "card-flip-reveal": {
+    "description": "Feature cards rotate 180 degrees around the Y axis, flash at the edge, and reveal a large result on the back.",
+    "title": "card-flip-reveal"
+  },
+  "card-flock-tumble": {
+    "description": "Three UI cards tumble in 3D from edge-on to a stepped formation, keep slowly rotating, then collapse inward and burst into a smoke ring under a giant word.",
+    "title": "card-flock-tumble"
+  },
+  "card-stack": {
+    "description": "Eight cards spring up from below the frame one after another and pile into a single stack, then the whole pile fans out into a 3D arc as each card rotates, slides sideways and steps back in depth.",
+    "title": "card-stack"
+  },
+  "carousel-3d": {
+    "description": "Eight cards sit on a circular ring laid out with sin and cos, spinning through exactly one full revolution while each card billboards outward with matched front and back faces so it never reads as mirrored or upside down.",
+    "title": "carousel-3d"
+  },
+  "cel-flash-stomp": {
+    "description": "Large words stamp into frame on the beat while flat background colors flash behind the locked typography.",
+    "title": "cel-flash-stomp"
+  },
+  "chart-live-moves": {
+    "description": "Three data-driven motions: a live oscilloscope trace, dots regrouping into a figure, and an axis forced to rescale.",
+    "title": "chart-live-moves"
+  },
+  "chip-grid-single-select-blackout": {
+    "description": "Five option chips fade in, then a single grey press frame flashes before the chosen chip turns solid black with a tiny bounce while the others drop to eighteen percent without moving.",
+    "title": "chip-grid-single-select-blackout"
+  },
+  "chip-lift-to-user-pill": {
+    "description": "One chip in a grid hard-cuts to inverted black, the rest fade out in distance order, and the black chip grows rightward into a pill that types out a name and links to a badge.",
+    "title": "chip-lift-to-user-pill"
+  },
+  "circle-match-iris": {
+    "description": "An iris expands from a circular UI element and lands on a matching circle in the next scene.",
+    "title": "circle-match-iris"
+  },
+  "cloner-depth-echo": {
+    "description": "A card duplicates into a diagonal depth trail, holds briefly, then accelerates back into one springy original.",
+    "title": "cloner-depth-echo"
+  },
+  "collab-cursor-moves": {
+    "description": "Two cursor performances: a duet of collaborator cursors dancing in a dark scene, and a five-cursor ensemble drifting and typing as ambience.",
+    "title": "collab-cursor-moves"
+  },
+  "color-block-step-wipe": {
+    "description": "A color block swallows the screen in three to five discrete hard steps — either expanding from a center strip or eating diagonally from a corner.",
+    "title": "color-block-step-wipe"
+  },
+  "command-palette-summon": {
+    "description": "The screen dims and blurs as a command palette drops in, populates results, and narrows while the query is typed.",
+    "title": "command-palette-summon"
+  },
+  "countdown-arc-scatter": {
+    "description": "Numbers arranged tangentially along a large arc sweep past and brake to a stop, the winning digit sliding out of the dial to become the first character of the headline.",
+    "title": "countdown-arc-scatter"
+  },
+  "counter-confetti": {
+    "description": "A large counter sprints up with ease-out-quart and an overshoot scale while 52 confetti pieces burst in from both sides on real gravity arcs — deliberately half a beat before the number lands.",
+    "title": "counter-confetti"
+  },
+  "crane-rise-reveal": {
+    "description": "The camera starts tight on one data row, rises and pulls back, then reveals a full dashboard filling the frame.",
+    "title": "crane-rise-reveal"
+  },
+  "crash-zoom-punch": {
+    "description": "A six-frame push races from a wide view to a target close-up, ending with either an elastic overshoot or a heavy impact stop.",
+    "title": "crash-zoom-punch"
+  },
+  "cube-navigation": {
+    "description": "Content panels wrap the six faces of a 3D cube while the camera alternates between face close-ups and pulled-back isometric views, each face shaded live by its normal direction.",
+    "title": "cube-navigation"
+  },
+  "cursor-flyover": {
+    "description": "After an overview fade-in the camera flies to each of four screen corners in turn while an SVG cursor arrives with it, pointing and leaving a click ripple at every stop.",
+    "title": "cursor-flyover"
+  },
+  "cycle-glass-node-morph": {
+    "description": "One subject shrinks through a diagonal wipe into a three-stage cycle, then a continuous push-in lets three glass nodes rise and take over the labels before diagnostic markers lock the system state.",
+    "title": "cycle-glass-node-morph"
+  },
+  "dashboard-glow-highlight-pill": {
+    "description": "A trading dashboard rises into frame with perspective and keeps drifting in 3D while a golden light blob roams across the panels, stretches into a pill, and draws a glowing outline around a modal.",
+    "title": "dashboard-glow-highlight-pill"
+  },
+  "dataviz-landscape-open": {
+    "description": "Streams of light merge across a dark data landscape while labels hover and a shallow-depth camera glides forward.",
+    "title": "dataviz-landscape-open"
+  },
+  "deck-deal-flyin": {
+    "description": "A physical card stack opens the scene, then cards accelerate into a live grid as the camera follows the growing page.",
+    "title": "deck-deal-flyin"
+  },
+  "depth-layer-moves": {
+    "description": "Two depth techniques: layered parallax rails and a simulated dolly zoom that pins the subject while the background expands.",
+    "title": "depth-layer-moves"
+  },
+  "doc-park-left-pill-deal": {
+    "description": "The source document slides left until only a sliver remains and keeps scrolling slowly, while three outlined pills are dealt one at a time, each followed by a caption that darkens word by word.",
+    "title": "doc-park-left-pill-deal"
+  },
+  "document-typewriter-reveal": {
+    "description": "A fully typeset document writes itself behind one accent-color caret, opens both side columns, and drops history entries into the rail.",
+    "title": "document-typewriter-reveal"
+  },
+  "draw-svg-trace": {
+    "description": "An ink stroke traces an element outline, closes with a dark flash, and hands focus to the revealed content.",
+    "title": "draw-svg-trace"
+  },
+  "edit-hook-moves": {
+    "description": "An editorial hook: a short logo-button stinger that interrupts the ending with a 12-frame easter egg.",
+    "title": "edit-hook-moves"
+  },
+  "element-body-moves": {
+    "description": "Two ways to give interface elements physicality: elastic axial stretch and a contact shadow that separates during lift.",
+    "title": "element-body-moves"
+  },
+  "floating-glossy-label-pills": {
+    "description": "Four wireframe dashboard panels topped with glossy pills queue up horizontally and step right in three beats, the centered one scaling up sharp while its neighbours shrink, sink and blur at the frame edges.",
+    "title": "floating-glossy-label-pills"
+  },
+  "flying-words": {
+    "description": "Keywords spawn deep in a perspective tunnel and rush past the camera along the z axis, fading in and out on a lifecycle curve across two seamless loops.",
+    "title": "flying-words"
+  },
+  "fracture": {
+    "description": "Twenty-five 3D tiles fly in from scattered space and lock into a poster in a center-out ripple, hold for a beat, then accelerate outward off-screen in all directions.",
+    "title": "fracture"
+  },
+  "fui-hud-moves": {
+    "description": "Two FUI patterns: a line unfolding into a panel, and a reticle assembling itself around a target.",
+    "title": "fui-hud-moves"
+  },
+  "gauge-readout-moves": {
+    "description": "Two instrument reads: a full-range needle self-test and a moving scale that races beneath a fixed pointer.",
+    "title": "gauge-readout-moves"
+  },
+  "glass-pill-dictation-typing": {
+    "description": "A fixed-width glass pill pops in slightly oversized and settles, glowing with an accent gradient inside that fades out as a placeholder sentence types across it.",
+    "title": "glass-pill-dictation-typing"
+  },
+  "glitch-cycle": {
+    "description": "Status phrases cycle through one monospace slot, each dissolving into noise at both ends with RGB split and jitter, while a progress bar tracks the whole run.",
+    "title": "glitch-cycle"
+  },
+  "glow-flyline-moves": {
+    "description": "Three dark-scene accents: ambient glow orbs, connecting flight arcs, and a synchronized orb-to-line relay.",
+    "title": "glow-flyline-moves"
+  },
+  "gradient-transition": {
+    "description": "The background morphs smoothly through linear, radial, and conic CSS gradients — angle, color stops, center, and radius each interpolated per-parameter with narrow cross-fades between types.",
+    "title": "gradient-transition"
+  },
+  "gradient-word-sweep": {
+    "description": "A gradient light sweeps left to right across a keyword, charging each character with glow that decays behind the wavefront until the whole word breathes.",
+    "title": "gradient-word-sweep"
+  },
+  "grain-dissolve": {
+    "description": "A clean line of text boils into displaced grain noise inside a hatched selection frame, then the particle cloud condenses into a larger glowing wordmark that locks sharp.",
+    "title": "grain-dissolve"
+  },
+  "graze-face-tour": {
+    "description": "The camera skims low across the UI surface like terrain while page text hovers above the interface and settles down as the shot advances.",
+    "title": "graze-face-tour"
+  },
+  "hashtag-to-pill-materialize": {
+    "description": "'A typed \"#word\" hard-cuts into a wide pill tag, holds, shrinks into its slot on the page, then hard-cuts again to reveal the finished view.'",
+    "title": "hashtag-to-pill-materialize"
+  },
+  "hatch-depth": {
+    "description": "Hatched placeholder bars wipe out to length one by one, then cross-fade into solid accent-colored data bars with values popping at their tips and a LIVE header sliding in.",
+    "title": "hatch-depth"
+  },
+  "icon-field-colorize": {
+    "description": "A grid of grayscale icons staggers in to fill the screen, holds a beat, then brand-color bands ripple down and light the whole field at once.",
+    "title": "icon-field-colorize"
+  },
+  "icon-performance-moves": {
+    "description": "Two icon performances: an explosive confirmation burst and an escalating attention bounce that compresses on landing.",
+    "title": "icon-performance-moves"
+  },
+  "impact-feedback": {
+    "description": "Two impact layers: a combo counter with damage feedback, and a full anime-style impact frame.",
+    "title": "impact-feedback"
+  },
+  "input-trigger-moves": {
+    "description": "Two input triggers: a performing cursor, and a key strike used as a hard-cut fuse.",
+    "title": "input-trigger-moves"
+  },
+  "integration-hub-map": {
+    "description": "A page flips 180 degrees into an integration hub where five app icons pop in together and rainbow light tubes connect with pulses flowing through them.",
+    "title": "integration-hub-map"
+  },
+  "lead-word-zoom-assemble": {
+    "description": "The lead word fills the frame at 2.3x and keeps drifting toward the viewer, then a single curve recedes it to size while the line slides left and the trailing words are pushed into their slots — pivoting on the lead word centre and the measured baseline.",
+    "title": "lead-word-zoom-assemble"
+  },
+  "letterspace-materialize": {
+    "description": "Every letter of a widely tracked wordmark draws itself in parallel, growing like handwriting and finishing together on the same frame.",
+    "title": "letterspace-materialize"
+  },
+  "light-play-moves": {
+    "description": "Three controlled light effects: spotlight sweep, single sheen pass, and a halation bloom at impact.",
+    "title": "light-play-moves"
+  },
+  "line-boil": {
+    "description": "Typography and outlines subtly redraw every few frames so a held image retains a handmade, living texture.",
+    "title": "line-boil"
+  },
+  "line-carry-transition": {
+    "description": "A progress line exits scene A, guides the camera sideways, then turns corners to become the frame of scene B.",
+    "title": "line-carry-transition"
+  },
+  "list-reveal": {
+    "description": "Menu rows scale into place one after another with a faint overshoot while the whole list drifts slowly upward, keeping the per-item entrance and the group motion on two independent layers.",
+    "title": "list-reveal"
+  },
+  "list-stack-press": {
+    "description": "List cards fly up from below, compress the growing stack on every landing, and advance a synchronized counter.",
+    "title": "list-stack-press"
+  },
+  "logo-shrink-wordmark-lockup": {
+    "description": "A neon slit ring shrinks fast into a solid white O with an overshoot brake, slides left to make room, letters stagger in one by one, and an accent slogan fades in below.",
+    "title": "logo-shrink-wordmark-lockup"
+  },
+  "magician-card-flourish": {
+    "description": "A blue starburst flashes on black for a third of a second, then a card shoots out of the flash, spinning along an arc toward camera before freezing near full frame.",
+    "title": "magician-card-flourish"
+  },
+  "marker-underline-title": {
+    "description": "After the headline settles, a marker stroke draws itself under the keyword — tapered, rough-edged, and slightly tilted to follow the italic.",
+    "title": "marker-underline-title"
+  },
+  "montage-rhythm-moves": {
+    "description": "Three montage rhythms: blackout anticipation and slam, a three-shot detail burst, and a domino cascade of entrances.",
+    "title": "montage-rhythm-moves"
+  },
+  "morph-from-primitive": {
+    "description": "A circle anticipates with one breath, morphs into a rounded card outline, then reveals its content.",
+    "title": "morph-from-primitive"
+  },
+  "mosaic-reframe": {
+    "description": "Twelve tiles morph continuously between a regular grid, a feature mosaic with one hero slot, and a rotated diagonal cascade, each tile interpolating position and size independently with a slight stagger.",
+    "title": "mosaic-reframe"
+  },
+  "neon-frame-forerun": {
+    "description": "A neon frame races ahead to outline the scene in steep perspective while components drop from above and the page brightens as they land.",
+    "title": "neon-frame-forerun"
+  },
+  "neon-frame-orbit-drop": {
+    "description": "After a neon frame draws itself, the camera arcs left to right while every page component drops from the air and lands on the same frame.",
+    "title": "neon-frame-orbit-drop"
+  },
+  "neon-triple-marquee": {
+    "description": "Three rows of outlined neon giants scroll in opposite directions across the full screen, lighting up in turn on a one-third phase offset.",
+    "title": "neon-triple-marquee"
+  },
+  "odometer-digit-roll": {
+    "description": "A full-screen metric rolls each digit like an odometer, overshoots into place, and pulses when every column locks.",
+    "title": "odometer-digit-roll"
+  },
+  "orbit-ring-title-open": {
+    "description": "Eight 16:9 content cards orbit an ellipse at a constant rate with their contents frozen on the first frame, then all start playing together while the centred headline de-blurs into place and a marker block sweeps across the key phrase.",
+    "title": "orbit-ring-title-open"
+  },
+  "outline-word-fill": {
+    "description": "An outlined word snaps down from triple size while a dashed circle and horizontal guides close in, then the stroke flips to solid white in a single frame with one brief glow.",
+    "title": "outline-word-fill"
+  },
+  "outro-group-photo-launch": {
+    "description": "Elements from the film assemble around the wordmark as a crane settle, stage light, and gold dust create a launch-event finale.",
+    "title": "outro-group-photo-launch"
+  },
+  "overhead-camera-moves": {
+    "description": "Two overhead reveals: a tilted scene leveling into view, and a tabletop layout dropping sharply into place.",
+    "title": "overhead-camera-moves"
+  },
+  "page-turn-transitions": {
+    "description": "Two full-page transitions: adjacent faces rotating like a cube, and an old page splitting open like double doors.",
+    "title": "page-turn-transitions"
+  },
+  "page-waterfall-wall": {
+    "description": "Real page captures flow at different speeds across a tilted 3D wall, creating an endless field of content.",
+    "title": "page-waterfall-wall"
+  },
+  "panel-grid-moves": {
+    "description": "Three grid rhythms: a flashing mosaic takeover, a collective flip-and-reflow, and an angled comic-panel split.",
+    "title": "panel-grid-moves"
+  },
+  "paper-craft-moves": {
+    "description": "Two paper gestures: masking tape slapping a floating card down, and cards rising from the page like a pop-up book.",
+    "title": "paper-craft-moves"
+  },
+  "paper-plane-messenger": {
+    "description": "After Send is clicked the camera pulls back and a folded paper plane flies a bezier arc through parallax props to land at the receiving window.",
+    "title": "paper-plane-messenger"
+  },
+  "paper-title-card": {
+    "description": "A sentence stamps onto paper word by word, highlights one amber italic term, and closes with a short rule.",
+    "title": "paper-title-card"
+  },
+  "particle-celebrate-hits": {
+    "description": "Two celebration accents: crossing confetti cannons and sparks emitted when a counter passes a milestone.",
+    "title": "particle-celebrate-hits"
+  },
+  "particle-sand-fill": {
+    "description": "Chart columns form from falling square particles, solidify when full, and finish with a value pop.",
+    "title": "particle-sand-fill"
+  },
+  "picker-carousel-feature-cycle": {
+    "description": "A vertical mobile-style picker holds its focus pill still while the list passes through it, each item decelerating hard into place and resting for several frames before the next.",
+    "title": "picker-carousel-feature-cycle"
+  },
+  "pill-chip-slot-cycle-handled": {
+    "description": "A dark chip inside the sentence rolls through feature words, its width easing to each word so the surrounding text is pushed apart while grey ghost items show above and below.",
+    "title": "pill-chip-slot-cycle-handled"
+  },
+  "pill-slot-cycle": {
+    "description": "A fixed sentence keeps its trailing pill slot spinning like a slot machine through feature words until the final word locks the sentence.",
+    "title": "pill-slot-cycle"
+  },
+  "platform-hinge-rise": {
+    "description": "A support platform establishes first, two subjects hinge upward from adjacent lower pivots, and a restrained outcome wedge rises last to turn evidence into a conclusion.",
+    "title": "platform-hinge-rise"
+  },
+  "print-texture-transitions": {
+    "description": "A print-based reveal: ink bleeding outward from a drop point to consume the old scene.",
+    "title": "print-texture-transitions"
+  },
+  "product-card-progressive-assemble": {
+    "description": "A product card builds itself field by field as image, title and pills pop in, the old price gets struck through while an accent new price springs out, and highlighter blocks sweep across the copy.",
+    "title": "product-card-progressive-assemble"
+  },
+  "quad-split-parallel-scenes": {
+    "description": "The frame hard-cuts into a 2×2 grid where four micro-scenes run in parallel — typing, a whip zoom, word pops, and a cursor interaction chain — with every beat offset by a few frames.",
+    "title": "quad-split-parallel-scenes"
+  },
+  "radial-ripple-phone-chips": {
+    "description": "Four concentric grey circles breathe out of phase like water ripples while a centered phone mockup auto-scrolls its feed and two white feature chips spring in and hover.",
+    "title": "radial-ripple-phone-chips"
+  },
+  "radial-wave": {
+    "description": "A 17x9 dot grid lights up in rings that spread outward from the center, each dot overshooting its scale before settling into a steady glow, then a brighter pulse collapses back inward from the edges.",
+    "title": "radial-wave"
+  },
+  "research-card-stack-scroll": {
+    "description": "Dark paper cards drop into the center every twelve frames and pile along a downward-right axis, squashing on landing while only the topmost card renders its full text as the rest blur into the stack.",
+    "title": "research-card-stack-scroll"
+  },
+  "rhythm-interrupt-moves": {
+    "description": "Two ways to break cadence: stepped punch-in jump cuts, and strobing black frames.",
+    "title": "rhythm-interrupt-moves"
+  },
+  "ring-diagram-annotation-reveal": {
+    "description": "A full-frame subject collapses into a concentric mechanism diagram, adds segmented rings and inward arrows, then shifts left to make room for a readable annotation column.",
+    "title": "ring-diagram-annotation-reveal"
+  },
+  "riso-print-hits": {
+    "description": "Two risograph impacts: a single misregistered color split that snaps into alignment, and a beat-driven series that grows stronger.",
+    "title": "riso-print-hits"
+  },
+  "row-embed": {
+    "description": "Content rows descend with perspective, flatten into the page, and flash a thin amber seam at the moment of insertion.",
+    "title": "row-embed"
+  },
+  "runway-ground-skim": {
+    "description": "From a low runway angle, UI cards rain down in overlapping fast drops with zero bounce, then the finished page tilts upright to camera.",
+    "title": "runway-ground-skim"
+  },
+  "sakuga-timing-shift": {
+    "description": "Movement begins in stepped, held drawings and suddenly switches to frame-by-frame acceleration at the climax.",
+    "title": "sakuga-timing-shift"
+  },
+  "scan-bracket-sweep": {
+    "description": "A skeleton document pops to center, black L-shaped framing brackets drop into its corners, and a thin line with a gradient trail sweeps up and down across it five times.",
+    "title": "scan-bracket-sweep"
+  },
+  "scanline-annotate-focus": {
+    "description": "A bright scanline travels down the page and, as it clears each block, camera framing brackets snap inward onto that region and a monospace caption types out beside it.",
+    "title": "scanline-annotate-focus"
+  },
+  "scanline-assemble-flyin": {
+    "description": "The page starts as an empty dark grid; a scanline descends and each component flies in from off-screen to snap into place behind it, with motion blur and a bright edge flash on landing.",
+    "title": "scanline-assemble-flyin"
+  },
+  "scramble": {
+    "description": "Every character flickers through a seeded symbol pool two frames at a time, then locks to its real glyph left to right, each lock flashing a short blue-white glow.",
+    "title": "scramble"
+  },
+  "scroll-brake-moves": {
+    "description": "Two fast-scroll stops: a long page decelerating precisely onto a target, and the same stop paired with a locking reticle.",
+    "title": "scroll-brake-moves"
+  },
+  "segmented-thumb-hero": {
+    "description": "An oversized segmented control gets a close-up: a cursor slides in, presses, and the white thumb snaps to the other segment as icons swap with a spring.",
+    "title": "segmented-thumb-hero"
+  },
+  "shot-transitions": {
+    "description": "Six handoff recipes for matching scene energy: flash cut, dark fly-through, focus relay, black title card, whip pan, and mask wipe.",
+    "title": "shot-transitions"
+  },
+  "skeleton-reveal": {
+    "description": "Content develops in three stages — wobbling doodle placeholders, gray skeleton bars, then rows resolving into avatars and word-by-word text.",
+    "title": "skeleton-reveal"
+  },
+  "slam-entrance-moves": {
+    "description": "Three high-energy arrivals: a perspective snap, a score drop, and an impact burst that pushes nearby elements.",
+    "title": "slam-entrance-moves"
+  },
+  "smear-multiples": {
+    "description": "A fast-moving card leaves four countable translucent copies that collapse back into the original at the landing.",
+    "title": "smear-multiples"
+  },
+  "space-camera-moves": {
+    "description": "Three spatial camera moves: exploded assembly, subject-locked rotation, and a drone-like dive to the landing point.",
+    "title": "space-camera-moves"
+  },
+  "spectrum-morph-ui": {
+    "description": "A title underline breaks into animated spectrum bars for two phrases, then gathers back into a clean line.",
+    "title": "spectrum-morph-ui"
+  },
+  "speed-ramp-freeze": {
+    "description": "Two nonlinear timing tools: a fast-slow-fast speed ramp and a freeze used for on-screen annotation before motion resumes.",
+    "title": "speed-ramp-freeze"
+  },
+  "split-flap-title": {
+    "description": "Characters flip through two incorrect glyphs before locking into the title in a left-to-right mechanical wave.",
+    "title": "split-flap-title"
+  },
+  "spotlight-hero-card": {
+    "description": "A spotlight selects one card, the camera pushes diagonally, the card lifts for two outline passes, then returns to the page.",
+    "title": "spotlight-hero-card"
+  },
+  "spotlight-sweep-moves": {
+    "description": "Three dark-scene spotlight moves: a wake-sleep sweep, an edge-glow pan with purple bleed, and a radial reveal expanding from a corner.",
+    "title": "spotlight-sweep-moves"
+  },
+  "steep-tilt-glide": {
+    "description": "A page stands at a steep 60-degree perspective and glides across a fixed camera with speed ghosting while text settles onto the surface mid-flight.",
+    "title": "steep-tilt-glide"
+  },
+  "stroke-segment-build": {
+    "description": "Disconnected title strokes illuminate in a scrambled order and become readable only when the final segments snap into place.",
+    "title": "stroke-segment-build"
+  },
+  "svg-shape-morph": {
+    "description": "A closed organic outline flows smoothly into a second shape and back again, interpolating 140 matched sample points while a faint scale breath, slow drift rotation and hue shift from cyan to violet ride on top.",
+    "title": "svg-shape-morph"
+  },
+  "tear-streak-transitions": {
+    "description": "A high-energy tear: horizontal glitch strips whose displacement hides the hard cut.",
+    "title": "tear-streak-transitions"
+  },
+  "tension-camera-moves": {
+    "description": "Four emotional camera tools: frozen orbit, Dutch roll correction, slow pressure push, and an isolating pull-back.",
+    "title": "tension-camera-moves"
+  },
+  "terminal-3d": {
+    "description": "Three terminal windows float at different poses in 3D space; the camera flies between them with a sine pull-back, and at each stop a command types out and its results slide in line by line.",
+    "title": "terminal-3d"
+  },
+  "text-as-mask": {
+    "description": "Product footage moves inside oversized title letters before the type expands until the footage takes over the frame.",
+    "title": "text-as-mask"
+  },
+  "text-column-converge": {
+    "description": "Two words pinned at opposite screen edges hard-swap through options, then slide together exactly once to lock into the final phrase.",
+    "title": "text-column-converge"
+  },
+  "theme-switch-moves": {
+    "description": "Two theme-change patterns: a diagonal sweep that recolors content in place, and a command-palette ripple with a clear cause and effect.",
+    "title": "theme-switch-moves"
+  },
+  "timeline-travel": {
+    "description": "The camera accelerates along a horizontal version timeline, raises cards at each stop, then brakes sharply on the final milestone.",
+    "title": "timeline-travel"
+  },
+  "title-demote-to-label": {
+    "description": "A centered headline stands for a beat, then shrinks and slides to the top-left corner to become a section label as content grows beneath it.",
+    "title": "title-demote-to-label"
+  },
+  "trailer-grammar-moves": {
+    "description": "Three trailer structures: a rapid opening hook, alternating title cards and footage, and a direct smash cut into stillness.",
+    "title": "trailer-grammar-moves"
+  },
+  "transition-hidden-cut": {
+    "description": "Three ways to conceal the edit: foreground occlusion, opposing impacts, and a brief amber light leak at the cut.",
+    "title": "transition-hidden-cut"
+  },
+  "transition-travel": {
+    "description": "Two passage transitions: shared-element relocation, and a push through the counter of a letterform.",
+    "title": "transition-travel"
+  },
+  "type-and-filter": {
+    "description": "A real interface types a search, collapses the grid to one result, then clicks through into the detail view.",
+    "title": "type-and-filter"
+  },
+  "type-assembly-moves": {
+    "description": "Four typography assemblies: split-letter rise, drifting convergence, tracking expansion, and text flowing along a path.",
+    "title": "type-assembly-moves"
+  },
+  "type-entrance-moves": {
+    "description": "Two title entrances: characters decoding from noise and letters falling under gravity before bouncing into alignment.",
+    "title": "type-entrance-moves"
+  },
+  "type-rhythm-sync": {
+    "description": "Two voice-and-beat synchronizations: font weight pulsing on percussion and spoken words filling like karaoke.",
+    "title": "type-rhythm-sync"
+  },
+  "typewriter-moves": {
+    "description": "Two typing narratives: a terminal command that triggers the scene and a three-act mistake, deletion, and retype.",
+    "title": "typewriter-moves"
+  },
+  "typing-code-block": {
+    "description": "The same syntax-highlighted snippet reveals two ways side by side: lines fade up on a stagger on the left, characters type out in full token color on the right.",
+    "title": "typing-code-block"
+  },
+  "ui-strip-away-outro": {
+    "description": "After Publish is clicked the editor UI evaporates layer by layer from the edges inward, leaving one button to slide center, grow, and hand off to the wordmark.",
+    "title": "ui-strip-away-outro"
+  },
+  "ui-to-brand-morph": {
+    "description": "Two UI-to-brand morphs: an icon flips flat and blooms into a logo mark, and an input field contracts into a capsule as glyphs assemble the logo.",
+    "title": "ui-to-brand-morph"
+  },
+  "value-stagger-gradient": {
+    "description": "Sixteen bars rise in a staggered sweep where height, hue, travel distance and blur are each spread as a gradient across the row, then a second beat re-origins the stagger at the center so the pulse amplitude fans out symmetrically.",
+    "title": "value-stagger-gradient"
+  },
+  "vertical-word-roll-blur-cycle": {
+    "description": "The closing word of a tagline rolls vertically through a three-line reel, neighbouring rows blurring into grey depth while the settled word takes the accent color.",
+    "title": "vertical-word-roll-blur-cycle"
+  },
+  "voice-waveform-live": {
+    "description": "A recording capsule shows 64 live bars that surge with speech, shrink to a dotted line in pauses, and collapse on submit.",
+    "title": "voice-waveform-live"
+  },
+  "wall-reveal-moves": {
+    "description": "Three in-place wall reveals: sequential bento lights, a wave of grid flips, and a wireframe drawing itself into a finished interface.",
+    "title": "wall-reveal-moves"
+  },
+  "white-flash-logo-simplify-cut": {
+    "description": "A liquid six-color gradient wordmark shimmers in place, the frame flash-burns to white with a blur-and-brightness pulse, and a flat gradient wordmark fades in and settles on the white.",
+    "title": "white-flash-logo-simplify-cut"
+  },
+  "wipe-transitions": {
+    "description": "Two geometric wipes: a radial clock sweep and twelve staggered vertical blinds.",
+    "title": "wipe-transitions"
+  },
+  "word-relay-filmstrip": {
+    "description": "A filmstrip of page cards steps vertically while a serif word relay swaps only its verb, each swap aligned to the center of the current card.",
+    "title": "word-relay-filmstrip"
+  },
+  "word-relay-geometry": {
+    "description": "Three benefit words hand off in turn, each with its own geometry — a spinning dashed circle, three interlocking circles that trim into view, and a metallic sheen that resolves to pure white.",
+    "title": "word-relay-geometry"
+  }
+}

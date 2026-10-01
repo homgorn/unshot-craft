@@ -1,0 +1,22 @@
+{
+  "namespaces": {
+    "en": {
+      "ui": 103,
+      "cards": 157,
+      "styles": 96,
+      "meta": 2
+    },
+    "zh": {
+      "ui": 103,
+      "cards": 157,
+      "styles": 214,
+      "meta": 2
+    }
+  },
+  "upstream_locales": [
+    "en",
+    "zh"
+  ],
+  "verified": true,
+  "problems": []
+}

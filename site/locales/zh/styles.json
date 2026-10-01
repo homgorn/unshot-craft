@@ -1,0 +1,644 @@
+{
+  "ai-stream-response": {
+    "title": "AI 响应汇入"
+  },
+  "anime-impact": {
+    "title": "动漫打击帧"
+  },
+  "assemble-then-type-flyin": {
+    "title": "骨架装配落字"
+  },
+  "attention-bounce": {
+    "title": "注意力弹跳"
+  },
+  "aurora-bloom-bg-flip": {
+    "title": "极光升腾反黑"
+  },
+  "autolayout-gap-dial": {
+    "title": "间距拨盘布局"
+  },
+  "avatar-bracket-carousel": {
+    "title": "对焦框轮换"
+  },
+  "avatar-grid-radial-build-colorize": {
+    "title": "分环生长染色"
+  },
+  "axial-stretch": {
+    "title": "轴向拉伸"
+  },
+  "axis-rescale-shock": {
+    "title": "坐标轴爆表重标"
+  },
+  "barn-door-split": {
+    "title": "双门裂开"
+  },
+  "basic-3d-scene": {
+    "title": "空间步进演示"
+  },
+  "beat-cut-accelerando": {
+    "title": "递进硬切串"
+  },
+  "beat-pump": {
+    "title": "套印节拍泵"
+  },
+  "beat-step-list-theme-cycle": {
+    "title": "节拍列表换色"
+  },
+  "before-after-slider-scrub": {
+    "title": "前后对比拉杆"
+  },
+  "bento-light-up": {
+    "title": "逐格点亮"
+  },
+  "bezier-source-converge-merge": {
+    "title": "曲线汇流吞并"
+  },
+  "blinds-slice": {
+    "title": "百叶窗切条"
+  },
+  "blur-slide": {
+    "title": "逐词模糊入场"
+  },
+  "bottom-push-stack-wipe": {
+    "title": "底推换章"
+  },
+  "brace-expand": {
+    "title": "括号拉幕"
+  },
+  "brake-reticle-lock": {
+    "title": "刹停准星锁定"
+  },
+  "brand-frame-snap": {
+    "title": "品牌画框硬切"
+  },
+  "brand-ink-open": {
+    "title": "品牌墨印开场"
+  },
+  "bubble-swarm-takeover": {
+    "title": "气泡群幕布"
+  },
+  "bullet-time-freeze-orbit": {
+    "title": "冻结环绕"
+  },
+  "card-flip-reveal": {
+    "title": "卡片翻面揭示"
+  },
+  "card-flock-tumble": {
+    "title": "卡片翻飞收束"
+  },
+  "card-footage-cadence": {
+    "title": "卡片与画面节奏交替"
+  },
+  "card-stack": {
+    "title": "牌堆扇展"
+  },
+  "carousel-3d": {
+    "title": "环形画廊"
+  },
+  "cast-ensemble": {
+    "title": "五光标群演"
+  },
+  "cel-flash-stomp": {
+    "title": "底色闪砸字"
+  },
+  "changelog-scroll-brake": {
+    "title": "更新日志滚动刹停"
+  },
+  "chip-grid-single-select-blackout": {
+    "title": "灰闪单选反黑"
+  },
+  "chip-lift-to-user-pill": {
+    "title": "选中长成药丸"
+  },
+  "circle-match-iris": {
+    "title": "圆心匹配光圈切"
+  },
+  "clock-wipe": {
+    "title": "时钟扫描擦除"
+  },
+  "cloner-depth-echo": {
+    "title": "克隆纵深回响"
+  },
+  "color-block-step-wipe": {
+    "title": "色块阶跃吞屏"
+  },
+  "comic-panel-split": {
+    "title": "漫画分镜切屏"
+  },
+  "command-palette-summon": {
+    "title": "命令面板召唤"
+  },
+  "confetti-crossfire": {
+    "title": "双侧礼炮"
+  },
+  "contact-shadow-lift": {
+    "title": "接触阴影抬升"
+  },
+  "corner-spotlight-reveal": {
+    "title": "角落匀速显影"
+  },
+  "countdown-arc-scatter": {
+    "title": "表盘数字扫过"
+  },
+  "counter-confetti": {
+    "title": "数字冲刺纸屑"
+  },
+  "counter-tick-sparks": {
+    "title": "数字跳动溅火"
+  },
+  "crane-rise-reveal": {
+    "title": "吊臂升起揭示"
+  },
+  "crash-zoom-punch": {
+    "title": "冲撞变焦"
+  },
+  "cube-navigation": {
+    "title": "立方体逐面导航"
+  },
+  "cube-rotate": {
+    "title": "立方体旋页"
+  },
+  "cursor-flyover": {
+    "title": "四角巡览指点"
+  },
+  "cursor-performance": {
+    "title": "光标表演点击"
+  },
+  "cycle-glass-node-morph": {
+    "title": "循环玻璃节点接管"
+  },
+  "dashboard-glow-highlight-pill": {
+    "title": "金色胶囊指引"
+  },
+  "dataviz-landscape-open": {
+    "title": "数据景观开场"
+  },
+  "deck-deal-flyin": {
+    "title": "发牌飞入"
+  },
+  "diagram-cascade": {
+    "title": "级联生成树"
+  },
+  "dialogue-duet": {
+    "title": "双光标对话"
+  },
+  "doc-park-left-pill-deal": {
+    "title": "文档驻留发牌"
+  },
+  "document-typewriter-reveal": {
+    "title": "文档打字揭示"
+  },
+  "dolly-zoom": {
+    "title": "伪推拉变焦"
+  },
+  "domino-cascade": {
+    "title": "多米诺连锁入场"
+  },
+  "draw-svg-trace": {
+    "title": "SVG 描线追踪"
+  },
+  "drift-assembly": {
+    "title": "漂移合拢"
+  },
+  "drone-dive-landing": {
+    "title": "无人机俯冲落点"
+  },
+  "drop-blackout-slam": {
+    "title": "黑场蓄爆"
+  },
+  "dutch-roll-to-level": {
+    "title": "斜角滚正"
+  },
+  "error-retype": {
+    "title": "误删重打"
+  },
+  "exploded-view": {
+    "title": "爆炸分层视图"
+  },
+  "flash-cut": {
+    "title": "推进流白"
+  },
+  "flip-grid-reflow": {
+    "title": "翻转网格重排"
+  },
+  "floating-glossy-label-pills": {
+    "title": "高光胶囊横滑"
+  },
+  "flying-words": {
+    "title": "词语纵深隧道"
+  },
+  "flyline-arc": {
+    "title": "飞线连接"
+  },
+  "font-weight-pump": {
+    "title": "字重脉冲"
+  },
+  "fracture": {
+    "title": "碎片聚合飞散"
+  },
+  "freeze-annotate": {
+    "title": "定格圈注"
+  },
+  "glass-pill-dictation-typing": {
+    "title": "玻璃胶囊听写"
+  },
+  "glitch-cycle": {
+    "title": "乱码轮播"
+  },
+  "glitch-displace": {
+    "title": "故障条带错位"
+  },
+  "glow-orb-ambient": {
+    "title": "暗场光斑呼吸"
+  },
+  "glow-wake-sleep-panel": {
+    "title": "醒睡扫过"
+  },
+  "gradient-transition": {
+    "title": "渐变参数变奏"
+  },
+  "gradient-word-sweep": {
+    "title": "渐变充能词"
+  },
+  "grain-dissolve": {
+    "title": "文字砂化凝聚"
+  },
+  "graze-face-tour": {
+    "title": "贴面游走"
+  },
+  "grid-flash-mosaic": {
+    "title": "网格闪切马赛克"
+  },
+  "grid-wave-flip": {
+    "title": "波浪翻面"
+  },
+  "halation-bloom": {
+    "title": "光晕绽放"
+  },
+  "hashtag-to-pill-materialize": {
+    "title": "话题词实体化"
+  },
+  "hatch-depth": {
+    "title": "斜纹变实柱"
+  },
+  "hit-counter": {
+    "title": "连招计数"
+  },
+  "icon-field-colorize": {
+    "title": "图标点阵翻色"
+  },
+  "icon-flip-bloom": {
+    "title": "图标翻扁绽放"
+  },
+  "impact-burst-kit": {
+    "title": "冲击爆点套件"
+  },
+  "ink-bleed-reveal": {
+    "title": "墨渗揭示"
+  },
+  "input-morph-assemble": {
+    "title": "输入框集结成标"
+  },
+  "integration-hub-map": {
+    "title": "集成星图"
+  },
+  "invisible-cut": {
+    "title": "前景遮挡隐形切"
+  },
+  "jump-cut-punch-in": {
+    "title": "跳切递进推近"
+  },
+  "kanada-perspective-snap": {
+    "title": "金田式透视甩正"
+  },
+  "karaoke-fill-sync": {
+    "title": "填色随读"
+  },
+  "keycap-smash-cut": {
+    "title": "键帽砸屏硬切"
+  },
+  "lead-word-zoom-assemble": {
+    "title": "首词推近组句"
+  },
+  "letter-drop-physics": {
+    "title": "字符坠落"
+  },
+  "letterform-zoom": {
+    "title": "字腔穿越"
+  },
+  "letterspace-materialize": {
+    "title": "字距结晶字标"
+  },
+  "light-leak-burn": {
+    "title": "琥珀漏光烧切"
+  },
+  "line-boil": {
+    "title": "线条沸腾"
+  },
+  "line-carry-transition": {
+    "title": "线条接力转场"
+  },
+  "line-unfold-panel": {
+    "title": "线条展开面板"
+  },
+  "list-reveal": {
+    "title": "逐项找位"
+  },
+  "list-stack-press": {
+    "title": "列表堆叠压弹"
+  },
+  "logo-shrink-wordmark-lockup": {
+    "title": "图标收束落位"
+  },
+  "logo-sting-button": {
+    "title": "字标彩蛋收尾"
+  },
+  "magician-card-flourish": {
+    "title": "魔术卡弹射"
+  },
+  "marker-underline-title": {
+    "title": "马克笔下划线"
+  },
+  "mask-wipe": {
+    "title": "穿窗转场"
+  },
+  "masking-tape-slap": {
+    "title": "胶带拍贴"
+  },
+  "misregistration-hit": {
+    "title": "套印错位单发"
+  },
+  "morph-from-primitive": {
+    "title": "原型变形"
+  },
+  "mosaic-reframe": {
+    "title": "三段布局重排"
+  },
+  "multiplane": {
+    "title": "多层视差滑轨"
+  },
+  "needle-sweep-selftest": {
+    "title": "满弧扫针自检"
+  },
+  "neon-frame-forerun": {
+    "title": "霓虹框先行"
+  },
+  "neon-frame-orbit-drop": {
+    "title": "霓虹框环绕齐落"
+  },
+  "neon-triple-marquee": {
+    "title": "三行霓虹跑马灯"
+  },
+  "odometer-digit-roll": {
+    "title": "里程表数字滚动"
+  },
+  "orb-flyline-relay": {
+    "title": "光斑飞线接力"
+  },
+  "orbit-ring-title-open": {
+    "title": "环形卡阵标题开场"
+  },
+  "oscilloscope-stream": {
+    "title": "示波流线"
+  },
+  "outline-word-fill": {
+    "title": "空心字点亮"
+  },
+  "outro-group-photo-launch": {
+    "title": "发布会合影收场"
+  },
+  "overhead-tabletop-drop": {
+    "title": "俯视桌面扎落"
+  },
+  "page-waterfall-wall": {
+    "title": "页面瀑布墙"
+  },
+  "palette-theme-ripple": {
+    "title": "调色板主题涟漪"
+  },
+  "panel-to-canvas": {
+    "title": "行倒卡上画布"
+  },
+  "paparazzi-flash": {
+    "title": "连闪定格"
+  },
+  "paper-plane-messenger": {
+    "title": "纸飞机信使"
+  },
+  "paper-title-card": {
+    "title": "纸张标题卡"
+  },
+  "particle-sand-fill": {
+    "title": "粒子落砂成柱"
+  },
+  "picker-carousel-feature-cycle": {
+    "title": "药丸吸附轮播"
+  },
+  "pill-chip-slot-cycle-handled": {
+    "title": "胶囊滚轮挤开"
+  },
+  "pill-slot-cycle": {
+    "title": "词槽轮换"
+  },
+  "platform-hinge-rise": {
+    "title": "平台铰接升起"
+  },
+  "pop-burst-confirm": {
+    "title": "弹跳爆点确认"
+  },
+  "popup-book-rise": {
+    "title": "立体书升起"
+  },
+  "product-card-progressive-assemble": {
+    "title": "字段逐个落位"
+  },
+  "pull-back-isolation": {
+    "title": "拉远孤立"
+  },
+  "quad-split-parallel-scenes": {
+    "title": "四宫并行蒙太奇"
+  },
+  "radial-ripple-phone-chips": {
+    "title": "同心波纹手机"
+  },
+  "radial-wave": {
+    "title": "点阵涟漪"
+  },
+  "research-card-stack-scroll": {
+    "title": "论文卡叠压"
+  },
+  "reticle-lock-on": {
+    "title": "准星锁定"
+  },
+  "ring-diagram-annotation-reveal": {
+    "title": "环图收束标注"
+  },
+  "row-embed": {
+    "title": "行元素嵌入"
+  },
+  "runway-ground-skim": {
+    "title": "跑道掠地贴落"
+  },
+  "sakuga-timing-shift": {
+    "title": "作画式节奏变拍"
+  },
+  "scan-bracket-sweep": {
+    "title": "取景括号扫描"
+  },
+  "scanline-annotate-focus": {
+    "title": "扫描取景标注"
+  },
+  "scanline-assemble-flyin": {
+    "title": "扫描装配飞入"
+  },
+  "score-slam": {
+    "title": "比分砸入"
+  },
+  "scramble": {
+    "title": "乱码锁定"
+  },
+  "scramble-decode": {
+    "title": "乱码解码"
+  },
+  "segmented-thumb-hero": {
+    "title": "分段控件特写"
+  },
+  "shared-element-morph": {
+    "title": "共享元素归位"
+  },
+  "sheen-sweep": {
+    "title": "单点扫光"
+  },
+  "shot-transitions-4": {
+    "title": "穿暗场直航"
+  },
+  "shot-transitions-5": {
+    "title": "虚焦接力"
+  },
+  "shot-transitions-6": {
+    "title": "黑场字卡"
+  },
+  "skeleton-reveal": {
+    "title": "骨架显影"
+  },
+  "slide-spotlight-pan": {
+    "title": "贴边泛光横摇"
+  },
+  "slow-push-in": {
+    "title": "慢推压迫"
+  },
+  "smash-cut": {
+    "title": "冲脸硬切"
+  },
+  "smear-multiples": {
+    "title": "拖影分身"
+  },
+  "spectrum-morph-ui": {
+    "title": "频谱变形界面"
+  },
+  "speed-ramp": {
+    "title": "快慢变速"
+  },
+  "split-flap-title": {
+    "title": "翻牌屏标题"
+  },
+  "split-text-stagger": {
+    "title": "逐字裂升"
+  },
+  "spotlight-hero-card": {
+    "title": "聚光主角卡"
+  },
+  "spotlight-sweep": {
+    "title": "聚光扫字"
+  },
+  "steep-tilt-glide": {
+    "title": "侧立透视滑行"
+  },
+  "strobe-black-frames": {
+    "title": "黑帧频闪倒数"
+  },
+  "stroke-segment-build": {
+    "title": "描边分段构建"
+  },
+  "svg-shape-morph": {
+    "title": "轮廓变形"
+  },
+  "tape-scroll-fixed-pointer": {
+    "title": "滚带定针"
+  },
+  "terminal-3d": {
+    "title": "终端空间飞行"
+  },
+  "terminal-typewriter": {
+    "title": "终端打字引爆"
+  },
+  "text-as-mask": {
+    "title": "文字蒙版"
+  },
+  "text-column-converge": {
+    "title": "双词合拢"
+  },
+  "text-on-path": {
+    "title": "沿线流入"
+  },
+  "theme-sweep-toggle": {
+    "title": "主题斜扫切换"
+  },
+  "tilt-reveal": {
+    "title": "俯仰揭示"
+  },
+  "timeline-travel": {
+    "title": "时间线穿行"
+  },
+  "title-demote-to-label": {
+    "title": "标题降格标签"
+  },
+  "tracking-expand": {
+    "title": "字距呼吸"
+  },
+  "trailer-bumper": {
+    "title": "预告片冷开场"
+  },
+  "type-and-filter": {
+    "title": "打字筛选"
+  },
+  "typing-code-block": {
+    "title": "代码块揭示"
+  },
+  "ui-strip-away-outro": {
+    "title": "减法收尾"
+  },
+  "unit-dot-swarm-regroup": {
+    "title": "点阵重组"
+  },
+  "value-stagger-gradient": {
+    "title": "数值梯度铺开"
+  },
+  "versus-slam": {
+    "title": "对撞开屏"
+  },
+  "vertical-word-roll-blur-cycle": {
+    "title": "竖向词条滚轮"
+  },
+  "voice-waveform-live": {
+    "title": "实时声纹"
+  },
+  "whip-pan": {
+    "title": "甩镜转场"
+  },
+  "white-flash-logo-simplify-cut": {
+    "title": "冲白降维切换"
+  },
+  "wireframe-draw-on": {
+    "title": "蓝图描线成形"
+  },
+  "word-relay-filmstrip": {
+    "title": "胶片词接力"
+  },
+  "word-relay-geometry": {
+    "title": "利益词接力"
+  },
+  "wright-triple-cut": {
+    "title": "三连特写"
+  }
+}

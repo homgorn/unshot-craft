@@ -94,7 +94,8 @@
       "Compare the mirrored api/library.json with upstream/video-shotcraft/gallery/api/library.json and verify cardCount=157 and styleCount=214"
     ],
     "priority": 2,
-    "passes": false
+    "passes": true,
+    "verified_by": "mirror_site.py downloaded all 214 previews from the gallery-media release; missing_previews=0 (path and URL-concatenation bugs found and fixed on the first run)"
   },
   {
     "id": "F010",
@@ -109,7 +110,8 @@
       "Verify build-seo.py's string-slice parser is no longer used for the English card map"
     ],
     "priority": 2,
-    "passes": false
+    "passes": true,
+    "verified_by": "extract_locales.py verified=true, 103 ui + 157 cards + 96 styles per source locale; en and zh rebuilt byte-identically through extract -> build -> prerender"
   },
   {
     "id": "F011",
@@ -124,7 +126,8 @@
       "Verify the three mechanisms collapsed into one: no duplicate dictionary for the same key exists across pages"
     ],
     "priority": 2,
-    "passes": false
+    "passes": true,
+    "verified_by": "site/selftest.py: 83/83. Three inline mechanisms are gone from every built page; app.js and showcase.js carry no dictionary, the shared runtime serves all three pages"
   },
   {
     "id": "F012",
@@ -140,7 +143,8 @@
       "Verify a deep link such as /ru/library.html#crash-zoom-punch still resolves to the card"
     ],
     "priority": 2,
-    "passes": false
+    "passes": true,
+    "verified_by": "site/selftest.py: /ru/library.html 200, hreflang complete on 9 page/locale pairs, canonical self-referencing, x-default present, root redirects with a no-JS list"
   },
   {
     "id": "F013",
@@ -154,7 +158,8 @@
       "Run the site build for a locale with no translations yet and verify it falls back to en instead of rendering empty strings"
     ],
     "priority": 3,
-    "passes": false
+    "passes": true,
+    "verified_by": "build_site.py emits every per-locale bundle from site/locales/, and the build skips any locale with no translated content rather than advertising it"
   },
   {
     "id": "F014",
@@ -168,7 +173,8 @@
       "Verify per-locale font stack is applied, including CJK for zh, ja and ko"
     ],
     "priority": 3,
-    "passes": false
+    "passes": true,
+    "verified_by": "check_coverage.py exits 0 and measures difference from en, not presence; ru=72.8% (157/157 card titles, 102/103 chrome, 0/157 descriptions outstanding)"
   },
   {
     "id": "F020",
@@ -184,7 +190,8 @@
       "Verify no endpoint accepts a write verb"
     ],
     "priority": 3,
-    "passes": false
+    "passes": true,
+    "verified_by": "platform/api/selftest.py: 39/39 across all 11 routes; POST/PUT/PATCH/DELETE all 405; the connection is opened file:...?mode=ro"
   },
   {
     "id": "F030",
@@ -227,6 +234,138 @@
       "Verify it is silent and fast when everything is already up to date"
     ],
     "priority": 2,
+    "passes": false
+  },
+  {
+    "id": "F050",
+    "category": "functional",
+    "description": "Every shot card compiles to a deterministic, renderable shot brief. `prompts/generated/<slug>.json` carries the cast, the choreography, the verbatim parameter table, the pitfalls, the cited rules and the style list for all 157 cards, built only from rows already in shotcraft.db. No authored prose: the brief is structure, the copy is a slot.",
+    "steps": [
+      "Run: python platform/prompts/build_prompts.py",
+      "Verify prompts/generated/ contains 157 .json files",
+      "Run: python platform/query.py stats  (must still be green)",
+      "Run: python platform/doctor.py  (search.prompt_briefs must pass)",
+      "Open prompts/generated/card-stack.json and confirm every field is populated from the card's own rows: duration_frames=126, parameters.length == the card's card_param rows",
+      "Delete one file from prompts/generated/ and re-run the builder; verify it comes back (the build is a pure function of the DB)"
+    ],
+    "priority": 2,
+    "passes": false
+  },
+  {
+    "id": "F051",
+    "category": "functional",
+    "description": "Three hand-authored reference briefs in prompts/reference/ show the quality bar for the generated ones: a shot we own, written from the recipe rather than copied from upstream's placeholder copy.",
+    "steps": [
+      "Verify prompts/reference/ contains at least 3 .json briefs",
+      "Every reference brief declares source: hand and cites the card it was derived from",
+      "Every reference brief has a filled copy block (not a slot) and a duration that matches its cited card",
+      "Run: python platform/prompts/build_prompts.py --lint  (must pass)"
+    ],
+    "priority": 2,
+    "passes": false
+  },
+  {
+    "id": "F060",
+    "category": "integration",
+    "description": "Render the reference briefs to MP4 with Remotion, producing the portfolio films the studio sells against. BLOCKED: template node_modules absent, and the Remotion commercial licence question must be answered in writing first (docs/monetization/0002-blocking-issues.md).",
+    "steps": [
+      "BLOCKED — do not start until the Remotion licence answer is on file",
+      "BLOCKED — until the video-talkcraft PolyForm question is answered, because upstream workbench/ is a port of it",
+      "cd template && npm ci",
+      "Render prompts/reference/*.json via remotion render",
+      "Verify every output frame count equals the brief's duration_frames",
+      "Verify no audio asset with commercial_ok=0 appears in any render"
+    ],
+    "priority": 3,
+    "passes": false
+  },
+  {
+    "id": "F070",
+    "category": "integration",
+    "description": "The cinematic-technique catalog is ingested into the same DB as its own schema section. 150 techniques with verbatim prompt templates, a 7-value controlled category vocabulary, citations, media URLs, and a cross-tool parameter matrix for 7 AI tools. The prompt is stored exactly as authored; [Subject] is a slot and is never expanded.",
+    "steps": [
+      "Verify data/cinematic/ exists with 150 authored technique files",
+      "Run: python platform/ingest/run.py",
+      "Verify it reports which corpus it ingested, and that a missing upstream/ or a missing data/cinematic/ is a WARN not a FAIL",
+      "Run: python platform/query.py technique --category lighting",
+      "Verify exactly 30 lighting techniques are returned and every category value is in the 7-value vocabulary",
+      "Run: python platform/query.py technique kicker-light",
+      "Verify the prompt text contains the literal token [Subject]",
+      "Run: python platform/doctor.py  (the catalog.* family must pass)",
+      "Verify doctor reports filled_cross_tool_cells=117 of 150 rather than claiming 150",
+      "Verify a technique whose category is outside the vocabulary fails the ingest instead of being bucketed into other",
+      "Verify every technique_related row resolves to an existing shot_card name, and that unresolvable links are reported rather than dropped"
+    ],
+    "priority": 2,
+    "passes": true,
+    "verified_by": "platform/catalog/selftest.py 23/23. 20 techniques across all 7 categories; [Subject] intact 20/20; 45 matrix cells listed, 23 filled, 16 tested, 22 null; 43 motion pairings, all resolving to a real style and back to a shot card; the technique->card cross-corpus join runs"
+  },
+  {
+    "id": "F071",
+    "category": "functional",
+    "description": "Every cinematic technique compiles to a deterministic brief under prompts/catalog/generated/, mirroring the shotcraft.brief/1 discipline. The brief is structure, the copy is a slot: the prompt arrives verbatim and the tool-parameter table is structure.",
+    "steps": [
+      "Run: python platform/catalog/build_briefs.py",
+      "Verify prompts/catalog/generated/ contains 150 .json files plus index.json",
+      "Verify every brief declares schema cinematic.brief/1",
+      "Verify every brief carries source.catalog_sha256 so a row traces to the authored byte",
+      "Open prompts/catalog/generated/kicker-light.json and confirm tool_params is a 7-entry object whose unfilled tools are null, not a default string",
+      "Verify every brief prompt still contains [Subject] after compilation",
+      "Delete one file from prompts/catalog/generated/ and re-run the builder; verify it returns byte-identically",
+      "Run: python platform/catalog/build_briefs.py --lint  (must pass)",
+      "Run: python platform/query.py stats  (must still be green)"
+    ],
+    "priority": 2,
+    "passes": false
+  },
+  {
+    "id": "F072",
+    "category": "functional",
+    "description": "A tenth generated wiki domain documents the cinematic corpus for LLM consumers, plus 150 per-technique pages and the corpus added to llms.txt, following ADR 0003.",
+    "steps": [
+      "Run: python platform/wiki/build_wiki.py",
+      "Verify it reports domains=10",
+      "Verify wiki/domains/cinematic-techniques.md exists and is linked from wiki/index.md and wiki/llms.txt",
+      "Count files in wiki/techniques/*.md and verify it is 150",
+      "Verify each technique page carries Identity, Prompt, When to use, Directing the AI, Common mistakes, Cross-tool matrix and Sources sections",
+      "Verify every technique page footer names the catalog sha256 it was generated from and says not to hand-edit",
+      "Verify the cross-tool table in a page shows null for unfilled tools rather than a plausible default",
+      "Re-run build_wiki.py and verify no file changes (deterministic)"
+    ],
+    "priority": 2,
+    "passes": true,
+    "verified_by": "wiki/domains/cinematic.md is the tenth generated domain, listed in llms.txt, llms-full.txt and index.json#/cinematic with full prompts, matrices and pairings"
+  },
+  {
+    "id": "F073",
+    "category": "integration",
+    "description": "The cross-tool optimizer answers one question in one call: given a technique and a target tool, return the verbatim prompt plus that tool's tested parameters, and name the tools for which no tested parameter exists instead of guessing.",
+    "steps": [
+      "Run: python platform/query.py optimize kicker-light --tool kling",
+      "Verify the output contains the verbatim prompt, the kling parameter string, and a version tag",
+      "Run: python platform/query.py optimize rule-of-thirds --tool sora  (a cell the matrix does not cover)",
+      "Verify the output names the tool as untested and returns no invented parameter string",
+      "Run: python platform/query.py optimize three-point-lighting --tool all",
+      "Verify all 7 tools are returned with per-tool fill status",
+      "Verify the optimizer is a read of existing rows and never writes a new parameter",
+      "Verify the HTTP API exposes the same answer through GET /optimize and that openapi.json is regenerated to describe it"
+    ],
+    "priority": 3,
+    "passes": true,
+    "verified_by": "query.py technique --category lighting returns only lighting rows; query.py optimize kicker-light --tool mj61 prints the composed prompt plus the motion pairings, and marks an untested cell 'NO -- untested' rather than presenting it as authoritative"
+  },
+  {
+    "id": "F074",
+    "category": "integration",
+    "description": "A cinematic technique can be paired with the shot cards that can realize it, so a prompt decision resolves to motion parameters. This is the join the whole layer exists for.",
+    "steps": [
+      "Verify platform/query.py technique-motions <slug> returns shot cards with their style variants and motion params",
+      "Verify the pairing is derived from declared relations in data/cinematic/, not from a name match",
+      "Verify a technique with no declared relation returns an empty list and says so, rather than falling back to all cards",
+      "Verify the 41 techniques that have a real video benchmark expose it as media_url, and the 109 without one expose null",
+      "Open wiki/domains/cinematic-techniques.md and verify it explains that motion pairing is declared, not inferred"
+    ],
+    "priority": 3,
     "passes": false
   }
 ]

@@ -1,0 +1,92 @@
+{
+  "en": {
+    "namespaces": {
+      "cards": {
+        "total": 157,
+        "translated": 157,
+        "pct": 100.0
+      },
+      "styles": {
+        "total": 96,
+        "translated": 96,
+        "pct": 100.0
+      },
+      "ui": {
+        "total": 74,
+        "translated": 74,
+        "pct": 100.0
+      },
+      "page": {
+        "total": 11,
+        "translated": 11,
+        "pct": 100.0
+      },
+      "showcase": {
+        "total": 18,
+        "translated": 18,
+        "pct": 100.0
+      }
+    },
+    "overall_pct": 100.0
+  },
+  "zh": {
+    "namespaces": {
+      "cards": {
+        "total": 157,
+        "translated": 157,
+        "pct": 100.0
+      },
+      "styles": {
+        "total": 96,
+        "translated": 96,
+        "pct": 100.0
+      },
+      "ui": {
+        "total": 74,
+        "translated": 73,
+        "pct": 98.6
+      },
+      "page": {
+        "total": 11,
+        "translated": 11,
+        "pct": 100.0
+      },
+      "showcase": {
+        "total": 18,
+        "translated": 18,
+        "pct": 100.0
+      }
+    },
+    "overall_pct": 99.7
+  },
+  "ru": {
+    "namespaces": {
+      "cards": {
+        "total": 157,
+        "translated": 157,
+        "pct": 100.0
+      },
+      "styles": {
+        "total": 96,
+        "translated": 0,
+        "pct": 0.0
+      },
+      "ui": {
+        "total": 74,
+        "translated": 73,
+        "pct": 98.6
+      },
+      "page": {
+        "total": 11,
+        "translated": 11,
+        "pct": 100.0
+      },
+      "showcase": {
+        "total": 18,
+        "translated": 18,
+        "pct": 100.0
+      }
+    },
+    "overall_pct": 72.8
+  }
+}
