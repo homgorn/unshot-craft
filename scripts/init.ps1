@@ -38,6 +38,13 @@ python platform/wiki/build_wiki.py | Out-Null
 if ($LASTEXITCODE -ne 0) { throw "wiki build failed" }
 Step ("wiki: " + (Get-ChildItem wiki/cards/*.md).Count + " card pages + llms-full.txt")
 
+# 3b. recipe briefs -- also generated from the database. This was missing from
+# the chain and deleting prompts/generated/ silently lost it: nothing rebuilt the
+# tree and nothing said so.
+python platform/prompts/build_prompts.py | Out-Null
+if ($LASTEXITCODE -ne 0) { throw "prompt briefs failed; see platform/prompts/build_prompts.py" }
+Step ("prompts: " + (Get-ChildItem prompts/generated/*.json -ErrorAction SilentlyContinue).Count + " briefs")
+
 # 4. the localized site -- extraction is the source of truth, then the build.
 #    Skipped when the upstream gallery is absent, so this stays a *fast* command.
 if (Test-Path "upstream/video-shotcraft/gallery/library.html") {

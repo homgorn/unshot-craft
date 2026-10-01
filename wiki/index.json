@@ -102,7 +102,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 1001,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "camera-work",
         "cat_label": "Camera Work",
         "mistakes": [
@@ -155,7 +155,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "pika15",
@@ -181,7 +181,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 1003,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "camera-work",
         "cat_label": "Camera Work",
         "mistakes": [
@@ -226,7 +226,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "runway_gen3",
@@ -252,7 +252,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 1009,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "camera-work",
         "cat_label": "Camera Work",
         "mistakes": [
@@ -305,7 +305,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "veo2",
@@ -331,7 +331,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 991,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "lighting",
         "cat_label": "Lighting",
         "mistakes": [
@@ -357,7 +357,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "veo2",
@@ -383,7 +383,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 997,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "lighting",
         "cat_label": "Lighting",
         "mistakes": [
@@ -430,7 +430,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           }
         ]
       },
@@ -448,7 +448,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 998,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "lighting",
         "cat_label": "Lighting",
         "mistakes": [
@@ -489,7 +489,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 100",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "runway_gen3",
@@ -515,7 +515,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 992,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "composition",
         "cat_label": "Composition",
         "mistakes": [
@@ -554,7 +554,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 100",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "veo2",
@@ -580,7 +580,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 1000,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "composition",
         "cat_label": "Composition",
         "mistakes": [
@@ -619,7 +619,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           }
         ]
       },
@@ -637,7 +637,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 1006,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "composition",
         "cat_label": "Composition",
         "mistakes": [
@@ -684,7 +684,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           }
         ]
       },
@@ -702,7 +702,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 995,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "editing",
         "cat_label": "Editing",
         "mistakes": [
@@ -773,7 +773,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 999,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "editing",
         "cat_label": "Editing",
         "mistakes": [
@@ -824,7 +824,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "runway_gen3",
@@ -850,7 +850,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 1008,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "editing",
         "cat_label": "Editing",
         "mistakes": [
@@ -923,7 +923,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 1002,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "narrative",
         "cat_label": "Narrative",
         "mistakes": [
@@ -962,7 +962,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "sora",
@@ -988,7 +988,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 1007,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "narrative",
         "cat_label": "Narrative",
         "mistakes": [
@@ -1053,7 +1053,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 990,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "visual-style",
         "cat_label": "Visual Style",
         "mistakes": [
@@ -1092,7 +1092,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50 --s 250",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "pika15",
@@ -1118,7 +1118,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 993,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "visual-style",
         "cat_label": "Visual Style",
         "mistakes": [
@@ -1157,7 +1157,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "veo2",
@@ -1183,7 +1183,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 1004,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "visual-style",
         "cat_label": "Visual Style",
         "mistakes": [
@@ -1228,7 +1228,7 @@
             "params": "--ar 16:9 --v 6.1 --cw 100",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "sora",
@@ -1254,7 +1254,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 994,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "genres",
         "cat_label": "Film Genres",
         "mistakes": [
@@ -1327,7 +1327,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 996,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "genres",
         "cat_label": "Film Genres",
         "mistakes": [
@@ -1374,7 +1374,7 @@
             "params": "--ar 1:1 --v 6.1 --style raw --cw 100",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "sora",
@@ -1400,7 +1400,7 @@
         "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
         "video_url": null,
         "source_file_id": 1005,
-        "ingested_at": "2026-10-01 11:05:33",
+        "ingested_at": "2026-10-01 11:15:24",
         "cat_key": "genres",
         "cat_label": "Film Genres",
         "mistakes": [
@@ -1433,7 +1433,7 @@
             "params": "--ar 16:9 --v 6.1 --style raw --cw 100",
             "version_tag": "v6.1",
             "tested": 1,
-            "tested_at": "2026-10-01T11:05:33+00:00"
+            "tested_at": "2026-10-01T11:15:24+00:00"
           },
           {
             "key": "pika15",
