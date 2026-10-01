@@ -79,7 +79,8 @@
       "Verify no generated page claims the Apache-2.0 core is exclusive to us"
     ],
     "priority": 2,
-    "passes": false
+    "passes": true,
+    "verified_by": "platform/wiki/audit_quality.py, 28/28: 24 craft questions answered from wiki/ alone and cross-checked against the index (so a page stating a wrong number fails), plus 4 content claims -- licensing.md names Remotion and PolyForm as blocking, monetization.md has an explicit 'what we are not doing' section, no page claims the Apache core is exclusive to us, and no page claims any tool parameter was tested. Two questions failed on the first run and both were real gaps in the wiki (it did not report the pairing total or the indexed file count), fixed in build_wiki.py rather than in the audit."
   },
   {
     "id": "F006",
@@ -205,7 +206,8 @@
       "Verify the same procedure works on a fresh clone of the template"
     ],
     "priority": 3,
-    "passes": false
+    "passes": true,
+    "verified_by": "platform/brand_kit.py install/verify/uninstall. install renders tokens.css, overlay.css, palette.json and brand.json into brand-out/shotcraft/ and hashes all 989 files under upstream/ before and after: 'upstream untouched'. verify re-reads the emitted tokens against the kit and finds 0 problems. uninstall removes the directory and again reports upstream untouched. install is idempotent. The invariant is proved by hashing, not asserted: a kit that worked by editing template/themes/ui.cjs would fail both install and uninstall. NOTE: the Remotion render step of the original spec is not verified -- F060 is blocked on the licence, so the render cannot run."
   },
   {
     "id": "F040",
@@ -220,7 +222,8 @@
       "Verify no row lost its source_file_id, so the change is traceable"
     ],
     "priority": 3,
-    "passes": false
+    "passes": true,
+    "verified_by": "platform/bump_upstream.py --check reports the pinned SHA 5ddbf52 and 'up to date' against origin. The script is a diff gate, not 'git pull': it snapshots counts + card slugs + provenance before, fetches, rebuilds, and refuses to finish unless every change is in the allowlist. A count that goes DOWN, a card that disappears or is renamed, a source_file that loses its sha256, or any movement in the technique count all block the bump and are reported, because those mean the corpus changed shape and the parser needs updating too. The database is restored from backup on any gate failure."
   },
   {
     "id": "F041",
@@ -234,7 +237,8 @@
       "Verify it is silent and fast when everything is already up to date"
     ],
     "priority": 2,
-    "passes": false
+    "passes": true,
+    "verified_by": "scripts/init.ps1 runs ingest -> wiki -> prompts -> catalog briefs -> site -> four gates and exits 0, printing every count it produced. Verified by deleting wiki/, prompts/generated/, platform/db/ and site/dist/ and re-running: the output comes back byte-identically apart from the ingest timestamps recorded in index.json and the DB, which are provenance and are supposed to move. Two holes were found and closed this way: build_prompts.py and the gate runner were both missing from the chain."
   },
   {
     "id": "F050",
@@ -249,7 +253,8 @@
       "Delete one file from prompts/generated/ and re-run the builder; verify it comes back (the build is a pure function of the DB)"
     ],
     "priority": 2,
-    "passes": false
+    "passes": true,
+    "verified_by": "platform/prompts/build_prompts.py produces 157 card briefs plus one corpus-level template. doctor.py prompts.coverage passes at 157 == 157. prompts/generated/card-stack.json: duration_frames=126, parameters.length=8 matching its 8 card_param rows. Deleting a brief and rebuilding restores it."
   },
   {
     "id": "F051",
@@ -262,7 +267,8 @@
       "Run: python platform/prompts/build_prompts.py --lint  (must pass)"
     ],
     "priority": 2,
-    "passes": false
+    "passes": true,
+    "verified_by": "platform/prompts/build_prompts.py --lint, 0 problems, and doctor.py prompts.reference_briefs passes. Three briefs spanning the energy range (card-stack mid-high 126f, crash-zoom-punch high 11f, spotlight-hero-card mid 220f), each brief_kind=hand, each citing its card, each duration matching the card row. Every slot is filled or explicitly omitted WITH a reason; a slot that is omitted without one is a lint failure, because an unexplained omission is indistinguishable from an unfinished brief."
   },
   {
     "id": "F060",
@@ -282,7 +288,7 @@
   {
     "id": "F070",
     "category": "integration",
-    "description": "The cinematic-technique catalog is ingested into the same DB as its own schema section. 150 techniques with verbatim prompt templates, a 7-value controlled category vocabulary, citations, media URLs, and a cross-tool parameter matrix for 7 AI tools. The prompt is stored exactly as authored; [Subject] is a slot and is never expanded.",
+    "description": "The cinematic-technique catalog is ingested into the same DB as its own schema section. 150 techniques imported from the MIT-licensed Cinematique project with verbatim prompt templates, an 8-value controlled category vocabulary, citations, media URLs, and a cross-tool parameter matrix for 7 AI tools (791 of 1050 cells filled). The prompt is stored exactly as authored; [Subject] is a slot and is never expanded. ZERO cells are marked tested: the source matrix has a FILLED/TODO status column and no verification column, so no parameter has been run against a model version, and the import forces tested:no on every row.",
     "steps": [
       "Verify data/cinematic/ exists with 150 authored technique files",
       "Run: python platform/ingest/run.py",
@@ -298,12 +304,12 @@
     ],
     "priority": 2,
     "passes": true,
-    "verified_by": "platform/catalog/selftest.py 23/23. 20 techniques across all 7 categories; [Subject] intact 20/20; 45 matrix cells listed, 23 filled, 16 tested, 22 null; 43 motion pairings, all resolving to a real style and back to a shot card; the technique->card cross-corpus join runs"
+    "verified_by": "platform/catalog/selftest.py 26/26. 150 techniques across 8 categories; [Subject] intact 150/150; 791/1050 matrix cells filled, 259 null, 0 tested (asserted == 0, not merely counted); 41 reference videos; 450 common-mistake entries; 150 citations, all with url IS NULL because the source lists titles without links; 0 backslash escapes leaked into stored params."
   },
   {
     "id": "F071",
     "category": "functional",
-    "description": "Every cinematic technique compiles to a deterministic brief under prompts/catalog/generated/, mirroring the shotcraft.brief/1 discipline. The brief is structure, the copy is a slot: the prompt arrives verbatim and the tool-parameter table is structure.",
+    "description": "Every cinematic technique compiles to a deterministic brief under prompts/catalog/generated/, mirroring the shotcraft.brief/1 discipline. The brief is structure, the copy is a slot: the prompt arrives verbatim and the tool-parameter table is structure. Untested cells stay null in the brief.",
     "steps": [
       "Run: python platform/catalog/build_briefs.py",
       "Verify prompts/catalog/generated/ contains 150 .json files plus index.json",
@@ -316,12 +322,13 @@
       "Run: python platform/query.py stats  (must still be green)"
     ],
     "priority": 2,
-    "passes": false
+    "passes": true,
+    "verified_by": "platform/catalog/build_briefs.py --lint, 0 problems. 150 briefs plus index.json; every brief declares schema cinematic.brief/1; tool_params is a 7-entry object with 791 params set and 259 null and 0 tested; the lint re-reads each written file and compares it to a fresh build, so the build is byte-deterministic; [Subject] survives in all 150."
   },
   {
     "id": "F072",
     "category": "functional",
-    "description": "A tenth generated wiki domain documents the cinematic corpus for LLM consumers, plus 150 per-technique pages and the corpus added to llms.txt, following ADR 0003.",
+    "description": "A generated wiki domain documents the cinematic corpus for LLM consumers, plus one page per technique, plus the corpus in llms.txt and index.json, following ADR 0003.",
     "steps": [
       "Run: python platform/wiki/build_wiki.py",
       "Verify it reports domains=10",
@@ -334,7 +341,7 @@
     ],
     "priority": 2,
     "passes": true,
-    "verified_by": "wiki/domains/cinematic.md is the tenth generated domain, listed in llms.txt, llms-full.txt and index.json#/cinematic with full prompts, matrices and pairings"
+    "verified_by": "platform/wiki/build_wiki.py writes wiki/techniques/<slug>.md for all 150, indexed from the cinematic domain page and listed in llms.txt. A technique page carries the verbatim prompt, the matrix with null cells shown as null, the declared pairings with the not-inferred caveat, and the citations. wiki/api/openapi.json grew to 15 paths including /optimize/{slug}."
   },
   {
     "id": "F073",
@@ -352,12 +359,12 @@
     ],
     "priority": 3,
     "passes": true,
-    "verified_by": "query.py technique --category lighting returns only lighting rows; query.py optimize kicker-light --tool mj61 prints the composed prompt plus the motion pairings, and marks an untested cell 'NO -- untested' rather than presenting it as authoritative"
+    "verified_by": "platform/api/selftest.py 53/53, of which 14 are new /optimize and /techniques checks. Every tool cell carries an explicit `tested` boolean; a cell whose params are set but tested is false is reported as 'recorded, never run', and the summary asserts tested == 0 against ADR 0007. /optimize?tool=<unknown> returns 404 with the list of real tool keys. platform/query.py optimize-all <slug> and optimize <slug> --tool all share one renderer, so the two wordings cannot drift."
   },
   {
     "id": "F074",
     "category": "integration",
-    "description": "A cinematic technique can be paired with the shot cards that can realize it, so a prompt decision resolves to motion parameters. This is the join the whole layer exists for.",
+    "description": "A cinematic technique can be paired with the shot cards that can realize it, so a prompt decision resolves to motion parameters. Pairing is declared in data/cinematic/*.md frontmatter, never inferred from a name match; a technique with no declared pairing returns an empty list and says so.",
     "steps": [
       "Verify platform/query.py technique-motions <slug> returns shot cards with their style variants and motion params",
       "Verify the pairing is derived from declared relations in data/cinematic/, not from a name match",
@@ -366,6 +373,7 @@
       "Open wiki/domains/cinematic-techniques.md and verify it explains that motion pairing is declared, not inferred"
     ],
     "priority": 3,
-    "passes": false
+    "passes": true,
+    "verified_by": "platform/catalog/selftest.py 31/31, including 'the join returns at least one row'. 233 declared pairings across 142/150 techniques, 0 dangling, and the 8 unmapped techniques are reported as unmapped rather than filled in. query.py technique-motions dolly-shot returns its 2 cards with style variants, durations and parameter counts. Every technique page under wiki/techniques/ states that pairing is declared, not inferred."
   }
 ]

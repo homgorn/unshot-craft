@@ -52,7 +52,7 @@ def load(code: str, ns: str) -> dict:
     return json.loads(p.read_text(encoding="utf-8"))
 
 
-def check() -> dict:
+def check(min_pct: float = 60.0) -> dict:
     errors: list[str] = []
     warns: list[str] = []
     locales = sorted(d.name for d in LOCALES.iterdir() if d.is_dir()) if LOCALES.is_dir() else []
@@ -120,18 +120,33 @@ def check() -> dict:
         for code, pct in report["coverage_json"].items():
             if code in SOURCE_LOCALES:
                 continue
-            if pct < 20:
-                warns.append(f"{code}: only {pct}% coverage — hreflang advertises a thin page")
+            # A locale that is advertised behind an hreflang tag but is mostly
+            # English is the failure ADR-0004 exists to prevent, so at the default
+            # threshold it is an ERROR, not a warning. 20% was low enough that a
+            # page of untranslated slugs would have passed.
+            if pct < min_pct:
+                errors.append(
+                    f"{code}: only {pct}% coverage but the locale is advertised — "
+                    f"hreflang claims a translation the page does not deliver "
+                    f"(threshold {min_pct}%)")
+            elif pct < 85:
+                warns.append(f"{code}: {pct}% coverage, still falling back to English "
+                             f"for the rest")
 
     return report
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--strict", action="store_true", help="exit 1 on warnings too")
+    ap.add_argument("--strict", action="store_true",
+                    help="also fail on warnings, not only on errors")
+    ap.add_argument("--min-pct", type=float, default=60.0,
+                    help="coverage below which an advertised locale is a failure "
+                         "(default 60: a locale under this is mostly English while "
+                         "claiming an hreflang)")
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args()
-    rep = check()
+    rep = check(min_pct=a.min_pct)
 
     if a.json:
         print(json.dumps(rep, ensure_ascii=False, indent=2))
@@ -159,6 +174,10 @@ def main() -> int:
 
     if rep["errors"]:
         return 1
+    # Severity matches platform/doctor.py: an ERROR always fails, a WARN fails only
+    # under --strict. The earlier version of this returned 0 unless --strict, and
+    # separately treated a 20%-coverage locale as a warning -- so an advertised
+    # page of untranslated slugs passed. The threshold is now an error.
     if a.strict and rep["warnings"]:
         return 1
     return 0

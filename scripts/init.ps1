@@ -63,9 +63,32 @@ if (Test-Path "upstream/video-shotcraft/gallery/library.html") {
 # 5. the catalog corpus (ADR 0007). Absent is a WARN, not a failure: either
 #    corpus must build alone.
 if (Test-Path "data/cinematic") {
+    python platform/catalog/build_briefs.py | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "catalog briefs failed; see platform/catalog/build_briefs.py" }
     python platform/catalog/selftest.py | Out-Null
     if ($LASTEXITCODE -ne 0) { throw "catalog selftest failed; see platform/catalog/selftest.py" }
     Step "catalog: invariants hold"
 }
 
+# 6. the gates. Every one of these has caught a real defect; running the pipeline
+#    without them is how a broken build gets committed.
+$gate = @(
+    @{ name = "doctor";       cmd = "platform/doctor.py" },
+    @{ name = "wiki audit";   cmd = "platform/wiki/audit_quality.py" },
+    @{ name = "brief lint";   cmd = "platform/prompts/build_prompts.py --lint" },
+    @{ name = "coverage";     cmd = "platform/site/check_coverage.py" }
+)
+foreach ($g in $gate) {
+    # Splat the argv array. Indexing a split with `[1..(len-1)]` on a one-element
+    # command hands python an empty argument list, which it reads as "usage".
+    $argv = @($g.cmd -split " ")
+    $out = & python @argv 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        $out | Select-Object -Last 6 | ForEach-Object { Write-Host "    $_" }
+        throw ("gate failed: " + $g.name)
+    }
+    Step ("gate ok: " + $g.name)
+}
+
 Write-Host "ok -- query with: python platform/query.py cards --energy high"
+Write-Host "     gates: platform/doctor.py, platform/catalog/layer_gate.py, platform/api/selftest.py, platform/site/selftest.py"

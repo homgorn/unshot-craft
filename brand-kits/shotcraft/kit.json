@@ -1,0 +1,39 @@
+{
+  "id": "shotcraft",
+  "name": "shotcraft studio",
+  "version": "1.0.0",
+  "applies_to": "upstream/video-shotcraft/template",
+  "description": "House brand for the shotcraft studio. Layered over the upstream Remotion template without editing it.",
+  "license": "internal",
+  "palette": {
+    "page": "#0e0e0c",
+    "surface": "#171714",
+    "field": "#1f1f1c",
+    "border": "#2c2c27",
+    "text": "#f0ede5",
+    "muted": "#8b877c",
+    "accent": "#d3923c"
+  },
+  "fonts": {
+    "sans": "'Inter Tight', 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif",
+    "mono": "'JetBrains Mono', 'Cascadia Mono', ui-monospace, monospace",
+    "serif": "'Newsreader', Georgia, serif",
+    "cjk": "'Microsoft YaHei', 'Noto Sans CJK SC', 'Hiragino Sans GB', sans-serif"
+  },
+  "type_scale": {
+    "body": "14px",
+    "small": "11px",
+    "label": "10px",
+    "h1": "24px",
+    "h2": "18px"
+  },
+  "brand_strings": {
+    "organisation": "shotcraft studio",
+    "mark": "SC",
+    "product": "Ledger",
+    "tagline": "Books that close themselves"
+  },
+  "motion": {
+    "note": "Motion parameters are NOT a brand concern. They live in the shot-card corpus and are compiled into a brief per shot. A kit that tried to set them here would fork the corpus."
+  }
+}

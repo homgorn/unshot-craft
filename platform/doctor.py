@@ -28,6 +28,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DB = ROOT / "platform" / "db" / "shotcraft.db"
 UPSTREAM = ROOT / "upstream" / "video-shotcraft"
+DATA = ROOT / "data"
 WIKI = ROOT / "wiki"
 
 # Expected upstream ground truth. Bump deliberately, never silently.
@@ -312,10 +313,26 @@ class Doctor:
                     bad.append(f"{p.name}: brief_kind must be 'hand'")
                 if not b.get("copy", {}).get("authored"):
                     bad.append(f"{p.name}: copy.authored must be true")
-                unfilled = [s.get("id") for s in b.get("copy", {}).get("slots", [])
-                            if not str(s.get("text") or "").strip()]
-                if unfilled:
-                    bad.append(f"{p.name}: unfilled slots {unfilled}")
+                # A slot is satisfied by being filled OR by being explicitly
+                # omitted with a reason. An 11-frame card cannot carry a
+                # subhead, and demanding one teaches the opposite of what the
+                # reference set exists to show. What is NOT acceptable is an
+                # omission with no rationale, because that is indistinguishable
+                # from an unfinished brief. Same rule as build_prompts.py --lint.
+                for s in b.get("copy", {}).get("slots", []):
+                    sid, status = s.get("id"), s.get("status")
+                    text = str(s.get("text") or "").strip()
+                    why = str(s.get("rationale") or "").strip()
+                    if status == "omitted":
+                        if not why:
+                            bad.append(f"{p.name}: slot {sid!r} omitted with no rationale")
+                    elif status != "filled" or not text:
+                        bad.append(f"{p.name}: copy slot {sid!r} is {status!r}, not filled")
+                    elif not why:
+                        bad.append(f"{p.name}: filled slot {sid!r} has no rationale")
+                if not refs:
+                    bad.append("prompts/reference/ holds no briefs; the quality bar "
+                               "for the generated ones does not exist")
             self.add("prompts.reference_briefs",
                      OK if refs and not bad else (ERROR if bad else WARN),
                      f"{len(refs)} hand-authored brief(s)"
@@ -402,6 +419,98 @@ class Doctor:
             "SELECT COUNT(*) FROM sqlite_master WHERE name=?", (table,)) > 0
 
 
+    def check_catalog(self) -> None:
+        """The cinematic-technique layer (ADR 0007).
+
+        An absent corpus is a WARN, not a failure: ADR 0007 requires either
+        corpus to build alone, so a repo with no `data/cinematic/` is a valid
+        state rather than a broken one.
+
+        `rows()` returns tuples on this connection, so every figure below is
+        positional. The check that matters most is `catalog.tested_claims_backed`:
+        791 tool parameters are recorded and not one has been run against a model
+        version, because the source matrix has a FILLED/TODO status column and no
+        verification column. This cannot tell a real test from a flag someone set,
+        so it requires a date behind every tested claim and reports the count.
+        """
+        if not self.rows("""SELECT name FROM sqlite_master
+                             WHERE type='table' AND name='cinematic_technique'"""):
+            self.add("catalog.schema", WARN,
+                     "catalog schema not applied (ADR 0007: either corpus builds alone)")
+            return
+
+        n = self.scalar("SELECT COUNT(*) FROM cinematic_technique")
+        if n == 0:
+            self.add("catalog.corpus", WARN,
+                     "data/cinematic/ is empty; the catalog layer has no rows")
+            return
+        self.add("catalog.corpus", OK, f"{n} techniques ingested")
+
+        used = {r[0] for r in self.rows(
+            "SELECT cc.key FROM cinematic_technique t "
+            "JOIN cinematic_category cc ON cc.id=t.category_id")}
+        vocab = [r[0] for r in self.rows("SELECT key FROM cinematic_category ORDER BY sort_order")]
+        empty = [k for k in vocab if k not in used]
+        self.add("catalog.taxonomy", OK if not empty else ERROR,
+                 f"{len(used)}/{len(vocab)} categories populated"
+                 + (f"; EMPTY {empty} - a vocabulary entry nothing can populate makes "
+                    f"--category return nothing" if empty else ""),
+                 empty)
+
+        slot = self.scalar("SELECT COUNT(*) FROM cinematic_technique "
+                           "WHERE prompt_text LIKE '%[Subject]%'")
+        lost = [r[0] for r in self.rows(
+            "SELECT name FROM cinematic_technique WHERE prompt_text NOT LIKE '%[Subject]%'")]
+        self.add("catalog.slot_preserved", OK if slot == n else ERROR,
+                 f"[Subject] intact in {slot}/{n} prompts", lost[:8])
+
+        filled = self.scalar("SELECT COUNT(*) FROM technique_tool_param "
+                             "WHERE params IS NOT NULL")
+        tested = self.scalar("SELECT COUNT(*) FROM technique_tool_param WHERE tested=1")
+        nulls = self.scalar("SELECT COUNT(*) FROM technique_tool_param WHERE params IS NULL")
+        listed = self.scalar("SELECT COUNT(*) FROM technique_tool_param")
+        tools = self.scalar("SELECT COUNT(*) FROM ai_tool")
+        self.add("catalog.matrix", OK if listed == n * tools else WARN,
+                 f"filled={filled} tested={tested} null={nulls} of {listed} listed cells",
+                 None if listed == n * tools else
+                 [f"expected {n * tools} rows for {n} techniques x {tools} tools, got {listed}"])
+
+        undated = self.scalar("SELECT COUNT(*) FROM technique_tool_param "
+                              "WHERE tested=1 AND tested_at IS NULL")
+        self.add("catalog.tested_claims_backed", OK if undated == 0 else ERROR,
+                 f"{tested} cell(s) marked tested, {undated} without a tested_at date",
+                 None if undated == 0 else
+                 [f"{undated} tested cells carry no date, so the claim cannot be audited"])
+
+        leaked = self.scalar(r"SELECT COUNT(*) FROM technique_tool_param "
+                             r"WHERE params LIKE '%\|%'")
+        self.add("catalog.param_escape", OK if leaked == 0 else ERROR,
+                 f"{leaked} stored parameters still contain a markdown pipe escape",
+                 None if leaked == 0 else
+                 [f"{leaked} params would send a literal backslash to a model"])
+
+        cites = self.scalar("SELECT COUNT(*) FROM technique_citation")
+        with_url = self.scalar("SELECT COUNT(*) FROM technique_citation WHERE url IS NOT NULL")
+        self.add("catalog.citations", OK,
+                 f"{cites} citations, {with_url} carrying a URL "
+                 f"(the source corpus lists titles without links)", None)
+
+        vids = [r[0] for r in self.rows(
+            "SELECT video_url FROM cinematic_technique WHERE video_url IS NOT NULL")]
+        missing_media = [v for v in vids if not (DATA / "cinematic" / v).exists()]
+        self.add("catalog.media", OK if not missing_media else ERROR,
+                 f"{len(vids)} techniques have a reference video",
+                 missing_media[:8] or None)
+
+        pairings = self.scalar("SELECT COUNT(*) FROM technique_motion")
+        paired = self.scalar("SELECT COUNT(DISTINCT technique_id) FROM technique_motion")
+        orphan = self.scalar("SELECT COUNT(*) FROM technique_motion WHERE style_id IS NULL")
+        self.add("catalog.motion_pairing", OK if pairings > 0 else WARN,
+                 f"{pairings} pairings across {paired}/{n} techniques"
+                 + ("" if pairings else "; F074 has nothing to serve until techniques "
+                    "declare styles:") + (f", {orphan} dangling" if orphan else ""),
+                 None if orphan == 0 else [f"{orphan} pairings point at no style"])
+
 def load_upstream_styles() -> dict[str, str]:
     lib = UPSTREAM / "gallery" / "api" / "library.json"
     if not lib.exists():
@@ -439,6 +548,7 @@ def main() -> int:
     d.check_docs()
     d.check_wiki_freshness()
     d.check_prompt_briefs()
+    d.check_catalog()
 
     errors = [r for r in d.results if r.status == ERROR]
     warns = [r for r in d.results if r.status == WARN]

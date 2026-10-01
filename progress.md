@@ -16,14 +16,14 @@ Runway Gen-3, Veo 2, Kling 1.5, Luma Dream Machine, Pika 1.5 and Sora.
 | ADR | `docs/adr/0007-cinematic-catalog-layer.md` | accepted |
 | Spec | `specs/features/F070-cinematic-catalog-ingest.md` | specified, `passes: false` |
 | Ledger | `specs/feature-list.json` → `F070`–`F074` | 5 features, all `passes: false` |
-| Source contract | `data/README.md` | written; `data/cinematic/` awaits 150 authored files |
+| Source contract | `data/README.md` | written; `data/cinematic/` imports 150 files from the MIT Cinematique project |
 | DDL | `platform/catalog/schema.sql` | 9 tables + 1 FTS5 index, **validated** |
 | DDL gate | `platform/catalog/validate_schema.py` | applies the DDL, guards the FK assumption |
 
 Verified: SQLite 3.49.1, FTS5 available, DDL applies clean after the upstream
 schema, 7 categories and 7 tools seeded, 2 cross-corpus FKs declared and stubbed,
 `[Subject]` survives compilation, 150 × 7 = 1,050 possible matrix cells of which
-**117 are filled**.
+**791 are filled, 259 are null, and 0 have been tested**.
 
 ### Findings that changed the design
 
@@ -93,7 +93,7 @@ object literals, and TSX motion literals). Output:
 | locales tracked | 9 |
 
 **The wiki — generated.** `wiki/` has `llms.txt`, `llms-full.txt` (~620 KB),
-`index.json` (~317 KB), 157 card pages (`.md` + `.json` each), 9 domain
+`index.json` (~317 KB), 157 card pages (`.md` + `.json` each), 10 domain
 documents and an OpenAPI contract.
 
 ### Findings that changed the design

@@ -14,6 +14,7 @@ every card description was still English.
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -33,7 +34,12 @@ def load(p: Path) -> dict:
 
 
 def main() -> int:
-    code = sys.argv[1] if len(sys.argv) > 1 else "ru"
+    ap = argparse.ArgumentParser()
+    ap.add_argument("code", nargs="?", default="ru")
+    ap.add_argument("--write", default=None, metavar="PATH",
+                    help="also write the report to PATH (default: stdout only)")
+    a = ap.parse_args()
+    code = a.code
     if not (LOCALES / code).is_dir():
         raise SystemExit(f"no locale dir: {LOCALES / code}")
 
@@ -66,9 +72,16 @@ def main() -> int:
 
     out.append(f"**{total - missing}/{total}** chrome strings translated, "
                f"**{missing}** outstanding.")
-    (LOCALES / code / "MISSING.md").write_text("\n".join(out) + "\n", encoding="utf-8")
-    print("\n".join(out[-1:]))
-    print(f"written: site/locales/{code}/MISSING.md")
+
+    # Print, do not write. This is a checker: running it used to drop a
+    # MISSING.md into site/locales/<code>/, which put an untracked generated file
+    # inside a source directory and left the working tree dirty. A report goes to
+    # stdout or to a path the caller names.
+    print("\n".join(out))
+    if a.write:
+        dest = Path(a.write)
+        dest.write_text("\n".join(out) + "\n", encoding="utf-8")
+        print(f"\nwritten: {dest}")
     return 0
 
 

@@ -15,7 +15,7 @@ credited.
 | `platform/ingest/` | `upstream tree → SQLite`. 24 tables, 4 FTS5 indexes, zero dependencies |
 | `platform/db/shotcraft.db` | the single source of truth: cards, styles, media, parameters, pitfalls, motion grammar, methodology, licences, research |
 | `platform/wiki/build_wiki.py` | `DB → wiki/`. Deterministic; hand-editing is a bug |
-| `wiki/` | generated LLM wiki: `llms.txt`, `llms-full.txt`, 157 card pages, 9 domain docs, OpenAPI contract |
+| `wiki/` | generated LLM wiki: `llms.txt`, `llms-full.txt`, 157 card pages, 10 domain docs, OpenAPI contract |
 | `platform/query.py` | agent CLI — cards, search in any language, params, pitfalls, rules, licences |
 | `platform/mirror_site.py` | mirrors the live site **including the mp4 previews that are not in git** |
 | `site/` | our i18n rebuild of the gallery (9 locales) — see ADR-0004 |

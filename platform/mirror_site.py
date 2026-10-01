@@ -110,6 +110,7 @@ def assets_from_library(out: Path, workers: int = 8) -> tuple[int, int]:
             urls.append(f"./media/poster/{st.get('key')}.jpg")
 
     ok = fail = 0
+    poster_fail = preview_fail = 0
     seen: set[str] = set()
 
     def grab(rel: str) -> bool:
@@ -130,8 +131,19 @@ def assets_from_library(out: Path, workers: int = 8) -> tuple[int, int]:
     with ThreadPoolExecutor(max_workers=workers) as pool:
         for rel, good in zip(urls, pool.map(grab, urls)):
             ok += int(good)
-            fail += int(not good)
-    return ok, fail
+            if not good:
+                fail += 1
+                # Upstream ships 64 poster jpegs for 214 styles. A missing poster
+                # is the upstream's gap, not a mirror failure, and lumping it in
+                # with a missing mp4 made every run print "WARNING: 150 assets
+                # missing" while all 214 previews were present. A warning that
+                # fires on a correct state is noise, and noise is how warnings
+                # stop being read.
+                if "/poster/" in rel:
+                    poster_fail += 1
+                else:
+                    preview_fail += 1
+    return ok, fail, poster_fail, preview_fail
 
 
 def main() -> int:
@@ -149,10 +161,16 @@ def main() -> int:
 
     if a.media:
         print("downloading media (this is the big one)…")
-        ok, fail = assets_from_library(out)
-        print(f"assets ok={ok} fail={fail}")
-        if fail:
-            print(f"WARNING: {fail} assets missing", file=sys.stderr)
+        ok, fail, poster_fail, preview_fail = assets_from_library(out)
+        print(f"assets ok={ok}")
+        if poster_fail:
+            # Informational, not a warning: upstream ships 64 poster jpegs for 214
+            # styles and the rest have never existed.
+            print(f"  {poster_fail} poster(s) absent upstream (expected; the site "
+                  f"falls back to a blurred first frame)")
+        if preview_fail:
+            print(f"WARNING: {preview_fail} mp4 preview(s) failed to download",
+                  file=sys.stderr)
 
     # verify against library.json, the same check deploy-pages.yml performs
     lib_file = out / "api" / "library.json"

@@ -293,13 +293,29 @@ def build_all(conn: sqlite3.Connection) -> tuple[list[dict], list[str]]:
     return briefs, missing
 
 
+# The reference set exists to show a range, not three variations on one theme.
+# Below this the comparison the briefs exist for cannot be made.
+MIN_REFERENCE_BRIEFS = 3
+
+
 def lint(conn: sqlite3.Connection, briefs: list[dict]) -> list[str]:
-    """Every authored brief must be complete. Machine briefs need no copy."""
+    """Every authored brief must be complete. Machine briefs need no copy.
+
+    A missing reference directory is a FAILURE, not an empty result. Returning
+    no problems when there is nothing to check made this lint pass vacuously on
+    a repo that had never written a single reference brief, which is the exact
+    state the lint exists to catch.
+    """
     problems: list[str] = []
     ref = ROOT / "prompts" / "reference"
     if not ref.is_dir():
-        return problems
-    for path in sorted(ref.glob("*.json")):
+        return [f"prompts/reference/ is missing: the reference briefs are the quality bar "
+                f"for the {len(briefs)} generated ones, so with none written there is no bar"]
+    paths = sorted(ref.glob("*.json"))
+    if len(paths) < MIN_REFERENCE_BRIEFS:
+        problems.append(f"prompts/reference/ holds {len(paths)} briefs, "
+                        f"need at least {MIN_REFERENCE_BRIEFS} to show a range")
+    for path in paths:
         try:
             b = json.loads(path.read_text(encoding="utf-8"))
         except json.JSONDecodeError as e:
@@ -309,10 +325,23 @@ def lint(conn: sqlite3.Connection, briefs: list[dict]) -> list[str]:
             problems.append(f"{path.name}: source.brief_kind must be 'hand'")
         if not b.get("copy", {}).get("authored"):
             problems.append(f"{path.name}: copy.authored must be true")
-        empty = [s["id"] for s in b.get("copy", {}).get("slots", [])
-                 if not str(s.get("text") or "").strip()]
-        if empty:
-            problems.append(f"{path.name}: unfilled copy slots {empty}")
+        # A slot is satisfied by being filled OR by being explicitly omitted with
+        # a reason. An omission with no reason is indistinguishable from an
+        # unfinished brief, which is the failure mode worth catching.
+        for s in b.get("copy", {}).get("slots", []):
+            sid, status = s.get("id"), s.get("status")
+            text = str(s.get("text") or "").strip()
+            if status == "omitted":
+                if not str(s.get("rationale") or "").strip():
+                    problems.append(
+                        f"{path.name}: slot {sid!r} is omitted with no rationale")
+            elif status != "filled" or not text:
+                problems.append(f"{path.name}: copy slot {sid!r} is {status!r}, "
+                                f"not filled")
+            elif not str(s.get("rationale") or "").strip():
+                problems.append(f"{path.name}: filled slot {sid!r} has no rationale; "
+                                f"the reference set is the quality bar, so an unexplained "
+                                f"line is not a demonstration")
         slug = b.get("slug")
         row = conn.execute(
             "SELECT duration_frames FROM shot_card WHERE name=?", (slug,)).fetchone()
@@ -322,6 +351,17 @@ def lint(conn: sqlite3.Connection, briefs: list[dict]) -> list[str]:
             problems.append(
                 f"{path.name}: duration_frames {b.get('render', {}).get('duration_frames')} "
                 f"!= card value {row[0]}")
+        # The brief must cite the card it was derived from. A null hash is
+        # allowed but has to say so, because a reference brief authored from the
+        # render rather than the card is a weaker claim and must not hide.
+        src = b.get("source", {})
+        if not src.get("card"):
+            problems.append(f"{path.name}: source.card is missing; a reference brief "
+                            f"must name the card it was derived from")
+        if src.get("card_sha256") is None and "card_sha256" in src \
+                and "note" not in src and not src.get("provenance_declared"):
+            problems.append(f"{path.name}: card_sha256 is null without a note explaining "
+                            f"why the provenance is weaker than a hash")
     return problems
 
 

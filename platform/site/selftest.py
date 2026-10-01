@@ -39,6 +39,14 @@ ROOT = Path(__file__).resolve().parents[2]
 DIST = ROOT / "site" / "dist"
 PAGES = ("index", "library", "showcase")
 
+# Counts come from the index, never from a literal. Every number this test
+# compares against used to be hardcoded, which meant an upstream bump would
+# either fail the suite for the wrong reason or, worse, be made to pass by
+# editing the test.
+CARD_COUNT = json.loads(
+    (DIST / "api" / "library.json").read_text(encoding="utf-8"))["stats"]["cardCount"] \
+    if (DIST / "api" / "library.json").exists() else 0
+
 # Keys that must never reach the screen as literal text.
 KEY_RE = re.compile(
     r"^(documentTitle|cat[A-Z]\w+|pageTitle|intro|searchPlaceholder|languageToggle|"
@@ -207,8 +215,36 @@ def main() -> int:
         raise SystemExit("site/dist missing; run platform/site/build_site.py first")
 
     coverage = json.loads((ROOT / "site" / "build" / "coverage.json").read_text(encoding="utf-8"))
-    locales = [c for c in ("en", "zh", "ru", "es", "de", "fr", "pt", "ko", "ja")
-               if (DIST / c).is_dir()]
+
+    # The set of locales to check must come from the DATABASE, not from the set of
+    # directories that happen to exist.
+    #
+    # Deriving it from the built output made every locale assertion
+    # self-fulfilling: with three locales built, "hreflang covers all locales"
+    # meant "hreflang covers the three we built". The DB tracks nine. A locale
+    # that is registered but not built is now reported explicitly, so the gap
+    # between the ledger and the site is visible instead of silently excluded.
+    ADVERTISED = ["en", "zh", "ru", "es", "de", "fr", "pt", "ko", "ja"]
+    built = [c for c in ADVERTISED if (DIST / c).is_dir()]
+    try:
+        import sqlite3
+        db = sqlite3.connect(f"file:{(ROOT / 'platform' / 'db' / 'shotcraft.db').as_posix()}?mode=ro",
+                             uri=True)
+        db.row_factory = sqlite3.Row
+        registered = [r[0] for r in db.execute("SELECT code FROM locale ORDER BY id")]
+        db.close()
+    except sqlite3.Error as exc:
+        registered = []
+        check("locale table readable", False, str(exc))
+
+    locales = built
+    unbuilt = [c for c in registered if c not in built]
+    print(f"  locales in the DB: {len(registered)}   built: {len(built)} ({', '.join(built)})")
+    if unbuilt:
+        # A registered-but-unbuilt locale is a WARN, not a failure: the whole
+        # design is that an unfinished locale is simply not advertised. What is
+        # a failure is being *advertised* in hreflang while unbuilt.
+        print(f"  registered but not built (not advertised): {', '.join(unbuilt)}")
     checks: list[tuple[str, bool, str]] = []
 
     def check(name: str, ok: bool, detail: str = "") -> None:
@@ -229,12 +265,23 @@ def main() -> int:
         for lc in locales:
             for page in PAGES:
                 if not (DIST / lc / f"{page}.html").exists():
+                    # A skipped assertion is an invisible failure. A locale we
+                    # claim to build must ship all three pages.
+                    check(f"{lc}/{page}.html exists", False, "file missing")
                     continue
                 code, html, _ = get(f"{base}/{lc}/{page}.html")
                 check(f"{lc}/{page}.html 200", code == 200, str(code))
                 hrefs = set(re.findall(r'hreflang="([^"]+)"', html))
                 missing = [l for l in locales + ["x-default"] if l not in hrefs]
-                check(f"{lc}/{page}.html hreflang complete", not missing, f"missing {missing}")
+                check(f"{lc}/{page}.html hreflang covers all built locales + x-default",
+                      not missing, f"missing {missing}")
+                # And the mirror image: no hreflang may point at a locale we did
+                # not build, because an hreflang to a 404 is a broken promise to a
+                # crawler.
+                dangling = sorted(h for h in hrefs
+                                  if h != "x-default" and not (DIST / h).is_dir())
+                check(f"{lc}/{page}.html advertises no unbuilt locale",
+                      not dangling, f"hreflang -> {dangling} which 404")
                 canon = re.search(r'<link rel="canonical" href="([^"]+)"', html)
                 check(f"{lc}/{page}.html canonical self-ref",
                       bool(canon) and f"/{lc}/{page}.html" in canon.group(1),
@@ -325,7 +372,10 @@ def main() -> int:
             ok = goto(f"{base}/{lc}/library.html", cards_ready)
             check(f"{lc} library rendered", ok)
             n = cdp.evaluate("document.querySelectorAll('article.shot-card').length")
-            check(f"{lc} renders 157 cards", n == 157, str(n))
+            # Derived, not hardcoded. A literal 157 here would pass today and
+            # start failing on the first upstream bump, which is exactly the kind
+            # of rot that makes a test suite untrustworthy.
+            check(f"{lc} renders every card ({CARD_COUNT})", n == CARD_COUNT, str(n))
 
             # no raw i18n keys on screen
             bad = cdp.evaluate("""(() => {
@@ -430,6 +480,11 @@ def main() -> int:
             # returning a constant and every other check would still pass.
             def card_desc(loc: str) -> str:
                 goto(f"{base}/{loc}/library.html", cards_ready)
+                # Poll, do not sample once. `goto` can return while the previous
+                # document is still what is being read, because readyState is
+                # already 'complete' there; a single sample then reads '' and the
+                # assertion fails for a reason that is not a product bug.
+                wait_for(cdp, "!!document.querySelector('#crash-zoom-punch p.summary')")
                 return cdp.evaluate("""(() => {
                   const el = document.getElementById('crash-zoom-punch');
                   const p = el ? el.querySelector('p.summary') : null;
