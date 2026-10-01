@@ -15,6 +15,7 @@ This is a static knowledge base for language models. Every card is addressed by 
 - [The sibling skill, the tools, the channels, and the upstream author](domains/landscape.md)
 - [Revenue models, ranked by time to first dollar, with the evidence](domains/monetization.md)
 - [Motion-design vocabulary as used by these cards, with card references](domains/glossary.md)
+- [The cinematic-technique catalog: what to shoot, and how to say it per tool](domains/cinematic.md)
 
 ## Cards by category
 

@@ -43,6 +43,7 @@ DOMAINS = [
     ("landscape", "The sibling skill, the tools, the channels, and the upstream author"),
     ("monetization", "Revenue models, ranked by time to first dollar, with the evidence"),
     ("glossary", "Motion-design vocabulary as used by these cards, with card references"),
+    ("cinematic", "The cinematic-technique catalog: what to shoot, and how to say it per tool"),
 ]
 
 
@@ -61,7 +62,11 @@ def main() -> int:
         return 1
     conn = sqlite3.connect(DB)
     conn.row_factory = sqlite3.Row
-    Q = lambda sql, *a: [dict(r) for r in conn.execute(sql, a).fetchall()]
+    # Accepts either Q(sql, id) or Q(sql, (id,)): flatten a single tuple so a
+    # stray comma at a call site cannot silently bind a tuple as one parameter.
+    def Q(sql, *a):
+        params = a[0] if len(a) == 1 and isinstance(a[0], (tuple, list)) else (a or ())
+        return [dict(r) for r in conn.execute(sql, params).fetchall()]
 
     (OUT / "cards").mkdir(parents=True, exist_ok=True)
     (OUT / "domains").mkdir(parents=True, exist_ok=True)
@@ -293,6 +298,8 @@ def main() -> int:
         "bezier": "`Easing.bezier(x1,y1,x2,y2)`",
         "spring": "Remotion `spring({frame, fps, config})`",
         "easing_const": "a module-scope easing constant, resolved before use",
+        "easing_name": "a named curve from the shared table, e.g. `E.outCubic`",
+        "helper": "a shared `Motion.tsx` helper call: `lerp` / `rand`",
         "exp_decay": "`Math.exp(...)` shake/decay envelopes",
         "motion_blur": "`<CameraMotionBlur shutterAngle samples>`",
         "sin": "`Math.sin(...)` oscillation",
@@ -496,6 +503,108 @@ def main() -> int:
                      + ", ".join(f"`{h}`" for h in hits[:6]) + (f" (+{len(hits)-6} more)" if len(hits) > 6 else "") + " |")
     (OUT / "domains" / "glossary.md").write_text("\n".join(lines), encoding="utf-8")
 
+    # ------------------------------------------------- domain: cinematic (F072)
+    cat_rows = Q("SELECT t.*, cc.key cat_key, cc.label_en cat_label FROM cinematic_technique t"
+                 " JOIN cinematic_category cc ON cc.id=t.category_id"
+                 " ORDER BY cc.sort_order, t.name")
+    if cat_rows:
+        cell = Q("""SELECT SUM(p.params IS NOT NULL) filled, SUM(p.tested=1) tested,
+                           SUM(p.params IS NULL) nulls, COUNT(*) listed
+                    FROM technique_tool_param p""")[0]
+        tcount = len(cat_rows)
+        videos = sum(1 for r in cat_rows if r["video_url"])
+        lines = [
+            "# Cinematic techniques", "",
+            f"A second corpus: **{tcount} techniques** that answer *what to shoot*, "
+            f"complementing the {stats['cards']} shot cards that answer *how it moves*. "
+            "Same DB, same join keys, same generated-from-the-DB rule (ADR 0007).", "",
+            "| stage | corpus | answers |",
+            "|---|---|---|",
+            "| 1 | `data/cinematic/` | **what to shoot** — camera, light, composition, editing rhythm, genre |",
+            "| 2 | `references/shots/` | **how it moves** — easing, spring, timing, render duration |",
+            "| 3 | Remotion | motion execution and render |", "",
+            "## Two rules that are not stylistic", "",
+            "1. **`[Subject]` is a slot and is never expanded.** The prompts below are "
+            "verbatim. An expanded prompt reads exactly like an authored one, and an agent "
+            "handed it will paste it to a client as though the studio wrote it.",
+            f"2. **An absent cross-tool cell is `null`, never a default.** Of {cell['listed']} "
+            f"listed cells, {cell['filled']} carry a parameter, {cell['tested']} have actually "
+            f"been run against the model version, and {cell['nulls']} are empty because nobody "
+            "has tested them. A plausible string in an untested cell is a claim we cannot "
+            "defend to a client.", "",
+            f"`data/cinematic/` is **source**, not generated: authored, committed, reviewed in a "
+            f"diff. See `data/cinematic/README.md`. Reference stills are linked; "
+            f"{videos}/{tcount} techniques have a reference video.", ""]
+
+        by_cat: dict[str, list] = defaultdict(list)
+        for r in cat_rows:
+            by_cat[r["cat_label"]].append(r)
+        for label, rows in by_cat.items():
+            lines += [f"## {label}  (`{rows[0]['cat_key']}`, {len(rows)})", "",
+                      "| technique | level | motions | tested tools | prompt |",
+                      "|---|---|---|---|---|"]
+            for r in rows:
+                motions = Q("SELECT COUNT(*) n FROM technique_motion m WHERE m.technique_id=?",
+                            (r["id"],))[0]["n"]
+                tools_tested = [x["key"] for x in Q(
+                    """SELECT a.key FROM technique_tool_param p JOIN ai_tool a ON a.id=p.tool_id
+                       WHERE p.technique_id=? AND p.tested=1 ORDER BY a.key""", (r["id"],))]
+                lines.append(
+                    f"| [{r['name']}](#{r['name']}) | {r['level'] or '—'} | {motions} | "
+                    f"{', '.join(tools_tested) or 'none'} | {clip(r['prompt_text'], 90)} |")
+            lines.append("")
+
+        lines.append("## Techniques in full")
+        for r in cat_rows:
+            lines += ["", f"### {r['name']}", "",
+                      f"**{r['title']}** · `{r['cat_key']}` · level {r['level'] or '—'}",
+                      "", "```", r["prompt_text"], "```", ""]
+            if r["lede_text"]:
+                lines += [clip(r["lede_text"], 400), ""]
+            if r["when_to_use_text"]:
+                lines += ["**When to use.** " + clip(r["when_to_use_text"], 300), ""]
+            if r["directing_text"]:
+                lines += ["**Directing the AI.** " + clip(r["directing_text"], 400), ""]
+            mist = Q("SELECT text FROM technique_section WHERE technique_id=? AND kind='common_mistake'"
+                     " ORDER BY ord", (r["id"],))
+            if mist:
+                lines.append("**Common mistakes.**")
+                for m in mist:
+                    lines.append(f"- {clip(m['text'], 220)}")
+                lines.append("")
+            tools = Q("""SELECT a.key, a.label, p.params, p.version_tag, p.tested
+                         FROM technique_tool_param p JOIN ai_tool a ON a.id=p.tool_id
+                         WHERE p.technique_id=? ORDER BY a.key""", (r["id"],))
+            if tools:
+                lines += ["| tool | params | version | tested |", "|---|---|---|---|"]
+                for t in tools:
+                    lines.append(f"| `{t['key']}` {t['label']} | "
+                                 f"{('`' + t['params'] + '`') if t['params'] else '**null**'} | "
+                                 f"{t['version_tag'] or '—'} | {'yes' if t['tested'] else 'no'} |")
+                lines.append("")
+            mot = Q("""SELECT m.kind, s.key style, sc.name card, sc.duration_frames
+                       FROM technique_motion m JOIN style s ON s.id=m.style_id
+                       LEFT JOIN shot_card sc ON sc.id=s.card_id
+                       WHERE m.technique_id=? ORDER BY s.key""", (r["id"],))
+            if mot:
+                lines += ["**Shot cards that can carry it.** "
+                          + ", ".join(f"`{m['style']}`"
+                                      + (f" ({m['card']})" if m["card"] and m["card"] != m["style"] else "")
+                                      + (f", {m['duration_frames']}f" if m["duration_frames"] else "")
+                                      for m in mot),
+                          ""]
+            cites = Q("SELECT title, url FROM technique_citation WHERE technique_id=? ORDER BY ord",
+                      (r["id"],))
+            if cites:
+                lines.append("**Sources.** " + ", ".join(
+                    f"[{c['title']}]({c['url']})" for c in cites))
+                lines.append("")
+    else:
+        lines = ["# Cinematic techniques", "",
+                 "The catalog corpus has not been ingested. See `data/cinematic/README.md`.",
+                 ""]
+    (OUT / "domains" / "cinematic.md").write_text("\n".join(lines), encoding="utf-8")
+
     # ------------------------------------------------- domain: overview
     lines = ["# video-shotcraft — overview", "",
              f"An open-source agent skill (Apache-2.0) that turns Claude Code or Codex into a "
@@ -539,6 +648,25 @@ def main() -> int:
                      "stars": repo["stars"], "forks": repo["forks"], "license": repo["license"]},
         "stats": stats,
         "domains": [{"slug": s, "title": t, "path": f"wiki/domains/{s}.md"} for s, t in DOMAINS],
+        "cinematic": {
+            "techniques": [dict(r) | {
+                "mistakes": [m["text"] for m in Q(
+                    "SELECT text FROM technique_section WHERE technique_id=? AND kind='common_mistake' ORDER BY ord",
+                    (r["id"],))],
+                "citations": [dict(x) for x in Q(
+                    "SELECT title, url FROM technique_citation WHERE technique_id=? ORDER BY ord",
+                    (r["id"],))],
+                "motions": [dict(m) for m in Q(
+                    """SELECT m.kind, s.key style, sc.name card, sc.duration_frames
+                       FROM technique_motion m JOIN style s ON s.id=m.style_id
+                       LEFT JOIN shot_card sc ON sc.id=s.card_id
+                       WHERE m.technique_id=? ORDER BY s.key""", (r["id"],))],
+                "tools": [dict(t) for t in Q(
+                    """SELECT a.key, a.label, p.params, p.version_tag, p.tested, p.tested_at
+                       FROM technique_tool_param p JOIN ai_tool a ON a.id=p.tool_id
+                       WHERE p.technique_id=? ORDER BY a.key""", (r["id"],))],
+            } for r in cat_rows],
+        } if cat_rows else {"techniques": []},
         "categories": [dict(c) for c in cats],
         "locales": Q("SELECT code, bcp47, name_en, native_name, status FROM locale ORDER BY id"),
         "licenses": Q("SELECT subject, spdx, commercial_use, blocking FROM license_registry"),
@@ -601,17 +729,43 @@ def main() -> int:
         "openapi": "3.1.0",
         "info": {"title": "shotcraft index API", "version": "1.0.0",
                  "description": "Read-only access to the indexed video-shotcraft knowledge base. "
-                                "Generated from shotcraft.db; no write endpoints."},
+                                "Generated from shotcraft.db; no write endpoints.",
+                 "license": {"name": "Apache-2.0", "url": "https://www.apache.org/licenses/LICENSE-2.0"}},
+        "servers": [{"url": "http://localhost:8080", "description": "local"}],
+        "components": {"schemas": {
+            "Error": {"type": "object", "required": ["error"],
+                      "properties": {"error": {"type": "string"}}},
+            "CardRef": {
+                "type": "object",
+                "required": ["name", "category"],
+                "properties": {
+                    "name": {"type": "string"},
+                    "category": {"type": "string"},
+                    "energy": {"type": ["string", "null"], "enum": ENERGY_ORDER + [None]},
+                    "duration_frames": {"type": ["integer", "null"]},
+                    "summary": {"type": "string",
+                                "description": "Chinese one-liner, upstream verbatim"},
+                }},
+        }},
         "paths": {
+            "/": {"get": {"summary": "Health check and the route list"}},
+            "/locales": {"get": {"summary": "Locales and how many strings each has"}},
+            "/categories": {"get": {"summary": "The 10 card categories with counts"}},
             "/cards": {"get": {"summary": f"All {stats['cards']} shot cards",
                                "parameters": [
                                    {"name": "category", "in": "query", "schema": {"type": "string", "enum": [c["key"] for c in cats]}},
                                    {"name": "energy", "in": "query", "schema": {"type": "string", "enum": [r[0] for r in ENERGY_ORDER]}},
                                    {"name": "q", "in": "query", "schema": {"type": "string"},
-                                    "description": "FTS5 search over name, summary, use, intention"}]}},
+                                    "description": "Full-text search. 3+ characters use the trigram "
+                                                   "index (substring, any script); 1-2 characters fall "
+                                                   "back to LIKE, which is why CJK works either way."},
+                                   {"name": "max_frames", "in": "query",
+                                    "schema": {"type": "integer"},
+                                    "description": "Only cards whose suggested duration fits"},
+                                   {"name": "limit", "in": "query", "schema": {"type": "integer"}}]}},
             "/cards/{slug}": {"get": {"summary": "One card with its parameters, pitfalls and styles"}},
-            "/styles": {"get": {"summary": f"All {stats['styles']} motion styles with extracted parameters"}},
-            "/easing": {"get": {"summary": "Easing curves ranked by usage across the demo corpus"}},
+            "/styles": {"get": {"summary": f"All {stats['styles']} motion styles"}},
+            "/styles/{key}": {"get": {"summary": "One style with its extracted motion parameters and easings"}},
             "/rules": {"get": {"summary": f"The {stats['rules']} aesthetic rules, grouped by family"}},
             "/licenses": {"get": {"summary": "Licence audit for the whole stack"}},
             "/opportunities": {"get": {"summary": "Monetization models with their evidence"}},

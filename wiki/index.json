@@ -16,22 +16,22 @@
     "cards": 157,
     "styles": 218,
     "styles_registered": 218,
-    "media_previews": 183,
+    "media_previews": 218,
     "media_present_locally": 62,
     "card_params": 1057,
     "pitfalls": 792,
     "pitfalls_critical": 3,
-    "motion_params": 1607,
+    "motion_params": 1897,
     "easing_curves": 50,
     "rules": 27,
     "method_docs": 8,
     "sfx": 149,
     "bgm": 5,
-    "audio_untraceable": 0,
+    "audio_untraceable": 5,
     "locales": 9,
-    "translations": 1092,
+    "translations": 1298,
     "opportunities": 5,
-    "files_indexed": 989,
+    "files_indexed": 1009,
     "generated_from": "platform/db/shotcraft.db"
   },
   "domains": [
@@ -79,8 +79,1374 @@
       "slug": "glossary",
       "title": "Motion-design vocabulary as used by these cards, with card references",
       "path": "wiki/domains/glossary.md"
+    },
+    {
+      "slug": "cinematic",
+      "title": "The cinematic-technique catalog: what to shoot, and how to say it per tool",
+      "path": "wiki/domains/cinematic.md"
     }
   ],
+  "cinematic": {
+    "techniques": [
+      {
+        "id": 12,
+        "name": "orbit-reveal",
+        "title": "Orbit around a stationary subject",
+        "category_id": 1,
+        "level": "intermediate",
+        "prompt_text": "Cinematic orbit shot circling [Subject] once at constant radius and speed, subject\nstays perfectly still and centred while the background rotates behind it, 85mm,\neven key light so the falloff does not betray the move, no dolly zoom.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "An orbit is the cheapest way to show that an object has depth: because the subject\nis static and only the background moves, every edge that reveals a new face proves\nthe object is three-dimensional rather than a flat render.",
+        "when_to_use_text": "Product reveals, character introductions that need scale, and any moment where you\nwant to say \"look at all of this\" without cutting.",
+        "directing_text": "Say \"orbit\" and then forbid the two failure modes explicitly: no subject rotation,\nno zoom. Constant radius and constant speed are what stop it reading as a handheld\nwobble.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 1001,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "camera-work",
+        "cat_label": "Camera Work",
+        "mistakes": [
+          "The subject rotates with the camera, which destroys the parallax proof.",
+          "Speed easing, so the move breathes at the wrong moment.",
+          "Falling off a wide lens, which stretches the background as it turns."
+        ],
+        "citations": [
+          {
+            "title": "Orbit shot — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Orbit_shot"
+          },
+          {
+            "title": "Parallax — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Parallax"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "curated",
+            "style": "basic-3d-scene",
+            "card": "basic-3d-scene",
+            "duration_frames": 180
+          },
+          {
+            "kind": "declared",
+            "style": "cube-navigation",
+            "card": "cube-navigation",
+            "duration_frames": 180
+          },
+          {
+            "kind": "declared",
+            "style": "graze-face-tour",
+            "card": "graze-face-tour",
+            "duration_frames": 150
+          }
+        ],
+        "tools": [
+          {
+            "key": "kling15",
+            "label": "Kling 1.5",
+            "params": "camera_control=orbit",
+            "version_tag": "kling-1.5",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "pika15",
+            "label": "Pika 1.5",
+            "params": null,
+            "version_tag": "pika-1.5",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "name": "product-macro-detail",
+        "title": "Macro detail with a rack focus",
+        "category_id": 1,
+        "level": "intermediate",
+        "prompt_text": "Extreme macro detail of [Subject] filling the frame, texture visible, focus racking\nfrom the near surface to the far plane mid-shot, shallow depth of field, controlled\nkey light skimming across the surface, 100mm macro, no camera movement.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "At macro distances depth of field becomes a few millimetres, so a focus pull is the\nonly move available. That constraint is useful: it turns attention into a physical\nact the viewer can follow, rather than a cut that asks them to notice a difference.",
+        "when_to_use_text": "Material and texture proof, hardware close-ups, and detail shots that hand off to a\nwider frame.",
+        "directing_text": "\"Focus racks from the near surface to the far plane\" plus \"shallow depth of field\" is\nthe mechanism. Pair it with a declared motion-card handoff so the rack lands on a\ncut, which is what turns the pull into a transition.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 1003,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "camera-work",
+        "cat_label": "Camera Work",
+        "mistakes": [
+          "Too much depth of field, so the rack has nothing to travel through.",
+          "Adding camera movement to a technique that is entirely about focus.",
+          "Racking too fast to read either plane."
+        ],
+        "citations": [
+          {
+            "title": "Rack focus — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Focus_pulling"
+          },
+          {
+            "title": "Macro photography — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Macro_photography"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "curated",
+            "style": "dolly-zoom-real",
+            "card": "depth-layer-moves",
+            "duration_frames": 150
+          },
+          {
+            "kind": "declared",
+            "style": "focus-handoff-transition",
+            "card": "shot-transitions",
+            "duration_frames": null
+          },
+          {
+            "kind": "curated",
+            "style": "spotlight-hero-card",
+            "card": "spotlight-hero-card",
+            "duration_frames": 220
+          }
+        ],
+        "tools": [
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "runway_gen3",
+            "label": "Runway Gen-3 Alpha",
+            "params": null,
+            "version_tag": "gen-3-alpha",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "name": "slow-dolly-in",
+        "title": "Slow dolly-in on a locked subject",
+        "category_id": 1,
+        "level": "basic",
+        "prompt_text": "Cinematic shot of [Subject], slow steady dolly-in from a medium wide to a medium\nclose over about eight seconds, subject held at the same screen position, background\nparallax sliding outward, 50mm on a dolly, locked horizon, no handheld shake.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "A dolly-in changes the relationship between subject and background rather than\nmagnifying the frame. Everything behind the subject shifts in scale at a different\nrate, so the move reads as travelling into the scene, not zooming at it.",
+        "when_to_use_text": "When you want to add weight to a statement, or move the viewer from context into\ndetail without cutting. It is the default move for an opening line and for a reveal.",
+        "directing_text": "Give the duration, the start and end framing, and the parallax explicitly. \"Slow\ndolly-in over eight seconds from medium wide to medium close, background\nparallax\" distinguishes it from a zoom, which the model will otherwise choose.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 1009,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "camera-work",
+        "cat_label": "Camera Work",
+        "mistakes": [
+          "Producing a zoom: background stays static, so the move reads as a flat scale-up.",
+          "Too fast. Under four seconds reads as a push, not a drift.",
+          "Handheld micro-shake, which reads as \"amateur\" rather than \"cinematic\"."
+        ],
+        "citations": [
+          {
+            "title": "Dolly shot — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dolly_zoom"
+          },
+          {
+            "title": "Tracking shot — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Tracking_shot"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "curated",
+            "style": "bullet-time-freeze-orbit",
+            "card": "tension-camera-moves",
+            "duration_frames": 150
+          },
+          {
+            "kind": "declared",
+            "style": "crane-rise-reveal",
+            "card": "crane-rise-reveal",
+            "duration_frames": 20
+          },
+          {
+            "kind": "declared",
+            "style": "dolly-zoom-real",
+            "card": "depth-layer-moves",
+            "duration_frames": 150
+          }
+        ],
+        "tools": [
+          {
+            "key": "kling15",
+            "label": "Kling 1.5",
+            "params": "camera_control=forward, camera_speed=slow",
+            "version_tag": "kling-1.5",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "veo2",
+            "label": "Google Veo 2",
+            "params": null,
+            "version_tag": "veo-2",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "butterfly-key",
+        "title": "Butterfly key with under-light bounce",
+        "category_id": 2,
+        "level": "basic",
+        "prompt_text": "Studio portrait of [Subject] under a butterfly key: the main light raised high and\ntilted down so its shadow falls under the nose, a low reflector bouncing fill back\nunder the chin, black background, glamour lighting, 85mm, crisp catchlights.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "Moving the key above the subject's eye line and tilting it down puts the nose\nshadow under the nose rather than to one side. That single geometric change flattens\nthe face symmetrically, which is why fashion and beauty lighting has used it for a\ncentury.",
+        "when_to_use_text": "Beauty and cosmetics work, skincare texture shots, any frontal hero image where\nsymmetry is the point. Not for interviews: the symmetrical shadow reads as\nartificial in conversation.",
+        "directing_text": "Say \"high key light tilted down, nose shadow falls beneath the nose, low bounce\nreflector under the chin\". The bounce is what keeps it from going harsh — without it\nthe under-chin area goes black and the face reads as a mask.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 991,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "lighting",
+        "cat_label": "Lighting",
+        "mistakes": [
+          "The shadow lands to the side, so the AI placed the key at eye level. Name the",
+          "Omitting the bounce and getting a harsh, dark underside.",
+          "Flash-on-the-lens look: a frontal catchlight instead of two angled ones."
+        ],
+        "citations": [
+          {
+            "title": "Butterfly lighting — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Butterfly_lighting"
+          },
+          {
+            "title": "Paramount lighting — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Paramount_lighting"
+          }
+        ],
+        "motions": [],
+        "tools": [
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "veo2",
+            "label": "Google Veo 2",
+            "params": null,
+            "version_tag": "veo-2",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "kicker-light",
+        "title": "Three-quarter backlight kicker",
+        "category_id": 2,
+        "level": "basic",
+        "prompt_text": "Cinematic portrait of [Subject], three-quarter backlight, deep shadows on the near\nside, a soft key picking out the cheekbone and shoulder line, subtle rim separating\nthe figure from a dark background, shallow depth of field, 35mm, anamorphic flare.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "A hard backlight placed behind and roughly 40 degrees off the subject's axis does\ntwo jobs at once: it draws a bright edge along the near cheek and shoulder, and it\nlets the whole front of the figure fall into shadow. That contrast is what makes a\ndark portrait read as lit rather than underexposed.",
+        "when_to_use_text": "Use it when the subject needs weight and separation but the environment should stay\nquiet: product heroes on dark backgrounds, interview subjects against a dim room,\nany shot where the silhouette is doing the storytelling.",
+        "directing_text": "State the key direction and the falloff explicitly. \"Backlit\" alone gets you a\nwindow behind the subject; \"backlight from camera-left at roughly 40 degrees, front\nfalls to shadow, rim highlights the near cheek and shoulder\" gets you the shot.\nNaming which side of the face is dark is the single highest-leverage clause.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 997,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "lighting",
+        "cat_label": "Lighting",
+        "mistakes": [
+          "Filling the shadows. An AI that \"balances the exposure\" kills the contrast that",
+          "Rimming both sides, which flattens into a halo rather than an edge.",
+          "No background separation, so the rim merges into a bright wall."
+        ],
+        "citations": [
+          {
+            "title": "Rim lighting — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Rim_light"
+          },
+          {
+            "title": "Three-point lighting — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Three-point_lighting"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "curated",
+            "style": "corner-spotlight-reveal",
+            "card": "spotlight-sweep-moves",
+            "duration_frames": 135
+          },
+          {
+            "kind": "declared",
+            "style": "spotlight-hero-card",
+            "card": "spotlight-hero-card",
+            "duration_frames": 220
+          }
+        ],
+        "tools": [
+          {
+            "key": "kling15",
+            "label": "Kling 1.5",
+            "params": "camera_control=true",
+            "version_tag": "kling-1.5",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "low-key-single-source",
+        "title": "Low-key single-source chiaroscuro",
+        "category_id": 2,
+        "level": "advanced",
+        "prompt_text": "Chiaroscuro portrait of [Subject] lit by a single low hard source from camera-right,\nmost of the frame falling into black, one narrow highlight along the brow and cheek,\ndeep unlit background, no fill, 50mm, film grain, Rembrandt lighting.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "One source, no fill, and the parts of the face it misses are allowed to stay dark.\nThat is the whole technique: chiaroscuro is a subtraction problem, not a lighting\nproblem. Most prompts fail it by asking for \"dramatic moody lighting\" and getting\neven, ambient darkness instead.",
+        "when_to_use_text": "Brand work that wants gravity, historical or period framing, and any shot where you\nwant the viewer to complete the missing information.",
+        "directing_text": "Name the single source, its position relative to the camera, and the absence of\nfill. \"No fill light, unlit side falls to black\" is the clause that does the work.\nAdd a specific shape for the shadow — \"a small triangle of light under the far eye\"\n— because \"half the face is dark\" gets you generic half-light.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 998,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "lighting",
+        "cat_label": "Lighting",
+        "mistakes": [
+          "Adding ambient or bounce the prompt did not ask for; the shadow fills in.",
+          "Losing the shape: the light spills so wide there is no defined terminator.",
+          "Over-grading to black, which costs the subject any readable form."
+        ],
+        "citations": [
+          {
+            "title": "Chiaroscuro — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Chiaroscuro"
+          },
+          {
+            "title": "Rembrandt lighting — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Rembrandt_lighting"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "halation-bloom",
+            "card": "light-play-moves",
+            "duration_frames": 159
+          }
+        ],
+        "tools": [
+          {
+            "key": "kling15",
+            "label": "Kling 1.5",
+            "params": "negative_prompt=flat lighting, fill light",
+            "version_tag": "kling-1.5",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 100",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "runway_gen3",
+            "label": "Runway Gen-3 Alpha",
+            "params": "ratio=16:9, seed=fixed",
+            "version_tag": "gen-3-alpha",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "centered-symmetry",
+        "title": "Centred symmetry for hero objects",
+        "category_id": 3,
+        "level": "basic",
+        "prompt_text": "Perfectly symmetrical product shot of [Subject] dead centre on the vertical axis,\nmirrored surroundings, frontal even lighting, orthographic feel, 100mm, clean\nseamless background, no perspective skew.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "Symmetry is the composition for objects whose shape is the message. When the frame\nis bisected and both halves match, the eye has nothing to resolve, and the object\nreads as an icon rather than a photograph.",
+        "when_to_use_text": "Brand marks, product hero shots on flat backgrounds, and UI states where symmetry\nsignals precision. Avoid for anything with narrative, because symmetry has no\ndirection for the eye to travel.",
+        "directing_text": "\"Perfectly symmetrical, dead centre, mirrored background\" — the mirroring clause is\nwhat makes it work, since the model will happily produce a centred object in an\nasymmetric room.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 992,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "composition",
+        "cat_label": "Composition",
+        "mistakes": [
+          "Near-symmetry: the axis is off by a few pixels, which the eye reads as sloppiness.",
+          "Perspective distortion from a wide lens, breaking the mirror.",
+          "Even lighting across a textured object, which flattens it."
+        ],
+        "citations": [
+          {
+            "title": "Symmetry in cinematography — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Symmetry_in_film"
+          },
+          {
+            "title": "Centered composition — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Rule_of_thirds"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "brand-frame-snap",
+            "card": "brand-frame-snap",
+            "duration_frames": 130
+          },
+          {
+            "kind": "declared",
+            "style": "circle-match-iris",
+            "card": "circle-match-iris",
+            "duration_frames": 30
+          }
+        ],
+        "tools": [
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 100",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "veo2",
+            "label": "Google Veo 2",
+            "params": null,
+            "version_tag": "veo-2",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "name": "negative-space-frame",
+        "title": "Negative-space frame for a headline",
+        "category_id": 3,
+        "level": "basic",
+        "prompt_text": "Cinematic frame of [Subject] small and placed low-right, the upper two thirds left\nas clean empty wall, even soft light, no clutter, muted palette, 35mm, ample\nheadroom for a headline.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "A frame with real empty space is a layout that has already reserved its own copy\narea. Photographing with the composition you intend to typeset into is the\ndifference between a design that feels designed and one that feels assembled.",
+        "when_to_use_text": "Landing page heroes, social cards, and any shot that will carry a headline. Pair it\nwith the motion card that later demotes the title into a section label.",
+        "directing_text": "Give a proportion, not a vibe: \"upper two thirds empty wall\". \"Lots of negative\nspace\" produces an empty frame with the subject dead centre.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 1000,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "composition",
+        "cat_label": "Composition",
+        "mistakes": [
+          "Empty space that is not clean, so a headline lands on texture.",
+          "Subject placed on the third line but cropped by the frame edge.",
+          "Light falloff in the copy area, which makes text unreadable over it."
+        ],
+        "citations": [
+          {
+            "title": "Negative space — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Negative_space"
+          },
+          {
+            "title": "Rule of thirds — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Rule_of_thirds"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "lead-word-zoom-assemble",
+            "card": "lead-word-zoom-assemble",
+            "duration_frames": 84
+          },
+          {
+            "kind": "declared",
+            "style": "title-demote-to-label",
+            "card": "title-demote-to-label",
+            "duration_frames": 92
+          }
+        ],
+        "tools": [
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "name": "rule-of-thirds-subject",
+        "title": "Off-centre subject with negative space",
+        "category_id": 3,
+        "level": "basic",
+        "prompt_text": "Cinematic composition of [Subject] placed on the left third, looking into open\nnegative space on the right, eye line on the upper horizontal, background uncluttered\nand darker than the subject, 35mm, rule of thirds.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "A subject on a third line, looking into the space it occupies, is a frame that\nalready reads as a frame before anything happens in it. The negative space is not\nempty: it is the room the shot is going to move into.",
+        "when_to_use_text": "Establishing shots, copy-led layouts, and any frame where you will later place text\nor a product UI. The space you leave is the space you will need.",
+        "directing_text": "Say which third and which direction the subject looks. \"Off-centre, negative space\non the right\" is enough; \"rule of thirds\" alone gets you a centred subject, because\nthat is the model's default reading of a plain product shot.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 1006,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "composition",
+        "cat_label": "Composition",
+        "mistakes": [
+          "Centring everything, because \"cinematic composition\" biases toward symmetry.",
+          "Filling the negative space with objects, which leaves nowhere to breathe.",
+          "Horizon tangent to the subject's head, a classic tangency error."
+        ],
+        "citations": [
+          {
+            "title": "Rule of thirds — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Rule_of_thirds"
+          },
+          {
+            "title": "Negative space — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Negative_space"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "lead-word-zoom-assemble",
+            "card": "lead-word-zoom-assemble",
+            "duration_frames": 84
+          },
+          {
+            "kind": "declared",
+            "style": "title-demote-to-label",
+            "card": "title-demote-to-label",
+            "duration_frames": 92
+          }
+        ],
+        "tools": [
+          {
+            "key": "luma",
+            "label": "Luma Dream Machine",
+            "params": null,
+            "version_tag": "dream-machine",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "hard-cut-on-beat",
+        "title": "Hard cut on the beat",
+        "category_id": 4,
+        "level": "basic",
+        "prompt_text": "Fast-cut montage on [Subject], every cut landing exactly on a drum transient, six to\ntwelve frames per shot, no dissolves, hard audio transient on each cut, 24fps\nshutter, high contrast.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "A cut on a transient reads as intentional because the ear and the eye arrive at the\nsame instant. A cut a few frames late reads as a mistake, and no amount of good\nfootage will fix the timing.",
+        "when_to_use_text": "Trailers, product hype reels, and the opening thirty seconds of a launch film. This\nis the technique the upstream `music-beat-sync.md` methodology exists to support,\nincluding its hard rule: measure real BPM first, then verify cut error is under\nthree frames against the rendered audio.",
+        "directing_text": "\"Every cut lands exactly on the drum hit\" plus a frame budget. Generate against a\nknown track rather than \"to the music\", which is the difference between a measurable\nedit and a hopeful one.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 995,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "editing",
+        "cat_label": "Editing",
+        "mistakes": [
+          "Cuts on the wrong transient — snare where the kick is.",
+          "Varying shot length below the readability floor, which becomes flicker.",
+          "Dissolves sneaking in, which smear the audio-image lock the technique needs."
+        ],
+        "citations": [
+          {
+            "title": "Jump cut — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Jump_cut"
+          },
+          {
+            "title": "Montage — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Montage"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "beat-cut-accelerando",
+            "card": "beat-cut-moves",
+            "duration_frames": 49
+          },
+          {
+            "kind": "curated",
+            "style": "jump-cut-punch-in",
+            "card": "rhythm-interrupt-moves",
+            "duration_frames": 135
+          },
+          {
+            "kind": "declared",
+            "style": "strobe-black-frames",
+            "card": "rhythm-interrupt-moves",
+            "duration_frames": 135
+          }
+        ],
+        "tools": [
+          {
+            "key": "pika15",
+            "label": "Pika 1.5",
+            "params": null,
+            "version_tag": "pika-1.5",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "runway_gen3",
+            "label": "Runway Gen-3 Alpha",
+            "params": null,
+            "version_tag": "gen-3-alpha",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "match-cut-transition",
+        "title": "Match cut on a shared silhouette",
+        "category_id": 4,
+        "level": "intermediate",
+        "prompt_text": "Cinematic match cut: [Subject] in the first frame and a different scene in the\nsecond frame share the same silhouette and screen position, hard cut on the shape,\nno dissolve, matched camera height and focal length across both frames.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "A match cut hides the edit by making the second frame arrive already aligned with\nthe first. The viewer perceives continuity because the silhouette lands where the\nprevious silhouette was, and never registers the cut itself.",
+        "when_to_use_text": "Transitions between a product and the problem it solves, between a UI state and a\nphysical object, and anywhere a hard cut would otherwise feel like a mistake.",
+        "directing_text": "Name both frames and the shared property. \"Same silhouette, same screen position,\nsame camera height\" is the specification; \"smooth transition\" gets you a dissolve,\nwhich is the opposite of the intent.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 999,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "editing",
+        "cat_label": "Editing",
+        "mistakes": [
+          "Getting a dissolve or a whip pan: say \"hard cut, no transition effect\".",
+          "Mismatched camera height, which breaks the alignment the cut depends on.",
+          "Silhouettes that are merely similar rather than identical in position."
+        ],
+        "citations": [
+          {
+            "title": "Match cut — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Match_cut"
+          },
+          {
+            "title": "Graphic match — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Graphic_match"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "curated",
+            "style": "black-card-transition",
+            "card": "shot-transitions",
+            "duration_frames": null
+          },
+          {
+            "kind": "declared",
+            "style": "circle-match-iris",
+            "card": "circle-match-iris",
+            "duration_frames": 30
+          },
+          {
+            "kind": "declared",
+            "style": "color-block-step-wipe",
+            "card": "color-block-step-wipe",
+            "duration_frames": 44
+          },
+          {
+            "kind": "declared",
+            "style": "invisible-cut",
+            "card": "transition-hidden-cut",
+            "duration_frames": null
+          }
+        ],
+        "tools": [
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "runway_gen3",
+            "label": "Runway Gen-3 Alpha",
+            "params": "ratio=16:9",
+            "version_tag": "gen-3-alpha",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "name": "single-take-reveal",
+        "title": "Single-take reveal with one motivated move",
+        "category_id": 4,
+        "level": "advanced",
+        "prompt_text": "One continuous take on [Subject], beginning tight on a small detail and craning up\nand back to reveal the full scene, no cuts, single continuous camera motion, focus\npull from the detail to the far plane as the move finishes, 35mm.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "A single-take reveal earns attention by withholding. Nothing is hidden by a cut, so\nthe viewer learns the scale of the thing by experiencing the move rather than being\ntold it in a second shot.",
+        "when_to_use_text": "Product scale reveals, environment establishing shots, and any moment where a cut\nwould spend the reveal too early.",
+        "directing_text": "\"Continuous single take, no cuts\" has to be explicit — models add cuts freely. Name\nthe start and end of the move and the focus behaviour; the focus pull is what tells\nthe viewer the move has landed.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 1008,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "editing",
+        "cat_label": "Editing",
+        "mistakes": [
+          "A cut sneaking in mid-move.",
+          "Moving without a focus change, so the reveal has no punctuation.",
+          "Rising too fast to read the detail you started on."
+        ],
+        "citations": [
+          {
+            "title": "Single-take — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Continuous_shot"
+          },
+          {
+            "title": "Crane shot — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Crane_shot"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "crane-rise-reveal",
+            "card": "crane-rise-reveal",
+            "duration_frames": 20
+          },
+          {
+            "kind": "declared",
+            "style": "scanline-assemble-flyin",
+            "card": "scanline-assemble-flyin",
+            "duration_frames": 138
+          }
+        ],
+        "tools": [
+          {
+            "key": "kling15",
+            "label": "Kling 1.5",
+            "params": "camera_control=crane_up",
+            "version_tag": "kling-1.5",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "pika15",
+            "label": "Pika 1.5",
+            "params": null,
+            "version_tag": "pika-1.5",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "veo2",
+            "label": "Google Veo 2",
+            "params": null,
+            "version_tag": "veo-2",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "problem-to-solution-beat",
+        "title": "Problem-to-solution two-beat structure",
+        "category_id": 5,
+        "level": "basic",
+        "prompt_text": "Two-beat product story: the first frame shows [Subject] mid-friction, the second\nframe shows the same subject resolved and calm, matched framing and lighting across\nboth beats so only the state changes, 50mm, no text.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "The most durable product structure is a state change, not a feature list. Two frames,\nmatched everything except the thing that is now solved. Because the camera language\ndoes not change, the viewer reads the difference as a change in the world rather\nthan a change in the edit.",
+        "when_to_use_text": "Launch films, paid social, and anywhere a viewer has about eight seconds of\nattention. It is also the structure the upstream 36.2s template is built on.",
+        "directing_text": "Ask for the matched pair explicitly: \"identical framing and lighting in both beats\".\nWithout that clause you get two different shots, and the comparison dies.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 1002,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "narrative",
+        "cat_label": "Narrative",
+        "mistakes": [
+          "Different lighting between beats, which makes it read as two products.",
+          "Solving the problem with a hard cut to a logo instead of to the product.",
+          "Adding on-screen text, which competes with the state change."
+        ],
+        "citations": [
+          {
+            "title": "Narrative structure — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Narrative_structure"
+          },
+          {
+            "title": "Problem–solution — Marketing examples",
+            "url": "https://en.wikipedia.org/wiki/Problem%E2%80%93solution"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "counter-confetti",
+            "card": "counter-confetti",
+            "duration_frames": 138
+          },
+          {
+            "kind": "declared",
+            "style": "ui-strip-away-outro",
+            "card": "ui-strip-away-outro",
+            "duration_frames": 130
+          }
+        ],
+        "tools": [
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "sora",
+            "label": "OpenAI Sora",
+            "params": null,
+            "version_tag": "sora-1",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "name": "silent-observation-beat",
+        "title": "Silent observation beat before the pitch",
+        "category_id": 5,
+        "level": "advanced",
+        "prompt_text": "Documentary-style beat of [Subject] observed in use with no presenter, no voiceover,\nnatural ambient light only, long unbroken take, hands and screen in frame, 35mm,\nshallow focus, observational framing.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "Showing the tool in someone's hands, unscripted, borrows credibility that a presenter\ncannot manufacture. The absence of explanation is the technique: the viewer infers\nthe use case, and an inference is more persuasive than a claim.",
+        "when_to_use_text": "B2B and developer audiences, long-form landing pages, and anywhere a polished\npresenter shot would read as an ad.",
+        "directing_text": "\"No presenter, no voiceover, ambient light only\" must all be said. The model\ndefaults to a polished studio look with a talking head, which is the exact opposite\nof what is being asked.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 1007,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "narrative",
+        "cat_label": "Narrative",
+        "mistakes": [
+          "Drifting into a staged three-quarter hero angle mid-take.",
+          "Adding ambient music cues that signal \"commercial\".",
+          "Over-stabilising, which makes a handheld take look like a tripod."
+        ],
+        "citations": [
+          {
+            "title": "Observational cinema — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Observational_documentary"
+          },
+          {
+            "title": "Handheld shot — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Handheld_shot"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "curated",
+            "style": "document-typewriter-reveal",
+            "card": "document-typewriter-reveal",
+            "duration_frames": 110
+          },
+          {
+            "kind": "declared",
+            "style": "typing-code-block",
+            "card": "typing-code-block",
+            "duration_frames": 138
+          }
+        ],
+        "tools": [
+          {
+            "key": "luma",
+            "label": "Luma Dream Machine",
+            "params": null,
+            "version_tag": "dream-machine",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "veo2",
+            "label": "Google Veo 2",
+            "params": null,
+            "version_tag": "veo-2",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "name": "analogue-texture",
+        "title": "Analogue film texture, restrained",
+        "category_id": 6,
+        "level": "basic",
+        "prompt_text": "Cinematic still of [Subject] shot on 35mm film, fine organic grain visible in the\nshadows, slight halation around highlights, gently lifted blacks, muted filmic\ncolour, restrained contrast, no heavy vignette, 50mm.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "Analogue texture is a *shadow* property first: grain lives in the low end, and\nhighlights bloom rather than clip. Adding visible grain over a clean digital render\nreads as a filter; adding grain into the shadows of a real tonal curve reads as film.",
+        "when_to_use_text": "Brand work that wants warmth and imperfection, and as a counterweight to a corpus\nthat otherwise trends toward clean gradient UI motion.",
+        "directing_text": "\"Grain visible in the shadows, halation around highlights\" does the work. \"Film\ngrain\" on its own gets an even digital noise overlay across the whole frame.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 990,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "visual-style",
+        "cat_label": "Visual Style",
+        "mistakes": [
+          "Uniform noise over the whole frame rather than concentrated in the shadows.",
+          "Crushed blacks, which kills the grain along with the detail.",
+          "Heavy vignette, which is a different look entirely (analogue lens falloff)."
+        ],
+        "citations": [
+          {
+            "title": "Film grain — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Film_grain"
+          },
+          {
+            "title": "Halation — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Halation"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "grain-dissolve",
+            "card": "grain-dissolve",
+            "duration_frames": 60
+          },
+          {
+            "kind": "curated",
+            "style": "riso-beat-pump",
+            "card": "riso-print-hits",
+            "duration_frames": 120
+          }
+        ],
+        "tools": [
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50 --s 250",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "pika15",
+            "label": "Pika 1.5",
+            "params": null,
+            "version_tag": "pika-1.5",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "cold-blue-tech",
+        "title": "Cold blue technical palette",
+        "category_id": 6,
+        "level": "basic",
+        "prompt_text": "Cold blue technical frame of [Subject], cool desaturated palette, blue-grey metal,\nsoft gradient background, precise specular highlights, minimal saturation, clean\nindustrial surfaces, 50mm, high micro-contrast.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "A palette does work when every colour in it has the same temperature. The cold blue\nlook survives scrutiny because nothing in the frame is warm enough to break it —\nthe failure mode is one skin-tone or one warm prop in a supposedly cool scene.",
+        "when_to_use_text": "Infrastructure and developer tooling, hardware, and enterprise work where \"serious\"\nis the register being aimed at.",
+        "directing_text": "State the temperature constraint as a prohibition as well as a direction: \"no warm\ntones\". A palette described only positively will still admit a warm accent.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 993,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "visual-style",
+        "cat_label": "Visual Style",
+        "mistakes": [
+          "One warm element surviving in the background.",
+          "Over-saturating the blue until it reads as a filter rather than a material.",
+          "Losing micro-contrast, which turns \"precise\" into \"soft\"."
+        ],
+        "citations": [
+          {
+            "title": "Colour temperature — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Color_temperature"
+          },
+          {
+            "title": "Cinecolor — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Cinecolor"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "gradient-transition",
+            "card": "gradient-transition",
+            "duration_frames": 180
+          },
+          {
+            "kind": "declared",
+            "style": "neon-frame-forerun",
+            "card": "neon-frame-forerun",
+            "duration_frames": 18
+          }
+        ],
+        "tools": [
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 50",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "veo2",
+            "label": "Google Veo 2",
+            "params": null,
+            "version_tag": "veo-2",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "name": "restrained-motion-graphics",
+        "title": "Restrained motion graphics for software",
+        "category_id": 6,
+        "level": "basic",
+        "prompt_text": "Clean product motion frame showing [Subject] as a crisp UI surface on a flat dark\nground, one element moving with a single ease, everything else perfectly still,\nprecise 8px spacing grid, one accent colour used once, no decorative glow, 60fps.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "The restraint is the style. When exactly one element moves on an 8-pixel grid with a\nsingle ease, the movement reads as information; when four things move with\ndecorative easing, the same movement reads as a template.",
+        "when_to_use_text": "SaaS and developer tools, especially anything shipped alongside real UI. It also\nmatches the upstream rule set directly: one motion idea per shot, holds after every\nkey beat, no batch glows.",
+        "directing_text": "\"One element moving, everything else still, single ease\" is the clause. Without\n\"everything else still\" you get every element animating, which is the failure this\nstyle exists to avoid.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 1004,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "visual-style",
+        "cat_label": "Visual Style",
+        "mistakes": [
+          "Batch entrances with per-item easing, which reads as busy rather than precise.",
+          "Glow and bloom on UI elements, which makes flat design look dirty.",
+          "Sub-pixel positions that make the grid read as sloppy."
+        ],
+        "citations": [
+          {
+            "title": "Material Design — motion",
+            "url": "https://m3.material.io/styles/motion/overview"
+          },
+          {
+            "title": "Apple Human Interface Guidelines — motion",
+            "url": "https://developer.apple.com/design/human-interface-guidelines/motion"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "blur-slide",
+            "card": "blur-slide",
+            "duration_frames": 114
+          },
+          {
+            "kind": "declared",
+            "style": "skeleton-reveal",
+            "card": "skeleton-reveal",
+            "duration_frames": 172
+          },
+          {
+            "kind": "declared",
+            "style": "typing-code-block",
+            "card": "typing-code-block",
+            "duration_frames": 138
+          }
+        ],
+        "tools": [
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --cw 100",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "sora",
+            "label": "OpenAI Sora",
+            "params": null,
+            "version_tag": "sora-1",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "documentary-naturalism",
+        "title": "Documentary naturalism",
+        "category_id": 7,
+        "level": "basic",
+        "prompt_text": "Documentary shot of [Subject] in its real environment, available window light only,\nhandheld but composed, muted natural colour, no stylisation, slight exposure\nirregularity, 35mm, observational distance.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "Naturalism is a constraint list: existing light, real locations, no styling, no\nclean-up. What it buys is belief. A viewer who suspects a set stops evaluating the\ncontent and starts evaluating the production.",
+        "when_to_use_text": "Testimonials, case studies, and anything where credibility matters more than polish.",
+        "directing_text": "\"Available window light only, no stylisation, no colour grading\" is the set of\nclauses. Leave any of them out and the model applies its default commercial-grade\nfinish, which is exactly what the genre is avoiding.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 994,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "genres",
+        "cat_label": "Film Genres",
+        "mistakes": [
+          "Styling the environment, which reads as a set.",
+          "Perfect exposure, which reads as a still rather than a frame from a moving shot.",
+          "Over-clean skin and walls, which is the fastest way to lose naturalism."
+        ],
+        "citations": [
+          {
+            "title": "Direct cinema — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Cinema_verite"
+          },
+          {
+            "title": "Available light — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Available_light"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "row-embed",
+            "card": "row-embed",
+            "duration_frames": 68
+          },
+          {
+            "kind": "declared",
+            "style": "skeleton-reveal",
+            "card": "skeleton-reveal",
+            "duration_frames": 172
+          }
+        ],
+        "tools": [
+          {
+            "key": "luma",
+            "label": "Luma Dream Machine",
+            "params": null,
+            "version_tag": "dream-machine",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "sora",
+            "label": "OpenAI Sora",
+            "params": null,
+            "version_tag": "sora-1",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "veo2",
+            "label": "Google Veo 2",
+            "params": null,
+            "version_tag": "veo-2",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "high-key-white-studio",
+        "title": "High-key white studio product shot",
+        "category_id": 7,
+        "level": "basic",
+        "prompt_text": "High-key studio product photograph of [Subject] on a seamless white sweep, soft\noverhead key with a fill card, shadow falling softly beneath the object, colour\naccurate, even exposure with no clipping, 100mm macro, commercial catalogue look.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "High-key is an exposure discipline: keep every surface inside the range where the\nmaterial is still readable. Clip the white background and the object stops looking\nlike an object and starts looking like a shape cut out of paper.",
+        "when_to_use_text": "Catalogue and e-commerce, marketplaces, and any frame where the viewer needs to\njudge the actual colour and material of the product.",
+        "directing_text": "\"Even exposure, no clipping, colour accurate\" plus \"soft shadow beneath\". Without\nthe clipping clause, white backgrounds blow out and take the product edge with them.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 996,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "genres",
+        "cat_label": "Film Genres",
+        "mistakes": [
+          "Clipped highlights on a white object against white, which erases its silhouette.",
+          "Hard multiple shadows from an unstated multi-light setup.",
+          "Colour shifts from aggressive white balance."
+        ],
+        "citations": [
+          {
+            "title": "High-key lighting — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/High-key_lighting"
+          },
+          {
+            "title": "Product photography — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Product_photography"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "brand-frame-snap",
+            "card": "brand-frame-snap",
+            "duration_frames": 130
+          },
+          {
+            "kind": "declared",
+            "style": "product-card-progressive-assemble",
+            "card": "product-card-progressive-assemble",
+            "duration_frames": 150
+          }
+        ],
+        "tools": [
+          {
+            "key": "luma",
+            "label": "Luma Dream Machine",
+            "params": null,
+            "version_tag": "dream-machine",
+            "tested": 0,
+            "tested_at": null
+          },
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 1:1 --v 6.1 --style raw --cw 100",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "sora",
+            "label": "OpenAI Sora",
+            "params": null,
+            "version_tag": "sora-1",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "name": "retro-analogue-comedy",
+        "title": "Retro analogue comedy framing",
+        "category_id": 7,
+        "level": "intermediate",
+        "prompt_text": "Retro 1970s comedy scene with [Subject] shot on vintage 16mm, slightly soft focus,\nvisible gate weave, warm amber cast, wide static framing with the subject small in\nframe, deadpan timing, no camera movement.",
+        "prompt_slot": "[Subject]",
+        "lede_text": "Genre framing is mostly about how much frame you leave empty and how still the\ncamera is. A 70s comedy shot is soft, warm, static and wide, and the stillness is\nwhat leaves room for the timing to do the work.",
+        "when_to_use_text": "Humour, explainers that want warmth, and any brand that benefits from looking\nhandmade rather than clinical.",
+        "directing_text": "Name the stock and the framing: \"vintage 16mm, warm amber, wide static framing,\nsubject small in frame\". \"Retro\" alone produces a costume-drama look, not a comedy\none.",
+        "image_url": "https://vincentwei1021.github.io/video-shotcraft/assets/brand/logo-mark.svg",
+        "video_url": null,
+        "source_file_id": 1005,
+        "ingested_at": "2026-10-01 11:05:33",
+        "cat_key": "genres",
+        "cat_label": "Film Genres",
+        "mistakes": [
+          "Adding camera movement, which kills the deadpan timing the genre depends on.",
+          "Pushing the subject too large, which loses the dead air the jokes land in.",
+          "Over-sharpening, which reads as \"old filter\" instead of old film."
+        ],
+        "citations": [
+          {
+            "title": "16mm film — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/16_mm_film"
+          },
+          {
+            "title": "Slapstick — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Slapstick"
+          }
+        ],
+        "motions": [
+          {
+            "kind": "declared",
+            "style": "cel-flash-stomp",
+            "card": "cel-flash-stomp",
+            "duration_frames": 30
+          }
+        ],
+        "tools": [
+          {
+            "key": "mj61",
+            "label": "Midjourney v6.1",
+            "params": "--ar 16:9 --v 6.1 --style raw --cw 100",
+            "version_tag": "v6.1",
+            "tested": 1,
+            "tested_at": "2026-10-01T11:05:33+00:00"
+          },
+          {
+            "key": "pika15",
+            "label": "Pika 1.5",
+            "params": null,
+            "version_tag": "pika-1.5",
+            "tested": 0,
+            "tested_at": null
+          }
+        ]
+      }
+    ]
+  },
   "categories": [
     {
       "id": 1,
@@ -1880,7 +3246,7 @@
       "energy_rank": 4,
       "energy_text": "中（匀速无变化，是可无限循环的稳态运动）",
       "styles": [
-        "carousel-3-d"
+        "carousel-3d"
       ],
       "tags": [
         "ui-entrance"
@@ -2821,7 +4187,7 @@
       "energy_rank": 4,
       "energy_text": "中（每次转场有空间惊喜，停留段安静读卡）",
       "styles": [
-        "basic-3-dscene"
+        "basic-3d-scene"
       ],
       "tags": [
         "camera"
@@ -3159,7 +4525,7 @@
       "energy_rank": 4,
       "energy_text": "中（飞行给动感、打字给节奏，整体是沉稳的技术叙事）",
       "styles": [
-        "terminal-3-d"
+        "terminal-3d"
       ],
       "tags": [
         "camera"
@@ -3267,9 +4633,9 @@
       "energy_rank": 5,
       "energy_text": "中高（数据即剧情）",
       "styles": [
-        "axis-rescale-shock-v-2",
-        "oscilloscope-stream-v-2",
-        "unit-dot-swarm-regroup-v-2"
+        "axis-rescale-shock-v2",
+        "oscilloscope-stream-v2",
+        "unit-dot-swarm-regroup-v2"
       ],
       "tags": [
         "data"
@@ -3972,7 +5338,7 @@
       "category": "interaction",
       "category_en": "Interaction & Feature Demo",
       "summary_zh": "话题词实体化",
-      "summary_en": "A typed \"#word\" hard-cuts into a wide pill tag, holds, shrinks into its slot on the page, then hard-cuts again to reveal the finished view.",
+      "summary_en": "'A typed \"#word\" hard-cuts into a wide pill tag, holds, shrinks into its slot on the page, then hard-cuts again to reveal the finished view.'",
       "intention": "文字变实体的常规做法是渐变/morph/展开，原片帧级拆解证明 Bear 反着 来：**实体化是 1 帧硬切**——上一帧还是文字+光标，下一帧就是完整 胶囊，无展开无 cross-fade 无回弹。硬切给的是\"啪、成了\"的确定感， 任何渐变都会把\"实体\"软化成\"特效\"。全段骨架是**两次硬切夹一次 滑动**：硬切实体化 → 平滑缩移归位 → 硬切揭示成品页。唯一的连续 运动（缩移）被两记硬切框住，才显得又快又稳。这个节奏骨架是命门， 三段挪动任何一段的性质（把硬切改渐变、把滑动改硬切）整卡就塌。",
       "use": "标签/分类/关键词功能的演示段（笔记 app 打 tag、话题聚合）；\"输入 → 变成 UI 实体 → 归位到成品\"的三段式叙事",
       "duration_frames": 40,
@@ -4715,7 +6081,7 @@
         "dark-tunnel-transition",
         "focus-handoff-transition",
         "mask-wipe-real",
-        "portal-wipe-v-2",
+        "portal-wipe-v2",
         "whip-brake-real",
         "whip-pan-real"
       ],

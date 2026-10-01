@@ -1,6 +1,6 @@
 # video-shotcraft wiki
 
-Generated from `5ddbf521038b` — 157 cards, 218 styles, 1607 extracted motion parameters, 27 aesthetic rules.
+Generated from `5ddbf521038b` — 157 cards, 218 styles, 1897 extracted motion parameters, 27 aesthetic rules.
 
 **Machine-readable entry points**
 
@@ -21,6 +21,7 @@ Generated from `5ddbf521038b` — 157 cards, 218 styles, 1607 extracted motion p
 - [The sibling skill, the tools, the channels, and the upstream author](domains/landscape.md)
 - [Revenue models, ranked by time to first dollar, with the evidence](domains/monetization.md)
 - [Motion-design vocabulary as used by these cards, with card references](domains/glossary.md)
+- [The cinematic-technique catalog: what to shoot, and how to say it per tool](domains/cinematic.md)
 
 **Cards**
 
