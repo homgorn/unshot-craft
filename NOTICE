@@ -1,0 +1,56 @@
+shotcraft
+Copyright 2026 the shotcraft authors
+
+This product includes software developed as an independent fork of:
+
+    video-shotcraft
+    https://github.com/Vincentwei1021/video-shotcraft
+    Copyright 2026 Wei Yihao
+    Licensed under the Apache License, Version 2.0
+
+--------------------------------------------------------------------------------
+What was modified
+--------------------------------------------------------------------------------
+
+This repository is **not** a redistribution of that project under its own name.
+Per ADR-0005 it is an independent fork: the upstream tree is pinned as a
+read-only clone under `upstream/`, never edited, never committed, and read at
+build time by `platform/ingest/`. Everything outside `upstream/` — the schema,
+the parsers, the wiki generator, the API, the site, the i18n runtime, the render
+harness and the gates — was written here.
+
+Apache-2.0 §4(b) requires modified files to carry prominent notices of change,
+and §4(d) requires this NOTICE to be carried forward. The upstream attribution
+above is kept for that reason.
+
+--------------------------------------------------------------------------------
+Third-party components
+--------------------------------------------------------------------------------
+
+Remotion (https://www.remotion.dev) — the render engine, used by
+`platform/render/run.py`. Its licence is free for individuals and for companies
+of up to three people and paid above that; this repository is rendered by an
+individual, so the free tier applies. See `docs/monetization/0002-blocking-issues.md`.
+
+PolyForm Noncommercial 1.0.0 — `video-talkcraft`, a sibling skill. It is read for
+ideas and its techniques were re-implemented; the tool itself is not shipped and
+not delivered commercially. See `docs/monetization/0002-blocking-issues.md`.
+
+Mixkit Free License — the SFX and BGM under `assets/audio/`. Attribution is
+recorded in `assets/audio/ATTRIBUTION.md`. Five files in that set have no
+traceable source and are marked `commercial_ok = 0`; they must be replaced before
+any client-facing delivery.
+
+`cinematique` — the MIT-licensed source of the 150-entry cinematography catalog
+under `data/cinematic/`, imported by `platform/catalog/import_cinematique.py`.
+See ADR-0007.
+
+--------------------------------------------------------------------------------
+A note on the brand
+--------------------------------------------------------------------------------
+
+The name in the topbar, the manifest, the icons, the structured data and the
+social cards is `shotcraft`. The name `video-shotcraft` belongs to the upstream
+project and to its author, and where a page still shows it that is either an
+attribution to the upstream work or a defect — `platform/site/check_seo.py`
+treats it as the latter.

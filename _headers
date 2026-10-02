@@ -1,0 +1,57 @@
+# Cloudflare Pages response headers.
+#
+#   docs/architecture/0003-site-target-astro-cloudflare.md names Cloudflare Pages
+#   as the target, and this file is what decides every response header — it did
+#   not exist, so the site was shipping with whatever the host defaults to.
+#
+# `check_seo.py` reads `site/dist`, so it cannot see a header file, and
+# `site/dist/` is gitignored: this file lives at the repo root and must be copied
+# into the deploy directory. `scripts\init.ps1` does not copy it, because init
+# builds the tree and deploy is a separate, deliberate step.
+
+# ------------------------------------------------------------------ security
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+  # `unsafe-inline` for style-src is required and is a deliberate, recorded
+  # concession: `upstream/`'s template carries three inline <style> and
+  # <script> blocks per page and `seo.py` writes the canonical/hreflang block
+  # inline. Moving them to files is the right fix and is not done. What this
+  # header does buy is `object-src 'none'` and a same-origin `script-src`, so an
+  # injected <script> from anywhere else cannot run.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+# ---------------------------------------------------------------------- media
+# 214 mp4 previews, 128 MB. Their content-address is the name, which changes
+# whenever the component does, so `immutable` is correct for them.
+ /media/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/assets/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# The three i18n bundles are small, change with every translation, and are what
+# a stale cache would silently break: an old bundle means a page whose keys no
+# longer match its strings.
+/assets/i18n/*
+  Cache-Control: no-cache
+
+# -------------------------------------------------------------------- html
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+/404.html
+  Cache-Control: public, max-age=600
+
+# ------------------------------------------------------------------- indexes
+# Sitemap and robots change with every build and must never be cached past it.
+/sitemap.xml
+  Cache-Control: public, max-age=600
+
+/robots.txt
+  Cache-Control: public, max-age=600

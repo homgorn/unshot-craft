@@ -1,6 +1,19 @@
 # upstream: read-only clone, pinned, not ours
 upstream/
 
+# Secrets. `.env` holds API tokens and the site origin; `.env.example` is
+# committed and holds only names and comments, so the negation has to sit
+# directly after the rule or git will not re-include it.
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Debug screenshots. The browser panel writes them into the project directory and
+# `git add -A` swept four of them in. A screenshot is evidence for a person, not
+# an input to a build, and a repository that accumulates them stops being readable.
+.openchamber/screenshots/
+
 # WAL sidecars only. platform/db/shotcraft.db IS committed: it is a deliverable,
 # so a reviewer can read the index without running Python (ADR-0002). The
 # generator ships alongside it, so the file is always reproducible.

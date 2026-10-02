@@ -114,6 +114,7 @@ python platform/site/check_coverage.py        # en 100%, zh 99.7%, ru 99.7%
 python platform/site/check_seo.py             # 369/369
 python platform/site/translate.py report      # 371 attributed, 0 reviewed
 python platform/render/run.py --list          # 118 renderable, 100 fragments
+python platform/_env.py                      # what .env sets -- names, never values
 python platform/render/run.py --verify        # every claimed clip, frame-exact
 python platform/_gate_test.py                 # proves docs_freshness can fail
 ```
@@ -183,6 +184,27 @@ Read `docs/adr/` before proposing an architecture change:
 | 0005 | independent fork, own brand, upstream credited |
 | 0006 | SDD loop with a verifier-owned completion gate |
 | 0007 | the cinematic-technique catalog is a second corpus in the same DB |
+
+## Secrets and the site origin
+
+`.env` is gitignored; `.env.example` is committed and holds only names and
+comments. `platform/_env.py` reads it with no third-party dependency — every gate
+runs a script directly, and a gate that cannot run without `pip install` is a
+gate nobody runs on a new machine. A real environment variable always beats the
+file, so CI secrets are not overridden by a stale checkout.
+
+**`SITE_ORIGIN` is the one variable that changes what the site emits.** Every
+canonical link, `og:url`, sitemap entry and JSON-LD `url` is generated from it,
+and there are 480 + 471 of those. It currently resolves to
+`https://shotcraft.example`, which is a placeholder — if that string reaches
+production, the site's own metadata tells a crawler the pages live somewhere they
+do not. Set it in `.env` before any deploy.
+
+Nothing else in the repository requires a secret. Every upstream fetch is public:
+`platform/mirror_site.py` pulls the deployed site and the 214 GitHub release
+assets without authentication. `CLOUDFLARE_API_TOKEN` and `GITHUB_TOKEN` are in
+the example file as placeholders for the deploy step, not because a current code
+path reads them.
 
 ## Money and licensing
 

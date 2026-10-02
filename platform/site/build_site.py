@@ -25,7 +25,18 @@ import json
 import re
 import shutil
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
+
+import os
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from _env import load as _load_env  # noqa: E402
+
+_load_env()
+DEFAULT_ORIGIN = "https://shotcraft.example"
+
 
 ROOT = Path(__file__).resolve().parents[2]
 GALLERY = ROOT / "upstream" / "video-shotcraft" / "gallery"
@@ -54,6 +65,14 @@ META = {
 # Asserted patch sets. Each entry: (find, replace, expected_count, label)
 # A changed upstream file must fail the build here, not ship broken.
 # --------------------------------------------------------------------------
+
+# The last two statements of upstream's own `applyLanguage()`, verbatim, in both
+# app.js and showcase.js. Used as the anchor for handing the rest of the
+# attribute contract to the shared runtime -- see the two patches that use it.
+ARIA_LOOP = (
+    "  document.querySelectorAll('[data-i18n-aria-label]').forEach((node) => {\n"
+    "    node.setAttribute('aria-label', text(node.dataset.i18nAriaLabel));\n"
+    "  });")
 
 APP_PATCHES: list[tuple[str, str, int, str]] = [
     ("const translations = window.GALLERY_I18N;",
@@ -195,6 +214,26 @@ loadLibrary().then(() => window.__I18N__.scrollToHash());""", 1, "hash scroll on
   return window.__I18N__.t('cards', card.name).description
     || card.summary || card.intention || card.name.split('-').join(' ');
 };""", 1, "cardDescription reads the locale"),
+    # Hand every translation attribute to the one runtime, on this page too.
+    #
+    # index.html gets this for free: `strip_inline_l10n` replaces its inline
+    # `applyLanguage()` with `window.__I18N__.apply(document)`. library.html and
+    # showcase.html keep upstream's own `applyLanguage()`, which handles
+    # `data-i18n` and `data-i18n-aria-label` and nothing else -- so
+    # `data-i18n-placeholder`, `data-i18n-title` and `data-l10n` are inert there,
+    # and both loops resolve against `ui` whatever `data-ns` says.
+    #
+    # That last part is why the search box used to work by accident rather than
+    # by design: upstream hardcodes `elements.searchInput.placeholder =
+    # text('searchPlaceholder')`, so the Russian placeholder appeared on /ru/
+    # while the `data-i18n-placeholder` that `check_seo.py` asserts was never read
+    # on that page at all. A gate that passes on an attribute nothing consumes is
+    # not evidence the attribute works.
+    #
+    # `apply()` is idempotent and re-applies `data-i18n` with `data-ns` honoured,
+    # so calling it after upstream's loops is additive rather than conflicting.
+    (ARIA_LOOP, ARIA_LOOP + "\n  window.__I18N__.apply(document);",
+     1, "library honours every attribute kind"),
 ]
 
 SHOWCASE_PATCHES: list[tuple[str, str, int, str]] = [
@@ -218,6 +257,23 @@ SHOWCASE_PATCHES: list[tuple[str, str, int, str]] = [
      "  const codes = window.__I18N__.locales.map((l) => l.code);\n"
      "  location.href = window.__I18N__.urlFor(\n"
      "    codes[(codes.indexOf(window.__I18N__.locale) + 1) % codes.length]);", 1, "showcase toggle"),
+    # The manifest was fetched as `./api/showcase.json`, which resolves against
+    # the page. From `/en/showcase.html` that is `/en/api/showcase.json`, and
+    # `site/dist/api/` holds exactly one file: `library.json`. So all three
+    # showcase pages fell into their own load-error branch and rendered nothing,
+    # while every gate passed -- `check_seo.py` never fetches it.
+    #
+    # `required=1`, so a change in the upstream path becomes a build failure
+    # rather than a silently empty page.
+    ("fetch('./api/showcase.json'", "fetch('../api/showcase.json'",
+     1, "showcase manifest path"),
+    # Same reason as the library patch above: upstream's `applyLanguage()` here
+    # handles two of the five attribute kinds and ignores `data-ns`. The showcase
+    # page is the one that uses `showcase.*` keys, so an annotation the page
+    # resolves against the `ui` namespace renders the wrong string.
+    (ARIA_LOOP,
+     ARIA_LOOP + "\n  window.__I18N__.apply(document);",
+     1, "showcase honours every attribute kind"),
 ]
 
 # `expected` is 0 for anchors that legitimately vary per page: the builder only
@@ -411,6 +467,24 @@ def build() -> dict:
         if src.exists():
             shutil.copy2(src, DIST / "assets" / name)
     shutil.copy2(GALLERY / "api" / "library.json", DIST / "api" / "library.json")
+    # The showcase manifest is published by a release workflow on upstream's
+    # repository and is not in the git clone, so `site/dist/api/showcase.json`
+    # did not exist -- and `showcase.js` fell into its own load-error branch on
+    # all three showcase pages. An error is the wrong thing to show for "nothing
+    # has been submitted yet": the page has an empty state, written and styled,
+    # and it is what the reader should see.
+    #
+    # So the manifest is emitted, empty, with a `state` the page can distinguish.
+    # `submissions` being empty is the truth; a missing file is an accident.
+    manifest = DIST / "api" / "showcase.json"
+    if not manifest.exists():
+        manifest.write_text(json.dumps({
+            "version": 1,
+            "generated": datetime.now(timezone.utc).date().isoformat(),
+            "source": "built; upstream publishes real submissions per release",
+            "state": "empty",
+            "submissions": [],
+        }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     shutil.copy2(RUNTIME / "i18n.js", DIST / "assets" / "i18n.js")
     # The switcher is generated, so its CSS ships with the generated CSS rather
     # than being patched into a third hand-maintained copy of styles.css.
@@ -428,7 +502,10 @@ def build() -> dict:
     (DIST / "assets" / "showcase.js").write_text(sc, encoding="utf-8")
 
     # ---- per-locale data + pages ------------------------------------------
-    origin = "https://shotcraft.example"   # overridden by --origin at deploy
+    # SITE_ORIGIN, then --origin, then the placeholder. The order matters:
+    # a flag on the command line must beat a file, and a file must beat a
+    # hardcoded default that nobody remembers to change.
+    origin = os.environ.get("SITE_ORIGIN", DEFAULT_ORIGIN)
     # Every generated bundle carries ALL built locales, keyed ns -> locale -> key.
     # Shipping only the active locale would break the runtime's `locale -> en`
     # fallback chain with no network available to fetch a second file.
@@ -839,7 +916,7 @@ def serve(port: int) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--origin", default="https://shotcraft.example")
+    ap.add_argument("--origin", default=os.environ.get("SITE_ORIGIN", DEFAULT_ORIGIN))
     ap.add_argument("--serve", type=int, default=0,
                     help="serve site/dist on this port")
     ap.add_argument("--rebuild", action="store_true",

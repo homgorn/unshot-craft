@@ -49,6 +49,15 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+import os
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from _env import load as _load_env  # noqa: E402
+
+_load_env()
+DEFAULT_ORIGIN = "https://shotcraft.example"
+
+
 ROOT = Path(__file__).resolve().parents[2]
 DIST = ROOT / "site" / "dist"
 LOCALES_DIR = ROOT / "site" / "locales"
@@ -688,17 +697,25 @@ def write_404(origin: str, locales: list[str], total: int) -> str:
     * it is the only page that should carry `noindex`, and saying so here is
       cheaper than remembering it at every other place `robots` appears.
 
-    The three locales are separate documents rather than one page with a language
-    switcher, because the switcher needs JavaScript and the whole point of a 404
-    is that it works when everything else has already gone wrong.
+    One file per locale, at `/{code}/404.html`, plus a root `/404.html` that
+    redirects. **Not three documents concatenated into one file.** That was the
+    first attempt and it is wrong: a doctype after `</html>` is a parse error the
+    tree builder ignores, so a browser renders the English 404 and then appends
+    the Chinese and Russian bodies into the same document — three `<h1>`s, three
+    navs, one `<head>` carrying the English `<title>`. Every 404 on the site hit
+    it.
+
+    The no-JS rationale stands and is met per file: each locale's own links are
+    plain `<a href>`, so a reader who lands on `/ru/404.html` can still reach
+    `/ru/` with scripting off. The redirect at the root uses `<noscript>` links
+    for the same reason.
     """
-    pages = []
     for code in locales:
         title, body = NOT_FOUND[code]
         links = "\n".join(
             f'      <li><a href="/{l}/" lang="{META[l][0]}">{esc(META[l][1])}</a></li>'
             for l in locales)
-        pages.append(f"""<!doctype html>
+        page = f"""<!doctype html>
 <html lang="{META[code][0]}">
 <head>
 <meta charset="utf-8">
@@ -728,10 +745,58 @@ def write_404(origin: str, locales: list[str], total: int) -> str:
 </main>
 </body>
 </html>
-""")
-    out = DIST / "404.html"
-    out.write_text("".join(pages), encoding="utf-8")
-    return f"404.html ({len(locales)} locales, noindex, follow)"
+"""
+        out = DIST / code / "404.html"
+        out.write_text(page, encoding="utf-8")
+
+    # The root `/404.html` is what most hosts serve for an unknown path, and it
+    # has no locale to be in. It picks one from `Accept-Language` and redirects.
+    # The `<noscript>` list is the whole point of writing it by hand rather than
+    # redirecting to `/en/404.html`: a mistyped URL is the end of the visit, and
+    # the visitor must still be able to get somewhere.
+    picker = "\n".join(
+        f'      <li><a href="/{l}/" lang="{META[l][0]}">{esc(META[l][1])}</a></li>'
+        for l in locales)
+    lang_js = "\n".join(
+        f"    if ((navigator.language || '').toLowerCase().startsWith('{l}'))"
+        f" location.replace('/{l}/404.html');"
+        for l in locales if l != "en")
+    root = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>404 — {esc(SITE)}</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0e0e0c">
+<link rel="alternate" hreflang="x-default" href="{origin}/en/404.html">
+{chr(10).join(f'<link rel="alternate" hreflang="{META[l][3]}" href="{origin}/{l}/404.html">' for l in locales)}
+<link rel="stylesheet" href="/assets/styles.css">
+<script>
+  var lang = (navigator.language || 'en').toLowerCase();
+{lang_js}
+  location.replace('/en/404.html');
+</script>
+</head>
+<body>
+<main class="card-page">
+  <h1>404</h1>
+  <p class="summary">That URL does not exist.</p>
+  <noscript>
+    <ul>
+{picker}
+    </ul>
+  </noscript>
+</main>
+</body>
+</html>
+"""
+    (DIST / "404.html").write_text(root, encoding="utf-8")
+    return (f"404.html + /{locales[0]}/404.html … ({len(locales)} locales, "
+            f"one document each, noindex, follow)")
 
 
 def build(origin: str) -> dict:
@@ -800,12 +865,39 @@ def build(origin: str) -> dict:
             html = p.read_text(encoding="utf-8")
             head, body = (html.split("</head>", 1) + [""])[:2]
             head = re.sub(r"[ \t]*<title>.*?</title>\n", "", head, flags=re.S)
-            head = re.sub(r'[ \t]*<meta name="description"[^>]*>\n', "", head)
-            head = re.sub(r'[ \t]*<link rel="canonical"[^>]*>\n', "", head)
-            head = re.sub(r'[ \t]*<meta property="og:(url|title|description|image|image:width|image:height|image:alt|type)"[^>]*>\n',
+            # `og:site_name` belongs in the strip list. It did not, so upstream's
+            # `og:site_name="video-shotcraft"` survived while ours was added 380
+            # lines later -- two values on one page, and a scraper takes the
+            # first. Every shared card said the upstream project's name.
+            #
+            # The trailing `>` on the description is the same family of mistake:
+            # the pattern anchored on `>\n`, and `prerender.py` had already
+            # rewritten that line, so the newline was no longer there and the
+            # match consumed the tag but left the rest of the line behind as a
+            # bare `>` text node inside <head>. Trailing space is allowed before
+            # the newline for the same reason.
+            head = re.sub(r'[ \t]*<meta name="description"[^>]*>[ \t]*\n', "", head)
+            head = re.sub(r"[ \t]*<link rel=\"canonical\"[^>]*>[ \t]*\n", "", head)
+            head = re.sub(r'[ \t]*<meta property="og:(url|title|description|image|image:width|image:height|image:alt|type|site_name)"[^>]*>[ \t]*\n',
                           "", head)
-            head = re.sub(r'[ \t]*<meta name="twitter:[^"]*"[^>]*>\n', "", head)
-            head = re.sub(r'[ \t]*<link rel="alternate"[^>]*>\n', "", head)
+            head = re.sub(r'[ \t]*<meta name="twitter:[^"]*"[^>]*>[ \t]*\n', "", head)
+            head = re.sub(r'[ \t]*<link rel="alternate"[^>]*>[ \t]*\n', "", head)
+            # A line consisting of nothing but `>` is a text node inside <head>,
+            # which is invalid, and it is the tail of a tag whose opening was
+            # removed above -- the closing `>` surviving because the line it was
+            # on had already been rewritten by `prerender.py` and no longer ended
+            # where the pattern expected.
+            #
+            # Removed, and **counted**: silently swallowing it would make the
+            # generator's own breakage invisible, which is how a `>` got shipped
+            # on all nine pages in the first place.
+            stray = len(re.findall(r"^[ \t]*>[ \t]*$", head, re.M))
+            if stray:
+                head = re.sub(r"^[ \t]*>[ \t]*\n", "", head, flags=re.M)
+                made.setdefault("head_repaired", []).append(
+                    f"{code}/{page}.html: removed {stray} stray '>' text node(s) "
+                    f"from <head> -- a tag was split across lines before this "
+                    f"point; the pattern above is the place to look")
             head = re.sub(r'[ \t]*<link rel="(icon|apple-touch-icon|mask-icon|manifest)"[^>]*>\n',
                           "", head)
             head = re.sub(r'[ \t]*<script type="application/ld\+json">.*?</script>\n',
@@ -903,7 +995,7 @@ CARD_HEAD = {}
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--origin", default="https://shotcraft.example")
+    ap.add_argument("--origin", default=os.environ.get("SITE_ORIGIN", DEFAULT_ORIGIN))
     ap.add_argument("--build", action="store_true")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--report", action="store_true")
