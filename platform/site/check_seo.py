@@ -29,6 +29,8 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -48,6 +50,26 @@ REQUIRED_FILES = [
     "robots.txt",
     "sitemap.xml",
 ]
+
+# The site is a catalogue of motion. A build that ships without it has produced a
+# text list, and that is not detectable from any tag in <head>.
+MOTION_REQUIRED = {"media": 200, "media/poster": 1}
+
+# Translated ui keys that nothing can display: not an attribute on any element of
+# any built locale, and not a `t()` call in either script. 37, measured from a
+# clean `scripts/init.ps1`, down from 65 before platform/site/localise_dom.py
+# existed. The number is only reproducible from a clean build -- `localise_dom.py`
+# is idempotent, so running it twice over a tree it has already annotated reports
+# fewer orphans than the first pass, and reading the second number as the truth
+# makes the ceiling meaningless.
+#
+# The residue is not untranslated work. The English values in `en/ui.json` are
+# English renderings of upstream's Chinese `translations.js` table -- 81 of them
+# appear verbatim in that file and 0 in `app.js` -- so a key whose wording no code
+# path ever emits has no display site. Closing one is a decision about which of
+# two English wordings is right, which is why this is a ceiling rather than a
+# zero: a gate that cannot be satisfied is a gate that gets deleted.
+ORPHAN_CEILING = 37
 
 KNOWN_LOCALES = ("en", "zh", "ru")
 
@@ -79,11 +101,110 @@ def audit(origin: str) -> dict:
     cards = lib["cards"]
     slugs = sorted(c["name"] for c in cards)
 
+    # ------------------------------------------------------------- the motion
+    # Three independent defects each shipped a site with no movement at all, and
+    # every one of them passed every gate that existed at the time, because every
+    # gate read the DOM after the runtime had patched it -- or read nothing about
+    # motion at all. These read the static files and look for the thing itself.
+    for code in built:
+        idx = DIST / code / "index.html"
+        if idx.exists():
+            h = idx.read_text(encoding="utf-8", errors="replace")
+            ck("createElement('video')" in h or 'createElement("video")' in h,
+               f"{code}/index.html: the motion wall is present",
+               "no createElement('video') in the static file -- the inline script "
+               "was removed, or never emitted")
+            ck("WALL_CLIPS" in h,
+               f"{code}/index.html: the wall names its clips",
+               "no WALL_CLIPS list, so the page cannot know what to play")
+            ck("../media/" in h and '"./media/' not in h,
+               f"{code}/index.html: media paths are one level up",
+               "a './media/' path left unpatched resolves to /<locale>/media/ "
+               "and every poster and clip 404s")
+            ck("api/library.json" in h,
+               f"{code}/index.html: the wall fetches the payload",
+               "no reference to api/library.json")
+
+        lib_page = DIST / code / "library.html"
+        if lib_page.exists():
+            h = lib_page.read_text(encoding="utf-8", errors="replace")
+            body = h.split("</head>", 1)[1] if "</head>" in h else h
+            n_vid = len(re.findall(r"<video", body))
+            ck(n_vid > 0,
+               f"{code}/library.html: the prerendered block carries motion",
+               f"0 <video> in the static file; app.js draws one at runtime, so "
+               f"this passes every DOM-based check and shows a crawler a text list "
+               f"of {len(slugs)} cards")
+            ck(n_vid >= len(slugs) * 0.5,
+               f"{code}/library.html: most cards have a clip ({n_vid}/{len(slugs)})",
+               "fewer than half the cards resolve to an mp4 on disk")
+            # A <video> whose src 404s is worse than none: the browser shows a
+            # broken frame and never recovers.
+            bad = []
+            for src in re.findall(r'<video[^>]*\ssrc="([^"]+)"', body):
+                clean = src.split("?")[0].replace("../media/", "media/")
+                if not (DIST / clean).exists():
+                    bad.append(src)
+                else:
+                    poster = re.search(
+                        r'<video[^>]*\ssrc="' + re.escape(src) +
+                        r'"[^>]*\sposter="([^"]+)"', body)
+                    if poster:
+                        p = (DIST / poster.group(1).replace("../media/", "media/"))
+                        if not p.exists():
+                            bad.append(f"poster {poster.group(1)}")
+            ck(not bad, f"{code}/library.html: every clip and poster resolves",
+               f"{len(bad)} dangling, e.g. {bad[:3]}")
+
+    # ----------------------------------------------- translations that are shown
+    # `check_coverage.py` measures whether a string exists in a locale file. It
+    # reported ru at 99.7 % while the search placeholder, the theme toggle, the
+    # energy filter labels and the entire showcase page rendered in English,
+    # because no element and no script carried a lookup for them. Coverage of a
+    # translation nobody can read is not coverage.
+    #
+    # So this measures the other thing: how many translated keys have somewhere to
+    # be displayed. The residue is expected and is a fact, not a failure -- the
+    # English values in `en/ui.json` are English renderings of upstream's Chinese
+    # `translations.js` table, so a key whose wording app.js never emits is
+    # orphaned rather than untranslated. It is checked against a recorded ceiling
+    # so it can be seen to grow.
+    rep = LOCALES_DIR.parent / "build" / "localise_report.json"
+    if rep.exists():
+        loc = json.loads(rep.read_text(encoding="utf-8"))
+        orphan = len(loc.get("orphaned", []))
+        ck(orphan <= ORPHAN_CEILING,
+           f"orphaned translation keys: {orphan} (ceiling {ORPHAN_CEILING})",
+           "more translated strings have no display site than the recorded "
+           "ceiling; each new one needs a decision, not a rebuild")
+        # The three most prominent strings on a library page. A search box in the
+        # wrong language on a localised page is the failure a reader notices first.
+        for code in built:
+            lib = DIST / code / "library.html"
+            if lib.exists():
+                h = lib.read_text(encoding="utf-8", errors="replace")
+                ck('data-i18n-placeholder="searchPlaceholder"' in h,
+                   f"{code}/library.html: the search box is translatable",
+                   "no data-i18n-placeholder, so the placeholder is English on "
+                   "every locale")
+                ck('data-i18n="themeDark"' in h or 'data-i18n="themeLight"' in h,
+                   f"{code}/library.html: the theme toggle is translatable", "")
+    else:
+        ck(False, "localise_dom report exists",
+           "site/build/localise_report.json missing; run platform/site/localise_dom.py")
+
     # ---------------------------------------------------------------- files
     for f in REQUIRED_FILES:
         p = DIST / f
         ck(p.exists() and p.stat().st_size > 0, f"asset present: {f}",
            "missing or empty")
+
+    for sub, floor in MOTION_REQUIRED.items():
+        d = DIST / sub
+        n = len([x for x in d.iterdir() if x.is_file()]) if d.is_dir() else 0
+        ck(n >= floor, f"motion deployed: {sub}/ ({n} files)",
+           f"fewer than {floor}; run python platform/mirror_site.py --media "
+           f"then platform/site/build_site.py")
 
     for code in built:
         for og in (f"assets/og-{code}.jpg",):
@@ -178,6 +299,12 @@ def audit(origin: str) -> dict:
             ld = re.findall(r'<script type="application/ld\+json">(.*?)</script>',
                             head, re.S)
             ck(bool(ld), f"{code}/{page}: has JSON-LD", "none emitted")
+            # At least one block must describe the site itself; a second block
+            # describing something else (an ItemList for the carousel) is
+            # correct and must not be held to that requirement. Every block,
+            # though, must be ours -- an inherited block naming the author's
+            # domain is a lie about where this page lives.
+            saw_site = False
             for block in ld:
                 try:
                     data = json.loads(block)
@@ -188,8 +315,10 @@ def audit(origin: str) -> dict:
                 ck("vincentwei" not in blob,
                    f"{code}/{page}: JSON-LD has no upstream url",
                    "structured data points at the author's site")
-                ck('"@type": "WebSite"' in blob or '"@type":"WebSite"' in blob,
-                   f"{code}/{page}: JSON-LD declares a WebSite", "absent")
+                if '"WebSite"' in blob:
+                    saw_site = True
+            ck(saw_site, f"{code}/{page}: JSON-LD declares a WebSite",
+               "no block describes the site itself")
 
             hrefs = re.findall(r'hreflang="([^"]+)" href="([^"]+)"', head)
             ck(len(hrefs) >= len(built) + 1,
@@ -212,6 +341,63 @@ def audit(origin: str) -> dict:
            f"{code}: one card page per card ({len(slugs)})",
            f"{len(built_slugs)} built, {len(slugs)} cards in the payload")
 
+        # Distinctness across the whole set, not just the sample. One shared
+        # image across 157 cards is the defect; checking four pages could not
+        # see it if the shared one happened to be among them.
+        imgs = set()
+        for p in pages:
+            m = re.search(r'property="og:image" content="([^"]+)"', head_of(p))
+            if m:
+                imgs.add(m.group(1))
+        ck(len(imgs) == len(pages),
+           f"{code}: every card page has its own og:image ({len(imgs)}/{len(pages)})",
+           f"{len(pages) - len(imgs)} pages share an image with another card")
+
+        # The declared VideoObject duration must be the clip's real length.
+        #
+        # Every derivable source in this repo is a different quantity from the
+        # clip: `shot_card.duration_frames` is how long the shot should hold in a
+        # film (11 frames for crash-zoom-punch), `style.duration_frames` is how
+        # long the demo component runs (120). The preview is the second one, so
+        # the first version declared PT0.4S on a 4-second video -- and 6 of 6
+        # sampled clips were wrong, each plausible, because a short number is
+        # exactly what a video object is supposed to have. Only the file is not
+        # wrong, so only the file is asked.
+        ff = shutil.which("ffprobe")
+        sampled = pages[:4] + pages[len(pages) // 2:len(pages) // 2 + 2] + pages[-2:]
+        wrong: list[str] = []
+        undeclared = 0
+        probed = 0
+        for p in sampled:
+            h = head_of(p)
+            m = re.search(r'"contentUrl":\s*"([^"]+)"', h)
+            d = re.search(r'"duration":\s*"PT([\d.]+)S"', h)
+            if not m:
+                continue
+            if not d:
+                undeclared += 1
+                continue
+            target = m.group(1).replace(origin, "").lstrip("/")
+            clip = DIST / target
+            if not (ff and clip.exists()):
+                continue
+            probed += 1
+            out = subprocess.run(
+                [ff, "-v", "error", "-show_entries", "format=duration", "-of", "json",
+                 str(clip)], capture_output=True, text=True, errors="replace")
+            try:
+                real = float(json.loads(out.stdout)["format"]["duration"])
+            except (json.JSONDecodeError, KeyError, ValueError):
+                continue
+            if abs(real - float(d.group(1))) > 0.25:
+                wrong.append(f"{p.stem}: declares PT{d.group(1)}S, file is {real}s")
+        ck(not wrong,
+           f"{code}: every declared clip length matches the file ({probed} probed)",
+           f"{len(wrong)} wrong, e.g. {wrong[:3]}")
+        ck(undeclared == 0,
+           f"{code}: every VideoObject states a duration ({undeclared} silent)",
+           "a VideoObject with no duration is dropped from video rich results")
+
         sample = pages[:3] + pages[-1:]
         for p in sample:
             head = head_of(p)
@@ -225,6 +411,20 @@ def audit(origin: str) -> dict:
             ogu = re.search(r'property="og:url" content="([^"]+)"', head)
             ck(bool(canon) and bool(ogu) and canon.group(1) == ogu.group(1),
                f"{code}/card/{p.stem}: canonical == og:url", "")
+            ogi = re.search(r'property="og:image" content="([^"]+)"', head)
+            # The image must exist *and* be this card's own. All 471 card pages
+            # pointed at one blank placeholder: it was generated from an empty
+            # title, it passed the existence check, and Facebook had already
+            # cached it. Existence alone cannot catch that; only distinctness can.
+            if ogi:
+                target = ogi.group(1).replace(origin, "").lstrip("/")
+                fp = DIST / target
+                ck(fp.exists() and fp.stat().st_size > 2000,
+                   f"{code}/card/{p.stem}: og:image exists",
+                   f"{ogi.group(1)} -> {target} missing or empty")
+                ck(f"/og-card/{p.stem}-{code}." in ogi.group(1),
+                   f"{code}/card/{p.stem}: og:image is this card's own",
+                   f"points at {ogi.group(1)}, which is shared")
             ck('property="og:type" content="article"' in head,
                f"{code}/card/{p.stem}: og:type is article", "")
             ld = re.findall(r'<script type="application/ld\+json">(.*?)</script>', head, re.S)

@@ -49,6 +49,14 @@ See `.opencode/agents/README.md`. **`verifier` is the only role allowed to set
    and is pinned to someone else's SHA.** Two corpora, one DB (ADR 0007). Never
    edit `data/cinematic/*.md` from a generator, and never let an ingest write
    into it. `[Subject]` in a prompt is a slot, not a token to expand.
+9. **A test that reads the DOM after JavaScript has run cannot see a static
+   defect.** This repo shipped a home page whose 16-clip motion wall had been
+   deleted along with an inline dictionary, with the media path left one
+   directory too shallow, and with `site/dist/media/` absent because a symlink
+   raised `OSError` and the handler was `pass`. Every gate was green. The checks
+   that found all three read the *static file* and look for the thing itself:
+   `createElement('video')`, `../media/`, `<video` in the prerendered block.
+   When a check can be written against the file on disk, write it there.
 
 ## Commands
 
@@ -78,6 +86,16 @@ project**, not authored here; 791 of 1050 cross-tool cells are filled and
 no verification column. A bump is `git clone && python
 platform/catalog/import_cinematique.py && git diff`.
 
+**The site has two media sources and neither is obvious.** `upstream/`'s git tree
+holds **posters only** — `gallery/media/poster/*.jpg`, 64 files. The **214 mp4
+previews are not in git at all**; they are GitHub release assets, downloaded by
+`platform/mirror_site.py --media` into `upstream/site-mirror/media/`. A fresh
+clone therefore builds a site that calls itself a catalogue of motion and has
+nothing to play, and it does so without an error. `build_site.py` reports that
+as a **warning** and `platform/site/check_seo.py` **fails** on it — one gate,
+one authority. `mirror_site.py --media` is 128 MB and is not part of
+`scripts\init.ps1`.
+
 ## Gates
 
 Every one of these has caught a real defect. `scripts\init.ps1` runs the first
@@ -93,9 +111,9 @@ python platform/site/selftest.py              # 99/99, real Chrome
 python platform/wiki/audit_quality.py         # 28/28, 24 craft questions
 python platform/prompts/build_prompts.py --lint
 python platform/site/check_coverage.py        # en 100%, zh 99.7%, ru 99.7%
-python platform/site/check_seo.py             # 303/303
+python platform/site/check_seo.py             # 369/369
 python platform/site/translate.py report      # 371 attributed, 0 reviewed
-python platform/render/run.py --list          # 117 renderable, 100 fragments
+python platform/render/run.py --list          # 118 renderable, 100 fragments
 python platform/render/run.py --verify        # every claimed clip, frame-exact
 python platform/_gate_test.py                 # proves docs_freshness can fail
 ```
@@ -107,6 +125,12 @@ template's `package.json` omits, then installs. `--render` writes MP4s to
 `render/out/` and a report to `platform/render/render_report.json`; `--verify`
 reads each clip back with `ffprobe` and compares the frame count against the
 index.
+
+**118 of the 218 components state a duration and 117 are rendered.** The two
+counts differ by one, and the difference is not an off-by-one: the harness joins
+through `card_variant`, and `clip-card-looping` (120 frames, renderable) has no
+card link — upstream has no card for it. So `--list` offers **217**
+compositions, of which 117 state a duration.
 
 **100 of the 218 components are deliberately not rendered.** They state no
 duration — they are timeline fragments, not standalone films, and the seven that

@@ -38,6 +38,10 @@ END = "<!-- seo:cards:end -->"
 # must match the real numbers or the static and dynamic views disagree.
 COUNT_IDS = {"cardCount": "cards", "styleCount": "styles", "previewCount": "samples"}
 
+# Scratch counters for the last render_block() call, so main() can report them
+# without threading a mutable through the string builder.
+BLOCKS: dict = {}
+
 
 def esc(s: str) -> str:
     return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -49,10 +53,38 @@ def load(code: str, name: str) -> dict:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
 
 
+def clip_for(card: dict, media_dir: Path) -> tuple[str, str | None]:
+    """The (clip, poster) pair for a card, from the payload and the filesystem.
+
+    Existence is checked against disk, not inferred from the payload. `library.json`
+    lists a `media.url` for all 214 preview styles, and a URL in a JSON file is a
+    claim rather than a fact: writing it into the HTML for a file that is not
+    there produces a page whose video element 404s, which looks identical to one
+    that works until someone presses play.
+    """
+    for s in card.get("styles", []):
+        m = s.get("media") or {}
+        url = m.get("url") or ""
+        if not url or m.get("type") != "mp4":
+            continue
+        base = url.split("?")[0].replace("./media/", "").removesuffix(".mp4")
+        clip = media_dir / f"{base}.mp4"
+        if clip.exists():
+            poster = media_dir / "poster" / f"{base}.jpg"
+            # Only 64 of the 214 previews have a poster. A `poster` attribute
+            # pointing at a missing file is worse than none: the browser shows
+            # the broken frame instead of the video's own first frame.
+            return f"../media/{base}.mp4", (
+                f"../media/poster/{base}.jpg" if poster.exists() else None)
+    return "", None
+
+
 def render_block(code: str, lib: dict) -> str:
     cards = load(code, "cards")
     styles = load(code, "styles")
+    media_dir = DIST / "media"
     rows: list[str] = []
+    with_video = 0
     for card in lib["cards"]:
         name = card["name"]
         meta = cards.get(name, {}) if isinstance(cards.get(name), dict) else {}
@@ -65,14 +97,41 @@ def render_block(code: str, lib: dict) -> str:
         for k in keys:
             sm = styles.get(k, {}) if isinstance(styles.get(k), dict) else {}
             style_rows.append(f"<li>{esc(sm.get('title') or k)}</li>")
+
+        # The video is in the prerendered block, not only in app.js.
+        #
+        # app.js does render one at runtime, so every gate here was green while
+        # the static file carried 157 cards and no motion. A crawler is not a
+        # browser: it reads the file, sees text, and cannot tell that a <video>
+        # would appear a second later. The 214 previews are the product, and the
+        # prerender is the copy of the page that is actually served to the thing
+        # that decides whether the page is worth indexing.
+        clip, poster = clip_for(card, media_dir)
+        media_tag = ""
+        if clip:
+            with_video += 1
+            poster_attr = f' poster="{esc(poster)}"' if poster else ""
+            # Wrapped in the site's own `.preview` container rather than a new
+            # class: upstream's stylesheet already sizes `.preview video` to a
+            # 16/9 crop, and a bare <video> would render at its natural 480x270
+            # inside a card that is not 480 wide.
+            media_tag = (
+                f'        <div class="preview">\n'
+                f'          <video src="{esc(clip)}"'
+                f'{poster_attr} muted loop playsinline preload="metadata"'
+                f' aria-label="{esc(title)}"></video>\n'
+                f'        </div>\n')
+
         rows.append(
             f'      <article class="shot-card" id="{esc(name)}">\n'
             f"        <h3>{esc(title)}</h3>\n"
             f"        <p>{esc(desc)}</p>\n"
+            f"{media_tag}"
             f"        <ul class=\"style-list\">\n"
             + ("\n".join(style_rows) + "\n" if style_rows else "")
             + "        </ul>\n"
             f"      </article>")
+    BLOCKS["with_video"] = with_video
     return "\n".join(rows)
 
 
@@ -82,6 +141,7 @@ def main() -> int:
     lib = json.loads((DIST / "api" / "library.json").read_text(encoding="utf-8"))
     stats = lib["stats"]
     problems: list[str] = []
+    warnings: list[str] = []
     report: dict[str, dict] = {}
 
     for d in sorted(p for p in DIST.iterdir() if p.is_dir()):
@@ -149,9 +209,30 @@ def main() -> int:
                               html, count=1)
 
         page.write_text(html, encoding="utf-8")
+
+        # A prerender with no video in it is a build that succeeded and shipped
+        # nothing worth looking at. It is reported rather than raised, because a
+        # fresh clone legitimately has no media until `mirror_site.py --media`
+        # has been run, and refusing to build at all would be worse than building
+        # with the gap named. `platform/site/check_seo.py` is the gate that fails
+        # on it -- one authority for the fact, not two.
+        with_video = BLOCKS.get("with_video", 0)
+        if with_video == 0:
+            warnings.append(
+                f"{code}: no card in the prerendered block has a playable clip. "
+                f"site/dist/media holds "
+                f"{len(list((DIST / 'media').glob('*.mp4'))) if (DIST / 'media').is_dir() else 0} "
+                f"mp4; run `python platform/mirror_site.py --media` if that is 0, "
+                f"then build_site.py. check_seo.py fails until you do.")
+        elif with_video < len(lib["cards"]) * 0.5:
+            warnings.append(
+                f"{code}: only {with_video}/{len(lib['cards'])} cards got a clip; "
+                f"the library reads as a text list for most of it")
+
         report[code] = {
             "cards_prerendered": len(lib["cards"]),
             "cards_with_locale_title": covered,
+            "cards_with_clip": with_video,
             "cards_total": len(lib["cards"]),
             "title_coverage_pct": round(100.0 * covered / len(lib["cards"]), 1),
             "has_locale_description":
@@ -160,7 +241,7 @@ def main() -> int:
             "meta_translated": sorted(k for k, v in meta.items() if v),
         }
 
-    out = {"report": report, "problems": problems}
+    out = {"report": report, "warnings": warnings, "problems": problems}
     (ROOT / "site" / "build" / "prerender_report.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(out, ensure_ascii=False, indent=2))

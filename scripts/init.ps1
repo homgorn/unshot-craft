@@ -63,6 +63,12 @@ if (Test-Path "upstream/video-shotcraft/gallery/library.html") {
     if ($LASTEXITCODE -ne 0) { throw "seo build failed; see platform/site/seo.py" }
     python platform/site/icons.py | Out-Null
     if ($LASTEXITCODE -ne 0) { throw "icon generation failed" }
+    # After the prerender, because it rewrites the card block inside the body and
+    # localise_dom rewrites the surrounding markup. Before seo, which rewrites the
+    # head; the two do not overlap, so the order here only has to be after the
+    # build that produced the tree.
+    python platform/site/localise_dom.py | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "localise_dom failed" }
     $locales = (Get-ChildItem site/dist -Directory | Where-Object { Test-Path (Join-Path $_.FullName "library.html") }).Count
     $cards = (Get-ChildItem site/dist/*/card/*.html -ErrorAction SilentlyContinue).Count
     Step ("site: " + $locales + " locales, " + $cards + " card pages")

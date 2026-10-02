@@ -273,7 +273,7 @@
   {
     "id": "F060",
     "category": "integration",
-    "description": "Render the demo corpus to MP4 with Remotion, producing the portfolio films the studio sells against. The renderer runs in a working copy outside upstream/, discovers the external modules the demos import, and verifies every clip by reading it back with ffprobe and comparing the frame count against the index. Only the 118 components that state a duration are rendered by default: the other 100 are timeline fragments, not standalone films.",
+    "description": "Render the demo corpus to MP4 with Remotion, producing the portfolio films the studio sells against. The renderer runs in a working copy outside upstream/, discovers the external modules the demos import and adds the ones the template's package.json omits, and verifies every clip by reading it back with ffprobe and comparing the frame count against the index. Of 218 components, 118 state a duration and 100 do not; only the 117 the harness can link to a card are rendered by default, and the other 100 are timeline fragments rather than standalone films.",
     "steps": [
       "BLOCKED — do not start until the Remotion licence answer is on file",
       "BLOCKED — until the video-talkcraft PolyForm question is answered, because upstream workbench/ is a port of it",

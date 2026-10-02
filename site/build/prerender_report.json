@@ -3,6 +3,7 @@
     "en": {
       "cards_prerendered": 157,
       "cards_with_locale_title": 157,
+      "cards_with_clip": 157,
       "cards_total": 157,
       "title_coverage_pct": 100.0,
       "has_locale_description": 157,
@@ -14,6 +15,7 @@
     "ru": {
       "cards_prerendered": 157,
       "cards_with_locale_title": 157,
+      "cards_with_clip": 157,
       "cards_total": 157,
       "title_coverage_pct": 100.0,
       "has_locale_description": 157,
@@ -22,6 +24,7 @@
     "zh": {
       "cards_prerendered": 157,
       "cards_with_locale_title": 157,
+      "cards_with_clip": 157,
       "cards_total": 157,
       "title_coverage_pct": 100.0,
       "has_locale_description": 0,
@@ -31,5 +34,6 @@
       ]
     }
   },
+  "warnings": [],
   "problems": []
 }

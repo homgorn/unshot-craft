@@ -40,6 +40,7 @@ check it, and the promise needs a verifier.
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import re
 import sqlite3
@@ -258,7 +259,80 @@ EXTERNAL: list[tuple[str, str, object, str]] = [
      lambda: _ru_style_titles(), "ru style titles"),
     ("AGENTS.md", r"(\d+) attributed, \d+ reviewed",
      lambda: _provenance("attributed"), "attributed translations"),
+
+    # ---- the site actually shows motion -------------------------------------
+    # These three exist because the site spent its whole life with no video on
+    # it: the wall's inline script had been deleted, the media path was one
+    # directory too shallow, and site/dist/media/ was never created. Every number
+    # in the prose above them was true of the index while the page itself showed
+    # nothing, so each is now anchored to the file on disk.
+    ("AGENTS.md", r"`gallery/media/poster/\*\.jpg`, (\d+) files",
+     lambda: _files("site/dist/media/poster/*.jpg"), "posters deployed"),
+    ("AGENTS.md", r"\*\*(\d+) mp4\s+previews are not in git at all\*\*",
+     lambda: _files("site/dist/media/*.mp4"), "mp4 previews deployed"),
+    ("AGENTS.md", r"check_seo\.py\s+# (\d+)/",
+     lambda: _seo_checks(), "SEO gate check count"),
+    ("progress.md", r"\*\*(\d+) cards with a playable clip in the static block\*\*",
+     lambda: _static_clips(), "cards carrying a <video> without JavaScript"),
+    ("progress.md", r"\*\*(\d+) rendered clips",
+     lambda: _rendered_clips(), "clips rendered by F060"),
+    ("AGENTS.md", r"(\d+) renderable, (\d+) fragments",
+     lambda: _render_split()[0], "components stating a duration"),
+    ("AGENTS.md", r"\*\*(\d+) of the \d+ components are deliberately not rendered",
+     lambda: _render_split()[1], "components deliberately not rendered"),
 ]
+
+
+def _files(pattern: str) -> int:
+    return len(list(ROOT.glob(pattern)))
+
+
+def _rendered_clips() -> int:
+    p = ROOT / "platform" / "render" / "render_report.json"
+    if not p.exists():
+        raise FileNotFoundError("platform/render/render_report.json; run run.py --render")
+    return int(json.loads(p.read_text(encoding="utf-8"))["rendered"])
+
+
+def _render_split() -> tuple[int, int]:
+    """(components that state a duration, components deliberately not rendered).
+
+    Read from the database, which is where both numbers come from: the first is
+    `style.duration_frames IS NOT NULL`, the second its complement. The prose says
+    "117 renderable, 100 fragments", and 117 + 100 must be the 217 compositions
+    the harness actually offers -- so if a fourth corpus arrives and the totals
+    stop adding up, the sentence fails rather than quietly staying true of the
+    old corpus.
+    """
+    c = sqlite3.connect(f"file:{DB.as_posix()}?mode=ro", uri=True)
+    yes = c.execute(
+        "SELECT COUNT(*) FROM style WHERE demo_path IS NOT NULL "
+        "AND duration_frames IS NOT NULL").fetchone()[0]
+    no = c.execute(
+        "SELECT COUNT(*) FROM style WHERE demo_path IS NOT NULL "
+        "AND duration_frames IS NULL").fetchone()[0]
+    c.close()
+    return yes, no
+
+
+def _static_clips() -> int:
+    """Cards whose *static* library HTML carries a <video>.
+
+    Counts the prerendered block, not the runtime: `app.js` draws a video for
+    every card a second after load, so any check that runs in a browser sees 157
+    either way and cannot tell whether the file a crawler reads has one.
+    """
+    lib = ROOT / "site" / "dist" / "en" / "library.html"
+    if not lib.exists():
+        raise FileNotFoundError("site/dist/en/library.html; run build_site.py")
+    return len(re.findall(r"<video", lib.read_text(encoding="utf-8", errors="replace")))
+
+
+def _seo_checks() -> int:
+    sys.path.insert(0, str(ROOT / "platform" / "site"))
+    import check_seo  # noqa: PLC0415
+    rep = check_seo.audit("https://shotcraft.example")
+    return rep["total"]
 
 _CACHE: dict[str, object] = {}
 

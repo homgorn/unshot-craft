@@ -7,10 +7,10 @@
     270
   ],
   "scale": 1,
-  "rendered": 1,
-  "failed": 2,
-  "total_bytes": 440053,
-  "total_seconds": 0,
+  "rendered": 117,
+  "failed": 0,
+  "total_bytes": 32440853,
+  "total_seconds": 1587.0,
   "licence": {
     "remotion": "free for individuals and companies of up to three people; paid above that. This repo is rendered by its author as an individual, so the free tier applies. That is a fact about who runs the render, not about the code.",
     "video_talkcraft": "PolyForm Noncommercial -- still a blocker for anything we deliver to a paying client"
@@ -30,21 +30,1161 @@
       "key": "crash-impact-real",
       "component_name": "CrashImpactReal",
       "category": "camera",
-      "status": "failed",
-      "bytes": 0,
-      "seconds": 11.2,
+      "status": "ok",
+      "bytes": 199190,
+      "seconds": 29.5,
       "duration_frames": 120,
-      "error": "35:21)\u001b[39m\n\u001b[31m    at async renderVideoFlow (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\render-flows\\render.js:167:53)\u001b[39m\n\u001b[31m    at async render (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\render.js:163:5)\u001b[39m\n\u001b[31m    at async cli (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\index.js:97:13)\u001b[39m\n"
+      "error": ""
     },
     {
       "key": "crash-zoom-real",
       "component_name": "CrashZoomReal",
       "category": "camera",
-      "status": "failed",
-      "bytes": 0,
-      "seconds": 7.0,
+      "status": "ok",
+      "bytes": 198065,
+      "seconds": 23.1,
       "duration_frames": 120,
-      "error": "35:21)\u001b[39m\n\u001b[31m    at async renderVideoFlow (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\render-flows\\render.js:167:53)\u001b[39m\n\u001b[31m    at async render (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\render.js:163:5)\u001b[39m\n\u001b[31m    at async cli (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\index.js:97:13)\u001b[39m\n"
+      "error": ""
+    },
+    {
+      "key": "cursor-flyover",
+      "component_name": "CursorFlyover",
+      "category": "camera",
+      "status": "ok",
+      "bytes": 468159,
+      "seconds": 21.4,
+      "duration_frames": 180,
+      "error": ""
+    },
+    {
+      "key": "dolly-zoom-real",
+      "component_name": "DollyZoomReal",
+      "category": "camera",
+      "status": "ok",
+      "bytes": 349480,
+      "seconds": 21.5,
+      "duration_frames": 135,
+      "error": ""
+    },
+    {
+      "key": "drone-dive-landing",
+      "component_name": "DroneDiveLanding",
+      "category": "camera",
+      "status": "ok",
+      "bytes": 67930,
+      "seconds": 19.4,
+      "duration_frames": 45,
+      "error": ""
+    },
+    {
+      "key": "multiplane-real",
+      "component_name": "MultiplaneReal",
+      "category": "camera",
+      "status": "ok",
+      "bytes": 238051,
+      "seconds": 25.6,
+      "duration_frames": 135,
+      "error": ""
+    },
+    {
+      "key": "overhead-tabletop-drop",
+      "component_name": "OverheadTabletopDrop",
+      "category": "camera",
+      "status": "ok",
+      "bytes": 130398,
+      "seconds": 18.4,
+      "duration_frames": 55,
+      "error": ""
+    },
+    {
+      "key": "pull-back-isolation",
+      "component_name": "PullBackIsolation",
+      "category": "camera",
+      "status": "ok",
+      "bytes": 28084,
+      "seconds": 15.6,
+      "duration_frames": 16,
+      "error": ""
+    },
+    {
+      "key": "terminal-3d",
+      "component_name": "Terminal3D",
+      "category": "camera",
+      "status": "ok",
+      "bytes": 439673,
+      "seconds": 26.0,
+      "duration_frames": 180,
+      "error": ""
+    },
+    {
+      "key": "avatar-grid-radial-build-colorize",
+      "component_name": "AvatarGridRadialBuildColorize",
+      "category": "data",
+      "status": "ok",
+      "bytes": 314612,
+      "seconds": 16.9,
+      "duration_frames": 168,
+      "error": ""
+    },
+    {
+      "key": "brake-reticle-lock",
+      "component_name": "BrakeReticleLock",
+      "category": "data",
+      "status": "ok",
+      "bytes": 231572,
+      "seconds": 19.4,
+      "duration_frames": 150,
+      "error": ""
+    },
+    {
+      "key": "counter-confetti",
+      "component_name": "CounterConfetti",
+      "category": "data",
+      "status": "ok",
+      "bytes": 466641,
+      "seconds": 22.7,
+      "duration_frames": 138,
+      "error": ""
+    },
+    {
+      "key": "counter-tick-sparks",
+      "component_name": "CounterTickSparks",
+      "category": "data",
+      "status": "ok",
+      "bytes": 111914,
+      "seconds": 17.2,
+      "duration_frames": 78,
+      "error": ""
+    },
+    {
+      "key": "cycle-glass-node-morph",
+      "component_name": "CycleGlassNodeMorph",
+      "category": "data",
+      "status": "ok",
+      "bytes": 439484,
+      "seconds": 19.9,
+      "duration_frames": 257,
+      "error": ""
+    },
+    {
+      "key": "hatch-depth",
+      "component_name": "HatchDepth",
+      "category": "data",
+      "status": "ok",
+      "bytes": 284613,
+      "seconds": 17.3,
+      "duration_frames": 132,
+      "error": ""
+    },
+    {
+      "key": "oscilloscope-stream-v2",
+      "component_name": "OscilloscopeStreamV2",
+      "category": "data",
+      "status": "ok",
+      "bytes": 159631,
+      "seconds": 18.9,
+      "duration_frames": 112,
+      "error": ""
+    },
+    {
+      "key": "ring-diagram-annotation-reveal",
+      "component_name": "RingDiagramAnnotationReveal",
+      "category": "data",
+      "status": "ok",
+      "bytes": 496398,
+      "seconds": 19.0,
+      "duration_frames": 190,
+      "error": ""
+    },
+    {
+      "key": "timeline-travel",
+      "component_name": "TimelineTravel",
+      "category": "data",
+      "status": "ok",
+      "bytes": 148044,
+      "seconds": 17.2,
+      "duration_frames": 104,
+      "error": ""
+    },
+    {
+      "key": "unit-dot-swarm-regroup-v2",
+      "component_name": "UnitDotSwarmRegroupV2",
+      "category": "data",
+      "status": "ok",
+      "bytes": 36399,
+      "seconds": 9.5,
+      "duration_frames": 20,
+      "error": ""
+    },
+    {
+      "key": "anime-impact",
+      "component_name": "AnimeImpact",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 49595,
+      "seconds": 10.6,
+      "duration_frames": 30,
+      "error": ""
+    },
+    {
+      "key": "assemble-then-type-flyin",
+      "component_name": "AssembleThenTypeFlyin",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 349703,
+      "seconds": 14.2,
+      "duration_frames": 156,
+      "error": ""
+    },
+    {
+      "key": "aurora-bloom-bg-flip",
+      "component_name": "AuroraBloomBgFlip",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 346995,
+      "seconds": 13.1,
+      "duration_frames": 156,
+      "error": ""
+    },
+    {
+      "key": "dashboard-glow-highlight-pill",
+      "component_name": "DashboardGlowHighlightPill",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 256633,
+      "seconds": 13.8,
+      "duration_frames": 60,
+      "error": ""
+    },
+    {
+      "key": "flyline-arc",
+      "component_name": "FlylineArc",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 36704,
+      "seconds": 8.8,
+      "duration_frames": 22,
+      "error": ""
+    },
+    {
+      "key": "halation-bloom",
+      "component_name": "HalationBloom",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 28792,
+      "seconds": 9.1,
+      "duration_frames": 17,
+      "error": ""
+    },
+    {
+      "key": "line-boil",
+      "component_name": "LineBoil",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 152271,
+      "seconds": 11.4,
+      "duration_frames": 105,
+      "error": ""
+    },
+    {
+      "key": "orb-flyline-relay",
+      "component_name": "OrbFlylineRelay",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 40197,
+      "seconds": 8.7,
+      "duration_frames": 24,
+      "error": ""
+    },
+    {
+      "key": "pop-burst-confirm",
+      "component_name": "PopBurstConfirm",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 170086,
+      "seconds": 10.1,
+      "duration_frames": 120,
+      "error": ""
+    },
+    {
+      "key": "radial-ripple-phone-chips",
+      "component_name": "RadialRipplePhoneChips",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 351937,
+      "seconds": 12.6,
+      "duration_frames": 168,
+      "error": ""
+    },
+    {
+      "key": "reticle-lock-on",
+      "component_name": "ReticleLockOn",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 39434,
+      "seconds": 9.2,
+      "duration_frames": 24,
+      "error": ""
+    },
+    {
+      "key": "scan-bracket-sweep",
+      "component_name": "ScanBracketSweep",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 292897,
+      "seconds": 12.1,
+      "duration_frames": 150,
+      "error": ""
+    },
+    {
+      "key": "scanline-annotate-focus",
+      "component_name": "ScanlineAnnotateFocus",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 335577,
+      "seconds": 11.1,
+      "duration_frames": 138,
+      "error": ""
+    },
+    {
+      "key": "scanline-assemble-flyin",
+      "component_name": "ScanlineAssembleFlyin",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 387602,
+      "seconds": 14.3,
+      "duration_frames": 138,
+      "error": ""
+    },
+    {
+      "key": "spotlight-sweep-reveal",
+      "component_name": "SpotlightSweepReveal",
+      "category": "effects",
+      "status": "ok",
+      "bytes": 174439,
+      "seconds": 12.8,
+      "duration_frames": 110,
+      "error": ""
+    },
+    {
+      "key": "autolayout-gap-dial",
+      "component_name": "AutolayoutGapDial",
+      "category": "interaction",
+      "status": "ok",
+      "bytes": 82738,
+      "seconds": 9.2,
+      "duration_frames": 52,
+      "error": ""
+    },
+    {
+      "key": "chip-grid-single-select-blackout",
+      "component_name": "ChipGridSingleSelectBlackout",
+      "category": "interaction",
+      "status": "ok",
+      "bytes": 282967,
+      "seconds": 12.4,
+      "duration_frames": 150,
+      "error": ""
+    },
+    {
+      "key": "chip-lift-to-user-pill",
+      "component_name": "ChipLiftToUserPill",
+      "category": "interaction",
+      "status": "ok",
+      "bytes": 235203,
+      "seconds": 11.7,
+      "duration_frames": 150,
+      "error": ""
+    },
+    {
+      "key": "command-palette-summon",
+      "component_name": "CommandPaletteSummon",
+      "category": "interaction",
+      "status": "ok",
+      "bytes": 158526,
+      "seconds": 10.8,
+      "duration_frames": 104,
+      "error": ""
+    },
+    {
+      "key": "glass-pill-dictation-typing",
+      "component_name": "GlassPillDictationTyping",
+      "category": "interaction",
+      "status": "ok",
+      "bytes": 95234,
+      "seconds": 10.5,
+      "duration_frames": 50,
+      "error": ""
+    },
+    {
+      "key": "hashtag-to-pill-materialize",
+      "component_name": "HashtagToPillMaterialize",
+      "category": "interaction",
+      "status": "ok",
+      "bytes": 130321,
+      "seconds": 10.9,
+      "duration_frames": 80,
+      "error": ""
+    },
+    {
+      "key": "palette-theme-ripple",
+      "component_name": "PaletteThemeRipple",
+      "category": "interaction",
+      "status": "ok",
+      "bytes": 151845,
+      "seconds": 12.7,
+      "duration_frames": 95,
+      "error": ""
+    },
+    {
+      "key": "picker-carousel-feature-cycle",
+      "component_name": "PickerCarouselFeatureCycle",
+      "category": "interaction",
+      "status": "ok",
+      "bytes": 230279,
+      "seconds": 13.7,
+      "duration_frames": 108,
+      "error": ""
+    },
+    {
+      "key": "segmented-thumb-hero",
+      "component_name": "SegmentedThumbHero",
+      "category": "interaction",
+      "status": "ok",
+      "bytes": 122151,
+      "seconds": 11.2,
+      "duration_frames": 60,
+      "error": ""
+    },
+    {
+      "key": "type-and-filter",
+      "component_name": "TypeAndFilter",
+      "category": "interaction",
+      "status": "ok",
+      "bytes": 114001,
+      "seconds": 13.1,
+      "duration_frames": 73,
+      "error": ""
+    },
+    {
+      "key": "brand-ink-open",
+      "component_name": "BrandInkOpen",
+      "category": "opening",
+      "status": "ok",
+      "bytes": 218213,
+      "seconds": 14.3,
+      "duration_frames": 104,
+      "error": ""
+    },
+    {
+      "key": "crane-rise-reveal",
+      "component_name": "CraneRiseReveal",
+      "category": "opening",
+      "status": "ok",
+      "bytes": 213321,
+      "seconds": 11.0,
+      "duration_frames": 120,
+      "error": ""
+    },
+    {
+      "key": "dataviz-landscape-open",
+      "component_name": "DatavizLandscapeOpen",
+      "category": "opening",
+      "status": "ok",
+      "bytes": 359754,
+      "seconds": 16.7,
+      "duration_frames": 165,
+      "error": ""
+    },
+    {
+      "key": "fracture",
+      "component_name": "Fracture",
+      "category": "opening",
+      "status": "ok",
+      "bytes": 383788,
+      "seconds": 12.5,
+      "duration_frames": 156,
+      "error": ""
+    },
+    {
+      "key": "letterspace-materialize",
+      "component_name": "LetterspaceMaterialize",
+      "category": "opening",
+      "status": "ok",
+      "bytes": 90109,
+      "seconds": 11.6,
+      "duration_frames": 52,
+      "error": ""
+    },
+    {
+      "key": "magician-card-flourish",
+      "component_name": "MagicianCardFlourish",
+      "category": "opening",
+      "status": "ok",
+      "bytes": 21080,
+      "seconds": 8.9,
+      "duration_frames": 12,
+      "error": ""
+    },
+    {
+      "key": "orbit-ring-title-open",
+      "component_name": "OrbitRingTitleOpen",
+      "category": "opening",
+      "status": "ok",
+      "bytes": 296214,
+      "seconds": 12.3,
+      "duration_frames": 130,
+      "error": ""
+    },
+    {
+      "key": "spotlight-hero-card",
+      "component_name": "SpotlightHeroCard",
+      "category": "opening",
+      "status": "ok",
+      "bytes": 346149,
+      "seconds": 15.7,
+      "duration_frames": 139,
+      "error": ""
+    },
+    {
+      "key": "grain-dissolve",
+      "component_name": "GrainDissolve",
+      "category": "outro",
+      "status": "ok",
+      "bytes": 178272,
+      "seconds": 12.1,
+      "duration_frames": 60,
+      "error": ""
+    },
+    {
+      "key": "icon-flip-bloom-logo",
+      "component_name": "IconFlipBloomLogo",
+      "category": "outro",
+      "status": "ok",
+      "bytes": 172113,
+      "seconds": 10.1,
+      "duration_frames": 62,
+      "error": ""
+    },
+    {
+      "key": "logo-shrink-wordmark-lockup",
+      "component_name": "LogoShrinkWordmarkLockup",
+      "category": "outro",
+      "status": "ok",
+      "bytes": 231802,
+      "seconds": 12.2,
+      "duration_frames": 132,
+      "error": ""
+    },
+    {
+      "key": "outro-group-photo-launch",
+      "component_name": "OutroGroupPhotoLaunch",
+      "category": "outro",
+      "status": "ok",
+      "bytes": 284410,
+      "seconds": 16.6,
+      "duration_frames": 145,
+      "error": ""
+    },
+    {
+      "key": "ui-strip-away-outro",
+      "component_name": "UiStripAwayOutro",
+      "category": "outro",
+      "status": "ok",
+      "bytes": 25545,
+      "seconds": 12.6,
+      "duration_frames": 14,
+      "error": ""
+    },
+    {
+      "key": "comic-panel-split",
+      "component_name": "ComicPanelSplit",
+      "category": "rhythm",
+      "status": "ok",
+      "bytes": 83407,
+      "seconds": 10.6,
+      "duration_frames": 45,
+      "error": ""
+    },
+    {
+      "key": "domino-cascade",
+      "component_name": "DominoCascade",
+      "category": "rhythm",
+      "status": "ok",
+      "bytes": 21082,
+      "seconds": 9.3,
+      "duration_frames": 12,
+      "error": ""
+    },
+    {
+      "key": "freeze-annotate-real",
+      "component_name": "FreezeAnnotateReal",
+      "category": "rhythm",
+      "status": "ok",
+      "bytes": 190390,
+      "seconds": 11.7,
+      "duration_frames": 135,
+      "error": ""
+    },
+    {
+      "key": "grid-flash-mosaic",
+      "component_name": "GridFlashMosaic",
+      "category": "rhythm",
+      "status": "ok",
+      "bytes": 23745,
+      "seconds": 10.0,
+      "duration_frames": 14,
+      "error": ""
+    },
+    {
+      "key": "quad-split-parallel-scenes",
+      "component_name": "QuadSplitParallelScenes",
+      "category": "rhythm",
+      "status": "ok",
+      "bytes": 172271,
+      "seconds": 12.1,
+      "duration_frames": 63,
+      "error": ""
+    },
+    {
+      "key": "spectrum-morph-ui",
+      "component_name": "SpectrumMorphUi",
+      "category": "rhythm",
+      "status": "ok",
+      "bytes": 21082,
+      "seconds": 9.2,
+      "duration_frames": 12,
+      "error": ""
+    },
+    {
+      "key": "speed-ramp-real",
+      "component_name": "SpeedRampReal",
+      "category": "rhythm",
+      "status": "ok",
+      "bytes": 191709,
+      "seconds": 12.2,
+      "duration_frames": 135,
+      "error": ""
+    },
+    {
+      "key": "wright-triple-cut",
+      "component_name": "WrightTripleCut",
+      "category": "rhythm",
+      "status": "ok",
+      "bytes": 41575,
+      "seconds": 9.0,
+      "duration_frames": 25,
+      "error": ""
+    },
+    {
+      "key": "black-card-transition",
+      "component_name": "BlackCardTransition",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 274445,
+      "seconds": 14.0,
+      "duration_frames": 120,
+      "error": ""
+    },
+    {
+      "key": "bottom-push-stack-wipe",
+      "component_name": "BottomPushStackWipe",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 48739,
+      "seconds": 12.1,
+      "duration_frames": 30,
+      "error": ""
+    },
+    {
+      "key": "card-flip-reveal",
+      "component_name": "CardFlipReveal",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 32983,
+      "seconds": 8.4,
+      "duration_frames": 18,
+      "error": ""
+    },
+    {
+      "key": "cube-navigation",
+      "component_name": "CubeNavigation",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 549000,
+      "seconds": 11.3,
+      "duration_frames": 180,
+      "error": ""
+    },
+    {
+      "key": "dark-tunnel-transition",
+      "component_name": "DarkTunnelTransition",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 228103,
+      "seconds": 11.8,
+      "duration_frames": 120,
+      "error": ""
+    },
+    {
+      "key": "focus-handoff-transition",
+      "component_name": "FocusHandoffTransition",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 192058,
+      "seconds": 12.0,
+      "duration_frames": 120,
+      "error": ""
+    },
+    {
+      "key": "gradient-transition",
+      "component_name": "GradientTransition",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 463713,
+      "seconds": 12.7,
+      "duration_frames": 180,
+      "error": ""
+    },
+    {
+      "key": "invisible-cut",
+      "component_name": "InvisibleCut",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 96348,
+      "seconds": 14.0,
+      "duration_frames": 54,
+      "error": ""
+    },
+    {
+      "key": "line-carry-transition",
+      "component_name": "LineCarryTransition",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 5489123,
+      "seconds": 68.7,
+      "duration_frames": 3980,
+      "error": ""
+    },
+    {
+      "key": "mask-wipe-real",
+      "component_name": "MaskWipeReal",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 198539,
+      "seconds": 11.6,
+      "duration_frames": 120,
+      "error": ""
+    },
+    {
+      "key": "mosaic-reframe",
+      "component_name": "MosaicReframe",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 554886,
+      "seconds": 12.9,
+      "duration_frames": 180,
+      "error": ""
+    },
+    {
+      "key": "shared-element-morph",
+      "component_name": "SharedElementMorph",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 93813,
+      "seconds": 9.7,
+      "duration_frames": 60,
+      "error": ""
+    },
+    {
+      "key": "whip-brake-real",
+      "component_name": "WhipBrakeReal",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 185447,
+      "seconds": 12.4,
+      "duration_frames": 130,
+      "error": ""
+    },
+    {
+      "key": "whip-pan-real",
+      "component_name": "WhipPanReal",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 201331,
+      "seconds": 16.6,
+      "duration_frames": 120,
+      "error": ""
+    },
+    {
+      "key": "white-flash-logo-simplify-cut",
+      "component_name": "WhiteFlashLogoSimplifyCut",
+      "category": "transition",
+      "status": "ok",
+      "bytes": 195684,
+      "seconds": 11.2,
+      "duration_frames": 108,
+      "error": ""
+    },
+    {
+      "key": "blur-slide",
+      "component_name": "BlurSlide",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 197532,
+      "seconds": 10.8,
+      "duration_frames": 114,
+      "error": ""
+    },
+    {
+      "key": "brace-expand",
+      "component_name": "BraceExpand",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 198158,
+      "seconds": 10.1,
+      "duration_frames": 114,
+      "error": ""
+    },
+    {
+      "key": "countdown-arc-scatter",
+      "component_name": "CountdownArcScatter",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 79392,
+      "seconds": 9.0,
+      "duration_frames": 33,
+      "error": ""
+    },
+    {
+      "key": "document-typewriter-reveal",
+      "component_name": "DocumentTypewriterReveal",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 477088,
+      "seconds": 11.9,
+      "duration_frames": 110,
+      "error": ""
+    },
+    {
+      "key": "flying-words",
+      "component_name": "FlyingWords",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 773522,
+      "seconds": 13.8,
+      "duration_frames": 180,
+      "error": ""
+    },
+    {
+      "key": "glitch-cycle",
+      "component_name": "GlitchCycle",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 355665,
+      "seconds": 13.4,
+      "duration_frames": 168,
+      "error": ""
+    },
+    {
+      "key": "gradient-word-sweep",
+      "component_name": "GradientWordSweep",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 115764,
+      "seconds": 12.7,
+      "duration_frames": 30,
+      "error": ""
+    },
+    {
+      "key": "lead-word-zoom-assemble",
+      "component_name": "LeadWordZoomAssemble",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 298872,
+      "seconds": 10.2,
+      "duration_frames": 84,
+      "error": ""
+    },
+    {
+      "key": "outline-word-fill",
+      "component_name": "OutlineWordFill",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 177168,
+      "seconds": 9.1,
+      "duration_frames": 75,
+      "error": ""
+    },
+    {
+      "key": "paper-title-card",
+      "component_name": "PaperTitleCard",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 134927,
+      "seconds": 9.5,
+      "duration_frames": 55,
+      "error": ""
+    },
+    {
+      "key": "pill-chip-slot-cycle-handled",
+      "component_name": "PillChipSlotCycleHandled",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 296483,
+      "seconds": 10.6,
+      "duration_frames": 150,
+      "error": ""
+    },
+    {
+      "key": "scramble",
+      "component_name": "Scramble",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 197571,
+      "seconds": 10.0,
+      "duration_frames": 96,
+      "error": ""
+    },
+    {
+      "key": "text-column-converge",
+      "component_name": "TextColumnConverge",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 54580,
+      "seconds": 10.6,
+      "duration_frames": 36,
+      "error": ""
+    },
+    {
+      "key": "typing-code-block",
+      "component_name": "TypingCodeBlock",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 244394,
+      "seconds": 15.5,
+      "duration_frames": 138,
+      "error": ""
+    },
+    {
+      "key": "vertical-word-roll-blur-cycle",
+      "component_name": "VerticalWordRollBlurCycle",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 244562,
+      "seconds": 12.5,
+      "duration_frames": 150,
+      "error": ""
+    },
+    {
+      "key": "word-relay-filmstrip",
+      "component_name": "WordRelayFilmstrip",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 26899,
+      "seconds": 8.4,
+      "duration_frames": 16,
+      "error": ""
+    },
+    {
+      "key": "word-relay-geometry",
+      "component_name": "WordRelayGeometry",
+      "category": "typography",
+      "status": "ok",
+      "bytes": 417426,
+      "seconds": 10.5,
+      "duration_frames": 180,
+      "error": ""
+    },
+    {
+      "key": "avatar-bracket-carousel",
+      "component_name": "AvatarBracketCarousel",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 282123,
+      "seconds": 10.1,
+      "duration_frames": 156,
+      "error": ""
+    },
+    {
+      "key": "bezier-source-converge-merge",
+      "component_name": "BezierSourceConvergeMerge",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 317792,
+      "seconds": 10.5,
+      "duration_frames": 168,
+      "error": ""
+    },
+    {
+      "key": "card-stack",
+      "component_name": "CardStack",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 282610,
+      "seconds": 10.9,
+      "duration_frames": 126,
+      "error": ""
+    },
+    {
+      "key": "carousel-3d",
+      "component_name": "Carousel3D",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 879040,
+      "seconds": 11.6,
+      "duration_frames": 168,
+      "error": ""
+    },
+    {
+      "key": "cloner-depth-echo",
+      "component_name": "ClonerDepthEcho",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 18453,
+      "seconds": 13.3,
+      "duration_frames": 10,
+      "error": ""
+    },
+    {
+      "key": "deck-deal-flyin",
+      "component_name": "DeckDealFlyin",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 414974,
+      "seconds": 32.7,
+      "duration_frames": 113,
+      "error": ""
+    },
+    {
+      "key": "doc-park-left-pill-deal",
+      "component_name": "DocParkLeftPillDeal",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 339160,
+      "seconds": 13.6,
+      "duration_frames": 174,
+      "error": ""
+    },
+    {
+      "key": "floating-glossy-label-pills",
+      "component_name": "FloatingGlossyLabelPills",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 381319,
+      "seconds": 13.2,
+      "duration_frames": 120,
+      "error": ""
+    },
+    {
+      "key": "list-reveal",
+      "component_name": "ListReveal",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 284771,
+      "seconds": 11.2,
+      "duration_frames": 108,
+      "error": ""
+    },
+    {
+      "key": "list-stack-press",
+      "component_name": "ListStackPress",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 237175,
+      "seconds": 12.3,
+      "duration_frames": 88,
+      "error": ""
+    },
+    {
+      "key": "masking-tape-slap",
+      "component_name": "MaskingTapeSlap",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 57233,
+      "seconds": 8.9,
+      "duration_frames": 38,
+      "error": ""
+    },
+    {
+      "key": "platform-hinge-rise",
+      "component_name": "PlatformHingeRise",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 181606,
+      "seconds": 9.9,
+      "duration_frames": 104,
+      "error": ""
+    },
+    {
+      "key": "popup-book-rise",
+      "component_name": "PopupBookRise",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 60219,
+      "seconds": 8.8,
+      "duration_frames": 34,
+      "error": ""
+    },
+    {
+      "key": "product-card-progressive-assemble",
+      "component_name": "ProductCardProgressiveAssemble",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 352287,
+      "seconds": 10.9,
+      "duration_frames": 150,
+      "error": ""
+    },
+    {
+      "key": "radial-wave",
+      "component_name": "RadialWave",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 448685,
+      "seconds": 15.9,
+      "duration_frames": 114,
+      "error": ""
+    },
+    {
+      "key": "research-card-stack-scroll",
+      "component_name": "ResearchCardStackScroll",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 510288,
+      "seconds": 12.8,
+      "duration_frames": 144,
+      "error": ""
+    },
+    {
+      "key": "row-embed",
+      "component_name": "RowEmbed",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 178532,
+      "seconds": 10.5,
+      "duration_frames": 68,
+      "error": ""
+    },
+    {
+      "key": "svg-shape-morph",
+      "component_name": "SvgShapeMorph",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 396004,
+      "seconds": 12.6,
+      "duration_frames": 156,
+      "error": ""
+    },
+    {
+      "key": "value-stagger-gradient",
+      "component_name": "ValueStaggerGradient",
+      "category": "ui-entrance",
+      "status": "ok",
+      "bytes": 293818,
+      "seconds": 12.0,
+      "duration_frames": 150,
+      "error": ""
     }
   ]
 }

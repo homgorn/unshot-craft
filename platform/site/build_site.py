@@ -200,9 +200,27 @@ HTML_PATCHES: list[tuple[str, str, int, str]] = [
     ('href="./logo-mark.svg"', 'href="../assets/logo-mark.svg"', 0, "favicon"),
     ('src="./logo-mark-reverse.svg"', 'src="../assets/logo-mark-reverse.svg"', 0, "logo reverse"),
     ('src="./logo-mark.svg"', 'src="../assets/logo-mark.svg"', 0, "logo"),
-    ("fetch('./api/library.json'", "fetch('../api/library.json'", 0, "index fetch"),
-    ("'./media/poster/${name}.jpg'", "'../media/poster/${name}.jpg'", 0, "wall posters"),
-    ('`./media/${name}.mp4`', '`../media/${name}.mp4`', 0, "wall clips"),
+    ('fetch(\'./api/library.json\'', "fetch('../api/library.json'", 0, "index fetch"),
+    # ADR-0005: an independent fork with its own brand. Upstream's name is
+    # hardcoded in the topbar of every page and it is the first thing a visitor
+    # reads -- while the manifest, the icons, the structured data and every social
+    # card this project generates already say `shotcraft`. The page and its own
+    # metadata were disagreeing about who this is.
+    #
+    # Deliberately NOT a `data-i18n` key: a brand name is a proper noun and is
+    # spelled the same in every language. Putting it in the locale JSON would
+    # mean three copies that must stay identical, and a locale that "translated"
+    # it would be the bug.
+    ('<span>VIDEO SHOTCRAFT</span>', '<span>shotcraft</span>', 0, "brand name"),
+    ('<span>video-shotcraft</span>', '<span>shotcraft</span>',
+     0, "brand name, lowercase"),
+    # Media paths are rewritten by prefix, not by quoting style. Two separate
+    # entries used to try to match `'./media/...'` and `` `./media/...` ``, and
+    # the wall's own source uses backticks -- so the poster entry never matched
+    # and the clips pointed one directory too shallow. `apply_patches` counts
+    # matches and the count was `required=0`, so a miss was silent: 64 posters
+    # and 214 clips, all fetched from a URL that 404s.
+    ("./media/", "../media/", 0, "wall media paths"),
     ('href="./showcase.html"', 'href="../{code}/showcase.html"', 0, "nav showcase"),
     ('href="./library.html"', 'href="../{code}/library.html"', 0, "nav library"),
     ('href="./"', 'href="../{code}/"', 0, "nav home"),
@@ -282,6 +300,7 @@ def head_block(code: str, page: str, origin: str, locales: list[str]) -> str:
 
 def build() -> dict:
     problems: list[str] = []
+    warnings: list[str] = []
     present = [c for c in LOCALE_ORDER if (LOCALES_DIR / c).is_dir()]
     if not present:
         raise SystemExit("no locales found; run platform/site/extract_locales.py first")
@@ -322,13 +341,7 @@ def build() -> dict:
     css = (DIST / "assets" / "styles.css").read_text(encoding="utf-8") if (DIST / "assets" / "styles.css").exists() else ""
     if css:
         (DIST / "assets" / "styles.css").write_text(css + "\n" + LOCALE_CSS, encoding="utf-8")
-    media_src = GALLERY / "media"
-    if media_src.exists():
-        try:
-            (DIST / "media").symlink_to(media_src.resolve(), target_is_directory=True)
-        except (OSError, NotImplementedError):
-            # Windows without developer mode: serve media from upstream root instead
-            pass
+    media_report = deploy_media(problems, warnings)
 
     # ---- patched JS --------------------------------------------------------
     app = apply_patches((GALLERY / "app.js").read_text(encoding="utf-8"),
@@ -384,6 +397,8 @@ def build() -> dict:
             html = inject_switcher(html)
             d = DIST / code
             d.mkdir(parents=True, exist_ok=True)
+            if page == "index":
+                assert_wall(html, code, page_problems)
             (d / f"{page}.html").write_text(html, encoding="utf-8")
         # Only a locale whose pages are broken fails the build; a per-locale
         # problem must not be reported once per locale.
@@ -397,16 +412,121 @@ def build() -> dict:
     (ROOT / "site" / "build" / "coverage.json").write_text(
         json.dumps(coverage, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    return {"locales": locales, "coverage": coverage, "problems": problems}
+    return {"locales": locales, "coverage": coverage, "problems": problems,
+            "warnings": warnings, "media": media_report}
+
+
+def deploy_media(problems: list[str], warnings: list[str]) -> dict:
+    """Assemble site/dist/media from the two places the media actually live.
+
+    Upstream's git tree holds **posters only** -- `gallery/media/poster/*.jpg`,
+    64 files, 0.8 MB. The **214 mp4 previews are not in git at all**; they are
+    published as GitHub releases and `platform/mirror_site.py --media`
+    downloads them into `upstream/site-mirror/media/`. That split is the whole
+    reason the site shipped with no motion, and the previous code could not have
+    found the videos even if it had worked.
+
+    It symlinked `site/dist/media` at `gallery/media`. Two things went wrong and
+    neither was visible:
+
+    * **the symlink failed.** Windows without developer mode raises `OSError`,
+      and the handler was `pass` -- so the directory simply was not there;
+    * **even on success it would have been posters without videos**, since the
+      mp4s are in the other tree.
+
+    So: copy both, and fail loudly when a source is missing. "The site built fine
+    and has no video" is not a state anyone should be able to reach by accident,
+    and the failure that produced it was a bare `pass`.
+
+    Copying rather than linking is deliberate. A symlink does not survive being
+    uploaded to Cloudflare Pages, and it does not survive being opened by someone
+    who has not run the mirror.
+    """
+    posters = GALLERY / "media" / "poster"
+    videos = ROOT / "upstream" / "site-mirror" / "media"
+
+    n_posters = n_videos = 0
+    if posters.is_dir():
+        dest = DIST / "media" / "poster"
+        dest.mkdir(parents=True, exist_ok=True)
+        for p in posters.glob("*.jpg"):
+            shutil.copy2(p, dest / p.name)
+            n_posters += 1
+    else:
+        warnings.append(
+            f"no posters at {posters}; the wall will fall back to the clip's own "
+            f"first frame. Run: python platform/mirror_site.py --media")
+
+    if videos.is_dir():
+        for p in videos.glob("*.mp4"):
+            shutil.copy2(p, DIST / "media" / p.name)
+            n_videos += 1
+        # The mirror also parks posters next to the clips; skip them, they are
+        # already copied from the tree that is in git.
+    else:
+        warnings.append(
+            f"no video previews at {videos}. The 214 mp4 files are NOT in "
+            f"upstream's git tree -- they are GitHub release assets, so a fresh "
+            f"clone legitimately has none until you run "
+            f"`python platform/mirror_site.py --media` (128 MB). The site will "
+            f"build and every page will say it is a catalogue of motion with "
+            f"nothing to play, which is the state this function exists to make "
+            f"visible. platform/site/check_seo.py fails on it.")
+
+    if not n_videos and not warnings:
+        warnings.append("site/dist/media has no mp4; the motion wall will be blank")
+    return {"posters": n_posters, "videos": n_videos}
+
+
+def assert_wall(html: str, code: str, problems: list[str]) -> None:
+    """The home page must still contain the motion wall.
+
+    A check on the *output*, not on the patch that is supposed to produce it. The
+    patch count was `required=0`, which makes "the wall's media paths were not
+    rewritten" indistinguishable from "the wall is not there at all" -- and the
+    second of those is what actually happened, invisibly, for the whole life of
+    this site.
+
+    Three independent ways to ship a home page with no motion, all of which
+    passed every gate:
+      1. the inline script deleted along with the L10N dictionary,
+      2. the media path left one directory too shallow, so every fetch 404s,
+      3. `site/dist/media/` absent entirely because a symlink failed.
+    Each is invisible to a test that reads the DOM and looks for cards. So this
+    reads the static file and looks for the thing itself.
+    """
+    if "createElement('video')" not in html and 'createElement("video")' not in html:
+        problems.append(
+            f"{code}/index.html: the motion wall is gone -- no createElement('video') "
+            f"in the static file. Something removed or never emitted the inline script.")
+    if "../media/" not in html:
+        problems.append(
+            f"{code}/index.html: no '../media/' path, so every poster and clip "
+            f"request resolves to a 404. The path rewrite did not apply.")
 
 
 def strip_inline_l10n(html: str) -> str:
-    """Remove index.html's inline L10N object and its applyLanguage() call."""
+    """Retire index.html's inline L10N dictionary and hand applyLanguage() over.
+
+    The dictionary is replaced *in place*, and the enclosing `<script>` block is
+    left alone. That is not a stylistic preference.
+
+    The first version removed the whole block from the opening `<script>` to the
+    matching `</script>`, reasoning that a dictionary cannot outlive its script.
+    On index.html that was wrong: `const L10N` and the 16-clip motion wall share
+    **one** script, so deleting the block deleted the wall as well. The build
+    produced a home page with 16 empty tiles, no `<video>`, no `fetch`, and no
+    error -- and every gate was green, because no gate had ever asserted that the
+    page still contains the thing that makes it a home page.
+
+    `L10N` has exactly one reader, `t()`, and `t()` has no call sites left once
+    `applyLanguage()` is replaced below, so an empty object is inert rather than
+    broken. Sibling scripts are now untouchable by construction.
+    """
     m = re.search(r"const L10N = \{", html)
     if m:
-        start = html.rfind("<script>", 0, m.start())
-        depth, i = 0, m.end() - 1
-        quote = None
+        depth, i, quote = 0, m.end() - 1, None
+        end_at = None
         while i < len(html):
             ch = html[i]
             if quote:
@@ -422,10 +542,19 @@ def strip_inline_l10n(html: str) -> str:
             elif ch == "}":
                 depth -= 1
                 if depth == 0:
-                    end = html.find("</script>", i)
-                    html = html[:start] + html[end:]
+                    end_at = i
                     break
             i += 1
+        if end_at is not None:
+            html = html[:m.start()] + "const L10N = {};" + html[end_at + 1:]
+        else:
+            # An unbalanced brace means the dictionary was never parsed
+            # correctly, and guessing where it ends would be a silent corruption.
+            raise SystemExit(
+                "index.html: `const L10N = {` has no matching `}`. Refusing to "
+                "guess where it ends -- the previous behaviour deleted the "
+                "enclosing <script>, which on this page also holds the motion wall.")
+
     # the state block still declares language + applyLanguage(); the runtime
     # owns them now
     html = re.sub(r"const state = \{[^}]*\};",
@@ -668,8 +797,13 @@ def main() -> int:
               "or the static card block will be the untranslated template")
 
     res = build()
+    # `problems` blocks the build; `warnings` does not. A missing media mirror is
+    # a warning here and a hard failure in check_seo.py, which is the single gate
+    # a release runs. Two authorities for one fact is how a gate stops being one.
     print(json.dumps({"locales": res["locales"],
                       "coverage": {k: v["overall_pct"] for k, v in res["coverage"].items()},
+                      "media": res["media"],
+                      "warnings": res["warnings"],
                       "problems": res["problems"]}, ensure_ascii=False, indent=2), flush=True)
     if res["problems"]:
         return 1

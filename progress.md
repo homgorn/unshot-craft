@@ -141,6 +141,33 @@ template. Running the build after the prerender drops every translation silently
 refuses to run without it — which is how the culprit was found: `build_site.py
 --serve`, used to start a test server, was rebuilding the tree it served.
 
+**The site had no motion on it, through three separate faults at once.**
+The home page's 16-clip wall was an inline script that shared a `<script>` block
+with upstream's `L10N` dictionary, and the code that retired the dictionary
+deleted the whole block; the media paths were rewritten by an `apply_patches`
+entry written for single quotes when the source uses backticks, with
+`required=0`, so the miss was silent; and `site/dist/media` was a symlink to
+`gallery/media`, which holds **64 posters and no videos at all**, created inside a
+`try` whose handler was `pass`, so on Windows it was simply never there. The 214
+mp4 previews are GitHub release assets and are not in upstream's git tree — they
+come from `platform/mirror_site.py --media`. Every gate was green throughout,
+because every gate read the DOM after JavaScript had run. Now there are **157
+cards with a playable clip in the static block**, each `<video>` checked against
+disk before it is written, and `check_seo.py` fails on a home page without
+`createElement('video')`, on a `./media/` path, on a dangling clip or poster, and
+on an empty `site/dist/media/`.
+
+**F060 renders.** `platform/render/run.py` produces **117 rendered clips** in
+`render/out/`, 32.4 MB, and `--verify` reads all 117 back with `ffprobe` and
+compares each frame count against the index. It runs in `platform/render/.work/`
+because `npm install` writes into whatever directory it runs in and `upstream/`
+is a pinned read-only clone. `check_seo.py` additionally verifies that every
+declared `VideoObject` duration matches the real length of the file it names —
+a check that exists because the first version took
+`shot_card.duration_frames` (how long the shot should hold in a film) for the
+clip's length (how long the demo component runs), declared `PT0.4S` on a
+4-second video, and had 6 wrong out of 6 sampled, every one of them plausible.
+
 **The index — built and working.** `platform/ingest/` is a dependency-free
 Python pipeline (hand parsers for YAML-ish frontmatter, markdown tables, JS
 object literals, and TSX motion literals). Output:

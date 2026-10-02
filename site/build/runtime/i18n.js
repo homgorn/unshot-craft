@@ -134,6 +134,17 @@
     scope.querySelectorAll('[data-i18n-aria-label]').forEach(function (node) {
       node.setAttribute('aria-label', s(node.dataset.ns || 'ui', node.dataset.i18nAriaLabel));
     });
+    // Attribute-valued copy. `placeholder` is the one that matters: the library's
+    // search box is the most prominent text on the page and there was no way to
+    // translate it, so on /ru/ it read "Search names, use cases, and styles..."
+    // while every card under it was in Russian. A localised site with an
+    // English search box is a localised site nobody can search.
+    scope.querySelectorAll('[data-i18n-placeholder]').forEach(function (node) {
+      node.setAttribute('placeholder', s(node.dataset.ns || 'ui', node.dataset.i18nPlaceholder));
+    });
+    scope.querySelectorAll('[data-i18n-title]').forEach(function (node) {
+      node.setAttribute('title', s(node.dataset.ns || 'ui', node.dataset.i18nTitle));
+    });
     // data-l10n is the upstream index.html contract and may contain markup.
     scope.querySelectorAll('[data-l10n]').forEach(function (node) {
       node.innerHTML = s(node.dataset.ns || 'page', node.dataset.l10n);
