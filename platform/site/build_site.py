@@ -62,6 +62,30 @@ APP_PATCHES: list[tuple[str, str, int, str]] = [
      "window.__I18N__.mountSwitcher();", 1, "i18n source"),
     ("const libraryEndpoint = staticGallery ? './api/library.json' : '/api/library';",
      "const libraryEndpoint = staticGallery ? '../api/library.json' : '/api/library';", 1, "library path"),
+    # The media URLs inside library.json are `./media/<name>.mp4?v=…` and they are
+    # emitted into `data-src` **verbatim**. That resolves against the page, so on
+    # `/ru/library.html` every clip was fetched from `/ru/media/…` and 404'd.
+    #
+    # The prerendered block had its paths rewritten, the runtime's did not -- which
+    # is why the page played correctly at first paint and went blank a moment later
+    # as app.js replaced it. Both halves came from the same payload and only one
+    # was corrected.
+    #
+    # `required=2` because this exact miss is silent: the file is valid, the static
+    # block is right, every gate passes, and the only evidence is a 404 line in a
+    # dev server's log. Two sites emit the URL -- an `<img>` for a style with a
+    # still and a `<video>` for the rest -- and patching one leaves a whole class
+    # of clip 404ing, so the count is asserted rather than accepted.
+    ('${escapeHtml(style.media.url)}',
+     '${escapeHtml(mediaUrl(style.media.url))}', 2, "media url depth"),
+    ("const libraryEndpoint = staticGallery ? '../api/library.json' : '/api/library';",
+     "const libraryEndpoint = staticGallery ? '../api/library.json' : '/api/library';\n"
+     "  // `library.json` states media paths relative to the site root. A page lives\n"
+     "  // one directory down, so the prefix has to be added here rather than by\n"
+     "  // rewriting the payload -- the payload is the index, and ADR 0002 says the\n"
+     "  // database is the source of truth for it.\n"
+     "  const mediaUrl = (u) => (u || '').replace(/^\\.\\/media\\//, '../media/');",
+     1, "mediaUrl helper"),
     ("  language: savedLanguage === 'zh' ? 'zh' : 'en',",
      "  language: window.__I18N__.locale,", 1, "locale from URL"),
     ("const text = (key) => translations.ui[state.language][key] || key;",

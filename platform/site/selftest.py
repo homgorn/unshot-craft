@@ -406,7 +406,21 @@ def main() -> int:
                 time.sleep(0.25)
             return False
 
-        cards_ready = "document.querySelectorAll('#ai-stream-response').length > 0"
+        # Wait for the *runtime*, not for the static block.
+        #
+        # `#ai-stream-response` is present the instant the prerendered HTML is
+        # parsed, so waiting on it returned before app.js had fetched
+        # library.json, run apply(), and mounted the switcher. The checks that
+        # follow -- no raw i18n keys on screen, switcher lists every locale --
+        # then ran against a page the runtime had not touched yet, and on
+        # `/zh/library.html`, the largest page, they failed about three times in
+        # five runs while the page itself was correct.
+        #
+        # `button.locale-flag` is created by `mountSwitcher()`, which runs inside
+        # `applyLanguage()` after `apply()`. Its presence means the runtime has
+        # finished, which is the thing actually being waited for.
+        cards_ready = ("!!document.querySelector('button.locale-flag') && "
+                       "document.querySelectorAll('#ai-stream-response').length > 0")
         for lc in locales:
             if not (DIST / lc / "library.html").exists():
                 continue
