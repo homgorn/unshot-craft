@@ -54,8 +54,18 @@ if (Test-Path "upstream/video-shotcraft/gallery/library.html") {
     if ($LASTEXITCODE -ne 0) { throw "site build failed" }
     python platform/site/prerender.py | Out-Null
     if ($LASTEXITCODE -ne 0) { throw "site prerender failed" }
+    # seo runs LAST on purpose. build_site regenerates the pages, prerender bakes
+    # translated card text into the body, and seo rewrites the head, creates the
+    # 471 per-card pages and regenerates the sitemap to match. Any earlier and the
+    # head is rebuilt underneath it; any later and the card pages and the sitemap
+    # describe a tree that no longer exists.
+    python platform/site/seo.py --build | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "seo build failed; see platform/site/seo.py" }
+    python platform/site/icons.py | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "icon generation failed" }
     $locales = (Get-ChildItem site/dist -Directory | Where-Object { Test-Path (Join-Path $_.FullName "library.html") }).Count
-    Step ("site: " + $locales + " locales built to site/dist/")
+    $cards = (Get-ChildItem site/dist/*/card/*.html -ErrorAction SilentlyContinue).Count
+    Step ("site: " + $locales + " locales, " + $cards + " card pages")
 } else {
     Step "site: skipped (no upstream gallery)"
 }
@@ -78,7 +88,8 @@ $gate = @(
     @{ name = "wiki audit";   cmd = "platform/wiki/audit_quality.py" },
     @{ name = "card briefs";  cmd = "platform/prompts/build_prompts.py --lint" },
     @{ name = "cat briefs";   cmd = "platform/catalog/build_briefs.py --lint" },
-    @{ name = "coverage";     cmd = "platform/site/check_coverage.py" }
+    @{ name = "coverage";     cmd = "platform/site/check_coverage.py" },
+    @{ name = "seo";          cmd = "platform/site/check_seo.py" }
 )
 foreach ($g in $gate) {
     # Splat the argv array. Indexing a split with `[1..(len-1)]` on a one-element

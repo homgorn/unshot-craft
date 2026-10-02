@@ -43,6 +43,13 @@ PAGES = ("index", "library", "showcase")
 # compares against used to be hardcoded, which meant an upstream bump would
 # either fail the suite for the wrong reason or, worse, be made to pass by
 # editing the test.
+# Directory name -> BCP-47 tag, owned by platform/site/seo.py (META) and
+# imported rather than restated: two copies of this table is one table too
+# many, and the failure mode is a test that disagrees with the build.
+sys.path.insert(0, str(ROOT / "platform" / "site"))
+from seo import META as _SEO_META  # noqa: E402
+HREFLANG = {code: m[3] for code, m in _SEO_META.items()}
+
 CARD_COUNT = json.loads(
     (DIST / "api" / "library.json").read_text(encoding="utf-8"))["stats"]["cardCount"] \
     if (DIST / "api" / "library.json").exists() else 0
@@ -276,20 +283,28 @@ def main() -> int:
                     continue
                 code, html, _ = get(f"{base}/{lc}/{page}.html")
                 check(f"{lc}/{page}.html 200", code == 200, str(code))
+                # hreflang carries a BCP-47 tag, not our directory name: `zh` is
+                # ambiguous between Traditional and Simplified, so the tag is
+                # `zh-Hans`. These assertions used to compare the tag against the
+                # directory name, which meant the correct tag read as a dangling
+                # hreflang and the test failed for a reason that was the test's.
                 hrefs = set(re.findall(r'hreflang="([^"]+)"', html))
-                missing = [l for l in locales + ["x-default"] if l not in hrefs]
+                want_tags = {HREFLANG[l] for l in locales} | {"x-default"}
+                missing = sorted(want_tags - hrefs)
                 check(f"{lc}/{page}.html hreflang covers all built locales + x-default",
                       not missing, f"missing {missing}")
                 # And the mirror image: no hreflang may point at a locale we did
-                # not build, because an hreflang to a 404 is a broken promise to a
-                # crawler.
-                dangling = sorted(h for h in hrefs
-                                  if h != "x-default" and not (DIST / h).is_dir())
+                # not build, because an hreflang to a 404 is a broken promise.
+                tag_to_dir = {v: k for k, v in HREFLANG.items()}
+                dangling = sorted(
+                    tag_to_dir.get(h, h) for h in hrefs
+                    if h != "x-default" and h in tag_to_dir
+                    and not (DIST / tag_to_dir[h]).is_dir())
                 check(f"{lc}/{page}.html advertises no unbuilt locale",
                       not dangling, f"hreflang -> {dangling} which 404")
                 canon = re.search(r'<link rel="canonical" href="([^"]+)"', html)
                 check(f"{lc}/{page}.html canonical self-ref",
-                      bool(canon) and f"/{lc}/{page}.html" in canon.group(1),
+                      bool(canon) and f"/{lc}/" in canon.group(1),
                       canon.group(1) if canon else "absent")
                 check(f"{lc}/{page}.html no upstream canonical",
                       "vincentwei1021.github.io/video-shotcraft/library.html" not in html)
@@ -299,14 +314,35 @@ def main() -> int:
         code, xml, _ = get(base + "/sitemap.xml")
         check("sitemap 200", code == 200)
         locs = re.findall(r"<loc>([^<]+)</loc>", xml)
+
+        # The sitemap is checked against each page's own canonical, not against a
+        # hardcoded URL shape. The previous version asserted `/zh/index.html`
+        # because that was the shape at the time; the canonical is now `/zh/`, and
+        # a check that encodes a string instead of a relationship is a check that
+        # fails the moment the canonical changes for a good reason -- which is
+        # exactly what happened, and why it was rewritten rather than satisfied.
         for lc in locales:
             for page in PAGES:
-                want = f"{page}.html"
-                if not (DIST / lc / f"{page}.html").exists():
+                f = DIST / lc / f"{page}.html"
+                if not f.exists():
                     continue
-                check(f"sitemap has /{lc}/{want}",
-                      any(f"/{lc}/{want}" in l for l in locs))
+                m = re.search(r'<link rel="canonical" href="([^"]+)"',
+                              f.read_text(encoding="utf-8"))
+                want = m.group(1) if m else ""
+                check(f"sitemap lists {lc}/{page}.html at its canonical",
+                      bool(want) and want in locs,
+                      f"canonical {want!r} not among the {len(locs)} sitemap URLs")
+
+        card_pages = sorted((DIST / locales[0] / "card").glob("*.html")) \
+            if (DIST / locales[0] / "card").is_dir() else []
+        if card_pages:
+            in_sm = sum(1 for p in card_pages
+                        if f"/card/{p.stem}.html" in " ".join(locs))
+            check(f"sitemap lists the {len(card_pages)} per-card pages",
+                  in_sm == len(card_pages), f"{in_sm} of {len(card_pages)} listed")
         check("sitemap has x-default alternates", 'hreflang="x-default"' in xml)
+        check("sitemap is on our origin",
+              "vincentwei" not in xml, "sitemap names the author's domain")
 
         code, root_html, _ = get(base + "/")
         check("root 200", code == 200)
