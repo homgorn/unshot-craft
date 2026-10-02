@@ -1,0 +1,50 @@
+{
+  "renderer": "remotion",
+  "remotion_version": "4.0.484",
+  "fps": 30,
+  "design_stage": [
+    480,
+    270
+  ],
+  "scale": 1,
+  "rendered": 1,
+  "failed": 2,
+  "total_bytes": 440053,
+  "total_seconds": 0,
+  "licence": {
+    "remotion": "free for individuals and companies of up to three people; paid above that. This repo is rendered by its author as an individual, so the free tier applies. That is a fact about who runs the render, not about the code.",
+    "video_talkcraft": "PolyForm Noncommercial -- still a blocker for anything we deliver to a paying client"
+  },
+  "clips": [
+    {
+      "key": "basic-3d-scene",
+      "component_name": "Basic3DScene",
+      "category": "camera",
+      "status": "cached",
+      "bytes": 440053,
+      "seconds": null,
+      "duration_frames": 180,
+      "error": null
+    },
+    {
+      "key": "crash-impact-real",
+      "component_name": "CrashImpactReal",
+      "category": "camera",
+      "status": "failed",
+      "bytes": 0,
+      "seconds": 11.2,
+      "duration_frames": 120,
+      "error": "35:21)\u001b[39m\n\u001b[31m    at async renderVideoFlow (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\render-flows\\render.js:167:53)\u001b[39m\n\u001b[31m    at async render (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\render.js:163:5)\u001b[39m\n\u001b[31m    at async cli (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\index.js:97:13)\u001b[39m\n"
+    },
+    {
+      "key": "crash-zoom-real",
+      "component_name": "CrashZoomReal",
+      "category": "camera",
+      "status": "failed",
+      "bytes": 0,
+      "seconds": 7.0,
+      "duration_frames": 120,
+      "error": "35:21)\u001b[39m\n\u001b[31m    at async renderVideoFlow (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\render-flows\\render.js:167:53)\u001b[39m\n\u001b[31m    at async render (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\render.js:163:5)\u001b[39m\n\u001b[31m    at async cli (C:\\susa ai\\shotcraft\\platform\\render\\.work\\node_modules\\@remotion\\cli\\dist\\index.js:97:13)\u001b[39m\n"
+    }
+  ]
+}

@@ -4,10 +4,10 @@ The stack is not uniformly free. Before anything is sold or published, this is t
 
 | subject | licence | commercial use | blocks us | obligation |
 |---|---|---|---|---|
-| Remotion (render engine) | Remotion License | `restricted` | **yes** | free for individuals and small companies; companies may need a paid licence |
-| Tracked-out audio (6 files 无法反查) | unknown | `unknown` | **yes** | must be re-licensed or replaced before any commercial delivery |
+| Tracked-out audio (5 files 无法反查; upstream prose says 6) | unknown | `unknown` | **yes** | must be re-licensed or replaced before any commercial delivery; `audio_asset.commercial_ok = 0` until then |
 | video-talkcraft (sibling skill) | PolyForm Noncommercial 1.0.0 | `requires-license` | **yes** | commercial use of the tool requires written authorisation |
 | Mixkit SFX + BGM | Mixkit Free License | `free` | no | free for commercial use, no attribution required |
+| Remotion (render engine) | Remotion License | `free-for-individuals` | no | free for individuals and companies of up to three people; a company above that needs a paid licence, which is a pricing question at delivery time, not a legal one. platform/render/run.py records the tier it ran under. |
 | Shot-recipe provenance (48 cards, 2026-08) | Apache-2.0, techniques re-implemented | `free` | no | no third-party footage or brand assets included; do not claim endorsement |
 | video-shotcraft core | Apache-2.0 | `free` | no | keep copyright + NOTICE when redistributing |
 
@@ -26,6 +26,7 @@ The stack is not uniformly free. Before anything is sold or published, this is t
 ## What this means for us
 
 - The **core is Apache-2.0**: fork, modify, sell services built on it. Keep the copyright and add a NOTICE when redistributing.
-- **Remotion is the real commercial gate.** Free for individuals and small companies; companies may need a paid licence. Any client deliverable has to price this in, or the client buys the licence.
-- **video-talkcraft is PolyForm Noncommercial.** We can read it for ideas and port techniques (upstream already did: 19 cards were ported across), but we cannot ship it or build a product on it commercially without authorisation.
-- **Tracked-out audio** is the quietest risk: 6 files with no traceable source. Replace them before a client-facing delivery rather than arguing about it later.
+- **Remotion's paid tier applies to companies above three people, not to individuals.** This repo is rendered by an individual, so the free tier applies and `platform/render/run.py` runs; see `render/out/` and `platform/render/render_report.json`. A client deliverable rendered *for a company* has to price the licence in, or the client buys it — which is a pricing question, not a legal one.
+- **The distinction is which kind of fact it is.** A licence term binds whoever ships the code. A free tier is a fact about who is running it. Collapsing the two is how a project refuses to build something it is allowed to build — or, worse, ships something it is not.
+- **video-talkcraft is PolyForm Noncommercial.** We can read it for ideas and port techniques (upstream already did: 19 cards were ported across), but we cannot ship it or build a product on it commercially without authorisation. This one *is* a hard constraint.
+- **Tracked-out audio** is the quietest risk: 5 files with no traceable source (`commercial_ok = 0`). Replace them before a client-facing delivery rather than arguing about it later.

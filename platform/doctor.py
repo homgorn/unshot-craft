@@ -503,6 +503,66 @@ class Doctor:
             self.add(f"i18n.provenance.{r[0]}_{r[1]}", OK,
                      f"{r[0]}/{r[1]}: {r[2]} string(s) with a recorded origin")
 
+    def check_render(self) -> None:
+        """The render report against what is actually on disk (F060).
+
+        A render report is a claim like any other, and a claim that nothing reads
+        is decoration. The check that matters is the count: a report claiming 117
+        clips with 80 files on disk means the report is stale, and a stale report
+        on a deliverable is worse than no report because it will be quoted.
+
+        The licence state travels with it. Remotion's paid tier applies to
+        companies above three people and not to individuals, and this repo is
+        rendered by an individual -- so the render is authorised, and the report
+        says which tier it ran under so the next reader does not have to ask.
+        """
+        rep = ROOT / "platform" / "render" / "render_report.json"
+        out = ROOT / "render" / "out"
+        if not rep.exists():
+            self.add("render.report", WARN,
+                     "no render report; run python platform/render/run.py --render "
+                     "(F060 is a claim until a report exists)")
+            return
+        try:
+            data = json.loads(rep.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            self.add("render.report", ERROR, f"render report is not valid JSON: {exc}")
+            return
+
+        clips = [c for c in data.get("clips", []) if c.get("status") in ("ok", "cached")]
+        on_disk = sorted(out.glob("*.mp4")) if out.is_dir() else []
+        have = {p.stem for p in on_disk}
+        claimed = {c["key"] for c in clips}
+        missing = sorted(claimed - have)
+        orphan = sorted(have - claimed)
+        total = sum(p.stat().st_size for p in on_disk)
+        self.add("render.report", OK if not missing else ERROR,
+                 f"{len(clips)} clip(s) claimed, {len(on_disk)} on disk, "
+                 f"{total / 1e6:.1f} MB, remotion {data.get('remotion_version')}, "
+                 f"scale {data.get('scale')}",
+                 [f"{k}: claimed rendered, file absent" for k in missing[:8]] or None)
+        self.add("render.orphans", OK if not orphan else WARN,
+                 f"{len(orphan)} mp4 on disk that the report does not claim"
+                 + (f": {orphan[:5]}" if orphan else ""),
+                 [f"{k} is on disk but not in the report" for k in orphan[:6]] or None)
+
+        # Every clip rendered from a stated duration must be that long. A clip
+        # with no stated duration was rendered at the floor and the report has to
+        # say which is which, or the two kinds look identical in a file listing.
+        stated = [c for c in clips if c.get("duration_frames")]
+        unstated = [c for c in clips if not c.get("duration_frames")]
+        self.add("render.duration_provenance", OK,
+                 f"{len(stated)} clip(s) rendered at a duration the index states, "
+                 f"{len(unstated)} at the {data.get('fps', 30)}f floor with no "
+                 f"stated duration",
+                 None)
+
+        lic = data.get("licence", {})
+        self.add("render.licence", OK if lic else WARN,
+                 (f"remotion: {lic.get('remotion', 'unrecorded')[:90]}"
+                  if lic else "the report records no licence state; a reader "
+                              "cannot tell whether the render was authorised"))
+
     def check_catalog(self) -> None:
         """The cinematic-technique layer (ADR 0007).
 
@@ -633,6 +693,7 @@ def main() -> int:
     d.check_wiki_freshness()
     d.check_prompt_briefs()
     d.check_translation_provenance()
+    d.check_render()
     d.check_catalog()
 
     errors = [r for r in d.results if r.status == ERROR]

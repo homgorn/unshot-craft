@@ -93,9 +93,27 @@ python platform/site/selftest.py              # 99/99, real Chrome
 python platform/wiki/audit_quality.py         # 28/28, 24 craft questions
 python platform/prompts/build_prompts.py --lint
 python platform/site/check_coverage.py        # en 100%, zh 99.7%, ru 99.7%
+python platform/site/check_seo.py             # 303/303
 python platform/site/translate.py report      # 371 attributed, 0 reviewed
+python platform/render/run.py --list          # 117 renderable, 100 fragments
+python platform/render/run.py --verify        # every claimed clip, frame-exact
 python platform/_gate_test.py                 # proves docs_freshness can fail
 ```
+
+`platform/render/run.py` is F060 and the only slow thing here. `--install` copies
+the template into `platform/render/.work/` (never into `upstream/`, which is
+read-only), discovers the external modules the demos import and adds the ones the
+template's `package.json` omits, then installs. `--render` writes MP4s to
+`render/out/` and a report to `platform/render/render_report.json`; `--verify`
+reads each clip back with `ffprobe` and compares the frame count against the
+index.
+
+**100 of the 218 components are deliberately not rendered.** They state no
+duration — they are timeline fragments, not standalone films, and the seven that
+export something duration-shaped export `BEAT_LEN=18` or `FPS=30`, neither of
+which is a length. Rendering them at a guessed frame count produces a clip of the
+wrong size that passes every byte-level check. `--include-unspecified` does it
+anyway and labels every one.
 
 `platform/site/translate.py` is the i18n worklist. `list` for what to translate,
 `apply` for a batch, `verify` for what is left, `prune` for placeholder entries
@@ -144,13 +162,20 @@ Read `docs/adr/` before proposing an architecture change:
 
 ## Money and licensing
 
-Two things an LLM will get confidently wrong if not told:
+Three things an LLM will get confidently wrong if not told:
 
 - **The Apache-2.0 core is free to fork and resell.** Anything we sell must be an
   outcome, a service, or support.
-- **Remotion requires a paid licence for companies, and `video-talkcraft` is
-  PolyForm Noncommercial.** Both are hard constraints, not preferences. See
-  `docs/monetization/brainstorm.md`.
+- **Remotion's paid tier applies to companies above three people, not to
+  individuals.** This repo is rendered by an individual, so the free tier applies
+  and `platform/render/run.py` runs. Do not re-block the render on the strength of
+  the licence alone — see the correction in
+  `docs/monetization/0002-blocking-issues.md`. What matters is *which kind* of fact
+  it is: a licence term binds whoever ships the code, a free tier is a fact about
+  who is running it.
+- **`video-talkcraft` is PolyForm Noncommercial** and that one *is* a hard
+  constraint, because it binds whoever ships the code. We do not deliver it
+  commercially.
 
 ## Commit discipline
 

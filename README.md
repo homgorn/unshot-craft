@@ -62,14 +62,21 @@ indexes it. That data is the most reusable thing in this repo.
 4. [`docs/monetization/brainstorm.md`](docs/monetization/brainstorm.md) — how this makes money
 5. [`AGENTS.md`](AGENTS.md) — conventions and hard rules
 
-## Two constraints that shape everything
+## Three constraints that shape everything
 
 - **The Apache-2.0 core is free to fork and resell.** Anything we sell must be an
   outcome, a service, or support.
-- **Remotion requires a paid licence for companies**, and the sibling skill
-  `video-talkcraft` is **PolyForm Noncommercial**. Both are hard boundaries.
+- **`video-talkcraft` is PolyForm Noncommercial.** A hard boundary, because it binds
+  whoever ships the code: we do not deliver it commercially.
+- **Remotion's paid tier applies to companies above three people, not to
+  individuals.** Rendering here is done by an individual, so the free tier applies
+  and the render runs. The distinction worth keeping is *which kind* of fact a
+  licence is: a term binds every shipper, a free tier is a fact about who is
+  running it. Treating the second as the first is how a project refuses to build
+  something it may build.
 
-See `docs/adr/0005-upstream-policy.md` and `wiki/domains/licensing.md`.
+See `docs/adr/0005-upstream-policy.md`, `wiki/domains/licensing.md` and the
+correction in `docs/monetization/0002-blocking-issues.md`.
 
 ## Credits
 

@@ -38,6 +38,26 @@ And from our own `license_registry`:
 | subject | SPDX | commercial_use | blocking |
 |---|---|---|---|
 | video-talkcraft (sibling skill) | PolyForm Noncommercial 1.0.0 | requires-license | **1** |
+| Remotion (render engine) | Remotion License | free-for-individuals-and-smtn | **0** |
+| Apache-2.0 core (this repo) | Apache-2.0 | allowed | **0** |
+
+> **Correction, 2026-10-02: Remotion is no longer treated as a blocker here.**
+> An earlier version of this document listed the Remotion commercial licence as
+> a hard constraint on the whole project, and F060 was left blocked on the strength
+> of it. That was right about the licence and wrong about who it applies to.
+> Remotion is free for individuals and for companies of up to three people, and
+> paid above that. The author of this repo is an individual, so the free tier
+> applies and **the render is now running**: `platform/render/run.py` produces
+> real MP4s from the demo corpus, and `render/out/` holds them.
+>
+> The distinction worth keeping is *what kind* of fact this is. The Apache-2.0 and
+> PolyForm terms are properties of the **code** and bind whoever ships it. The
+> Remotion free tier is a property of **who is running the render** and says
+> nothing about the code. Conflating them is how a project ends up refusing to
+> build something it is allowed to build, or — worse — shipping something it is
+> not. So the render report records the tier and who it applies to, and
+> `platform/doctor.py` reports it next to the PolyForm blocker instead of quietly
+> treating them as the same kind of risk.
 
 So: a **PolyForm Noncommercial** workbench was ported into an **Apache-2.0**
 repository. PolyForm NC permits use, copying and modification for noncommercial

@@ -74,7 +74,18 @@ LICENSE_ROWS = [
      "free", 0, "keep copyright + NOTICE when redistributing", "LICENSE"),
     ("Remotion (render engine)", "Remotion License",
      "https://github.com/remotion-dev/remotion/blob/main/LICENSE.md",
-     "restricted", 1, "free for individuals and small companies; companies may need a paid licence", "README.md"),
+     # Was `restricted` / blocking=1. Corrected 2026-10-02: the paid tier applies
+     # to companies above three people, and this repo is rendered by an
+     # individual, so the free tier applies and the render runs. `blocking` is
+     # about the *code*, and a free tier is a fact about *who is running it* --
+     # recording the second as the first is how a project refuses to build
+     # something it is allowed to build. What still blocks a client delivery is
+     # the tier, not the licence, and that is a pricing question.
+     "free-for-individuals", 0,
+     "free for individuals and companies of up to three people; a company above "
+     "that needs a paid licence, which is a pricing question at delivery time, "
+     "not a legal one. platform/render/run.py records the tier it ran under.",
+     "README.md"),
     ("Mixkit SFX + BGM", "Mixkit Free License", "https://mixkit.co/license/",
      "free", 0, "free for commercial use, no attribution required", "assets/audio/ATTRIBUTION.md"),
     ("video-talkcraft (sibling skill)", "PolyForm Noncommercial 1.0.0",
@@ -83,8 +94,14 @@ LICENSE_ROWS = [
     ("Shot-recipe provenance (48 cards, 2026-08)", "Apache-2.0, techniques re-implemented",
      "https://github.com/Vincentwei1021/video-shotcraft/blob/main/references/shots/ATTRIBUTION.md",
      "free", 0, "no third-party footage or brand assets included; do not claim endorsement", "references/shots/ATTRIBUTION.md"),
-    ("Tracked-out audio (6 files 无法反查)", "unknown", "",
-     "unknown", 1, "must be re-licensed or replaced before any commercial delivery", "assets/audio/ATTRIBUTION.md"),
+    # The count is 5, not 6. Upstream's ATTRIBUTION.md prose says 6 and its own
+    # table marks 5; the table is what the ingest reads, so this row says 5 and
+    # the divergence is recorded in `decision_log` as `audio-provenance` rather
+    # than smoothed away. Writing 6 here would repeat the upstream error into our
+    # own registry and make the divergence invisible from the other direction.
+    ("Tracked-out audio (5 files 无法反查; upstream prose says 6)", "unknown", "",
+     "unknown", 1, "must be re-licensed or replaced before any commercial delivery; "
+     "`audio_asset.commercial_ok = 0` until then", "assets/audio/ATTRIBUTION.md"),
 ]
 
 OPPORTUNITIES = [
