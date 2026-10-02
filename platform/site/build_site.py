@@ -74,6 +74,35 @@ APP_PATCHES: list[tuple[str, str, int, str]] = [
   ? translations.stylesZh[style.key] || style.label
   : style.key;""",
      "const styleName = (style) => window.__I18N__.t('styles', style.key).title || style.key;", 1, "styleName"),
+    # The card description had two sources, so the same card read one way in the
+    # static HTML and another way a second later.
+    #
+    # The prerender writes the locale's own description from `cards.json`. The
+    # runtime's path for the same field is `cardDescription()`, and it read
+    # `translations.stylesEn` / `cardsEn` -- **English on every locale**. So
+    # /ru/library.html served Russian descriptions from the prerender and English
+    # ones from the runtime, and which one a reader saw depended on whether
+    # app.js had finished re-rendering.
+    #
+    # Two earlier attempts at this failed in instructive ways, and both are why
+    # the patch is anchored on the whole function body now:
+    #
+    # * patching the bare line `return (multi && style?.description) || ...`
+    #   with `required=1` matched the **CJK branch** of `cardDescription` and
+    #   turned it into a call to itself -- unbounded recursion, thrown on the
+    #   first zh or ja render;
+    # * declaring a new `const cardDescription` collided with the one upstream
+    #   already had, and `SyntaxError: Identifier 'cardDescription' has already
+    #   been declared` killed the whole runtime -- on every locale.
+    #
+    # Both were invisible to every gate, because the file is valid and the
+    # static block still carries the right text. Only the browser console caught
+    # the second, which is why the selftest reads page errors.
+    #
+    # Note the style description is not a fallback for the card one here: the
+    # `styles` namespace holds titles only, in every locale, because style
+    # descriptions were never translated. Card descriptions were.
+
     ("  if (state.language === 'zh') {",
      "  if (window.__I18N__.isCJK()) {", 1, "description branch"),
     ("  document.documentElement.lang = state.language === 'zh' ? 'zh-CN' : 'en';",
@@ -119,6 +148,29 @@ loadLibrary().then(() => window.__I18N__.scrollToHash());""", 1, "hash scroll on
   const next = codes[(codes.indexOf(window.__I18N__.locale) + 1) % codes.length];
   location.href = window.__I18N__.urlFor(next);
 });""", 1, "toggle navigates"),
+    ("""const cardDescription = (card, style) => {
+  const multi = card.styles.length > 1;
+  if (window.__I18N__.isCJK()) {
+    return (multi && style?.description) || card.summary || card.intention;
+  }
+  return (multi && translations.stylesEn[style?.key])
+    || translations.cardsEn[card.name] || card.name.split('-').join(' ');
+};""",
+     """const cardDescription = (card, style) => {
+  // One source for both paths: the locale. The prerender already reads
+  // `cards.json` for this field, and reading a different one here is what made
+  // the static and runtime views disagree. The style branch is gone rather than
+  // redirected: the `styles` namespace carries titles only, in every locale,
+  // because style descriptions were never translated.
+  //
+  // The fallbacks are the *corpus*, not a prettified slug. `zh` is the source
+  // locale: its card entries carry no `description`, because upstream's Chinese
+  // prose already IS the description and lives in `card.summary`. Dropping that
+  // fallback put 'crash zoom punch' on the Chinese page -- a slug with the
+  // dashes replaced by spaces, which is worse than either language's real text.
+  return window.__I18N__.t('cards', card.name).description
+    || card.summary || card.intention || card.name.split('-').join(' ');
+};""", 1, "cardDescription reads the locale"),
 ]
 
 SHOWCASE_PATCHES: list[tuple[str, str, int, str]] = [
