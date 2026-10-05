@@ -59,6 +59,38 @@
   }
 
   /**
+   * Is `code` one of the locales the payload ships?
+   *
+   * `DATA.locales` is an **array** of `{code, nativeName, htmlLang}` -- the same
+   * shape `htmlLang()` iterates a few lines below. The guard this replaces
+   * indexed it by code, which is `arr['ru']`, always `undefined`, so the locale
+   * was never pushed onto the fallback chain.
+   *
+   * What that cost, precisely: `legacy().ui` returned the fallback language for
+   * every locale on the site. Nothing the page shows went through it -- `app.js`
+   * reads chrome with `__I18N__.s('ui', key)`, which indexes `DATA.ns` directly
+   * and was never wrong, which is why a `/ru/` page rendered correct Russian
+   * with the bug in place. What `legacy()` does feed is the zh/en card and style
+   * title tables, which are zh and en on every locale by construction.
+   *
+   * So this was a silently wrong fallback chain rather than a visibly wrong page,
+   * which is the harder kind to find: it survives until something reads
+   * `legacy().ui`, at which point every locale shows English and there is nothing
+   * in the markup to grep for. `platform/site/check_i18n.js` now pins it.
+   */
+  function hasLocale(code) {
+    if (!code) return false;
+    var list = DATA.locales || [];
+    if (Object.prototype.toString.call(list) === '[object Array]') {
+      for (var i = 0; i < list.length; i += 1) {
+        if (list[i] && list[i].code === code) return true;
+      }
+      return false;
+    }
+    return Object.prototype.hasOwnProperty.call(list, code);
+  }
+
+  /**
    * Adapt our namespaced bundles to the flat shape upstream's app.js expects.
    * This is a compatibility shim, not the API: it exists so app.js stays a
    * minimal patch of the upstream file. app.js is patched by
@@ -67,7 +99,7 @@
   function legacy() {
     var langs = {};
     var all = [fallback];
-    if (DATA.locales[locale]) all.push(locale);
+    if (hasLocale(locale)) all.push(locale);
     for (var i = 0; i < all.length; i += 1) {
       var code = all[i];
       var ui = (DATA.ns.ui && DATA.ns.ui[code]) || {};

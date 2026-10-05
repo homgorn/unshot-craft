@@ -238,6 +238,10 @@ def main() -> int:
     # between the ledger and the site is visible instead of silently excluded.
     ADVERTISED = ["en", "zh", "ru", "es", "de", "fr", "pt", "ko", "ja"]
     built = [c for c in ADVERTISED if (DIST / c).is_dir()]
+    # Captured on the first locale and compared against on the rest. `en` is
+    # first in ADVERTISED and the fallback for everything, so it is both the
+    # baseline and the locale every other one is measured as differing from.
+    en_chrome: dict = {}
     try:
         import sqlite3
         db = sqlite3.connect(f"file:{(ROOT / 'platform' / 'db' / 'shotcraft.db').as_posix()}?mode=ro",
@@ -466,6 +470,76 @@ def main() -> int:
               return hits;
             })()""")
             check(f"{lc} has no raw i18n keys", not bad, f"{bad[:6]}")
+
+            # The chrome must be *in the page's language*, not merely present.
+            #
+            # Everything above this line was satisfiable by a page that renders
+            # English on /ru/ and /zh/: the attributes exist, the switcher says
+            # `ru`, the keys are not printed raw, and the runtime reports the
+            # right locale -- because the switcher reads the closure variable
+            # while the chrome goes through `legacy()`. Those two disagreed for a
+            # whole build, and every check here was green. So: read the rendered
+            # text of each `data-i18n` node and require it to differ from the same
+            # node on /en/, which is the only honest definition of "translated"
+            # available without hardcoding 74 strings per locale.
+            # Named `rendered`, not `chrome`: `chrome` is the browser handle in
+            # this file, and shadowing it turns a clean teardown into
+            # `AttributeError: 'dict' object has no attribute 'kill'` after
+            # every check has already passed.
+            #
+            # Scoped to the CHROME, deliberately. The first version of this walked
+            # every `[data-i18n]` node and failed only above a 35 % share of
+            # identical strings -- a threshold the 157 correctly-translated cards
+            # satisfied on their own, so the sidebar could be entirely English
+            # and the check would pass. The chrome is the part the visitor reads
+            # before any card: the heading, the intro, the ten filter buttons, the
+            # sidebar label, the stat labels, the search box, the skip link and
+            # the switcher. Every one of those is named, because a scoped check
+            # with an unnamed scope is the same problem wearing a different hat.
+            rendered = cdp.evaluate("""(() => {
+              const sels = [
+                '#filters [data-i18n]', '.stats [data-i18n]',
+                '#pageTitle', '#searchInput', '.skip-link',
+                '[data-locale-current]', '.category-link [data-i18n]',
+              ];
+              const out = {};
+              for (const sel of sels) {
+                for (const n of document.querySelectorAll(sel)) {
+                  const k = (n.dataset.i18n || n.id || sel) + '@'
+                          + ((n.textContent || '').trim() || n.placeholder || '');
+                  if (k) out[k] = (n.textContent || '').trim() || n.placeholder || '';
+                }
+              }
+              return out;
+            })()""")
+            if lc == "en":
+                en_chrome = rendered
+                # 18 nodes reach these selectors today. The floor is 10 so a
+                # refactor that breaks the selectors fails loudly instead of
+                # quietly shrinking the comparison to nothing -- a check whose
+                # sample can fall to zero passes by not running.
+                check("en chrome captured for comparison",
+                      len(en_chrome) >= 10, f"{len(en_chrome)} nodes")
+            elif not en_chrome:
+                check(f"{lc} chrome is translated, not the en strings", False,
+                      "the en baseline was never captured, so this check would "
+                      "pass by not running. ADVERTISED must list en first")
+            else:
+                identical = sorted(
+                    k for k, v in rendered.items()
+                    if k in en_chrome and v and v == en_chrome[k])
+                # A few chrome strings are legitimately identical in every
+                # language -- the brand name, "⌘ K", a count. So the bar is
+                # "nearly all differ", not "all differ": on the chrome alone, 80 %
+                # still leaves room for brand names while making an untranslated
+                # page impossible to pass.
+                share = len(identical) / max(len(rendered), 1)
+                check(f"{lc} chrome is translated, not the en strings",
+                      share < 0.20,
+                      f"{len(identical)}/{len(rendered)} ({share:.0%}) render "
+                      f"exactly the en text, e.g. {identical[:5]}. The runtime "
+                      f"resolves the locale for the switcher but not for the "
+                      f"strings, which is a half-translated page")
 
             # switcher present and populated from data
             items = cdp.evaluate(

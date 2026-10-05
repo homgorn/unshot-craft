@@ -115,13 +115,30 @@ $gate = @(
     # build defect. Without the flag this gate fails on every machine that has
     # not been told its own domain, and a gate that always fails is a gate nobody
     # reads. Deploy still has to set it: `check_dist.py` without the flag fails.
-    @{ name = "dist";         cmd = "platform/site/check_dist.py --allow-placeholder-origin" }
+    @{ name = "dist";         cmd = "platform/site/check_dist.py --allow-placeholder-origin" },
+    # The negative test behind the `_headers` rule in `check_dist.py`. Cheap, and
+    # without it that rule is indistinguishable from one that always passes.
+    @{ name = "headers fmt"; cmd = "platform/site/check_headers.py" },
+    # Executes the built i18n runtime under node and asks it for a string.
+    # Everything else about i18n checked the plumbing -- that attributes exist,
+    # that every namespace ships every locale, that the switcher renders -- and a
+    # `/ru/` page passed all of it with its heading, intro, search box, sidebar
+    # and all ten filter buttons in English. Only running the code tells you the
+    # lookup is wrong rather than the data.
+    # Run with node, not python. The gate is JavaScript because the thing it
+    # checks is a JavaScript runtime: a Python translation of `legacy()` would be
+    # a second implementation of the fallback chain, and agreeing with that one
+    # would say nothing about the one the browser runs. An optional `exe` per
+    # gate, defaulting to python so the other nine are untouched.
+    @{ name = "i18n runtime"; exe = "node"; cmd = "platform/site/check_i18n.js" }
 )
 foreach ($g in $gate) {
     # Splat the argv array. Indexing a split with `[1..(len-1)]` on a one-element
-    # command hands python an empty argument list, which it reads as "usage".
+    # command hands the interpreter an empty argument list, which python reads as
+    # "usage".
     $argv = @($g.cmd -split " ")
-    $out = & python @argv 2>&1
+    $exe = if ($g.exe) { $g.exe } else { "python" }
+    $out = & $exe @argv 2>&1
     if ($LASTEXITCODE -ne 0) {
         $out | Select-Object -Last 6 | ForEach-Object { Write-Host "    $_" }
         throw ("gate failed: " + $g.name)

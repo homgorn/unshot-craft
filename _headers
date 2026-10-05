@@ -28,7 +28,13 @@
 # ---------------------------------------------------------------------- media
 # 214 mp4 previews, 128 MB. Their content-address is the name, which changes
 # whenever the component does, so `immutable` is correct for them.
- /media/*
+#
+# The path starts at column 0. It did not: the line read ` /media/*`, with one
+# leading space, while every other rule below it was flush. A rule whose pattern
+# is not at the start of the line is not a path rule, so the one entry governing
+# 128 MB of video was the one that silently did not apply -- and `media/*` is the
+# rule a reader on a slow connection would feel most.
+/media/*
   Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *
 

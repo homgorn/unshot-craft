@@ -39,6 +39,14 @@ import os
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from _env import load as _load_env  # noqa: E402
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+# The single owner of `<html lang>`. Imported rather than restated: a checker that
+# keeps its own copy of the expected value is a second source of truth, and the
+# defect it missed here was two sources disagreeing.
+from build_site import META as BUILD_META  # noqa: E402
+
+HTML_LANG: dict[str, str] = {c: BUILD_META[c][0] for c in BUILD_META}
+
 _load_env()
 DEFAULT_ORIGIN = "https://shotcraft.example"
 
@@ -257,9 +265,18 @@ def audit(origin: str) -> dict:
             html = p.read_text(encoding="utf-8")
 
             lang = re.search(r'<html[^>]*\blang="([^"]+)"', html)
-            ck(bool(lang) and lang.group(1) != "en" or code == "en",
-               f"{code}/{page}: <html lang> matches the locale",
-               f"lang={lang.group(1) if lang else '(none)'} for locale {code}")
+            # Compared against the one table, not against "anything but en".
+            #
+            # The old assertion was `lang != "en"` for every non-English locale,
+            # which is true of `zh-Hans` and of `zh-CN` alike -- so it passed while
+            # the page's own CSS, keyed to `html[lang="zh-CN"]`, stopped matching.
+            # A check that cannot distinguish the correct value from a plausible
+            # wrong one is not a check.
+            ck(bool(lang) and lang.group(1) == HTML_LANG[code],
+               f"{code}/{page}: <html lang> is {HTML_LANG[code]}",
+               f"got {lang.group(1) if lang else '(none)'}; expected "
+               f"{HTML_LANG[code]} from build_site.META, which is also what the "
+               f"runtime's htmlLang() returns and what the stylesheet keys off")
 
             canon = re.search(r'<link rel="canonical" href="([^"]+)"', head)
             ogu = re.search(r'property="og:url" content="([^"]+)"', head)

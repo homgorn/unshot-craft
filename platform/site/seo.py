@@ -64,6 +64,21 @@ LOCALES_DIR = ROOT / "site" / "locales"
 SITE = "shotcraft"
 PAGES = ("index", "library", "showcase")
 
+# `<html lang>` belongs to exactly one table.
+#
+# `build_site.META` feeds the payload's `meta` namespace, `i18n.js` returns it
+# from `htmlLang()`, and upstream's own CSS keys off `html[lang="zh-CN"]`.
+# `seo.META` carried a second, different spelling of the same fact -- `zh-Hans`
+# -- and because `seo.py` runs after the runtime it overwrote a correct value
+# with a different correct one, so the page's typography stopped matching and
+# the attribute a crawler read disagreed with the one the runtime set.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_site import META as BUILD_META  # noqa: E402
+
+
+#: code -> the value that belongs in `<html lang>`, taken from the one table.
+HTML_LANG: dict[str, str] = {c: BUILD_META[c][0] for c in BUILD_META}
+
 FPS = 30   # the demo corpus renders at the DesignStage's 30fps
 
 # The clips on this site were rendered by this project from components in a
@@ -277,7 +292,7 @@ def jsonld(code: str, page: str, origin: str, lib: dict) -> str:
                 "@id": f"{origin}/#website",
                 "name": SITE,
                 "url": f"{origin}/",
-                "inLanguage": META[code][0],
+                "inLanguage": HTML_LANG[code],
                 "publisher": {"@id": f"{origin}/#org"},
             },
             {
@@ -292,7 +307,7 @@ def jsonld(code: str, page: str, origin: str, lib: dict) -> str:
                 "applicationCategory": "MultimediaApplication",
                 "operatingSystem": "Any",
                 "url": url_for(origin, code, page),
-                "inLanguage": META[code][0],
+                "inLanguage": HTML_LANG[code],
                 "description": c[page]["desc"] if page in c else c["index"]["desc"],
                 "license": "https://www.apache.org/licenses/LICENSE-2.0",
                 "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -355,7 +370,7 @@ def library_itemlist(code: str, origin: str, lib: dict, ns: dict) -> str | None:
         "@context": "https://schema.org",
         "@type": "ItemList",
         "name": COPY[code]["library"]["title"],
-        "inLanguage": META[code][0],
+        "inLanguage": HTML_LANG[code],
         "numberOfItems": len(items),
         "itemListElement": items,
     }, ensure_ascii=False, indent=2), untranslated
@@ -526,7 +541,7 @@ def card_page_html(code: str, slug: str, card: dict, styles: dict,
                 "@type": "TechArticle",
                 "headline": title,
                 "description": desc,
-                "inLanguage": META[code][0],
+                "inLanguage": HTML_LANG[code],
                 "url": canon,
                 "mainEntityOfPage": canon,
                 "publisher": {"@id": f"{origin}/#org"},
@@ -554,7 +569,7 @@ def card_page_html(code: str, slug: str, card: dict, styles: dict,
             "@type": "VideoObject",
             "name": title,
             "description": desc[:200],
-            "inLanguage": META[code][0],
+            "inLanguage": HTML_LANG[code],
             "contentUrl": clip_url,
             "thumbnailUrl": thumb,
             "uploadDate": upload_date(),
@@ -591,7 +606,7 @@ def card_page_html(code: str, slug: str, card: dict, styles: dict,
     next_n = all_cards[idx] if idx < len(all_cards) else None
 
     return f"""<!doctype html>
-<html lang="{META[code][0]}">
+<html lang="{HTML_LANG[code]}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -713,10 +728,10 @@ def write_404(origin: str, locales: list[str], total: int) -> str:
     for code in locales:
         title, body = NOT_FOUND[code]
         links = "\n".join(
-            f'      <li><a href="/{l}/" lang="{META[l][0]}">{esc(META[l][1])}</a></li>'
+            f'      <li><a href="/{l}/" lang="{HTML_LANG[l]}">{esc(META[l][1])}</a></li>'
             for l in locales)
         page = f"""<!doctype html>
-<html lang="{META[code][0]}">
+<html lang="{HTML_LANG[code]}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -755,7 +770,7 @@ def write_404(origin: str, locales: list[str], total: int) -> str:
     # redirecting to `/en/404.html`: a mistyped URL is the end of the visit, and
     # the visitor must still be able to get somewhere.
     picker = "\n".join(
-        f'      <li><a href="/{l}/" lang="{META[l][0]}">{esc(META[l][1])}</a></li>'
+        f'      <li><a href="/{l}/" lang="{HTML_LANG[l]}">{esc(META[l][1])}</a></li>'
         for l in locales)
     lang_js = "\n".join(
         f"    if ((navigator.language || '').toLowerCase().startsWith('{l}'))"
@@ -926,7 +941,7 @@ def build(origin: str) -> dict:
                           "", head)
             if "<html lang=" in head:
                 head = re.sub(r'<html lang="[^"]*"',
-                              f'<html lang="{META[code][0]}"', head, count=1)
+                              f'<html lang="{HTML_LANG[code]}"', head, count=1)
             inject = "\n  ".join(head_tags(code, page, origin, locales, lib))
             inject += ('\n  <script type="application/ld+json">\n'
                        + jsonld(code, page, origin, lib) + "\n  </script>")

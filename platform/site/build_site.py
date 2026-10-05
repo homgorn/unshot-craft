@@ -308,26 +308,41 @@ LOCALE_CSS = """
 
   /* Data-driven language switcher (site/build/runtime/i18n.js) */
   /* Inline flag: always visible, no hover needed, so a Russian or Japanese
-     visitor who cannot decode Latin script can still find their language. */
+     visitor who cannot decode Latin script can still find their language.
+
+     Colours come from the token system, like every other topbar control
+     (`.topbar-link`, `.topbar-toggle`). The first version of this block set
+     `background: rgba(14,14,12,.35)` and `color: var(--muted)` -- a hardcoded
+     *dark* pill, which measured 2.03:1 in the light theme: the text colour was
+     the light theme's muted grey, sitting on a dark scrim the light theme never
+     asked for. Two defects in one declaration. A hardcoded colour cannot follow
+     a theme, and pairing it with a themed colour is how it slipped through a
+     palette where every token had been given a comment stating which ratios it
+     clears.
+
+     The switcher is not a special case that needs its own surface, so it does not
+     get one. */
   .locale-nav { position: relative; }
   .locale-flag {
     display: inline-flex; align-items: center; justify-content: center;
     border: 1px solid var(--line); border-radius: 999px;
-    padding: .38rem .95rem; background: rgba(14,14,12,.35);
-    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-    color: var(--muted); font: inherit; font-size: .8rem; cursor: pointer;
+    padding: .38rem .95rem; background: var(--surface); color: var(--text);
+    box-shadow: 0 2px 8px var(--control-shadow);
+    font: inherit; font-size: .8rem; cursor: pointer;
     white-space: nowrap; list-style: none;
-    transition: color 150ms ease, border-color 150ms ease;
+    transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
   }
-  .locale-flag:hover { color: var(--text); border-color: rgba(211,146,60,.65); }
+  .locale-flag:hover { background: var(--control-hover); border-color: var(--faint); }
+  .locale-flag:active { background: var(--control-active); }
+  .locale-flag:focus-visible { border-color: var(--accent); color: var(--accent-text); }
   .locale-flag-icon { display: inline-flex; align-items: center; margin-right: .4rem; }
   .locale-flag-icon svg { width: 15px; height: 15px; fill: none; stroke: currentColor;
                           stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   .locale-list {
     position: absolute; right: 0; top: calc(100% + 8px); z-index: 20;
     display: flex; flex-direction: column; min-width: 168px; padding: 6px;
-    background: rgba(14,14,12,.97); border: 1px solid var(--line);
-    border-radius: 12px; box-shadow: 0 16px 48px rgba(0,0,0,.55);
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 12px; box-shadow: var(--shadow);
     opacity: 0; visibility: hidden; transform: translateY(-4px);
     transition: opacity 150ms ease, transform 150ms ease, visibility 150ms;
   }
@@ -337,13 +352,49 @@ LOCALE_CSS = """
   }
   .locale-item {
     display: block; padding: 8px 12px; border-radius: 8px;
-    color: var(--muted); font-size: .86rem; text-decoration: none;
+    color: var(--text); font-size: .86rem; text-decoration: none;
   }
-  .locale-item:hover { background: rgba(240,237,229,.08); color: var(--text); }
-  .locale-item.is-current { color: var(--accent); font-weight: 700; }
+  .locale-item:hover { background: var(--control-hover); }
+  .locale-item.is-current { color: var(--accent-text); font-weight: 700; }
   /* the upstream inline toggle is superseded by the switcher above */
   .language-toggle[hidden] { display: none; }
 """
+
+def indented_non_header(raw: str) -> list[str]:
+    """Lines in a Cloudflare `_headers` file that are indented but are not headers.
+
+    The format has two kinds of line and the distinction is positional:
+
+    * a **path pattern**, which must begin at column 0, because that is what
+      starts a rule;
+    * a **header**, `Name: value`, which is indented two spaces under the pattern
+      it belongs to.
+
+    So "indented" is not the defect -- 14 of this file's 22 lines are correctly
+    indented headers, and a check that flags any indented line is a check that
+    cannot be satisfied. The defect is an indented line that is *not* a header,
+    because it then reads as a pattern and matches nothing.
+
+    ` /media/*` was exactly that: one leading space, in the file whose rule
+    governs 128 MB of video, and it shipped without error.
+
+    Shared with `check_dist.py`, which imports it rather than restating the
+    format, so the builder and the gate cannot disagree about what valid is.
+    """
+    bad: list[str] = []
+    # `[A-Za-z0-9-]+:` then end-of-line-or-space. An empty value is legal -- it is
+    # how the format removes a header -- so requiring a value after the colon
+    # flagged `  Referrer-Policy:` as a pattern.
+    header = re.compile(r"^\s+[A-Za-z0-9-]+:(?:\s|$)")
+    for line in raw.splitlines():
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        if not line[0].isspace():
+            continue                     # column 0: a pattern, as intended
+        if not header.match(line):
+            bad.append(line.rstrip())
+    return bad
+
 
 def github_patches() -> tuple[list, list]:
     """Point the GitHub affordances at *our* repository, or remove them.
@@ -628,7 +679,52 @@ def build() -> dict:
         src = GALLERY / name
         if src.exists():
             shutil.copy2(src, DIST / "assets" / name)
-    shutil.copy2(GALLERY / "api" / "library.json", DIST / "api" / "library.json")
+    # ---- card sources, and the 471 links that point at them ------------------
+    #
+    # `library.json` says `"sourceUrl": "./source/<slug>.md"`, and `app.js`
+    # renders it into an `href` verbatim -- so every card on every locale linked
+    # to `/<locale>/source/<slug>.md`, a directory nothing ever created. 471 dead
+    # links, invisible to a static crawl because they only exist in the DOM after
+    # `app.js` has run, which is where every other check was looking.
+    #
+    # The files are real: `upstream/video-shotcraft/references/shots/` holds all
+    # 157 of them, 575 KB, laid out as `<category>/<slug>.md`. So the fix is to
+    # ship them, not to remove the link -- a card whose "Recipe" button goes
+    # somewhere is strictly worse than one that opens the shot reference it was
+    # written from, and those references are Apache-2.0 like everything else here.
+    #
+    # `sourceUrl` is rewritten to the real relative path rather than flattening
+    # the tree, so the directory a reader lands in matches the category the card
+    # belongs to.
+    shots = ROOT / "upstream" / "video-shotcraft" / "references" / "shots"
+    lib_src = GALLERY / "api" / "library.json"
+    lib_dst = DIST / "api" / "library.json"
+    if shots.is_dir() and lib_src.exists():
+        shutil.copytree(shots, DIST / "source", dirs_exist_ok=True)
+        payload = json.loads(lib_src.read_text(encoding="utf-8"))
+        rewritten = 0
+        for card in payload.get("cards", []):
+            src = card.get("source") or ""
+            prefix = "references/shots/"
+            if src.startswith(prefix):
+                # `../`, not `./`. The link is rendered by `app.js` into a page at
+                # `/<locale>/library.html`, so `./source/x.md` resolves to
+                # `/<locale>/source/x.md` and 404s; the tree lives at the site
+                # root. One segment of depth, and the whole 471-link fix is dead
+                # again -- which is why `check_dist.py` resolves this value out of
+                # the payload rather than trusting the string.
+                card["sourceUrl"] = "../source/" + src[len(prefix):]
+                rewritten += 1
+        lib_dst.write_text(json.dumps(payload, ensure_ascii=False, indent=None)
+                           + "\n", encoding="utf-8")
+        if rewritten != len(payload.get("cards", [])):
+            problems.append(
+                f"rewrote {rewritten} sourceUrl values for "
+                f"{len(payload.get('cards', []))} cards; some had no "
+                f"'references/shots/' source, so their Recipe link stays dead")
+    else:
+        problems.append(
+            f"no shot sources at {shots}; every card's Recipe link would 404")
     # The showcase manifest is published by a release workflow on upstream's
     # repository and is not in the git clone, so `site/dist/api/showcase.json`
     # did not exist -- and `showcase.js` fell into its own load-error branch on
@@ -648,11 +744,54 @@ def build() -> dict:
             "submissions": [],
         }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     shutil.copy2(RUNTIME / "i18n.js", DIST / "assets" / "i18n.js")
+    # ---- patched CSS --------------------------------------------------------
     # The switcher is generated, so its CSS ships with the generated CSS rather
     # than being patched into a third hand-maintained copy of styles.css.
-    css = (DIST / "assets" / "styles.css").read_text(encoding="utf-8") if (DIST / "assets" / "styles.css").exists() else ""
+    #
+    # Wrapped in sentinels so `check_dist.py` can tell this block from upstream's
+    # 1800 lines and audit only the part we own. Boundary-detection by guessing
+    # which rule came last is how a gate ends up auditing the wrong 40 lines and
+    # reporting green.
+    CSS_BEGIN = "/* >>> generated by platform/site/build_site.py -- do not edit */"
+    CSS_END = "/* <<< end generated */"
+    css_path = DIST / "assets" / "styles.css"
+    css = css_path.read_text(encoding="utf-8") if css_path.exists() else ""
     if css:
-        (DIST / "assets" / "styles.css").write_text(css + "\n" + LOCALE_CSS, encoding="utf-8")
+        # Idempotent: a rebuild re-appends only when the sentinels are absent, so
+        # running the builder twice cannot double the block.
+        if CSS_BEGIN not in css:
+            css_path.write_text(
+                css + "\n" + CSS_BEGIN + "\n" + LOCALE_CSS.strip()
+                + "\n" + CSS_END + "\n", encoding="utf-8")
+
+    # ---- _headers ----------------------------------------------------------
+    # Cloudflare Pages reads `_headers` from the directory it is told to publish,
+    # so a file at the repository root governs nothing. The tree is `rmtree`'d and
+    # rebuilt on every run, so the deploy directory is the only place a header file
+    # can live -- and it was not being copied, which meant the site shipped with
+    # whatever the host's defaults are: no CSP, no `nosniff`, no `immutable` on
+    # 128 MB of video.
+    #
+    # Copied rather than generated, because the file is hand-authored and
+    # Cloudflare-specific, and generating it would mean restating its syntax in
+    # Python. Validated on the way through, because the one way this can be wrong
+    # in a way nobody notices is a rule that parses but does not match: see the
+    # column-0 check.
+    headers_src = ROOT / "_headers"
+    if headers_src.is_file():
+        raw = headers_src.read_text(encoding="utf-8")
+        stray = indented_non_header(raw)
+        if stray:
+            problems.append(
+                f"_headers: {len(stray)} line(s) are indented but are not "
+                f"`Name: value` headers, so they read as path patterns and match "
+                f"nothing: {stray[0]!r}")
+        (DIST / "_headers").write_text(raw, encoding="utf-8")
+    else:
+        problems.append(
+            "no _headers at the repository root; the deploy directory will ship "
+            "without CSP, nosniff or media cache headers")
+
     media_report = deploy_media(problems, warnings)
 
     # ---- patched JS --------------------------------------------------------
