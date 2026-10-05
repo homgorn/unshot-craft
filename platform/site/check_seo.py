@@ -34,6 +34,15 @@ import subprocess
 import sys
 from pathlib import Path
 
+import os
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from _env import load as _load_env  # noqa: E402
+
+_load_env()
+DEFAULT_ORIGIN = "https://shotcraft.example"
+
+
 ROOT = Path(__file__).resolve().parents[2]
 DIST = ROOT / "site" / "dist"
 LOCALES_DIR = ROOT / "site" / "locales"
@@ -56,12 +65,16 @@ REQUIRED_FILES = [
 MOTION_REQUIRED = {"media": 200, "media/poster": 1}
 
 # Translated ui keys that nothing can display: not an attribute on any element of
-# any built locale, and not a `t()` call in either script. 37, measured from a
+# any built locale, and not a `t()` call in either script. 33, measured from a
 # clean `scripts/init.ps1`, down from 65 before platform/site/localise_dom.py
-# existed. The number is only reproducible from a clean build -- `localise_dom.py`
-# is idempotent, so running it twice over a tree it has already annotated reports
-# fewer orphans than the first pass, and reading the second number as the truth
-# makes the ceiling meaningless.
+# existed and from 37 while it was still unreproducible.
+#
+# That number used to be only reproducible from a clean build, because
+# `localise_dom.py` wired a different number of keys on every run and each run
+# left a differently annotated tree behind. It is now a pure function of the
+# template and `site/locales/en/ui.json`: two clean builds produce byte-identical
+# pages, and a second pass wires nothing. So the ceiling can be the exact count
+# rather than a slack allowance over one that moved.
 #
 # The residue is not untranslated work. The English values in `en/ui.json` are
 # English renderings of upstream's Chinese `translations.js` table -- 81 of them
@@ -69,7 +82,7 @@ MOTION_REQUIRED = {"media": 200, "media/poster": 1}
 # path ever emits has no display site. Closing one is a decision about which of
 # two English wordings is right, which is why this is a ceiling rather than a
 # zero: a gate that cannot be satisfied is a gate that gets deleted.
-ORPHAN_CEILING = 37
+ORPHAN_CEILING = 33
 
 KNOWN_LOCALES = ("en", "zh", "ru")
 
@@ -179,16 +192,30 @@ def audit(origin: str) -> dict:
            "ceiling; each new one needs a decision, not a rebuild")
         # The three most prominent strings on a library page. A search box in the
         # wrong language on a localised page is the failure a reader notices first.
+        #
+        # Anchored on the element, not on the substring. `data-i18n-placeholder`
+        # was once satisfied by an annotation sitting on the `<label>` that wraps
+        # the search box rather than on the `<input>`, which is why the placeholder
+        # was English on every locale while this check stayed green: it found the
+        # string and never asked what it was attached to.
+        #
+        # `themeDark` is on `<span id="themeToggleLabel">`, not on the button:
+        # `data-i18n` sets textContent, so putting it on the button would replace
+        # the toggle's two icon `<svg>`s with the word "Dark".
         for code in built:
             lib = DIST / code / "library.html"
             if lib.exists():
                 h = lib.read_text(encoding="utf-8", errors="replace")
-                ck('data-i18n-placeholder="searchPlaceholder"' in h,
+                ck(re.search(r'<input[^>]*\bdata-i18n-placeholder="searchPlaceholder"', h)
+                   is not None,
                    f"{code}/library.html: the search box is translatable",
-                   "no data-i18n-placeholder, so the placeholder is English on "
-                   "every locale")
-                ck('data-i18n="themeDark"' in h or 'data-i18n="themeLight"' in h,
-                   f"{code}/library.html: the theme toggle is translatable", "")
+                   "no data-i18n-placeholder on the <input>, so the placeholder "
+                   "is English on every locale")
+                ck(re.search(r'<span[^>]*\bid="themeToggleLabel"[^>]*\bdata-i18n="theme(To)?[DL]', h)
+                   is not None,
+                   f"{code}/library.html: the theme toggle is translatable",
+                   "no data-i18n on #themeToggleLabel, so the toggle reads in "
+                   "English on every locale")
     else:
         ck(False, "localise_dom report exists",
            "site/build/localise_report.json missing; run platform/site/localise_dom.py")
@@ -470,7 +497,7 @@ def audit(origin: str) -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--origin", default="https://shotcraft.example")
+    ap.add_argument("--origin", default=os.environ.get("SITE_ORIGIN", DEFAULT_ORIGIN))
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args()
     rep = audit(a.origin)

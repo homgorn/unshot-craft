@@ -78,6 +78,23 @@ UPSTREAM_NAME = "video-shotcraft"
 # template literals. Quoted, so a path inside prose is not mistaken for one.
 URL_LITERAL = re.compile(r"""['"]((?:\.\.?/)[^'"`\s]{2,120})['"]""")
 
+# Meta keys that are *legitimately* repeatable, per the OpenGraph protocol, and
+# which the "no duplicated meta keys" check must therefore not flag.
+#
+# `og:locale:alternate` is one tag per other locale: a card page has two, with
+# two different values. A page with two of them is a correct hreflang cluster, not
+# a bug -- the first version of this check flagged 480 of 471 card pages for it,
+# which is the failure mode of a gate nobody can satisfy. A gate that is wrong
+# gets deleted, and then the real duplicates it was meant to catch go with it.
+REPEATABLE = {
+    "og:locale:alternate",
+    "og:image",
+    "og:image:secure_url",
+    "og:video",
+    "og:video:secure_url",
+    "article:tag",
+}
+
 
 def built() -> list[str]:
     return [c for c in LOCALES if (DIST / c / "library.html").exists()]
@@ -150,6 +167,8 @@ def audit(origin: str, allow_placeholder: bool) -> dict:
 
         keys = re.findall(r'<meta[^>]*\b(?:property|name)="([^"]+)"', head)
         for k in set(keys):
+            if k in REPEATABLE:
+                continue
             if keys.count(k) > 1:
                 dup_meta.append(f"{rel}: {k} x{keys.count(k)}")
 

@@ -125,14 +125,28 @@
     };
   }
 
-  /** Apply every translation attribute in the document. */
-  function apply(root) {
+  /**
+   * Apply every translation attribute in the document.
+   *
+   * `fallbackNs` is the namespace a **bare** attribute name resolves against, and
+   * it is a property of the page rather than of the runtime. `showcase.js` reads
+   * its own strings with `s('showcase', key)`, so on `/ru/showcase.html` a bare
+   * `data-i18n="navLibrary"` means `showcase.navLibrary`. Calling this with a
+   * hardcoded `'ui'` fallback -- which is what it did at first -- resolved those
+   * against `ui`, found nothing, and replaced "Библиотека кадров" with the
+   * literal word `navLibrary` on the page, while the card list below stayed
+   * correctly translated. `data-ns` always wins; the fallback only applies to
+   * upstream's own hand-marked attributes, which carry none.
+   */
+  function apply(root, fallbackNs) {
     var scope = root || document;
+    var def = fallbackNs || 'ui';
+    function nsOf(node) { return node.dataset.ns || def; }
     scope.querySelectorAll('[data-i18n]').forEach(function (node) {
-      node.textContent = s(node.dataset.ns || 'ui', node.dataset.i18n);
+      node.textContent = s(nsOf(node), node.dataset.i18n);
     });
     scope.querySelectorAll('[data-i18n-aria-label]').forEach(function (node) {
-      node.setAttribute('aria-label', s(node.dataset.ns || 'ui', node.dataset.i18nAriaLabel));
+      node.setAttribute('aria-label', s(nsOf(node), node.dataset.i18nAriaLabel));
     });
     // Attribute-valued copy. `placeholder` is the one that matters: the library's
     // search box is the most prominent text on the page and there was no way to
@@ -140,12 +154,13 @@
     // while every card under it was in Russian. A localised site with an
     // English search box is a localised site nobody can search.
     scope.querySelectorAll('[data-i18n-placeholder]').forEach(function (node) {
-      node.setAttribute('placeholder', s(node.dataset.ns || 'ui', node.dataset.i18nPlaceholder));
+      node.setAttribute('placeholder', s(nsOf(node), node.dataset.i18nPlaceholder));
     });
     scope.querySelectorAll('[data-i18n-title]').forEach(function (node) {
-      node.setAttribute('title', s(node.dataset.ns || 'ui', node.dataset.i18nTitle));
+      node.setAttribute('title', s(nsOf(node), node.dataset.i18nTitle));
     });
-    // data-l10n is the upstream index.html contract and may contain markup.
+    // data-l10n is the upstream index.html contract, always `page`, and may
+    // contain markup.
     scope.querySelectorAll('[data-l10n]').forEach(function (node) {
       node.innerHTML = s(node.dataset.ns || 'page', node.dataset.l10n);
     });

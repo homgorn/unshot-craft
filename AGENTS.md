@@ -96,6 +96,15 @@ as a **warning** and `platform/site/check_seo.py` **fails** on it — one gate,
 one authority. `mirror_site.py --media` is 128 MB and is not part of
 `scripts\init.ps1`.
 
+**Poster frames are extracted, not fetched.** 64 posters shipped with the
+original recording; the other 150 are pulled from their own clips by
+`platform/site/posters.py`, a third of the way in — most of this corpus animates
+*in* from an empty stage, so the first frame is a blank canvas and would make the
+poster look worse than none. It runs in `init.ps1` **before** `prerender.py`,
+because the prerender writes a `poster=` attribute only for frames that already
+exist on disk; run after it and 97 of the 157 library videos ship with no poster
+at all.
+
 ## Gates
 
 Every one of these has caught a real defect. `scripts\init.ps1` runs the first

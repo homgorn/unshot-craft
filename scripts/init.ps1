@@ -52,6 +52,14 @@ if (Test-Path "upstream/video-shotcraft/gallery/library.html") {
     if ($LASTEXITCODE -ne 0) { throw "locale extraction failed" }
     python platform/site/build_site.py | Out-Null
     if ($LASTEXITCODE -ne 0) { throw "site build failed" }
+    # posters BEFORE prerender, because prerender writes `poster=` only for the
+    # frames that already exist on disk. Run after it and 97 of the 157 library
+    # videos are written with no poster attribute at all -- which is what a
+    # posterless looping tile looks like: a black rectangle until the clip
+    # decodes. It was missing from this script, so the 150 frames the module
+    # extracts were thrown away by the next build every time.
+    python platform/site/posters.py | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "poster extraction failed" }
     python platform/site/prerender.py | Out-Null
     if ($LASTEXITCODE -ne 0) { throw "site prerender failed" }
     # seo runs LAST on purpose. build_site regenerates the pages, prerender bakes
@@ -95,7 +103,19 @@ $gate = @(
     @{ name = "card briefs";  cmd = "platform/prompts/build_prompts.py --lint" },
     @{ name = "cat briefs";   cmd = "platform/catalog/build_briefs.py --lint" },
     @{ name = "coverage";     cmd = "platform/site/check_coverage.py" },
-    @{ name = "seo";          cmd = "platform/site/check_seo.py" }
+    @{ name = "seo";          cmd = "platform/site/check_seo.py" },
+    # Reads `site/dist` as written: one document per file, no text nodes in
+    # <head>, no duplicated meta keys, every reference resolving, and no page
+    # carrying upstream's project name. `check_seo.py` asks whether the metadata
+    # is right; this asks whether the file is a valid document whose references
+    # work, which is not a question about metadata.
+    #
+    # `--allow-placeholder-origin` because `SITE_ORIGIN` is a placeholder until
+    # the owner sets one in `.env`, and that is a deploy-time fact rather than a
+    # build defect. Without the flag this gate fails on every machine that has
+    # not been told its own domain, and a gate that always fails is a gate nobody
+    # reads. Deploy still has to set it: `check_dist.py` without the flag fails.
+    @{ name = "dist";         cmd = "platform/site/check_dist.py --allow-placeholder-origin" }
 )
 foreach ($g in $gate) {
     # Splat the argv array. Indexing a split with `[1..(len-1)]` on a one-element

@@ -266,8 +266,12 @@ EXTERNAL: list[tuple[str, str, object, str]] = [
     # directory too shallow, and site/dist/media/ was never created. Every number
     # in the prose above them was true of the index while the page itself showed
     # nothing, so each is now anchored to the file on disk.
-    ("AGENTS.md", r"`gallery/media/poster/\*\.jpg`, (\d+) files",
-     lambda: _files("site/dist/media/poster/*.jpg"), "posters deployed"),
+    ("AGENTS.md", r"holds \*\*posters only\*\* — `gallery/media/poster/\*\.jpg`, (\d+) files",
+     lambda: _files("upstream/video-shotcraft/gallery/media/poster/*.jpg"),
+     "posters in upstream's git tree"),
+    ("AGENTS.md", r"the other (\d+) are pulled from their own clips",
+     lambda: _files("site/dist/media/poster/*.jpg") - _upstream_posters(),
+     "poster frames extracted from the clips"),
     ("AGENTS.md", r"\*\*(\d+) mp4\s+previews are not in git at all\*\*",
      lambda: _files("site/dist/media/*.mp4"), "mp4 previews deployed"),
     ("AGENTS.md", r"check_seo\.py\s+# (\d+)/",
@@ -285,6 +289,18 @@ EXTERNAL: list[tuple[str, str, object, str]] = [
 
 def _files(pattern: str) -> int:
     return len(list(ROOT.glob(pattern)))
+
+
+def _upstream_posters() -> int:
+    """Posters that arrived with upstream, as opposed to ones we extracted.
+
+    Both numbers are real and they mean different things: 64 files exist in the
+    pinned git tree, and 214 exist in the built tree. The sentence in AGENTS.md
+    says both, so both are anchored -- and the second claim is a *difference*, so
+    a reader cannot satisfy it by editing one number to match the other.
+    """
+    return len(list(ROOT.glob(
+        "upstream/video-shotcraft/gallery/media/poster/*.jpg")))
 
 
 def _rendered_clips() -> int:

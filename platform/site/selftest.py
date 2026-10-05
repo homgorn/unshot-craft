@@ -416,16 +416,34 @@ def main() -> int:
         # `/zh/library.html`, the largest page, they failed about three times in
         # five runs while the page itself was correct.
         #
-        # `button.locale-flag` is created by `mountSwitcher()`, which runs inside
-        # `applyLanguage()` after `apply()`. Its presence means the runtime has
-        # finished, which is the thing actually being waited for.
-        cards_ready = ("!!document.querySelector('button.locale-flag') && "
-                       "document.querySelectorAll('#ai-stream-response').length > 0")
+        # `button.locale-flag` was the next thing tried, on the belief that
+        # `mountSwitcher()` creates it. It does not: `inject_switcher()` writes
+        # that button into the static HTML and `mountSwitcher()` only *fills* it.
+        # So the predicate was true from the moment the element was parsed, which
+        # is the same false-ready as the static card block, one selector later.
+        # The symptom was the whole failure this suite exists to catch --
+        # `data-i18n` attributes rendering as their own key names and the
+        # switcher reading `en` on `/zh/` and `/ru/` -- appearing on about two
+        # runs in three against a page that was correct.
+        #
+        # What `mountSwitcher()` genuinely creates is `.locale-nav .locale-item`,
+        # one per built locale. Requiring that, plus `window.__I18N__` existing,
+        # plus the runtime's own locale agreeing with the URL, means the wait ends
+        # when the runtime has actually finished.
         for lc in locales:
             if not (DIST / lc / "library.html").exists():
                 continue
+            cards_ready = (
+                "!!window.__I18N__ && window.__I18N__.locale === %r && "
+                "!!document.querySelector('.locale-nav .locale-item') && "
+                "document.querySelectorAll('#ai-stream-response').length > 0" % lc)
             ok = goto(f"{base}/{lc}/library.html", cards_ready)
             check(f"{lc} library rendered", ok)
+            # The locale comes from the URL and never from localStorage; a page
+            # that boots on the wrong one is broken however good its markup is.
+            check(f"{lc} runtime took its locale from the URL",
+                  cdp.evaluate("(window.__I18N__ || {}).locale") == lc,
+                  f"runtime says {cdp.evaluate('(window.__I18N__ || {}).locale')!r}")
             n = cdp.evaluate("document.querySelectorAll('article.shot-card').length")
             # Derived, not hardcoded. A literal 157 here would pass today and
             # start failing on the first upstream bump, which is exactly the kind
@@ -454,6 +472,62 @@ def main() -> int:
                 "document.querySelectorAll('.locale-nav .locale-item').length")
             check(f"{lc} switcher lists every built locale",
                   items == len(locales), f"{items} vs {len(locales)}")
+
+            # The switcher must show the locale you are actually on.
+            #
+            # Waiting for `button.locale-flag` proved `mountSwitcher()` had run; it
+            # said nothing about *what* it put there, so a page whose button read
+            # "en" while the URL said "/ru/" passed. That is the whole visible
+            # symptom of the locale not being read from the URL at all, and the
+            # suite was green while it happened.
+            shown = cdp.evaluate(
+                "(() => {const c = document.querySelector('[data-locale-current]');"
+                "return c ? c.textContent.trim() : null;})()")
+            check(f"{lc} switcher shows {lc}", shown == lc, f"button reads {shown!r}")
+
+            current = cdp.evaluate(
+                "(() => {const a = document.querySelector("
+                "'.locale-nav .locale-item[aria-current=\"page\"]');"
+                "return a ? a.getAttribute('data-locale') : null;})()")
+            check(f"{lc} switcher marks {lc} as the current item",
+                  current == lc, f"aria-current is on {current!r}")
+
+            # The chrome around the cards, in the page's own language.
+            #
+            # Every other check here looked at the cards, which the **prerender**
+            # bakes into the static HTML in the locale's language -- so a page
+            # whose entire chrome was English still rendered 157 Russian cards and
+            # passed. These read the three strings a reader meets before any card:
+            # the category heading, the search box, and the theme toggle.
+            #
+            # Expected values come from `site/locales/<lc>/ui.json` rather than from
+            # a literal, so this works for any locale and cannot drift from the
+            # translation. `en` is skipped: "is the English page in English" is not
+            # a statement, and the locale would trivially satisfy it.
+            ui_file = DIST.parent / "locales" / lc / "ui.json"
+            if lc != "en" and ui_file.exists():
+                ui = json.loads(ui_file.read_text(encoding="utf-8"))
+                en_ui = json.loads(
+                    (DIST.parent / "locales" / "en" / "ui.json").read_text(encoding="utf-8"))
+                for label, sel, key, prop in (
+                    ("category heading", ".sidebar-heading", "categoriesHeading", "textContent"),
+                    ("search placeholder", "#searchInput", "searchPlaceholder", "placeholder"),
+                    ("theme toggle", "#themeToggleLabel", "themeDark", "textContent"),
+                ):
+                    want = ui.get(key)
+                    other = en_ui.get(key)
+                    got = cdp.evaluate(
+                        f"(() => {{const n = document.querySelector({sel!r});"
+                        f"return n ? String(n.{prop} ?? '').trim() : null;}})()")
+                    # Two conditions, because either alone is gameable: equal to
+                    # the locale's own string is the positive claim, and *not*
+                    # equal to the English one is the negative one that this
+                    # regression actually produced.
+                    ok = (want is not None and got == want
+                          and (other is None or got != other))
+                    check(f"{lc} {label} is in {lc}, not English", ok,
+                          f"{sel}.{prop} is {got!r}; expected {want!r}"
+                          + (f", English is {other!r}" if other is not None else ""))
 
             if a.shots:
                 shot_dir = ROOT / "site" / "build" / "shots"

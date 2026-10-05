@@ -898,11 +898,32 @@ def build(origin: str) -> dict:
                     f"{code}/{page}.html: removed {stray} stray '>' text node(s) "
                     f"from <head> -- a tag was split across lines before this "
                     f"point; the pattern above is the place to look")
-            head = re.sub(r'[ \t]*<link rel="(icon|apple-touch-icon|mask-icon|manifest)"[^>]*>\n',
+            head = re.sub(r'[ \t]*<link rel="(icon|apple-touch-icon|mask-icon|manifest)"[^>]*>[ \t]*\n',
                           "", head)
-            head = re.sub(r'[ \t]*<script type="application/ld\+json">.*?</script>\n',
-                          "", head, flags=re.S)
-            head = re.sub(r'[ \t]*<meta property="og:locale[^"]*"[^>]*>\n', "", head)
+            # Upstream's JSON-LD, removed whole. The `\n` after `</script>` was
+            # the anchor and it is the wrong one: `prerender.py` rewrites inside
+            # <head> before this runs, so the block no longer ended where the
+            # pattern assumed. The consequence was not cosmetic -- the block
+            # survived alongside ours and its `sameAs` and `softwareHelp` still
+            # named `github.com/Vincentwei1021/video-shotcraft`, which is our
+            # own structured data pointing at the author's repository.
+            #
+            # `[ \t]*\n` is kept because the *whole* block is removed either way;
+            # the point is that the match must not depend on a newline it cannot
+            # guarantee. Counted, because a silent miss here is invisible from
+            # the outside: both blocks are valid JSON and both parse.
+            ld_blocks = len(re.findall(
+                r'<script type="application/ld\+json">.*?</script>', head, re.S))
+            if ld_blocks:
+                head = re.sub(
+                    r'[ \t]*<script type="application/ld\+json">.*?</script>[ \t]*\n',
+                    "", head, flags=re.S)
+                made.setdefault("ld_replaced", []).append(
+                    f"{code}/{page}.html: replaced {ld_blocks} inherited "
+                    f"JSON-LD block(s) -- upstream's named the author's "
+                    f"repository in sameAs/softwareHelp")
+            head = re.sub(r'[ \t]*<meta property="og:locale[^"]*"[^>]*>[ \t]*\n',
+                          "", head)
             if "<html lang=" in head:
                 head = re.sub(r'<html lang="[^"]*"',
                               f'<html lang="{META[code][0]}"', head, count=1)

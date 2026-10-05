@@ -37,6 +37,12 @@ from _env import load as _load_env  # noqa: E402
 _load_env()
 DEFAULT_ORIGIN = "https://shotcraft.example"
 
+# Upstream's repository, used for the "Star on GitHub" button, the showcase
+# submission link and the star count. EMPTY by default, and the three sites
+# that use it are then neutralised rather than repointed -- see
+# `github_patches()`.
+GITHUB_REPO = os.environ.get("SITE_GITHUB_REPO", "").strip()
+
 
 ROOT = Path(__file__).resolve().parents[2]
 GALLERY = ROOT / "upstream" / "video-shotcraft" / "gallery"
@@ -232,12 +238,20 @@ loadLibrary().then(() => window.__I18N__.scrollToHash());""", 1, "hash scroll on
     #
     # `apply()` is idempotent and re-applies `data-i18n` with `data-ns` honoured,
     # so calling it after upstream's loops is additive rather than conflicting.
+    # No fallback namespace: upstream's `text()` on this page is `s('ui', key)`,
+    # which is also the runtime's default.
     (ARIA_LOOP, ARIA_LOOP + "\n  window.__I18N__.apply(document);",
      1, "library honours every attribute kind"),
 ]
 
 SHOWCASE_PATCHES: list[tuple[str, str, int, str]] = [
     ("const SHOWCASE_L10N = {", "const SHOWCASE_L10N_UNUSED = {", 1, "neutralize inline dict"),
+    # Dead data: the table above is renamed out of use and the runtime replaces
+    # every read of it, yet it still ships unreachable Chinese containing the
+    # upstream name. Emptied rather than deleted, because these two literals are
+    # the only unambiguous way to reach inside a table we no longer execute.
+    ("'社区作品展示 | video-shotcraft'", "''", 1, "dead showcase title"),
+    ("'社区用 video-shotcraft 做出的产品视频", "'", 1, "dead showcase intro"),
     ("const state = {",
      "// the switcher is generated from data, so a new locale needs no HTML edit\n"
      "window.__I18N__.mountSwitcher();\nconst state = {", 1, "mount switcher"),
@@ -271,14 +285,28 @@ SHOWCASE_PATCHES: list[tuple[str, str, int, str]] = [
     # handles two of the five attribute kinds and ignores `data-ns`. The showcase
     # page is the one that uses `showcase.*` keys, so an annotation the page
     # resolves against the `ui` namespace renders the wrong string.
+    #
+    # `fallbackNs` is 'showcase' and not left at the default 'ui': upstream's own
+    # `text()` on this page is `s('showcase', key)`, so a bare `data-i18n=
+    # "navLibrary"` in the shipped template means `showcase.navLibrary`. Calling
+    # apply() with the default instead replaced "Библиотека кадров" with the
+    # literal word `navLibrary` on /ru/showcase.html.
     (ARIA_LOOP,
-     ARIA_LOOP + "\n  window.__I18N__.apply(document);",
+     ARIA_LOOP + "\n  window.__I18N__.apply(document, 'showcase');",
      1, "showcase honours every attribute kind"),
 ]
 
 # `expected` is 0 for anchors that legitimately vary per page: the builder only
 # complains when an anchor that must exist is missing.
-LOCALE_CSS = """  /* Data-driven language switcher (site/build/runtime/i18n.js) */
+LOCALE_CSS = """
+  /* A GitHub affordance that has nowhere to point, because SITE_GITHUB_REPO is
+     unset. Hidden rather than left as a dead anchor: a button that does nothing
+     reads as a bug, and on this project it would also be pointing a stranger's
+     repository at anyone who pressed it. Set SITE_GITHUB_REPO in .env and the
+     class never appears. */
+  .is-unavailable, .repo-absent { display: none; }
+
+  /* Data-driven language switcher (site/build/runtime/i18n.js) */
   /* Inline flag: always visible, no hover needed, so a Russian or Japanese
      visitor who cannot decode Latin script can still find their language. */
   .locale-nav { position: relative; }
@@ -316,6 +344,137 @@ LOCALE_CSS = """  /* Data-driven language switcher (site/build/runtime/i18n.js) 
   /* the upstream inline toggle is superseded by the switcher above */
   .language-toggle[hidden] { display: none; }
 """
+
+def github_patches() -> tuple[list, list]:
+    """Point the GitHub affordances at *our* repository, or remove them.
+
+    An independent fork that ships upstream's repository URL is making two false
+    statements at once: that we are that project, and that the project lives at
+    that address. Worse, the showcase's "Submit your video" filed a GitHub issue
+    on a stranger's tracker, so a third party's community submissions landed in
+    someone else's backlog.
+
+    Neither can be fixed by guessing a URL, so `SITE_GITHUB_REPO` decides:
+
+    * **set** -- every occurrence is repointed at that repository and the star
+      count is fetched from it.
+    * **unset** -- the star count fetch is removed, the two links are dropped and
+      the count element is hidden. A page with no button is honest; a page with a
+      button pointing at someone else's repo is not.
+
+    The empty case is the default because this repository has no public address
+    yet, and a placeholder URL would be indistinguishable from a real one in the
+    built output.
+    """
+    if GITHUB_REPO:
+        tag = GITHUB_REPO.replace("/", "-")
+        # Both lists, because `apply_patches` asserts every entry matched and a
+        # list handed to both app.js and the HTML pages fails on the entries that
+        # belong to only one of them. The assertion is the point: relaxing a
+        # `required` to make a list fit would restore the silent miss that let a
+        # broken path ship in the first place.
+        html = [('aria-label="video-shotcraft home"',
+                 'aria-label="shotcraft home"', 0, "brand aria-label")]
+        js = [
+            ("https://github.com/Vincentwei1021/video-shotcraft",
+             f"https://github.com/{GITHUB_REPO}", 0, "github repo link"),
+            ("https://api.github.com/repos/Vincentwei1021/video-shotcraft",
+             f"https://api.github.com/repos/{GITHUB_REPO}", 1, "star count api"),
+            ("const CACHE_KEY = 'video-shotcraft-stars';",
+             f"const CACHE_KEY = 'shotcraft-stars-{tag}';", 1, "star cache key"),
+        ]
+        html += [
+            ("https://github.com/Vincentwei1021/video-shotcraft",
+             f"https://github.com/{GITHUB_REPO}", 0, "github repo link"),
+        ]
+        js = []
+        return html, js
+    return _repo_empty_html() + _repo_star_html(), _repo_empty_js()
+
+
+def _repo_empty_html():
+    """Everything here is page-specific, so every entry is `required=0`.
+
+    `apply_patches` asserts each entry matched on **every** file it is handed, and
+    one list is handed to index, library and showcase alike. The hero button and
+    the star count exist only on index; the submission link only on showcase.
+    Relaxing `required` here is safe only because the guarantee moved to the
+    written output: `build()` re-reads index.html and fails if any upstream
+    repository reference survived. A patch with `required=0` and no output
+    assertion is exactly how the media-path defect shipped.
+    """
+    return [
+        # The submission link goes first: it is the one that writes into someone
+        # else's tracker.
+        ('<a href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank"'
+         ' rel="noreferrer">github.com/Vincentwei1021/video-shotcraft</a>',
+         '<span class="repo-absent">no public repository yet</span>', 0,
+         "showcase submission link"),
+        # The hero button. Distinct from the footer link only by its class, so
+        # the class is the anchor -- and rather than leave a dead anchor it is
+        # marked, and hidden by `.is-unavailable` in LOCALE_CSS. A visible button
+        # that goes nowhere is worse than no button.
+        ('<a class="button-github" href="https://github.com/Vincentwei1021/video-shotcraft"',
+         '<a class="button-github is-unavailable" aria-disabled="true" href="#"',
+         0, "hero github button"),
+        # The brand link's static aria-label. `data-i18n-aria-label="brandHome"`
+        # replaces it at runtime, but the file on disk said the upstream name, and
+        # that is what a crawler, a scraper and a screen reader with JS off read.
+        ('aria-label="video-shotcraft home"',
+         'aria-label="shotcraft home"', 0, "brand aria-label"),
+        ('aria-label="Star video-shotcraft on GitHub"',
+         'aria-label="Star shotcraft on GitHub"', 0, "star badge aria-label"),
+        # The library page's star button. A different element from the hero's --
+        # `social-badge`, not `button-github` -- which is why the first pass left
+        # 21 of 42 occurrences alive.
+        ('<a class="social-badge" data-platform="github"'
+         ' href="https://github.com/Vincentwei1021/video-shotcraft"',
+         '<a class="social-badge is-unavailable" aria-disabled="true" data-platform="github"'
+         ' href="#"',
+         0, "library star badge"),
+        # The showcase submission button. `data-i18n` rewrites its label at
+        # runtime, but the *href* is not a translated string and it was filing
+        # third-party submissions into a stranger's issue tracker.
+        ('<a class="showcase-submit"'
+         ' href="https://github.com/Vincentwei1021/video-shotcraft/issues/new?template=showcase.yml"',
+         '<a class="showcase-submit is-unavailable" aria-disabled="true" href="#"',
+         0, "showcase submit button"),
+        # The two static intro paragraphs. Both carry `data-i18n`, so a reader
+        # with JavaScript sees our text -- but a crawler, a scraper and a reader
+        # whose script fails all see the file's, and the file said the upstream
+        # project's name in a sentence about what *this* site is. The locale
+        # values are the truth; these are the fallback that has to agree.
+        ('data-i18n="intro">video-shotcraft is an AI agent skill',
+         'data-i18n="intro">shotcraft is an AI agent skill', 0, "intro (library)"),
+        ('data-i18n="intro">Product videos the community made with video-shotcraft.',
+         'data-i18n="intro">Product videos the community made with shotcraft.',
+         0, "intro (showcase)"),
+    ]
+
+
+def _repo_empty_js():
+    """Empty by design: nothing in app.js mentions the repository."""
+    return []
+
+
+def _repo_star_html():
+    """The two star-count patches. These live in index.html's inline script.
+
+    The fetch is upstream's star count for upstream's repository. Showing it on
+    an independently branded fork claims an endorsement that does not exist, so
+    with no repository configured it is pointed at nothing rather than at them.
+    """
+    return [
+        ("""fetch('https://api.github.com/repos/Vincentwei1021/video-shotcraft')""",
+         "fetch('')  // no repository configured; see SITE_GITHUB_REPO in .env\n"
+         "      // The star count is upstream's number, not ours, and showing it\n"
+         "      // on an independently branded fork implies an endorsement that does\n"
+         "      // not exist.", 0, "star count fetch"),
+        ("const CACHE_KEY = 'video-shotcraft-stars';",
+         "const CACHE_KEY = 'shotcraft-stars-unconfigured';", 0,
+         "star cache key"),
+    ]
+
 
 HTML_PATCHES: list[tuple[str, str, int, str]] = [
     ('<link rel="stylesheet" href="./styles.css">',
@@ -430,6 +589,9 @@ def head_block(code: str, page: str, origin: str, locales: list[str]) -> str:
     return "\n".join(tags)
 
 
+GITHUB_HTML, GITHUB_JS = github_patches()
+
+
 def build() -> dict:
     problems: list[str] = []
     warnings: list[str] = []
@@ -495,7 +657,7 @@ def build() -> dict:
 
     # ---- patched JS --------------------------------------------------------
     app = apply_patches((GALLERY / "app.js").read_text(encoding="utf-8"),
-                        APP_PATCHES, "en", problems, "app.js")
+                        APP_PATCHES + GITHUB_JS, "en", problems, "app.js")
     (DIST / "assets" / "app.js").write_text(app, encoding="utf-8")
     sc = apply_patches((GALLERY / "showcase.js").read_text(encoding="utf-8"),
                        SHOWCASE_PATCHES, "en", problems, "showcase.js")
@@ -544,7 +706,8 @@ def build() -> dict:
             html = tmpl.read_text(encoding="utf-8")
             if page == "index":
                 html = strip_inline_l10n(html)
-            html = apply_patches(html, HTML_PATCHES, code, page_problems, f"{page}.html", origin)
+            html = apply_patches(html, HTML_PATCHES + GITHUB_HTML, code, page_problems,
+                               f"{page}.html", origin)
             html = inject_runtime(html, code)
             html = inject_head(html, code, page, origin, locales)
             html = inject_switcher(html)
@@ -552,6 +715,26 @@ def build() -> dict:
             d.mkdir(parents=True, exist_ok=True)
             if page == "index":
                 assert_wall(html, code, page_problems)
+                # No page may still *link* upstream's repository. The patches
+                # above are optional per page, so their success is proven here
+                # rather than assumed: index carries the star fetch, the hero
+                # button and the cache key, and any of the three surviving means
+                # the page still claims to be that project and points a reader
+                # at someone else's tracker.
+                #
+                # Scoped to what *this* step controls. The same name also appears
+                # in upstream's JSON-LD, which `seo.py` strips in a later pass --
+                # asserting it here failed the build on all three locales for a
+                # defect two steps downstream was about to fix.
+                # `platform/site/check_dist.py` is the net for the whole tree.
+                for upstream_leftover in ('href="https://github.com/Vincentwei1021/video-shotcraft"',
+                                          "api.github.com/repos/Vincentwei1021",
+                                          "video-shotcraft-stars"):
+                    if upstream_leftover in html:
+                        page_problems.append(
+                            f"{code}/index.html: still references "
+                            f"{upstream_leftover!r} -- SITE_GITHUB_REPO handling "
+                            f"did not apply; the page links upstream's repository")
             (d / f"{page}.html").write_text(html, encoding="utf-8")
         # Only a locale whose pages are broken fails the build; a per-locale
         # problem must not be reported once per locale.
