@@ -171,8 +171,44 @@ APP_PATCHES: list[tuple[str, str, int, str]] = [
   // fragment change, in which case the page never reloaded and the hrefs
   // captured at mount time are stale.
   window.__I18N__.refreshSwitcher();
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({block: 'start'});
+
+  // Place the target once and then keep placing it until it stops moving.
+  //
+  // One `scrollIntoView` was enough to be wrong: it runs in a microtask after
+  // `loadLibrary()` resolves, but the grid is still settling at that point --
+  // the skeleton tiles are replaced by real ones and the row heights change
+  // afterwards. So the offset was computed against a layout that no longer
+  // existed, and the card landed 277px or 513px from where it belonged. The
+  // browser suite caught this as an intermittent failure of its own assertion,
+  // which is the only reason it was ever seen at all.
+  //
+  // Also offset for the topbar. It is `position: sticky` and 66px tall, so
+  // `block: 'start'` puts the target's top edge *underneath* it -- the heading
+  // of the card you asked to see is hidden by the bar you scrolled past.
+  const place = () => {
+    const el = document.getElementById(id);
+    if (!el) return null;
+    const bar = document.querySelector('.topbar');
+    const gap = bar ? Math.round(bar.getBoundingClientRect().height) + 12 : 12;
+    const top = Math.max(0, Math.round(
+      el.getBoundingClientRect().top + window.scrollY - gap));
+    window.scrollTo({top: top, behavior: 'auto'});
+    return top;
+  };
+
+  let last = null;
+  let frames = 0;
+  const settle = () => {
+    // If the reader has scrolled since we last placed it, they have taken over.
+    // Yanking the page back mid-read is worse than landing 200px out.
+    if (last !== null && Math.abs(window.scrollY - last) > 8) return;
+    const now = place();
+    frames += 1;
+    if (now !== null && now === last) return;      // the offset held: done
+    last = now;
+    if (frames < 30) requestAnimationFrame(settle);  // ~500ms at 60fps
+  };
+  settle();
 };
 
 elements.themeToggle.addEventListener('click', () => {""", 1, "hash scroll helper"),
