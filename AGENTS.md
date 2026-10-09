@@ -193,6 +193,7 @@ Read `docs/adr/` before proposing an architecture change:
 | 0005 | independent fork, own brand, upstream credited |
 | 0006 | SDD loop with a verifier-owned completion gate |
 | 0007 | the cinematic-technique catalog is a second corpus in the same DB |
+| 0008 | TypeSafe judgments are advisory, never gates |
 
 ## Secrets and the site origin
 
@@ -214,6 +215,14 @@ Nothing else in the repository requires a secret. Every upstream fetch is public
 assets without authentication. `CLOUDFLARE_API_TOKEN` and `GITHUB_TOKEN` are in
 the example file as placeholders for the deploy step, not because a current code
 path reads them.
+
+The one optional secret is `TYPESAFE_API_KEY` (ADR-0008, `docs/research/typesafe-ai.md`).
+The `typesafe-ai` skill is installed project-local (`.agents/skills/`, pinned in
+`skills-lock.json`) for advisory semantic judgments — claim checks, translation QA,
+search rerank. Advisory means advisory: its output never decides a gate, never edits
+the DB/wiki/prompts, never sets `passes`. No code path reads the key today; when an
+integration needs it, the key lives in `.env`/environment, never in git, and only
+public-corpus text is sent as `state`.
 
 ## Money and licensing
 
