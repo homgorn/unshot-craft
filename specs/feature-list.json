@@ -359,7 +359,7 @@
     ],
     "priority": 3,
     "passes": true,
-    "verified_by": "platform/api/selftest.py 53/53, of which 14 are new /optimize and /techniques checks. Every tool cell carries an explicit `tested` boolean; a cell whose params are set but tested is false is reported as 'recorded, never run', and the summary asserts tested == 0 against ADR 0007. /optimize?tool=<unknown> returns 404 with the list of real tool keys. platform/query.py optimize-all <slug> and optimize <slug> --tool all share one renderer, so the two wordings cannot drift."
+    "verified_by": "platform/api/selftest.py 53/53, of which 14 are new /optimize and /techniques checks. Every tool cell carries an explicit `tested` boolean; a cell whose params are set but tested is false is reported as 'recorded, never run', and the summary asserts tested == 0 against ADR 0007. /optimize?tool=<unknown> returns 404 with the list of real tool keys. platform/query.py optimize-all <slug> and optimize <slug> --tool all share one renderer, so the two wordings cannot drift. 2026-10-09: the /licenses assertion was updated to the 2026-10-02 licence correction in ingest/run.py -- Remotion (render engine) is blocking=0 free-for-individuals, PolyForm talkcraft stays blocking=1; the old 'Remotion marked blocking' check contradicted the recorded decision and failed 52/53."
   },
   {
     "id": "F074",

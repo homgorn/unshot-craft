@@ -217,7 +217,17 @@ def main() -> int:
 
         code, lic = call(base, "/licenses")
         blocking = {l["subject"] for l in lic.get("items", []) if l["blocking"]}
-        check("Remotion marked blocking", any("Remotion" in s for s in blocking), str(blocking))
+        # Remotion is NOT blocking: corrected 2026-10-02 in ingest/run.py
+        # (LICENSE_ROWS) -- the paid tier binds companies above three people,
+        # this repo is rendered by an individual, so the free tier applies.
+        # `blocking` is about the code; the tier is a pricing question at
+        # delivery time. Assert the corrected row, not the old refusal.
+        by_subject = {l["subject"]: l for l in lic.get("items", [])}
+        rem = by_subject.get("Remotion (render engine)", {})
+        check("Remotion free-for-individuals, not blocking",
+              rem.get("blocking") in (0, False)
+              and rem.get("commercial_use") == "free-for-individuals",
+              str(rem))
         check("PolyForm marked blocking", any("talkcraft" in s for s in blocking), str(blocking))
 
         code, opp = call(base, "/opportunities")
