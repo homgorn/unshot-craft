@@ -460,21 +460,48 @@ def github_patches() -> tuple[list, list]:
         # belong to only one of them. The assertion is the point: relaxing a
         # `required` to make a list fit would restore the silent miss that let a
         # broken path ship in the first place.
+        #
+        # Upstream keeps the star fetch and its cache key in index.html's INLINE
+        # script, not in app.js (gallery/index.html:576,584) -- so those two
+        # entries live in `html`, not `js`. They sat in `js` with `required=1`
+        # while a stray `js = []` discarded the list: with no public repo the
+        # set-path never executed, so the build stayed green on a path that
+        # could not work. The output assertion in `build()` caught it on the
+        # first real run 2026-10-12.
         html = [('aria-label="video-shotcraft home"',
                  'aria-label="shotcraft home"', 0, "brand aria-label")]
         js = [
             ("https://github.com/Vincentwei1021/video-shotcraft",
              f"https://github.com/{GITHUB_REPO}", 0, "github repo link"),
-            ("https://api.github.com/repos/Vincentwei1021/video-shotcraft",
-             f"https://api.github.com/repos/{GITHUB_REPO}", 1, "star count api"),
-            ("const CACHE_KEY = 'video-shotcraft-stars';",
-             f"const CACHE_KEY = 'shotcraft-stars-{tag}';", 1, "star cache key"),
         ]
         html += [
             ("https://github.com/Vincentwei1021/video-shotcraft",
              f"https://github.com/{GITHUB_REPO}", 0, "github repo link"),
+            ("fetch('https://api.github.com/repos/Vincentwei1021/video-shotcraft')",
+             f"fetch('https://api.github.com/repos/{GITHUB_REPO}')", 0,
+             "star count api"),
+            ("const CACHE_KEY = 'video-shotcraft-stars';",
+             f"const CACHE_KEY = 'shotcraft-stars-{tag}';", 0,
+             "star cache key"),
+            # The footer link's href is repointed above; its visible text still
+            # named upstream's path. A reader sees the text, not the href.
+            (">github.com/Vincentwei1021/video-shotcraft</a>",
+             f">github.com/{GITHUB_REPO}</a>", 0, "footer repo text"),
+            # Static brand words, not links: the badge aria-label and the two
+            # intro fallbacks name the upstream project in sentences about this
+            # site. Same entries as in `_repo_empty_html` -- the links stay
+            # (they are repointed above) but the words must be ours in both
+            # paths, which is what `check_dist.py` asserts net-wide.
+            ('aria-label="Star video-shotcraft on GitHub"',
+             'aria-label="Star shotcraft on GitHub"', 0,
+             "star badge aria-label"),
+            ('data-i18n="intro">video-shotcraft is an AI agent skill',
+             'data-i18n="intro">shotcraft is an AI agent skill', 0,
+             "intro (library)"),
+            ('data-i18n="intro">Product videos the community made with video-shotcraft.',
+             'data-i18n="intro">Product videos the community made with shotcraft.',
+             0, "intro (showcase)"),
         ]
-        js = []
         return html, js
     return _repo_empty_html() + _repo_star_html(), _repo_empty_js()
 
