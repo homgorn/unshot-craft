@@ -1,0 +1,55 @@
+name: ci
+
+# What this CI is for: prove that every push still produces a consistent
+# database, a consistent wiki and a truthful document set. It deliberately
+# does NOT run the site build (needs fonts for og:image), the browser
+# selftest (needs Chrome) or the Remotion render (needs the local template);
+# those stay pre-commit slow gates, per AGENTS.md. A CI that goes red for
+# environment reasons teaches everyone to ignore it, and a gate that is
+# ignored is worse than no gate.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone upstream (pinned read-only corpus)
+        run: |
+          git clone --depth 1 --single-branch --branch main \
+            https://github.com/Vincentwei1021/video-shotcraft.git \
+            upstream/video-shotcraft
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Ingest (DB is a pure function of the pinned tree)
+        run: python platform/ingest/run.py
+
+      - name: Wiki
+        run: python platform/wiki/build_wiki.py
+
+      - name: Prompt briefs
+        run: python platform/prompts/build_prompts.py
+        env:
+          PYTHONIOENCODING: utf-8
+
+      - name: Catalog corpus briefs
+        run: python platform/catalog/build_briefs.py
+
+      - name: Catalog invariants
+        run: python platform/catalog/selftest.py
+
+      - name: Document numbers match the index
+        run: PYTHONIOENCODING=utf-8 python platform/docs_freshness.py
