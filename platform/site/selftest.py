@@ -621,18 +621,35 @@ def main() -> int:
             check("deep link card exists in the DOM",
                   cdp.evaluate("!!document.getElementById('crash-zoom-punch')"))
             seen_top = None
+            # Diagnostic breadcrumb for the two intermittent deep-link failures
+            # seen so far (final top=None with the element existing one check
+            # earlier). Record what the DOM actually holds each iteration; the
+            # failure detail carries the series, so the next flake is evidence,
+            # not speculation.
+            trail = []
             for _ in range(12):
-                top = cdp.evaluate("""(() => {
+                sample = cdp.evaluate("""(() => {
                   const e = document.getElementById('crash-zoom-punch');
-                  return e ? Math.round(e.getBoundingClientRect().top) : null;
+                  const all = document.querySelectorAll('article.shot-card').length;
+                  const grid = document.getElementById('ai-stream-response');
+                  return {found: !!e,
+                          top: e ? Math.round(e.getBoundingClientRect().top) : null,
+                          count: all,
+                          gridChildless: grid ? grid.childElementCount === 0 : null,
+                          hidden: e ? e.hidden : null,
+                          display: e ? getComputedStyle(e).display : null,
+                          ready: document.readyState};
                 })()""")
+                trail.append(sample)
+                top = sample.get("top") if isinstance(sample, dict) else None
                 if top is not None:
                     seen_top = top
                     if abs(top) < 200:
                         break
                 time.sleep(0.35)
             check("deep link scrolls the card into view",
-                  seen_top is not None and abs(seen_top) < 200, f"final top={seen_top}")
+                  seen_top is not None and abs(seen_top) < 200,
+                  f"final top={seen_top} trail={trail}")
             if a.shots:
                 shot_dir = ROOT / "site" / "build" / "shots"
                 shot_dir.mkdir(parents=True, exist_ok=True)
@@ -644,12 +661,21 @@ def main() -> int:
             nav = cdp.evaluate("""(() => {
               const items = [...document.querySelectorAll('.locale-nav .locale-item')];
               const other = items.find((a) => !a.classList.contains('is-current'));
-              if (!other) return null;
+              if (!other) {
+                return {__none: true,
+                        items: items.map((a) => ({cls: a.className,
+                                                  cur: a.getAttribute('aria-current'),
+                                                  text: (a.textContent || '').trim()}))};
+              }
               const href = other.getAttribute('href');
               other.click();
               return href;
             })()""")
-            check("switcher offers another locale", bool(nav), str(nav))
+            nav_href = nav if isinstance(nav, str) else None
+            nav_diag = nav if isinstance(nav, dict) else None
+            check("switcher offers another locale", bool(nav_href),
+                  str(nav_href or nav_diag))
+            nav = nav_href
             if nav:
                 # the click triggers a full navigation; wait for it to settle
                 for _ in range(20):
